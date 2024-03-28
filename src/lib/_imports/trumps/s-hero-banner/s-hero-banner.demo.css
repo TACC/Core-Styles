@@ -1,0 +1,11 @@
+body > main {
+    margin-inline: unset;
+    padding-block: unset;
+    width: unset;
+}
+  
+main {
+    padding-block: unset;
+    width: unset;
+}
+  
