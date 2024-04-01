@@ -1,3 +1,9 @@
 @custom-selector :--s-paragraph-table
     .s-paragraph-table,
     .paragraph-table;
+
+@custom-selector :--table--is-responsive
+    :is(
+        table:not(:has(thead)),
+        table:has([data-col])
+    );
