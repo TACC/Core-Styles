@@ -178,6 +178,6 @@ Styleguide Components.Callout
 
 /* As a Link */
 
-a.c-callout:hover { @extend %x-article-link-hover; text-decoration: none; }
-a.c-callout:active { @extend %x-article-link-active; }
+a.c-callout:hover { @mixin article-link-hover; text-decoration: none; }
+a.c-callout:active { @mixin article-link-active; }
 a.c-callout:focus { text-decoration: none; }

@@ -21,8 +21,8 @@ a.c-card--frontera-about-page /* FAQ: Links may be underlined by default */,
 a.c-card--frontera-about-page:hover {
   text-decoration: none;
 }
-a.c-card--frontera-about-page:hover { @extend %x-article-link-hover; }
-a.c-card--frontera-about-page:active { @extend %x-article-link-active; }
+a.c-card--frontera-about-page:hover { @mixin article-link-hover; }
+a.c-card--frontera-about-page:active { @mixin article-link-active; }
 
 /* Plugins: * > Image + Text */
 .c-card--frontera-about-page img + h3 {

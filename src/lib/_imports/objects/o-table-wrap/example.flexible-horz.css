@@ -16,5 +16,5 @@
 /* Truncate Cell Text - Mixin i.e. Standard */
 /*
 1. import @tacc/core-styles/src/lib/_imports/tools/x-truncate.css
-2. mixin, extend, or compose .x-truncate--one-line
+2. mixin or compose .x-truncate--one-line
 */

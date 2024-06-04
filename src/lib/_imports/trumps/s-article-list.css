@@ -60,7 +60,7 @@ Styleguide Trumps.Scopes.ArticleList
   font-weight: var(--bold);
   text-transform: uppercase;
 
-  @extend .x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 /* Add a fake short border above title */
 [class*="s-article-list--"] > h2 {
@@ -111,7 +111,7 @@ Styleguide Trumps.Scopes.ArticleList
   padding-bottom: 1.0rem;
   padding-right: 1.0rem;
 
-  @extend .x-truncate--one-line;
+  @mixin truncate--one-line;
   max-width: 100%; /* SEE: https://stackoverflow.com/a/44521595 */
 }
 /* Dark section */
@@ -175,17 +175,17 @@ Styleguide Trumps.Scopes.ArticleList
 .s-article-list--links p:not(:last-child) a::before {
   content: '';
 
-  @extend .x-article-link-stretch;
+  @mixin article-link-stretch;
 }
 .s-article-list--layout-gapless.s-article-list--links p:not(:last-child) a::before {
-  @extend .x-article-link-stretch--gapless;
+  @mixin article-link-stretch--gapless;
 }
 /* Give link state (pseudo-class) feedback */
 .s-article-list--links p:not(:last-child) a:hover::before {
-  @extend .x-article-link-hover;
+  @mixin article-link-hover;
 }
 .s-article-list--layout-gapless.s-article-list--links p:not(:last-child) a:hover::before {
-  @extend .x-article-link-hover--gapless;
+  @mixin article-link-hover--gapless;
 }
 
 

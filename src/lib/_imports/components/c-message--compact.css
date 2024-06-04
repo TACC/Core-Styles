@@ -16,15 +16,15 @@
 /* To distinguish link from message text */
 :--c-message a,
 :--c-message :--c-button--as-link {
-  @extend .x-link--irregular;
+  @mixin link--irregular;
 }
 :--c-message a:hover,
 :--c-message :--c-button--as-link:hover {
-  @extend .x-link--irregular--hover;
+  @mixin link--irregular--hover;
 }
 :--c-message a:active,
 :--c-message :--c-button--as-link:active {
-  @extend .x-link--irregular--active;
+  @mixin link--irregular--active;
 }
 
 

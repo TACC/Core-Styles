@@ -12,12 +12,11 @@ Styles that allow visible link hover for article lists.
 %x-article-link-active           - Give link an active (click, enter) state
 %x-article-link-text             - Hide link text
 
-Styleguide Tools.ExtendsAndMixins.ArticleLink
+Styleguide Tools.Mixins.ArticleLink
 */
 
 /* To expand link to cover container */
-.x-article-link-stretch,
-%x-article-link-stretch {
+@define-mixin article-link-stretch {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -29,34 +28,54 @@ Styleguide Tools.ExtendsAndMixins.ArticleLink
   /* SEE: http://johndoesdesign.com/blog/2012/css/firefox-and-its-css-focus-outline-bug/ */
   overflow: hidden;
 }
-.x-article-link-stretch--gapless,
-%x-article-link-stretch--gapless {
+.x-article-link-stretch,
+%x-article-link-stretch {
+  @mixin article-link-stretch;
+}
+@define-mixin article-link-stretch--gapless {
   width: calc(100% + 30px);
   left: -15px;
 }
+.x-article-link-stretch--gapless,
+%x-article-link-stretch--gapless {
+  @mixin article-link-stretch--gapless;
+}
 
 /* To give link state (pseudo-class) feedback */
-.x-article-link-hover,
-%x-article-link-hover {
+@define-mixin article-link-hover {
   --outline-offset: 1em;
 
   outline: 1px solid var(--global-color-accent--normal);
 
   outline-offset: var(--outline-offset);
 }
+.x-article-link-hover,
+%x-article-link-hover {
+  @mixin article-link-hover;
+}
+@define-mixin article-link-hover--gapless {
+  --outline-offset: 0;
+}
 .x-article-link-hover--gapless,
 %x-article-link-hover--gapless {
-  --outline-offset: 0;
+  @mixin article-link-hover--gapless;
 }
 
 /* To give link active state feedback */
-%x-article-link-active {
+@define-mixin article-link-active {
   outline: 1px dotted var(--global-color-accent--normal);
 }
 
+%x-article-link-active {
+  @mixin article-link-active;
+}
+
 /* To hide link text but retain link element */
-%x-article-link-text {
+@define-mixin article-link-text {
   line-height: 0;
   font-size: 0;
   color: transparent;
+}
+%x-article-link-text {
+  @mixin article-link-text;
 }

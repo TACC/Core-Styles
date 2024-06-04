@@ -1,0 +1,30 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+/* NOTE: This code is required for demo only after
+         `.x-` classes are removed from Core-Styles */
+/*
+.x-link {
+  @mixin link;
+}
+.x-link--disabled {
+  @mixin link--disabled;
+}
+.x-link--hover {
+  @mixin link--hover;
+}
+.x-link--active {
+  @mixin link--active;
+}
+.x-link--irregular {
+  @mixin link--irregular;
+}
+.x-link--irregular--disabled {
+  @mixin link--irregular--disabled;
+}
+.x-link--irregular--hover {
+  @mixin link--irregular--hover;
+}
+.x-link--irregular--active {
+  @mixin link--irregular--active;
+}
+*/
