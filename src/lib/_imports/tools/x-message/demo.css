@@ -1,0 +1,12 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.x-message {
+  margin-top: 1em;
+}
+
+dt {
+  text-transform: capitalize;
+}
+dd {
+  margin-block: 2em;
+}
