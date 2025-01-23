@@ -14,20 +14,20 @@
   display: block;
 }
 :--c-card,
-:--c-card:hover /* overwrite core-styles.base.css */ {
+a:--c-card:hover /* overwrite core-styles.base.css */ {
   color: inherit;
 }
-:--c-card:hover {
+a:--c-card:hover {
   text-decoration: none;
 }
-:--c-card:hover :is( h1, h2, h3, h4, h5, h6 ) {
+a:--c-card:hover :is( h1, h2, h3, h4, h5, h6 ) {
   /* To mimic TACC/Core-Styles .x-link */
   text-underline-offset: 0.2em;
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-thickness: var(--global-border-width--normal);
 }
-:--c-card:active :is( h1, h2, h3, h4, h5, h6 ) {
+a:--c-card:active :is( h1, h2, h3, h4, h5, h6 ) {
   /* To mimic TACC/Core-Styles .x-link */
   text-decoration-line: underline;
   text-decoration-style: dotted;
