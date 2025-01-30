@@ -117,7 +117,7 @@ Styleguide Trumps.Scopes.Header
     align-items: center;
 
     /* To align the underline of a hovered link to bottom of header */
-    height: calc(100% - var(--nav-padding-vert) - var(--border-width) + var(--header-major-border-width));
+    height: calc(100% + var(--nav-padding-vert) + var(--header-major-border-width));
   }
 }
 @media (--x-narrow-and-above) {
