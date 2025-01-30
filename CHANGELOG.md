@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
-## [2.37.5] - 2025-01-30: Fix Header Nav Link Alignment
+## [2.37.5] - 2025-01-30: Better Fix Header Nav Link Alignment
 
 ### Fixed
 
