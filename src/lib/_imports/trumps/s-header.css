@@ -97,10 +97,11 @@ Styleguide Trumps.Scopes.Header
 /* Navigation: Links */
 
 .s-header .nav-link {
+  --border-width: 4px;
 
   border-color: transparent;
   border-style: solid;
-  border-width: 0 0 4px;
+  border-width: 0 0 var(--border-width);
 
   /* If link text uses 2 lines, header grows taller (but it must not do so) */
   white-space: nowrap;
@@ -115,14 +116,8 @@ Styleguide Trumps.Scopes.Header
     display: flex;
     align-items: center;
 
-    --move-text-back-to-middle: var(--nav-padding-vert);
-    --move-underline-to-bottom: calc( var(--nav-padding-vert) + var(--header-major-border-width) );
-
     /* To align the underline of a hovered link to bottom of header */
-    /* FAQ: Increase link height to match header, then push link back up */
-    position: relative;
-    height: calc( 100% + var(--move-underline-to-bottom) + var(--move-text-back-to-middle) );
-    top: calc( var(--move-text-back-to-middle) * -1 );
+    height: calc(100% + var(--nav-padding-vert) + var(--header-major-border-width));
   }
 }
 @media (--x-narrow-and-above) {
