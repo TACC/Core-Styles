@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [2.37.5] - 2025-01-30: Fix Header Nav Link Alignment
+
+### Fixed
+
+- fix: nav alignment fix too complex (simplify PR #427) by @wesleyboar in https://github.com/TACC/Core-Styles/pull/434
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.4...v2.37.5
+
 ## [2.37.4] - 2025-01-24: Automate Release Steps, Fix Doc Card Hover State
 
 ### Fixed
@@ -1306,7 +1314,8 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.37.4...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.37.5...HEAD
+[2.37.5]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.5
 [2.37.4]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.4
 [2.37.3]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.3
 [2.37.2]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.2
