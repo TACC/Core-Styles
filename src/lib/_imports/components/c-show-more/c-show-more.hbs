@@ -1,23 +1,34 @@
-<div class="c-show-more c-show-more--one-line">
-  <input type="checkbox" class="c-show-more__state" id="show-more-1">
-  <p class="c-show-more__target">
-    This is a single line of text that will be truncated with an ellipsis when it gets too long for its container width. The full text will be revealed when you click "Show More".
-  </p>
-  <label class="c-show-more__toggle" for="show-more-1">
-    <span class="c-show-more__on-text">Show More</span>
-    <span class="c-show-more__off-text">Show Less</span>
-  </label>
-</div>
+<h3>Using Generated Markup</h3>
+<p>JavaScript will convert static markup into a full component structure.</p>
 
-<div class="c-show-more c-show-more--many-lines">
-  <input type="checkbox" class="c-show-more__state" id="show-more-2">
-  <div class="c-show-more__target">
-    <p>This is a multi-line example that will be truncated after several lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-  </div>
-  <label class="c-show-more__toggle" for="show-more-2">
-    <span class="c-show-more__on-text">Show More</span>
-    <span class="c-show-more__off-text">Show Less</span>
-  </label>
-</div>
+<dl>
+  <dt>One Line Example</dt>
+  <dd>
+    <div class="c-show-more c-show-more--one-line">
+      <input type="checkbox" class="c-show-more__state" id="show-more-1">
+      <p class="c-show-more__target">
+        This is a single line of text that will be truncated with an ellipsis when it gets too long for its container width. The full text will be revealed when you click "Show More".
+      </p>
+      <label class="c-show-more__toggle" for="show-more-1">
+        <span class="c-show-more__on-text">Show More</span>
+        <span class="c-show-more__off-text">Show Less</span>
+      </label>
+    </div>
+  </dd>
+
+  <dt>Many Lines Example</dt>
+  <dd>
+    <div class="c-show-more c-show-more--many-lines">
+      <input type="checkbox" class="c-show-more__state" id="show-more-2">
+      <div class="c-show-more__target">
+        <p>This is a multi-line example that will be truncated after several lines. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+      </div>
+      <label class="c-show-more__toggle" for="show-more-2">
+        <span class="c-show-more__on-text">Show More</span>
+        <span class="c-show-more__off-text">Show Less</span>
+      </label>
+    </div>
+  </dd>
+</dl>
