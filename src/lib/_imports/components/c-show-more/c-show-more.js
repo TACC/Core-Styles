@@ -1,9 +1,11 @@
+export const DEFAULT_ELEMENTS = document.querySelectorAll(`
+  [class*="js-show-more--"]
+`);
+
 /**
  * Convert elements with js-show-more--* classes into show-more components
  */
-function initShowMore() {
-  const elements = document.querySelectorAll('[class*="js-show-more--"]');
-
+export function generateMarkup(elements = DEFAULT_ELEMENTS) {
   [...elements].forEach((element, index) => {
     const wrapper = document.createElement('div');
     wrapper.className = element.className.replace('js-show-more--', 'c-show-more c-show-more--');
@@ -32,5 +34,3 @@ function initShowMore() {
     element.replaceWith(wrapper);
   });
 }
-
-document.addEventListener('DOMContentLoaded', initShowMore); 
