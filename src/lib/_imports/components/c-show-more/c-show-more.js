@@ -3,7 +3,7 @@ export const defaults = {
     [class*="js-show-more"]
   `),
   options: {
-    lines: 1,
+    lines: 0,
     targetTag: 'span',
     shouldToggleResembleLink: false,
     startIndex: 0,
@@ -40,7 +40,9 @@ export function generateMarkup(
     const target = document.createElement(options.targetTag);
     target.className = 'c-show-more__target';
     target.innerHTML = element.innerHTML;
-    target.style.setProperty('--lines', options.lines);
+    if (options.lines) {
+      target.style.setProperty('--lines', options.lines);
+    }
 
     const toggle = document.createElement('label');
     toggle.className = 'c-show-more__toggle';
