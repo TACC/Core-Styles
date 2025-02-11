@@ -30,7 +30,7 @@ export function generateMarkup(
     const wrapper = document.createElement(element.tagName);
     wrapper.className = element.className;
     wrapper.classList.add('c-show-more');
-    wrapper.classList.add(`c-show-more--${options.lines === 1 ? 'one-line' : 'many-lines'}`);
+    wrapper.classList.add(`c-show-more--${options.lines <= 1 ? 'one-line' : 'many-lines'}`);
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
