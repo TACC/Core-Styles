@@ -13,6 +13,7 @@ Styleguide: Components.ShowMore
 */
 @import url("../tools/x-truncate.css");
 
+
 /* Truncation */
 
 /* Many Lines */
@@ -26,10 +27,13 @@ Styleguide: Components.ShowMore
 /* One Line */
 .c-show-more--one-line .c-show-more__target {
   @mixin truncate--one-line;
+
+  display: block;
 }
 .c-show-more--one-line .c-show-more__state:checked ~ .c-show-more__target {
   @mixin untruncate--one-line;
 }
+
 
 /* Show More / Show Less */
 
@@ -43,6 +47,7 @@ Styleguide: Components.ShowMore
 .c-show-more__state:checked ~ .c-show-more__toggle .c-show-more__off-text {
   display: block;
 }
+
 
 /* Toggle */
 .c-show-more__toggle {
