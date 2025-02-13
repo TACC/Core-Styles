@@ -58,7 +58,8 @@ Styleguide Trumps.Scopes.Header
 .s-header .navbar-brand {
   /* To align first CMS nav link with Portal "Dashboard" header */
   /* CAVEAT: A wide logo will shift first CMS nav link rightward */
-  min-width: 175px;
+  flex-shrink: 0;
+  flex-basis: 175px;
   margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
 
   padding: unset;
