@@ -11,7 +11,11 @@ context:
         - applications
         - allocations
         - history
+        - history-reverse
         - jobs
+        - jobs-history
+        - my-data
+        - calendar
     - id: status
       title: Status Icons
       icons:
@@ -22,17 +26,20 @@ context:
         - approved-boxed-reverse
         - approved-reverse
         - denied-reverse
+        - trophy
     - id: files
       title: File Operations
       icons:
         - file
         - add-file
         - edit-document
+        - document
         - copy
         - rename
         - trash
         - folder
         - search-folder
+        - image
     - id: apps
       title: Applications
       icons:
@@ -71,6 +78,8 @@ context:
         - new-browser
         - compass
         - globe
+        - link
+        - dna
     - id: actions
       title: Actions
       icons:
@@ -84,6 +93,7 @@ context:
         - reverse-order
         - rotate-ccw
         - rotate-cw
+        - refresh
     - id: ui
       title: UI Elements
       icons:
@@ -128,8 +138,8 @@ context:
     relative:
       - class: icon-sm
         label: .icon-sm
-      - class: ""
-        label: default
+      - class: icon-md
+        label: .icon-md
       - class: icon-lg
         label: .icon-lg
     absolute:
@@ -143,13 +153,15 @@ context:
     - icon: icon-refresh
       class: icon-is-spinning
       label: .icon-is-spinning
-    - icon: icon-rotate-cw
+    - icon: icon-search
+      label: (no rotation)
+    - icon: icon-search
       class: icon-rotate-90
       label: .icon-rotate-90
-    - icon: icon-rotate-cw
+    - icon: icon-search
       class: icon-rotate-180
       label: .icon-rotate-180
-    - icon: icon-rotate-cw
+    - icon: icon-search
       class: icon-rotate-270
       label: .icon-rotate-270
     - icon: icon-push-right
