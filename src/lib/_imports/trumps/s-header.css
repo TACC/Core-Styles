@@ -18,12 +18,12 @@ Styleguide Trumps.Scopes.Header
 @import url("../tools/media-queries.css");
 @import url("./s-header.bootstrap.css");
 
-/* WARNING: NO-R/EM: Until Frontera CMS drops Bootstrap 3.7.1 (for old design)…
-            `em` nor `rem` was not allowed because results were not consistent.
-            UPDATE: As of PR #312, this has likely changed (untested). */
+/* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
 .s-header {
+  --height: 50px;
   --header-major-border-width: 1px;
+
   font-size: var(--global-font-size--medium); /* NO-R/EM: Overwrite `bootstrap.3.3.7.css` */
   font-weight: var(--bold);
   letter-spacing: 0.025px; /* 14px * 0.025em equals design-requested 0.35px */
@@ -43,6 +43,19 @@ Styleguide Trumps.Scopes.Header
   border-bottom: var(--header-major-border-width) solid var(--header-major-border-color);
 }
 
+/* To prevent header bar resize whether:
+  - navbar is collapsed or expanded
+  - logo is wide or narrow
+  - logo is raster or vector
+*/
+.s-header .navbar-brand {
+  height: calc(
+    var(--height)
+    - var(--nav-padding-vert) * 2
+    - var(--header-major-border-width)
+  );
+}
+
 /* Affiliation */
 
 /* SEE: ../branding_logos.css */
@@ -50,17 +63,13 @@ Styleguide Trumps.Scopes.Header
 /* Logo */
 
 .s-header .navbar-brand {
-  display: grid;
-  align-content: center;
+  /* To align first CMS nav link with Portal "Dashboard" header */
+  /* CAVEAT: A wide logo will shift first CMS nav link rightward */
+  flex-shrink: 0;
+  flex-basis: 175px;
+  margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
 
-  /* If branding is short enough, then align position of first CMS nav link with Portal "Dashboard" header */
-  /* WARNING: This is a manual value; if Portal interface changes, then this may need to change */
-  min-width: 176px;
-  margin-right: 16px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
-  padding: 0;
-
-  color: var(--header-text-color);
-  /* text-decoration: none; */ /* already provided by Bootstrap */
+  padding: unset;
 }
 
 /* Navigation */
@@ -71,7 +80,7 @@ Styleguide Trumps.Scopes.Header
     align-items: stretch;
 }
 
-.s-header.navbar {
+.s-header {
   /* Make horizontal padding match the horizontal content buffer in Portal */
   /* FAQ: The `calc()` keeps track of disparate source of space values */
   /* `16px` = `1rem` from Portal (via `#sidebar .nav-content`) */
@@ -81,17 +90,6 @@ Styleguide Trumps.Scopes.Header
 
   background-color: var(--header-bkgd-color);
   padding: var(--nav-padding-vert) var(--nav-padding-horz);
-}
-/* On wide viewport, prevent header resize from dynamic content */
-@media (--medium-and-above) {
-  .s-header.navbar {
-    --logo-height: 60px;
-
-    min-height: var(--logo-height);
-  }
-  .s-header > .navbar-brand {
-    min-height: calc( var(--logo-height) - var(--nav-padding-vert) * 2 );
-  }
 }
 
 /* Navigation: Links */
