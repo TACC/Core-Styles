@@ -19,14 +19,9 @@
   color: var(--global-color-primary--dark);
   font-size: smaller;
 }
-
-.demo-sizes,
-.demo-transforms,
-.demo-nav,
-.demo-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+.demo-item small {
+  width: 100%;
+  text-align: center;
 }
 
 .demo-buttons .c-button {

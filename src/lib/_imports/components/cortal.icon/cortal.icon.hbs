@@ -26,6 +26,7 @@
       <a href="#sizes">Sizes</a>
       <a href="#transforms">Transformations</a>
       <a href="#buttons">in Buttons</a>
+      <a href="#labels">with Labels</a>
     </nav>
   </dd>
 </dl>
@@ -49,7 +50,7 @@
       <dd>
         <dl>
           <dt>Relative Units</dt>
-          <dd class="demo-sizes">
+          <dd class="demo-grid">
             {{#each sizes.relative}}
             <div class="demo-item">
               <i class="icon icon-dashboard {{this.class}}"></i>
@@ -59,7 +60,7 @@
           </dd>
 
           <dt>Absolute Units</dt>
-          <dd class="demo-sizes">
+          <dd class="demo-grid">
             {{#each sizes.absolute}}
             <div class="demo-item">
               <i class="icon icon-dashboard {{this.class}}"></i>
@@ -72,7 +73,7 @@
 
       <dt id="transforms">Transformations</dt>
       <dd>
-        <div class="demo-transforms">
+        <div class="demo-grid">
           {{#each transforms}}
           <div class="demo-item">
             <i class="icon {{this.icon}} {{this.class}}"></i>
@@ -84,12 +85,25 @@
 
       <dt id="buttons">in Buttons</dt>
       <dd>
-        <div class="demo-buttons">
+        <div class="demo-list">
           {{#each in_buttons}}
           <button class="c-button c-button--{{this.type}}">
             <i class="icon icon-{{this.icon}} c-button__icon--before"></i>
             <span class="c-button__text">{{this.text}}</span>
           </button>
+          {{/each}}
+        </div>
+      </dd>
+
+      <dt id="labels">with Labels</dt>
+      <dd>
+        <div class="demo-grid">
+          {{#each with_labels}}
+          <div class="demo-item">
+            <i class="icon {{this.icon}}" data-label="{{this.label}}"></i>
+            <code>[data-label="{{this.label}}"]</code>
+            <small class="x-truncate--one-line">{{this.usage}}</small>
+          </div>
           {{/each}}
         </div>
       </dd>
