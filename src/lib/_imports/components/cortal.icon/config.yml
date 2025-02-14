@@ -179,4 +179,14 @@ context:
       text: Edit
     - type: tertiary
       icon: trash
-      text: Delete 
+      text: Delete
+  with_labels:
+    - icon: icon-file
+      label: "ODC"
+      usage: "licensing e.g. CC, ODC, FSF, OSI"
+    - icon: icon-refresh
+      label: "| |"
+      usage: "loading paused"
+    - icon: icon-data-files
+      label: "99+"
+      usage: "number of data entries"
