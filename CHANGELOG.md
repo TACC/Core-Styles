@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [v2.39.0] - 2025-02-15: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
+
+### What's Changed
+
+* feat: c-card-list pattern & demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/445
+* feat: add c-show-more to CMS styles by @wesleyboar in https://github.com/TACC/Core-Styles/pull/446
+* feat: icon demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/447
+* feat: icon with labels (on-the-fly customization) by @wesleyboar in https://github.com/TACC/Core-Styles/pull/448
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.38.0...v2.39.0
+
 ## [2.38.0] - 2025-02-15: Fix Header Bar Resize, Add Show More Demo
 
 ### What's Changed
@@ -1320,7 +1332,8 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.38.0...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.0...HEAD
+[2.39.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.0
 [2.38.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.38.0
 [2.37.5]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.5
 [2.37.4]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.4
