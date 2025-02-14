@@ -5,7 +5,9 @@ context:
     - ../../assets/core-styles.header.css
     - ../../assets/core-styles.theme.default.css
 variants:
+  - name: default
+    hidden: true
   - name: with-branding
     label: With Branding
-  - name: default
-    label: Without Branding
+  - name: different-logos
+    label: Different Logos
