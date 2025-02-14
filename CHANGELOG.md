@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [2.38.0] - 2025-02-15: Fix Header Bar Resize
+
+### What's Changed
+
+* docs: c-show-more demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/438
+* feat: js-show-more by @wesleyboar in https://github.com/TACC/Core-Styles/pull/439, https://github.com/TACC/Core-Styles/pull/440, https://github.com/TACC/Core-Styles/pull/441, https://github.com/TACC/Core-Styles/pull/442
+* refactor: simplify header and logo height mgmt by @wesleyboar in https://github.com/TACC/Core-Styles/pull/443
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.5...v2.38.0
+
 ## [2.37.5] - 2025-01-30: Better Fix Header Nav Link Alignment
 
-### Fixed
+### What's Changed
 
 - fix: nav alignment fix too complex (simplify PR #427) by @wesleyboar in https://github.com/TACC/Core-Styles/pull/434
 
@@ -17,12 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.37.4] - 2025-01-24: Automate Release Steps, Fix Doc Card Hover State
 
-### Fixed
+### What's Changed
 
 - fix: doc cards hover state apply even when card is not a link by @wesleyboar in https://github.com/TACC/Core-Styles/pull/432
-
-### Changed
-
 - feat: automate many release steps by @wesleyboar in https://github.com/TACC/Core-Styles/pull/429
 - build(deps): bump braces from 3.0.2 to 3.0.3 by @dependabot in https://github.com/TACC/Core-Styles/pull/430
 
@@ -30,13 +38,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.37.3] - 2025-01-17: Fix Header Nav Link Alignment
 
-### Fixed
+### What's Changed
 
-- fix: header nav link alignment inconsistent (#430)
-
-### Updated
-
-- build(deps): bump nanoid from 3.3.7 to 3.3.8 (#426)
+- chore: remove outdated dist content by @wesleyboar in #425
+- build(deps): bump nanoid from 3.3.7 to 3.3.8 by @dependabot in #426
+- fix: s-header nav-link alignment inconsistent by @wesleyboar in #427
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.2...v2.37.3
 
@@ -1314,7 +1320,8 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.37.5...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.38.0...HEAD
+[2.38.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.38.0
 [2.37.5]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.5
 [2.37.4]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.4
 [2.37.3]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.3
