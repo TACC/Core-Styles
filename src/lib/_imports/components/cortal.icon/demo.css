@@ -1,0 +1,34 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1em;
+}
+
+.demo-item {
+  display: grid;
+  place-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border: 1px solid var(--global-color-primary--light);
+  border-radius: 4px;
+}
+
+.demo-item code {
+  color: var(--global-color-primary--dark);
+  font-size: smaller;
+}
+
+.demo-sizes,
+.demo-transforms,
+.demo-nav,
+.demo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.demo-buttons .c-button {
+  min-width: 120px;
+} 
