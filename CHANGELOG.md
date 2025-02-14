@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
-## [2.38.0] - 2025-02-15: Fix Header Bar Resize
+## [2.38.0] - 2025-02-15: Fix Header Bar Resize, Add Show More Demo
 
 ### What's Changed
 
