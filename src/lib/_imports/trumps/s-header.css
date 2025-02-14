@@ -41,12 +41,19 @@ Styleguide Trumps.Scopes.Header
 
   /* To hide border, set this in theme to match `--header-bkgd-color` value */
   border-bottom: var(--header-major-border-width) solid var(--header-major-border-color);
+}
 
-  /* To prevent header bar resize when navbar is expanded */
-  min-height: var(--height);
-  & > .navbar-brand {
-    min-height: calc( var(--height) - var(--nav-padding-vert) * 2 );
-  }
+/* To prevent header bar resize whether:
+  - navbar is collapsed or expanded
+  - logo is wide or narrow
+  - logo is raster or vector
+*/
+.s-header .navbar-brand {
+  height: calc(
+    var(--height)
+    - var(--nav-padding-vert) * 2
+    - var(--header-major-border-width)
+  );
 }
 
 /* Affiliation */
