@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
-## [v2.39.0] - 2025-02-15: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
+## [v2.39.0] - 2025-02-14: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
 
 ### What's Changed
 
@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.38.0...v2.39.0
 
-## [2.38.0] - 2025-02-15: Fix Header Bar Resize, Add Show More Demo
+## [2.38.0] - 2025-02-14: Fix Header Bar Resize, Add Show More Demo
 
 ### What's Changed
 
