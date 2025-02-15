@@ -1,0 +1,34 @@
+@import url("../tools/x-pagination.postcss");
+
+.pagination {
+  @mixin pagination;
+}
+
+.page-item:not( :first-child, :last-child ) {
+  @mixin pagination__item;
+}
+.page-item:is( :first-child, :last-child ) {
+  @mixin pagination__item--end;
+}
+
+.page-item.skip {
+  @mixin pagination__item--etc;
+}
+
+.page-link {
+  @mixin pagination__link;
+
+  .page-item:is( :first-child, :last-child ) & {
+    @mixin pagination__link--end;
+  }
+  .page-item.skip & {
+    @mixin pagination__link--etc;
+  }
+
+  .page-item.active & {
+    @mixin pagination__link--active;
+  }
+  .page-item.disabled & {
+    @mixin pagination__link--disabled;
+  }
+}

@@ -1,0 +1,18 @@
+variants:
+  - name: default
+    label: Bootstrap
+    status: reference
+    context:
+      shouldSkipBase: true
+  - name: tacc-portal
+    label: TACC (Portal)
+    status: prototype
+    context:
+      shouldSkipPattern: false
+      shouldLoadPortal: true
+  - name: tacc-cms
+    label: TACC (CMS)
+    status: prototype
+    context:
+      shouldSkipPattern: false
+      shouldLoadCMS: true

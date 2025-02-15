@@ -1,7 +1,0 @@
-/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
-
-/* All Bootstrap pattern library CSS loads for every component */
-/* FAQ: To support legacy client imports, Bootstrap file organization is odd */
-
-@import url("./bootstrap--form.demo.css");
-@import url("./bootstrap--modal.demo.css");
