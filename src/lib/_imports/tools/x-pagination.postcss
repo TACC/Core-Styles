@@ -13,12 +13,16 @@
   place-content: center;
   place-items: center;
 
-  padding-top: 20px;
   margin-bottom: unset; /* overwrites core-styles.base.css */
 
   font-size: var(--global-font-size--small);
 
+  &:not(:first-child) {
+    padding-top: 20px;
+  }
+
   &:is(ol, ul) {
+    padding-left: unset;
     list-style: none;
   }
 }
