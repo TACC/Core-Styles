@@ -6,7 +6,8 @@
 
 .page-item:not(
   :first-child,
-  :last-child
+  :last-child,
+  .skip
 ) {
   @mixin pagination__page-item;
 
@@ -31,6 +32,8 @@
 
   & .page-link {
     @mixin pagination__skipped-link;
+
+    color: inherit;
   }
 }
 
