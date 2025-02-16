@@ -3,21 +3,7 @@
 
 
 
-/* XXX:
-  - Style page links correctly (compare to Pagiantor module)
-    (maybe v3 color tokens are the culprit)
-    (maybe I just used the wrong `--global…` vars)
-  - Fix missing hover state on active link
-  - Fix hover state on pagination end hiding text
-  - Test hover and active states on all link types
-*/
-
-
-
-
-
-
-
+/* TODO: Use x-button and x-link (instead of copied styles) */
 
 
 
@@ -81,26 +67,54 @@
   padding: 5px 0;
   line-height: 1;
 
-  border: var(--global-border--normal);
-  color: var(--global-color-primary--x-dark);
-  background-color: var(--global-color-primary--xx-light);
+  background-color: var(--global-color-primary--x-light);
+  border-color: var(--global-color-primary--xx-dark);
+  color: var(--global-color-primary--xx-dark);
 
-  &:hover,
+  &:hover {
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--normal);
+    color: var(--global-color-primary--xx-dark);
+
+    &:is(a) {
+      text-decoration: none;
+    }
+  }
   &:focus {
-    color: var(--global-color-primary--xx-light);
-    background-color: var(--global-color-primary--normal);
-    border-color: var(--global-color-primary--normal);
-    text-decoration: none;
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-primary--xx-dark);
+    color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
+  }
+  &:active {
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--dark);
+    border-width: var(--global-border-width--normal);
+    color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--normal) solid var(--global-color-accent--dark);
   }
 }
 @define-mixin pagination__link--end {
   border: none;
   background-color: transparent;
+  outline: none;
+
+  color: var(--global-color-accent--normal);
+
+  &:hover {
+    text-decoration: underline solid var(--global-border-width--normal);
+  }
+  &:active {
+    text-decoration-style: dotted;
+  }
 }
 
 @define-mixin pagination__link--etc {
   border: none;
   background-color: transparent;
+  outline: none;
 
   &:is(a) {
     pointer-events: none;
@@ -111,6 +125,11 @@
   background-color: var(--global-color-accent--x-light);
   border-color: var(--global-color-primary--xx-dark);
   color: var(--global-color-primary--xx-dark);
+
+  &:hover {
+    background-color: var(--global-color-accent--xx-light);
+    border-color: var(--global-color-accent--dark);
+  }
 }
 @define-mixin pagination__link--disabled {
   color: var(--global-color-primary--light);

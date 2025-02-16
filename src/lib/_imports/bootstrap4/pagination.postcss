@@ -18,6 +18,10 @@
 .page-link {
   @mixin pagination__link;
 
+  &:focus {
+    box-shadow: none;
+  }
+
   .page-item:is( :first-child, :last-child ) & {
     @mixin pagination__link--end;
   }
