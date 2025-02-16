@@ -4,15 +4,9 @@ variants:
     status: reference
     context:
       shouldSkipBase: true
-  - name: tacc-portal
-    label: TACC (Portal)
+  - name: tacc
+    label: TACC
     status: prototype
     context:
       shouldSkipPattern: false
-      shouldLoadPortal: true
-  - name: tacc-cms
-    label: TACC (CMS)
-    status: prototype
-    context:
-      shouldSkipPattern: false
-      shouldLoadCMS: true
+
