@@ -4,35 +4,50 @@
   @mixin pagination;
 }
 
-.page-item:not( :first-child, :last-child ) {
+.page-item:not(
+  :first-child,
+  :last-child
+) {
   @mixin pagination__item;
+
+  & .page-link {
+    @mixin pagination__link;
+  }
 }
-.page-item:is( :first-child, :last-child ) {
+
+.page-item:is(
+  :first-child,
+  :last-child
+) {
   @mixin pagination__item--end;
+
+  & .page-link {
+    @mixin pagination__link--end;
+  }
 }
 
 .page-item.skip {
   @mixin pagination__item--etc;
+
+  & .page-link {
+    @mixin pagination__link--etc;
+  }
+}
+
+.page-item.active .page-link {
+  @mixin pagination__link--active;
+}
+
+.page-item.disabled {
+  @mixin pagination__item--disabled;
+
+  & .page-link {
+    @mixin pagination__link--disabled;
+  }
 }
 
 .page-link {
-  @mixin pagination__link;
-
   &:focus {
     box-shadow: none;
-  }
-
-  .page-item:is( :first-child, :last-child ) & {
-    @mixin pagination__link--end;
-  }
-  .page-item.skip & {
-    @mixin pagination__link--etc;
-  }
-
-  .page-item.active & {
-    @mixin pagination__link--active;
-  }
-  .page-item.disabled & {
-    @mixin pagination__link--disabled;
   }
 }

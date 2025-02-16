@@ -44,6 +44,7 @@
     margin-inline: 0.25em;
   }
 }
+
 @define-mixin pagination__item--end {
   padding: 4px 12px;
   min-width: auto;
@@ -55,6 +56,10 @@
   place-content: center;
 
   cursor: default;
+}
+
+@define-mixin pagination__item--disabled {
+  pointer-events: none;
 }
 
 
@@ -96,6 +101,7 @@
     outline: var(--global-border-width--normal) solid var(--global-color-accent--dark);
   }
 }
+
 @define-mixin pagination__link--end {
   border: none;
   background-color: transparent;
@@ -106,6 +112,9 @@
   &:hover {
     text-decoration: underline solid var(--global-border-width--normal);
   }
+  &:focus {
+    outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
+  }
   &:active {
     text-decoration-style: dotted;
   }
@@ -115,10 +124,6 @@
   border: none;
   background-color: transparent;
   outline: none;
-
-  &:is(a) {
-    pointer-events: none;
-  }
 }
 
 @define-mixin pagination__link--active {
@@ -131,12 +136,9 @@
     border-color: var(--global-color-accent--dark);
   }
 }
+
 @define-mixin pagination__link--disabled {
   color: var(--global-color-primary--light);
   background-color: var(--global-color-primary--xx-light);
   border-color: var(--global-color-primary--light);
-
-  &:is(a) {
-    pointer-events: none;
-  }
 }
