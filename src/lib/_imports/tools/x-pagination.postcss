@@ -1,6 +1,6 @@
 @import url("../components/c-button.selectors.postcss");
-/* TODO: Use x-button and x-link (instead of copied styles) */
-/* @import url("../tools/x-link.postcss"); */
+/* TODO: Use x-button (instead of copied styles) */
+/* @import url("../tools/x-button.postcss"); */
 
 
 
@@ -109,27 +109,15 @@
 }
 
 @define-mixin pagination__end-link {
-  border: none;
-  background-color: transparent;
-  outline: none;
-
-  color: var(--global-color-accent--normal);
-
-  &:hover {
-    text-decoration: underline solid var(--global-border-width--normal);
-  }
   &:focus {
     outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
-  }
-  &:active {
-    text-decoration-style: dotted;
   }
 }
 
 @define-mixin pagination__skipped-link {
-  border: none;
-  background-color: transparent;
-  outline: none;
+  /* FAQ: If client applies this with other mixins,
+          then client must resolve conflicting styles
+          (like in Bootstrap4 pagination.css) */
 }
 
 @define-mixin pagination__active-link {
