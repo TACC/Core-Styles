@@ -31,6 +31,13 @@
 
 /* Item */
 
+@define-mixin pagination__end-item {
+  padding: 4px 12px;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
 @define-mixin pagination__page-item {
   min-width: 2em;
 
@@ -40,12 +47,6 @@
   ) {
     margin-inline: 0.25em;
   }
-}
-
-@define-mixin pagination__end-item {
-  padding: 4px 12px;
-  min-width: auto;
-  white-space: nowrap;
 }
 
 @define-mixin pagination__skipped-item {
