@@ -8,10 +8,10 @@
   :first-child,
   :last-child
 ) {
-  @mixin pagination__item;
+  @mixin pagination__page-item;
 
   & .page-link {
-    @mixin pagination__link;
+    @mixin pagination__page-link;
   }
 }
 
@@ -19,30 +19,34 @@
   :first-child,
   :last-child
 ) {
-  @mixin pagination__item--end;
+  @mixin pagination__end-item;
 
   & .page-link {
-    @mixin pagination__link--end;
+    @mixin pagination__end-link;
   }
 }
 
 .page-item.skip {
-  @mixin pagination__item--etc;
+  @mixin pagination__skipped-item;
 
   & .page-link {
-    @mixin pagination__link--etc;
+    @mixin pagination__skipped-link;
   }
 }
 
-.page-item.active .page-link {
-  @mixin pagination__link--active;
+.page-item.active {
+  @mixin pagination__active-item;
+
+  & .page-link {
+    @mixin pagination__active-link;
+  }
 }
 
 .page-item.disabled {
-  @mixin pagination__item--disabled;
+  @mixin pagination__disabled-item;
 
   & .page-link {
-    @mixin pagination__link--disabled;
+    @mixin pagination__disabled-link;
   }
 }
 
