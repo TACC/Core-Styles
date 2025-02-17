@@ -26,6 +26,10 @@
     list-style: none;
   }
 }
+/* DEMO-USE ONLY */
+.x-pagination {
+  @mixin pagination;
+}
 
 
 
@@ -41,6 +45,10 @@
 
   white-space: nowrap;
 }
+/* DEMO-USE ONLY */
+.x-pagination__end-item {
+  @mixin pagination__end-item;
+}
 
 @define-mixin pagination__page-item {
   &:not(
@@ -50,6 +58,10 @@
     margin-inline: 0.25em;
   }
 }
+/* DEMO-USE ONLY */
+.x-pagination__page-item {
+  @mixin pagination__page-item;
+}
 
 @define-mixin pagination__skipped-item {
   display: flex;
@@ -57,13 +69,25 @@
 
   cursor: default;
 }
+/* DEMO-USE ONLY */
+.x-pagination__skipped-item {
+  @mixin pagination__skipped-item;
+}
 
 @define-mixin pagination__active-item {
   /* no styles needed */
 }
+/* DEMO-USE ONLY */
+.x-pagination__active-item {
+  @mixin pagination__active-item;
+}
 
 @define-mixin pagination__disabled-item {
   pointer-events: none;
+}
+/* DEMO-USE ONLY */
+.x-pagination__disabled-item {
+  @mixin pagination__disabled-item;
 }
 
 
@@ -80,6 +104,7 @@
 
   background-color: var(--global-color-primary--x-light);
   border-color: var(--global-color-primary--xx-dark);
+  border-style: solid;
   border-width: var(--global-border-width--normal);
   color: var(--global-color-primary--xx-dark);
 
@@ -108,6 +133,10 @@
     outline: var(--global-border-width--normal) solid var(--global-color-accent--dark);
   }
 }
+/* DEMO-USE ONLY */
+.x-pagination__page-link {
+  @mixin pagination__page-link;
+}
 
 @define-mixin pagination__end-link {
   padding: 5px;
@@ -116,11 +145,19 @@
     outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
   }
 }
+/* DEMO-USE ONLY */
+.x-pagination__end-link {
+  @mixin pagination__end-link;
+}
 
 @define-mixin pagination__skipped-link {
   /* FAQ: If client applies this with other mixins,
           then client must resolve conflicting styles
           (like in Bootstrap4 pagination.css) */
+}
+/* DEMO-USE ONLY */
+.x-pagination__skipped-link {
+  @mixin pagination__skipped-link;
 }
 
 @define-mixin pagination__active-link {
@@ -133,9 +170,17 @@
     border-color: var(--global-color-accent--dark);
   }
 }
+/* DEMO-USE ONLY */
+.x-pagination__active-link {
+  @mixin pagination__active-link;
+}
 
 @define-mixin pagination__disabled-link {
   color: var(--global-color-primary--light);
   background-color: var(--global-color-primary--xx-light);
   border-color: var(--global-color-primary--light);
+}
+/* DEMO-USE ONLY */
+.x-pagination__disabled-link {
+  @mixin pagination__disabled-link;
 }
