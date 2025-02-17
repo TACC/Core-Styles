@@ -1,8 +1,0 @@
-label: C Page / C Pagination
-variants:
-  - name: default
-    label: v3 (C Pagination)
-    status: prototype
-  - name: v2
-    label: v2 (C Page)
-    status: ready
