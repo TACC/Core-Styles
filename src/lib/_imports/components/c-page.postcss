@@ -20,6 +20,10 @@
 
 .c-page-link {
   @mixin pagination__page-link;
+
+  &:disabled {
+    @mixin pagination__page-link--disabled;
+  }
 }
 
 .c-page-item--etcetera {
