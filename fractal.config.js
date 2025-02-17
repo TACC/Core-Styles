@@ -110,6 +110,9 @@ engine.handlebars.registerHelper('ifno', function(value, fallback) {
 engine.handlebars.registerHelper('concat', function() {
   return Array.prototype.slice.call(arguments, 0, -1).join('');
 });
+engine.handlebars.registerHelper('default', function(value, defaultValue) {
+  return value || defaultValue;
+});
 
 // Export
 module.exports = fractal;
