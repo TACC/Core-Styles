@@ -1,6 +1,10 @@
+context:
+  subdir: "bootstrap4/nav"
 variants:
   - name: default
     label: Bootstrap
+    context:
+      shouldSkipBase: true
   - name: tacc
     label: TACC
     status: prototype
