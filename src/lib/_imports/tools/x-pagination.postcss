@@ -93,14 +93,17 @@
 
 /* Link */
 
-@define-mixin pagination__page-link {
+@define-mixin pagination__link {
   display: flex;
   place-content: center;
 
   padding: 5px;
   line-height: 1;
   min-width: 1em;
-  box-sizing: content-box;
+  box-sizing: content-box; /* to support square links and button links */
+}
+@define-mixin pagination__page-link {
+  @mixin pagination__link;
 
   background-color: var(--global-color-primary--x-light);
   border-color: var(--global-color-primary--xx-dark);
@@ -139,7 +142,7 @@
 }
 
 @define-mixin pagination__end-link {
-  padding: 5px;
+  @mixin pagination__link;
 
   &:focus {
     outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
@@ -151,6 +154,8 @@
 }
 
 @define-mixin pagination__skipped-link {
+  @mixin pagination__link;
+
   /* FAQ: If client applies this with other mixins,
           then client must resolve conflicting styles
           (like in Bootstrap4 pagination.css) */

@@ -8,6 +8,7 @@ Mixins for creating consistent pagination components.
 | `pagination__skipped-item` | Styles for ellipsis/skip items
 | `pagination__active-item` | Styles for current page item
 | `pagination__disabled-item` | Styles for disabled items
+| `pagination__link` | Base styles for pagination links
 | `pagination__page-link` | Styles for numbered page links
 | `pagination__end-link` | Styles for previous/next links
 | `pagination__skipped-link` | Styles for ellipsis/skip indicators
