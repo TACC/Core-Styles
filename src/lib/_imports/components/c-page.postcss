@@ -1,96 +1,45 @@
-/*
-Pagination
+@import url("../tools/x-pagination.postcss");
 
-A navigation list of sequential page toggles with end cap links.
-
-Markup: c-page.html
-
-Styleguide Components.Pagination
-*/
-@import url("../components/c-button.selectors.postcss");
-
-
-
-/* Pagination: Variables */
+/* FAQ: Core-Components Paginator module expects these classes */
+/* https://github.com/TACC/Core-Components/blob/v0.0.4/src/lib/Paginator/Paginator.module.css */
 
 .c-page-list {
-  --item-width: 2em;
-  --item-buffer: 3px;
-  --item-border: var(--global-border-width--normal); /* WARNING: assumption */
+  @mixin pagination;
 }
 
+.c-page-end {
+  @mixin pagination__end-item;
+  @mixin pagination__end-link;
 
-
-/* Pagination: List */
-
-.c-page-list {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  list-style: none;
-
-  font-size: 14px; /* TEMPORARY: Should be 14px and have commented rem value */
-}
-ul.c-page-list {
-  list-style: none;
+  margin-inline: 12px;
 }
 
-/* Pagination: List: Constant Hover */
-
-.c-page-link--always-click {
-  position: relative;
-  box-sizing: content-box;
+.c-page-item {
+  @mixin pagination__page-item;
 }
-.c-page-link--always-click::before,
-.c-page-link--always-click::after {
-  --width: var(--item-buffer);
-  --vert-offset: calc( -1 * var(--item-border) );
-  --horz-offset: calc( 100% + var(--item-border) );
-
-  content: '';
-  width: var(--width);
-  position: absolute;
-  top: var(--vert-offset);
-  bottom: var(--vert-offset);
+.c-page-item--is-active {
+  @mixin pagination__active-item;
 }
-.c-page-link--always-click:--c-button {
-  overflow: visible; /* overwrite `.c-button` so pseudo elements show */
-}
-.c-page-link--always-click::before { right: var(--horz-offset) }
-.c-page-link--always-click::after { left: var(--horz-offset) }
-
-
-
-
-
-/* Pagination: Item */
-
-.c-page-item              { margin-inline: var(--item-buffer) }
-.c-page-item:first-child  { margin-left: 0 }
-.c-page-item:last-child   { margin-right: 0 }
-
-/* Pagination: Item: Truncated */
-
-.c-page-item--etcetera {
-  min-width: var(--item-width);
-  margin-inline: 2px;
-  text-align: center;
-
-  cursor: default;
-}
-
-
-
-/* Pagination: End */
-
-.c-page-end { padding: 4px 12px }
-
-
-
-/* Pagination: Link */
 
 .c-page-link {
-  padding: 5px 0;
-  min-width: var(--item-width);
-  line-height: 1.2;
+  @mixin pagination__page-link;
+
+  &:disabled {
+    @mixin pagination__page-link--disabled;
+  }
+
+  &.c-page-link--is-active,
+  &.c-page-item--is-active,
+  .c-page-item--is-active & {
+    @mixin pagination__page-link--active;
+  }
+}
+
+.c-page-item--etcetera {
+  @mixin pagination__skipped-item;
+  @mixin pagination__skipped-link;
+}
+
+.c-button--is-active {
+  @mixin pagination__page-link--active;
 }

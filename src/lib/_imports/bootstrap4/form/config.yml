@@ -1,8 +1,48 @@
+context:
+  helpTextTag: small
+  inputListTag: menu
+  inputListItemClass: form-check
+  isSemantic: false
+  selectors:
+    errorList: .alert.alert-danger, .invalid-feedback
+    wrap: .form-group
+  classNames:
+    root: null
+    title: null
+    desc: null
+    form_errors: null
+    field_errors: invalid-feedback
+    form_errors_wrap: alert alert-danger
+    field_errors_wrap: null
+    field: form-group
+    control: form-control
+    file_control: form-control-file
+    checkbox_control: form-check-input
+    radio_control: form-check-input
+    badge: badge badge-danger
+    hint: form-text text-muted
+    has_required: js-has-required
+    has_checkbox: form-check
+    has_spam_filter: null
+    radio_menu: form-group-radiolist
+    check_menu: form-group-checklist
+    buttons: form-group
+    button: btn btn-primary
 variants:
   - name: default
     label: Bootstrap
+    status: reference
+    context:
+      shouldSkipBase: true
   - name: tacc
-    label: TACC
+    label: TACC (Portal)
     status: prototype
     context:
       shouldSkipPattern: false
+      shouldLoadPortal: true
+  - name: tacc-cms
+    label: TACC (CMS)
+    status: prototype
+    context:
+      shouldSkipPattern: false
+      shouldLoadCMS: true

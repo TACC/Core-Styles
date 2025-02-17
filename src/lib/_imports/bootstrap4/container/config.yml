@@ -1,3 +1,5 @@
+order: 1
+label: 'Grid: Container'
 context:
   shouldSkipBase: true
   supportStyles:
@@ -6,6 +8,7 @@ context:
 variants:
   - name: default
     label: Bootstrap
+    status: reference
   - name: tacc
     label: TACC
     status: ready

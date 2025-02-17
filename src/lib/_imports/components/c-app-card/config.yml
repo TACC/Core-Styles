@@ -5,7 +5,7 @@ context:
   shouldLoadBootstrap4: true
   📝 shouldLoadBootstrap4: to use Bootstrap 4 grid for layout
   supportStyles:
-    - ../../assets/components/bootstrap.row.css
+    - ../../assets/bootstrap4/row.css
     - ../../assets/components/cortal.icon.css
   can-wrap-in-a-link: false
   data:

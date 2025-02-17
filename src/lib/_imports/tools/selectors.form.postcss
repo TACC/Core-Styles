@@ -1,82 +1,115 @@
 @import url("../components/c-form.selectors.postcss");
 @import url("../components/django-cms-forms.selectors.postcss");
 @import url("../trumps/s-form.selectors.postcss");
+@import url("../bootstrap4/form.selectors.postcss");
 
 @custom-selector :--form
     :--c-form,
     :--s-form,
-    :--cms-form;
+    :--cms-form,
+    :--bs4-form;
 
 /* Generic */
 
 @custom-selector :--form__title
     :--c-form__title,
     :--s-form__title,
-    :--cms-form__title;
+    :--cms-form__title,
+    :--bs4-form__title;
 @custom-selector :--form__desc
     :--c-form__desc,
     :--s-form__desc,
-    :--cms-form__desc;
+    :--cms-form__desc,
+    :--bs4-form__desc;
 
 @custom-selector :--form__errors /* errors container (maybe not the list) */
     :--c-form__errors,
     :--s-form__errors,
-    :--cms-form__errors;
+    :--cms-form__errors,
+    :--bs4-form__errors;
 @custom-selector :--form__errors_list /* list of errors (maybe not container) */
     :--c-form__errors_list,
     :--s-form__errors_list,
-    :--cms-form__errors_list;
+    :--cms-form__errors_list,
+    :--bs4-form__errors_list;
 @custom-selector :--form__errors--form /* submission errors */
     :--c-form__errors--form,
     :--s-form__errors--form,
-    :--cms-form__errors--form;
+    :--cms-form__errors--form,
+    :--bs4-form__errors--form;
 @custom-selector :--form__errors--field /* validation errors */
     :--c-form__errors--field,
     :--s-form__errors--field,
-    :--cms-form__errors--field;
+    :--cms-form__errors--field,
+    :--bs4-form__errors--field;
 
 @custom-selector :--form__field
     :--c-form__field,
     :--s-form__field,
-    :--cms-form__field;
+    :--cms-form__field,
+    :--bs4-form__field;
 @custom-selector :--form__field--has-required
     :--c-form__field--has-required,
     :--s-form__field--has-required,
-    :--cms-form__field--has-required;
+    :--cms-form__field--has-required,
+    :--bs4-form__field--has-required;
 @custom-selector :--form__field--has-checkbox
     :--c-form__field--has-checkbox,
     :--s-form__field--has-checkbox,
-    :--cms-form__field--has-checkbox;
+    :--cms-form__field--has-checkbox,
+    :--bs4-form__field--has-checkbox;
 
 @custom-selector :--form__menu
     :--c-form__menu,
     :--s-form__menu,
-    :--cms-form__menu;
+    :--cms-form__menu,
+    :--bs4-form__menu;
+@custom-selector :--form__menu_item
+    :--c-form__menu_item,
+    :--s-form__menu_item,
+    :--cms-form__menu_item,
+    :--bs4-form__menu_item;
+@custom-selector :--form__menu_line
+    :--c-form__menu_line,
+    :--s-form__menu_line,
+    :--cms-form__menu_line,
+    :--bs4-form__menu_line;
+@custom-selector :--form__menu_label
+    :--c-form__menu_label,
+    :--s-form__menu_label,
+    :--cms-form__menu_label,
+    :--bs4-form__menu_label;
 
 @custom-selector :--form__help 
     :--c-form__help,
     :--s-form__help,
-    :--cms-form__help;
+    :--cms-form__help,
+    :--bs4-form__help;
 
 @custom-selector :--form__badge
     :--c-form__badge,
     :--s-form__badge,
-    :--cms-form__badge;
+    :--cms-form__badge,
+    :--bs4-form__badge;
 
 @custom-selector :--form__buttons
     :--c-form__buttons,
     :--s-form__buttons,
-    :--cms-form__buttons;
+    :--cms-form__buttons,
+    :--bs4-form__buttons;
 @custom-selector :--form__button
     :--c-form__button,
     :--s-form__button,
-    :--cms-form__button;
+    :--cms-form__button,
+    :--bs4-form__button;
 
 /* Login */
 
 @custom-selector :--form--login
     :--c-form--login,
-    :--s-form--login;
+    :--s-form--login,
+    :--bs4-form--login;
 @custom-selector :--form__nav
     :--c-form__nav,
-    :--s-form__nav;
+    :--s-form__nav,
+    :--bs4-form__nav;

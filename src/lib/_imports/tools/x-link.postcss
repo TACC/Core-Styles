@@ -1,3 +1,5 @@
+/* Regular Links */
+
 @define-mixin link {
   color: var(--global-color-accent--normal);
 
@@ -41,6 +43,10 @@
   @mixin link--active;
 }
 
+
+
+/* Irregular Links */
+
 @define-mixin link--irregular {
   @mixin link;
 
@@ -58,7 +64,6 @@
 .x-link--irregular--disabled {
   @mixin link--irregular--disabled;
 }
-
 
 @define-mixin link--irregular--hover {
   @mixin link--hover;
@@ -78,4 +83,28 @@
 /* DEPRECATED */
 .x-link--irregular--active {
   @mixin link--irregular--active;
+}
+
+
+
+/* Block Links */
+
+@define-mixin block-link {
+  --border-width: var(--global-border-width--thick);
+
+  outline-color: var(--global-color-accent--normal);
+
+  outline-width: var(--border-width);
+}
+
+@define-mixin block-link--disabled {
+  @mixin link--disabled;
+}
+
+@define-mixin block-link--hover {
+  outline-style: solid;
+}
+
+@define-mixin block-link--active {
+  outline-style: dotted;
 }

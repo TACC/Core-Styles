@@ -20,16 +20,21 @@ context:
   errorLoc: top
   helpTextTag: div
   inputListTag: ul
+  inputListItemClass: null
+  isSemantic: true
   selectors:
     errorList: .form-errors, .field-errors
     wrap: .field-wrapper
   classNames:
     title: title
     desc: description
-    errors: errorlist
+    form_errors: null
+    field_errors: errorlist
     form_errors_wrap: form-errors
     field_errors_wrap: field-errors
     field: field-wrapper
+    control: null
+    file_control: null
     badge: asterisk
     hint: help-text
     has_required: required
@@ -39,3 +44,4 @@ context:
     check_menu: checkboxselectmultiple
     buttons: button-wrapper
     button: form-button
+    nav: null

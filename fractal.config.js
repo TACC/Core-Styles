@@ -13,6 +13,11 @@ fractal.components.set('label', 'Patterns');
 fractal.components.set('title', 'Patterns');
 fractal.components.set('default.status', 'wip');
 fractal.components.set('statuses', {
+  reference: {
+    label: "Reference",
+    description: "Original skin from third-party library.",
+    color: "#333333"
+  },
   prototype: {
     label: "Prototype",
     description: "Do not implement.",
@@ -101,6 +106,12 @@ engine.handlebars.registerHelper('has', function(array, item) {
 engine.handlebars.registerHelper('ifno', function(value, fallback) {
   const output = value || fallback;
   return new engine.handlebars.SafeString(output);
+});
+engine.handlebars.registerHelper('concat', function() {
+  return Array.prototype.slice.call(arguments, 0, -1).join('');
+});
+engine.handlebars.registerHelper('default', function(value, defaultValue) {
+  return value || defaultValue;
 });
 
 // Export

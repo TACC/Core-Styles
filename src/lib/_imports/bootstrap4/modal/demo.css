@@ -1,12 +1,9 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
-#exampleModalStatic {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    z-index: 1;
-    display: block;
-    height: auto;
+main {
+    display: flex;
+    flex-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

@@ -23,12 +23,14 @@
     :--cms-form__field.checkboxinput;
 
 @custom-selector :--cms-form__menu
-    /* HACK: Use `:is` not `:where` */
-    /* FAQ: To override core-styles.cms html-elements.cms */
-    /* HELP: Clients get django-cms-forms via c-form via core-styles.base,
-                thus django-cms-forms can be overridden by core-styles.cms,
-                yet only (Core-)CMS should ever load django-cms-forms... */
+    /* HELP: Clients get django-cms-forms via c-form via core-styles.base, thus django-cms-forms can be overridden by core-styles.cms, yet only (Core-)CMS should ever load django-cms-forms... */
     :is(.radioselect, .checkboxselectmultiple);
+@custom-selector :--cms-form__menu_item
+    :--cms-form__menu > li;
+@custom-selector :--cms-form__menu_line
+    :--cms-form__menu_label;
+@custom-selector :--cms-form__menu_label
+    :--cms-form__menu_item > label;
 
 @custom-selector :--cms-form__help
     .help-text;

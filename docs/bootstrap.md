@@ -40,7 +40,9 @@ Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless othe
 
 | Core Styles <u>extends</u> | Bootstrap
 | - | -
-| [Row](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/components/bootstrap.row.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Row
+| [Container](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/container.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Container
+| [Row](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/row.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Row
+| [Col](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/col.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Col
 
 | Core Styles <u>changes</u> | Bootstrap
 | - | -
@@ -48,7 +50,7 @@ Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless othe
 | [Breadcrumb](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap3--breadcrumb) | [Breadcrumb (**v3**)](https://getbootstrap.com/docs/4.0/components/breadcrumb/)
 | [Modal](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--modal.html) | [Modal](https://getbootstrap.com/docs/4.0/components/modal/)
 | [Nav Tabs](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--nav-tabs.html) | Navs: [Tabs](https://getbootstrap.com/docs/4.0/components/navs/#tabs)
-| [Pagination](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/components/bootstrap.pagination.css) | [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
+| [Pagination](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/pagination.css) | [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
 
 | Where Core Styles <u>yields</u> to | Bootstrap
 | - | -

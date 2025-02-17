@@ -1,0 +1,18 @@
+/* Base */
+
+ul.c-card-list {
+    padding-left: unset;
+    list-style: none;
+}
+.c-card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--global-space--bootstrap-gap);
+}
+
+
+/* Elements */
+
+.c-card-list [class*="card--"] {
+    margin-bottom: unset;
+}

@@ -1,0 +1,29 @@
+context:
+  form_field_checkboxes:
+    label: Which fish do you want?
+    help: All choices offer similar joy.
+    name: which-fish
+    id: which-fish
+    boxes:
+      - label: One Fish
+        value: one
+      - label: Two Fish
+        value: two
+      - label: Red Fish
+        value: red
+      - label: Blue Fish
+        value: blue
+      - label: Gold Fish
+        value: gold
+  form_field_radioboxes:
+    label: Radio stations
+    help: Which radio stations do you prefer?
+    name: radio-station
+    id: radio-station
+    boxes:
+      - label: LX 1234
+        value: lx-1234
+      - label: LOVE 45
+        value: love-45
+      - label: OLD 555
+        value: old-555

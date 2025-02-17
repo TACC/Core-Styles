@@ -1,17 +1,19 @@
-@import url("../components/c-button.selectors.postcss");
+/* FAQ: c-form.css styles most of all form patterns */
+@import url("../components/c-form.postcss");
 
-.form-control {
-  border: var(--global-border--normal);
-  border-radius: 0;
+.form-check {
+    padding-left: unset; /* to overwrite Bootstrap */
 }
-input.form-control,
-textarea.form-control {
-  /* FAQ: Vertical padding reduced by 1px each to near input height of design * 1.2 */
-  padding: 6px 12px; /* 6px 10px design * 1.2 design-to-app ratio */
+.form-check-input {
+    position: unset;
 }
-.input-group-prepend {
-  z-index: 1; /* so child button border is above sibling input border */
+.form-check label {
+    margin-bottom: unset;
 }
-.input-group-prepend > :--c-button {
-  padding: unset;
+
+/* To overwrite Bootstrap's muted text color that they often suggest */
+@layer foundation {
+    .form-text.text-muted {
+        color: inherit !important;
+    }
 }

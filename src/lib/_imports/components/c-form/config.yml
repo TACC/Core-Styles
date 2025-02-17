@@ -1,6 +1,8 @@
 context:
   helpTextTag: div
   inputListTag: menu
+  inputListItemClass: null
+  isSemantic: true
   selectors:
     errorList: .c-form__errors
     wrap: .c-form__field
@@ -8,8 +10,13 @@ context:
     root: c-form
     title: c-form__title
     desc: c-form__desc
-    errors: c-form__errors
+    form_errors: c-form__errors
+    field_errors: c-form__errors
+    form_errors_wrap: null
+    field_errors_wrap: null
     field: c-form__field
+    control: null
+    file_control: null
     badge: c-form__star
     hint: c-form__help
     has_required: has-required

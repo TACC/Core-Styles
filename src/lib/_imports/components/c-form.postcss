@@ -58,14 +58,16 @@
   margin-bottom: 0; /* overwrite forms.css label */
 }
 
-:--form__menu label {
-  display: flex;
+:--form__menu_line {
+  display: inline-flex;
   gap: 0.5em;
   align-items: center;
+}
+:--form__menu_label {
   font-weight: revert; /* undo html-elements.cms.css */
 }
-:--form__menu li:last-child label {
-  margin-bottom: 0; /* overwrite forms.css label */
+li:--form__menu_item {
+  display: block;
 }
 
 /* Field: Required, Asterisk, Important */
@@ -84,11 +86,11 @@
 :--form__badge {
   display: inline-block;
   visibility: hidden;
-  line-height: 0;
 
-  /* To reduce asterisk character space */
-  /* WARNING: https://github.com/TACC/Core-Styles/pull/269 */
-  font-size: 0.25em;
+  /* To remove space from asterisk character */
+  line-height: 0;
+  font-size: 0;
+  width: 0;
 }
 :--form__badge::after {
   visibility: visible;
@@ -111,6 +113,9 @@ ul:--form__errors_list {
   list-style: none;
   padding-left: 0;
 }
+ul:--form__errors_list:only-child {
+  margin-bottom: 0; /* overwrite ul margin-bottom */
+}
 ul:--form__errors--field {
   margin-top: 1rem; /* mimic ul margin-bottom */
   margin-bottom: 0; /* overwrite ul margin-bottom */
@@ -120,9 +125,10 @@ ul:--form__errors--field {
 
 /* Menus (Input Lists) */
 
-:--form__menu {
+:--form__menu:is(ul, ol, menu) {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0;
 }
 
 

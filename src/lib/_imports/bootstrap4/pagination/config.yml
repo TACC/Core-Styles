@@ -1,0 +1,12 @@
+variants:
+  - name: default
+    label: Bootstrap
+    status: reference
+    context:
+      shouldSkipBase: true
+  - name: tacc
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: false
+

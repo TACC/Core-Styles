@@ -1,3 +1,5 @@
+order: 2
+label: 'Grid: Row'
 context:
   supportStyles:
     - ../../assets/components/c-card.css
