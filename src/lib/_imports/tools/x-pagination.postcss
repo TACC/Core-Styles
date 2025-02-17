@@ -165,7 +165,7 @@
   @mixin pagination__skipped-link;
 }
 
-@define-mixin pagination__active-link {
+@define-mixin pagination__page-link--active {
   background-color: var(--global-color-accent--x-light);
   border-color: var(--global-color-primary--xx-dark);
   color: var(--global-color-primary--xx-dark);
@@ -176,16 +176,16 @@
   }
 }
 /* DEMO-USE ONLY */
-.x-pagination__active-link {
-  @mixin pagination__active-link;
+.x-pagination__page-link--active {
+  @mixin pagination__page-link--active;
 }
 
-@define-mixin pagination__disabled-link {
+@define-mixin pagination__page-link--disabled {
   color: var(--global-color-primary--light);
   background-color: var(--global-color-primary--xx-light);
   border-color: var(--global-color-primary--light);
 }
 /* DEMO-USE ONLY */
-.x-pagination__disabled-link {
-  @mixin pagination__disabled-link;
+.x-pagination__page-link--disabled {
+  @mixin pagination__page-link--disabled;
 }

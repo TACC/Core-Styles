@@ -12,5 +12,5 @@ Mixins for creating consistent pagination components.
 | `pagination__page-link` | Styles for numbered page links
 | `pagination__end-link` | Styles for previous/next links
 | `pagination__skipped-link` | Styles for ellipsis/skip indicators
-| `pagination__active-link` | Styles for current page link
-| `pagination__disabled-link` | Styles for disabled links
+| `pagination__page-link--active` | Styles for current page link
+| `pagination__page-link--disabled` | Styles for disabled links
