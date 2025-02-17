@@ -6,7 +6,7 @@ variants:
       shouldSkipBase: true
   - name: tacc
     label: TACC
-    status: prototype
+    status: ready
     context:
       shouldSkipPattern: false
 
