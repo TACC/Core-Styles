@@ -43,8 +43,6 @@
 }
 
 @define-mixin pagination__page-item {
-  min-width: 2em;
-
   &:not(
     :first-child,
     :last-child
@@ -75,15 +73,14 @@
   display: flex;
   place-content: center;
 
-  &:is(button) {
-    width: 100%;
-  }
-
-  padding: 5px 0;
+  padding: 5px;
   line-height: 1;
+  min-width: 1em;
+  box-sizing: content-box;
 
   background-color: var(--global-color-primary--x-light);
   border-color: var(--global-color-primary--xx-dark);
+  border-width: var(--global-border-width--normal);
   color: var(--global-color-primary--xx-dark);
 
   &:hover {
