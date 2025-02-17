@@ -17,12 +17,21 @@
 .c-page-item {
   @mixin pagination__page-item;
 }
+.c-page-item--is-active {
+  @mixin pagination__active-item;
+}
 
 .c-page-link {
   @mixin pagination__page-link;
 
   &:disabled {
     @mixin pagination__page-link--disabled;
+  }
+
+  &.c-page-link--is-active,
+  &.c-page-item--is-active,
+  .c-page-item--is-active & {
+    @mixin pagination__page-link--active;
   }
 }
 
