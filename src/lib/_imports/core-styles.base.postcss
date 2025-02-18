@@ -1,0 +1,56 @@
+/*! core-styles.base.css */
+/* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
+
+/* Organize via ITCSS */
+/* https://confluence.tacc.utexas.edu/x/IAA9Cw */
+
+/* SETTINGS */
+@import url("./core-styles.settings.postcss");
+
+/* GENERICS */
+/* Mostly from Bootstrap */
+/* https://confluence.tacc.utexas.edu/x/b53tDg */
+@import url("./generics/fonts.postcss");
+@import url("./generics/pseudo-elements.postcss");
+@import url("./generics/attributes.postcss");
+
+/* ELEMENTS */
+/* To override Bootstrap */
+@import url("./elements/root.postcss");
+/* NOTE: Load generic html-elements.css before specific elements/….css */
+@import url("./elements/html-elements.postcss");
+@import url("./elements/form.postcss");
+@import url("./elements/links.postcss");
+@import url("./elements/table.postcss");
+
+/* OBJECTS */
+@import url("./objects/o-fixed-header-table.postcss");
+@import url("./objects/o-grid.postcss");
+@import url("./objects/o-site.postcss");
+@import url("./objects/o-table-wrap.postcss");
+
+/* COMPONENTS */
+@import url("./components/bootstrap.container.postcss");
+@import url("./components/bootstrap.figure.postcss");
+@import url("./components/bootstrap.modal.postcss");
+@import url("./components/bootstrap.nav-tabs.postcss");
+@import url("./components/c-button.postcss");
+@import url("./components/c-callout.postcss");
+@import url("./components/c-data-list.postcss");
+@import url("./components/c-form.postcss");
+@import url("./components/c-island.postcss");
+@import url("./components/c-nav.postcss");
+@import url("./components/c-page.postcss");
+@import url("./components/c-pill.postcss");
+@import url("./components/c-see-all-link.postcss");
+@import url("./components/c-tag.postcss");
+
+/* TRUMPS */
+@import url("./trumps/s-affixed-input-wrapper.postcss");
+@import url("./trumps/s-form.postcss");
+@import url("./trumps/s-blockquote.postcss");
+@import url("./trumps/s-breadcrumbs.postcss");
+@import url("./trumps/u-empty.postcss");
+@import url("./trumps/s-irregular-links.postcss");
+@import url("./trumps/u-mailto-text-replace.postcss");
+@import url("./trumps/u-highlight.postcss");

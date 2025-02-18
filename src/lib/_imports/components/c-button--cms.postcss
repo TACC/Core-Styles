@@ -1,0 +1,26 @@
+@import url("../components/c-button.selectors.postcss");
+@import url("../tools/selectors.form.postcss");
+
+
+:--main-content {
+  & :--c-button--primary,
+  & :--c-button--secondary,
+  & :--c-button--tertiary,
+  & :--c-button--is-active,
+  & :--form__button {
+    padding: 10px 20px;
+
+    font-size: var(--global-font-size--small);
+
+    font-weight: var(--bold);
+    letter-spacing: 0.05em;
+  }
+}
+
+:--c-button--primary,
+:--c-button--secondary,
+:--c-button--tertiary,
+:--c-button--is-active,
+:--form__button {
+  text-transform: uppercase;
+}
