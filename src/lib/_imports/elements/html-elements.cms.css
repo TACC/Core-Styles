@@ -128,6 +128,14 @@ Reference:
 Styleguide Elements.InlineTextSemantics
 */
 
+/* Miscellaneous */
+
+& time {
+  color: var(--global-color-accent--secondary);
+  font-weight: var(--medium);
+  text-transform: uppercase;
+}
+
 /* To allow user to distinguish bold and black */
 & strong {
   font-weight: var(--bold);
