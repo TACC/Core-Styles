@@ -1,3 +1,6 @@
+label: Breadcrumbs
+context:
+  subdir: "bootstrap3/components/breadcrumb"
 variants:
   - name: default
     label: Bootstrap
