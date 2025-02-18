@@ -1,7 +1,6 @@
 order: 3
 label: 'Grid: Col'
 context:
-  subdir: "bootstrap4/grid"
   supportStyles:
     - ../../assets/components/c-card.css
 variants:

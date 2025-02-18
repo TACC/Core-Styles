@@ -1,7 +1,6 @@
 order: 1
 label: 'Grid: Container'
 context:
-  subdir: "bootstrap4/grid"
   shouldSkipBase: true
   supportStyles:
     - ../../assets/components/c-message.css
