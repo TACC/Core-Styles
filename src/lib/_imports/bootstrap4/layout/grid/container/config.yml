@@ -1,5 +1,4 @@
 order: 1
-label: 'Grid: Container'
 context:
   shouldSkipBase: true
   supportStyles:

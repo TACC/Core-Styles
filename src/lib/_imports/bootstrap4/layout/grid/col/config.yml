@@ -1,5 +1,4 @@
 order: 3
-label: 'Grid: Col'
 context:
   supportStyles:
     - ../../assets/components/c-nav.css
