@@ -1,4 +1,0 @@
-.col-stretch-content-y {
-  display: grid;
-  align-content: normal; /* to overwrite potential alignment */
-}

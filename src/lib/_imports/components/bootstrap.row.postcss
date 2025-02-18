@@ -1,0 +1,16 @@
+@import url("./bootstrap.col.postcss");
+
+/* BOOTSTRAP 4 */
+/* Add this class to the row in need */
+.row-col-stretch-content-y .col {
+  @extend .col-stretch-content-y;
+}
+
+/* BOOTSTRAP 3 */
+/* Add this class to any containing element */
+/* NOTE: DesignSafe CMS Admin can not add class on Bootstrap 3 grid elements */
+/* https://stackoverflow.com/a/22892773/11817077 */
+.has-row--col-stretch-content-y .row:has([class^="col-"]) {
+  display: flex;
+  flex-wrap: wrap;
+}

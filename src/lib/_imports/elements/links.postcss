@@ -1,0 +1,16 @@
+@import url("../components/c-button.selectors.postcss");
+@import url("../tools/selectors.postcss");
+@import url("../tools/x-link.postcss");
+
+a:not(:--c-button) {
+  @mixin link;
+}
+a:not([href]) {
+  @mixin link--disabled;
+}
+a:not(:--c-button):hover {
+  @mixin link--hover;
+}
+a:not(:--c-button):active {
+  @mixin link--active;
+}

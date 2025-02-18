@@ -1,0 +1,37 @@
+@import url("../tools/x-breadcrumbs.postcss");
+
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs:where(ol),
+.s-breadcrumbs-via-ul {
+  @mixin x-breadcrumbs;
+}
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs-via-ul {
+  @mixin x-breadcrumbs-major;
+}
+
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs:where(ol),
+.s-breadcrumbs-via-ul ul {
+  @mixin x-breadcrumbs__list;
+}
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs-via-ul ul {
+  @mixin x-breadcrumbs-major__list;
+}
+
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs:where(ol) li,
+.s-breadcrumbs-via-ul ul li {
+  @mixin x-breadcrumbs__list-item;
+}
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs-via-ul ul li {
+  @mixin x-breadcrumbs-major__list-item;
+}
+
+.s-breadcrumbs:where(nav) ol li + li,
+.s-breadcrumbs:where(ol) li + li,
+.s-breadcrumbs-via-ul ul li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
+}

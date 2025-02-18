@@ -4,14 +4,15 @@
 
 const { resolve } = require('path');
 
-const build = require('./bin/build.js');
+const buildStyles = require('./bin/build-styles.js');
+const buildTokens = require('./bin/build-tokens.js');
 const config = require('./bin/config.js');
 const version = require('./bin/version.js');
 
 /**
  * Build stylesheets from source CSS
  * @param {string} input - Parse CSS files from which directory
- * @param {string} output - Output CSS files to which directory
+ * @param {string|undefined} output - Output CSS files to which directory
  * @param {object} [opts={}] - Options
  * @param {string} [opts.baseMirrorDir] - Path to NOT add when mirroring
  * @param {string} [opts.fileExt] - Custom file extension for output files
@@ -25,11 +26,11 @@ function buildStylesheets(input, output, opts = {}) {
   const buildOpts = {
     verbose: opts.verbose || null,
     baseMirrorDir: opts.baseMirrorDir || null,
-    fileExt: opts.fileExt || null,
+    fileExt: opts.fileExt || `.css`,
   };
 
   const inputResolved = resolve(input);
-  const outputResolved = resolve(output);
+  const outputResolved = output ? resolve(output) : output;
   const customConfigs = opts.customConfigs
     ? opts.customConfigs.map((filePath) =>
         filePath ? resolve(filePath) : null
@@ -37,7 +38,8 @@ function buildStylesheets(input, output, opts = {}) {
     : undefined;
 
   config(customConfigs, version(opts.buildId));
-  build(inputResolved, outputResolved, buildOpts);
+  buildTokens();
+  buildStyles(inputResolved, outputResolved, buildOpts);
 }
 
 /*

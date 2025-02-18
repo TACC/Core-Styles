@@ -1,0 +1,58 @@
+/*! core-styles.cms.css */
+/* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
+
+/* Organize via ITCSS */
+/* https://confluence.tacc.utexas.edu/x/IAA9Cw */
+
+/* SETTINGS */
+/* To get most settings, client should load `./base.css` first */
+@import url("./settings/font--cms.postcss");
+@import url("./settings/color--cms.postcss");
+
+/* GENERICS */
+/* Mostly from Bootstrap */
+/* https://confluence.tacc.utexas.edu/x/b53tDg */
+
+/* ELEMENTS */
+@import url("./elements/root--cms.postcss");
+/* To override Bootstrap */
+@import url("./elements/sticky-footer.postcss");
+@import url("./elements/html-elements.cms.postcss");
+@import url("./elements/headings--cms.postcss");
+@import url("./elements/mailto-link.postcss");
+@import url("./elements/monospace.postcss");
+@import url("./elements/table.cms.postcss");
+
+/* OBJECTS */
+@import url("./objects/o-float-content.postcss");
+@import url("./objects/o-offset-content.postcss");
+@import url("./objects/o-section.postcss");
+@import url("./objects/o-heading-steps.postcss");
+
+
+/* COMPONENTS */
+@import url("./components/bootstrap.col.postcss");
+@import url("./components/bootstrap.modal--cms.postcss");
+@import url("./components/bootstrap.row.postcss");
+@import url("./components/c-content-block.postcss");
+@import url("./components/cortal.icon.postcss");
+@import url("./components/c-button--cms.postcss");
+@import url("./components/c-card.postcss");
+@import url("./components/c-card-list.postcss");
+@import url("./components/c-form--cms.postcss");
+@import url("./components/c-message.postcss");
+@import url("./components/c-message--expanded.postcss");
+@import url("./components/c-recognition.postcss");
+@import url("./components/c-show-more.postcss");
+@import url("./components/c-update.postcss");
+
+/* TODO: Move to TACC/Core-CMS-Resources:/frontera-cms
+        or — alternatively — TACC/Core-CMS */
+@import url("./components/c-card--frontera-about-page.postcss");
+
+/* TRUMPS */
+@import url("./trumps/s-drop-cap.postcss");
+@import url("./trumps/s-footer.postcss");
+@import url("./trumps/s-footer--thick.postcss");
+@import url("./trumps/s-truncated-table.postcss");
+@import url("./trumps/s-hero-banner.postcss");

@@ -1,6 +1,0 @@
-@import url("./table.selectors.css");
-
-table,
-:--s-paragraph-table {
-  --font-size: var(--global-font-size--medium);
-}

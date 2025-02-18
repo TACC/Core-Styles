@@ -1,0 +1,23 @@
+@import url("../tools/x-breadcrumbs.postcss");
+
+.cmd-line,
+.job-script {
+  /* SEE: ../tools/selectors.monospace.css */
+  /* FAQ: The element-based code styling is much richer than these classes */
+}
+
+.rst-content > [role="navigation"] {
+  @mixin x-breadcrumbs;
+  @mixin x-breadcrumbs-major;
+}
+.rst-content > [role="navigation"] ul {
+  @mixin x-breadcrumbs__list;
+  @mixin x-breadcrumbs-major__list;
+}
+.rst-content > [role="navigation"] li {
+  @mixin x-breadcrumbs__list-item;
+  @mixin x-breadcrumbs-major__list-item;
+}
+.rst-content > [role="navigation"] li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
+}

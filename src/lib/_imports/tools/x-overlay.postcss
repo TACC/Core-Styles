@@ -1,0 +1,28 @@
+/*
+Overlay
+
+Colored boxes that appear atop a large image (like a banner).
+
+%x-overlay--curtain - A full size transluscent curtain over the background
+%x-overlay--callout - A transluscent box surrounding the content
+
+Styleguide Tools.Mixins.Overlay
+*/
+@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
+
+@define-mixin overlay--curtain {
+  color: inherit;
+  background-color: rgb( from design-token('color.gray.medium') r g b / 0.65 );
+  backdrop-filter: blur(6px);
+}
+%x-overlay--curtain {
+  @mixin overlay--curtain;
+}
+
+@define-mixin overlay--callout {
+  color: inherit;
+  background-color: rgb( from design-token('color.gray.medium') r g b / 0.90 );
+}
+%x-overlay--callout {
+  @mixin overlay--curtain;
+}

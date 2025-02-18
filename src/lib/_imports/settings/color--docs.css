@@ -1,7 +1,0 @@
-/* Load accent colors without scope */
-@import url("../settings/color.accent--purple.css");
-
-/* Set scope for accent colors */
-/* Override accent colors from base */
-@custom-selector :--light-context-safe
-  :root;
