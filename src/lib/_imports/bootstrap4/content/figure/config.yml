@@ -1,4 +1,6 @@
 label: Figures
+context:
+  subdir: "bootstrap4/content/figure"
 variants:
   - name: default
     label: Bootstrap

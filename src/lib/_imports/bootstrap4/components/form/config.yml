@@ -1,5 +1,6 @@
 label: Forms
 context:
+  subdir: "bootstrap4/components/form"
   helpTextTag: small
   inputListTag: menu
   inputListItemClass: form-check

@@ -1,3 +1,5 @@
+context:
+  subdir: "bootstrap4/components/modal"
 variants:
   - name: default
     label: Bootstrap
