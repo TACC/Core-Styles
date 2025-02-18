@@ -1,0 +1,7 @@
+<div class="{{#if class }}{{ class }}{{else}}s-paragraph-table{{/if}}">
+{{#each data.rows}}
+  {{#if paragraph}}
+  <p>{{> @text-of-one-paragraph-short }}</p>
+  {{/if}}
+{{/each}}
+</div>

@@ -1,0 +1,14 @@
+/* DO NOT ADD STYLES HERE; ADD CUSTOM SELECTORS TO USE IN OTHER STYLESHEETS */
+
+/*
+Multiple Elements
+
+These are global selectors to target common elements.
+
+Styleguide Tools.CustomSelectors.MultipleElements
+*/
+@custom-selector :--action          button, a;
+@custom-selector :--main-content    [role="main"], main;
+@custom-selector :--portal-content  #root;
+@custom-selector :--modal           .modal;
+@custom-selector :--heading         h1, h2, h3, h4, h5, h6;

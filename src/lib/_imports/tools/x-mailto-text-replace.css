@@ -3,7 +3,7 @@ Mailto Link Text Replacement
 
 Replace mailto link rendered text with virtual text from data-attributes
 
-Styleguide Tools.ExtendsAndMixins.MailtoTextReplace
+Styleguide Tools.Mixins.MailtoTextReplace
 */
 
 /* To replace actual link text with generated link text */
@@ -11,6 +11,9 @@ Styleguide Tools.ExtendsAndMixins.MailtoTextReplace
     /* FAQ: Using `display: none` would hide pseudo element text */
     visibility: hidden; /* to hide actual link text */
     font-size: 0; /* to remove space of hidden text */
+    /* CAVEAT: The `font-size: 0` causes underline to be too high */
+    /* HACK: So push underline down */
+    text-underline-offset: 0.3rem;
 }
 %x-mailto-text-replace::before {
     display: inline;

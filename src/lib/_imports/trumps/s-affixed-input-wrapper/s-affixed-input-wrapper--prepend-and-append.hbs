@@ -1,0 +1,43 @@
+<dl>
+  <dt>Prepend</dt>
+  <dl>
+    <dt>Auto-Width Input</dt>
+    <dd>
+      {{> @s-affixed-input-wrapper--end modifier="prepend" }}
+    </dd>
+    <dt>Static-Width Input</dt>
+    <dd class="demo-static-width">
+      {{> @s-affixed-input-wrapper--end modifier="prepend" }}
+    </dd>
+    <dt>Full-Width Input</dt>
+    <dd>
+      {{> @s-affixed-input-wrapper--end modifier="prepend" is-full-width=true }}
+    </dd>
+  </dl>
+  <dt>Append</dt>
+  <dl>
+    <dt>Auto-Width Input</dt>
+    <dd>
+      {{> @s-affixed-input-wrapper--end modifier="append" }}
+    </dd>
+    <dt>Static-Width Input</dt>
+    <dd class="demo-static-width">
+      {{> @s-affixed-input-wrapper--end modifier="append" }}
+    </dd>
+    <dt>Full-Width Input</dt>
+    <dd>
+      {{> @s-affixed-input-wrapper--end modifier="append" is-full-width=true }}
+    </dd>
+  </dl>
+</dl>
+<script>
+const copyButtons = document.querySelectorAll('[data-copy-target]');
+
+[ ...copyButtons ].forEach( button => button.addEventListener('click', event => {
+  const textFieldId = event.srcElement.dataset.copyTarget
+  const textField = document.getElementById( textFieldId );
+  const text = textField.value;
+
+  navigator.clipboard.writeText( text );
+}));
+</script>

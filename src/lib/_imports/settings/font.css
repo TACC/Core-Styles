@@ -6,9 +6,9 @@ Define standard fonts for a TACC website.
 Usage:
   ```
   .something {
-    font-family: var(--global-font-family--serif);
-    font-size: var(--global-font-size--normal);
-    font-weight: var(--global-font-weight--bold); /* or `var(--bold)` *\/
+    font-family: var(--serif);
+    font-size: var(--normal);
+    font-weight: var(--bold);
   }
   ```
 
@@ -23,22 +23,44 @@ Styleguide Settings.CustomProperties.Font
 
 :root {
   /* Family */
-  /* https://confluence.tacc.utexas.edu/x/nB4FDg */
-  --global-font-family--sans--cms: "Benton Sans", "Roboto", sans-serif;
-  --global-font-family--sans--portal: "Roboto", sans-serif;
-  --global-font-family--serif: Times, sans-serif;
-  --global-font-family--mono: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  /* https://tacc-main.atlassian.net/wiki/x/Nw9v */
+  --sans--cms: "Benton Sans", "Roboto", sans-serif;
+  --sans--portal: "Roboto", sans-serif;
+  --serif: sans-serif;
+  --mono: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --icon: "Hiragino Sans", monospace;
 
   /* Weight */
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight */
-  /* NOTE: Long names to be consistent (opinions welcome) */
-  --global-font-weight--regular: 400;
-  --global-font-weight--medium: 500;
-  --global-font-weight--bold: 700;
-  --global-font-weight--black: 800;
-  /* NOTE: Short names to increase adoption (opinions welcome) */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping */
+  --thin: 100;
+  --hairline: 100;
+  --extra-light: 200;
+  --ultra-light: 200;
+  --light: 300;
+  --normal: 400;
   --regular: 400;
   --medium: 500;
+  --semi-bold: 600;
+  --demi-bold: 600;
   --bold: 700;
-  --black: 800;
+  --extra-bold: 800;
+  --ultra-bold: 800;
+  --black: 900;
+  --heavy: 900;
+  --extra-black: 950;
+  --ultra-black: 950;
+}
+
+/* DEPRECATED */
+/* For backwards-compatibility with v0, v1, v2.23 */
+:root {
+  --global-font-family--sans--cms: var(--sans--cms);
+  --global-font-family--sans--portal: var(--sans--portal);
+  --global-font-family--serif: var(--serif);
+  --global-font-family--mono: var(--mono);
+
+  --global-font-weight--regular: var(--regular);
+  --global-font-weight--black: var(--black);
+  --global-font-weight--medium: var(--medium);
+  --global-font-weight--bold: var(--bold);
 }

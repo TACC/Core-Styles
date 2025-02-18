@@ -1,0 +1,6 @@
+@import url("../trumps/s-truncated-table.css");
+
+/* Assume portal tables always supports truncation */
+table {
+  @extend .s-truncated-table;
+}

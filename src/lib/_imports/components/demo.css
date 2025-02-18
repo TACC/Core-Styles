@@ -1,0 +1,40 @@
+/* Grid */
+
+.demo-grid {
+  display: grid;
+  gap: 10px;
+}
+.demo-grid > figure {
+  margin: unset; /* undo browser & Bootstrap */
+}
+
+/* Grid: Boxes */
+
+.demo-grid--boxes > * {
+  border: var(--global-border--normal);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Grid: Square */
+/* https://medium.com/cloudaper/ea48baf038f3 */
+/* https://codepen.io/krystof-k/pen/vdNQGB */
+
+.demo-grid--square {
+  --size: 115px;
+
+  grid-template-columns: repeat(auto-fill, var(--size));
+}
+/* To force height to match width */
+.demo-grid--square::before {
+  content: '';
+  width: 0; /* to obscure this item from grid visualization for developers */
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+/* To hide the ::before grid item */
+.demo-grid--square > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}

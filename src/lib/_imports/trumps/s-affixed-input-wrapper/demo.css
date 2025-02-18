@@ -1,0 +1,5 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.demo-static-width input {
+  width: 25ch;
+}

@@ -1,0 +1,82 @@
+@import url("../components/c-form.selectors.css");
+@import url("../components/django-cms-forms.selectors.css");
+@import url("../trumps/s-form.selectors.css");
+
+@custom-selector :--form
+    :--c-form,
+    :--s-form,
+    :--cms-form;
+
+/* Generic */
+
+@custom-selector :--form__title
+    :--c-form__title,
+    :--s-form__title,
+    :--cms-form__title;
+@custom-selector :--form__desc
+    :--c-form__desc,
+    :--s-form__desc,
+    :--cms-form__desc;
+
+@custom-selector :--form__errors /* errors container (maybe not the list) */
+    :--c-form__errors,
+    :--s-form__errors,
+    :--cms-form__errors;
+@custom-selector :--form__errors_list /* list of errors (maybe not container) */
+    :--c-form__errors_list,
+    :--s-form__errors_list,
+    :--cms-form__errors_list;
+@custom-selector :--form__errors--form /* submission errors */
+    :--c-form__errors--form,
+    :--s-form__errors--form,
+    :--cms-form__errors--form;
+@custom-selector :--form__errors--field /* validation errors */
+    :--c-form__errors--field,
+    :--s-form__errors--field,
+    :--cms-form__errors--field;
+
+@custom-selector :--form__field
+    :--c-form__field,
+    :--s-form__field,
+    :--cms-form__field;
+@custom-selector :--form__field--has-required
+    :--c-form__field--has-required,
+    :--s-form__field--has-required,
+    :--cms-form__field--has-required;
+@custom-selector :--form__field--has-checkbox
+    :--c-form__field--has-checkbox,
+    :--s-form__field--has-checkbox,
+    :--cms-form__field--has-checkbox;
+
+@custom-selector :--form__menu
+    :--c-form__menu,
+    :--s-form__menu,
+    :--cms-form__menu;
+
+@custom-selector :--form__help 
+    :--c-form__help,
+    :--s-form__help,
+    :--cms-form__help;
+
+@custom-selector :--form__badge
+    :--c-form__badge,
+    :--s-form__badge,
+    :--cms-form__badge;
+
+@custom-selector :--form__buttons
+    :--c-form__buttons,
+    :--s-form__buttons,
+    :--cms-form__buttons;
+@custom-selector :--form__button
+    :--c-form__button,
+    :--s-form__button,
+    :--cms-form__button;
+
+/* Login */
+
+@custom-selector :--form--login
+    :--c-form--login,
+    :--s-form--login;
+@custom-selector :--form__nav
+    :--c-form__nav,
+    :--s-form__nav;

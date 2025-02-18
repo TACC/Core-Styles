@@ -1,90 +1,57 @@
-/*
-Message
+@import url('../tools/x-message.css');
 
-Inform user about a temporary status.
-
-- .c-message--type-info - neither positive nor negative
-- .c-message--type-success - a positive status
-- .c-message--type-warning - a minor negative status
-- .c-message--type-danger - a major negative status
-- .c-message--scope-inline - an error for one interatction on a page
-- .c-message--scope-section - an error for a whole section of a page
-
-Reference:
-- https://getbootstrap.com/docs/4.0/components/alerts/
-
-Styleguide Components.Message
-*/
-@import url('../tools/x-link.css');
+@import url("./c-message.selectors.css");
 
 
 
-/* Elements */
-
-/* To avoid clash of link color with message color */
-.c-message a,
-.c-message .c-button--as-link {
-  color: inherit !important; /* override :hover and :active */
+:--c-message {
+  @mixin message;
 }
 
-/* To distinguish link from message text */
-.c-message a,
-.c-message .c-button--as-link {
-  @extend .x-link--irregular;
+:--c-message--scope-inline {
+  @mixin message--scope-inline;
 }
-.c-message a:hover,
-.c-message .c-button--as-link:hover {
-  @extend .x-link--irregular--hover;
+:--c-message--type-info:--c-message--scope-inline {
+  @mixin message--type-info---message--scope-inline;
 }
-.c-message a:active,
-.c-message .c-button--as-link:active {
-  @extend .x-link--irregular--active;
+:--c-message--type-success:--c-message--scope-inline {
+  @mixin message--type-success---message--scope-inline;
+  @mixin message--has-icon---message--type-success;
+  @mixin message--has-icon;
 }
-
-
-
-/* Modifiers */
-
-/* Structure */
-
-.c-message--scope-inline,
-.c-message--scope-section {
-  font-size: var(--global-font-size--small);
+:--c-message--type-warning:--c-message--scope-inline {
+  @mixin message--type-warning---message--scope-inline;
+  @mixin message--has-icon---message--type-warning;
+  @mixin message--has-icon;
 }
-
-.c-message--scope-section {
-  padding: 15px 20px;
-  border: var(--global-border--thick);
+:--c-message--type-error:--c-message--scope-inline {
+  @mixin message--type-error---message--scope-inline;
+  @mixin message--has-icon---message--type-error;
+  @mixin message--has-icon;
+}
+:--c-message--type-extra:--c-message--scope-inline {
+  @mixin message--type-extra---message--scope-inline;
 }
 
-/* Skin */
+:--c-message--scope-section {
+  @mixin message--scope-section;
+}
+:--c-message--type-info:--c-message--scope-section {
+  @mixin message--type-info---message--scope-section;
+}
+:--c-message--type-success:--c-message--scope-section {
+  @mixin message--type-success---message--scope-section;
+}
+:--c-message--type-warning:--c-message--scope-section {
+  @mixin message--type-warning---message--scope-section;
+}
+:--c-message--type-error:--c-message--scope-section {
+  @mixin message--type-error---message--scope-section;
+}
+:--c-message--type-extra:--c-message--scope-section {
+  @mixin message--type-extra---message--scope-section;
+}
 
-.c-message--type-info {
-  color: var(--global-color-info--dark);
-}
-.c-message--type-success {
-  color: var(--global-color-success--dark);
-}
-.c-message--type-warning {
-  color: var(--global-color-warning--dark);
-}
-.c-message--type-error {
-  color: var(--global-color-danger--dark);
-}
-
-.c-message--scope-section.c-message--type-info {
-  background-color: var(--global-color-info--x-light);
-  border-color: var(--global-color-info--normal);
-}
-.c-message--scope-section.c-message--type-success {
-  background-color: var(--global-color-success--x-light);
-  border-color: var(--global-color-success--normal);
-}
-.c-message--scope-section.c-message--type-warning {
-  background-color: var(--global-color-warning--x-light);
-  border-color: var(--global-color-warning--normal);
-}
-.c-message--scope-section.c-message--type-error {
-  background-color: var(--global-color-danger--x-light);
-  border-color: var(--global-color-danger--normal);
+:--c-message--scope-global {
+  @mixin message--scope-global;
 }

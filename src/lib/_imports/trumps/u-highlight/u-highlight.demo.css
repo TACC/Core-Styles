@@ -1,0 +1,11 @@
+.u-highlight-container {
+    max-width: 800px;
+}
+
+.u-highlight {
+    padding-inline: 10px;
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-primary--xxx-dark);
+    line-height: 1;
+    text-transform: uppercase;
+}

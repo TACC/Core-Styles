@@ -35,9 +35,94 @@ Styleguide Components.DataList
 
 
 
+/* Tools */
+/* FAQ: These selectors:
+        - reduce actual selector complexity
+        - support old complex class names
+        - support new simple class names
+*/
+
+/* Base */
+@custom-selector :--data-list
+  .c-data-list,
+  .data-list,
+  [class*="data-list--"];
+
+/* Modifiers */
+@custom-selector :--data-list--horz
+  .c-data-list--is-horz,
+  .data-list--horz;
+@custom-selector :--data-list--vert
+  .c-data-list--is-vert,
+  .data-list--vert;
+@custom-selector :--data-list--wide
+  .c-data-list--is-wide,
+  .data-list--wide;
+@custom-selector :--data-list--narrow
+  .c-data-list--is-narrow,
+  .data-list--narrow;
+@custom-selector :--data-list--truncate-values
+  .c-data-list--should-truncate-values,
+  .data-list--truncate-values;
+
+/* Elements (Partials) */
+@custom-selector :--dlist-key dt;
+@custom-selector :--dlist-value dd;
+@custom-selector :--table-key th;
+@custom-selector :--table-value td;
+@custom-selector :--class-key [class*="data-list__key"];
+@custom-selector :--class-value [class*="data-list__value"];
+@custom-selector :--non-table-key
+  :--dlist-key,
+  :--class-key:not(th);
+@custom-selector :--non-table-value
+  :--dlist-value,
+  :--class-value:not(td);
+@custom-selector :--any-key
+  :--dlist-key,
+  :--table-key,
+  :--class-key;
+@custom-selector :--any-value
+  :--dlist-value,
+  :--table-value,
+  :--class-value;
+
+/* Elements (Complete) */
+@custom-selector :--data-list__dlist-key
+  :--data-list > :--dlist-key;
+@custom-selector :--data-list__dlist-value
+  :--data-list > :--dlist-value;
+@custom-selector :--data-list__table-key
+  :--data-list > tbody > :--table-key;
+@custom-selector :--data-list__table-value
+  :--data-list > tbody > :--table-value;
+@custom-selector :--data-list__class-key
+  :--class-key; /* parent is redundant, so reuse child selector */
+@custom-selector :--data-list__class-value
+  :--class-value; /* parent is redundant, so reuse child selector */
+@custom-selector :--data-list__non-table-key
+  :--data-list__dlist-key,
+  :--data-list__class-key;
+@custom-selector :--data-list__non-table-value
+  :--data-list__dlist-value,
+  :--data-list__class-value;
+@custom-selector :--data-list__key
+  :--data-list__dlist-key,
+  :--data-list__table-key,
+  :--data-list__class-key;
+@custom-selector :--data-list__value
+  :--data-list__dlist-value,
+  :--data-list__table-value,
+  :--data-list__class-value;
+
+
+
+
+
 /* Base i.e. Container */
 
-table.c-data-list {
+table:--data-list {
+  /* ???: Is this only for CEPv2? It appears useless in v1 */
   border-left: 0;
   border-right: 0;
 }
@@ -49,30 +134,29 @@ table.c-data-list {
 /* Elements i.e. Children */
 
 /* To truncate text */
-.c-data-list__key {
-  @extend %x-truncate--one-line;
+:--data-list__key {
+  @mixin truncate--one-line;
 }
 @supports(text-overflow: ':') {
-  .c-data-list__key:not(th) {
+  :--data-list__non-table-key {
     --text-overflow: ':';
   }
 }
 
 /* To space out elements (tables) */
-th.c-data-list__key,
-td.c-data-list__value {
+:--data-list__table-key,
+:--data-list__table-value {
   padding-block: 0.5em;
 }
 
 /* To add colon (non-tables) */
-.c-data-list__key:not(th)::after {
+:--data-list__non-table-key::after {
   content: ':';
   display: inline;
   padding-right: 0.25em;
 }
-
 /* To add space (instead of colon) (tables) */
-th.c-data-list__key {
+:--data-list__table-key {
   padding-right: 0.25em;
 }
 
@@ -80,24 +164,25 @@ th.c-data-list__key {
 
 
 /* Modifiers i.e. Types */
-/* FAQ: The `:not(table)` selectors avoid nesting caveats by using `>` */
+/* FAQ: The `__non-table-…` selectors avoid nesting caveats by using `>` */
+/* FAQ: The `table:--data-list-…` selectors also avoid nesting caveats */
 
 
 
 /* Horizontal */
 
-.c-data-list--is-horz {
+:--data-list--horz {
   display: flex;
   flex-direction: row;
 }
-dl.c-data-list--is-horz,
-.c-data-list--is-horz dd.c-data-list__value {
+dl:--data-list--horz,
+:--data-list__dlist-value {
   margin-bottom: 0; /* overwrite Bootstrap's `_reboot.scss` */
 }
 
 /* To propogate flexbox layout so cells are flex items */
-table.c-data-list--is-horz tr,
-table.c-data-list--is-horz tbody {
+table:--data-list--horz tr,
+table:--data-list--horz tbody {
   min-width: 0;
 
   display: flex;
@@ -105,31 +190,27 @@ table.c-data-list--is-horz tbody {
 }
 
 /* To space out key and value (non-tables) */
-.c-data-list--is-horz:not(table).c-data-list--is-narrow
-  > .c-data-list__key ~ .c-data-list__key::before {
+:--data-list--horz:--data-list--narrow
+  > :--non-table-key ~ :--non-table-key::before {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-.c-data-list--is-horz:not(table).c-data-list--is-wide
-  > .c-data-list__key ~ .c-data-list__key::before {
+:--data-list--horz:--data-list--wide
+  > :--non-table-key ~ :--non-table-key::before {
   padding-left: 1em;
   padding-right: 1em;
 }
 /* To space out key and value (tables) */
-table.c-data-list--is-horz.c-data-list--is-narrow
-  tr:not(:first-child) th.c-data-list__key {
+table:--data-list--horz:--data-list--narrow tr:not(:first-child) :--table-key {
   padding-left: 0.5em;
 }
-table.c-data-list--is-horz.c-data-list--is-narrow
-  td.c-data-list__value {
+table:--data-list--horz:--data-list--narrow :--table-value {
   margin-right: 0.5em; /* use margin because text would show through padding */
 }
-table.c-data-list--is-horz.c-data-list--is-wide
-  tr:not(:first-child) th.c-data-list__key {
+table:--data-list--horz:--data-list--wide tr:not(:first-child) :--table-key {
   padding-left: 1em;
 }
-table.c-data-list--is-horz.c-data-list--is-wide
-  td.c-data-list__value {
+table:--data-list--horz:--data-list--wide :--table-value {
   margin-right: 1em; /* use margin because text would show through padding */
 }
 
@@ -137,23 +218,21 @@ table.c-data-list--is-horz.c-data-list--is-wide
 
 /* Vertical */
 
-table.c-data-list--is-vert {
+table:--data-list--vert {
   width: 100%;
   table-layout: fixed;
 }
 
 /* To overwrite Bootstrap `_reboot.scss` */
-.c-data-list--is-vert:not(table) > .c-data-list__value {
+:--data-list--vert > :--non-table-value {
   margin-left: 0;
 }
 
-/* To space out key and value (tables) */
-.c-data-list--is-vert:not(table).c-data-list--is-narrow > .c-data-list__value,
-table.c-data-list--is-vert.c-data-list--is-narrow td.c-data-list__value {
+/* To space out key and value */
+:--data-list--vert:--data-list--narrow :--any-value {
   padding-left: 0;
 }
-.c-data-list--is-vert:not(table).c-data-list--is-wide > .c-data-list__value,
-table.c-data-list--is-vert.c-data-list--is-wide td.c-data-list__value {
+:--data-list--vert:--data-list--wide :--any-value {
   padding-left: 2.5em; /* font-size 10px gives 40px (Firefox default margin) */
 }
 
@@ -168,29 +247,29 @@ table.c-data-list--is-vert.c-data-list--is-wide td.c-data-list__value {
 /* Element Borders */
 
 /* To remove most borders (tables) */
-table.c-data-list--is-vert th.c-data-list__key,
-td.c-data-list__value {
+table:--data-list--vert :--table-key,
+:--data-list__table-value {
   border-left: 0;
   border-right: 0;
 }
-table.c-data-list--is-horz th.c-data-list__key,
-table.c-data-list--is-horz td.c-data-list__value {
+table:--data-list--horz :--table-key,
+table:--data-list--horz :--table-value {
   border-top: 0;
   border-bottom: 0;
 }
 
 /* To keep real border between key and value (tables) */
 /* CAVEAT: Certain fonts may limit border height (see "Font Alignment") */
-table.c-data-list--is-horz tr:first-child th.c-data-list__key {
+table:--data-list--horz tr:first-child :--table-key {
   border-left: 0;
 }
-table.c-data-list--is-horz th.c-data-list__key {
+table:--data-list--horz :--table-key {
   border-right: 0;
 }
 
 /* To add fake border between key and value (non-tables) */
-.c-data-list--is-horz:not(table)
-  > .c-data-list__key ~ .c-data-list__key::before {
+:--data-list--horz
+  > :--non-table-key ~ :--non-table-key::before {
   content: '|';
   display: inline-block;
 }
@@ -200,8 +279,8 @@ table.c-data-list--is-horz th.c-data-list__key {
 /* Truncate Values */
 /* FAQ: Truncate when doing is unlikely to almost entirely obscure text */
 
-.c-data-list--should-truncate-values .c-data-list__value {
-  @extend %x-truncate--one-line;
+:--data-list--truncate-values :--any-value {
+  @mixin truncate--one-line;
 }
 
 
@@ -211,12 +290,12 @@ table.c-data-list--is-horz th.c-data-list__key {
 /* FAQ: "Benton Sans" needs this solution (as of 2021-07) */
 
 /* NOTE: This assumes key and value are flex items, not inline display */
-.c-data-list--is-horz:not(table) { align-items: baseline; }
+:--data-list--horz:not(table) { align-items: baseline; }
 
 /* CAVEAT: On Firefox (for "Benton Sans"), `align-items` is ineffectual */
 /* CAVEAT: This causes <th> and <td> cell borders to be offset */
-table.c-data-list--is-horz tr { align-items: baseline; }
+table:--data-list--is-horz tr { align-items: baseline; }
 
 /* NOTE: This assumes key and value are inline display, not flex items */
-table.c-data-list--is-vert th.c-data-list__key,
-table.c-data-list--is-vert td.c-data-list__value { vertical-align: baseline; }
+table:--data-list--is-vert :--table-key,
+table:--data-list--is-vert :--table-value { vertical-align: baseline; }

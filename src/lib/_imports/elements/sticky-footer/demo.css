@@ -1,0 +1,18 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+/* To style the footer, see trumps/s-footer.css */
+
+aside {
+  text-align: center;
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--global-color-primary--light);
+
+  /* To make <p> margin space visible */
+  /* FAQ: A side with a border prevents margin collapse on that side */
+  border: var(--global-border--normal);
+  border-color: var(--global-color-primary--light);
+}

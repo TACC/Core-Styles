@@ -1,0 +1,28 @@
+.x-tabs {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.x-tabs__toggle {
+  /* FAQ: If `display: none` were used, keyboard accessibility would break */
+  position: absolute;
+  opacity: 0;
+}
+
+.x-tabs__tab {
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.x-tabs__content {
+  width: 100%;
+  display: none;
+}
+.x-tabs__content--active {
+  order: 99;
+  display: block;
+}
+.x-tabs__content--force-active {
+  display: contents;
+}

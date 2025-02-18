@@ -6,9 +6,24 @@
  * @type {object.<string,*>}
  */
  const DEFAULT_CLASS_NAMES = {
-  errorList: null,
+  /* The class added when required state has been changed and is active */
   jsIs: 'js-is-required',
-  jsNot: 'js-not-required'
+  /* The class added when required state has been changed and is not active */
+  jsNot: 'js-not-required',
+  /* The class for the wrapper of a field that is required */
+  wrapRequired: undefined,
+};
+
+/**
+ * @constant
+ * @default
+ * @type {object.<*,*>}
+ */
+ const DEFAULT_OPTIONS = {
+  /* @type {boolean} - should scroll to the first required field */
+  shouldScrollToFirst: false,
+  /* @type {DEFAULT_CLASS_NAMES} */
+  classNames: {}
 };
 
 /**
@@ -16,17 +31,19 @@
  * @default
  * @type {object.<string,*>}
  */
- const DEFAULT_OPTIONS = {
-  shouldScrollToFirst: false
+ const DEFAULT_SELECTORS = {
+  /* The wrapper of a field */
+  wrap: 'div'
 };
 
 /**
  * Make a field NOT required (and update field wrapper accordingly)
  * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field
- * @param {string} wrapClassRequired - class on field's wrapper
+ * @param {DEFAULT_CLASS_NAMES} classNames
+ * @param {DEFAULT_SELECTORS} selectors
  */
-function unRequireField( field, classNames ) {
-  const wrap = field.closest('.' +  classNames.wrap );
+function unRequireField( field, classNames, selectors ) {
+  const wrap = field.closest( selectors.wrap );
 
   field.required = false;
   field.classList.add( classNames.jsNot );
@@ -39,10 +56,11 @@ function unRequireField( field, classNames ) {
 /**
  * Make a field REQUIRED (and update field wrapper accordingly)
  * @param {HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement} field
- * @param {string} wrapClassRequired - class on field's wrapper
+ * @param {DEFAULT_CLASS_NAMES} classNames
+ * @param {DEFAULT_SELECTORS} selectors
  */
-function requireField( field, classNames ) {
-  const wrap = field.closest('.' + classNames.wrap );
+function requireField( field, classNames, selectors ) {
+  const wrap = field.closest( selectors.wrap );
 
   field.required = true;
   field.classList.add( classNames.jsIs );
@@ -55,16 +73,14 @@ function requireField( field, classNames ) {
 /**
  * Toggle required attribute (and classes) of fields (and field wrappers)
  * @param {Document|HTMLElement} [scope=document] - where to search for fields
- * @param {string} [wrapClass] - class on all field wrappers
- * @param {string} [wrapRequiredClass] - class on required fields' wrappers
  * @param {object.<string,*>} [opts]
+ * @param {DEFAULT_CLASS_NAMES} [opts.classNames] - to scroll to first such field
+ * @param {DEFAULT_SELECTORS} [opts.selectors] - to scroll to first such field
  * @param {boolean} [opts.shouldScrollToFirst] - to scroll to first such field
  */
-export default function toggleRequiredFields( scope = document, wrapClass, wrapRequiredClass, opts ) {
-  const classNames = Object.assign( DEFAULT_CLASS_NAMES, {
-    wrap: wrapClass,
-    wrapRequired: wrapRequiredClass
-  });
+export default function toggleRequiredFields( scope = document, opts ) {
+  const classNames = Object.assign( DEFAULT_CLASS_NAMES, opts.classNames );
+  const selectors = Object.assign( DEFAULT_SELECTORS, opts.selectors );
   const options = Object.assign( DEFAULT_OPTIONS, opts );
   const requiredFields = scope.querySelectorAll(`
     [required]:is(input, select, textarea),
@@ -73,9 +89,9 @@ export default function toggleRequiredFields( scope = document, wrapClass, wrapR
 
   [ ...requiredFields ].forEach( field => {
     if ( field.hasAttribute('required') ) {
-      unRequireField( field, classNames );
+      unRequireField( field, classNames, selectors );
     } else {
-      requireField( field, classNames );
+      requireField( field, classNames, selectors );
     }
   });
 

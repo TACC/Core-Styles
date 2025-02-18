@@ -5,19 +5,22 @@
 /* https://confluence.tacc.utexas.edu/x/IAA9Cw */
 
 /* SETTINGS */
-/* (none) */
+@import url("./settings/demo.css");
+@import url("./settings/color--demo.css");
 
 /* GENERICS */
 /* (none) */
 
 /* ELEMENTS */
+@import url("./elements/root--demo.css");
 @import url("./elements/demo.css");
 
 /* OBJECTS */
 /* (none) */
 
 /* COMPONENTS */
-/* (none) */
+@import url("./components/c-message.css");
+@import url("./components/demo.css");
 
 /* TRUMPS */
 @import url("./trumps/demo.css");

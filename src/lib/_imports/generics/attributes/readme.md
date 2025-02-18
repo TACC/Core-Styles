@@ -1,0 +1,1 @@
+Renders data-prefix attribute value as prefix to text. Typically used in blog titles.

@@ -1,0 +1,12 @@
+.col-stretch-content-y {
+  display: grid;
+  align-content: normal; /* to overwrite potential alignment */
+}
+.col-muted {
+  color: var(--global-color-primary--x-dark);
+  background: var(--global-color-primary--x-light);
+}
+.col-dark {
+  color: var(--global-color-primary--xx-light);
+  background: var(--global-color-primary--xx-dark);
+}

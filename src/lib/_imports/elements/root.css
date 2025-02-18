@@ -1,0 +1,45 @@
+/*
+Main Root & Sectioning Root
+
+Elements that represent the root of a document or document content.
+
+```
+<html> <body>
+```
+
+Reference:
+
+- [MDN: HTML element reference: Main root](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Main_root)
+- [MDN: HTML element reference: Sectioning root](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Sectioning_root)
+
+Styleguide Elements.MainSectioningRoots
+*/
+
+/* The webpage must be at least as tall as the viewport */
+html,
+body {
+  height: 100%;
+}
+
+
+
+html {
+  /* Set base font but support user-defined browser font size */
+  /* SEE: https://snook.ca/archives/html_and_css/font-size-with-rem */
+  font-size: 62.5%; /* 16px */
+}
+
+
+
+body {
+  margin: 0;
+
+  /* To avoid negative whitespace at right on horz scroll on tiny screen */
+  min-width: 290px; /* developer-decided value */
+
+  /* To overwrite Bootstrap */
+  color: var(--global-color-primary--x-dark);
+
+  /* Prevent trackpad scroll from showing white background beyond page height */
+  overscroll-behavior-y: none;
+}

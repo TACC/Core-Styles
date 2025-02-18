@@ -1,0 +1,103 @@
+/* Fonts */
+
+/* FAQ: Setting font on form would erroneously apply to links and buttons */
+label,
+input,
+select,
+textarea {
+  font-family: var(--global-font-family--sans--portal);
+}
+
+
+
+/* Labels */
+
+label {
+  font-size: var(--global-font-size--small);
+  font-weight: var(--medium);
+
+  line-height: normal;
+}
+/* To avoid extra space between field wrappers */
+/* FAQ: The known use case is a django.cms.forms `.checkboxselectmultiple` */
+li > label:only-child {
+  margin-bottom: unset;
+}
+/* To avoid inline labels for (most) raw form elements */
+/* FAQ: Any specific form styling (e.g. django.cms.forms) manages this */
+label:where(:not(
+  input[type="checkbox"] + *, /* so checkbox labels are still inline */
+  :is(ul, menu) * /* so menus of radios or checkboxes are still inline */
+)) {
+  display: block;
+  margin-bottom: 0.75em;
+}
+/* To avoid extra space between label and list of inputs */
+label + :where(ul, menu),
+.checkboxinput .errorlist /* django-cms-forms */ {
+  margin-top: unset;
+}
+
+
+
+/* Fieldsets */
+
+fieldset:where(:not(:last-child)) {
+  margin-bottom: 3.5rem;
+}
+
+
+
+/* Fields */
+
+input,
+select,
+textarea {
+  border: var(--global-border--normal);
+}
+::placeholder {
+  color: var(--global-color-primary--dark);
+}
+:is(input, textarea):read-only {
+  border-color: transparent;
+}
+input, select {
+  height: 1.4em;
+  box-sizing: content-box;
+}
+
+input[type="time"],
+input[type="date"] {
+  font-family: var(--global-font-family--mono);
+}
+input[type="search"] {
+  outline-offset: revert; /* undo Bootstrap _reboot */
+}
+
+/* FAQ: If tempted to set max-width for inputs, change client layout not CSS
+        (for APCD, a max-width: 50ch was added here by developer)
+        (on TUP-CMS, that max-width was ordered killed by designer) */
+
+input:where( /* Use `:where` so rules are easier to override */
+  [type=time],
+  [type=date],
+  [type=checkbox],
+  [type=radio]
+) {
+  width: min-content;
+}
+
+@media (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    padding: 12px 12px;
+  }
+}
+@media (pointer: fine), (pointer: none) {
+  input,
+  select,
+  textarea {
+    padding: 5px 10px;
+  }
+}

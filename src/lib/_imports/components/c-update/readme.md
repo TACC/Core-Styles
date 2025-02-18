@@ -1,0 +1,2 @@
+- Will show "Update" pill and date
+- Will show "ORIGINAL MESSAGE" and date

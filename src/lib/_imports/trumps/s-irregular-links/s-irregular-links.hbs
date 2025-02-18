@@ -1,10 +1,14 @@
-<dl class="demo-narrow-paragraphs">
-  <dt>Links</dt>
-  <dd class="s-irregular-links">
+<dl class="demo-narrow-paragraphs s-irregular-links">
+  <dt>Normal</dt>
+  <dd>
     {{> @text-and-link }}
   </dd>
-  <dt>Buttons as Links</dt>
-  <dd class="s-irregular-links">
-    {{> @text-and-button-as-link }}
+  <dt>No <code>href</code></dt>
+  <dd>
+    {{> @text-and-link-no-href }}
+  </dd>
+  <dt>Button as Link</dt>
+  <dd>
+    {{> @text-and-button class="c-button c-button--as-link" }}
   </dd>
 </dl>

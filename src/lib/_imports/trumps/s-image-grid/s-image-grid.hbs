@@ -1,0 +1,145 @@
+<dl>
+  <dt>
+    Images Use Full-Size URLs<br />
+    <small><ul>
+      <li>images are larger, so (by default) row height will be taller</li>
+      <li>link <code>href</code> matches image </code>src</code> (not sensible, but usage via a cms plugin create such markup if a user does not add links)</li>
+    </ul></small>
+  </dt>
+  <dd>
+    <div class="s-image-grid s-image-grid--links-are-automatic">
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img large=true }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img large=true wide=true }}
+      </a>
+      <a href="{{> @img-url large=true tall=true }}" target="_blank">
+        {{> @img large=true tall=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img large=true }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img large=true wide=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img large=true }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img large=true wide=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img large=true }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img large=true wide=true }}
+      </a>
+      <a href="{{> @img-url large=true tall=true }}" target="_blank">
+        {{> @img large=true tall=true }}
+      </a>
+    </div>
+  </dd>
+  <dt>
+    Images Use Thumbnail URLs<br />
+    <small><ul>
+      <li>images are smaller, so (by default) row height will be shorter</li>
+      <li>link <code>href</code> is to a larger-size image than the image </code>src</code> (expected markup)</li>
+    </ul></small>
+  </dt>
+  <dd>
+    <div class="s-image-grid s-image-grid--links-are-manual">
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img wide=true }}
+      </a>
+      <a href="{{> @img-url large=true tall=true }}" target="_blank">
+        {{> @img tall=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img wide=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img wide=true }}
+      </a>
+      <a href="{{> @img-url large=true }}" target="_blank">
+        {{> @img }}
+      </a>
+      <a href="{{> @img-url large=true wide=true }}" target="_blank">
+        {{> @img wide=true }}
+      </a>
+      <a href="{{> @img-url large=true tall=true }}" target="_blank">
+        {{> @img tall=true }}
+      </a>
+    </div>
+  </dd>
+  <dt>
+    Grid is a List<br />
+    <small><ul>
+      <li>this grid should look identical to "Images Use Thumbnail URLs"</li>
+      <li>the markup is different, though (this uses &lt;ul&gt; and &lt;li&gt;'s)</li>
+    </ul></small>
+  </dt>
+  <dd>
+    <ul class="s-image-grid s-image-grid--links-are-manual">
+      <li>
+        <a href="{{> @img-url large=true }}" target="_blank">
+          {{> @img }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true wide=true }}" target="_blank">
+          {{> @img wide=true }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true tall=true }}" target="_blank">
+          {{> @img tall=true }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true }}" target="_blank">
+          {{> @img }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true wide=true }}" target="_blank">
+          {{> @img large=true wide=true }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true }}" target="_blank">
+          {{> @img }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true wide=true }}" target="_blank">
+          {{> @img wide=true }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true }}" target="_blank">
+          {{> @img }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true wide=true }}" target="_blank">
+          {{> @img wide=true }}
+        </a>
+      </li>
+      <li>
+        <a href="{{> @img-url large=true tall=true }}" target="_blank">
+          {{> @img tall=true }}
+        </a>
+      </li>
+    </ul>
+  </dd>
+</dl>

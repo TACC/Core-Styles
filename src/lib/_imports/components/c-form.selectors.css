@@ -1,0 +1,46 @@
+@custom-selector :--c-form
+    .c-form;
+
+/* Generic */
+
+@custom-selector :--c-form__title
+    .c-form__title;
+@custom-selector :--c-form__desc
+    .c-form__desc;
+
+@custom-selector :--c-form__errors
+    :where(.c-form__errors);
+@custom-selector :--c-form__errors_list
+    :--c-form__errors;
+@custom-selector :--c-form__errors--form /* submission errors */
+    :is(.c-form > .c-form__errors);
+@custom-selector :--c-form__errors--field /* validation errors */
+    :is(.c-form__field .c-form__errors);
+
+@custom-selector :--c-form__field
+    .c-form__field;
+@custom-selector :--c-form__field--has-required
+    :--c-form__field.has-required;
+@custom-selector :--c-form__field--has-checkbox
+    :--c-form__field.has-type-check;
+
+@custom-selector :--c-form__menu
+    .c-form__field > menu;
+
+@custom-selector :--c-form__help
+    .c-form__help;
+
+@custom-selector :--c-form__badge
+    .c-form__star;
+
+@custom-selector :--c-form__buttons
+    .c-form__buttons;
+@custom-selector :--c-form__button
+    .c-form__button;
+
+/* Login */
+
+@custom-selector :--c-form--login
+    .c-form--login;
+@custom-selector :--c-form__nav
+    .c-form__nav;

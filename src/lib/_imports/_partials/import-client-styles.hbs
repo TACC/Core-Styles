@@ -1,0 +1,17 @@
+<style>
+{{#each styles}}
+  {{#if this.isInternal}}
+    {{#if this.layer}}
+    @import url('{{path this.path}}') layer({{this.layer}});
+    {{else}}
+    @import url('{{path this.path}}');
+    {{/if}}
+  {{else}}
+    {{#if this.layer}}
+    @import url('{{this.path}}') layer({{this.layer}});
+    {{else}}
+    @import url('{{this.path}}');
+    {{/if}}
+  {{/if}}
+{{/each}}
+</style>

@@ -1,0 +1,6 @@
+/* To make a footer stick to bottom of page */
+/* https://css-tricks.com/a-clever-sticky-footer-technique/ */
+body > main ~ footer {
+  position: sticky;
+  top: 100vh;
+}

@@ -1,0 +1,34 @@
+/* Basic Structure */
+
+.align-right,
+.align-center,
+.align-left {
+  margin-bottom: var(--global-space--grid-gap);
+}
+.align-right {
+  float: right;
+  margin-left: var(--global-space--grid-gap);
+}
+.align-left {
+  float: left;
+  margin-right: var(--global-space--grid-gap);
+}
+.align-center {
+  /* Client should manage display */
+  /* FAQ: Display is likely block-ish e.g. block, inline-block, table */
+  /* FAQ: We cannot assume which display is best for client */
+  /* display: ... */
+  margin-inline: auto;
+}
+
+
+
+/* Edge Cases */
+
+/* To arbitrarily force wrap to prevent taking up too much content */
+.align-right,
+.align-left,
+.align-center {
+  /* NOTE: Demo has been given the default */
+  /* max-width: 50%; /* a default is sensible, but leave it to client */
+}

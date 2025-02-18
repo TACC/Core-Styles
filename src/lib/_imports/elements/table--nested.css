@@ -1,5 +1,3 @@
-@import url('../tools/x-truncate.css');
-
 @supports selector(:has(table)) {
   /* To ensure matching row height of nested table and parent table */
   table:has(table) :is(td, th) { white-space: nowrap; }
@@ -31,21 +29,32 @@
   td.has-table { padding: 0; }
 }
 
-/* To replace parent table columns above with nested table columns */
+/* To replace any parent table columns above with nested table columns */
 /* FAQ: Pulls nested table up by the height of the parent table head */
-tr table {
-  --offset: calc(-1 * 33px); /* WARNING: manually calculated */
+thead + tbody tr table {
+  --offset-distance: calc(
+    var(--cell-pad-vert) * 2
+    +
+    var(--cell-line-height) * var(--font-size)
+    +
+    var(--global-border-width--normal)
+  );
+  --offset: calc( var(--offset-distance) * -1 );
 
   transform: translateY(var(--offset));
   margin-bottom: var(--offset);
 }
 /* FAQ: Hides any parent table head underneath nested table head */
-tr:first-of-type thead {
+thead + tbody tr:first-of-type thead {
   background: var(--global-color-background--app);
 }
 /* FAQ: Hides all successive (thus redundant) nested table heads */
-tr:not(:first-of-type) thead {
+thead + tbody tr:not(:first-of-type) thead {
   visibility: hidden;
+}
+/* FAQ: Re-colors border of all successive nested rows (to match parent row) */
+thead + tbody tr:not(:first-of-type) tbody :is(td,th) {
+  border-color: var(--global-color-primary--light);
 }
 
 /* To reduce inline padding

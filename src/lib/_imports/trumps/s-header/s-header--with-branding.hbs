@@ -1,0 +1,32 @@
+<!-- FAQ:
+
+This is the markup of the #s-header, as of 2020-03-11,
+from https://frontera-portal.tacc.utexas.edu/. It has:
+
+- Bootstrap class names
+  (also via `./s-portal-nav.html`)
+  (also via `./s-cms-nav.html`)
+- Bootstrap attributes
+  (also via `./s-portal-nav.html`)
+- multiple internal scope (`s-`) classes
+  (only via `./s-portal-nav.html`)
+  (only via `./s-cms-nav.html`)
+- FontAwesome class names
+  (only via `./s-portal-nav.html`)
+- illegally-nested markup (`ul > div > li`)
+  (only via `./s-portal-nav.html`)
+-->
+<div class="branding-header">
+  <a href="https://www.nsf.gov/" target="_blank">
+    <img class="branding-logo branding-nsf" src="http://cep.tacc.utexas.edu/static/site_cms/img/org_logos/nsf-white.png" alt="NSF Logo">
+  </a>
+  <span class="branding-seperator"></span>
+  <a href="https://www.tacc.utexas.edu/" target="_blank">
+    <img class="branding-logo branding-tacc" src="http://cep.tacc.utexas.edu/static/site_cms/img/org_logos/tacc-white.png" alt="TACC Logo">
+  </a>
+  <span class="branding-seperator"></span>
+  <a href="https://www.utexas.edu/" target="_blank">
+    <img class="branding-logo branding-utaustin" src="http://cep.tacc.utexas.edu/static/site_cms/img/org_logos/utaustin-white.png" alt="University of Texas at Austin Logo">
+  </a>
+</div>
+{{> @s-header}}

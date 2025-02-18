@@ -2,26 +2,45 @@
 
 The shared styles for TACC WMA Workspace Portals & Websites
 
+
 ## Known Clients
 
 - [Core CMS], the base CMS code for TACC WMA CMS Websites
 - [Core Portal], the base Portal code for TACC WMA CMS Websites
 - [TUP UI], the client code for TACC User Portal
+- [TACC Docs], the documentation for TACC
+    - and, indirectly, [DesignSafe User Guide]
+- [Tapis Authenticator], the web server for Tapis v3 auth
+- [Hazmapper], a TACC application for geospatial data
+- [DesignSafe Portal], the DesignSafe-CI Portal code
+
 
 ## Table of Contents
 
 - [External Project Usage](#external-project-usage)
+   - [A. Load from a Project](#a-load-from-a-project)
+   - [B. Install into a Project](#b-install-into-a-project)
 - [Local Development Setup](#local-development-setup)
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
+- [Bootstrap](#bootstrap)
 
 
 ## External Project Usage
 
-### Install This Package
+### A. Load from a Project
 
-1. Installwith any package manager e.g.:
+> [!NOTE]
+> This is likely the easier and simpler solution. Try this first.
+
+See [`QUICKSTART.md`](QUICKSTART.md).
+
+### B. Install into a Project
+
+#### Install This Package
+
+1. Install with any package manager e.g.:
 
     - `npm install @tacc/core-styles`
     - `yarn add @tacc/core-styles`
@@ -30,15 +49,15 @@ The shared styles for TACC WMA Workspace Portals & Websites
    - pre-compiled, from `/dist`
    - source files, from `/src/lib/_imports`
 
-### Build from Source
+#### Build from Source
 
-#### Via Your Environment's [PostCSS](https://github.com/postcss/postcss#readme)
+##### Via Your Environment's [PostCSS](https://github.com/postcss/postcss#readme)
 
 Please review [the plugins expected](./src/.postcssrc.base.yml).
 
-#### Via Core-Styles API
+##### Via Core-Styles API
 
-##### JavaScript
+###### JavaScript
 
 <details><summary><code>require('core-styles').buildStylesheets</code></summary>
 
@@ -72,7 +91,7 @@ buildStylesheets(
 
 </details>
 
-##### CLI
+###### CLI
 
 <details><summary><code>core-styles</code></summary>
 
@@ -148,7 +167,7 @@ Notes:
 
 ## Local Development Setup
 
-### Prequisites for Running
+### Prerequisites for Running
 
 * Nodejs 15.x
 
@@ -236,38 +255,12 @@ _Later_, the demo may be deployed indpendently and `core-styles.….css` served 
 
 ## Contributing
 
-### Development Workflow
+To contribute, first read [How to Contirbute][Contributing].
 
-We use a modifed version of [GitFlow](https://datasift.github.io/gitflow/IntroducingGitFlow.html) as our development workflow. Our [development site](https://dev.cep.tacc.utexas.edu) (accessible behind the TACC Network) is always up-to-date with `main`, while the [production site](https://prod.cep.tacc.utexas.edu) is built to a hashed commit tag.
 
-- Feature branches contain major updates, bug fixes, and hot fixes with respective branch prefixes:
-  - `task/` for features and updates
-  - `bug/` for bugfixes
-  - `fix/` for hotfixes
+## Bootstrap
 
-### Best Practices
-
-Sign your commits ([see this link](https://help.github.com/en/github/authenticating-to-github/managing-commit-signature-verification) for help).
-
-### Publishing Workflow
-
-Only authorized team members may publish.
-
-1. (one time) Login to npm i.e. `npm login`.
-1. Create new branch for version bump.
-1. Update `CHANGELOG.md`.
-1. Update version via `npm version N.N.N`.
-1. Update dist via `npm run build:css --build-id=vN.N.N`.
-1. Commit, push, PR, review, merge.
-1. Create release and tag on GitHub.
-1. Publish to NPM via `npm publish --access public`.
-
-> **Notice**: Project build will automatically occur before publish.
-
-### Resources
-
-- [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-- [Research & Development](https://confluence.tacc.utexas.edu/x/FADMBQ)
+Core Styles was an effort to replace Bootstrap. Core Styles is compatible with Bootstrap. [Learn more.][Bootstrap]
 
 <!-- Link Aliases -->
 
@@ -276,3 +269,11 @@ Only authorized team members may publish.
 [core cms]: https://github.com/TACC/Core-CMS
 [core portal]: https://github.com/TACC/Core-Portal
 [tup ui]: https://github.com/TACC/tup-ui
+[tacc docs]: https://github.com/TACC/TACC-Docs
+[designsafe user guide]: https://github.com/DesignSafe-CI/DS-User-Guide
+[designsafe portal]: https://github.com/DesignSafe-CI/portal
+[tapis authenticator]: https://github.com/tapis-project/authenticator
+[hazmapper]: https://github.com/TACC-Cloud/hazmapper
+
+[Contributing]: ./docs/contributing.md
+[Bootstrap]: ./docs/bootstrap.md

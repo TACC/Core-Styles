@@ -1,0 +1,14 @@
+<figure {{#if class}}class="{{ class }}"{{/if}}>
+  {{#if use-image-wide}}
+    {{> @img large=true wide=true }}
+  {{else if use-image-tall}}
+    {{> @img large=true tall=true }}
+  {{else}}
+    {{> @img }}
+  {{/if}}
+  <figcaption>
+    I am a &lt;figcaption&gt; within a &lt;figure&gt;. 
+    {{> @message tag="span" type="warning" scope="inline"
+        content="I may be wider than image. If so, should I wrap?" }}
+  </figcaption>
+</figure>

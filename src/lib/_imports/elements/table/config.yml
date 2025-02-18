@@ -1,5 +1,3 @@
-context:
-  shouldLoadCMS: true # temporary dependence, until proven to work on Portal
 variants:
   - name: default
     label: Basic
@@ -39,8 +37,245 @@ variants:
                 text: View Details
               - is-button: true
                 text: Delete
-  - name: paragraph
+  - name: cms
+    label: Basic (CMS)
     context:
+      shouldLoadCMS: true
+      data:
+        cols:
+          - ID
+          - Name
+          - Size
+          - Time
+          - Actions
+        rows:
+          - id: n234as
+            name-link: apple-sauce
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 56l810
+            name-link: milk-shake-032
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 3r56xc
+            name-link: white-candy-5
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: docs
+    label: Basic (Docs)
+    context:
+      shouldLoadDocs: true
+      data:
+        cols:
+          - ID
+          - Name
+          - Size
+          - Time
+          - Actions
+        rows:
+          - id: n234as
+            name-link: apple-sauce
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 56l810
+            name-link: milk-shake-032
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 3r56xc
+            name-link: white-candy-5
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: no-header
+    context:
+      data:
+        rows:
+          - id: n234as
+            name-link: apple-sauce
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 56l810
+            name-link: milk-shake-032
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 3r56xc
+            name-link: white-candy-5
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: no-header-cms
+    label: No Header (CMS)
+    context:
+      shouldLoadCMS: true
+      data:
+        rows:
+          - id: n234as
+            name-link: apple-sauce
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 56l810
+            name-link: milk-shake-032
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 3r56xc
+            name-link: white-candy-5
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: no-header-docs
+    label: No Header (Docs)
+    context:
+      shouldLoadDocs: true
+      data:
+        rows:
+          - id: n234as
+            name-link: apple-sauce
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 56l810
+            name-link: milk-shake-032
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - id: 3r56xc
+            name-link: white-candy-5
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: via-paragraphs
+    context:
+      data:
+        rows:
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+  - name: via-paragraphs-cms
+    view: 'table--via-paragraphs.hbs'
+    label: Via Paragraphs (CMS)
+    context:
+      shouldLoadCMS: true
+      data:
+        rows:
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+  - name: via-paragraphs-docs
+    view: 'table--via-paragraphs.hbs'
+    label: Via Paragraphs (Docs)
+    context:
+      shouldLoadDocs: true
+      data:
+        rows:
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+          - paragraph: true
+  - name: with-paragraphs
+    label: With Paragraphs
+    context:
+      data:
+        cols:
+          - Name
+          - Summary
+          - Actions
+        rows:
+          - name: apple-sauce
+            paragraph: true
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - name: milk-shake-032
+            paragraph: true
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+          - name: white-candy-5
+            paragraph: true
+            acts:
+              - is-link: true
+                text: View Details
+              - is-button: true
+                text: Delete
+  - name: with-paragraphs-portal
+    label: With Paragraphs (Portal)
+    context:
+      shouldLoadPortal: true
       data:
         cols:
           - Name
@@ -90,15 +325,15 @@ variants:
               rows:
                 - name: Corral
                   custom-1: 50 GB
-                  custom-2: <span class="c-pill">13 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-danger">13 GB</span>
                   time: 12/01/2019 11:04:19
                 - name: Hikari
                   custom-1: 21 SU
-                  custom-2: <span class="c-pill">1.5 SU</span>
+                  custom-2: <span class="c-pill c-pill--is-warning">1.5 SU</span>
                   time: 03/22/2021 05:23:01
                 - name: Ranch
                   custom-1: 1 TB
-                  custom-2: <span class="c-pill">932 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-success">932 GB</span>
                   time: 12/01/2019 11:04:19
           - id: Vermillion
             name: Nathan Fillion
@@ -112,15 +347,15 @@ variants:
               rows:
                 - name: Corral
                   custom-1: 50 GB
-                  custom-2: <span class="c-pill">13 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-danger">13 GB</span>
                   time: 12/01/2019 11:04:19
                 - name: Hikari
                   custom-1: 21 SU
-                  custom-2: <span class="c-pill">1.5 SU</span>
+                  custom-2: <span class="c-pill c-pill--is-warning">1.5 SU</span>
                   time: 03/22/2021 05:23:01
                 - name: Ranch
                   custom-1: 1 TB
-                  custom-2: <span class="c-pill">932 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-success">932 GB</span>
                   time: 12/01/2019 11:04:19
           - id: Emerald
             name: Wesley Snipes
@@ -134,13 +369,13 @@ variants:
               rows:
                 - name: Corral
                   custom-1: 50 GB
-                  custom-2: <span class="c-pill">13 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-danger">13 GB</span>
                   time: 12/01/2019 11:04:19
                 - name: Hikari
                   custom-1: 21 SU
-                  custom-2: <span class="c-pill">1.5 SU</span>
+                  custom-2: <span class="c-pill c-pill--is-warning">1.5 SU</span>
                   time: 03/22/2021 05:23:01
                 - name: Ranch
                   custom-1: 1 TB
-                  custom-2: <span class="c-pill">932 GB</span>
+                  custom-2: <span class="c-pill c-pill--is-success">932 GB</span>
                   time: 12/01/2019 11:04:19

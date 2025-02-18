@@ -1,0 +1,7 @@
+@import url("./c-message.selectors.css");
+
+:--c-message--scope-section,
+:--c-message--scope-global {
+  padding-block: 20px;
+  padding-inline: 30px;
+}

@@ -1,0 +1,11 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+/* To make a card with a grid inside span all columns */
+.o-section > .c-card:has(.o-grid) {
+  grid-column: 1/-1
+}
+
+/* To prevent cards from stretching to match grid's equal row height */
+.o-grid--col-min-width {
+  grid-auto-rows: unset;
+}

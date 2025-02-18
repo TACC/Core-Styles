@@ -1,0 +1,7 @@
+body {
+  font-family: var(--global-font-family--sans);
+  font-size: var(--global-font-size--medium);
+  line-height: 1.6;
+
+  letter-spacing: 0.025rem;
+}

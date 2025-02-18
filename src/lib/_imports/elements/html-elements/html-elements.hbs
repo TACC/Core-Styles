@@ -1,0 +1,83 @@
+<dl>
+
+  <dt>Forms</dt>
+  <dd>
+    <form>
+      <label>&lt;input&gt;</label>
+      <input />
+      <label>&lt;select&gt;</label>
+      <select>
+        <option value="" selected="">
+          Please select a dinosaur
+        </option>
+        <optgroup label="Theropods">
+            <option>Tyrannosaurus</option>
+            <option>Velociraptor</option>
+            <option>Deinonychus</option>
+        </optgroup>
+        <optgroup label="Sauropods">
+            <option>Diplodocus</option>
+            <option>Saltasaurus</option>
+            <option>Apatosaurus</option>
+        </optgroup>
+      </select>
+      <label>&lt;textarea&gt;</label>
+      <textarea></textarea>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="clear">Clear</button>
+      <button type="button">Button</button>
+    </form>
+  </dd>
+
+  <dt>Text Content</dt>
+  <dd>
+    <dl>
+      <dt>Paragraphs &amp; Inline Text Semantics</dt>
+      <dd>
+        <p>{{> @text-of-one-paragraph-medium }}</p>
+        <p>{{> @text-of-one-paragraph-with-tags }}</p>
+      </dd>
+
+      <dt>Lists</dt>
+      <dd>
+        <dl>
+          <dt>Unordered</dt>
+          <dd>
+            <ul>
+              <li>LX 1234</li>
+              <li>LOVE 45</li>
+              <li>OLD 555</li>
+            </ul>
+          </dd>
+          <dt>Ordered</dt>
+          <dd>
+            <ul>
+              <li>One Fish</li>
+              <li>Two Fish</li>
+              <li>Red Fish</li>
+              <li>Blue Fish</li>
+            </ul>
+          </dd>
+          <dt>Definition List</dt>
+          <dd>
+            <dl class="no-demo-styles">
+              <dt>CSS</dt><dd>Cascading Stylesheet</dd>
+              <dt>HTML</dt><dd>Hypertext Markup Language</dd>
+              <dt>JSON</dt><dd>JavaScript Object Notation</dd>
+            </dl>
+          </dd>
+        </dl>
+      </dd>
+
+      <dt>Figure <small>(Narrow Image)</small></dt>
+      <dd>{{> @figure }}</dd>
+
+      <dt>Figure <small>(Dynamic-Width Image)</small></dt>
+      <dd>{{> @figure class="with-dynamic-width-image" use-image-wide=true }}</dd>
+
+      <dt>Blockquote</dt>
+      <dd>{{> @blockquote }}</dd>
+    </dl>
+  </dd>
+</dl>

@@ -1,0 +1,22 @@
+@custom-selector :--c-island
+  .island,
+  .c-island;
+
+:--c-island {
+  padding: 1em 2em;
+
+  border-top-style: solid;
+  border-top-width: var(--global-border-width--thick);
+  border-top-color: var(--global-color-tertiary--normal);
+
+  background-color: var(--global-color-primary--x-light);
+
+  font-style: italic;
+}
+
+:--c-island hr {
+  margin-block: 2em;
+
+  border-top: none;
+  border-bottom: var(--global-border-width--normal) solid currentColor;
+}

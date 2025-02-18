@@ -1,0 +1,45 @@
+@import url("../tools/x-grid.css");
+
+
+
+/* Grid Layout */
+
+.s-image-grid {
+  @extend .x-grid--layout-cols-equal-min-width-max-count;
+
+  /*
+  --gap: var(--global-space--grid-gap);
+  --max-cols: 7;
+  --min-width: 250px;
+  --row-height: auto;
+  */
+}
+.s-image-grid * {
+  max-width: 100%; /* effectual if cell width is smaller than content */
+  max-height: 100%; /* effectual if cell height is smaller than content */
+}
+
+
+
+/* List Layout */
+
+ul.s-image-grid {
+  padding-inline-start: unset; /* undo browser styles */
+  margin-bottom: unset; /* undo core-styles.base.css */
+}
+ul.s-image-grid > li {
+  list-style: none;
+}
+
+
+
+/* Image Layout */
+
+.s-image-grid > a,
+.s-image-grid > li,
+.s-image-grid > li > a {
+  /* So image is horizontally centered */
+  align-items: center;
+  display: flex; /* FAQ: `grid` would allow overflow; `flex` does not */
+  justify-content: center;
+}

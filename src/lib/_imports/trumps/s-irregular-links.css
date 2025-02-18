@@ -1,14 +1,15 @@
+@import url('../components/c-button.selectors.css');
 @import url('../tools/x-link.css');
 
 .s-irregular-links a,
-.s-irregular-links .c-button--as-link {
-  @extend .x-link--irregular;
+.s-irregular-links :--c-button--as-link {
+  @mixin link--irregular;
 }
 .s-irregular-links a:hover,
-.s-irregular-links .c-button--as-link:hover {
-  @extend .x-link--irregular--hover;
+.s-irregular-links :--c-button--as-link:hover {
+  @mixin link--irregular--hover;
 }
 .s-irregular-links a:active,
-.s-irregular-links .c-button--as-link:active {
-  @extend .x-link--irregular--active;
+.s-irregular-links :--c-button--as-link:active {
+  @mixin link--irregular--active;
 }

@@ -1,69 +1,37 @@
-/*
-Breadcrumbs
+@import url("../tools/x-breadcrumbs.css");
 
-A list of links to ancestor navigation (pages or sections that are a parent, grandparent, et cetera of the current page or section) and the current page or section itself.
-
-Notice: A scope class is used to enforce appropriate semantic HTML.
-
-Markup:
-<!-- Major Navigation -->
-<!-- FAQ: Use this major navigation markup for global breadcrumbs -->
-<!-- SEE: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav#usage_notes -->
-<nav class="s-breadcrumbs">
-  <ol>
-      <li><a href="/"><span>Home</span></a></li>
-      <li><a href="/"><span>Science</span></a></li>
-      <li><span>Publications</span></li>
-  </ol>
-</nav>
-<!-- Minor Navigation -->
-<ol class="s-breadcrumbs">
-    <li><a href="/"><span>Home</span></a></li>
-    <li><a href="/"><span>Science</span></a></li>
-    <li><span>Publications</span></li>
-</ol>
-
-Styleguide Trumps.Scopes.Breadcrumbs
-*/
-@import url("../tools/x-truncate.css");
-
-
-
-
-
-/* Base i.e. Container */
-
-nav.s-breadcrumbs {
-  padding-top: 15px;
-
-  font-size: var(--global-font-size--x-small);
-
-  text-transform: uppercase;
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs:where(ol),
+.s-breadcrumbs-via-ul {
+  @mixin x-breadcrumbs;
+}
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs-via-ul {
+  @mixin x-breadcrumbs-major;
 }
 
-
-
-/* Elements i.e. Content */
-
-/* To undo default list styles */
-nav.s-breadcrumbs ol {
-  list-style: none; /* overwrite browser styles */
-  padding-left: unset; /* undo html-elements.css */
-  margin-bottom: unset; /* undo html-elements.css */
-
-  font-weight: var(--global-font-weight--medium);
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs:where(ol),
+.s-breadcrumbs-via-ul ul {
+  @mixin x-breadcrumbs__list;
+}
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs-via-ul ul {
+  @mixin x-breadcrumbs-major__list;
 }
 
-ol.s-breadcrumbs li,
-nav.s-breadcrumbs ol li {
-  display: inline-block;
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs:where(ol) li,
+.s-breadcrumbs-via-ul ul li {
+  @mixin x-breadcrumbs__list-item;
+}
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs-via-ul ul li {
+  @mixin x-breadcrumbs-major__list-item;
 }
 
-ol.s-breadcrumbs li + li::before,
-nav.s-breadcrumbs ol li + li::before {
-  content: ' > ';
-}
-
-nav.s-breadcrumbs ol li:last-child span {
-  font-weight: var(--bold);
+.s-breadcrumbs:where(nav) ol li + li,
+.s-breadcrumbs:where(ol) li + li,
+.s-breadcrumbs-via-ul ul li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
 }

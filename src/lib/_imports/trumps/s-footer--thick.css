@@ -1,0 +1,5 @@
+@import url("./s-footer.properties.css");
+
+.s-footer {
+  padding-inline: var(--pad-horz--thick);
+}

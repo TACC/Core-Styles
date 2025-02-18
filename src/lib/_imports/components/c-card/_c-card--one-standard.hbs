@@ -1,0 +1,17 @@
+{{#if variant}}
+
+<article class="c-card c-card--standard-{{variant}}">
+  <h3>Card - Standard {{variant}}</h3>
+  <p>This is a backup variant.
+    {{> @message tag="span" type="warning" scope="inline"
+        content="Only use if <code>c-card--standard</code> fails." }}</p>
+</article>
+
+{{else}}
+
+<article class="c-card c-card--standard">
+  <h3>Card - Standard</h3>
+  <p>{{> @text-of-one-paragraph-short }}</p>
+</article>
+
+{{/if}}

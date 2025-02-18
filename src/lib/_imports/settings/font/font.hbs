@@ -1,0 +1,40 @@
+{{#if shouldShowSizeMessage}}
+{{> @message
+    tag="p"
+    content='There are currently <em><strong>no</strong> default font sizes <strong>nor</strong> default font families</em>. A client must load <strong>CMS</strong> styles or <strong>Portal</strong> styles or their own custom font sizes.'
+}}
+{{/if}}
+<dl>
+  <dt>Family</dt>
+  <dd>
+    <dl>
+      {{> @font--family modifier="sans" name="Sans" }}
+      {{> @font--family modifier="serif" name="Serif" }}
+      {{> @font--family modifier="mono" name="Mono" }}
+    </dl>
+  </dd>
+</dl>
+<dl>
+  <dt>Size</dt>
+  <dd>
+    <dl>
+      {{> @font--size modifier="x-small" name="X Small" }}
+      {{> @font--size modifier="small" name="Small" }}
+      {{> @font--size modifier="medium" name="Medium" }}
+      {{> @font--size modifier="large" name="Large" }}
+      {{> @font--size modifier="x-large" name="X Large" }}
+      {{> @font--size modifier="xx-large" name="XX Large" }}
+      {{> @font--size modifier="xxx-large" name="XXX Large" }}
+    </dl>
+</dl>
+<dl>
+  <dt>Font Weights</dt>
+  <dd>
+    <dl>
+      {{> @font--weight modifier="regular" name="Regular"}}
+      {{> @font--weight modifier="medium" name="Medium"}}
+      {{> @font--weight modifier="bold" name="Bold"}}
+      {{> @font--weight modifier="black" name="Black"}}
+    </dl>
+  </dd>
+</dl>

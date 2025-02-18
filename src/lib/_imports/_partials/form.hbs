@@ -1,0 +1,541 @@
+{{#message}}
+{{> @message content=. }}
+{{/message}}
+
+{{#if markup.wrap_start}}
+{{{markup.wrap_start}}}
+{{else}}
+<form action="" method="POST" enctype="multipart/form-data" class="{{ class.root }}">
+
+  <h3 {{#if class.title }}class="{{ class.title }}"{{/if}}>
+    (Optional) Title of Form
+  </h3>
+  <p {{#if class.desc }}class="{{ class.desc }}"{{/if}}>
+    (Optional) Description of the form.
+  </p>
+{{/if}}
+
+  {{> @form-errors class=class.errors wrapClass=class.form_errors_wrap }}
+
+  <div class="{{ class.field }} {{ class.has_required }}">
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="name">
+      Name
+      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
+        aria-label="(required)">*</span>
+    </label>
+
+    <input
+      type="text"
+      name="name"
+      required=""
+      placeholder="Your name"
+      id="name"
+    />
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      We use this to identify your submission.
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="favorite-fruit">Favorite Fruit</label>
+
+    <select name="favorite-fruit" id="favorite-fruit">
+      <option value="" selected="">
+        Please select an option
+      </option>
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Cherry">Cherry</option>
+      <option value="Durian">Durian</option>
+      <option value="Other">Other</option>
+      <option value="Whatever">Whatever</option>
+    </select>
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Choose your favorite fruit.
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="wake-up-time">Wake Up Time</label>
+
+    <input
+      type="time"
+      name="wake-up-time"
+      id="wake-up-time"
+    />
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      We use this to know when to wake you up.
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label>Radio stations</label>
+
+    {{#with inputListTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}menu{{/if}}
+      {{#if ../class.radio_menu }}class="{{../class.radio_menu}}"{{/if}}
+      id="radio-stations"
+    >
+      <li>
+        <label for="radio-stations-0">
+          <input
+            type="radio"
+            name="radio-stations"
+            value="LX 1234"
+            id="radio-stations-0"
+          />
+          LX 1234
+        </label>
+      </li>
+      <li>
+        <label for="radio-stations-1">
+          <input
+            type="radio"
+            name="radio-stations"
+            value="LOVE 45"
+            id="radio-stations-1"
+          />
+          LOVE 45
+        </label>
+      </li>
+      <li>
+        <label for="radio-stations-2">
+          <input
+            type="radio"
+            name="radio-stations"
+            value="OLD 555"
+            id="radio-stations-2"
+          />
+          OLD 555
+        </label>
+      </li>
+    </{{#if tag}}{{tag}}{{else}}menu{{/if}}>
+    {{/with}}
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Which radio stations do you prefer?
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div class="{{ class.field }} {{ class.has_checkbox }}">
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <input
+      type="checkbox"
+      name="checking-out"
+      id="checking-out"
+    />
+
+    <label for="checking-out">Checking Out?</label>
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Are you checking out today?
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="">
+      Which fish do you want?
+    </label>
+
+    {{#with inputListTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}menu{{/if}}
+      {{#if ../class.check_menu }}class="{{../class.check_menu}}"{{/if}}
+      id="which-fish-do-you-want"
+    >
+      <li>
+        <label for="which-fish-do-you-want-0">
+          <input
+            type="checkbox"
+            name="which-fish-do-you-want"
+            value="one fish"
+            id="which-fish-do-you-want-0"
+          />
+          one fish
+        </label>
+      </li>
+      <li>
+        <label for="which-fish-do-you-want-1">
+          <input
+            type="checkbox"
+            name="which-fish-do-you-want"
+            value="two fish"
+            id="which-fish-do-you-want-1"
+          />
+          two fish
+        </label>
+      </li>
+      <li>
+        <label for="which-fish-do-you-want-2">
+          <input
+            type="checkbox"
+            name="which-fish-do-you-want"
+            value="red fish"
+            id="which-fish-do-you-want-2"
+          />
+          red fish
+        </label>
+      </li>
+      <li>
+        <label for="which-fish-do-you-want-3">
+          <input
+            type="checkbox"
+            name="which-fish-do-you-want"
+            value="blue fish"
+            id="which-fish-do-you-want-3"
+          />
+          blue fish
+        </label>
+      </li>
+      <li>
+        <label for="which-fish-do-you-want-4">
+          <input
+            type="checkbox"
+            name="which-fish-do-you-want"
+            value="all the fish"
+            id="which-fish-do-you-want-4"
+          />
+          all the fish
+        </label>
+      </li>
+    </{{#if tag}}{{tag}}{{else}}menu{{/if}}>
+    {{/with}}
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="hangry-time">Hangry Time</label>
+
+    <select name="hangry-time" id="hangry-time">
+      <option value="" selected="">
+        Please select an option
+      </option>
+      <option value="Morning">Morning</option>
+      <option value="Noon">Noon</option>
+      <option value="Afternoon">Afternoon</option>
+      <option value="Evening">Evening</option>
+      <option value="Night">Night</option>
+      <option value="Midnight">Midnight</option>
+    </select>
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      At which time of day do you get hangry?
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="life-story">Life Story</label>
+
+    <textarea
+      name="life-story"
+      cols="40"
+      rows="10"
+      id="life-story"
+    ></textarea>
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Go on, tell me everything.
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="what-day-is-it">What day is it?</label>
+
+    <input
+      type="date"
+      name="what-day-is-it"
+      id="what-day-is-it"
+    />
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Please enter today's date.
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/if}}
+
+    <label for="your-favorite-picture">Your favorite picture</label>
+
+    <input
+      type="file"
+      name="your-favorite-picture"
+      id="your-favorite-picture"
+    />
+
+    {{#unless (eq errorLoc "top")}}
+      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+    {{/unless}}
+
+    {{#with helpTextTag as | tag |}}
+    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+      Upload your favorite image.
+      <small class="{{../class.hint}}">
+        Supported types:
+        <code>.jpeg</code>,<code>.jpg</code>,<code>.gif</code>,<code>.png</code>
+      </small>
+    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+    {{/with}}
+  </div>
+
+  <div class="{{ class.field }} {{ class.has_spam_filter }} {{ class.has_required }}">
+    <label for="recaptcha_g9y93gP8">
+      Are you a robot?
+      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
+        aria-label="(required)">*</span>
+    </label>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script type="text/javascript">
+      // Submit function to be called, after reCAPTCHA was successful. var
+      onSubmit_9e32f28ccb9545109ff6ae891f9af324 = function(token){" "}
+      {console.log("reCAPTCHA validated for 'data-widget-uuid=\"9e32f28ccb9545109ff6ae891f9af324\"'")};
+    </script>
+    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" required="" id="recaptcha_g9y93gP8" data-widget-uuid="9e32f28ccb9545109ff6ae891f9af324" data-callback="onSubmit_9e32f28ccb9545109ff6ae891f9af324" data-size="normal"></div>
+  </div>
+
+  <fieldset class="{{ class.field }} {{ class.has_spam_filter }} {{ class.has_required }}">
+    <legend>sample fields in a fieldset</legend>
+
+    {{!-- FAQ: Copied from first two fields --}}
+    <div class="{{ class.field }} {{ class.has_required }}">
+      {{#if (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/if}}
+
+      <label for="name">
+        Name
+        <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
+          aria-label="(required)">*</span>
+      </label>
+
+      <input
+        type="text"
+        name="name"
+        required=""
+        placeholder="Your name"
+        id="name"
+      />
+
+      {{#unless (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/unless}}
+
+      {{#with helpTextTag as | tag |}}
+      <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+        We use this to identify your submission.
+      </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+      {{/with}}
+    </div>
+
+    <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+      {{#if (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/if}}
+
+      <label for="favorite-fruit">Favorite Fruit</label>
+
+      <select name="favorite-fruit" id="favorite-fruit">
+        <option value="" selected="">
+          Please select an option
+        </option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Cherry">Cherry</option>
+        <option value="Durian">Durian</option>
+        <option value="Other">Other</option>
+        <option value="Whatever">Whatever</option>
+      </select>
+
+      {{#unless (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/unless}}
+
+      {{#with helpTextTag as | tag |}}
+      <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+        Choose your favorite fruit.
+      </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+      {{/with}}
+    </div>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>sample buttons outside footer</legend>
+    <button {{#if class.button }}class="{{ class.button }}"{{/if}} type="submit">
+      Submit
+    </button>
+    <button {{#if class.button }}class="{{ class.button }}"{{/if}} type="button">
+      Button
+    </button>
+    <button {{#if class.button }}class="{{ class.button }}"{{/if}} type="reset">
+      Reset
+    </button>
+  </fieldset>
+
+  <footer {{#if class.buttons }}class="{{ class.buttons }}"{{/if}}>
+    <button
+      {{#if class.button }}class="{{ class.button }}"{{/if}}
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      id="toggle-field-errors"
+      {{#if class.button }}class="{{ class.button }}"{{/if}}
+      type="button"
+    >
+      Toggle Field Errors
+    </button>
+    <button
+      id="toggle-required-fields"
+      {{#if class.button }}class="{{ class.button }}"{{/if}}
+      type="button"
+    >
+      Toggle Required Fields
+    </button>
+    <button
+      {{#if class.button }}class="{{ class.button }}"{{/if}}
+      type="reset"
+    >
+      Reset Field Values
+    </button>
+  </footer>
+
+{{#if markup.wrap_end}}
+{{{markup.wrap_end}}}
+{{else}}
+</form>
+{{/if}}
+
+<script type="module">
+  import toggleFieldErrors from '{{ path "/components/raw/c-form/toggle-field-errors.js" }}';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('toggle-field-errors');
+    const form = document.querySelector('form');
+    const selector = '{{{ selectors.errorList }}}'
+
+    toggle.addEventListener('click', () => {
+      toggleFieldErrors( form, selector );
+    });
+  });
+</script>
+<script type="module">
+  import toggleRequiredFields from '{{ path "/components/raw/c-form/toggle-required-fields.js" }}';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('toggle-required-fields');
+    const form = toggle.closest('form');
+
+    toggle.addEventListener('click', () => {
+      toggleRequiredFields( form, {
+        shouldScrollToFirst: true,
+        classNames: { wrapRequired: '{{{ classNames.has_required }}}' },
+        selectors: { wrap: '{{{ selectors.wrap }}}' }
+      });
+    });
+  });
+</script>
+<script type="module">
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+
+      /* TODO: Show success message on form */
+      alert('Form was not submitted, because this is an incomplete demo.');
+    });
+  });
+</script>

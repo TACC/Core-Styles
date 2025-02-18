@@ -1,3 +1,5 @@
+@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
+
 /* SETTINGS: Color */
 
 /* Usage: `var(--global-color-primary--normal)` */
@@ -5,79 +7,113 @@
 
 /* Modifers
     --normal:   standard color
-    --alt:      alternate color
-    --weak:     transparent instance
+    --weak:     transparent instance (DEPRECATED)
     --(…)light: lighter value
     --(…)dark:  darker value
-    --(…)rgb:   "R, G, B" value partial (ex. usage: `rgba(var(--...-rgb), 0.5)`)
 */
 
 :root {
+
   /* Neutral */
   /* FAQ: Primary colors of an app (neutral text, borders, backgrounds) */
   /* IDEA: Rename these from `primary` to `neutral` */
-  --global-color-primary--xx-light: #FFFFFF;
-    --global-color-primary--xx-light-rgb: 255, 255, 255;
-  --global-color-primary--x-light: #F4F4F4;
-    --global-color-primary--x-light-rgb: 244, 244, 244;
-  --global-color-primary--light: #D7D7D7;
-    --global-color-primary--light-rgb: 198, 198, 198;
-  --global-color-primary--normal: #AFAFAF;
-    --global-color-primary--normal-rgb: 175, 175, 175;
-  --global-color-primary--dark: #707070;
-    --global-color-primary--dark-rgb: 112, 112, 112;
-  --global-color-primary--x-dark: #484848;
-    --global-color-primary--x-dark-rgb: 72, 72, 72;
-  --global-color-primary--xx-dark: #222222;
-    --global-color-primary--xx-dark-rgb: 34, 34, 34;
+
+  --global-color-primary--xx-light: design-token('color.gray.light-2x');
+  --global-color-primary--x-light: design-token('color.gray.light-x');
+  --global-color-primary--light: design-token('color.gray.light');
+  --global-color-primary--normal: design-token('color.gray.medium');
+  --global-color-primary--dark: design-token('color.gray.dark');
+  --global-color-primary--x-dark: design-token('color.gray.dark-x');
+  --global-color-primary--xx-dark: design-token('color.gray.dark-2x');
+  --global-color-primary--xxx-dark: #000000;
+
+
 
   /* Accent */
-  --global-color-accent--x-light: #e3d7fd;
-  --global-color-accent--light: #a387ed;
-  --global-color-accent--normal: #784fe8;
-  --global-color-accent--dark: #6039cc;
-  --global-color-accent--x-dark: #3d189b;
 
-  --global-color-accent--alt: #d2cce7;
-  --global-color-accent--weak: #6039cc40; /* similar to #E3D7FD on #f4f4f4 */
+  --global-color-accent--xxx-light: #dfeafe; /* DEPRECATED */
+  --global-color-accent--xx-light: design-token('color.v2.blue.light-2x');
+  --global-color-accent--x-light: design-token('color.v2.blue.light-x');
+  --global-color-accent--light-old: design-token('color.v2.blue.light-old'); /* DEPRECATED */
+  --global-color-accent--light: design-token('color.v2.blue.light');
+  --global-color-accent--normal: design-token('color.v2.blue.medium');
+  --global-color-accent--dark: design-token('color.v2.blue.dark');
+  --global-color-accent--x-dark: design-token('color.v2.blue.dark-x');
+  --global-color-accent--xx-dark: design-token('color.v2.blue.dark-2x');
+  --global-color-accent--xxx-dark: #000a22; /* DEPRECATED */
+
+  --global-color-secondary--xx-light: design-token('color.v2.gold.light-2x');
+  --global-color-secondary--x-light: design-token('color.v2.gold.light-x');
+  --global-color-secondary--light: design-token('color.v2.gold.light');
+  --global-color-secondary--normal: design-token('color.v2.gold.medium');
+  --global-color-secondary--dark: design-token('color.v2.gold.dark');
+  --global-color-secondary--x-dark: design-token('color.v2.gold.dark-x');
+  --global-color-secondary--xx-dark: design-token('color.v2.gold.dark-2x');
+
+  --global-color-tertiary--xx-light: design-token('color.v2.teal.light-2x');
+  --global-color-tertiary--x-light: design-token('color.v2.teal.light-x');
+  --global-color-tertiary--light: design-token('color.v2.teal.light');
+  --global-color-tertiary--normal: design-token('color.v2.teal.medium');
+  --global-color-tertiary--dark: design-token('color.v2.teal.dark');
+  --global-color-tertiary--x-dark: design-token('color.v2.teal.dark-x');
+  --global-color-tertiary--xx-dark: design-token('color.v2.teal.dark-2x');
+
+  /* DEPRECATED */
+  --global-color-accent--secondary: var(--global-color-secondary--normal);
+  --global-color-accent--tertiary: var(--global-color-tertiary--normal);
+
 
   /* State */
-  --global-color-info--x-dark: var(--global-color-primary--xx-dark);
-  --global-color-info--dark: var(--global-color-primary--x-dark);
-  --global-color-info--normal: var(--global-color-primary--normal);
-  --global-color-info--light: var(--global-color-primary--light);
-  --global-color-info--x-light: var(--global-color-primary--x-light);
 
-  --global-color-info--weak: rgba( var(--global-color-primary--normal), 0.125 );
+  --global-color-info--x-light: design-token('color.info.light-x');
+  --global-color-info--light: design-token('color.info.light');
+  --global-color-info--normal: design-token('color.info.medium');
+  --global-color-info--dark: design-token('color.info.dark');
+  --global-color-info--x-dark: design-token('color.info.dark-x');
 
-  --global-color-success--x-light: #E7F9E5;
-  --global-color-success--light: #AFECA7;
-  --global-color-success--normal: #43d130;
-  --global-color-success--dark: #237119;
-  --global-color-success--x-dark: #263824;
+  --global-color-danger--x-light: design-token('color.danger.light-x');
+  --global-color-danger--light: design-token('color.danger.light');
+  --global-color-danger--normal: design-token('color.danger.medium');
+  --global-color-danger--dark: design-token('color.danger.dark');
+  --global-color-danger--x-dark: design-token('color.danger.dark-x');
 
-  --global-color-success--weak: #43d13020;
+  --global-color-warning--x-light: design-token('color.warning.light-x');
+  --global-color-warning--light: design-token('color.warning.light');
+  --global-color-warning--normal: design-token('color.warning.medium');
+  --global-color-warning--dark: design-token('color.warning.dark');
+  --global-color-warning--x-dark: design-token('color.warning.dark-x');
 
-  --global-color-warning--x-light: #FBF4E1;
-  --global-color-warning--light: #FAE19E;
-  --global-color-warning--normal: #DFA70C;
-  --global-color-warning--dark: #735911;
-  --global-color-warning--x-dark: #3A3320;
+  --global-color-success--x-light: design-token('color.success.light-x');
+  --global-color-success--light: design-token('color.success.light');
+  --global-color-success--normal: design-token('color.success.medium');
+  --global-color-success--dark: design-token('color.success.dark');
+  --global-color-success--x-dark: design-token('color.success.dark-x');
 
-  --global-color-warning--weak: #DFA70C20;
+  --global-color-extra--x-light: design-token('color.extra.light-x');
+  --global-color-extra--light: design-token('color.extra.light');
+  --global-color-extra--normal: design-token('color.extra.medium');
+  --global-color-extra--dark: design-token('color.extra.dark');
+  --global-color-extra--x-dark: design-token('color.extra.dark-x');
 
-  --global-color-danger--x-light: #FDF1F1;
-  --global-color-danger--light: #F8C9C9;
-  --global-color-danger--normal: #F09393;
-  --global-color-danger--dark: #AF1818;
-  --global-color-danger--x-dark: #3C3030;
+  /* DEPRECATED */
+  --global-color-info--weak: rgb( from design-token('color.info.medium') r g b / 0.125 );
+  --global-color-danger--weak: rgb( from design-token('color.danger.medium') r g b / 0.125 );
+  --global-color-warning--weak: rgb( from design-token('color.warning.medium') r g b / 0.125 );
+  --global-color-success--weak: rgb( from design-token('color.success.medium') r g b / 0.125 );
+  --global-color-extra--weak: rgb( from design-token('color.extra.medium') r g b / 0.125 );
 
-  --global-color-danger--weak: #F0939320;
+
 
   /* Generic */
-  --global-color-background--app: var(--global-color-primary--xx-light);
+
+  --global-color-background--app: design-token('color.gray.light-2x');
+
+
 
   /* Link */
+  /* DEPRECATED */
+  /* TODO: Rely on :--light-context and :--dark-context instead */
+
   --global-color-link-on-light--normal: var(--global-color-accent--normal);
-  --global-color-link-on-dark--normal: var(--global-color-accent--light);
+  --global-color-link-on-dark--normal: var(--global-color-accent--xxx-light);
 }

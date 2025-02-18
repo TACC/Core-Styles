@@ -1,24 +1,6 @@
-/*
-Nav
-
-Navigation links that flows inline on narrow screens.
-
-To enforce appropriate semantic HTML, a `<nav>` is required.
-
-For list-like navigation, use `<ul>` or `<ol>` (with children `<li>`). Inside this kind of nav, markup whitespace is __not__ rendered.
-
-To support a navigation not as a list and with direct `<a>` children, add class `c-nav--no-list`. Inside this kind of nav, markup whitespace __is__ rendered.﹡
-
-﹡ To remove whitespace with CSS would break or complicate font-size cascade.
-
-- c-nav--boxed - Surrounded by a box
-
-Markup: c-nav.html
-
-Styleguide Components.Nav
-*/
 @import url("../tools/media-queries.css");
 
+@import url("./c-button.selectors.css");
 
 
 
@@ -26,6 +8,7 @@ Styleguide Components.Nav
 /* Block */
 
 nav.c-nav {
+  /* NOTE: Client is expected to overwrite these */
   --link-padding: 0.5em;
 }
 
@@ -40,6 +23,7 @@ nav.c-nav {
 /* Modifiers: Boxed */
 
 nav.c-nav--boxed {
+  /* NOTE: Client is expected to overwrite these */
   --indent-small: calc(var(--global-space--list-indent) / 4);
   --indent-medium: calc(var(--global-space--list-indent) / 2);
   --indent-large: var(--global-space--list-indent);
@@ -100,6 +84,77 @@ nav.c-nav--boxed.c-nav--no-list {
 
 
 
+/* Modifiers: Pipes */
+
+nav.c-nav--piped {
+  --pipe-style: var(--global-border--normal);
+}
+
+/* To ensure pipe is visible */
+/* CAVEAT: Truncation will NOT work */
+nav[class*="c-nav--piped"] button:--c-button--as-link {
+  overflow: visible;
+}
+
+
+/* Modifiers: Pipes: Methods */
+
+@custom-selector :--child-no-list
+  > :not(ul,ol);
+@custom-selector :--child-of-list
+  :is(ul,ol) > *;
+
+.c-nav--piped--after :--child-of-list,
+.c-nav--piped--after :--child-no-list,
+.c-nav--piped--before :--child-of-list,
+.c-nav--piped--before :--child-no-list {
+  position: relative;
+}
+.c-nav--piped--after :--child-of-list::after,
+.c-nav--piped--after :--child-no-list::after,
+.c-nav--piped--before :--child-of-list::before,
+.c-nav--piped--before :--child-no-list::before {
+  content: '';
+  display: block;
+  height: 1em;
+
+  /* To vertically center (because height ≠ 100%) */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* via "after" pseduo-element */
+.c-nav--piped--after :--child-no-list:not(:last-child)::after,
+.c-nav--piped--after :--child-of-list:not(:last-child)::after {
+  border-right: var(--pipe-style);
+  right: calc( -0.5 * var(--link-padding));
+}
+.c-nav--piped--after button:--c-button--as-link:not(:last-child)::after {
+  margin-right: calc( -1 * var(--global-border-width--normal));
+}
+.c-nav--piped--after button:not(:--c-button--as-link):not(:last-child)::after {
+  margin-right: calc( -2 * var(--global-border-width--normal));
+}
+/* via "before" pseduo-element */
+.c-nav--piped--before :--child-no-list:not(:first-child)::before,
+.c-nav--piped--before :--child-of-list:not(:first-child)::before {
+  border-left: var(--pipe-style);
+  left: calc( -0.5 * var(--link-padding));
+}
+.c-nav--piped--before button:--c-button--as-link:not(:first-child)::before {
+  margin-left: calc( -2 * var(--global-border-width--normal));
+}
+.c-nav--piped--before button:not(:--c-button--as-link):not(:first-child)::before {
+  margin-left: calc( -2 * var(--global-border-width--normal));
+}
+/* default */
+nav.c-nav--piped:not([class*="c-nav--piped--"]) {
+  @extend .c-nav--piped--after;
+}
+
+
+
 /* Modifiers: No List */
 
 /* This is not a true modifier. It is required to support certain markup. */
@@ -114,9 +169,10 @@ nav.c-nav--boxed.c-nav--no-list {
 
 
 nav.c-nav {
+  /* NOTE: Client is expected to overwrite these */
   --space-between-inline-items: 0.5em;
 }
-nav.c-nav a {
+nav.c-nav :is(a, :--c-button--as-link) {
   display: inline-block; /* to let line-height define clickable area */
   padding-inline: var(--link-padding);
 }
@@ -125,8 +181,12 @@ nav.c-nav a {
 nav.c-nav--no-list {
   display: flex; /* to remove whitespace between items */
   flex-wrap: wrap;
+  align-items: center; /* for diff-height items e.g. links with buttons */
 }
-nav.c-nav--no-list > a {
+nav.c-nav--no-list:has(button) {
+  row-gap: var(--space-between-inline-items);
+}
+nav.c-nav--no-list > :is(a, button) {
   /* To space items via margin (use `-right` to not increase left indent) */
   margin-right: var(--space-between-inline-items);
 }
@@ -145,6 +205,7 @@ nav.c-nav--no-list > a {
   nav.c-nav :is(ul,ol) {
     display: flex;
     flex-wrap: wrap;
+    align-items: center; /* for diff-height items e.g. links with buttons */
 
     /* To prevent overlap of any lists' decorators (when items are inline) */
     list-style-position: inside;

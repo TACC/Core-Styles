@@ -1,44 +1,8 @@
-/*
-Main Root & Sectioning Root
+@import url("../tools/selectors.css");
+@import url("../tools/selectors.form.css");
 
-Elements that represent the root of a document or document content.
-
-```
-<html> <body>
-```
-
-Reference:
-
-- [MDN: HTML element reference: Main root](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Main_root)
-- [MDN: HTML element reference: Sectioning root](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Sectioning_root)
-
-Styleguide Elements.MainSectioningRoots
-*/
-
-html {
-  /* Set base font but support user-defined browser font size */
-  /* SEE: https://snook.ca/archives/html_and_css/font-size-with-rem */
-  font-size: 62.5%; /* 16px */
-}
-
-/* The webpage must be at least as tall as the viewport */
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-
-  /* To avoid negative whitespace at right on horz scroll on tiny screen */
-  min-width: 290px; /* developer-decided value */
-
-  /* To overwrite Bootstrap */
-  color: var(--global-color-primary--x-dark);
-  font-family: var(--global-font-family--sans--cms);
-  font-size: var(--global-font-size--small);
-  line-height: 1.4;
-}
+/* To scope these styles to main content (i.e. not header, not navbar) */
+:where(:--main-content) {
 
 
 
@@ -60,61 +24,9 @@ Reference:
 Styleguide Elements.ContentSectioning
 */
 
-body > main {
-  margin-bottom: var(--global-space--section-gap);
-}
-
-/* To make a "sticky footer" */
-/* https://css-tricks.com/a-clever-sticky-footer-technique/ */
-body > main + footer {
-  position: sticky;
-  top: 100vh;
-}
-
 /* Headings */
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--global-color-primary--xx-dark);
-}
-h1, h2, h4, h5, h6 {
-  font-weight: var(--bold);
-}
-
-h1 {
-  margin-top: 27px;
-  margin-bottom: 27px;
-}
-h2 {
-  margin-top: 30px;
-  margin-bottom: var(--global-space--normal);
-}
-h1 + h2,
-h1 + hr {
-  margin-top: -12px;
-}
-h1 {
-  font-size: var(--global-font-size--xxx-large);
-}
-h2 {
-  font-size: var(--global-font-size--x-large);
-}
-
-h3, h4, h5, h6 {
-  margin-top: var(--global-space--normal);
-  margin-bottom: var(--global-space--normal);
-}
-h3 {
-  font-size: var(--global-font-size--x-large);
-}
-h4 {
-  font-size: var(--global-font-size--large);
-}
-h5 {
-  text-transform: uppercase;
-}
-h5, h6 {
-  font-size: var(--global-font-size--medium);
-}
+/* SEE: ./headings--cms.css */
 
 
 
@@ -136,34 +48,63 @@ Reference:
 Styleguide Elements.TextContent
 */
 
-p {
+& p {
   margin-bottom: 2rem; /* overwrite Bootstrap */
 }
 
 /* Lists */
 
-ol, ul,
-dl dl /* Treat nested definition lists like other nested lists */ {
+& :where(
+  ol, ul,
+  dl dl /* Treat nested definition lists like other nested lists */
+) {
   padding-left: var(--global-space--list-indent);
 }
-ol ol, ol ul, ul ol, ul ul {
+& :is(
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul
+) {
   margin: revert; /* Undo Bootstrap `_reboot.css` */
 }
 /* Add space between `dt` and `dd` */
-dt {
+& dt {
   margin-bottom: .5rem; /* overwrite Bootstrap */
   font-weight: initial; /* overwrite Bootstrap */
 }
 
-li:not(td li) {
+& li:not(td li) {
   line-height: 1.6;
+}
+
+/* Figures */
+
+/* https://stackoverflow.com/a/49287729/11817077 */
+/* To make figure size and caption wrap dependent on content:
+  - figure unaffected by content with intrinsic width
+  - shrink figure to content with dynamic width
+  - shrink figure to content with static width
+  - prevent content from overflowing parent
+  - wrap caption text at content edge
+*/
+& figure {
+  display: table;
+}
+& figure figcaption {
+  display: table-caption;
+  caption-side: bottom;
 }
 
 /* Misc. */
 
-hr {
+& hr {
   margin-top: var(--global-space--hr-buffer-above); /* overwrite Bootstrap */
-  border-top: 1px solid var(--global-color-primary--light);
+
+  border-top-width: var(--global-border-width--normal);
+  border-top-style: solid;
+  border-top-color: var(--global-color-primary--light);
+
   margin-bottom: var(--global-space--hr-buffer-below); /* overwrite Bootstrap */
 }
 
@@ -187,57 +128,17 @@ Reference:
 Styleguide Elements.InlineTextSemantics
 */
 
+/* To allow user to distinguish bold and black */
+& strong {
+  font-weight: var(--bold);
+}
+& b {
+  font-weight: var(--black);
+}
+
 /* Monospace */
 
-var,
-/* Overwrite Bootstrap (which does not use its `--font-family-monospace`) */
-code, kbd, pre, samp {
-  font-family: var(--global-font-family--mono);
-}
-code kbd {
-  display: inline-block; /* ensure element does not bleed outside parent */
-  padding: .1rem .2rem; /* overwrites Bootstrap */
-  margin-left: .2rem;
-  margin-right: .2rem;
-
-  font-size: inherit;
-}
-
-/* Code (<code>, <samp>, <pre>) */
-
-/* Code: any content or context */ code,
-/* Code: content has only output */ pre > samp {
-  /* Undo Bootstrap */
-  color: unset;
-}
-/* Code: context is inline */ :not(pre) > code {
-  display: inline-block;
-  padding: var(--global-space--xx-small) var(--global-space--x-small);
-}
-/* Code: context is block, content has input */ pre > code,
-/* Code: context is block, content has only ouput */ pre > samp {
-  display: inline-block; /* FAQ: If `block`, then background color is cropped */
-  padding: var(--global-space--x-small) var(--global-space--small);
-}
-/* Code: context is block, container probably has inline-style width set */
-/* FAQ: Stretch code to meet container width */
-pre[style] > code,
-pre[style] > samp {
-  min-width: 100%;
-}
-
-/* Code: context is inline, content has only output */
-/* FAQ: Examples: command output within CLI illustration */
-pre samp {
-  opacity: 0.75;
-  text-decoration: none;
-}
-/* Code: context is inline, content has context-agnostic output */
-/* FAQ: Examples: command prompt within CLI illustration */
-pre code u {
-  opacity: 0.50;
-  text-decoration: none;
-}
+/* SEE: ./monospace.css */
 
 
 
@@ -331,24 +232,4 @@ Styleguide Elements.DemarcatingEdits
 
 
 
-/*
-Interactive Elements
-
-Elements that help to create interactive user interface objects.
-
-```
-<details> <summary> <dialog> <menu>
-```
-
-Reference:
-
-- [HTML element reference: Interactive elements | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Interactive_elements)
-
-Styleguide Elements.Interactive
-*/
-
-/* Clone Bootstrap's <p> and <ul> margins */
-details {
-  margin-top: 0;
-  margin-bottom: 1rem;
 }

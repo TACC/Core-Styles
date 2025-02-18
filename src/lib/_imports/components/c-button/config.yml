@@ -22,6 +22,10 @@ variants:
   - name: tertiary
     notes: For inactive buttons among many buttons
       (e.g. pagination buttons to other pages)
+  - name: can-truncate
+    notes: For buttons that should truncate
+    context:
+      type: c-button--secondary
   - name: is-active
     notes: For the one active button among many buttons
       (e.g. pagination button for current page)

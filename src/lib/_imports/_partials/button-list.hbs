@@ -1,0 +1,9 @@
+{{#each buttons as | button |}}{{#if ../is-list}}<li>{{/if}}{{!
+
+  }}<button
+      {{#if ../as-links}}class="c-button c-button--as-link"{{/if}}
+      {{#if button.id}}id="{{button.id}}"{{/if}}>{{!
+      }}{{button.name}}{{!
+  }}</button>{{!
+
+}}{{#if ../is-list}}</li>{{/if}}{{/each}}

@@ -1,0 +1,18 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--global-space--grid-gap);
+}
+dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc( var(--global-space--grid-gap) / 2);
+}
+
+small > code:not(:last-child)::after {
+  content: '';
+  padding-inline: 0.5em;
+  display: inline;
+}

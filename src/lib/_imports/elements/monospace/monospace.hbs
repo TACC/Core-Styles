@@ -1,0 +1,60 @@
+<dl>
+  <dt>Tags in Isolation</dt>
+  <dd>
+    <p><code>code (any) = &lt;code&gt;</code></p>
+    <p><kbd>keyboard (input) = &lt;kbd&gt;</kbd></p>
+    <p><pre>pre-formatted = &lt;pre&gt;</pre></p>
+    <p><samp>sample (output) = &lt;samp&gt;</samp></p>
+    <p><var>variable = &lt;var&gt;</var></p>
+  </dd>
+
+  <dt>Tag Combinations</dt>
+  <dd>
+    <p>A sentence with <code>code (&lt;code&gt;)</code> snippet, and as a <a href="#"><code>link</code></a>.</p>
+    <p><code>code (&lt;code&gt;) with <kbd>keyboard (&lt;kbd&gt;)</kbd> input</code></p>
+    <p>A sentence with <code>code (&lt;code&gt;) with <kbd>keyboard</kbd> input</code>, and as a <a href="#"><code>link</code></a>.</p>
+    <pre><code>pre-formatted code block
+
+&lt;pre&gt;
+  &lt;code&gt;
+    ...
+  &lt;/code&gt;
+&lt;/pre&gt;</code></pre>
+    <pre><code>pre-formatted sample output
+
+&lt;pre&gt;
+  &lt;samp&gt;
+    ...
+  &lt;/samp&gt;
+&lt;/pre&gt;</code></pre>
+    <pre><code>pre-formatted code (&lt;pre&gt; &lt;code&gt;) block with <var>variable (&lt;var&gt;)</var> text</code></pre>
+    <pre><code>pre-formatted samp (&lt;pre&gt; &lt;sample&gt;) output with <var>variable (&lt;var&gt;)</var> text</code></pre>
+    <pre><code>pre-formatted code (&lt;pre&gt; &lt;code&gt;) block with <strong>strong (&lt;strong&gt;)</strong> or <em>emphasized (&lt;em&gt;)</em> text</code></pre>
+    <pre><code>pre-formatted sample (&lt;pre&gt; &lt;samp&gt;) output with <strong>strong (&lt;strong&gt;)</strong> or <em>emphasized (&lt;em&gt;)</em> text</code></pre>
+    <pre><code><u>a prompt (via &lt;u&gt;):</u> within a pre-formatted (&lt;pre&gt;) code block</code></pre>
+    <pre><code>pre-formatted code (&lt;pre&gt; &lt;code&gt;) block with text that can overflow parent:
+      {{> @text-of-one-paragraph-medium }}</code></pre>
+    <pre><code>pre-formatted sample (&lt;pre&gt; &lt;samp&gt;)  ouput with text that can overflow parent:
+      {{> @text-of-one-paragraph-medium }}</code></pre>
+    <pre style="width: 75%"><code>pre-formatted, with a width set inline, code (&lt;pre style="width: 75%"&gt; &lt;code&gt;) block</code></pre>
+    <pre style="width: 75%"><samp>pre-formatted, with a width set inline, sample (&lt;pre style="width: 75%"&gt; &lt;samp&gt;) output</samp></pre>
+  </dd>
+
+  <dt>Sample</dt>
+  <dd>
+    <pre>
+<code><u>prompt&gt; </u>run command
+<samp>Sample output and <var>/a-variable/in-the/output</var></samp>
+</code>
+    </pre>
+  </dd>
+
+  <dt>Example</dt>
+  <dd>
+    <pre>
+<code><u>sftp&gt; </u>put my_file.txt
+<samp>Uploading my_file.txt to <var>/transfer/directory/path</var></samp>
+</code>
+    </pre>
+  </dd>
+</dl>

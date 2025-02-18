@@ -1,0 +1,9 @@
+@import url("./x-drop-cap.css");
+
+/* FAQ: Wrapped to deter clients from using `.x-message` */
+/* HACK: Not in `x-message/demo.css` because it is not processed */
+#demo {
+  .x-drop-cap::first-letter {
+    @mixin drop-cap;
+  }
+}

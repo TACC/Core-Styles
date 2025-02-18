@@ -1,21 +1,29 @@
-<table class="{{#if data.has-table }}has-table{{/if}} {{#if class }}{{ class }}{{/if}}">
+<table class="{{#if table }}has-table{{/if}} {{#if class }}{{ class }}{{/if}}">
   {{#if caption }}
   <caption>{{{ caption }}}</catpion>
   {{/if}}
+  {{#if data.cols }}
   <thead>
     <tr>
       {{#each data.cols}}<th>{{ this }}</th>{{/each}}
     </tr>
   </thead>
+  {{/if}}
   <tbody>
+  {{#each data.key-value-pairs}}
+    <tr>
+      {{#if key}}<th class="c-data-list__key">{{ key }}</th>{{/if}}
+      {{#if value}}<td class="c-data-list__value">{{ value }}</td>{{/if}}
+    </tr>
+  {{/each}}
   {{#each data.rows}}
     <tr>
       {{#if id}}<th>{{ id }}</th>{{/if}}
       {{#if name}}<th>{{ name }}</th>{{/if}}
       {{#if name-link}}<th><a href="#">{{ name-link }}</a></th>{{/if}}
       {{#if paragraph}}
-      <td title="{{> @text-of-one-paragraph }}">
-        <p>{{> @text-of-one-paragraph }}</p>
+      <td title="{{> @text-of-one-paragraph-short }}">
+        <p>{{> @text-of-one-paragraph-short }}</p>
       </td>
       {{/if}}
       {{#if sentence}}

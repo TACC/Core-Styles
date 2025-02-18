@@ -1,59 +1,94 @@
-/* Organize */
+/* Set Foundation */
 
-body > dl dl {
-  margin-block: 0;
+html {
+  /* Set base font but support user-defined browser font size */
+  /* SEE: https://snook.ca/archives/html_and_css/font-size-with-rem */
+  font-size: 62.5%; /* 16px */
 }
-body > dl dt,
-body > dl dd {
-  font-family: Arial, sans;
-  color: #484848;
-  line-height: normal;
-}
-body > dl dt {
-  font-weight: normal;
-  margin-bottom: 10px;
-}
-body > dl dt:not(:first-of-type) {
-  margin-top: 20px;
-}
-body > dl dd {
-  margin-bottom: 10px;
-  margin-left: 25px;
-}
-body > dl dd > * {
-  margin-right: 5px;
-  vertical-align: middle;
+
+body {
+  font-size: 1.6rem;
 }
 
 
 
-/* Debug */
+/* Organize Content */
 
-body > details:last-of-type {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
+main > dl:not(.no-demo-styles) {
 
-  padding: 1em;
-  background-color: #222;
-  color: lime;
+  &:is(dt, dd) {
+    font-family: var(--global-font-family--sans);
+    color: #484848;
+    line-height: normal;
+  }
+  & dt {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  & dt { font-weight: var(--bold); }
+  & dl dt { font-weight: var(--medium); }
+  & dl dl dt { font-weight: var(--regular); }
 
-  text-align: right;
-  direction: rtl;
+  & dt:not(:first-of-type) {
+    margin-top: 20px;
+  }
+  & dd {
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
 
-  font-family: var(--global-font-family--mono);
+  & dl:not(.no-demo-styles) {
+    margin-block: 0;
+    padding-left: unset; /* undo html-elements.cms.css */
+  }
+
 }
-body > details[open]:last-of-type { opacity: 1; }
-body > details:not([open]):last-of-type { opacity: 0.5; }
 
-body > details:last-of-type summary {
-  font-weight: bold;
+
+
+/* Lay Out */
+
+body > main {
+  width: 80vw;
+  margin-inline: auto;
+  padding-block: 1em;
 }
-body > details:last-of-type dt { font-weight: normal; }
-body > details:last-of-type dd { font-weight: bold; }
-body > details:last-of-type dd {
-  line-height: 1.4;
-  min-height: 1.4em;
-  width: 4ch;
+
+/* To show when body is covered by a full-width background */
+body:has(main > section) {
+  --color-light: var(--global-color-primary--xx-light);
+  --color-dark: var(--global-color-primary--x-light);
+
+  background-color: var(--color-dark);
+  background: repeating-linear-gradient( 90deg,
+    var(--color-dark),
+    var(--color-dark) 1px,
+    var(--color-light) 1px,
+    var(--color-light) 20px
+  );
+}
+
+/* To give equal block spacing to rulers */
+hr {
+  margin-top: var(--global-space--hr-buffer-above);
+
+  margin-bottom: var(--global-space--hr-buffer-below);
+}
+
+
+
+/* Background */
+
+/* To show when body is covered by a full-width background */
+body:has(body > .o-section) {
+  --color-light: var(--global-color-primary--xx-light);
+  --color-dark: var(--global-color-primary--x-light);
+
+  background-color: var(--color-dark);
+  background: repeating-linear-gradient( -45deg,
+    var(--color-dark),
+    var(--color-dark) 1px,
+    var(--color-light) 1px,
+    var(--color-light) 20px
+  );
 }

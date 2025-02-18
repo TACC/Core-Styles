@@ -1,0 +1,5 @@
+/* This CSS is EXAMPLE code for a client. It is NOT part of the pattern. */
+
+body {
+  background-color: var(--global-color-primary--light);
+}

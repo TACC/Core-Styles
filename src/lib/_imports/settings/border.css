@@ -12,4 +12,7 @@
 
     --global-border-width--x-thick: 3px;
     --global-border--x-thick: var(--global-border-width--x-thick) solid var(--global-color-primary--normal);
+
+    --global-border-width--xx-thick: 5px;
+    --global-border--xx-thick: var(--global-border-width--xx-thick) solid var(--global-color-primary--normal);
 }

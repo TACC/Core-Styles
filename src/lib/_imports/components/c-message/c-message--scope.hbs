@@ -1,0 +1,15 @@
+<dl>
+  {{#each scopes}}
+  <dt>Scope <strong>{{ this.name }}</strong></dt>
+  <dd>
+    {{> @c-message--single scope=this.name
+        type="info" title="Info" content=this.content}}
+    {{> @c-message--single scope=this.name
+        type="success" title="Success" content=this.content}}
+    {{> @c-message--single scope=this.name
+        type="warning" title="Warning" content=this.content}}
+    {{> @c-message--single scope=this.name
+        type="error" title="Error" content=this.content}}
+  </dd>
+  {{/each}}
+</dl>

@@ -1,0 +1,27 @@
+@import url('../tools/x-figure.css');
+
+.x-blockquote {
+    @extend .x-figure;
+
+    --buffer-above: 3.0rem;
+    --buffer-below: 3.0rem;
+
+    width: fit-content;
+    padding-left: 1em;
+
+    color: var(--global-color-tertiary--normal);
+    font-size: var(--global-font-size--large);
+    line-height: 1.7;
+
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: currentcolor;
+}
+.x-blockquote-caption {
+    @extend .x-figure-caption;
+
+    --buffer-above: 0; /* FAQ: cuz .x-blockquote line-height is enough */
+    --buffer-below: 0; /* FAQ: cuz .x-blockquote-caption has no border */
+
+    border-bottom: unset; /* to undo .x-figure-caption */
+}

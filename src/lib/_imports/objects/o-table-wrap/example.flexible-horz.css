@@ -14,10 +14,7 @@
 }
 
 /* Truncate Cell Text - Mixin i.e. Standard */
-/* (only works on TACC clients using PostCSS) */
 /*
-@import url('@tacc/core-styles/src/lib/_imports/tools/x-truncate.css');
-... {
-  @extend .x-truncate--one-line;
-}
+1. import @tacc/core-styles/src/lib/_imports/tools/x-truncate.css
+2. mixin or compose .x-truncate--one-line
 */

@@ -1,11 +1,16 @@
 <div>
-  <p>{{> @text-of-one-paragraph }}</p>
+  <p>{{> @text-of-one-paragraph-short }}</p>
 </div>
 {{#> @partial-block}}
 <div>
-  <p class="c-message c-message--type-info c-message--scope-section">To render a table, choose a modifier class from the navigation panel.</p>
+  {{> @message
+      tag="p"
+      type="info"
+      scope="section"
+      content="To render a table, choose a modifier class from the navigation panel."
+  }}
 </div>
 {{/@partial-block}}
 <div>
-  <p>{{> @text-of-one-paragraph }}</p>
+  <p>{{> @text-of-one-paragraph-short }}</p>
 </div>

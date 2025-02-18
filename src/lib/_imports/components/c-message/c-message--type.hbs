@@ -1,0 +1,13 @@
+<dl>
+  {{#each types }}
+  <dt>Type <strong>{{ this.name }}</strong></dt>
+  <dd>
+    {{> @c-message--single type=this.name
+        scope="inline" title="Inline" content=this.content}}
+    {{> @c-message--single type=this.name
+        scope="section" title="Section" content=this.content}}
+    {{> @c-message--single type=this.name
+        scope="global" title="Global" content=this.content}}
+  </dd>
+  {{/each}}
+</dl>

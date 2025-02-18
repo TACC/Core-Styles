@@ -1,0 +1,7 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.align-right,
+.align-left,
+.align-center {
+  max-width: 50%; /* a default is sensible, but leave it to client */
+}

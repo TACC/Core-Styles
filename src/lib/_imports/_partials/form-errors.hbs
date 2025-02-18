@@ -1,0 +1,12 @@
+{{#if wrapClass}}
+<div class="{{ wrapClass }}" style="display:none;">
+{{/if}}
+  <ul {{#if class }}class="{{ class }}"{{/if}}{{#unless wrapClass}} style="display:none;"{{/unless}}>
+    <li>
+      Sample <strong>{{#if typeName}}{{typeName}}{{else}}form{{/if}}</strong>
+      error. <a href="https://example.com" target="_blank">Link.</a>
+    </li>
+  </ul>
+{{#if wrapClass}}
+</div>
+{{/if}}

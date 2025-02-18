@@ -1,0 +1,11 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.c-tag:not([class*="c-tag--"]) {
+  color: var(--global-color-primary--xx-light);
+  background-color: var(--global-color-primary--xxx-dark);
+}
+
+.c-tag--is-whatever {
+  color: var(--global-color-tertiary--xx-light);
+  background-color: var(--global-color-tertiary--dark);
+}

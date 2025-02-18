@@ -1,0 +1,15 @@
+<div class="
+  s-affixed-input-wrapper s-affixed-input-wrapper--{{modifier}}
+  {{#if is-full-width}}s-affixed-input-wrapper--full-width{{/if}}
+">
+  <label for="field-dollars">How many dollars do you have?</label>
+  <span class="s-affixed-input-wrapper__{{modifier}}">$</span>
+  <input
+    type="number"
+    name="dollars"
+    id="field-dollars"
+    inputmode="numeric"
+    step="0.01"
+    min="0.01"
+  />
+</div>

@@ -9,19 +9,15 @@ Styleguide Objects.OffsetContent
 */
 @import url("../tools/media-queries.css");
 
-
-
-@custom-selector :--o-offset-content
-  .o-offset-content--left,
-  .o-offset-content--right;
-
-
-
-:--o-offset-content {
-  	--offset-distance: min(15vw, 410px);
+.o-offset-content--left,
+.o-offset-content--right {
+  	--offset-distance: 12vw;
 	--buffer: calc( 2 * var(--global-space--grid-gap) );
+
+    max-width: 85%;
 }
 
+/* To merely float content on narrow screens */
 @media only screen and (--medium-and-above) {
 	.o-offset-content--right {
 		float: right;
@@ -35,15 +31,18 @@ Styleguide Objects.OffsetContent
 	}
 	.o-offset-content--left + .o-offset-content--left { clear: left; }
 
-  .figure:is(:--o-offset-content) .figure-caption {
-    padding-right: 125px;
-  }
+    .figure:is(
+	  .o-offset-content--left,
+	  .o-offset-content--right
+	) .figure-caption {
+        padding-right: 125px;
+    }
 }
-@media only screen and (--medium-and-above) and (--max-wide-and-below) {
-  :--o-offset-content {
-    max-width: 560px;
-  }
-  /* Apply negative margin only when using offset value */
+
+/* To offset content only on wide screens */
+/* HELP: Do designers want to prevent offset on mega-wide screens */
+/* FAQ: M.S. did on texascale.org but that may have been only for that site */
+@media only screen and (--medium-and-above)/* and (--max-wide-and-below) */{
 	.o-offset-content--right {
 		margin-right: calc( var(--offset-distance) * -1);
 	}

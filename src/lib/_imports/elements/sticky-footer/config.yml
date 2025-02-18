@@ -1,0 +1,4 @@
+status: ready
+context:
+  shouldSkipPattern: false
+  shouldOmitMainTag: true

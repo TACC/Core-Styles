@@ -12,45 +12,6 @@ Styleguide Trumps.Scopes.GuideDoc
 
 /* ELEMENTS */
 
-
-/* ELEMENTS: Content Sectioning */
-
-/* Fake <hr> above <h2> */
-.s-guide-doc h2:not(hr + h2)::before {
-  display: block;
-  content: '';
-
-  /* To mirror hr (site.css) */
-  margin-top: var(--global-space--hr-buffer-above);
-  border-top: 1px solid var(--global-color-primary--light);
-  margin-bottom: var(--global-space--hr-buffer-below);
-}
-
-
-/* ELEMENTS: Text Content */
-
-.s-guide-doc blockquote {
-  opacity: 0.75;
-  border: var(--global-border--normal);
-
-  padding: 1em;
-}
-.s-guide-doc blockquote > *:last-child { margin-bottom: 0; }
-
-@media only screen and (min-width: 768px) {
-  blockquote { width: 600px; }
-}
-
-.s-guide-doc figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.s-guide-doc figcaption {
-  font-weight: bold;
-}
-
-
 /* ELEMENTS: Table Content */
 
 .s-guide-doc table {
@@ -58,6 +19,30 @@ Styleguide Trumps.Scopes.GuideDoc
   max-width: 500px;
 
   text-align: center;
+}
+
+/* ELEMENTS: Description List */
+
+.s-guide-doc dt {
+  display: block;
+  float: left;
+
+  /* Remove space between <dt> and <dd> (from our styles) */
+  /* SEE: ../elments/html-elements.html */
+  margin-bottom: 0;
+
+  font-weight: var(--bold);
+}
+.s-guide-doc dt::after {
+  content: ':';
+
+  margin-inline-end: 0.25em;
+}
+.s-guide-doc dd {
+  clear: right;
+
+  /* Remove space between <dd>'s (from Bootstrap) */
+  margin-bottom: 0;
 }
 
 

@@ -1,0 +1,68 @@
+collated: true
+name: c-data-list--list
+label: '&lt;dl&gt; Description List'
+# NOTE: Variant config is mirrored on `../list/config` and `../table/config`
+# NOTE: Can `../list/config` and `../table/config` have source of truth?
+variants:
+  - name: default
+    hidden: True
+  - name: horz-wide
+    label: Horz. & Wide
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-horz
+        c-data-list--is-wide
+  - name: horz-wide
+    label: Horz. & Wide (Values Truncated)
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-horz
+        c-data-list--is-wide
+        c-data-list--should-truncate-values
+  - name: horz-narrow
+    label: Horz. & Narrow
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-horz
+        c-data-list--is-narrow
+  - name: horz-narrow
+    label: Horz. & Narrow (Values Truncated)
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-horz
+        c-data-list--is-narrow
+        c-data-list--should-truncate-values
+  - name: vert-wide
+    label: Vert. & Wide
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-vert
+        c-data-list--is-wide
+  - name: vert-wide
+    label: Vert. & Wide (Values Truncated)
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-vert
+        c-data-list--is-wide
+        c-data-list--should-truncate-values
+  - name: vert-narrow
+    label: Vert. & Narrow
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-vert
+        c-data-list--is-narrow
+  - name: vert-narrow
+    label: Vert. & Narrow (Values Truncated)
+    context:
+      class: |-
+        c-data-list
+        c-data-list--is-vert
+        c-data-list--is-narrow
+        c-data-list--should-truncate-values

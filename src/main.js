@@ -4,7 +4,8 @@
 
 const { resolve } = require('path');
 
-const build = require('./bin/build.js');
+const buildStyles = require('./bin/build-styles.js');
+const buildTokens = require('./bin/build-tokens.js');
 const config = require('./bin/config.js');
 const version = require('./bin/version.js');
 
@@ -13,7 +14,8 @@ const version = require('./bin/version.js');
  * @param {string} input - Parse CSS files from which directory
  * @param {string} output - Output CSS files to which directory
  * @param {object} [opts={}] - Options
- * @param {string} [opts.baseMirrorDir] - Do not add this path when mirroring
+ * @param {string} [opts.baseMirrorDir] - Path to NOT add when mirroring
+ * @param {string} [opts.fileExt] - Custom file extension for output files
  * @param {array.string} [opts.customConfigs] - List of YAML config file paths
  * (The first file is merged on top of the base config.)
  * (Each successive file overwrites the file before it.)
@@ -24,6 +26,7 @@ function buildStylesheets(input, output, opts = {}) {
   const buildOpts = {
     verbose: opts.verbose || null,
     baseMirrorDir: opts.baseMirrorDir || null,
+    fileExt: opts.fileExt || null,
   };
 
   const inputResolved = resolve(input);
@@ -35,7 +38,8 @@ function buildStylesheets(input, output, opts = {}) {
     : undefined;
 
   config(customConfigs, version(opts.buildId));
-  build(inputResolved, outputResolved, buildOpts);
+  buildTokens();
+  buildStyles(inputResolved, outputResolved, buildOpts);
 }
 
 /*

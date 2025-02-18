@@ -1,0 +1,111 @@
+@import url("../tools/selectors.css");
+@import url('../tools/x-link.css');
+
+
+/* To share styles between component and elements without scoping components */
+/* FAQ: Only elements need scoping, because they could appear anywhere */
+:--monospace-components,
+:where(:--main-content) :is(:--monospace-elements) {
+  font-family: var(--global-font-family--mono);
+  font-size: 87.5%; /* borrowed from Bootstrap */
+  line-height: 1.4;
+
+  color: inherit;
+}
+
+/* So client can render preformatted text without assuming Bootstrap color */
+pre {
+  color: unset; /* override Bootstrap */
+}
+
+
+
+/* To scope these styles to main content (i.e. not header, not navbar) */
+:where(:--main-content) {
+
+
+
+
+
+/* Base */
+
+/* FAQ: Nested monospace patterns should not be resized twice */
+& :is(:--monospace-elements) > :is(:--monospace-elements) {
+  font-size: inherit;
+}
+& pre {
+  overflow: auto; /* borrowed from Bootstrap */
+}
+
+
+
+/* Types */
+
+/* Structure */
+& :--monospace--block {
+  display: block;
+  width: min-content;
+  padding: var(--global-space--x-small) var(--global-space--small);
+}
+& :--monospace--inline {
+  display: inline-block; /* to ensure element does not bleed outside parent */
+  padding: var(--global-space--xx-small) var(--global-space--x-small);
+}
+
+/* Skin */
+& :--monospace--block,
+& :--monospace--inline {
+  background-color: var(--global-color-primary--x-light);
+  color: var(--global-color-primary--x-dark);
+  border: var(--global-border--normal);
+}
+& :--monospace--output:not(:--monospace--boxed) {
+  opacity: 0.75;
+}
+& :--monospace--kbd {
+  border: var(--global-border--normal);
+  border-radius: 0.5rem;
+  background-color: var(--global-color-primary--xx-light); /* undo Bootstrap */
+}
+
+/* Types: Edge Cases */
+
+/* To stretch code blocks whose container has a width set inline */
+& :--monospace--block:where(pre[style] > *) {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+/* To apply link styles */
+& :--monospace--inline:where(a > *) {
+  @mixin link;
+}
+& :--monospace--inline:where(a:not([href]) > *) {
+  @mixin link--disabled;
+}
+& :--monospace--inline:where(a:hover > *) {
+  @mixin link--hover;
+}
+& :--monospace--inline:where(a:active > *) {
+  @mixin link--active;
+}
+
+
+
+/* Children */
+
+& :--monospace__kbd {
+  display: inline-block;
+  font-size: inherit;
+}
+
+& :--monospace__prompt {
+  opacity: 0.50;
+  text-decoration: none;
+}
+
+
+
+
+
+}

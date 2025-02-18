@@ -1,0 +1,4 @@
+/* To give more space above anchor e.g. heading with id matching url hash */
+:target {
+  scroll-margin-top: 20px;
+}

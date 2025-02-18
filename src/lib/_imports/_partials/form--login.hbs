@@ -1,0 +1,97 @@
+{{#message}}
+{{> @message content=. }}
+{{/message}}
+
+<form action="" class="{{ class.root }} {{ class.modifier }}">
+  <h3 {{#if class.title }}class="{{ class.title }}"{{/if}}>
+    {{#if hasManyBrands}}
+    <figure>
+      <img
+        src="https://www.tacc.utexas.edu/static/site_cms/img/org_logos/ut-primary.svg"
+        alt="UT Logo"
+      />
+      <img
+        src="https://www.tacc.utexas.edu/static/site_cms/img/org_logos/tacc-formal.svg"
+        alt="TACC Logo"
+      />
+    </figure>
+    {{else}}
+    <img
+      src="https://www.tacc.utexas.edu/static/site_cms/img/org_logos/tacc-formal.svg"
+      alt="TACC Logo"
+    />
+    {{/if}}
+    <span>Log In</span>
+  </h3>
+  <p {{#if class.desc }}class="{{ class.desc }}"{{/if}}>to continue to the TACC User Portal</p>
+
+  {{> @form-errors class=class.errors wrapClass=class.form_errors_wrap }}
+
+  <div class="{{ class.field }} {{ class.has_required }}">
+    <label for="username">
+      User Name
+      <span class="{{ class.badge }}">Required</span>
+    </label>
+    <input
+      name="username"
+      type="text"
+      autocomplete="username"
+      id="username"
+      required
+    >
+  </div>
+  <div class="{{ class.field }} {{ class.has_required }}">
+    <label for="password">
+      Password
+      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}>Required</span>
+    </label>
+    <input
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      id="password"
+      required
+    >
+  </div>
+  <footer {{#if class.buttons }}class="{{ class.buttons }}"{{/if}}>
+    <a
+      href="https://accounts.tacc.utexas.edu/register"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Create Account
+    </a>
+    <button {{#if class.button }}class="{{ class.button }}"{{/if}} type="submit">
+      Log In
+    </button>
+  </footer>
+  <nav {{#if class.nav }}class="{{ class.nav }}"{{/if}}>
+    <p>Having trouble logging in?</p>
+    <a
+      href="https://example.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Reset Password
+    </a>
+    <a
+      href="https://example.com"
+      rel="noreferrer"
+      target="_blank"
+    >
+      Account Help
+    </a>
+  </nav>
+</form>
+<script type="module">
+  import toggleFieldErrors from '{{ path "/components/raw/c-form/toggle-field-errors.js" }}';
+
+  const form = document.querySelector('form');
+  const selector = '{{{ selectors.errorList }}}';
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    console.log({ form, selector });
+    toggleFieldErrors( form, selector );
+  });
+</script>

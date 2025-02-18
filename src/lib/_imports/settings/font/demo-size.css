@@ -1,0 +1,11 @@
+/* To use settings */
+.demo-size--xxx-large { font-size: var(--global-font-size--xxx-large); }
+.demo-size--xx-large { font-size: var(--global-font-size--xx-large); }
+.demo-size--x-large { font-size: var(--global-font-size--x-large); }
+.demo-size--large { font-size: var(--global-font-size--large); }
+.demo-size--medium { font-size: var(--global-font-size--medium); }
+.demo-size--small { font-size: var(--global-font-size--small); }
+.demo-size--x-small { font-size: var(--global-font-size--x-small); }
+
+/* To style samples */
+[class*="demo-family-"] div { letter-spacing: 0.5em; }

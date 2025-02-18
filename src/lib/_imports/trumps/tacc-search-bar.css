@@ -36,11 +36,6 @@ Styleguide Scopes.SearchBar
 
 /* Container */
 
-:host {
-  /* To remove all whitespace */
-  /* NOTE: A `font-size: 0` is not necessary if tag whitespace is removed */
-  font-size: 0;
-}
 :host [part="form"] {
   /* To ensure search field font matches Portal */
   /* GH-101: Set and rely on header font */
@@ -72,7 +67,7 @@ Styleguide Scopes.SearchBar
   background-color: transparent;
   border: none;
 
-  color: env(--header-text-color);
+  color: var(--header-text-color);
   font-size: var(--button-font-size);
 }
 
@@ -95,14 +90,14 @@ Styleguide Scopes.SearchBar
   );
   padding-right: var(--input-horz-pad);
 
-  background-color: env(--header-search-bkgd-color);
-  border: var(--global-border-width--normal) solid env(--header-search-brdr-color);
+  background-color: var(--header-search-bkgd-color);
+  border: var(--global-border-width--normal) solid var(--header-search-brdr-color);
   border-radius: 5px;
 
-  color: env(--header-text-color);
+  color: var(--header-text-color);
   font-size: var(--input-font-size);
 }
 :host [part="input"]::placeholder {
-  color: env(--header-text-color);
+  color: var(--header-text-color);
   opacity: 0.5;
 }

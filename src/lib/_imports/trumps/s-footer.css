@@ -1,16 +1,44 @@
-/*
-Footer
+@import url("../tools/selectors.css");
+@import url("../components/c-button.selectors.css");
 
-Styles for elements within a footer that has WYSIWIG markup.
+@import url("./s-footer.properties.css");
 
-Markup: s-footer.html
+.s-footer {
+  padding-block: 15px;
 
-Styleguide Trumps.Scopes.Footer
-*/
-
-.s-footer > p:last-of-type {
-  margin: 0;
-}
-.s-footer a {
   color: var(--global-color-primary--light);
+  background-color: var(--global-color-primary--xx-dark);
+
+  font-size: var(--global-font-size--small);
+  text-align: center;
+}
+.s-footer--thick {
+  padding-inline: var(--pad-horz--thick);
+}
+.s-footer--thin {
+  padding-inline: var(--pad-horz--thin);
+}
+
+.s-footer a:not(:--c-button, :hover) {
+    color: var(--global-color-primary--light)
+}
+
+.s-footer a:not(:--c-button):hover {
+    color: var(--global-color-accent--light-old)
+}
+
+.s-footer :--heading {
+  color: var(--global-color-primary--xx-light);
+}
+
+/* Let paragraphs behave normally */
+.s-footer > p {
+  margin: revert;
+}
+.s-footer > p:first-of-type { margin-top: 0; }
+.s-footer > p:last-of-type { margin-bottom: 0; }
+
+/* To suggest semantic solution for horiontal lines */
+.s-footer hr {
+    margin-block: 1rem;
 }

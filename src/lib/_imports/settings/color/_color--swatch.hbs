@@ -1,0 +1,17 @@
+<figure class="
+    demo-palette-item
+    {{#if not-available }}
+    not-available
+    {{/if}}
+    {{#if not-opaque }}
+    not-opaque
+    {{/if}}
+">
+  {{#unless is-utility}}
+  <span
+    role="presentation"
+    style="background-color: var({{ name }})"
+  ></span>
+  {{/unless}}
+  <code>{{ name }}</code>
+</figure>

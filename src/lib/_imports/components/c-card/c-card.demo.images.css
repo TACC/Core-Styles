@@ -1,0 +1,30 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+/* To allow the image max-height to not be 100% for the demo */
+.o-grid img {
+    max-height: unset;
+}
+
+/* Rid margin-bottom on last section */
+.o-section>:last-child {
+    margin-bottom: var(--global-space--bootstrap-gap);
+}
+
+/* create a two column grid (cleaner look) */
+.s-image-grid {
+    --max-cols: 2;
+}
+
+/* get rid of margin for inner-sections */
+section > section {
+    margin: unset;
+}
+
+/* Image: Contact Card */
+/* To overwrite `.s-image-grid > *` specificity */
+/* WARNING: This may be a specificty bug... */
+/* NOTE: Should `s-image-grid` be `o-image-grid`,
+         so `c-card` has greater specificity? */
+.c-card--image-top:has(h4) {
+    max-width: fit-content;
+}

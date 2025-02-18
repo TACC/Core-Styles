@@ -3,35 +3,38 @@ plugins:
     path:
       - 'src/lib'
 
-  postcss-extend: {}
+  postcss-extend: {} # DEPRECATED
 
-  # https://github.com/TACC/Core-CMS/blob/70a1ca3/conf/css/.postcssrc.yml#L6-L12
-  postcss-env-function:
-    importFrom:
-      - 'src/lib/_themes/default.json'
+  postcss-mixins: {}
+
+  '@csstools/postcss-design-tokens': {}
 
   postcss-preset-env:
-    # https://github.com/csstools/postcss-preset-env#features
+    # https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env#stage
     stage: false
 
-    # https://github.com/csstools/postcss-preset-env/blob/master/src/lib/plugins-by-id.js#L35
+    # https://github.com/csstools/postcss-plugins/blob/main/plugin-packs/postcss-preset-env/FEATURES.md
     features:
       custom-media-queries: true
       media-query-ranges: true
+      nesting-rules: true
       custom-selectors: true
+      relative-color-syntax: true
       # This feature (to come in v8) is not ready yet
       # https://github.com/csstools/postcss-plugins/issues/481#issuecomment-1335678359
       cascade-layers: false
 
   cssnano:
+    # https://github.com/cssnano/cssnano/tree/cssnano%405.1.15/packages/cssnano-preset-default
     preset:
       - 'default'
       - # Both of these are disabled to allow manual CSS build tests
         # The `discardDuplicates` is disabled to prevent hiding duplicate CSS
-        discardDuplicates:
-          exclude: true
-        mergeRules:
-          exclude: true
+        discardDuplicates: false
+        mergeRules: false
+        # So that if we use `initial` it remains `initial`
+        # SEE: src/lib/_imports/tools/x-mailto-text-replace.css
+        reduceInitial: false
 
   postcss-banner:
     banner: 'no build id'

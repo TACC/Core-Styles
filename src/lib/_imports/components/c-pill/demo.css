@@ -1,0 +1,18 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.demo-truncate .c-pill {
+  white-space: nowrap;
+  max-width: 10em;
+}
+
+.demo-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding-left: 0;
+  gap: 1em;
+}
+
+.c-pill:not([class*="c-pill--"]) {
+  background-color: var(--global-color-primary--x-light);
+}

@@ -15,6 +15,10 @@ Reference:
 
 Styleguide Tools.CustomMediaQueries.Breakpoints
 */
+@custom-media --xx-narrow-and-below (width < 380px);
+@custom-media --xx-narrow-and-above (width >= 380px);
+@custom-media --xx-narrow-to-x-narrow (380px <= width < 576px);
+
 @custom-media --x-narrow-and-below (width < 576px);
 @custom-media --x-narrow-and-above (width >= 576px);
 @custom-media --x-narrow-to-narrow (576px <= width < 768px);

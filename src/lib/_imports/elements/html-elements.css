@@ -1,5 +1,12 @@
+@import url("../tools/selectors.css");
+
+/* To scope these styles to main content (i.e. not header, not navbar) */
+:where(:--main-content) {
+
+
+
 /*
-Text Content
+Form Content
 
 Elements that create forms which allow users to enter and submit data.
 
@@ -15,12 +22,14 @@ Styleguide Elements.Forms
 */
 
 /* To mimic Bootstrap */
-button, input, optgroup, select, textarea {
+& :is(button, input, optgroup, select, textarea) {
   margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
+
+
 
 /*
 Text Content
@@ -38,11 +47,25 @@ Reference:
 Styleguide Elements.TextContent
 */
 
+& blockquote {
+  margin-inline: unset; /* undo browser */
+}
+& blockquote > p:last-child {
+  margin-bottom: 0;
+}
+
+& figure {
+  margin-inline: unset; /* undo browser */
+}
+
 /* To mimic Bootstrap */
-dl, ol, ul {
+& :is(dl, ol, ul, menu) {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+
+
 
 /*
 Interactive Elements
@@ -61,7 +84,14 @@ Styleguide Elements.Interactive
 */
 
 /* To mimic Bootstrap's <p> and <ul> margins */
-details {
+& details {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+& details > summary {
+  cursor: pointer;
+}
+
+
+
 }

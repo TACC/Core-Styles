@@ -6,6 +6,8 @@ node_modules
 
 # Fractal
 demo
+## Files used directly by demo but not clients, yet provided via dist
+dist/_utils
 ## Empty file touched after auto-rebuild to trigger server live-refresh */
 fractal.server.refresh.css
 

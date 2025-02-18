@@ -28,3 +28,11 @@ ul.s-portal-nav {
   /* To overwrite @tacc/core-styles */
   text-decoration: none; /* copied from Bootstrap */
 }
+
+
+.s-portal-nav .icon {
+  margin-right: 0.25em;
+
+  font-size: 1.5em;
+  vertical-align: middle;
+}

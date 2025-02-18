@@ -1,0 +1,14 @@
+status: ready
+context:
+  types:
+    - danger
+    - success
+    - warning
+    - normal
+    - fixed
+    - updated
+variants:
+  - name: default
+    hidden: true
+  - name: html-elements
+    label: HTML Elements

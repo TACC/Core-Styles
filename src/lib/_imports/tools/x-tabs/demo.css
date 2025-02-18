@@ -1,0 +1,5 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.x-tabs label {
+  cursor: default; /* to suggest tabs are not functional */
+}

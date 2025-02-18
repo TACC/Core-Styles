@@ -81,7 +81,7 @@ Styleguide Trumps.Scopes.ArticlePreview
 }
 /* (List) */
 [class*="s-article-list--"] .s-article-preview h3 {
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 /* (List) Allocations */
 .s-article-list--allocations .s-article-preview h3 {
@@ -108,7 +108,7 @@ Styleguide Trumps.Scopes.ArticlePreview
 }
 /* (List) */
 [class*="s-article-list--"] .s-article-preview p:not(:first-child):not(:last-child) {
-  @extend %x-truncate--many-lines;
+  @mixin truncate--many-lines;
   --lines: 3;
 }
 /* (List) Allocations */
@@ -220,17 +220,17 @@ Styleguide Trumps.Scopes.ArticlePreview
 .s-article-preview p:last-child > a {
   color: transparent; /* ensure Link _text_ is invisible (allow decoration) */
 
-  @extend .x-article-link-stretch;
+  @mixin article-link-stretch;
 }
 .s-article-list--layout-gapless .s-article-preview p:last-child > a {
-  @extend .x-article-link-stretch--gapless;
+  @mixin article-link-stretch--gapless;
 }
 /* Give link state (pseudo-class) feedback */
 .s-article-preview p:last-child > a:hover {
-  @extend .x-article-link-hover;
+  @mixin article-link-hover;
 }
 .s-article-list--layout-gapless .s-article-preview p:last-child > a:hover {
-  @extend .x-article-link-hover--gapless;
+  @mixin article-link-hover--gapless;
 }
 
 

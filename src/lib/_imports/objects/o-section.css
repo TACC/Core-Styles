@@ -1,39 +1,8 @@
-/*
-Section
-
-A group of related content.
-
-_Nested sections are an afterthought. No official design uses them._
-
-To Do:
-<details><summary>FP-1463: Extract layout pattern</summary>
-
-```
-.o-section--layout-a - lay out children as two even columns
-.o-section--layout-b - lay out children as one wide column & one narrow column
-.o-section--layout-c - lay out children as one narrow column & one wide column
-.o-section--layout-d - lay out children as three even
-```
-
-</details>
-<details><summary>FP-1462: Extract banner pattern</summary>
-
-```
-.o-section--banner - add banner with background image, overlay, then content
-```
-
-</details>
-
-.o-section--style-light - light background, dark text
-.o-section--style-muted - dull light background, dark text
-.o-section--style-dark  - dark background, light text
-
-Markup: o-section.html
-
-Styleguide Objects.Section
-*/
+@import url("../components/c-button.selectors.css");
+@import url("../components/c-card.selectors.css");
 @import url("../tools/x-layout.css");
-@import url("../tools/x-fake-border.css");
+
+@import url("./o-section.selectors.css");
 
 
 
@@ -41,19 +10,30 @@ Styleguide Objects.Section
 
 /* Block */
 
-.o-section {
-  /* GH-99: Use standard spacing value */
-  --padding-block: var(--global-space--section-gap);
-
-  padding-block: var(--padding-block); /* ~avg. from design docs */
+:--o-section {
+  /* Estimates from varying spacing in design specs:
+    - TACC Site Mockups
+    - CMS-Common-Components
+  */
+  --margin-block: var(--global-space--section-gap); /* 60px */
+  --padding-top: 50px;
+  --padding-bottom: 50px;
 }
-/* To distinguish nested sections */
-.o-section .o-section {
-  padding-block: 1em;
 
-  --hoz-space: 1em;
-  padding-inline: var(--hoz-space);
-  margin-inline: calc(-1 * var(--hoz-space));
+/* Basic blocks use margin, for intuitive usage */
+:--o-section:not(:--o-section--style) {
+  margin-block: var(--margin-block);
+}
+
+/* Modified blocks use padding, to support backgrounds */
+:--o-section--style {
+  padding-block: var(--padding-top) var(--padding-bottom);
+}
+
+/* To distinguish nested sections */
+:--o-section :--o-section {
+  padding: var(--padding-top);
+  margin-inline: calc(-1 * var(--padding-top));
 }
 
 
@@ -69,7 +49,7 @@ Styleguide Objects.Section
 .o-section--banner { overflow: hidden; }
 .o-section--banner [class*="o-section--layout"] { gap: 0; }
 .o-section--banner .container { padding-inline: 0; }
-.o-section--banner.o-section { padding-block: 0; }
+.o-section--banner:--o-section { padding-block: 0; }
 
 
 
@@ -90,32 +70,28 @@ Styleguide Objects.Section
 
 /* Modifers: Style: Options */
 
-.o-section--style-light {
-  --color--text: var(--global-color-primary--dark);
+:--o-section--light {
+  --color--text: var(--global-color-primary--x-dark);
   --color--text-strong: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--xx-light);
   --color--line: var(--global-color-primary--normal);
-  --color--link: var(--global-color-link-on-light--normal);
 }
-.o-section--style-muted {
+:--o-section--muted {
   --color--text: var(--global-color-primary--x-dark);
   --color--text-strong: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--x-light);
   --color--line: var(--global-color-primary--dark);
-  --color--link: var(--global-color-link-on-light--normal);
 }
-.o-section--style-dark {
-  --color--text: var(--global-color-primary--x-light);
+:--o-section--dark {
+  --color--text: var(--global-color-primary--xx-light);
   --color--text-strong: var(--global-color-primary--xx-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
   --color--line: var(--global-color-primary--xx-light);
-  --color--link: var(--global-color-link-on-dark--normal);
 }
 
 /* Modifers: Style: Text & Background */
 
-[class*="o-section--style"] {
-  --line-width: var(--global-border-width--normal);
+:--o-section--style {
   --box-shadow--fake-bkgd: 50vw 0 var(--color--bkgd),
                           -50vw 0 var(--color--bkgd);
 
@@ -124,55 +100,18 @@ Styleguide Objects.Section
   box-shadow: var(--box-shadow--fake-bkgd);
 }
 /* Nested sections must not stretch to page edge */
-[class*="o-section--style"] [class*="o-section--style"] {
+:--o-section--style :--o-section--style {
   box-shadow: none;
-}
-
-/* Modifers: Style: Line Between Matching Sections */
-
-/* Pure sections can use just a border */
-.o-section--style-light + .o-section--style-light:not(.container),
-.o-section--style-dark + .o-section--style-dark:not(.container) {
-  border-top: var(--line-width) solid var(--color--line);
-}
-/* any muted section */ .o-section--style-muted {
-  border-top: var(--line-width) solid var(--color--line);
-  border-bottom: var(--line-width) solid var(--color--line);
-}
-
-/* Muted sections have border that extends to page edges (like background) */
-.o-section--style-muted {
-  --box-shadow--fake-bkgd:
-    /* re-build fake background but shorter by two lines' widths */
-    50vw 0 0 calc(-1 * var(--line-width)) var(--color--bkgd),
-    -50vw 0 0 calc(-1 * var(--line-width)) var(--color--bkgd),
-    /* fake top border to page edges using mostly-hidden fake background */
-    33vw 0 var(--color--line),
-    -33vw 0 var(--color--line),
-    /* fake bottom border to page edges using mostly-hidden fake background */
-    33vw 0px var(--color--line),
-    -33vw 0px var(--color--line);
-}
-
-/* Container-based light and dark sections need a border that ignores padding */
-.o-section--style-light + .o-section--style-light.container,
-.o-section--style-dark + .o-section--style-dark.container {
-  @extend %x-fake-border--inset-horz-top;
-
-  --fb--line-width: var(--global-border-width--normal);
-  --fb--line-color: var(--color--line);
-  --fb--inset-width: var(--global-space--grid-gap);
-  --fb--inset-color: var(--color--bkgd);
-
-  --fb--shadow-below: var(--box-shadow--fake-bkgd);
 }
 
 /* Modifers: Style: Child Text */
 
-[class*="o-section--style"] a {
-  color: var(--color--link);
-}
-[class*="o-section--style"] :is(h1, h2, h3, h4, h5, h6) {
+/* To color text, but not those within certain contexts */
+:--o-section--style :is(h1, h2, h3, h4, h5, h6):not(
+  :--c-card--plain *,
+  :--c-card--standard *,
+  :--c-card--standard-N *
+) {
   color: var(--color--text-strong);
 }
 
@@ -200,7 +139,7 @@ Styleguide Objects.Section
 /* Modifers: Banner */
 /* FP-1462: Extract to new banner component(s) */
 
-[class*="o-section--style"].o-section--banner + [class*="o-section--style"] {
+:--o-section--style.o-section--banner + :--o-section--style {
   box-shadow: var(--box-shadow--fake-bkgd);
 }
 
@@ -216,10 +155,11 @@ Styleguide Objects.Section
 /* FP-1462: Extract to new banner component(s) */
 
 /* Added `.o-section--banner` to require parent modifier class in markup */
-.o-section--banner .o-section__banner-image {
+.o-section--banner :--o-section__banner-image {
 
   /* To size image to cover section dimensions but maintain ratio */
   /* CAVEAT: This causes image to overflow beyond section */
+  /* TODO: Try `max-width: 100%` as in Core-Styles#331 */
   /* CAVEAT: The `vw` causes shrinkage on screen narrower than body min-width */
   /* SEE: "Tricks" section */
   width: 100vw;
@@ -240,7 +180,7 @@ Styleguide Objects.Section
 /* FP-1462: Extract to new banner component(s) */
 
 /* Added `.o-section--banner` to require parent modifier class in markup */
-.o-section--banner .o-section__banner-overlay {
+.o-section--banner :--o-section__banner-overlay {
   position: relative;
   z-index: 2;
 }
@@ -258,9 +198,17 @@ Styleguide Objects.Section
 /* To prevent visibly extra space beneath certain sections and footer */
 /* FAQ: "extra space" is margin (from <main>) between section and <footer> */
 /* FAQ: 'last-of-type' not 'last-child' cuz hidden elements */
-main > .container.o-section--style-light:last-of-type,
-main > .container > .o-section--style-light:last-of-type,
-main > .container.o-section--style-dark:last-of-type,
-main > .container > .o-section--style-dark:last-of-type {
-  margin-bottom: calc( -1 * var(--padding-block) );
+main > .container:--o-section--light:last-of-type,
+main > .container > :--o-section--light:last-of-type,
+main > .container:--o-section--dark:last-of-type,
+main > .container > :--o-section--dark:last-of-type {
+  margin-bottom: calc( -1 * var(--global-space--section-gap) );
+}
+
+/* Tricks: Children */
+
+/* To hide margin that is likely undesirable */
+/* WARNING: This "feature" was not reviewed by design */
+:--o-section > *:last-child {
+  margin-bottom: 0;
 }

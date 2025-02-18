@@ -1,0 +1,64 @@
+/* DO NOT ADD STYLES HERE; ADD CUSTOM SELECTORS TO USE IN OTHER STYLESHEETS */
+
+/*
+Monospace Elements & Components
+
+These are global selectors to target markup for monospace patterns.
+
+Styleguide Tools.CustomSelectors.Monospace
+*/
+
+
+
+/* Base */
+
+@custom-selector :--monospace
+  :--monospace-elements,
+  :--monospace-components;
+
+@custom-selector :--monospace-elements
+  /* elements used in a specific manner */
+  code, kbd, pre, samp, var;
+
+@custom-selector :--monospace-components
+  /* tacc-docs components */
+  .cmd-line,
+  .job-script;
+
+
+
+/* Modifiers */
+
+@custom-selector :--monospace--inline
+  code:not(pre > *) /* inline code */,
+  kbd;
+
+@custom-selector :--monospace--block
+  pre > code /* code block with mostly input data */,
+  pre > samp /* code block with only output data */;
+
+
+
+@custom-selector :--monospace--boxed
+  code /* any code */,
+  pre > samp /* code block with only output data */;
+
+/* For output data e.g. command output in CLI demo */
+@custom-selector :--monospace--output
+  samp /* code block with only output data */;
+
+
+
+@custom-selector :--monospace--kbd
+  kbd;
+
+
+
+/* Elements */
+
+@custom-selector :--monospace__kbd
+  code kbd;
+
+/* For data that is neither input nor output e.g. command prompt in CLI demo */
+@custom-selector :--monospace__prompt
+  pre code u /* command prompts */;

@@ -1,0 +1,15 @@
+/* Allow making all hyperlinks "irregular" styles */
+/* FAQ: Only included by a project as client wants it */
+/* SEE: https://ecepalliance.org/ (<style id="site-css-links">) */
+
+@import url('../tools/x-link.css');
+
+a {
+  @mixin link--irregular;
+}
+a:hover {
+  @mixin link--irregular--hover;
+}
+a:active {
+  @mixin link--irregular--active;
+}

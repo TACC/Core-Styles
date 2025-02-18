@@ -1,0 +1,65 @@
+
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section</h2>
+    {{render '@o-section--usage'}}
+</section>
+
+<hr />
+
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (First of a Pair)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (Second of a Pair)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+
+<hr />
+
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (before Muted Section)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+<section class="o-section o-section--style-muted">
+    <h2>Muted Section</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (after Muted Section)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+
+<hr />
+
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (with Nested Sections)</h2>
+    <p>⚠️ These are not used in any design. They are minimally supported only to prevent layouts from breaking if accidentally used.</p>
+    <div class="o-section o-section--style-dark">
+        <h3>(Nested) Dark Section</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+        {{> @button-samples }}
+    </div>
+    <div class="o-section o-section--style-muted">
+        <h3>(Nested) Muted Section</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+        {{> @button-samples }}
+    </div>
+    <div class="o-section o-section--style-light">
+        <h3>(Nested) Light Section</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+        {{> @button-samples }}
+    </div>
+</section>
+
+<hr />
+
+<section class="o-section o-section--{{this._self.name}}">
+    <h2>Section (at Bottom of Page)</h2>
+    <p>At the bottom of a CMS page: a <strong>light</strong> Section will stand out above the Footer, a <strong>muted</strong> Section will stand out above the Footer, a <strong>dark</strong> Section will visually merge with the Footer.</p>
+</section>

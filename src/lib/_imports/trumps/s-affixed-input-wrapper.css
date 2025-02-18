@@ -1,59 +1,126 @@
-/* Layout */
+@import url("../tools/selectors.form.css");
 
-.s-affixed-input-wrapper:not(
+/* Grid */
+
+.s-affixed-input-wrapper:where(:not(
   .checkboxinput, .has-type-check
   .radio, .has-type-radio
   .select, .has-type-select
   .checkboxselectmultiple, .has-select
   .textarea, .has-textarea
-) {
+)) {
   display: grid;
-  align-items: start;
-  grid-template-columns: auto 1fr;
+}
+
+/* Grid: Cells */
+
+.s-affixed-input-wrapper label { grid-area: label; }
+.s-affixed-input-wrapper input { grid-area: input; }
+.s-affixed-input-wrapper .help-text /* for Django CMS */,
+.s-affixed-input-wrapper :--form__help { grid-area: help; }
+.s-affixed-input-wrapper .field-errors /* for Django CMS */,
+.s-affixed-input-wrapper :--form__errors { grid-area: error; }
+
+/* To render element atop input */
+.s-affixed-input-wrapper__prepend,
+.s-affixed-input-wrapper__append,
+.s-affixed-input-wrapper__prefix,
+.s-affixed-input-wrapper__suffix {
+  position: relative;
+}
+
+/* Grid: Prepend & Append */
+
+/* To layout prefix and suffix beside input */
+.s-affixed-input-wrapper--prepend,
+.s-affixed-input-wrapper--append {
+  grid-template-areas:
+    "label label label"
+    var(--input-area)
+    "help help help"
+    "error error error";
+}
+.s-affixed-input-wrapper__prepend { grid-area: prepend; }
+.s-affixed-input-wrapper__append { grid-area: append; }
+.s-affixed-input-wrapper--append { --input-area: "input append _____"; }
+.s-affixed-input-wrapper--prepend { --input-area: "prepend input _____"; }
+
+/* To shrink input area to match input width */
+.s-affixed-input-wrapper--prepend:where(:not([class*="--full-width"])) {
+  grid-template-columns: auto auto 1fr; /* to stretch empty space right of input */
+}
+.s-affixed-input-wrapper--append:where(:not([class*="--full-width"])) {
+  grid-template-columns: auto auto 1fr; /* to stretch empty space right of input */
+}
+
+/* To stretch input to full width */
+.s-affixed-input-wrapper--prepend.s-affixed-input-wrapper--full-width {
+  grid-template-columns: auto 1fr auto; /* to shrink empty space right of input */
+}
+.s-affixed-input-wrapper--append.s-affixed-input-wrapper--full-width {
+  grid-template-columns: 1fr auto auto; /* to shrink empty space right of input */
+}
+
+/* Grid: Prefix & Suffix */
+
+/* To layout prefix and suffix within input (and before an empty cell) */
+/* FAQ: Empty cell adjusts, or is adjusted to, the width of input field */
+.s-affixed-input-wrapper--prefix,
+.s-affixed-input-wrapper--suffix {
   grid-template-areas:
     "label label"
-    var(--input-row, "input input")
+    "input _____"
     "help help"
     "error error";
 }
-@supports selector(:has(*)) {
-  .s-affixed-input-wrapper:has(.s-affixed-input-wrapper__prefix) {
-    --input-row: "prefix input";
-  }
-  .s-affixed-input-wrapper:has(.s-affixed-input-wrapper__suffix) {
-    --input-row: "input suffix";
-  }
+.s-affixed-input-wrapper__prefix,
+.s-affixed-input-wrapper__suffix {
+  grid-area: input;
 }
-@supports not selector(:has(*)) {
-  .s-affixed-input-wrapper--prefix {
-    --input-row: "prefix input";
-  }
-  .s-affixed-input-wrapper--suffix {
-    --input-row: "input suffix";
-  }
+
+/* To shrink input area to match input width */
+.s-affixed-input-wrapper--prefix:where(:not([class*="--full-width"])),
+.s-affixed-input-wrapper--suffix:where(:not([class*="--full-width"])) {
+  grid-template-columns: auto 1fr; /* to stretch empty space right of input */
 }
-.s-affixed-input-wrapper label { grid-area: label; }
-.s-affixed-input-wrapper input { grid-area: input; }
-.s-affixed-input-wrapper__prefix { grid-area: prefix; }
-.s-affixed-input-wrapper__suffix { grid-area: suffix; }
-.s-affixed-input-wrapper .help-text,
-.s-affixed-input-wrapper .c-form__help { grid-area: help; }
-.s-affixed-input-wrapper .field-errors,
-.s-affixed-input-wrapper .c-form__errors { grid-area: error; }
+
+/* To stretch input to full width */
+.s-affixed-input-wrapper--prefix.s-affixed-input-wrapper--full-width,
+.s-affixed-input-wrapper--suffix.s-affixed-input-wrapper--full-width {
+  grid-template-columns: 1fr auto; /* to shrink empty space right of input */
+}
+
+/* To position prefix and suffix */
+/* FAQ: Prefix has `justify-self: start` by default, but to see it is clearer */
+.s-affixed-input-wrapper__prefix { justify-self: start; }
+.s-affixed-input-wrapper__suffix { justify-self: end; }
 
 
 
-/* Variables */
+/* Prepnd & Append */
 
-.s-affixed-input-wrapper {
-  --width: 1em;
-  --padding-vert: 5px; /* mimic input */
-  --padding-horz: 10px; /* mimic input */
+.s-affixed-input-wrapper__prepend,
+.s-affixed-input-wrapper__append {
+  /* To make this element's border visible, not the input */
+  position: relative; /* FAQ: auto z-index bump moves element atop field */
+}
+.s-affixed-input-wrapper__prepend {
+  margin-right: calc( -1 * var(--global-border-width--normal) );
+}
+.s-affixed-input-wrapper__append {
+  margin-left: calc( -1 * var(--global-border-width--normal) );
 }
 
 
 
 /* Prefix & Suffix */
+
+.s-affixed-input-wrapper--prefix,
+.s-affixed-input-wrapper--suffix {
+  --width: 1em;
+  --padding-vert: 5px; /* mimic input */
+  --padding-horz: 10px; /* mimic input */
+}
 
 .s-affixed-input-wrapper__prefix,
 .s-affixed-input-wrapper__suffix {
@@ -74,19 +141,13 @@
   font-family: var(--global-font-family--sans--portal);
 }
 
-/* To render <span> atop and (as if) within input */
-.s-affixed-input-wrapper__prefix {
-  position: relative;
-  top: var(--global-border-width--normal);
-  left: var(--global-border-width--normal);
-  margin-right: calc(-1 * var(--width) - var(--padding-horz) * 2);
-}
-.s-affixed-input-wrapper__suffix {
-  position: relative;
-  top: var(--global-border-width--normal);
-  right: var(--global-border-width--normal);
-  margin-left: calc(-1 * var(--width) - var(--padding-horz) * 2);
-}
 .s-affixed-input-wrapper__prefix + input {
   text-indent: calc(var(--width) + var(--padding-horz));
+}
+
+/* To NOT stretch input to match width of wider label */
+/* FAQ: Using `:where()` to reduce specificity */
+.s-affixed-input-wrapper--prefix:where(:not([class*="--full-width"])) input,
+.s-affixed-input-wrapper--suffix:where(:not([class*="--full-width"])) input {
+  width: fit-content;
 }

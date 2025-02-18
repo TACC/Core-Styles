@@ -1,0 +1,49 @@
+status: ready
+context:
+  types:
+    - name: info
+      content: Notify user of any details that are <strong>not</strong> a problem.
+    - name: success
+      content: Notify user of a successful event.
+    - name: warning
+      content: Notify user of an <strong>un</strong>successful event that <em>could prevent</em> functionality.
+    - name: error
+      content: Notify user of an <strong>un</strong>successful event that <em>does prevent</em> functionality.
+  scopes:
+    - name: inline
+      content: An inline message.
+    - name: section
+      content: A wide block message.
+    - name: global
+      content: A site-wide banner message.
+variants:
+  - name: default
+    hidden: true
+  - name: type
+    label: by Type
+    status: ready
+  - name: type-portal
+    label: by Type (Portal)
+    status: ready
+    view: 'c-message--type.hbs'
+    context:
+      shouldLoadPortal: true
+  - name: type-cms
+    label: by Type (CMS)
+    view: 'c-message--type.hbs'
+    context:
+      shouldLoadCMS: true
+  - name: scope
+    label: by Scope
+    status: ready
+  - name: scope-portal
+    label: by Scope (Portal)
+    status: ready
+    view: 'c-message--scope.hbs'
+    context:
+      shouldLoadPortal: true
+  - name: scope-cms
+    label: by Scope (CMS)
+    view: 'c-message--scope.hbs'
+    context:
+      shouldLoadCMS: true

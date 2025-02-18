@@ -47,9 +47,11 @@ Styleguide Objects.Grid
   max-width: 100%;
 }
 
-/* Hide content that does exceed cell size */
-.o-grid > * {
-  overflow: hidden;
+/* Avoid figure size shrinking */
+/* HELP: Why does this happen to figure only inside a gid? */
+/* SEE: components/c-card--frontera/c-card--frontera.hbs */
+.o-grid figure {
+  width: unset; /* undo html-elements.css */
 }
 
 
@@ -87,8 +89,8 @@ Styleguide Objects.Grid
 /* Prevent content overflow */
 /* FAQ: Excluding `img` because `.o-grid img` already sets this for images */
 .o-grid--col-min-width > *:not(img) {
-  max-width: 100%; /* used if cell width is smaller than content */
-  max-height: 100%; /* used if cell height is smaller than content */
+  max-width: 100%; /* effectual if cell width is smaller than content */
+  max-height: 100%; /* effectual if cell height is smaller than content */
 }
 
 
@@ -103,9 +105,12 @@ Styleguide Objects.Grid
 
 /* Layout: Content: Image Fills Cell/Container */
 
-.o-grid--image-fill > :is(a, figure):not(img) {
-  width: 100%;
-  height: 100%;
+.o-grid--image-fill > * {
+  min-height: 0; /* to prevent image overflowing grid cell */
+}
+.o-grid--image-fill > :is(a, figure) {
+  align-self: stretch;
+  justify-self: stretch;
 }
 .o-grid--image-fill > img,
 .o-grid--image-fill > figure > img,

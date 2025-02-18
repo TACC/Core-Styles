@@ -1,0 +1,10 @@
+label: "S Paragraph Table (CMS)"
+context:
+  shouldLoadCMS: true
+  ⚠️ shouldLoadCMS: only works well in CMS, because its code is in table.cms.css
+  data:
+    rows:
+      - paragraph: true
+      - paragraph: true
+      - paragraph: true
+      - paragraph: true

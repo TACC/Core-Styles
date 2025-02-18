@@ -1,0 +1,19 @@
+{{#each links as | link |}}
+  {{#if ../is-list}}
+  <li>
+  {{/if}}
+    <a
+      {{#if link.href~}}href="
+        {{~#if is-anchor-href}}#{{link.href~}}
+        {{~else if is-internal}}{{path link.href~}}
+        {{~else}}{{link.href}}{{/if~}}
+      "{{~/if}}
+      {{#if link.id}}id="{{link.id}}"{{/if}}
+      {{#if link.target}}target="{{link.target}}"{{/if}}
+    >
+      {{{link.name}}}
+    </a>
+  {{#if ../is-list}}
+  </li>
+  {{/if}}
+{{/each}}

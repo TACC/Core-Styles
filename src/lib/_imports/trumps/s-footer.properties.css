@@ -1,0 +1,4 @@
+.s-footer {
+  --pad-horz--thick: 36px; /* mimic `.s-header.navbar { --nav-padding-horz }` */
+  --pad-horz--thin: 15px;
+}

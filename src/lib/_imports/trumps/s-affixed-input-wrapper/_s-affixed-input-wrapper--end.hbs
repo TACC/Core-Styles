@@ -1,0 +1,13 @@
+<div class="
+  s-affixed-input-wrapper s-affixed-input-wrapper--{{modifier}}
+  {{#if is-full-width}}s-affixed-input-wrapper--full-width{{/if}}
+">
+  <label for="text-to-copy-{{modifier}}">Text to Copy</label>
+  <button
+    class="s-affixed-input-wrapper__{{modifier}}  c-button c-button--size-small"
+    data-copy-target="text-to-copy-{{modifier}}"
+  >
+    Copy
+  </button>
+  <input id="text-to-copy-{{modifier}}" name="text-{{modifier}}" />
+</div>

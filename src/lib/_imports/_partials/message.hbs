@@ -1,0 +1,17 @@
+<{{#if tag}}{{ tag }}{{else}}div{{/if}}
+  class="
+    {{ifno ns 'c-'}}message
+    {{#if type}}{{ifno ns 'c-'}}message--type-{{ type }}{{/if}}
+    {{#if scope}}{{ifno ns 'c-'}}message--scope-{{ scope }}{{/if}}
+    {{#unless scope}}{{ifno ns 'c-'}}message--scope-global{{/unless}}
+    {{#if needs}}{{ifno ns 'c-'}}message--has-{{ needs }}{{/if}}
+  "
+>
+
+  {{#unless tag}}<p>{{/unless}}
+  {{#if title }}<strong>{{ title }}:</strong>{{/if}}
+  {{{ content }}}
+  {{{ extra_content }}}
+  {{#unless tag}}</p>{{/unless}}
+
+</{{#if tag}}{{ tag }}{{else}}div{{/if}}>

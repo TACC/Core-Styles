@@ -1,162 +1,159 @@
 <dl>
   {{#if supports.type}}
   <dt>Type</dt>
-  <dd><dl>
-    <dt><code>&lt;button&gt;</code></dt>
-    <dd>
-      <button class="c-button c-button--{{this._self.name}} c-button--secondary"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">--secondary</span>
-      </button>
-      {{#if small}}
-        <small>(no small primary allowed)</small>
-      {{else}}
-        <button class="c-button c-button--{{this._self.name}} c-button--primary"
-        {{#if disabled}}disabled{{/if}}>
+  <dd>
+    <dl>
+      <dt><code>&lt;button&gt;</code></dt>
+      <dd>
+        <button class="c-button c-button--{{this._self.name}} c-button--secondary" {{#if disabled}}disabled{{/if}}>
+          <span class="c-button__text">--secondary</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}} c-button--primary" {{#if disabled}}disabled{{/if}}>
           <span class="c-button__text">--primary</span>
         </button>
-      {{/if}}
-      <button class="c-button c-button--{{this._self.name}} c-button--tertiary"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">--tertiary</span>
-      </button>
-    </dd>
+        <button class="c-button c-button--{{this._self.name}} c-button--tertiary" {{#if disabled}}disabled{{/if}}>
+          <span class="c-button__text">--tertiary</span>
+        </button>
+      </dd>
 
-    {{#if supports.link-tag}}
-    <dt><code>&lt;a&gt;</code></dt>
-    <dd>
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--secondary"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">--secondary</span>
-      </a>
-      {{#if small}}
-        <small>(no small primary allowed)</small>
-      {{else}}
-        <a href="#" class="c-button c-button--{{this._self.name}} c-button--primary"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
+      {{#if supports.link-tag}}
+      <dt><code>&lt;a&gt;</code></dt>
+      <dd>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--secondary" {{#if disabled}}disabled
+          tabindex="-1" {{/if}}>
+          <span class="c-button__text">--secondary</span>
+        </a>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--primary" {{#if disabled}}disabled
+          tabindex="-1" {{/if}}>
           <span class="c-button__text">--primary</span>
         </a>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--tertiary" {{#if disabled}}disabled
+          tabindex="-1" {{/if}}>
+          <span class="c-button__text">--tertiary</span>
+        </a>
+      </dd>
       {{/if}}
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--tertiary"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">--tertiary</span>
-      </a>
-    </dd>
+    </dl>
+  <dd>
     {{/if}}
-  </dl><dd>
-  {{/if}}
 
-  {{#if supports.states}}
+    {{#if supports.states}}
   <dt>States</dt>
-  <dd><dl>
-    <dt><code>&lt;button&gt;</code></dt>
-    <dd>
-      <button class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">default</span>
-      </button>
-      <button class="c-button c-button--{{this._self.name}} c-button--is-busy
-        {{#if type}}{{type}}{{/if}}"
-        disabled>
-        <span class="c-button__text">--is-busy</span>
-    </dd>
+  <dd>
+    <dl>
+      <dt><code>&lt;button&gt;</code></dt>
+      <dd>
+        <button class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
+          <span class="c-button__text">default</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}} 
+        {{#if type}}{{type}}{{/if}}" disabled>
+          <span class="c-button__text">disabled-attr</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}} c-button--is-busy
+        {{#if type}}{{type}}{{/if}}" disabled>
+          <span class="c-button__text">--is-busy</span>
+      </dd>
 
-    {{#if supports.link-tag}}
-    <dt><code>&lt;a&gt;</code></dt>
-    <dd>
-      <a href="#" class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">default</span>
-      </a>
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--is-busy
-        {{#if type}}{{type}}{{/if}}"
-        disabled tabindex="-1">
-        <span class="c-button__text">--is-busy</span>
-      </a>
-    </dd>
+      {{#if supports.link-tag}}
+      <dt><code>&lt;a&gt;</code></dt>
+      <dd>
+        <a href="#" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <span class="c-button__text">default</span>
+        </a>
+        <a disabled tabindex="-1" href="#" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}">
+          <span class="c-button__text">disabled-attr</span>
+        </a>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--is-busy
+        {{#if type}}{{type}}{{/if}}" disabled tabindex="-1">
+          <span class="c-button__text">--is-busy</span>
+        </a>
+      </dd>
+      {{/if}}
+    </dl>
+  <dd>
     {{/if}}
-  </dl><dd>
-  {{/if}}
 
-  {{#if supports.icons}}
+    {{#if supports.icons}}
   <dt>Icons</dt>
-  <dd><dl>
-    <dt><code>&lt;button&gt;</code></dt>
-    <dd>
-      <button class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <i class="c-button__icon--before" aria-description="validate input">…</i>
-        <span class="c-button__text">__icon--before</span>
-      </button>
-      <button class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">__icon--after</span>
-        <i class="c-button__icon--after" aria-description="exit page">X</i>
-    </dd>
+  <dd>
+    <dl>
+      <dt><code>&lt;button&gt;</code></dt>
+      <dd>
+        <button class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
+          <i class="c-button__icon--before" aria-description="validate input">…</i>
+          <span class="c-button__text">__icon--before</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
+          <span class="c-button__text">__icon--after</span>
+          <i class="c-button__icon--after" aria-description="exit page">X</i>
+      </dd>
 
-    {{#if supports.link-tag}}
-    <dt><code>&lt;a&gt;</code></dt>
-    <dd>
-      <a href="#" class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <i class="c-button__icon--before" aria-description="validate input">…</i>
-        <span class="c-button__text">__icon--before</span>
-      </a>
-      <a href="#" class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">__icon--after</span>
-        <i class="c-button__icon--after" aria-description="exit page">X</i>
-      </a>
-    </dd>
+      {{#if supports.link-tag}}
+      <dt><code>&lt;a&gt;</code></dt>
+      <dd>
+        <a href="#" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <i class="c-button__icon--before" aria-description="validate input">…</i>
+          <span class="c-button__text">__icon--before</span>
+        </a>
+        <a href="#" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <span class="c-button__text">__icon--after</span>
+          <i class="c-button__icon--after" aria-description="exit page">X</i>
+        </a>
+      </dd>
+      {{/if}}
+    </dl>
+  <dd>
     {{/if}}
-  </dl><dd>
-  {{/if}}
 
-  {{#if supports.width}}
+    {{#if supports.width}}
   <dt>Width</dt>
-  <dd><dl>
-    <dt><code>&lt;button&gt;</code></dt>
-    <dd>
-      <button class="c-button c-button--{{this._self.name}} c-button--width-short {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">--width-short</span>
-      </button>
-      <button class="c-button c-button--{{this._self.name}} c-button--width-medium {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">--width-medium</span>
-      </button>
-      <button class="c-button c-button--{{this._self.name}} c-button--width-long {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled{{/if}}>
-        <span class="c-button__text">--width-long</span>
-    </dd>
+  <dd>
+    <dl>
+      <dt><code>&lt;button&gt;</code></dt>
+      <dd>
+        <button class="c-button c-button--{{this._self.name}} c-button--width-short {{#if type}}{{type}}{{/if}}" {{#if
+          disabled}}disabled{{/if}}>
+          <span class="c-button__text">--width-short</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}} c-button--width-medium {{#if type}}{{type}}{{/if}}" {{#if
+          disabled}}disabled{{/if}}>
+          <span class="c-button__text">--width-medium</span>
+        </button>
+        <button class="c-button c-button--{{this._self.name}} c-button--width-long {{#if type}}{{type}}{{/if}}" {{#if
+          disabled}}disabled{{/if}}>
+          <span class="c-button__text">--width-long</span>
+      </dd>
 
-    {{#if supports.link-tag}}
-    <dt><code>&lt;a&gt;</code></dt>
-    <dd>
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-short {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">--width-short</span>
-      </a>
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-medium {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">--width-medium</span>
-      </a>
-      <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-long {{#if type}}{{type}}{{/if}}"
-        {{#if disabled}}disabled tabindex="-1"{{/if}}>
-        <span class="c-button__text">--width-long</span>
-      </a>
-    </dd>
+      {{#if supports.link-tag}}
+      <dt><code>&lt;a&gt;</code></dt>
+      <dd>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-short {{#if type}}{{type}}{{/if}}"
+          {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <span class="c-button__text">--width-short</span>
+        </a>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-medium {{#if type}}{{type}}{{/if}}"
+          {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <span class="c-button__text">--width-medium</span>
+        </a>
+        <a href="#" class="c-button c-button--{{this._self.name}} c-button--width-long {{#if type}}{{type}}{{/if}}"
+          {{#if disabled}}disabled tabindex="-1" {{/if}}>
+          <span class="c-button__text">--width-long</span>
+        </a>
+      </dd>
+      {{/if}}
+    </dl>
+  <dd>
     {{/if}}
-  </dl><dd>
-  {{/if}}
 
-  {{#if supports.size}}
+    {{#if supports.size}}
   <dt>Size</dt>
   <dd>
     {{#if supports.size-small}}
@@ -164,8 +161,7 @@
       <dt><code>&lt;button&gt;</code></dt>
       <dd>
         <button class="c-button c-button--{{this._self.name}} c-button--size-small
-          {{#if type}}{{type}}{{/if}}"
-          {{#if disabled}}disabled{{/if}}>
+          {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
           <span class="c-button__text">--size-small</span>
         </button>
       </dd>
@@ -174,8 +170,7 @@
       <dt><code>&lt;a&gt;</code></dt>
       <dd>
         <a href="#" class="c-button c-button--{{this._self.name}} c-button--size-small
-          {{#if type}}{{type}}{{/if}}"
-          {{#if disabled}}disabled{{/if}}>
+          {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1"{{/if}}>
           <span class="c-button__text">--size-small</span>
         </a>
       </dd>
@@ -185,5 +180,5 @@
     <small>(no small size allowed)</small>
     {{/if}}
   <dd>
-  {{/if}}
+    {{/if}}
 </dl>

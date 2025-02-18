@@ -1,0 +1,27 @@
+{{#if only-standard}}
+
+<article class="c-card c-card--{{this._self.name}}">
+  <h3>Card - {{this._self.label}}</h3>
+  <p>Standard card and its explicit variations.
+    {{> @message tag="span" type="warning" scope="inline"
+        content="The explicit variations are only if <code>c-card--standard</code> automatic variation fails and cannot be fixed fast enough." }}</p>
+  <div class="o-grid o-grid--col-min-width">
+    {{> @c-card--one-standard }}
+    {{> @c-card--one-standard variant=1 }}
+    {{> @c-card--one-standard variant=2 }}
+    {{> @c-card--one-standard variant=3 }}
+  </div>
+</article>
+
+{{else}}
+
+<article class="c-card c-card--{{this._self.name}}">
+  <h3>Card - {{this._self.label}}</h3>
+  <div class="o-grid o-grid--col-min-width">
+    {{> @c-card--one-transparent }}
+    {{> @c-card--one-plain }}
+    {{> @c-card--one-standard }}
+  </div>
+</article>
+
+{{/if}}

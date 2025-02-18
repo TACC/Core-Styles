@@ -1,0 +1,30 @@
+context:
+  helpTextTag: small
+  inputListTag: menu
+  selectors:
+    errorList: :where(.s-form > ul), :where(.s-form > div > ul)
+    wrap: :where(.s-form > div)
+  classNames:
+    root: s-form
+    has_required: has-required
+    has_checkbox: has-type-check
+    has_spam_filter: has-spam-check
+variants:
+  - name: default
+    status: wip
+  - name: portal
+    status: wip
+    context:
+      shouldLoadPortal: true
+  - name: cms
+    label: CMS
+    status: wip
+    context:
+      shouldLoadCMS: true
+  - name: login
+    context:
+      classNames:
+        modifier: s-form--login
+      shouldLoadPortal: true
+      supportStyles:
+        - ../../assets/trumps/s-form--login.css

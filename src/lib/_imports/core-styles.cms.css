@@ -6,30 +6,53 @@
 
 /* SETTINGS */
 /* To get most settings, client should load `./base.css` first */
-@import url("./settings/font.cms.css");
+@import url("./settings/font--cms.css");
+@import url("./settings/color--cms.css");
 
 /* GENERICS */
 /* Mostly from Bootstrap */
 /* https://confluence.tacc.utexas.edu/x/b53tDg */
 
 /* ELEMENTS */
+@import url("./elements/root--cms.css");
 /* To override Bootstrap */
+@import url("./elements/sticky-footer.css");
 @import url("./elements/html-elements.cms.css");
-@import url("./elements/form.cms.css");
+@import url("./elements/headings--cms.css");
+@import url("./elements/mailto-link.css");
+@import url("./elements/monospace.css");
+@import url("./elements/table.cms.css");
 
 /* OBJECTS */
-/* (none) */
+@import url("./objects/o-float-content.css");
+@import url("./objects/o-offset-content.css");
+@import url("./objects/o-section.css");
+@import url("./objects/o-heading-steps.css");
+
 
 /* COMPONENTS */
-/* (none) */
+@import url("./components/bootstrap.col.css");
+@import url("./components/bootstrap.modal--cms.css");
+@import url("./components/bootstrap.row.css");
+@import url("./components/c-content-block.css");
+@import url("./components/cortal.icon.css");
+@import url("./components/c-button--cms.css");
+@import url("./components/c-card.css");
+@import url("./components/c-card-list.css");
+@import url("./components/c-form--cms.css");
+@import url("./components/c-message.css");
+@import url("./components/c-message--expanded.css");
+@import url("./components/c-recognition.css");
+@import url("./components/c-show-more.css");
+@import url("./components/c-update.css");
+
+/* TODO: Move to TACC/Core-CMS-Resources:/frontera-cms
+        or — alternatively — TACC/Core-CMS */
+@import url("./components/c-card--frontera-about-page.css");
 
 /* TRUMPS */
-/* To explain the in-limbo Core-CMS doc page styles */
-/* FAQ: Commented out because Core-CMS doc pages load these directly */
-/* IMPORTANT: If CMS docs are moved to TACC-Docs, then kill these stylesheets */
-/*
-@import url("_imports/trumps/s-document.css");
-@import url("_imports/trumps/s-guide-doc.css");
-@import url("_imports/trumps/s-inline-dl.css");
-@import url("_imports/trumps/u-nested-text-content.css");
-*/
+@import url("./trumps/s-drop-cap.css");
+@import url("./trumps/s-footer.css");
+@import url("./trumps/s-footer--thick.css");
+@import url("./trumps/s-truncated-table.css");
+@import url("./trumps/s-hero-banner.css");
