@@ -16,3 +16,6 @@ variants:
     context:
       shouldSkipPattern: true
       shouldLoadCMS: true
+  # partials
+  - name: tacc
+    hidden: true

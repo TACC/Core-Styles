@@ -1,6 +1,7 @@
 <button id="open-modal-button"
         type="button"
-        class="btn btn-primary"
+        {{!-- HACK: To support TACC .c-button until TACC skins Bootstrap .btn --}}
+        class="c-button c-button--primary"
         data-toggle="modal"
         data-target="#static-modal">
   Open Modal
@@ -29,12 +30,14 @@
       </div>
       <div class="modal-footer">
         <button type="button"
-                class="btn btn-secondary"
+                {{!-- HACK: To support TACC .c-button until TACC skins Bootstrap .btn --}}
+                class="c-button c-button--secondary"
                 data-dismiss="modal">
           Another Action
         </button>
         <button type="button"
-                class="btn btn-primary">
+                {{!-- HACK: To support TACC .c-button until TACC skins Bootstrap .btn --}}
+                class="c-button c-button--primary">
           Main Action
         </button>
       </div>
