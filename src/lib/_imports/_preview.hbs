@@ -36,9 +36,12 @@
 {{/if}}
 
 <!-- Styles: Global (for every pattern) -->
-{{#unless _target.context.shouldSkipBase }}
-{{> @import-client-styles styles=globalStyles }}
-{{/unless}}
+{{> @import-client-styles styles=demoStyles }}
+{{#if _target.context.shouldSkipBase }}
+{{> @import-client-styles styles=settingsStyles }}
+{{else}}
+{{> @import-client-styles styles=baseStyles }}
+{{/if}}
 
 {{#if _target.context.shouldLoadCMS }}
 {{#unless _target.context.shouldSkipCMS }}

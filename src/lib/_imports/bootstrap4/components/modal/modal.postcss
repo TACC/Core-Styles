@@ -1,4 +1,4 @@
-@import url("../tools/x-truncate.postcss");
+@import url("../../../tools/x-truncate.postcss");
 
 
 
@@ -92,6 +92,8 @@
 
 /* Footer */
 
-.modal-footer .btn + .btn {
+.modal-footer .btn + .btn,
+/* HACK: To support TACC .c-button until TACC skins Bootstrap .btn */
+.modal-footer .c-button + .c-button {
   margin-left: 1rem;
 }

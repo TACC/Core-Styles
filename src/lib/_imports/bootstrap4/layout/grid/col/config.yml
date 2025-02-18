@@ -1,14 +1,15 @@
-order: 1
-label: 'Grid: Container'
+order: 3
 context:
-  shouldSkipBase: true
   supportStyles:
-    - ../../assets/components/c-message.css
-    - ../../assets/components/c-message--expanded.css
+    - ../../assets/components/c-nav.css
+    - ../../assets/components/c-card.css
+    - ../../assets/components/c-button.css
 variants:
   - name: default
     label: Bootstrap
     status: reference
+    context:
+      shouldSkipBase: true
   - name: tacc
     label: TACC
     status: ready

@@ -1,17 +1,12 @@
+label: Figures
 variants:
   - name: default
     label: Bootstrap
     status: reference
     context:
       shouldSkipBase: true
-  - name: tacc-portal
-    label: TACC (Portal)
-    status: prototype
-    context:
-      shouldSkipPattern: true
-      shouldLoadPortal: true
-  - name: tacc-cms
-    label: TACC (CMS)
+  - name: tacc
+    label: TACC
     status: prototype
     context:
       shouldSkipPattern: true

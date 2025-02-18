@@ -1,13 +1,10 @@
-order: 2
-label: 'Grid: Row'
-context:
-  supportStyles:
-    - ../../assets/components/c-card.css
 variants:
   - name: default
     label: Bootstrap
+    context:
+      shouldSkipBase: true
   - name: tacc
     label: TACC
-    status: ready
+    status: prototype
     context:
       shouldSkipPattern: false

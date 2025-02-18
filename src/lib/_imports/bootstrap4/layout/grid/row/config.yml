@@ -1,3 +1,7 @@
+order: 2
+context:
+  supportStyles:
+    - ../../assets/components/c-card.css
 variants:
   - name: default
     label: Bootstrap
@@ -6,7 +10,6 @@ variants:
       shouldSkipBase: true
   - name: tacc
     label: TACC
-    status: prototype
+    status: ready
     context:
-      shouldSkipPattern: true
-      shouldLoadCMS: true
+      shouldSkipPattern: false
