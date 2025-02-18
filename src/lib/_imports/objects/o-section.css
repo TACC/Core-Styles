@@ -159,6 +159,7 @@
 
   /* To size image to cover section dimensions but maintain ratio */
   /* CAVEAT: This causes image to overflow beyond section */
+  /* TODO: Try `max-width: 100%` as in Core-Styles#331 */
   /* CAVEAT: The `vw` causes shrinkage on screen narrower than body min-width */
   /* SEE: "Tricks" section */
   width: 100vw;

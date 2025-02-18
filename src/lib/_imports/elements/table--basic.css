@@ -3,8 +3,9 @@
 table,
 :--s-paragraph-table {
   --font-size: var(--global-font-size--small, 12px);
-  --cell-pad-vert: 1em;
-  --cell-pad-horz: 2em;
+  --cell-pad-vert: 0.6667em; /* 8px if font-size is 12px */
+  --cell-pad-horz: 1.3333em; /* 16px if font-size is 12px */
+  --cell-line-height: 1.1;
 
   /* To prevent borders from being hidden */
   /* SEE: TABLE WITH A <thead> */
@@ -13,10 +14,7 @@ table,
 
   font-family: var(--global-font-family--sans--portal);
   font-size: var(--font-size);
-
-  border-bottom: var(--global-border-width--normal) solid var(--global-color-primary--dark);
 }
-
 :--s-paragraph-table {
   display: table; /* to mimic shrink-wrap width of real table */
 }
@@ -28,7 +26,6 @@ table,
 thead tr:last-child :is(td, th) {
   border-bottom: var(--global-border-width--normal) solid var(--global-color-primary--dark);
 }
-
 /* TABLE WITH NO <thead> */
 /* FAQ: To __avoid__ styling a __nested__ table, must use direct selector `>`  */
 /* FAQ: To __ensure__ border is __visible__:
@@ -36,7 +33,7 @@ thead tr:last-child :is(td, th) {
           (because table has `border-collapse: separate`) */
 tbody:not(thead + tbody) > tr:first-child > :is(td, th),
 :--s-paragraph-table {
-  border-top: var(--global-border-width--normal) solid var(--global-color-primary--dark);;
+  border-top: var(--global-border-width--normal) solid var(--global-color-primary--dark);
 }
 
 /* To add bottom border to rows */
@@ -53,7 +50,6 @@ tr:not(:last-of-type) > :is(td, th),
 tr:nth-child(odd) :is(th, td) {
   background: var(--global-color-background--app);
 }
-
 tr:nth-child(even) :is(th, td),
 :--s-paragraph-table p:nth-child(even) {
   background: var(--global-color-primary--x-light);
@@ -67,18 +63,29 @@ tr:nth-child(even) :is(th, td),
 
   color: var(--global-color-primary--dark);
 }
+/* To ensure <thead> height matches between browsers */
+/* IMPORTANT: More than for consistency; `table--nested.css` requires this */
+:is(td, th),
+:--s-paragraph-table p {
+  line-height: var(--cell-line-height);
+}
+/* To pin first column to left of table even during scroll */
+/* WARNING: Design does NOT approve this */
+/* TODO: Replace with APCD-CMS "responsive-data-tables" solution */
+/* SEE: https://github.com/TACC/Core-CMS-Custom/blob/3bec84b/apcd-cms/src/apps/view_users/static/view_users_table/css/table.css#L65-L129 */
+:is(th, td):first-child {
+  position: sticky;
+  left: 0;
+}
 
 th {
   color: var(--global-color-primary--x-dark);
 
-  text-align: inherit;
-  /* copied from Bootstrap 4.0.0 */
+  text-align: inherit; /* copied from Bootstrap 4.0.0 */
 }
-
 thead > tr > th {
   font-weight: var(--bold);
 }
-
 tbody > tr > th {
   font-weight: var(--normal);
 }
@@ -93,6 +100,8 @@ caption {
   padding-inline: var(--cell-pad-horz);
 }
 
+
+
 /* Cell Content */
 
 /* To override browser */
@@ -101,10 +110,9 @@ td ul {
   padding-inline-start: 0;
   margin-block: 0;
 }
-
 td li:not(:last-of-type) {
   /* To match line-height of other cells, but still allow space between items */
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 /* To override browser */
@@ -119,110 +127,7 @@ table p,
 :--s-paragraph-table p {
   margin-top: 0;
 }
-
 table p:last-child,
 :--s-paragraph-table p {
   margin-bottom: 0;
-}
-
-/* SEE: https://css-tricks.com/responsive-data-tables/ */
-@media (max-width: 767px) {
-  /* overwrite Core CMS site.css */
-  table,
-  :--s-paragraph-table {
-    --font-size: var(--global-font-size--medium, 14px);
-    --cell-pad-vert: 1.2em;
-    --cell-pad-horz: 2.2em;
-
-    font-family: var(--global-font-family--sans--portal);
-    font-size: var(--font-size);
-
-    border-top: var(--global-border-width--normal) solid var(--global-color-primary--dark);
-    border-bottom: var(--global-border-width--normal) solid var(--global-color-primary--dark);
-  }
-
-
-  :is(table, thead, tbody, th, td, tr) {
-    display: block;
-  }
-
-  tr:not(:last-of-type) > :is(td, th),
-  :--s-paragraph-table p:not(:last-of-type) {
-    border-bottom: unset;
-  }
-
-  tr > :is(td, th):not(:last-of-type),
-  :--s-paragraph-table p:not(:last-of-type) {
-    border-bottom-width: var(--global-border-width--normal);
-    border-bottom-style: solid;
-    border-bottom-color: var(--global-color-primary--light);
-  }
-
-  tr:not(:last-of-type) {
-    border-bottom: var(--global-border-width--normal) solid var(--global-color-primary--light);
-  }
-
-  /* To make cells look like left-aligned labels */
-  td:before {
-    position: absolute;
-    width: calc( 50% - var(--cell-pad-horz) );
-    padding-right: 10px;
-    white-space: nowrap;
-    font-weight: bold;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    /* To mimic cell padding */
-    left: var(--cell-pad-horz);
-  }
-
-  tbody:not(thead + tbody) > tr:first-child > :is(td, th) {
-    border-top: none;
-  }
-
-  /* To remove border (that should probably be in Core anyway) */
-  table.has-data-cols {
-    /* To hide table headers (but not `display: none;`, for a11y) */
-    & thead tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-
-    /* To make each cell behave like a "row" */
-    & td {
-      position: relative;
-      padding-left: 50%;
-    }
-
-    /* To label the cells */
-    /* RFE: Add `data-label` to each cell so we can use `attr(data-label)` */
-    & td:before {
-      content: attr(data-col);
-    }
-
-    & td:not(:first-child) th:first-child,
-    td:not(:first-child) td:first-child {
-      padding-inline-start: 50%;
-    }
-
-    & td:not(:last-child) th:last-child,
-    td:not(:last-child) td:last-child {
-      padding-inline-end: 50%;
-    }
-
-    & .c-pill {
-      min-width: unset;
-    }
-
-    & td.has-table {
-      padding: 10px;
-    }
-  }
-
-  table.has-table {
-    & tr :is(td,th):last-child {
-      border-bottom: unset;
-    }
-  }
 }

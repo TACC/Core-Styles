@@ -1,0 +1,39 @@
+@import url("../tools/x-breadcrumbs.css");
+
+.breadcrumb {
+  @mixin x-breadcrumbs;
+
+  background-color: unset;
+  padding-bottom: unset;
+  padding-right: unset;
+}
+.breadcrumb:where(.breadcrumb-major) {
+  @mixin x-breadcrumbs-major;
+}
+.breadcrumb:where(:not(.breadcrumb-major)) {
+  padding-top: unset;
+}
+
+.breadcrumb:where(ol, ul) {
+  @mixin x-breadcrumbs--list;
+}
+.breadcrumb:where(ol, ul):where(.breadcrumb-major) {
+  @mixin x-breadcrumbs-major--list;
+}
+
+.breadcrumb li {
+  @mixin x-breadcrumbs__list-item;
+}
+.breadcrumb:where(.breadcrumb-major) li {
+  @mixin x-breadcrumbs-major__list-item;
+}
+
+.breadcrumb > .active {
+  color: inherit;
+}
+.breadcrumb li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
+}
+.breadcrumb li + li::before {
+  color: inherit;
+}

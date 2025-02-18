@@ -9,7 +9,7 @@ Styles that allow re-usable layouts.
 %x-layout--d - Widest: three even columns
 %x-layout--e - (deprecated) Always: multiple even rows
 
-Styleguide Tools.ExtendsAndMixins.Layout
+Styleguide Tools.Mixins.Layout
 */
 @import url("../tools/media-queries.css");
 

@@ -16,6 +16,7 @@
 /* ELEMENTS */
 @import url("./elements/root--portal.css");
 @import url("./elements/sticky-footer.css");
+@import url("./elements/table.portal.css");
 
 /* OBJECTS */
 @import url("./objects/o-flex-item-table-wrap.css");
@@ -33,3 +34,4 @@
 @import url("./trumps/s-footer.css");
 @import url("./trumps/s-footer--thin.css");
 @import url("./trumps/s-form-page.css");
+@import url("./trumps/s-truncated-table.css");

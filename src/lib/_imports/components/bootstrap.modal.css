@@ -37,7 +37,7 @@
   color: var(--global-color-primary--xx-dark);
   font-weight: normal;
 
-  @extend .x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 
 /* To darken close button */
@@ -55,7 +55,7 @@
 /* To render modal close button icon as a Cortal icon */
 /* CAVEAT: Pass `charCode="&#xe912;"` to `<ModalHeader>` */
 .modal-header .close span {
-  /* To mimic `.icon` styles without `@extend` or `composes` (unavailable) */
+  /* TODO: Use `.icon` styles via a `@mixin` instead */
   /* HACK: Copied (and reduced and edited) from `src/styles/trumps/icon...` */
   font-size: 1.5rem; /* bigger to match header text font height (like design) */
   font-family: Cortal-Icons !important;

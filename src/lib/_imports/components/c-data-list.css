@@ -135,7 +135,7 @@ table:--data-list {
 
 /* To truncate text */
 :--data-list__key {
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 @supports(text-overflow: ':') {
   :--data-list__non-table-key {
@@ -280,7 +280,7 @@ table:--data-list--horz :--table-key {
 /* FAQ: Truncate when doing is unlikely to almost entirely obscure text */
 
 :--data-list--truncate-values :--any-value {
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 
 

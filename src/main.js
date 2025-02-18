@@ -4,7 +4,8 @@
 
 const { resolve } = require('path');
 
-const build = require('./bin/build.js');
+const buildStyles = require('./bin/build-styles.js');
+const buildTokens = require('./bin/build-tokens.js');
 const config = require('./bin/config.js');
 const version = require('./bin/version.js');
 
@@ -37,7 +38,8 @@ function buildStylesheets(input, output, opts = {}) {
     : undefined;
 
   config(customConfigs, version(opts.buildId));
-  build(inputResolved, outputResolved, buildOpts);
+  buildTokens();
+  buildStyles(inputResolved, outputResolved, buildOpts);
 }
 
 /*

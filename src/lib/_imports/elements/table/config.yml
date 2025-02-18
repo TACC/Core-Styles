@@ -315,9 +315,7 @@ variants:
         rows:
           - id: Copper
             name: Paul Bunyan
-            name-link:
-                - is-button: true
-                - text: View Team
+            name-link: View Team
             table:
               cols:
                 - Systems
@@ -339,9 +337,7 @@ variants:
                   time: 12/01/2019 11:04:19
           - id: Vermillion
             name: Nathan Fillion
-            name-link:
-                - is-button: true
-                - text: View Team
+            name-link: View Team
             table:
               cols:
                 - Systems
@@ -363,9 +359,7 @@ variants:
                   time: 12/01/2019 11:04:19
           - id: Emerald
             name: Wesley Snipes
-            name-link:
-                - is-button: true
-                - text: View Team
+            name-link: View Team
             table:
               cols:
                 - Systems

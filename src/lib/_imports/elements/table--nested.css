@@ -29,66 +29,42 @@
   td.has-table { padding: 0; }
 }
 
+/* To replace any parent table columns above with nested table columns */
+/* FAQ: Pulls nested table up by the height of the parent table head */
+thead + tbody tr table {
+  --offset-distance: calc(
+    var(--cell-pad-vert) * 2
+    +
+    var(--cell-line-height) * var(--font-size)
+    +
+    var(--global-border-width--normal)
+  );
+  --offset: calc( var(--offset-distance) * -1 );
+
+  transform: translateY(var(--offset));
+  margin-bottom: var(--offset);
+}
+/* FAQ: Hides any parent table head underneath nested table head */
+thead + tbody tr:first-of-type thead {
+  background: var(--global-color-background--app);
+}
+/* FAQ: Hides all successive (thus redundant) nested table heads */
+thead + tbody tr:not(:first-of-type) thead {
+  visibility: hidden;
+}
 /* FAQ: Re-colors border of all successive nested rows (to match parent row) */
 thead + tbody tr:not(:first-of-type) tbody :is(td,th) {
   border-color: var(--global-color-primary--light);
 }
 
-table.nested-table {
-  border-bottom: unset;
-  border-left: var(--global-border-width--normal) solid var(--global-color-primary--light);
-  border-right: var(--global-border-width--normal) solid var(--global-color-primary--light);
+/* To reduce inline padding
+   at start and end of nested table
+   unless at start or end of parent table */
+td:not(:first-child) th:first-child,
+td:not(:first-child) td:first-child {
+  padding-inline-start: 8px;
 }
-
-@media (max-width: 767px) {
-
-  table.has-table {
-    & td:nth-child(3):not(:is(table.nested-table *) > *):before {
-      content: none;
-    }
-
-    & td:nth-child(3):not(:is(table.nested-table *) > *) {
-      padding-left: unset;
-      position: unset;
-
-      display: flex;
-      justify-content: center;
-      border-bottom: unset;
-    }
-
-    & td:last-child:not(:is(table.nested-table *) > *) {
-      padding-top: unset;
-    }
-  }
-
-  table.nested-table {
-    border: unset;
-
-    & tr {
-      border: var(--global-border-width--normal) solid var(--global-color-primary--dark);
-    }
-
-    & tr:nth-child(odd) :is(th, td) {
-      background-color: rgba(var(--global-color-primary--light-rgb), 0.40)
-    }
-    & tr:nth-child(odd) :is(th, td):nth-child(even) {
-      background-color: var(--global-color-primary--x-light);
-    }
-
-    & tr:nth-child(even) :is(th, td):nth-child(odd) {
-      background-color: rgba( var(--global-color-primary--x-light-rgb), 0.50);
-    }
-    & tr:nth-child(even) > :is(th, td):nth-child(even) {
-      background-color: var(--global-color-primary--xx-light);
-    }
-
-    & tr:not(:last-of-type) {
-      border-bottom: unset;
-    }
-  }
-
-  tr:not(:last-of-type) {
-    border-bottom: var(--global-border-width--normal) solid var(--global-color-primary--dark);
-  }
-
+td:not(:last-child) th:last-child,
+td:not(:last-child) td:last-child {
+  padding-inline-end: 8px;
 }

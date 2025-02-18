@@ -1,0 +1,9 @@
+context:
+  shouldSkipPattern: false
+  📝 shouldSkipPattern: because core-styles.base.css does not import this
+  data:
+    rows:
+      - paragraph: true
+      - paragraph: true
+      - paragraph: true
+      - paragraph: true

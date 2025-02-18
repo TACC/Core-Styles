@@ -18,11 +18,12 @@ Styleguide Trumps.Scopes.Header
 @import url("../tools/media-queries.css");
 @import url("./s-header.bootstrap.css");
 
-/* WARNING: NO-R/EM: Until Frontera CMS drops Bootstrap 3.7.1 (for old design)…
-            `em` nor `rem` was not allowed because results were not consistent.
-            UPDATE: As of PR #312, this has likely changed (untested). */
+/* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
 .s-header {
+  --height: 50px;
+  --header-major-border-width: 1px;
+
   font-size: var(--global-font-size--medium); /* NO-R/EM: Overwrite `bootstrap.3.3.7.css` */
   font-weight: var(--bold);
   letter-spacing: 0.025px; /* 14px * 0.025em equals design-requested 0.35px */
@@ -39,14 +40,20 @@ Styleguide Trumps.Scopes.Header
   -moz-osx-font-smoothing: grayscale;
 
   /* To hide border, set this in theme to match `--header-bkgd-color` value */
-  border-bottom: 1px solid var(--header-major-border-color);
+  border-bottom: var(--header-major-border-width) solid var(--header-major-border-color);
 }
 
-/* To enlarge height for all screen widths */
-@media (--medium-and-above)  {
-  .s-header {
-      height: 60px;
-  }
+/* To prevent header bar resize whether:
+  - navbar is collapsed or expanded
+  - logo is wide or narrow
+  - logo is raster or vector
+*/
+.s-header .navbar-brand {
+  height: calc(
+    var(--height)
+    - var(--nav-padding-vert) * 2
+    - var(--header-major-border-width)
+  );
 }
 
 /* Affiliation */
@@ -56,17 +63,13 @@ Styleguide Trumps.Scopes.Header
 /* Logo */
 
 .s-header .navbar-brand {
-  display: grid;
-  align-content: center;
+  /* To align first CMS nav link with Portal "Dashboard" header */
+  /* CAVEAT: A wide logo will shift first CMS nav link rightward */
+  flex-shrink: 0;
+  flex-basis: 175px;
+  margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
 
-  /* If branding is short enough, then align position of first CMS nav link with Portal "Dashboard" header */
-  /* WARNING: This is a manual value; if Portal interface changes, then this may need to change */
-  min-width: 176px;
-  margin-right: 16px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
-  padding: 0;
-
-  color: var(--header-text-color);
-  /* text-decoration: none; */ /* already provided by Bootstrap */
+  padding: unset;
 }
 
 /* Navigation */
@@ -77,15 +80,7 @@ Styleguide Trumps.Scopes.Header
     align-items: stretch;
 }
 
-/* On wide viewport, prevent header resize from dynamic content */
-/* CAVEAT: This is only for Portal and Docs which dynamically load content */
-@media (--wide-and-above) {
-  .s-header.navbar {
-    height: 50px;
-  }
-}
-
-.s-header.navbar {
+.s-header {
   /* Make horizontal padding match the horizontal content buffer in Portal */
   /* FAQ: The `calc()` keeps track of disparate source of space values */
   /* `16px` = `1rem` from Portal (via `#sidebar .nav-content`) */
@@ -100,48 +95,53 @@ Styleguide Trumps.Scopes.Header
 /* Navigation: Links */
 
 .s-header .nav-link {
-  --line-height: 24px;
   --border-width: 4px;
-  --border-offset: calc(var(--nav-padding-vert) - var(--border-width));
-  --border-color: var(--global-color-secondary--light);
 
-  /* The nav vertical padding does not match the link border, so the alignment
-     of the link border with the bottom of the header is off by small amount */
-  position: relative;
-  top: var(--border-offset);
-
-  line-height: var(--line-height);
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0 0 var(--border-width);
 
   /* If link text uses 2 lines, header grows taller (but it must not do so) */
   white-space: nowrap;
 }
 
-@media (--medium-and-above) {
-  .s-header .nav-item {
-      display: flex;
+@define-mixin header__nav-link--tall {
+  &.s-header .nav-item {
+    display: flex;
+  }
+
+  &.s-header .nav-link {
+    display: flex;
+    align-items: center;
+
+    /* To align the underline of a hovered link to bottom of header */
+    height: calc(100% + var(--nav-padding-vert) + var(--header-major-border-width));
   }
 }
-
-.s-header .nav-link {
-  display: flex;
-  align-items: center;
+@media (--x-narrow-and-above) {
+  .navbar-expand-sm { @mixin header__nav-link--tall; }
+}
+@media (--narrow-and-above) {
+  .navbar-expand-md { @mixin header__nav-link--tall; }
+}
+@media (--medium-and-above) {
+  .navbar-expand-lg { @mixin header__nav-link--tall; }
+}
+@media (--wide-and-above) {
+  .navbar-expand-xl { @mixin header__nav-link--tall; }
 }
 
 .s-header .nav-link:hover,
 .s-header .nav-link:focus,
 .s-header .nav-link:active,
 .s-header .nav-item.active .nav-link {
-  border-width: 0 0 var(--border-width);
-  border-style: solid;
-  border-color: var(--border-color);
-  margin-bottom: calc(var(--border-width) * -1);
+  border-color: var(--global-color-secondary--light);
 }
 /* HACK: Using an ID selector, because Bootstrap has overspecific selectors */
 #s-header .nav-link,
 /* HACK: Support `span.nav-link` having children `a` and `a.dropdown-toggle-split` */
 #s-header .nav-link > a {
   color: var(--header-text-color);
-  /* text-decoration: none; */ /* already provided by Bootstrap */
 }
 
 /* Navigation: Links: Responsive Design */

@@ -10,11 +10,27 @@
 @layer foundation, base, project;
 </style>
 
-{{#if _target.context.shouldLoadBootstrap}}
+{{#if _target.context.shouldLoadBootstrap }}
 {{#unless _target.context.shouldSkipBootstrap }}
 <!-- Styles: Global (for current pattern): Bootstrap -->
 <style>
   @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css') layer(foundation);
+</style>
+{{/unless}}
+{{/if}}
+{{#if _target.context.shouldLoadBootstrap3 }}
+{{#unless _target.context.shouldSkipBootstrap3 }}
+<!-- Styles: Global (for current pattern): Bootstrap -->
+<style>
+  @import url('https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css') layer(foundation);
+</style>
+{{/unless}}
+{{/if}}
+{{#if _target.context.shouldLoadBootstrap5 }}
+{{#unless _target.context.shouldSkipBootstrap5 }}
+<!-- Styles: Global (for current pattern): Bootstrap -->
+<style>
+  @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css') layer(foundation);
 </style>
 {{/unless}}
 {{/if}}
@@ -80,6 +96,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {{/if}}
+{{#if _target.context.shouldLoadBootstrap3}}
+<!-- Scripts: Global (for current pattern): Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
+{{/if}}
 
 <!-- Scripts: Local (for current pattern) -->
 {{#each _target.resources.assets}}
@@ -95,7 +116,7 @@
 
 {{!-- Markup (for current pattern) --}}
 {{#unless _target.context.shouldOmitMainTag}}
-<main>
+<main id="demo">
 {{/unless}}
 {{{yield}}}
 {{#unless _target.context.shouldOmitMainTag}}
