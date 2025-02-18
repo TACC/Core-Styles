@@ -14,4 +14,4 @@ A [table]({{path './table' }}) with its header pinned during vertical scroll.
 
 [source]: https://css-tricks.com/position-sticky-and-table-headers/ "CSS Tricks: Position Sticky & Table Headers"
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

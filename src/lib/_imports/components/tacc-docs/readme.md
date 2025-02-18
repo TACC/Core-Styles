@@ -15,4 +15,4 @@ Components used on [TACC-Docs].
 [TACC-Docs]: https://github.com/TACC/TACC-Docs/
 [Node]: https://nodejs.org/en/
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

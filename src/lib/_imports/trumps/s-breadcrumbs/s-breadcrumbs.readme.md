@@ -17,4 +17,4 @@ A list of links to ancestor navigation (pages or sections that are a parent, gra
 | `ol.s-breadcrumb` | Other navigation |
 | `div.s-breadcrumb ul` | Major navigation (Inaccurate markup) | Use when markup cannot be changed. |
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

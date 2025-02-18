@@ -1,8 +1,8 @@
 status: prototype
 order: 1
 context:
-  shouldLoadBootstrap: true
-  📝 shouldLoadBootstrap: >-
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: >-
     not yet tested without Bootstrap
     (known dependencies: <caption> font color)
   data:

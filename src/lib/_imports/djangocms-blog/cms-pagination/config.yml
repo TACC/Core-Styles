@@ -1,0 +1,13 @@
+label: Pagination
+variants:
+  - name: default
+    label: Unstyled
+    status: reference
+    context:
+      shouldSkipBase: true
+  - name: tacc-cms
+    label: TACC (CMS)
+    status: ready
+    context:
+      shouldSkipPattern: false
+      shouldLoadCMS: true

@@ -14,4 +14,4 @@ Mixins for tab components e.g. [Bootstrap Nav Tabs]({{path './bootstrap--nav-tab
 | `.x-tabs__content--active`       | visible content
 | `.x-tabs__content--force-active` | to force content to be visible
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

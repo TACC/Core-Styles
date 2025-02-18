@@ -20,12 +20,18 @@
 @custom-selector :--c-form__field
     .c-form__field;
 @custom-selector :--c-form__field--has-required
-    :--c-form__field.has-required;
+    :--c-form__field:has([required]);
 @custom-selector :--c-form__field--has-checkbox
     :--c-form__field.has-type-check;
 
 @custom-selector :--c-form__menu
     .c-form__field > menu;
+@custom-selector :--c-form__menu_item
+    :--c-form__menu > li;
+@custom-selector :--c-form__menu_line
+    :--c-form__menu_label;
+@custom-selector :--c-form__menu_label
+    :--c-form__menu_item > label;
 
 @custom-selector :--c-form__help
     .c-form__help;

@@ -6,7 +6,7 @@ variants:
     label: (CMS) Headings
     context:
       shouldLoadCMS: true
-      shouldLoadBootstrap: true
+      shouldLoadBootstrap4: true
   - name: docs
     status: wip
     label: (Docs) Headings
@@ -17,4 +17,4 @@ variants:
     label: (Portal) Headings
     context:
       shouldLoadPortal: true
-      shouldLoadBootstrap: true
+      shouldLoadBootstrap4: true

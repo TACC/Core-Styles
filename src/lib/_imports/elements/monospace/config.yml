@@ -5,7 +5,7 @@ variants:
     label: (CMS) Monospace
     context:
       shouldLoadCMS: true
-      shouldLoadBootstrap: true
+      shouldLoadBootstrap4: true
   - name: docs
     label: (Docs) Monospace
     context:

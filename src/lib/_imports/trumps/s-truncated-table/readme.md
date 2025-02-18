@@ -4,4 +4,4 @@ A [table]({{path './table' }}) that uses a [table](https://developer.mozilla.org
 >
 > - Text will truncate only if it is in a `<p>` tag.
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

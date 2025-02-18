@@ -23,4 +23,4 @@ Simple classes to align media or content within paragraphs:
 [source]: https://github.com/django-cms/djangocms-picture/blob/2.3.0/djangocms_picture/models.py#L24-L34
 [TACC-Docs]: https://github.com/TACC/TACC-Docs/
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />
