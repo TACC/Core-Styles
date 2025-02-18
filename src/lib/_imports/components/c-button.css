@@ -219,7 +219,7 @@ a:--c-button--is-busy {
 /* Modifiers: Types: Truncate */
 
 :--c-button--can-truncate {
-  @extend .x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 
 /* Modifiers: Types: Is Active */
@@ -266,7 +266,7 @@ a:--c-button--is-busy {
 /* Modifiers: Types: As Link */
 
 :--c-button--as-link {
-  @extend .x-link;
+  @mixin link;
 
   background: unset;
   border: unset;
@@ -277,19 +277,20 @@ a:--c-button--is-busy {
   font-weight: inherit;
 }
 :--c-button--as-link:where(:not(:--disabled)):hover {
-  @extend .x-link--hover;
+  @mixin link--hover;
 }
 :--c-button--as-link:where(:not(:--disabled)):active {
-  @extend .x-link--active;
+  @mixin link--active;
 }
 
 /* Modifiers: Types: Is Busy */
 
 :--c-button--is-busy {
   opacity: 0.5;
+  pointer-events: none;
 }
 :--c-button--is-busy :--c-button__text {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 
@@ -336,4 +337,10 @@ a:--c-button--is-busy {
 }
 :--c-button__icon--after {
   margin-left: 0.5em;
+}
+
+/* To position Bootstrap spinner inside TACC's flex-based button */
+:--c-button .spinner-border {
+  align-self: center;
+  margin-left: 0.5ch;
 }

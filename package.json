@@ -1,12 +1,15 @@
 {
   "name": "@tacc/core-styles",
-  "version": "2.27.0",
+  "version": "2.39.0",
   "license": "MIT",
-  "author": "TACC ACI WMA <wma-portals@gmail.com>",
+  "author": "TACC COA CMD <coa-cmd@tacc.utexas.edu>",
+  "contributors": [
+    "TACC ACI WMA <wma-portals@tacc.utexas.edu>"
+  ],
   "description": "CSS source and processor for TACC Core-CMS and Core-Portal.",
   "files": [
     "dist",
-    "docs",
+    "docs/bootstrap.md",
     "fractal.config.js",
     "fractal.theme.js",
     "src/cli.js",
@@ -20,13 +23,13 @@
     "start": "fractal start --sync",
     "build": "npm run build:css && npm run build:demo",
     "build:css": "bin/build.js --build-id=$npm_config_build_id",
+    "build:tokens": "bin/build-tokens.js",
     "postbuild:css": "rm -rf dist/fonts && cp -r src/lib/fonts dist/fonts",
     "prebuild:demo": "rm -rf dist/_utils && cp -r src/lib/_utils dist/_utils",
     "prestart": "npm run prebuild:demo",
     "build:demo": "fractal build",
     "test": "bin/test.js && echo \"Test output at 'dist/_tests' (compare to test input)\"",
     "build:watch": "npm run build:css && touch src/lib/_imports/fractal.server.refresh.css",
-    "prepublishOnly": "npm run build # && npm test && npm run lint",
     "watch": "npm-watch"
   },
   "engines": {
@@ -36,6 +39,7 @@
   "homepage": "https://github.com/TACC/Core-Styles",
   "repository": "git@github.com:TACC/Core-Styles.git",
   "peerDependencies": {
+    "@csstools/postcss-design-tokens": "^4.0.1",
     "commander": "^9.4.1",
     "cssnano": "^5.1.15",
     "js-yaml": "^4.1.0",
@@ -47,10 +51,11 @@
     "postcss-extend": "^1.0.5",
     "postcss-import": "^15.0.0",
     "postcss-mixins": "^10.0.1",
-    "postcss-preset-env": "^7.8.3",
+    "postcss-preset-env": "^10.0.2",
     "postcss-replace": "^2.0.1"
   },
   "// peerDependencies": {
+    "@csstools/postcss-design-tokens": "To convert design tokens to custom properties",
     "commander": "To create CLI",
     "cssnano": "To minify CSS",
     "js-yaml": "To parse PostCSS configs",
@@ -70,13 +75,16 @@
     "@frctl/handlebars": "^1.2.15",
     "@frctl/mandelbrot": "^1.10.1",
     "minimist": "^1.2.7",
-    "npm-watch": "^0.11.0"
+    "npm-watch": "^0.13.0"
   },
   "watch": {
     "build:watch": {
       "patterns": "src/**/*",
-      "extensions": "css",
-      "ignore": "fractal.server.refresh.css"
+      "extensions": "css,json",
+      "ignore": [
+        "fractal.server.refresh.css",
+        "tokens/*.json"
+      ]
     }
   }
 }

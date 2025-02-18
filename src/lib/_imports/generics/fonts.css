@@ -62,7 +62,7 @@ Styleguide Generics.Fonts
 @font-face {
   font-family: 'Benton Sans';
   src: url("../../fonts/BentonSans-Black.otf") format("opentype");
-  font-weight: 800;
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

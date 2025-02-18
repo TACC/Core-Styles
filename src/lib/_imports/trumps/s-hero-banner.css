@@ -1,4 +1,5 @@
 @import url("../tools/media-queries.css");
+@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
 
 /* Banner */
 /* Banner: Container */
@@ -37,7 +38,7 @@
 
 .s-home-banner article {
   color: var(--global-color-primary--xx-dark);
-  background-color: rgba(var(--global-color-primary--xx-light-rgb), 0.9);
+  background-color: rgb( from design-token('color.gray.light-2x') r g b / 0.9 );
   z-index: 2;
   padding: 24px 84px 36px 48px;
   font-weight: bold;

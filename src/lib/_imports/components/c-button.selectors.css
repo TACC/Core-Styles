@@ -21,7 +21,8 @@
 @custom-selector :--c-button--is-active
     [class*="button--is-active"];
 @custom-selector :--c-button--is-busy
-    [class*="button--is-busy"];
+    [class*="button--is-busy"],
+    [data-state="busy"];
 @custom-selector :--c-button--as-link
     [class*="button--as-link"];
 

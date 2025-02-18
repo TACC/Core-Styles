@@ -14,10 +14,8 @@
   align-items: center;
   justify-content: center;
 
-  /* This prevents header bar resize when branding is dynamically added */
-  /* CAVEAT: This is only for Portal and Docs which dynamically load content */
-  /* FAQ: Do not use `48.78px`, because Safari only accepts whole numbers */
-  height: 49px;
+  /* To prevent header bar resize when content is dynamically added */
+  height: 50px;
 
   background-color: var(--global-color-primary--xx-dark);
   color: var(--global-color-primary--xx-light);
@@ -63,9 +61,8 @@
 /* Logo Selectors  */
 
 .portal-logo {
-  float: left;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  border: none;
+  height: 100%;
+}
+img.portal-logo {
+  border-style: none; /* no effect if Bootstrap is loaded */
 }

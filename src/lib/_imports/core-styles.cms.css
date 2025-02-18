@@ -38,10 +38,12 @@
 @import url("./components/cortal.icon.css");
 @import url("./components/c-button--cms.css");
 @import url("./components/c-card.css");
+@import url("./components/c-card-list.css");
 @import url("./components/c-form--cms.css");
 @import url("./components/c-message.css");
 @import url("./components/c-message--expanded.css");
 @import url("./components/c-recognition.css");
+@import url("./components/c-show-more.css");
 @import url("./components/c-update.css");
 
 /* TODO: Move to TACC/Core-CMS-Resources:/frontera-cms
