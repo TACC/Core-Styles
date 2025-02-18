@@ -1,0 +1,112 @@
+{{#*inline "icon-grid"}}
+<div class="demo-grid">
+  {{#each icons}}
+  <div class="demo-item">
+    <i class="icon icon-{{this}}"></i>
+    <code>.icon-{{this}}</code>
+  </div>
+  {{/each}}
+</div>
+{{/inline}}
+
+<h2>Table of Contents</h2>
+<dl>
+  <dt>Types</dt>
+  <dd>
+    <nav class="c-nav c-nav--no-list">
+      {{#each sections}}
+      <a href="#{{id}}">{{title}}</a>
+      {{/each}}
+    </nav>
+  </dd>
+
+  <dt>Adjustments</dt>
+  <dd>
+    <nav class="c-nav c-nav--no-list">
+      <a href="#sizes">Sizes</a>
+      <a href="#transforms">Transformations</a>
+      <a href="#buttons">in Buttons</a>
+      <a href="#labels">with Labels</a>
+    </nav>
+  </dd>
+</dl>
+
+<h2>Icons</h2>
+<dl>
+  <dt>Types</dt>
+  <dd>
+    <dl>
+      {{#each sections}}
+      <dt id="{{id}}">{{title}}</dt>
+      <dd>{{> icon-grid icons=icons}}</dd>
+      {{/each}}
+    </dl>
+  </dd>
+
+  <dt>Adjustments</dt>
+  <dd>
+    <dl>
+      <dt id="sizes">Sizes</dt>
+      <dd>
+        <dl>
+          <dt>Relative Units</dt>
+          <dd class="demo-grid">
+            {{#each sizes.relative}}
+            <div class="demo-item">
+              <i class="icon icon-dashboard {{this.class}}"></i>
+              <code>{{this.label}}</code>
+            </div>
+            {{/each}}
+          </dd>
+
+          <dt>Absolute Units</dt>
+          <dd class="demo-grid">
+            {{#each sizes.absolute}}
+            <div class="demo-item">
+              <i class="icon icon-dashboard {{this.class}}"></i>
+              <code>{{this.label}}</code>
+            </div>
+            {{/each}}
+          </dd>
+        </dl>
+      </dd>
+
+      <dt id="transforms">Transformations</dt>
+      <dd>
+        <div class="demo-grid">
+          {{#each transforms}}
+          <div class="demo-item">
+            <i class="icon {{this.icon}} {{this.class}}"></i>
+            <code>{{this.label}}</code>
+          </div>
+          {{/each}}
+        </div>
+      </dd>
+
+      <dt id="buttons">in Buttons</dt>
+      <dd>
+        <div class="demo-list">
+          {{#each in_buttons}}
+          <button class="c-button c-button--{{this.type}}">
+            <i class="icon icon-{{this.icon}} c-button__icon--before"></i>
+            <span class="c-button__text">{{this.text}}</span>
+          </button>
+          {{/each}}
+        </div>
+      </dd>
+
+      <dt id="labels">with Labels</dt>
+      <dd>
+        <div class="demo-grid">
+          {{#each with_labels}}
+          <div class="demo-item">
+            <i class="icon {{this.icon}}" data-label="{{this.label}}"></i>
+            <code>[data-label="{{this.label}}"]</code>
+            <small class="x-truncate--one-line">{{this.usage}}</small>
+          </div>
+          {{/each}}
+        </div>
+      </dd>
+    </dl>
+  </dd>
+</dl> 

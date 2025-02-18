@@ -33,6 +33,22 @@ We use a modifed version of [GitFlow](https://datasift.github.io/gitflow/Introdu
 
 Only appointed team members may release versions.
 
+### Automated Release (Bash Scripts)
+
+1. (one time) Login to npm via:\
+    `npm login`
+2. Run the release preparation script:\
+    `./bin/release-prepare.sh`
+3. Create and merge the PR.
+4. Run the release publish script:\
+    `./bin/release-publish.sh vN.N.N`\
+    (where `N.N.N` is the version tag)
+
+### Manual Release Steps
+
+<details>
+<summary>Instructions</summary>
+
 1. (one time) Login to npm via:\
     `npm login`
 1. Create new branch for version bump.
@@ -61,3 +77,5 @@ Only appointed team members may release versions.
         (where `N.N.N` is the version tag)
     1. Overwrite remote tag with annotated one:\
         `git push --tags --force`
+
+</details>

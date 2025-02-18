@@ -50,3 +50,9 @@
 @custom-selector :--c-card--image-right
     .c-card--image-right,
     .card--image-right;
+
+@custom-selector :--c-card__image
+    :--c-card img,
+    :--c-card__image-link;
+@custom-selector :--c-card__image-link
+    :--c-card a:has(> img);

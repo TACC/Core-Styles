@@ -1,6 +1,6 @@
 {
   "name": "@tacc/core-styles",
-  "version": "2.36.0",
+  "version": "2.39.0",
   "license": "MIT",
   "author": "TACC COA CMD <coa-cmd@tacc.utexas.edu>",
   "contributors": [
@@ -9,7 +9,7 @@
   "description": "CSS source and processor for TACC Core-CMS and Core-Portal.",
   "files": [
     "dist",
-    "docs",
+    "docs/bootstrap.md",
     "fractal.config.js",
     "fractal.theme.js",
     "src/cli.js",
@@ -30,7 +30,6 @@
     "build:demo": "fractal build",
     "test": "bin/test.js && echo \"Test output at 'dist/_tests' (compare to test input)\"",
     "build:watch": "npm run build:css && touch src/lib/_imports/fractal.server.refresh.css",
-    "prepublishOnly": "npm run build # && npm test && npm run lint",
     "watch": "npm-watch"
   },
   "engines": {
