@@ -1,12 +1,15 @@
-order: 3
-label: 'Grid: Col'
+order: 2
+label: 'Grid: Row'
 context:
+  subdir: "bootstrap4/grid"
   supportStyles:
     - ../../assets/components/c-card.css
 variants:
   - name: default
     label: Bootstrap
     status: reference
+    context:
+      shouldSkipBase: true
   - name: tacc
     label: TACC
     status: ready
