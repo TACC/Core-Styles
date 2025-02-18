@@ -1,8 +1,9 @@
+label: Bootstrap 4
 context:
   shouldLoadBootstrap: true
 variants:
   - name: default
-    hidden: true
+    label: README
   - name: container
     status: ready
   - name: col

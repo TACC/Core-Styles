@@ -31,13 +31,13 @@ Load `core-styles.base.css` from a CDN e.g. [JSDeliver].
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.base.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css" />
     ```
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.base.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css");
     ```
 
 ### 2. Project
@@ -53,7 +53,7 @@ Load any one of these relevant project-type CSS from a CDN e.g. [JSDeliver]:
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.______.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.______.css" />
     ```
 
     Replace `______` with `cms` or `docs` or `portal`.
@@ -61,7 +61,7 @@ Load any one of these relevant project-type CSS from a CDN e.g. [JSDeliver]:
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.______.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.______.css");
     ```
 
     Replace `______` with `cms` or `docs` or `portal`.
@@ -114,13 +114,13 @@ Load `core-styles.settings.css` from a CDN e.g. [JSDeliver].
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.settings.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css" />
     ```
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
     ```
 
 ### Load a [Core Styles] Pattern
@@ -130,13 +130,13 @@ To use a pattern as is.
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/components/c-message.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/components/c-message.css" />
     ```
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
     ```
 
 ### Extend a [Core Styles] Pattern
@@ -146,7 +146,7 @@ To use a pattern but also change it to fit a unique requirement of your site.
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/components/c-message.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/components/c-message.css" />
     <style>
       .c-message--scope-section {
         margin-bottom: 1em;
@@ -157,7 +157,7 @@ To use a pattern but also change it to fit a unique requirement of your site.
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.6.2/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
 
     .c-message--scope-section {
       margin-bottom: 1em;

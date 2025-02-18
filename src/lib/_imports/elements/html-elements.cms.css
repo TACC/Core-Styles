@@ -103,13 +103,9 @@ Styleguide Elements.TextContent
 
   border-top-width: var(--global-border-width--normal);
   border-top-style: solid;
-  border-top-clolor: var(--global-color-primary--dark);
+  border-top-color: var(--global-color-primary--light);
 
   margin-bottom: var(--global-space--hr-buffer-below); /* overwrite Bootstrap */
-
-  /* To fix widthless-ness when <hr> is a grid or flex item */
-  /* https://dev.to/alvaromontoro/the-disappearing-line-a-css-mystery-3e35 */
-  width: 100%;
 }
 
 

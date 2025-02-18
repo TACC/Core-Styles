@@ -63,7 +63,7 @@
         {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
           <span class="c-button__text">default</span>
         </a>
-        <a disabled href="#" class="c-button c-button--{{this._self.name}}
+        <a disabled tabindex="-1" href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}">
           <span class="c-button__text">disabled-attr</span>
         </a>
@@ -170,7 +170,7 @@
       <dt><code>&lt;a&gt;</code></dt>
       <dd>
         <a href="#" class="c-button c-button--{{this._self.name}} c-button--size-small
-          {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
+          {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1"{{/if}}>
           <span class="c-button__text">--size-small</span>
         </a>
       </dd>

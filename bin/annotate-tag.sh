@@ -28,7 +28,7 @@ if ! is_valid_semver "$version_string"; then
 fi
 
 # Annotate the tag
-git pull
+git fetch --tags
 git checkout "$version_string"
 git tag -d "$version_string"
 git tag -a "$version_string" -m "chore: $version_string"

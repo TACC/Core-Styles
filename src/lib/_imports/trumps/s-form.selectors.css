@@ -15,20 +15,26 @@
 @custom-selector :--s-form__errors--form /* submission errors */
     :is(.s-form > ul);
 @custom-selector :--s-form__errors--field /* validation errors */
-    :is(.s-form > div > ul);
+    :is(.s-form > div > ul),
+    :is(.s-form > fieldset > div > ul);
 
 @custom-selector :--s-form__field
-    :where(.s-form > div);
+    :where(.s-form > div),
+    :where(.s-form > fieldset > div);
 @custom-selector :--s-form__field--has-required
-    :where(.s-form > div).has-required;
+    :where(.s-form > div).has-required,
+    :where(.s-form > fieldset > div).has-required;
 @custom-selector :--s-form__field--has-checkbox
+    :--s-form__field.has-type-check,
     :--s-form__field.has-type-check;
 
 @custom-selector :--s-form__menu
-    :where(.s-form > div > menu);
+    :where(.s-form > div > menu),
+    :where(.s-form > fieldset > div > menu);
 
 @custom-selector :--s-form__help
-    :where(.s-form > div > small);
+    :where(.s-form > div > small),
+    :where(.s-form > fieldset > div > small);
 
 @custom-selector :--s-form__badge
     :where(.s-form label > span);

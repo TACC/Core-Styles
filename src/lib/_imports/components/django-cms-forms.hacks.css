@@ -11,7 +11,6 @@ Styleguide Components.DjangoCMS.Forms.Hacks
 */
 @custom-selector :--django-cms-logged-in   .cms-ready;
 @custom-selector :--django-cms-edit-mode   [class*="cms-structure-mode-"];
-/* IDEA: import and extend `.c-message(...)` */
 /* IDEA: WP-280 use postcss mixin for message styles */
 /* @tacc/core-styles/src/lib/_imports/components/c-message.css */
 
@@ -20,7 +19,6 @@ Styleguide Components.DjangoCMS.Forms.Hacks
 
 /* To inform user or admin about unsupported required multi-checkbox field */
 /* HACK: This does not solve the problem; it just announces it */
-/* NOTE: Were we to @extend :--c-message, generated selectors become messy */
 :--problem-field > label::after {
   display: block;
   margin-top: 0.5em;

@@ -9,7 +9,7 @@ Fake borders that have features unavailable to regular borders
 %x-fake-border--inset-horz-both - Borders top & bottom that are not full width
 %x-fake-border--inset-horz-bottom - A bottom border that is not full width
 
-Styleguide Tools.ExtendsAndMixins.Overlay
+Styleguide Tools.Mixins.Overlay
 */
 
 /*

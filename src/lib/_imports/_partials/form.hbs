@@ -384,6 +384,72 @@
     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" required="" id="recaptcha_g9y93gP8" data-widget-uuid="9e32f28ccb9545109ff6ae891f9af324" data-callback="onSubmit_9e32f28ccb9545109ff6ae891f9af324" data-size="normal"></div>
   </div>
 
+  <fieldset class="{{ class.field }} {{ class.has_spam_filter }} {{ class.has_required }}">
+    <legend>sample fields in a fieldset</legend>
+
+    {{!-- FAQ: Copied from first two fields --}}
+    <div class="{{ class.field }} {{ class.has_required }}">
+      {{#if (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/if}}
+
+      <label for="name">
+        Name
+        <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
+          aria-label="(required)">*</span>
+      </label>
+
+      <input
+        type="text"
+        name="name"
+        required=""
+        placeholder="Your name"
+        id="name"
+      />
+
+      {{#unless (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/unless}}
+
+      {{#with helpTextTag as | tag |}}
+      <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+        We use this to identify your submission.
+      </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+      {{/with}}
+    </div>
+
+    <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
+      {{#if (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/if}}
+
+      <label for="favorite-fruit">Favorite Fruit</label>
+
+      <select name="favorite-fruit" id="favorite-fruit">
+        <option value="" selected="">
+          Please select an option
+        </option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Cherry">Cherry</option>
+        <option value="Durian">Durian</option>
+        <option value="Other">Other</option>
+        <option value="Whatever">Whatever</option>
+      </select>
+
+      {{#unless (eq errorLoc "top")}}
+        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{/unless}}
+
+      {{#with helpTextTag as | tag |}}
+      <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
+        Choose your favorite fruit.
+      </{{#if tag}}{{tag}}{{else}}small{{/if}}>
+      {{/with}}
+    </div>
+
+  </fieldset>
+
   <fieldset>
     <legend>sample buttons outside footer</legend>
     <button {{#if class.button }}class="{{ class.button }}"{{/if}} type="submit">

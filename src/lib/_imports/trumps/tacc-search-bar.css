@@ -36,11 +36,6 @@ Styleguide Scopes.SearchBar
 
 /* Container */
 
-:host {
-  /* To remove all whitespace */
-  /* NOTE: A `font-size: 0` is not necessary if tag whitespace is removed */
-  font-size: 0;
-}
 :host [part="form"] {
   /* To ensure search field font matches Portal */
   /* GH-101: Set and rely on header font */

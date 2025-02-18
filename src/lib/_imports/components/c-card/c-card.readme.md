@@ -12,7 +12,7 @@ Container with content and action(s) about a single subject.
 
 ---
 
-Future features that will be added when client testing is complete:
+To support images at different positions:
 
 | Class (Std.)               | Class (Alt.)             | Description
 | - | - | - |

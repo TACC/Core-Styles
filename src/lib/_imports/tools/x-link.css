@@ -1,15 +1,27 @@
-.x-link {
+/* Regular Links */
+
+@define-mixin link {
   color: var(--global-color-accent--normal);
 
   text-decoration: none;
   text-underline-offset: 0.2em;
   text-decoration-thickness: var(--global-border-width--normal);
 }
-.x-link--disabled {
+/* DEPRECATED */
+.x-link {
+  @mixin link;
+}
+
+@define-mixin link--disabled {
   opacity: 0.5;
   pointer-events: none;
 }
-.x-link--hover {
+/* DEPRECATED */
+.x-link--disabled {
+  @mixin link--disabled;
+}
+
+@define-mixin link--hover {
   text-decoration-line: underline;
   text-decoration-style: solid;
 
@@ -17,26 +29,82 @@
   color: var(--global-color-accent--normal);
   text-decoration-thickness: var(--global-border-width--normal);
 }
-.x-link--active {
+/* DEPRECATED */
+.x-link--hover {
+  @mixin link--hover;
+}
+
+@define-mixin link--active {
   text-decoration-line: underline;
   text-decoration-style: dotted;
 }
+/* DEPRECATED */
+.x-link--active {
+  @mixin link--active;
+}
 
-.x-link--irregular {
-  @extend .x-link;
+
+
+/* Irregular Links */
+
+@define-mixin link--irregular {
+  @mixin link;
 
   text-decoration-line: underline;
 }
-.x-link--irregular--disabled {
-  @extend .x-link--disabled;
+/* DEPRECATED */
+.x-link--irregular {
+  @mixin link--irregular;
 }
-.x-link--irregular--hover {
-  @extend .x-link--hover;
+
+@define-mixin link--irregular--disabled {
+  @mixin link--disabled;
+}
+/* DEPRECATED */
+.x-link--irregular--disabled {
+  @mixin link--irregular--disabled;
+}
+
+@define-mixin link--irregular--hover {
+  @mixin link--hover;
 
   text-decoration-style: dashed;
 }
-.x-link--irregular--active {
-  @extend .x-link--active;
+/* DEPRECATED */
+.x-link--irregular--hover {
+  @mixin link--irregular--hover;
+}
+
+@define-mixin link--irregular--active {
+  @mixin link--active;
 
   text-decoration-style: dotted;
+}
+/* DEPRECATED */
+.x-link--irregular--active {
+  @mixin link--irregular--active;
+}
+
+
+
+/* Block Links */
+
+@define-mixin block-link {
+  --border-width: var(--global-border-width--thick);
+
+  outline-color: var(--global-color-accent--normal);
+
+  outline-width: var(--border-width);
+}
+
+@define-mixin block-link--disabled {
+  @mixin link--disabled;
+}
+
+@define-mixin block-link--hover {
+  outline-style: solid;
+}
+
+@define-mixin block-link--active {
+  outline-style: dotted;
 }

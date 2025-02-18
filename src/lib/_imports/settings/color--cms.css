@@ -1,2 +1,23 @@
-/* Support the default accent color in all the scopes */
-@import url("./color--demo.css");
+@import url("../settings/color.accent.css");
+@import url("../objects/o-section.selectors.css");
+@import url("../components/c-card.selectors.css");
+
+/* Set scope for accent colors */
+
+@custom-selector :--light-context
+  .c-recognition--style-light,
+  :--o-section--muted,
+  :--o-section--light,
+  :--c-card--standard,
+  :--c-card--standard-N,
+  :--c-card--plain;
+@custom-selector :--dark-context
+  .c-recognition--style-dark,
+  :--o-section--dark,
+  .col-dark,
+  .s-footer;
+
+@custom-selector :--light-context-safe
+  :where(:--dark-context :--light-context);
+@custom-selector :--dark-context-safe
+  :where(:--dark-context:not(:--light-context *));

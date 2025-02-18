@@ -1,19 +1,4 @@
-variants:
-  - name: default
-  - name: cms
-    status: ready
-    label: (CMS) Color
-    context:
-      shouldLoadCMS: true
-      shouldLoadBootstrap: true
-  - name: docs
-    status: ready
-    label: (Docs) Color
-    context:
-      shouldLoadDocs: true
-  - name: portal
-    status: wip
-    label: (Portal) Color
-    context:
-      shouldLoadPortal: true
-      shouldLoadBootstrap: true
+context:
+  # FAQ: Demo looks nicer with CMS styles
+  shouldLoadCMS: true
+  shouldLoadBootstrap: true

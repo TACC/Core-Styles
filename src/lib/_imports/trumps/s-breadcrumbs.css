@@ -1,77 +1,37 @@
-/*
-Breadcrumbs
+@import url("../tools/x-breadcrumbs.css");
 
-A list of links to ancestor navigation (pages or sections that are a parent, grandparent, et cetera of the current page or section) and the current page or section itself.
-
-- `.s-breadcrumbs`: root class for <nav>, <... [role="nav"]>, or <ol>
-- `.s-breadcrumbs-via-ul`: alternate root class for <ul> (not recommended)
-
-Notice: A scope class is used to enforce appropriate semantic HTML.
-
-Markup:
-<!-- Major Navigation -->
-<!-- FAQ: Use this major navigation markup for global breadcrumbs -->
-<!-- SEE: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav#usage_notes -->
-<nav class="s-breadcrumbs">
-  <ol>
-      <li><a href="/"><span>Home</span></a></li>
-      <li><a href="/"><span>Science</span></a></li>
-      <li><span>Publications</span></li>
-  </ol>
-</nav>
-<!-- Minor Navigation -->
-<ol class="s-breadcrumbs">
-    <li><a href="/"><span>Home</span></a></li>
-    <li><a href="/"><span>Science</span></a></li>
-    <li><span>Publications</span></li>
-</ol>
-
-Styleguide Trumps.Scopes.Breadcrumbs
-*/
-@import url("../tools/selectors.css");
-@import url("../tools/x-truncate.css");
-
-
-
-
-
-/* Base i.e. Container */
-
-.s-breadcrumbs:is(nav),
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs:where(ol),
 .s-breadcrumbs-via-ul {
-  padding-top: var(--global-space--above-breadcrumbs);
-  margin-bottom: var(--global-space--under-breadcrumbs);
-
-  font-size: var(--global-font-size--x-small);
+  @mixin x-breadcrumbs;
+}
+.s-breadcrumbs:where(nav),
+.s-breadcrumbs-via-ul {
+  @mixin x-breadcrumbs-major;
 }
 
-
-
-/* Elements i.e. Content */
-
-/* To undo default list styles */
-.s-breadcrumbs:is(nav) ol,
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs:where(ol),
 .s-breadcrumbs-via-ul ul {
-  list-style: none; /* overwrite browser styles */
-  padding-left: unset; /* undo html-elements.css */
-  margin-bottom: unset; /* undo html-elements.css */
-
-  font-weight: var(--global-font-weight--medium);
+  @mixin x-breadcrumbs__list;
+}
+.s-breadcrumbs:where(nav) ol,
+.s-breadcrumbs-via-ul ul {
+  @mixin x-breadcrumbs-major__list;
 }
 
-.s-breadcrumbs:is(ol) li,
-.s-breadcrumbs:is(nav) ol li,
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs:where(ol) li,
 .s-breadcrumbs-via-ul ul li {
-  display: inline-block;
+  @mixin x-breadcrumbs__list-item;
+}
+.s-breadcrumbs:where(nav) ol li,
+.s-breadcrumbs-via-ul ul li {
+  @mixin x-breadcrumbs-major__list-item;
 }
 
-.s-breadcrumbs:is(ol) li + li::before,
-.s-breadcrumbs:is(nav) ol li + li::before,
-.s-breadcrumbs-via-ul ul li + li::before {
-  content: ' > ';
-}
-
-.s-breadcrumbs:is(nav) ol li:last-child,
-.s-breadcrumbs-via-ul ul li:last-child {
-  font-weight: var(--bold);
+.s-breadcrumbs:where(nav) ol li + li,
+.s-breadcrumbs:where(ol) li + li,
+.s-breadcrumbs-via-ul ul li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
 }

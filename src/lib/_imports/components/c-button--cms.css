@@ -3,7 +3,10 @@
 
 
 :--main-content {
-  & :--c-button,
+  & :--c-button--primary,
+  & :--c-button--secondary,
+  & :--c-button--tertiary,
+  & :--c-button--is-active,
   & :--form__button {
     padding: 10px 20px;
 
@@ -14,7 +17,10 @@
   }
 }
 
-:--c-button,
+:--c-button--primary,
+:--c-button--secondary,
+:--c-button--tertiary,
+:--c-button--is-active,
 :--form__button {
   text-transform: uppercase;
 }

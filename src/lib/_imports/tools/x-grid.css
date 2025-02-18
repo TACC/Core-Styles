@@ -16,7 +16,7 @@ Reference:
 %x-grid--layout-cols-equal-min-width-max-count  - Same width columns, default min. width, max. column count (custom properties: `--min-width`, `--max-cols`, `--row-height`, `--gap`)
 %x-grid--content-align-center         - Align content vert.ly and horz.ly center
 
-Styleguide Tools.ExtendsAndMixins.Grid
+Styleguide Tools.Mixins.Grid
 */
 
 

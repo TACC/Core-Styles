@@ -1,4 +1,4 @@
-@import url("../trumps/s-breadcrumbs.css");
+@import url("../tools/x-breadcrumbs.css");
 
 .cmd-line,
 .job-script {
@@ -7,5 +7,17 @@
 }
 
 .rst-content > [role="navigation"] {
-  @extend .s-breadcrumbs-via-ul;
+  @mixin x-breadcrumbs;
+  @mixin x-breadcrumbs-major;
+}
+.rst-content > [role="navigation"] ul {
+  @mixin x-breadcrumbs__list;
+  @mixin x-breadcrumbs-major__list;
+}
+.rst-content > [role="navigation"] li {
+  @mixin x-breadcrumbs__list-item;
+  @mixin x-breadcrumbs-major__list-item;
+}
+.rst-content > [role="navigation"] li + li {
+  @mixin x-breadcrumbs__list-item--prefix-separator;
 }

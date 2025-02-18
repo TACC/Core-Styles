@@ -3,20 +3,41 @@
 
   <h4><a href="#">Bender Rodríguez</a></h4>
   <p>Planet Express Worker</p>
-  <p>Anti-hero in Futurama</p>
+  <p>(Anti-hero in Futurama)</p>
+  <p><strong>
+    {{#if image-link}}
+    Image <em>IS</em> a link
+    {{else}}
+    Image is <em>NOT</em> a link
+    {{/if}}
+  </strong></p>
+  {{#if image-link}}
+  <a href="{{image-link}}">
+    <img class="img-fluid" width="234px" height="293px"
+      src="https://cohro.ukzn.ac.za/wp-content/uploads/2019/02/profile-placeholder.png"
+      title="University of Texas at Austin" class="img-fluid"
+    />
+  </a>
+  {{else}}
   <img class="img-fluid" width="234px" height="293px"
     src="https://cohro.ukzn.ac.za/wp-content/uploads/2019/02/profile-placeholder.png"
     title="University of Texas at Austin" class="img-fluid"
   />
+  {{/if}}
 
 {{else}}
 
-  <h3>Card - Image {{position}}</h3>
+  <h3 id="card-image-{{position}}">Card - Image {{position}}</h3>
   <p>{{> @text-of-one-paragraph-short }}</p>
   {{#if tall}}
   {{> @message tag="p" type="warning" scope="inline" content="Narrow images might not fill space available. Just use a wider image." }}
   {{/if}}
+  {{#if image-link}}
+  <a href="{{image-link}}">
+    <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
+  </a>
+  {{else}}
   <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
-
+  {{/if}}
 {{/if}}
 </article>
