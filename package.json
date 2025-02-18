@@ -70,7 +70,7 @@
     "// postcss-preset-env": "Using bleeding edge because https://github.com/csstools/postcss-plugins/issues/481#issuecomment-1334903391",
     "postcss-replace": "To edit relative paths to fonts"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "@frctl/fractal": "^1.5.15",
     "@frctl/handlebars": "^1.2.15",
     "@frctl/mandelbrot": "^1.10.1",
