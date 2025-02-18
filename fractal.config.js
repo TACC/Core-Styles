@@ -60,11 +60,17 @@ fractal.components.set('resources', {
 });
 fractal.components.set('default.context', {
   shouldSkipPattern: true, // true, because core-styles.….css loads most
-  globalStyles: [{
+  demoStyles: [{
     isInternal: true,
     layer: 'base',
     path: '/assets/core-styles.demo.css'
-  },{
+  }],
+  settingsStyles: [{
+    isInternal: true,
+    layer: 'base',
+    path: '/assets/core-styles.settings.css'
+  }],
+  baseStyles: [{
     isInternal: true,
     layer: 'base',
     path: '/assets/core-styles.base.css'

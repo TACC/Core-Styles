@@ -2,7 +2,9 @@ order: 3
 label: 'Grid: Col'
 context:
   supportStyles:
+    - ../../assets/components/c-nav.css
     - ../../assets/components/c-card.css
+    - ../../assets/components/c-button.css
 variants:
   - name: default
     label: Bootstrap
