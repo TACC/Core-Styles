@@ -25,7 +25,7 @@ For **only** [custom properties](https://developer.mozilla.org/en-US/docs/Web/CS
 ```
 
 > [!TIP]
-> For UI patterns and demos, see https://tacc.utexas.edu/static/ui/.
+> For UI patterns and demos, see https://cep.tacc.utexas.edu/static/ui/.
 
 > [!NOTE]
 > For a more-detailed walkthrough and options, see [HOWTO.md](HOWTO.md).

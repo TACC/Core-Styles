@@ -102,6 +102,9 @@ engine.handlebars.registerHelper('ifno', function(value, fallback) {
   const output = value || fallback;
   return new engine.handlebars.SafeString(output);
 });
+engine.handlebars.registerHelper('default', function(value, defaultValue) {
+  return value || defaultValue;
+});
 
 // Export
 module.exports = fractal;

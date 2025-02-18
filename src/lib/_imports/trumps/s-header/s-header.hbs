@@ -1,14 +1,22 @@
 <nav id="s-header" class="s-header navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="/">
-    <img src="http://tacc.utexas.edu/static/site_cms/img/org_logos/portal.png" alt="Portal Logo"
-      class="nav-logo-double nav-logo-frontera-double" />
+    <img
+      {{#if isSVGLogo}}
+        src="https://cdn.jsdelivr.net/gh/TACC/Core-CMS-Custom@21da26d/digitalrocks_assets/NSF-DigitalRocks-Logo-White.svg"
+        alt="Vector Logo"
+      {{else}}
+        src="http://cep.tacc.utexas.edu/static/site_cms/img/org_logos/portal.png"
+        alt="Raster Logo"
+      {{/if}}
+      class="portal-logo"
+    />
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExpandTarget"
-    aria-controls="navbarsExpandTarget" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExpandTarget-{{default id 0}}"
+    aria-controls="navbarExpandTarget-{{default id 0}}" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExpandTarget">
+  <div class="collapse navbar-collapse" id="navbarExpandTarget-{{default id 0}}">
     {{> @s-cms-nav}} {{> @s-portal-nav}}
   </div>
 </nav>

@@ -7,6 +7,103 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [v2.39.0] - 2025-02-14: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
+
+### What's Changed
+
+* feat: c-card-list pattern & demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/445
+* feat: add c-show-more to CMS styles by @wesleyboar in https://github.com/TACC/Core-Styles/pull/446
+* feat: icon demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/447
+* feat: icon with labels (on-the-fly customization) by @wesleyboar in https://github.com/TACC/Core-Styles/pull/448
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.38.0...v2.39.0
+
+## [2.38.0] - 2025-02-14: Fix Header Bar Resize, Add Show More Demo
+
+### What's Changed
+
+* docs: c-show-more demo by @wesleyboar in https://github.com/TACC/Core-Styles/pull/438
+* feat: js-show-more by @wesleyboar in https://github.com/TACC/Core-Styles/pull/439, https://github.com/TACC/Core-Styles/pull/440, https://github.com/TACC/Core-Styles/pull/441, https://github.com/TACC/Core-Styles/pull/442
+* refactor: simplify header and logo height mgmt by @wesleyboar in https://github.com/TACC/Core-Styles/pull/443
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.5...v2.38.0
+
+## [2.37.5] - 2025-01-30: Better Fix Header Nav Link Alignment
+
+### What's Changed
+
+- fix: nav alignment fix too complex (simplify PR #427) by @wesleyboar in https://github.com/TACC/Core-Styles/pull/434
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.4...v2.37.5
+
+## [2.37.4] - 2025-01-24: Automate Release Steps, Fix Doc Card Hover State
+
+### What's Changed
+
+- fix: doc cards hover state apply even when card is not a link by @wesleyboar in https://github.com/TACC/Core-Styles/pull/432
+- feat: automate many release steps by @wesleyboar in https://github.com/TACC/Core-Styles/pull/429
+- build(deps): bump braces from 3.0.2 to 3.0.3 by @dependabot in https://github.com/TACC/Core-Styles/pull/430
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.3...v2.37.4
+
+## [2.37.3] - 2025-01-17: Fix Header Nav Link Alignment
+
+### What's Changed
+
+- chore: remove outdated dist content by @wesleyboar in #425
+- build(deps): bump nanoid from 3.3.7 to 3.3.8 by @dependabot in #426
+- fix: s-header nav-link alignment inconsistent by @wesleyboar in #427
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.2...v2.37.3
+
+## [2.37.2] - 2024-11-06: Do Not Build Demo on Publish
+
+### Removed
+
+- chore: on publish, do not build demo nor add docs (a097e42)
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.1...v2.37.2
+
+## [2.37.1] - 2024-11-06: Fix Linked Images in Cards
+
+### Changed
+
+- enhance: remove card image hover state (#422)
+
+### Fixed
+
+- fix: c-card image link selector too broad (#421)
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.37.0...v2.37.1
+
+## [2.37.0] - 2024-10-31: Linked Images in Cards
+
+### Added
+
+* enhance(card): linked images (#419)
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.36.0...v2.37.0
+
+## [2.36.0] - 2024-10-25: Dark and Muted Bootstrap Columns
+
+### Added
+
+- feat(bootstrap4): columns -dark and -muted (#414, #415)
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.35.1...v2.36.0
+
+## [2.35.1] - 2024-10-24: Fix Image Card and Bootstrap Demo Bugs
+
+### Fixed
+
+* fix(c-card): image card padding not unset (#412)
+* fix(demo): Bootstrap patterns loads v3 instead of v4 (#410)
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.35.0...v2.35.1
+
 ## [2.35.0] - 2024-09-27: Truncate `c-app-card` Desc to 2 Lines
 
 ### Added
@@ -1235,7 +1332,17 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.35.0...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.0...HEAD
+[2.39.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.0
+[2.38.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.38.0
+[2.37.5]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.5
+[2.37.4]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.4
+[2.37.3]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.3
+[2.37.2]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.2
+[2.37.1]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.1
+[2.37.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.37.0
+[2.36.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.36.0
+[2.35.1]: https://github.com/TACC/Core-Styles/releases/tag/v2.35.1
 [2.35.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.35.0
 [2.34.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.34.0
 [2.33.1]: https://github.com/TACC/Core-Styles/releases/tag/v2.33.1
