@@ -170,7 +170,7 @@ Styleguide Trumps.Scopes.Header
 
 /* Dropdown */
 
-.dropdown-menu {
+.s-header .dropdown-menu {
   font-size: 16px; /* NO-R/EM: 1rem (from Bootstrap via `.dropdown-menu`) */
 }
 
@@ -226,6 +226,6 @@ Styleguide Trumps.Scopes.Header
     ```
 */
 
-.navbar-toggler-icon  {
+.s-header .navbar-toggler-icon {
   filter: var(--menu-toggle-icon);
 }
