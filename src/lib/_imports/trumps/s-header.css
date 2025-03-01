@@ -103,6 +103,8 @@ Styleguide Trumps.Scopes.Header
 
   /* If link text uses 2 lines, header grows taller (but it must not do so) */
   white-space: nowrap;
+
+  padding: 5px 14px;
 }
 
 @define-mixin header--not-expanded {
@@ -144,19 +146,6 @@ Styleguide Trumps.Scopes.Header
   color: var(--header-text-color);
 }
 
-/* Navigation: Links: Responsive Design */
-
-/* Tweak Bootstrap `_nav.scss` (which selects via `navbar-expand-` class) */
-.s-header[class*="navbar-expand-"] .navbar-nav .nav-link {
-  padding-right: 14px; /* NO-R/EM: .875rem (overwrite Bootstrap) */
-  padding-left: 14px; /* NO-R/EM: .875rem (overwrite Bootstrap) */
-}
-
-@media (--medium-and-below) {
-  .s-header[class*="navbar-expand-"] .navbar-nav .nav-link {
-      padding-block: 8px;
-  }
-}
 
 /* Search */
 
