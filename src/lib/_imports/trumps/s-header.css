@@ -170,8 +170,18 @@ Styleguide Trumps.Scopes.Header
 
 /* Dropdown */
 
+/* To ensure sizes match between clients with different rem value */
+/* FAQ: Bootstrap uses rem space values but CMS and Portal rem values differ */
 .s-header .dropdown-menu {
   font-size: 16px; /* NO-R/EM: 1rem (from Bootstrap via `.dropdown-menu`) */
+}
+/* - to match portal nav size */
+.s-header .dropdown-menu {
+  padding-block: 5px;
+}
+.s-header .dropdown-item {
+  padding-block: 2.5px;
+  padding-inline: 15px;
 }
 
 /* Icons */
