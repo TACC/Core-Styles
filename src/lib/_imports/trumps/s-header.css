@@ -104,7 +104,7 @@ Styleguide Trumps.Scopes.Header
   /* If link text uses 2 lines, header grows taller (but it must not do so) */
   white-space: nowrap;
 
-  padding: 5px 14px;
+  padding-inline: 14px;
 }
 
 @define-mixin header--not-expanded {
@@ -118,6 +118,8 @@ Styleguide Trumps.Scopes.Header
 
     /* To align the underline of a hovered link to bottom of header */
     height: calc(100% + var(--nav-padding-vert) + var(--header-major-border-width));
+
+    padding-block: 5px;
   }
 }
 @media (--x-narrow-and-above) {
@@ -131,6 +133,24 @@ Styleguide Trumps.Scopes.Header
 }
 @media (--wide-and-above) {
   .navbar-expand-xl { @mixin header--not-expanded; }
+}
+
+@define-mixin header--is-expanded {
+  &.s-header .nav-link {
+    padding-block: 8px;
+  }
+}
+@media (--x-narrow-and-below) {
+  .navbar-expand-sm { @mixin header--is-expanded; }
+}
+@media (--narrow-and-below) {
+  .navbar-expand-md { @mixin header--is-expanded; }
+}
+@media (--medium-and-below) {
+  .navbar-expand-lg { @mixin header--is-expanded; }
+}
+@media (--wide-and-below) {
+  .navbar-expand-xl { @mixin header--is-expanded; }
 }
 
 .s-header .nav-link:hover,
