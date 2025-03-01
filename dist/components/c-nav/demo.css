@@ -1,1 +1,1 @@
-/*! @tacc/core-styles 2.39.1 | MIT | github.com/TACC/Core-Styles */main{display:flex;flex-wrap:wrap;gap:var(--global-space--grid-gap)}dd{display:flex;flex-wrap:wrap;gap:calc(var(--global-space--grid-gap)/2)}small>code:not(:last-child):after{content:"";display:inline;padding-inline:.5em}
+/*! @tacc/core-styles 2.39.0+ | MIT | github.com/TACC/Core-Styles */main{display:flex;flex-wrap:wrap;gap:var(--global-space--grid-gap)}dd{display:flex;flex-wrap:wrap;gap:calc(var(--global-space--grid-gap)/2)}small>code:not(:last-child):after{content:"";display:inline;padding-inline:.5em}
