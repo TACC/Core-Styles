@@ -98,7 +98,9 @@ Styleguide Trumps.Scopes.Header
 
   /* If link text uses 2 lines, header grows taller (but it must not do so) */
   white-space: nowrap;
-
+}
+.s-header .navbar-nav .nav-link /* to match Bootstrap specificity */
+/* FAQ: Bootstrap selector is `.navbar-expand-… .navbar-nav .nav-link` */ {
   padding-inline: 14px;
 }
 
