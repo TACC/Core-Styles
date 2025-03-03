@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [v2.39.3] - 2025-03-03: Heading UI Inconsistencies Across Clients
+
+### What's Changed
+
+* fix: navbar toggle inconsistent across clients by @wesleyboar in https://github.com/TACC/Core-Styles/pull/467, https://github.com/TACC/Core-Styles/pull/468
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.2...v2.39.3
+
 ## [v2.39.2] - 2025-03-03: Heading Font Consistent Across Clients
 
 ### What's Changed
