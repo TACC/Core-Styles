@@ -29,7 +29,7 @@ Styleguide Trumps.Scopes.Header
   letter-spacing: 0.025px; /* 14px * 0.025em equals design-requested 0.35px */
   line-height: 1.4; /* `body` line-height differs between CMS, Portal, Docs */
 
-  font-family: var(--global-font-family--sans--cms);
+  font-family: var(--global-font-family--sans--portal);
   /* Copied from Portal (via `body`) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
