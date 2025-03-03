@@ -24,17 +24,12 @@ Styleguide Trumps.Scopes.Header
   --height: 50px;
   --header-major-border-width: 1px;
 
-  font-size: var(--global-font-size--medium); /* NO-R/EM: Overwrite `bootstrap.3.3.7.css` */
+  font-size: 14px; /* NO-R/EM: See `font--cms.css` */
   font-weight: var(--bold);
   letter-spacing: 0.025px; /* 14px * 0.025em equals design-requested 0.35px */
   line-height: 1.4; /* `body` line-height differs between CMS, Portal, Docs */
 
-  /* FAQ: Asssigning this font is only necessary for the User Guide,
-          because it has a different `body` font. Otherwise, this style
-          repeats the CMS and Portal `body` font. But, with this style,
-          the header may be moved to a future page/site without losing font */
-  /* TODO: Find a way to be safe, but not redundant */
-  font-family: var(--global-font-family);
+  font-family: var(--global-font-family--sans--cms);
   /* Copied from Portal (via `body`) */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
