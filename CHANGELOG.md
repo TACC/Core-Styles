@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
+## [v2.39.2] - 2025-03-03: Heading Font Consistent Across Clients
+
+### What's Changed
+
+* fix: header font inconsistent between clients by @wesleyboar in https://github.com/TACC/Core-Styles/pull/464, https://github.com/TACC/Core-Styles/pull/465
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.1...v2.39.2
+
 ## [v2.39.1] - 2025-02-28: Heading Nav Link Space Consistent Across Clients
 
-### Changed
+### What's Changed
 
 * refactor: simple explicit header nav link padding by @wesleyboar in https://github.com/TACC/Core-Styles/pull/462
 
@@ -1340,7 +1348,8 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.1...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.2...HEAD
+[2.39.2]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.2
 [2.39.1]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.1
 [2.39.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.0
 [2.38.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.38.0
