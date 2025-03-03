@@ -242,6 +242,20 @@ Styleguide Trumps.Scopes.Header
     ```
 */
 
+.s-header .navbar-toggler {
+  border-radius: 0;
+
+  /* to overwrite Bootstrap's use of rem (which is variable across clients) */
+  padding: 5px 8px;
+}
+.s-header button.navbar-toggler {
+  /* to match on Bootstrap 4 & 5 e.g. CMS & Portal */
+  line-height: 18px;
+}
 .s-header .navbar-toggler-icon {
   filter: var(--menu-toggle-icon);
+
+  /* to overwrite Bootstrap's use of rem (which is variable across clients) */
+  width: 18px;
+  height: 18px;
 }
