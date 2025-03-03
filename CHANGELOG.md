@@ -1356,7 +1356,8 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.2...HEAD
+[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.39.3...HEAD
+[2.39.3]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.3
 [2.39.2]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.2
 [2.39.1]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.1
 [2.39.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.0
