@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased][unreleased]
 
-## [v2.39.3] - 2025-03-03: Heading UI Inconsistencies Across Clients
+## [v2.39.4] - 2025-03-03: Header Font is Now Roboto Not Benton
+
+### What's Changed
+
+* enhance: header use Roboto not Benton by @wesleyboar in https://github.com/TACC/Core-Styles/pull/470, https://github.com/TACC/Core-Styles/pull/471
+
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.3...v2.39.4
+
+## [v2.39.3] - 2025-03-03: Header UI Inconsistencies Across Clients
 
 ### What's Changed
 
@@ -15,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.2...v2.39.3
 
-## [v2.39.2] - 2025-03-03: Heading Font Consistent Across Clients
+## [v2.39.2] - 2025-03-03: Header Font Consistent Across Clients
 
 ### What's Changed
 
@@ -23,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.1...v2.39.2
 
-## [v2.39.1] - 2025-02-28: Heading Nav Link Space Consistent Across Clients
+## [v2.39.1] - 2025-02-28: Header Nav Link Space Consistent Across Clients
 
 ### What's Changed
 
