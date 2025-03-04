@@ -28,3 +28,8 @@ variants:
     context:
       supportStyles:
         - ../../assets/components/bootstrap.form.css
+  - name: pagination
+    status: ready
+    context:
+      supportStyles:
+        - ../../assets/components/bootstrap.pagination.css
