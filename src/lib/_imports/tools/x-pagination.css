@@ -15,8 +15,6 @@
 
   margin-bottom: unset; /* overwrites core-styles.base.css */
 
-  font-size: var(--global-font-size--small);
-
   &:is(ol, ul) {
     padding-left: unset;
     list-style: none;
