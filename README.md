@@ -7,6 +7,7 @@ The shared styles for TACC WMA Workspace Portals & Websites
 
 - [Core CMS], the base CMS code for TACC WMA CMS Websites
 - [Core Portal], the base Portal code for TACC WMA CMS Websites
+- [Core Components], the UI components for [Core Portal] and [TUP UI]
 - [TUP UI], the client code for TACC User Portal
 - [TACC Docs], the documentation for TACC
     - and, indirectly, [DesignSafe User Guide]
@@ -274,6 +275,7 @@ Core Styles **had been** an effort to replace Bootstrap. Core Styles is **compat
 [camino]: https://github.com/TACC/Camino
 [core cms]: https://github.com/TACC/Core-CMS
 [core portal]: https://github.com/TACC/Core-Portal
+[core components]: https://github.com/TACC/Core-Components
 [tup ui]: https://github.com/TACC/tup-ui
 [tacc docs]: https://github.com/TACC/TACC-Docs
 [designsafe user guide]: https://github.com/DesignSafe-CI/DS-User-Guide
