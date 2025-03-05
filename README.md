@@ -24,6 +24,7 @@ The shared styles for TACC WMA Workspace Portals & Websites
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
+- [Publishing](#publishing)
 - [Bootstrap](#bootstrap)
 
 
@@ -255,12 +256,17 @@ _Later_, the demo may be deployed indpendently and `core-styles.….css` served 
 
 ## Contributing
 
-To contribute, first read [How to Contirbute][Contributing].
+To contribute, first read [How to Contribute][Contributing].
+
+
+## Publishing
+
+We manually release versions of Core-Styles. [Read more.][Publishing]
 
 
 ## Bootstrap
 
-Core Styles was an effort to replace Bootstrap. Core Styles is compatible with Bootstrap. [Learn more.][Bootstrap]
+Core Styles **had been** an effort to replace Bootstrap. Core Styles is **compatible** with Bootstrap. Core Styles **skins** only some Bootstrap components. [Learn more.][Bootstrap]
 
 <!-- Link Aliases -->
 
@@ -275,5 +281,6 @@ Core Styles was an effort to replace Bootstrap. Core Styles is compatible with B
 [tapis authenticator]: https://github.com/tapis-project/authenticator
 [hazmapper]: https://github.com/TACC-Cloud/hazmapper
 
-[Contributing]: ./docs/contributing.md
+[Contributing]: ./CONTRIBUTING.md
+[Publishing]: ./PUBLISHING.md
 [Bootstrap]: ./docs/bootstrap.md
