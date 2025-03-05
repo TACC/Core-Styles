@@ -266,7 +266,7 @@ We manually release versions of Core-Styles. [Read more.][Publishing]
 
 ## Bootstrap
 
-Core Styles **had been** an effort to replace Bootstrap. Core Styles is compatible with Bootstrap. Core Styles **skins** only some Bootstrap components. [Learn more.][Bootstrap]
+Core Styles **had been** an effort to replace Bootstrap. Core Styles is **compatible** with Bootstrap. Core Styles **skins** only some Bootstrap components. [Learn more.][Bootstrap]
 
 <!-- Link Aliases -->
 
