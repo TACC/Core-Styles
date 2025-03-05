@@ -4,4 +4,4 @@ A [`<blockquote>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blo
 >
 > Should this be implemented as `figure.has-blockquote` (fallback) `figure:has(blockquote)` (actual)? We can retain legacy support for `figure.s-blockquote` as an alternate class name.
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

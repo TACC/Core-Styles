@@ -16,4 +16,4 @@ _This is an isolated feature from [Bootstrap Input Group](https://getbootstrap.c
    - `<input type="date">` calendar
    - `<input type="time">` clock
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

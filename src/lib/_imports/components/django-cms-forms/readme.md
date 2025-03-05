@@ -12,4 +12,4 @@ To style forms built by [Django CMS forms][djcms-forms].
 [djcms-forms-tpl]: https://github.com/avryhof/djangocms-forms/blob/ab38b22/djangocms_forms/templates/djangocms_forms/form_template/default.html "DjangoCMS Forms (Maintained) Template"
 [django-form-widgets]: https://docs.djangoproject.com/en/2.2/ref/forms/widgets/ "Django Form Widgets"
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

@@ -10,4 +10,4 @@ Make [table]({{path './table' }}) width able to <strong>stretch</strong> <em>but
 
 [source-flex]: https://stackoverflow.com/a/41421700/11817077 "Stack Overflow: Why does flex-box work with a div, but not a table?"
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

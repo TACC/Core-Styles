@@ -12,4 +12,4 @@ For extra customization, see relevant <code>extra…</code> "File" from "Assets"
 
 [source-scroll]: https://stackoverflow.com/a/19794391/11817077 "Stack Overflow: Horizontal scroll on overflow of table (answer)"
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

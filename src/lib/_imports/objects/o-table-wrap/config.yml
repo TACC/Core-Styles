@@ -45,8 +45,8 @@ variants:
             custom-1: 250.0 MB
             time: 04/20/2020 15:03:10
 context:
-  shouldLoadBootstrap: true
-  📝 shouldLoadBootstrap: >-
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: >-
     not yet tested without Bootstrap
     (known dependencies: <caption> font color)
   data:

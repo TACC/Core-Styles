@@ -4,4 +4,4 @@ A portion of a document whose content is only indirectly related to the document
 >
 > The [`<aside>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside) is usually the appropriate element for this pattern.
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

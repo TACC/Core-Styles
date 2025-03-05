@@ -1,6 +1,6 @@
 context:
   shouldLoadCMS: true
-  📝 shouldLoadBootstrap: temporary dependence, until proven to work on Portal
+  📝 shouldLoadBootstrap4: temporary dependence, until proven to work on Portal
 variants:
   - name: default
     hidden: true

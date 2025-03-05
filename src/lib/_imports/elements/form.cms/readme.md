@@ -8,4 +8,4 @@
 >
 > These overwrite, but may accidentally rely on, [Bootstrap Reboot: Forms](https://getbootstrap.com/docs/4.0/content/reboot/#forms).
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

@@ -2,10 +2,10 @@ status: prototype
 context:
   shouldSkipPattern: false
   📝 shouldSkipPattern: because core-styles.….css does not import this
-  shouldLoadBootstrap: true
-  📝 shouldLoadBootstrap: to use Bootstrap 4 grid for layout
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: to use Bootstrap 4 grid for layout
   supportStyles:
-    - ../../assets/components/bootstrap.row.css
+    - ../../assets/bootstrap4/row.css
     - ../../assets/components/cortal.icon.css
   can-wrap-in-a-link: false
   data:

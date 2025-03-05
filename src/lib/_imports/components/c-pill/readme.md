@@ -10,4 +10,4 @@ To label the status of something.
 
 <small>* Requires client styles, because [truncation can be context-dependent](https://confluence.tacc.utexas.edu/x/sAoFDg).</small>
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

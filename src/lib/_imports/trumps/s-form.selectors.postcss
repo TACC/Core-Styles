@@ -4,26 +4,29 @@
 /* Generic */
 
 @custom-selector :--s-form__desc
-    :is(.s-form > :is(h1, h2, h3, h4, h5, h6) + p);
+    .s-form > :is(h1, h2, h3, h4, h5, h6) + p;
 @custom-selector :--s-form__title
-    :is(.s-form > :is(h1, h2, h3, h4, h5, h6));
+    .s-form > :is(h1, h2, h3, h4, h5, h6);
 
 @custom-selector :--s-form__errors
-    :where(:--s-form__errors--form, :--s-form__errors--field);
+    :where(
+        :--s-form__errors--form,
+        :--s-form__errors--field
+    );
 @custom-selector :--s-form__errors_list
     :--s-form__errors;
 @custom-selector :--s-form__errors--form /* submission errors */
-    :is(.s-form > ul);
+    .s-form > ul;
 @custom-selector :--s-form__errors--field /* validation errors */
-    :is(.s-form > div > ul),
-    :is(.s-form > fieldset > div > ul);
+    .s-form > div > ul,
+    .s-form > fieldset > div > ul;
 
 @custom-selector :--s-form__field
     :where(.s-form > div),
     :where(.s-form > fieldset > div);
 @custom-selector :--s-form__field--has-required
-    :where(.s-form > div).has-required,
-    :where(.s-form > fieldset > div).has-required;
+    :where(.s-form > div):has([required]),
+    :where(.s-form > fieldset > div):has([required]);
 @custom-selector :--s-form__field--has-checkbox
     :--s-form__field.has-type-check,
     :--s-form__field.has-type-check;
@@ -31,6 +34,12 @@
 @custom-selector :--s-form__menu
     :where(.s-form > div > menu),
     :where(.s-form > fieldset > div > menu);
+@custom-selector :--s-form__menu_item
+    :--s-form__menu > li;
+@custom-selector :--s-form__menu_line
+    :--s-form__menu_label;
+@custom-selector :--s-form__menu_label
+    :--s-form__menu_item > label;
 
 @custom-selector :--s-form__help
     :where(.s-form > div > small),

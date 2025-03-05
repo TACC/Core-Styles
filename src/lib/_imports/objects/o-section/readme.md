@@ -24,4 +24,4 @@ Older features are not illustrated in the demo:
 | `.o-section--layout-c`    | (on wider screens) 1 narrow column & 1 wide column
 | `.o-section--layout-d`    | (on wider screens) 3 even columns
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

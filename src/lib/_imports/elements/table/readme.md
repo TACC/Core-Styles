@@ -4,4 +4,4 @@
 <table> <thead> <tbody> <th> <td> <tfoot> <colgroup> <col> <caption>
 ```
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />

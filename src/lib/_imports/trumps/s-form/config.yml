@@ -1,6 +1,8 @@
 context:
   helpTextTag: small
   inputListTag: menu
+  inputListItemClass: null
+  isSemantic: true
   selectors:
     errorList: :where(.s-form > ul), :where(.s-form > div > ul)
     wrap: :where(.s-form > div)

@@ -1,5 +1,5 @@
 context:
-  shouldLoadBootstrap: true
+  shouldLoadBootstrap4: true
   shouldLoadCMS: true
   supportStyles:
     - ../../assets/core-styles.header.css

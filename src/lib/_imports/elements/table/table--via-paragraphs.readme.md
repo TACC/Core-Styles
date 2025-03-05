@@ -5,4 +5,4 @@ A [table]({{path './table' }}) that uses [paragraphs](https://developer.mozilla.
 > - Text will not truncate. It will wrap.
 > - Only a single column is supported.
 
-<script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />
+<script src="{{path '/assets/scripts/open-ext-links-in-new-window.js'}}" />
