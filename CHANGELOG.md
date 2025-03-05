@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased][unreleased]
+## [Releases Since 2.40.0](https://github.com/TACC/Core-Styles/releases)
 
-## [v2.40.0] - 2025-03-04: Pagination
+### What's Changed
+
+- docs: `CHANGELOG.md` should be automated by @wesleyboar in https://github.com/TACC/Core-Styles/issues/477
+
+**Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.40.0...HEAD
+
+## [2.40.0] - 2025-03-04: Pagination
 
 ### What's Changed
 
@@ -15,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.4...v2.40.0
 
-## [v2.39.4] - 2025-03-03: Header Font is Now Roboto Not Benton
+## [2.39.4] - 2025-03-03: Header Font is Now Roboto Not Benton
 
 ### What's Changed
 
@@ -24,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.3...v2.39.4
 
-## [v2.39.3] - 2025-03-03: Header UI Inconsistencies Across Clients
+## [2.39.3] - 2025-03-03: Header UI Inconsistencies Across Clients
 
 ### What's Changed
 
@@ -32,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.2...v2.39.3
 
-## [v2.39.2] - 2025-03-03: Header Font Consistent Across Clients
+## [2.39.2] - 2025-03-03: Header Font Consistent Across Clients
 
 ### What's Changed
 
@@ -40,7 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.1...v2.39.2
 
-## [v2.39.1] - 2025-02-28: Header Nav Link Space Consistent Across Clients
+## [2.39.1] - 2025-02-28: Header Nav Link Space Consistent Across Clients
 
 ### What's Changed
 
@@ -48,7 +54,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/TACC/Core-Styles/compare/v2.39.0...v2.39.1
 
-## [v2.39.0] - 2025-02-14: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
+## [2.39.0] - 2025-02-14: C-Card-List, Icon Demo & Label, CMS Load C-Show-More
 
 ### What's Changed
 
@@ -1373,7 +1379,6 @@ See [2.5.0] instead.
 
 Initial working code. (This code may not work on all environments.)
 
-[unreleased]: https://github.com/TACC/Core-Styles/compare/v2.40.0...HEAD
 [2.40.0]: https://github.com/TACC/Core-Styles/releases/tag/v2.40.0
 [2.39.4]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.4
 [2.39.3]: https://github.com/TACC/Core-Styles/releases/tag/v2.39.3
