@@ -261,7 +261,7 @@ To contribute, first read [How to Contribute][Contributing].
 
 ## Publishing
 
-We manually release versions of Core-Styles. [Read more][Publishing].
+We manually release versions of Core-Styles. [Read more.][Publishing]
 
 
 ## Bootstrap
