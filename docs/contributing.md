@@ -55,7 +55,6 @@ Only appointed team members may release versions.
 1. Verify build is up-to-date:\
     `npm run build:css`\
     <sub>Commit substantial unexpected changes via independent PR.</sub>
-1. Update `CHANGELOG.md`.
 1. Update version via:\
     `npm version vN.N.N`\
     (where `N.N.N` is the version tag)
