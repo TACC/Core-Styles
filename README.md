@@ -24,6 +24,7 @@ The shared styles for TACC WMA Workspace Portals & Websites
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
+- [Publishing](#publishing)
 - [Bootstrap](#bootstrap)
 
 
