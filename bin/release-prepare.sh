@@ -14,8 +14,8 @@ if ! command_exists git; then
     exit 1
 fi
 
-# Ensure working directory is clean
-if [ -n "$(git status --porcelain)" ]; then
+# Ensure working directory is clean except for CHANGELOG
+if [ -n "$(git status --porcelain | grep -v 'CHANGELOG.md')" ]; then
     echo "Error: Working directory has unexpected changes. Please commit or stash changes."
     exit 1
 fi
@@ -61,13 +61,19 @@ echo "Building CSS..."
 npm run build:css
 
 # Check for substantial changes
-if [ -n "$(git status --porcelain | grep -v '^.. dist/')" ]; then
+if [ -n "$(git status --porcelain | grep -v 'CHANGELOG.md' | grep -v '^.. dist/')" ]; then
     echo "Warning: Unexpected changes detected in build:"
-    git status --porcelain | grep -v '^.. dist/'
+    git status --porcelain | grep -v 'CHANGELOG.md' | grep -v '^.. dist/'
     echo "Please review changes and create an independent PR if necessary."
     if ! confirm "Continue anyway?"; then
         exit 1
     fi
+fi
+
+# Prompt for CHANGELOG update
+echo "Please update CHANGELOG.md now."
+if ! confirm "Have you updated CHANGELOG.md?"; then
+    exit 1
 fi
 
 # Update version
