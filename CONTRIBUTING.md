@@ -2,7 +2,7 @@
 
 ## Linting and Formatting
 
-Not standardized. Read [(internal) Formatting & Linting](https://confluence.tacc.utexas.edu/x/HoBGCw).
+Not standardized. Read [(internal) Formatting & Linting](https://tacc-main.atlassian.net/wiki/x/VwNv).
 
 ## Best Practices
 
