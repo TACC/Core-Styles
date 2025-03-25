@@ -1,23 +1,29 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
-/* To allow the image max-height to not be 100% for the demo */
-.o-grid img {
-    max-height: unset;
-}
-
 /* Rid margin-bottom on last section */
 .o-section>:last-child {
     margin-bottom: var(--global-space--bootstrap-gap);
 }
 
-/* create a two column grid (cleaner look) */
-.s-image-grid {
-    --max-cols: 2;
+/* To make a title inside a section… */
+.o-section > h2 {
+  /* …have "better" gap above and below */
+  margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
 }
 
-/* get rid of margin for inner-sections */
-section > section {
-    margin: unset;
+/* create a two column grid (cleaner look) */
+.c-card-list {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* To make a title inside a card list… */
+.c-card-list > h3 {
+  /* …span all columns */
+  grid-column: 1/-1;
+
+  /* …have "better" gap above and below */
+  margin-top: 40px;
+  margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
 }
 
 /* Image: Contact Card */

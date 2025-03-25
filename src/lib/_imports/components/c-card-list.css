@@ -16,3 +16,12 @@ ul.c-card-list {
 .c-card-list [class*="card--"] {
     margin-bottom: unset;
 }
+
+/* to prevent card images from overflowing */
+.c-card-list [class*="card--"] {
+    & > img,
+    & > a > img,
+    & > a:has(>img) {
+        max-width: 100%;
+    }
+}
