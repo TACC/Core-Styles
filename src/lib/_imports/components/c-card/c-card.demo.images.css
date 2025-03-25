@@ -25,12 +25,3 @@
   margin-top: 40px;
   margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
 }
-
-/* Image: Contact Card */
-/* To overwrite `.s-image-grid > *` specificity */
-/* WARNING: This may be a specificty bug... */
-/* NOTE: Should `s-image-grid` be `o-image-grid`,
-         so `c-card` has greater specificity? */
-.c-card--image-top:has(h4) {
-    max-width: fit-content;
-}
