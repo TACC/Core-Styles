@@ -11,8 +11,8 @@
 }
 
 /* create a two column grid (cleaner look) */
-.s-image-grid {
-    --max-cols: 2;
+.c-card-list {
+    grid-template-columns: 1fr 1fr;
 }
 
 /* get rid of margin for inner-sections */
