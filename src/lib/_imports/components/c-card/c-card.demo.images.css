@@ -25,3 +25,8 @@
   margin-top: 40px;
   margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
 }
+
+/* So hover outline shrink-wraps to card */
+.c-card-list > .c-card {
+    height: min-content;
+}
