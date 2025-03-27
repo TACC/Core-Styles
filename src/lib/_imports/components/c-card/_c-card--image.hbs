@@ -1,7 +1,7 @@
 {{#if card-link}}
-<a class="c-card c-card--{{variant}} c-card--image-{{position}}" href="{{card-link}}">
+<a class="c-card c-card--{{variant}} c-card--image-{{position}} {{#if disabled}}disabled{{/if}}" href="{{card-link}}">
 {{else}}
-<article class="c-card c-card--{{variant}} c-card--image-{{position}}">
+<article class="c-card c-card--{{variant}} c-card--image-{{position}} {{#if disabled}}disabled{{/if}}">
 {{/if}}
 
 {{#if is-staff}}
@@ -13,24 +13,10 @@
     Bender Rodríguez
     {{/if}}
   </h4>
+  {{#unless card-link}}
   <p>Planet Express Worker</p>
   <p>(Anti-hero in Futurama)</p>
-  <ul>
-    <li>
-    {{#if card-link}}
-    <strong>Card <em>IS</em> a link</strong>
-    {{else}}
-    <strong>Card is <em>NOT</em> a link</strong>
-    {{/if}}
-    </li>
-    <li>
-    {{#if image-link}}
-    <strong>Image <em>IS</em> a link</strong>
-    {{else}}
-    <strong>Image is <em>NOT</em> a link</strong>
-    {{/if}}
-    </li>
-  </ul>
+  {{/unless}}
   {{#if image-link}}
   <a href="{{image-link}}">
     <img class="img-fluid" width="234px" height="293px"
@@ -48,10 +34,12 @@
 {{else}}
 
   <h3 id="card-image-{{position}}">Card - Image {{position}}</h3>
+  {{#unless card-link}}
   <p>{{> @text-of-one-paragraph-short }}</p>
   {{#if tall}}
   {{> @message tag="p" type="warning" scope="inline" content="Narrow images might not fill space available. Just use a wider image." }}
   {{/if}}
+  {{/unless}}
   {{#if image-link}}
   <a href="{{image-link}}">
     <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
