@@ -30,3 +30,20 @@
 .c-card-list > .c-card {
     height: min-content;
 }
+
+/* To show a card must not be used (even if it works) */
+.c-card.demo-disabled * {
+    opacity: 0.5;
+}
+.c-card.demo-disabled { position: relative; }
+.c-card.demo-disabled::after {
+    content: "Card like this must not be linked. Design does not approve of such a configuration.";
+    padding: 1rem;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    background-color: black;
+    color: white;
+}
