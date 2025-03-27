@@ -1,16 +1,36 @@
+{{#if card-link}}
+<a class="c-card c-card--{{variant}} c-card--image-{{position}}" href="{{card-link}}">
+{{else}}
 <article class="c-card c-card--{{variant}} c-card--image-{{position}}">
+{{/if}}
+
 {{#if is-staff}}
 
-  <h4><a href="#">Bender Rodríguez</a></h4>
+  <h4>
+    {{#if image-link}}
+    <a href="{{image-link}}">Bender Rodríguez</a>
+    {{else}}
+    Bender Rodríguez
+    {{/if}}
+  </h4>
   <p>Planet Express Worker</p>
   <p>(Anti-hero in Futurama)</p>
-  <p><strong>
-    {{#if image-link}}
-    Image <em>IS</em> a link
+  <ul>
+    <li>
+    {{#if card-link}}
+    <strong>Card <em>IS</em> a link</strong>
     {{else}}
-    Image is <em>NOT</em> a link
+    <strong>Card is <em>NOT</em> a link</strong>
     {{/if}}
-  </strong></p>
+    </li>
+    <li>
+    {{#if image-link}}
+    <strong>Image <em>IS</em> a link</strong>
+    {{else}}
+    <strong>Image is <em>NOT</em> a link</strong>
+    {{/if}}
+    </li>
+  </ul>
   {{#if image-link}}
   <a href="{{image-link}}">
     <img class="img-fluid" width="234px" height="293px"
@@ -40,4 +60,9 @@
   <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
   {{/if}}
 {{/if}}
+
+{{#if card-link}}
+</a>
+{{else}}
 </article>
+{{/if}}

@@ -135,6 +135,17 @@
     margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
     margin-right: var(--global-space--pattern-pad);
 }
+/* So text of card links does not all look link a link */
+a:--c-card {
+    color: inherit;
+    text-decoration: none;
+}
+a:--c-card:hover {
+    --border-width: var(--global-border-width--thick);
+
+    outline-offset: calc(-1* var(--border-width));
+    outline: var(--border-width) solid var(--global-color-accent--normal);
+}
 
 /* Block */
 :--c-card {
