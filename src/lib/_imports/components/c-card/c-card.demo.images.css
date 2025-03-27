@@ -32,11 +32,11 @@
 }
 
 /* To show a card must not be used (even if it works) */
-.c-card.disabled * {
+.c-card.demo-disabled * {
     opacity: 0.5;
 }
-.c-card.disabled { position: relative; }
-.c-card.disabled::after {
+.c-card.demo-disabled { position: relative; }
+.c-card.demo-disabled::after {
     content: "Card like this must not be linked. Design does not approve of such a configuration.";
     padding: 1rem;
     position: absolute;
