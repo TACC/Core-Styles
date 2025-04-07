@@ -33,7 +33,13 @@
 
 {{else}}
 
-  <h3 id="card-image-{{position}}">Card - Image {{position}}</h3>
+  <h3 id="card-image-{{position}}">
+    {{#if (eq media-type "embed")}}
+    Card - <small>Embedded</small> Media {{position}}
+    {{else}}
+    Card - Image {{position}}
+    {{/if}}
+  </h3>
   {{#unless card-link}}
   <p>{{> @text-of-one-paragraph-short }}</p>
   {{#if tall}}
@@ -45,7 +51,13 @@
     <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
   </a>
   {{else}}
+    {{#if (eq media-type "embed")}}
+  <div class="embed-responsive embed-responsive-16by9 cms-plugin cms-plugin-638">
+    <iframe src="//www.youtube.com/embed/Lw1hOFZCjxg"></iframe>
+  </div>
+    {{else}}
   <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
+    {{/if}}
   {{/if}}
 {{/if}}
 
