@@ -53,6 +53,8 @@
 
 @custom-selector :--c-card__image
     :--c-card img,
-    :--c-card__image-link;
+    :--c-card__image-link,
+    .embed-responsive,
+    .ratio-responsive; /* Bootstrap 4 (embed), Bootstrap 5 (ratio) */
 @custom-selector :--c-card__image-link
     :--c-card a:has(> img);
