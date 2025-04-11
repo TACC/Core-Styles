@@ -107,7 +107,7 @@
 /* Modifers: Style: Child Text */
 
 /* To color text, but not those within certain contexts */
-:--o-section--style :is(h1, h2, h3, h4, h5, h6):not(
+:--o-section--style :is(h1, h3, h4, h5, h6):not(
   :--c-card--plain *,
   :--c-card--standard *,
   :--c-card--standard-N *
