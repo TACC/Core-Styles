@@ -193,18 +193,6 @@
 
 
 
-/* Tricks: Modifers: Style */
-
-/* To prevent visibly extra space beneath certain sections and footer */
-/* FAQ: "extra space" is margin (from <main>) between section and <footer> */
-/* FAQ: 'last-of-type' not 'last-child' cuz hidden elements */
-main > .container:--o-section--light:last-of-type,
-main > .container > :--o-section--light:last-of-type,
-main > .container:--o-section--dark:last-of-type,
-main > .container > :--o-section--dark:last-of-type {
-  margin-bottom: calc( -1 * var(--global-space--section-gap) );
-}
-
 /* Tricks: Children */
 
 /* To hide margin that is likely undesirable */
