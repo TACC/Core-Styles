@@ -11,7 +11,7 @@
     :--o-section--dark;
 @custom-selector :--o-section--light
     .o-section--style-light,
-    .section--dark;
+    .section--light;
 @custom-selector :--o-section--muted
     .o-section--style-muted,
     .section--muted;
