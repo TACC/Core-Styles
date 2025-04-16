@@ -1,7 +1,16 @@
-<div class="c-hero-banner">
-    <article class="c-hero-banner__article {{#if hasContainer}}container{{/if}}">
+<div class="c-hero-banner {{#if hasContainer}}container{{/if}}">
+    <article class="c-hero-banner__article">
         <h1 class="c-hero-banner__title">Core Experience Portal</h1>
         <p>The Texas Advanced Computing Center (TACC) provides powerful and intuitive web interfaces that remove technological hurdles.</p>
     </article>
     <img class="c-hero-banner__media" src="https://utrc.tacc.utexas.edu/media/filer_public_thumbnails/filer_public/72/18/72183c36-229e-4b56-a341-4591b7f5e68f/utrc-hero-1920-555-ratio.jpg__1680x1680_q85_subsampling-2.jpg" alt="hero banner">
 </div>
+{{#if hasContainer}}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>The text in the hero banner should be left-aligned with this text.</p>
+        </div>
+    </div>
+</div>
+{{/if}}

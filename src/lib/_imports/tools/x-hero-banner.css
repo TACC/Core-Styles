@@ -1,7 +1,13 @@
 @design-tokens url('../../tokens/v2.json') format('style-dictionary3');
 
+@define-mixin hero-banner-container {
+    container-type: inline-size;
+}
+:has(> .x-hero-banner) {
+    @mixin hero-banner-container;
+}
+
 @define-mixin hero-banner {
-  container-type: inline-size;
   position: relative;
 }
 .x-hero-banner {
@@ -26,10 +32,12 @@
 }
 
 @define-mixin hero-banner-article {
+  --inset-left: 48px;
+
   color: var(--global-color-primary--xx-dark);
   background-color: rgb( from design-token('color.gray.light-2x') r g b / 0.9 );
   z-index: 2;
-  padding: 24px 84px 36px 48px;
+  padding: 24px 84px 36px var(--inset-left);
   font-weight: bold;
 }
 .x-hero-banner__article {
@@ -38,6 +46,7 @@
 
 @define-mixin hero-banner-article--wide-context {
   --offset-left: 116px;
+  --container-gap: 0;
 
   position: absolute;
   left: var(--offset-left);
@@ -46,6 +55,11 @@
   width: 610px;
   box-sizing: border-box;
   max-width: calc( 100cqw - var(--offset-left));
+
+  margin-left: calc(-1 * (var(--inset-left) + var(--offset-left)) + var(--container-gap));
+}
+@define-mixin hero-banner-article--in-container {
+  --container-gap: calc( var(--global-space--bootstrap-gap) / 2 );
 }
 .x-hero-banner--wide-context .x-hero-banner__article {
   @mixin hero-banner-article--wide-context;
@@ -64,11 +78,14 @@
 }
 
 @define-mixin hero-banner-media {
-  width: 100%;
+  width: 100cqw;
   height: 100%;
   object-fit: cover;
   position: absolute;
   z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .x-hero-banner__media {
   @mixin hero-banner-media;

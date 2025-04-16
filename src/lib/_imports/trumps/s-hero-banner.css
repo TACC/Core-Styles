@@ -1,6 +1,10 @@
 @import url("../tools/media-queries.css");
 @import url("../tools/x-hero-banner.css");
 
+:has(> .s-hero-banner) {
+    @mixin hero-banner-container;
+}
+
 .s-hero-banner {
   @mixin hero-banner;
 }
@@ -20,6 +24,9 @@
 
 .s-hero-banner article {
   @mixin hero-banner-article;
+}
+.s-hero-banner.container article {
+  @mixin hero-banner-article--in-container;
 }
 
 .s-hero-banner h1 {
