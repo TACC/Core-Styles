@@ -45,18 +45,17 @@
 }
 
 @define-mixin hero-banner-article--wide-context {
-  --offset-left: 116px;
   --container-gap: 0;
 
   position: absolute;
-  left: var(--offset-left);
+  left: 0;
   bottom: 50px;
 
   width: 610px;
   box-sizing: border-box;
-  max-width: calc( 100cqw - var(--offset-left));
+  max-width: 100cqw;
 
-  margin-left: calc(-1 * (var(--inset-left) + var(--offset-left)) + var(--container-gap));
+  margin-left: calc(-1 * var(--inset-left) + var(--container-gap));
 }
 @define-mixin hero-banner-article--in-container {
   --container-gap: calc( var(--global-space--bootstrap-gap) / 2 );
