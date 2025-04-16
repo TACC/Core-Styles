@@ -1,30 +1,30 @@
 @import url("../tools/media-queries.css");
 @import url("../tools/x-hero-banner.css");
 
-.s-hero-banner {
+.c-hero-banner {
   @mixin hero-banner;
 }
 @media (--medium-and-above) {
-  .s-hero-banner {
+  .c-hero-banner {
     @mixin hero-banner--wide-context;
   }
-  .s-hero-banner article {
+  .c-hero-banner__article {
     @mixin hero-banner-article--wide-context;
   }
 }
 @media (--medium-and-below) {
-  .s-hero-banner {
+  .c-hero-banner {
     @mixin hero-banner--slim-context;
   }
 }
 
-.s-hero-banner article {
+.c-hero-banner__article {
   @mixin hero-banner-article;
 }
 
-.s-hero-banner h1 {
+.c-hero-banner__title {
   @mixin hero-banner-title;
 }
-.s-hero-banner img {
+.c-hero-banner__media {
   @mixin hero-banner-media;
 }
