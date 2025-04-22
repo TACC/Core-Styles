@@ -39,7 +39,7 @@ Styleguide Scopes.SearchBar
 :host [part="form"] {
   /* To ensure search field font matches Portal */
   /* GH-101: Set and rely on header font */
-  /* SEE: https://confluence.tacc.utexas.edu/x/nB4FDg */
+  /* SEE: https://tacc-main.atlassian.net/wiki/x/Nw9v */
   font-family: "Roboto";
 
   display: flex;

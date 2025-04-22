@@ -72,7 +72,7 @@ p > :is(:--action) > .icon:first-child {
 /* Overrides */
 
 /* To overwrite `cortal.icon.fonts.css` icon sizes */
-/* SEE: https://confluence.tacc.utexas.edu/x/dgB_CQ */
+/* SEE: https://tacc-main.atlassian.net/wiki/x/Bg5v */
 /* CAVEAT: Assumes 1rem = 10px */
 /* relative units */
 .icon-sm {

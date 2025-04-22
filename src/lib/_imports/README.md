@@ -12,7 +12,7 @@ Styles here should be isolated UI patterns and be imported by other stylesheets.
 
 These directories are based on [ITCSS][tacc-itcss].
 
-[tacc-itcss]: https://confluence.tacc.utexas.edu/x/IAA9Cw
+[tacc-itcss]: https://tacc-main.atlassian.net/wiki/x/QQhv
 
 ## Documentation Format
 
@@ -35,6 +35,6 @@ See [TACC: CSS Style Guide][tacc-style-guide].
 - Most styles will be _only **or** mostly_ for [structure][tacc-oocss].
 - Some styles may be for [skin][tacc-oocss].
 
-[tacc-oocss]: https://confluence.tacc.utexas.edu/x/VwALBg 'TACC: Object-Oriented CSS'
-[tacc-style-guide]: https://confluence.tacc.utexas.edu/x/ZQALBg 'TACC: CSS Style Guide'
+[tacc-oocss]: https://tacc-main.atlassian.net/wiki/x/7Atv 'TACC: Object-Oriented CSS'
+[tacc-style-guide]: https://tacc-main.atlassian.net/wiki/x/7Bdv 'TACC: CSS Style Guide'
 [fractal-docs-guide]: https://fractal.build/guide/components/#what-defines-a-component 'Fractal: User Guide: Components'
