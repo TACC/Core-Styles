@@ -3,6 +3,9 @@
     container-type: inline-size;
     gap: var(--global-space--grid-gap);
 }
+.o-media-spread > * {
+    width: 100%;
+}
 
 @container (min-width: 400px) {
     .o-media-spread--2-cols {

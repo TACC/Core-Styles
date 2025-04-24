@@ -1,5 +1,4 @@
 context:
-  shouldLoadBootstrap: true
   shouldSkipPattern: false
   📝 shouldSkipPattern: because core-styles.….css does not import this
   supportStyles:
