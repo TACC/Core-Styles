@@ -1,0 +1,1 @@
+/*! @tacc/core-styles 2.43.2+ | MIT | github.com/TACC/Core-Styles */.demo-grid{display:grid;gap:var(--global-space--grid-gap);grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}

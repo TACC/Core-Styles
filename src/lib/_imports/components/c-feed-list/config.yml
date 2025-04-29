@@ -1,0 +1,16 @@
+status: prototype
+variants:
+  - name: default
+    label: Default
+    context:
+      shouldSkipPattern: false
+  - name: cms
+    label: CMS
+    context:
+      shouldLoadCMS: true
+      shouldSkipPattern: true
+  - name: portal
+    label: Portal
+    context:
+      shouldLoadPortal: true
+      shouldSkipPattern: false
