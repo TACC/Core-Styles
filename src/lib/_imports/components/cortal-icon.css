@@ -58,8 +58,15 @@
 /* Cross-Pattern */
 
 /* To tweak action icon appearance and layout */
-:--c-card > :is(:--action) > .icon:first-child,
-p > :is(:--action) > .icon:first-child {
+/* NEXT STEP for TACC/Core-Styles#508:
+    - create mixin
+    - use mixin on c-card (for the `c-card` use case)
+    - use mixin on c-feed-list (for the `p` use case)
+*/
+:is(p, :--c-card) > :is(:--action):has(.icon:first-child) {
+    display: inline-flex;
+}
+:is(p, :--c-card) > :is(:--action) > .icon:first-child {
     margin-right: 10px;
     font-size: 1.2em;
 
