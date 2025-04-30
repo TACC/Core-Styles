@@ -1,0 +1,13 @@
+@custom-selector :--c-feed-list
+  .c-feed-list;
+
+@custom-selector :--c-feed-list__item
+  :--c-feed-list > div,
+  :--c-feed-list > article;
+
+@custom-selector :--c-feed-list__link-block
+  :--c-feed-list > a:last-child,
+  :--c-feed-list > p:has(a:only-child);
+@custom-selector :--c-feed-list__link-action
+  :--c-feed-list > a:last-child,
+  :--c-feed-list > p > a:only-child;

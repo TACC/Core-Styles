@@ -1,4 +1,7 @@
 status: prototype
+context:
+  supportStyles:
+    - ../../assets/components/cortal-icon.css
 variants:
   - name: default
     label: Default
