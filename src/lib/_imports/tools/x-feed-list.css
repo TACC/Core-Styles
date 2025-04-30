@@ -119,9 +119,9 @@
 
 
 
-/* "See All …" Link */
+/* "(See) More" Link */
 
-@define-mixin feed-list__link-wrap {
+@define-mixin feed-list__more {
     padding-top: 15px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -131,21 +131,21 @@
 
     margin-block: 0 2rem;
 }
-@define-mixin feed-list__link {
+@define-mixin feed-list__more-link {
     @mixin action--with-icon;
 }
-@define-mixin feed-list__link-icon {
+@define-mixin feed-list__more-icon {
     @mixin action__icon-at-start;
 }
 /* DEMO-USE ONLY */
-.x-feed-list__link-wrap {
-    @mixin feed-list__link-wrap;
+.x-feed-list__more {
+    @mixin feed-list__more;
 }
-.x-feed-list__link {
-    @mixin feed-list__link;
+.x-feed-list__more-link {
+    @mixin feed-list__more-link;
 }
-.x-feed-list__link-icon {
-    @mixin feed-list__link-icon;
+.x-feed-list__more-icon {
+    @mixin feed-list__more-icon;
 }
 
 

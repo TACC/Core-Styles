@@ -60,16 +60,16 @@
 
 
 
-/* "See All …" Link */
+/* "(See) More" Link */
 
-:--c-feed-list__link-block {
-  @mixin feed-list__link-wrap;
+:--c-feed-list__more {
+  @mixin feed-list__more;
 }
-:--c-feed-list__link-action {
-  @mixin feed-list__link;
+:--c-feed-list__more-action {
+  @mixin feed-list__more-link;
 }
-:--c-feed-list__link-action > .icon {
-  @mixin feed-list__link-icon;
+:--c-feed-list__more-action > .icon {
+  @mixin feed-list__more-icon;
 }
 
 

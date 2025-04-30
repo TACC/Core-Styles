@@ -5,9 +5,9 @@
   :--c-feed-list > div,
   :--c-feed-list > article;
 
-@custom-selector :--c-feed-list__link-block
+@custom-selector :--c-feed-list__more
   :--c-feed-list > a:last-child,
   :--c-feed-list > p:has(a:only-child);
-@custom-selector :--c-feed-list__link-action
+@custom-selector :--c-feed-list__more-action
   :--c-feed-list > a:last-child,
   :--c-feed-list > p > a:only-child;
