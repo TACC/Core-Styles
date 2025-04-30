@@ -124,6 +124,8 @@
     white-space: nowrap;
     font-weight: var(--bold);
     font-size: var(--global-font-size--medium);
+
+    margin-block: 0 2rem;
 }
 @define-mixin feed-list__link {
     @mixin action--with-icon;
