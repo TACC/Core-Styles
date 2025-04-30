@@ -65,6 +65,7 @@
 }
 
 /* Item: Elements */
+
 @define-mixin feed-list__item-time {
     grid-area: time;
 
@@ -91,7 +92,10 @@
 @define-mixin feed-list__item-desc {
     grid-area: desc;
 
-    margin-block: 0 1.15rem;
+    margin-block-start: 0;
+    /* NOTE: Value arises from guess-n-check */
+    /* FAQ: Prevents unexplained visibile 3rd line */
+    margin-block-end: 1.15rem;
 
     @mixin truncate--many-lines;
 }
@@ -115,7 +119,7 @@
 
 
 
-/* View All */
+/* "See All …" Link */
 
 @define-mixin feed-list__link-wrap {
     padding-top: 15px;
@@ -142,4 +146,17 @@
 }
 .x-feed-list__link-icon {
     @mixin feed-list__link-icon;
+}
+
+
+
+
+/* PATTERNS */
+
+@define-mixin feed-list__pill {
+    margin-left: 0.5ch;
+}
+/* DEMO-USE ONLY */
+.x-feed-list .c-pill {
+    @mixin feed-list__pill;
 }
