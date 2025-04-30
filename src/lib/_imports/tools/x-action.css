@@ -1,0 +1,25 @@
+@define-mixin action--with-icon {
+    display: inline-flex; /* for simple alignment code */
+    align-items: center;
+}
+@define-mixin action__icon {
+    font-size: 1.2em;
+}
+@define-mixin action__icon-at-start {
+    margin-inline-end: 0.5em;
+}
+@define-mixin action__icon-at-end {
+    margin-inline-start: 0.5em;
+}
+/* DEMO-USE ONLY */
+.x-action--with-icon {
+    @mixin action--with-icon;
+}
+.x-action__icon-at-start {
+    @mixin action__icon;
+    @mixin action__icon-at-start;
+}
+.x-action__icon-at-end {
+    @mixin action__icon;
+    @mixin action__icon-at-end;
+}
