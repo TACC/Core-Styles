@@ -11,6 +11,9 @@
     padding: 10px 20px;
 
     font-size: var(--global-font-size--small);
+    & .icon {
+      font-size: var(--global-font-size--medium); /* to retain icon size */
+    }
 
     font-weight: var(--bold);
     letter-spacing: 0.05em;
