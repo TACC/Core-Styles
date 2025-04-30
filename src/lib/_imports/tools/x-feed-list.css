@@ -33,9 +33,7 @@
     margin-top: 0;
     margin-bottom: 10px;
 
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    @mixin truncate--one-line;
 }
 /* DEMO-USE ONLY */
 .x-feed-list__item-title {
@@ -123,13 +121,12 @@
 
 @define-mixin feed-list__more {
     padding-top: 15px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
     font-weight: var(--bold);
     font-size: var(--global-font-size--medium);
 
     margin-block: 0 2rem;
+
+    @mixin truncate--one-line;
 }
 @define-mixin feed-list__more-link {
     @mixin action--with-icon;
