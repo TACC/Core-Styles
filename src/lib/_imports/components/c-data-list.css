@@ -139,7 +139,7 @@ table:--data-list {
 }
 @supports(text-overflow: ':') {
   :--data-list__non-table-key {
-    --text-overflow: ':';
+    text-overflow: ':';
   }
 }
 
