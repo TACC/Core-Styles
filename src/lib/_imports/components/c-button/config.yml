@@ -6,6 +6,8 @@ context:
     size: true
     size-small: true
     link-tag: true
+  supportStyles:
+    - ../../assets/components/cortal-icon.css
 variants:
   # type
   - name: default
