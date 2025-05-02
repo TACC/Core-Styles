@@ -41,6 +41,8 @@ Styleguide Settings.CustomProperties.Space
   --global-space--grid-gap: var(--global-space--bootstrap-gap);
   --global-space--above-breadcrumbs: 45px;
   --global-space--under-breadcrumbs: 40px;
+  --global-space--pattern-pad: 30px;
+  --global-space--unnamed: 50px;
 
   /* Applications */
   --global-space--section-top: 12px;
