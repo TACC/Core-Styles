@@ -67,6 +67,9 @@
 @define-mixin feed-list__item-time {
     grid-area: time;
 
+    display: flex;
+    gap: 0.25em;
+
     color: var(--global-color-secondary--normal);
     font-weight: var(--medium);
     text-transform: uppercase;
@@ -152,6 +155,10 @@
 
 @define-mixin feed-list__pill {
     margin-left: 0.5ch;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* DEMO-USE ONLY */
 .x-feed-list .c-pill {
