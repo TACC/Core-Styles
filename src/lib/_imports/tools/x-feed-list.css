@@ -132,7 +132,7 @@
     @mixin action--with-icon;
 }
 @define-mixin feed-list__more-icon {
-    @mixin action__icon-at-start;
+    @mixin action__icon;
 }
 /* DEMO-USE ONLY */
 .x-feed-list__more {

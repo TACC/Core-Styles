@@ -132,13 +132,9 @@
 :--c-card > p > a:not(:--c-button):has(.icon) {
     @mixin action--with-icon;
 }
-:--c-card > a:not(:--c-button) > .icon:last-child,
-:--c-card > p > a:not(:--c-button) > .icon:last-child {
-    @mixin action__icon-at-start;
-}
-:--c-card > a:not(:--c-button) > .icon:first-child,
-:--c-card > p > a:not(:--c-button) > .icon:first-child {
-    @mixin action__icon-at-end;
+:--c-card > a:not(:--c-button) > .icon,
+:--c-card > p > a:not(:--c-button) > .icon {
+    @mixin action__icon;
 }
 /* So text of card links does not all look like a link */
 a:--c-card {

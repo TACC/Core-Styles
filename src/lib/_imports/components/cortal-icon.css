@@ -1,4 +1,5 @@
 @import url('./cortal-icon-font.css');
+@import url("../tools/x-action.css");
 
 
 
@@ -54,6 +55,12 @@
 }
 
 
+
+/* Icon within an Action */
+
+:--action > .icon {
+    @mixin action__icon;
+}
 
 
 
