@@ -1,6 +1,3 @@
-@custom-selector :--c-feed-list
-  .c-feed-list;
-
 @custom-selector :--c-feed-list__item
-  :--c-feed-list > div,
-  :--c-feed-list > article;
+  .c-feed-list > div,
+  .c-feed-list > article;
