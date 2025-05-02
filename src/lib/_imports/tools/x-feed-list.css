@@ -1,11 +1,6 @@
 @import url('../tools/x-truncate.css');
 @import url('../tools/x-action.css');
 
-/* TODO: Move to base settings */
-:root {
-    --global-space--unnamed: 50px;
-}
-
 
 
 
