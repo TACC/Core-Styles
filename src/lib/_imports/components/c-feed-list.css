@@ -22,14 +22,14 @@
 /* Title */
 
 .c-feed-list > :--heading {
-  @mixin feed-list__item-title;
+  @mixin feed-list__title;
 }
 
 
 /* Item */
 
 :--c-feed-list__item {
-  @mixin feed-list__item-item;
+  @mixin feed-list__item;
 }
 
 /* Item: Elements */

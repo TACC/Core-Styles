@@ -29,21 +29,21 @@
 
 /* Title */
 
-@define-mixin feed-list__item-title {
+@define-mixin feed-list__title {
     margin-top: 0;
     margin-bottom: 10px;
 
     @mixin truncate--one-line;
 }
 /* DEMO-USE ONLY */
-.x-feed-list__item-title {
-    @mixin feed-list__item-title;
+.x-feed-list__title {
+    @mixin feed-list__title;
 }
 
 
 /* Item */
 
-@define-mixin feed-list__item-item {
+@define-mixin feed-list__item {
     display: grid;
     grid-template-areas:
         'time time'
@@ -58,8 +58,8 @@
     }
 }
 /* DEMO-USE ONLY */
-.x-feed-list__item-item {
-    @mixin feed-list__item-item;
+.x-feed-list__item {
+    @mixin feed-list__item;
 }
 
 /* Item: Elements */
