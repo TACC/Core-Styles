@@ -1,4 +1,4 @@
-status: prototype
+status: ready
 context:
   shouldSkipPattern: false
   supportStyles:
