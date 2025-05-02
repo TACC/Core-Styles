@@ -11,9 +11,7 @@ variants:
     label: CMS
     context:
       shouldLoadCMS: true
-      shouldSkipPattern: true
   - name: portal
     label: Portal
     context:
       shouldLoadPortal: true
-      shouldSkipPattern: false
