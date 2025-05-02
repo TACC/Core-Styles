@@ -62,14 +62,17 @@
 
 /* "(See) More" Link */
 
-:--c-feed-list__more {
+:--c-feed-list > a:last-child,
+:--c-feed-list > p:has(a:only-child) {
   @mixin feed-list__more;
 }
-:--c-feed-list__more-action {
+:--c-feed-list > a:last-child,
+:--c-feed-list > p > a:only-child {
   @mixin feed-list__more-link;
-}
-:--c-feed-list__more-action > .icon {
-  @mixin feed-list__more-icon;
+
+  & .icon {
+    @mixin feed-list__more-icon;
+  }
 }
 
 
