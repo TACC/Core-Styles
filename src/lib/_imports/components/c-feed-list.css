@@ -46,9 +46,7 @@
   @mixin feed-list__item-name;
 }
 
-:--c-feed-list__item > p:not(
-  :has(time, a:only-child)
-) {
+:--c-feed-list__item > p:not(:has(time, a:only-child)) {
   @mixin feed-list__item-desc;
 }
 
