@@ -1,6 +1,0 @@
-/* Demo layout for c-feed-list examples */
-.demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: var(--global-space--grid-gap);
-}
