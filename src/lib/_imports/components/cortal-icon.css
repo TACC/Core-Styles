@@ -55,10 +55,9 @@
 
 
 
-/* Cross-Pattern */
+/* For "Feed List" with Ideal Markup (f.k.a. Cross-Pattern) */
 
 /* To tweak action icon appearance and layout */
-:--c-card > :is(:--action) > .icon:first-child,
 p > :is(:--action) > .icon:first-child {
     margin-right: 10px;
     font-size: 1.2em;
