@@ -12,7 +12,9 @@
 
     font-size: var(--global-font-size--small);
     & .icon {
-      font-size: var(--global-font-size--medium); /* to retain icon size */
+      font-size: calc(
+        1.2 * var(--global-font-size--medium)
+      ); /* to retain standard action icon size */
     }
 
     font-weight: var(--bold);
