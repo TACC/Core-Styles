@@ -1,7 +1,7 @@
 @import url("../objects/o-section.selectors.css");
 @import url("../tools/selectors.css");
 @import url("../tools/x-link.css");
-
+@import url("../tools/x-action.css");
 @import url("./c-button.selectors.css");
 @import url("./c-card.selectors.css");
 
@@ -117,14 +117,6 @@
 
 /* Elements */
 
-:--c-card > a:not(:--c-button),
-:--c-card > p > a:not(:--c-button) {
-    /* XXX: Prevents text around it from wrapping if link spans two lines */
-    /* FAQ: To fix on client, `class="d-inline"` or `style="display: inline"` */
-    /* ???: Why does this use `inline-flex`? */
-    display: inline-flex;
-    align-items: baseline;
-}
 /* I.e. one of multiple icon links within a p tag */
 :--c-card > p > a:not(:--c-button):has(.icon):not(:last-child) {
     margin-right: 1rem;
@@ -135,7 +127,20 @@
     margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
     margin-right: var(--global-space--pattern-pad);
 }
-/* So text of card links does not all look link a link */
+/* To style actions that have an icon */
+:--c-card > a:not(:--c-button):has(.icon),
+:--c-card > p > a:not(:--c-button):has(.icon) {
+    @mixin action--with-icon;
+}
+:--c-card > a:not(:--c-button) > .icon:last-child,
+:--c-card > p > a:not(:--c-button) > .icon:last-child {
+    @mixin action__icon-at-start;
+}
+:--c-card > a:not(:--c-button) > .icon:first-child,
+:--c-card > p > a:not(:--c-button) > .icon:first-child {
+    @mixin action__icon-at-end;
+}
+/* So text of card links does not all look like a link */
 a:--c-card {
     color: inherit;
     text-decoration: none;
