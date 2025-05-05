@@ -6,6 +6,7 @@ The shared styles for TACC WMA Workspace Portals & Websites
 ## Known Clients
 
 - [Core CMS], the base CMS code for TACC WMA CMS Websites
+- [Core CMS Custom] (as of [#293](https://github.com/TACC/Core-CMS-Custom/pull/293))
 - [Core Portal], the base Portal code for TACC WMA CMS Websites
 - [Core Components], the UI components for [Core Portal] and [TUP UI]
 - [TUP UI], the client code for TACC User Portal
@@ -274,6 +275,7 @@ Core Styles **had been** an effort to replace Bootstrap. Core Styles is **compat
 [core portal deployments]: https://github.com/TACC/Core-Portal-Deployments
 [camino]: https://github.com/TACC/Camino
 [core cms]: https://github.com/TACC/Core-CMS
+[core cms custom]: https://github.com/TACC/Core-CMS-Custom
 [core portal]: https://github.com/TACC/Core-Portal
 [core components]: https://github.com/TACC/Core-Components
 [tup ui]: https://github.com/TACC/tup-ui
