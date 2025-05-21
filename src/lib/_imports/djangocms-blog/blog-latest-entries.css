@@ -61,8 +61,6 @@
 .blog-latest-entries article + article {
     border-top: var(--global-border-width--normal) solid var(--global-color-primary--dark);
     margin-top: var(--article-buffer);
-}
-.blog-latest-entries article:last-of-type {
     padding-top: var(--article-buffer);
 }
 
