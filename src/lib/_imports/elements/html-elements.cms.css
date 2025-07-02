@@ -51,6 +51,9 @@ Styleguide Elements.TextContent
 & p {
   margin-bottom: 2rem; /* overwrite Bootstrap */
 }
+p + :is(ul, ol, dl) {
+    margin-top: -1rem;
+}
 
 /* Lists */
 
