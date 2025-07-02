@@ -160,7 +160,32 @@ Reference:
 Styleguide Elements.DemarcatingEdits
 */
 
-/* … */
+/* To improve default underline style for inserted text */
+ins {
+    text-underline-position: under;
+    text-decoration-style: dotted;
+}
+
+/* To highlight blocks of inserted content */
+.ins-block {
+    /* To keep outline within a .container */
+    --offset: calc( var(--global-space--bootstrap-gap) * 0.375 );
+
+    border: 0.125em dotted currentcolor;
+    padding: var(--offset);
+
+    /* To keep outline within a .container */
+    margin-inline: calc( -1 * var(--offset));
+    /* To prevent outline from touching sibling content */
+    margin-block: 1em;
+
+    /* To create color that is between `x-light` and `xx-light` */
+    background: rgb( from var(--global-color-primary--x-light) r g b / 50% );
+}
+/* To remove likely extra space from final p */
+.ins-block > p:last-child {
+    margin-bottom: unset;
+}
 
 
 
