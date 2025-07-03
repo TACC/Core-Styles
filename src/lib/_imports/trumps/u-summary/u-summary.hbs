@@ -6,19 +6,21 @@
     <details>
       <summary class="u-summary-with-a-link">
         <a href="https://example.com" target="_blank">
-          A Working Link
+          a link with a functional <code>href</code>
         </a>
         <small>(to toggle details, click the triangle or this small text)</small>
       </summary>
-      <p>This is content that shows when the summary is expanded. The summary contains a clickable link with proper flex layout.</p>
+      <p>This is content that shows when the summary is expanded. The summary contains a navigation link to leave this page.</p>
     </details>
-    
+
     <details>
       <summary class="u-summary-with-a-link">
-        <a>Link without href</a>
+        <a>
+          a link with <strong>no</strong> <code>href</code>
+        </a>
         <small>(to toggle details, click the triangle, the link, or this small text)</small>
       </summary>
-      <p>This demonstrates that links without href attributes are properly restored to be clickable within the summary.</p>
+      <p>This demonstrates that links without href attributes are properly restored to appear as links within a summary.</p>
     </details>
   </dd>
 
@@ -28,18 +30,18 @@
 
     <details>
       <summary class="u-summary-fake-marker">
-        Dataset #218 - Another Sample
-        <small>(to toggle details, click the triangle, the text, or this small text)</small>
+        closed by default
+        <small>(to toggle details, click the triangle or text)</small>
       </summary>
       <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
     </details>
-    
-    <details>
+
+    <details open>
       <summary class="u-summary-fake-marker">
-        Opened by default
-        <small>(to toggle details, click the triangle, the tex, or this small text)</small>
+        open by default
+        <small>(to toggle details, click the triangle or text)</small>
       </summary>
-      <p>Custom marker styling using pseudo-elements instead of the default browser list markers.</p>
+      <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
     </details>
   </dd>
 </dl>
