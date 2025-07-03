@@ -12,8 +12,16 @@
   <tbody>
   {{#each data.key-value-pairs}}
     <tr>
-      {{#if key}}<th class="c-data-list__key">{{ key }}</th>{{/if}}
-      {{#if value}}<td class="c-data-list__value">{{ value }}</td>{{/if}}
+      {{#if key}}
+      <th {{#if key-class}}class="{{ key-class }}"{{/if}}>
+        {{ key }}
+      </th>
+      {{/if}}
+      {{#if value}}
+      <td {{#if value-class}}class="{{ value-class }}"{{/if}}>
+        {{ value }}
+      </td>
+      {{/if}}
     </tr>
   {{/each}}
   {{#each data.rows}}
