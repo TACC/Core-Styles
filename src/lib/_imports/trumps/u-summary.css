@@ -1,9 +1,3 @@
-summary.u-summary-with-a-link {
-    display: flex;
-}
-summary.u-summary-with-a-link > a {
-    flex: 1;
-}
 /* To undo core-styles, which assumes href-less <a> is disabled */
 summary.u-summary-with-a-link > a:not([href]) {
     pointer-events: auto;
