@@ -6,11 +6,11 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Dropdown button
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
+      <menu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </menu>
     </div>
   </dd>
 
@@ -20,12 +20,25 @@
       <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Options
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <a class="dropdown-item" href="#">Regular option</a>
-        <a class="dropdown-item" href="#">Another option</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated option</a>
-      </div>
+      <menu class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <li>
+          <a class="dropdown-item" href="#">
+            Option (above <strong>standard</strong> divider)
+          </a>
+        </li>
+        <li class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item" href="#">
+            Option (between <strong>different</strong> dividers)
+          </a>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <a class="dropdown-item" href="#">
+            Option (below <strong>non-standard</strong> divider)
+          </a>
+        </li>
+      </menu>
     </div>
   </dd>
 
@@ -35,12 +48,12 @@
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Demo States
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-        <a class="dropdown-item" href="#">Normal item</a>
-        <a class="dropdown-item active" href="#">Active item</a>
-        <a class="dropdown-item" href="#">Another normal item</a>
-        <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Disabled item</a>
-      </div>
+      <menu class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+        <li><a class="dropdown-item" href="#">Normal item</a></li>
+        <li><a class="dropdown-item active" href="#">Active item</a></li>
+        <li><a class="dropdown-item" href="#">Another normal item</a></li>
+        <li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Disabled item</a></li>
+      </menu>
     </div>
   </dd>
 
