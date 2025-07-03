@@ -1,15 +1,3 @@
-/*
-Summary Utilities
-
-Utility classes for styling HTML `<summary>` elements.
-
-Examples:
-- `u-summary-with-a-link`: For summary elements containing clickable links with flex layout
-- `u-summary-fake-marker`: For summary elements with custom pseudo-element markers
-
-Styleguide Trumps.Utilities.Summary
-*/
-
 /* Summary that contains a link with proper layout */
 summary.u-summary-with-a-link {
     display: flex;
