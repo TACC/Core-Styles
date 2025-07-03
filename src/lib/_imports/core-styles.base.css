@@ -31,6 +31,7 @@
 
 /* COMPONENTS */
 @import url("./components/bootstrap.container.css");
+@import url("./components/bootstrap.dropdown.css");
 @import url("./components/bootstrap.figure.css");
 @import url("./components/bootstrap.modal.css");
 @import url("./components/bootstrap.nav-tabs.css");
