@@ -1,1 +1,9 @@
 status: prototype
+variants:
+  - name: default
+    hidden: true
+  - name: plain
+  - name: custom-example
+    label: Example Customization
+    context:
+      shouldLoadCMS: true

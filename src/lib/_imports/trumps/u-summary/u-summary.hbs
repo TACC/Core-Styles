@@ -1,34 +1,44 @@
-<dl>
-  <dt>u-summary-with-a-link</dt>
-  <dd>
+<dl {{#if wrapper-class}}class="{{ wrapper-class }}"{{/if}}>
+  <dt><code>.u-summary-with-a-link</code></dt>
+  <dd {{#if example-class}}class="{{ example-class }}"{{/if}}>
     <p>Summary element containing a link:</p>
 
     <details>
       <summary class="u-summary-with-a-link">
-        <a href="#">Dataset #317 - Sample Data</a>
+        <a href="https://example.com" target="_blank">
+          A Working Link
+        </a>
+        <small>(to toggle details, click the triangle or this small text)</small>
       </summary>
       <p>This is content that shows when the summary is expanded. The summary contains a clickable link with proper flex layout.</p>
     </details>
     
     <details>
       <summary class="u-summary-with-a-link">
-        <a>Link without href (should still be clickable)</a>
+        <a>Link without href</a>
+        <small>(to toggle details, click the triangle, the link, or this small text)</small>
       </summary>
       <p>This demonstrates that links without href attributes are properly restored to be clickable within the summary.</p>
     </details>
   </dd>
 
-  <dt>u-summary-fake-marker</dt>
-  <dd>
+  <dt><code>.u-summary-fake-marker</code></dt>
+  <dd {{#if example-class}}class="{{ example-class }}"{{/if}}>
     <p>Summary element with custom pseudo-element markers:</p>
 
     <details>
-      <summary class="u-summary-fake-marker">Dataset #218 - Another Sample</summary>
+      <summary class="u-summary-fake-marker">
+        Dataset #218 - Another Sample
+        <small>(to toggle details, click the triangle, the text, or this small text)</small>
+      </summary>
       <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
     </details>
     
     <details>
-      <summary class="u-summary-fake-marker">Opened by default</summary>
+      <summary class="u-summary-fake-marker">
+        Opened by default
+        <small>(to toggle details, click the triangle, the tex, or this small text)</small>
+      </summary>
       <p>Custom marker styling using pseudo-elements instead of the default browser list markers.</p>
     </details>
   </dd>
