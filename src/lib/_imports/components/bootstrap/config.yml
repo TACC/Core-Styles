@@ -33,3 +33,8 @@ variants:
     context:
       supportStyles:
         - ../../assets/components/bootstrap.pagination.css
+  - name: dropdown
+    status: ready
+    context:
+      supportStyles:
+        - ../../assets/components/bootstrap.dropdown.css

@@ -10,22 +10,6 @@ Styleguide Trumps.Scopes.Header.Bootstrap
 */
 @design-tokens url('../../tokens/v2.json') format('style-dictionary3');
 
-.s-header .dropdown-item {
-  color: #212529;
-}
-.s-header .dropdown-item:focus,
-.s-header .dropdown-item:hover {
-  color: #16181b;
-  text-decoration: none;
-  background-color: rgb( from design-token('color.gray.light') r g b / 0.3 );
-}
-.s-header .dropdown-item.active,
-.s-header .dropdown-item:active {
-  color: #fff;
-  text-decoration: none;
-  background-color: var(--global-color-accent--normal);
-}
-
 .s-header input {
   font-family: inherit;
 }
