@@ -69,3 +69,9 @@ variants:
         c-data-list--is-vert
         c-data-list--is-narrow
         c-data-list--should-truncate-values
+  - name: multi-row
+    label: Multi-Row Items
+    view: table--multi-row.hbs
+    context:
+      class: |-
+        c-data-list
