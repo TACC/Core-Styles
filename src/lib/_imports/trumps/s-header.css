@@ -16,7 +16,6 @@ Markup: s-header.html
 Styleguide Trumps.Scopes.Header
 */
 @import url("../tools/media-queries.css");
-@import url("./s-header.bootstrap.css");
 
 /* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
