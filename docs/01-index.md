@@ -8,6 +8,8 @@ The pattern CSS is available via [@tacc/core-styles].
 
 The patterns are organized by [ITCSS][tacc itcss].
 
+Any patterns that expect Bootstrap are tested on [Bootstrap 4.3.1][bootstrap].
+
 ---
 
 Known Clients:
