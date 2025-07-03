@@ -1,31 +1,35 @@
-<div>
-  <h3>u-summary-with-a-link</h3>
-  <p>Summary element containing a link with flex layout:</p>
-  
-  <details>
-    <summary class="u-summary-with-a-link">
-      <a href="#">Dataset #317 - Sample Data</a>
-    </summary>
-    <p>This is content that shows when the summary is expanded. The summary contains a clickable link with proper flex layout.</p>
-  </details>
-  
-  <details>
-    <summary class="u-summary-with-a-link">
-      <a>Link without href (should still be clickable)</a>
-    </summary>
-    <p>This demonstrates that links without href attributes are properly restored to be clickable within the summary.</p>
-  </details>
+<dl>
+  <dt>u-summary-with-a-link</dt>
+  <dd>
+    <p>Summary element containing a link:</p>
 
-  <h3>u-summary-fake-marker</h3>
-  <p>Summary element with custom pseudo-element markers:</p>
-  
-  <details>
-    <summary class="u-summary-fake-marker">Dataset #218 - Another Sample</summary>
-    <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
-  </details>
-  
-  <details>
-    <summary class="u-summary-fake-marker">Opened by default</summary>
-    <p>Custom marker styling using pseudo-elements instead of the default browser list markers.</p>
-  </details>
-</div>
+    <details>
+      <summary class="u-summary-with-a-link">
+        <a href="#">Dataset #317 - Sample Data</a>
+      </summary>
+      <p>This is content that shows when the summary is expanded. The summary contains a clickable link with proper flex layout.</p>
+    </details>
+    
+    <details>
+      <summary class="u-summary-with-a-link">
+        <a>Link without href (should still be clickable)</a>
+      </summary>
+      <p>This demonstrates that links without href attributes are properly restored to be clickable within the summary.</p>
+    </details>
+  </dd>
+
+  <dt>u-summary-fake-marker</dt>
+  <dd>
+    <p>Summary element with custom pseudo-element markers:</p>
+
+    <details>
+      <summary class="u-summary-fake-marker">Dataset #218 - Another Sample</summary>
+      <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
+    </details>
+    
+    <details>
+      <summary class="u-summary-fake-marker">Opened by default</summary>
+      <p>Custom marker styling using pseudo-elements instead of the default browser list markers.</p>
+    </details>
+  </dd>
+</dl>
