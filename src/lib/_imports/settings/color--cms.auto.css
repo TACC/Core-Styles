@@ -1,3 +1,5 @@
+@import url("./color--cms.selectors.css");
+
 /* To auto-define lighter/darker colors (accent, secondary, tertiary) */
 @supports (color: lab(from white l a b)) {
     :root {
