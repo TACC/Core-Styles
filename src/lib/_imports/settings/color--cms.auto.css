@@ -1,5 +1,8 @@
 @import url("./color--cms.selectors.css");
 
+@import url("../objects/o-section.selectors.css");
+@import url("../components/c-card.selectors.css");
+
 /* To auto-define lighter/darker colors (accent, secondary, tertiary) */
 @supports (color: lab(from white l a b)) {
     :root {
