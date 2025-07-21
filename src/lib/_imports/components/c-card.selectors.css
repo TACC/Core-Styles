@@ -1,4 +1,5 @@
 @import url("../tools/selectors.css");
+@import url("../trumps/u-image-zoom.selectors.css");
 
 @custom-selector :--c-card
     .c-card,
@@ -54,7 +55,9 @@
 @custom-selector :--c-card__image
     :--c-card img,
     :--c-card__image-link,
+    :--u-image-zoom,
+    /* Bootstrap 4 (embed), Bootstrap 5 (ratio) */
     .embed-responsive,
-    .ratio; /* Bootstrap 4 (embed), Bootstrap 5 (ratio) */
+    .ratio;
 @custom-selector :--c-card__image-link
     :--c-card a:has(> img);
