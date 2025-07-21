@@ -1,7 +1,9 @@
-.u-image-zoom--on-hover {
+.u-image-zoom,
+[class*="u-image-zoom--"] {
   overflow: hidden;
 }
-.u-image-zoom--on-hover img {
+.u-image-zoom img,
+[class*="u-image-zoom--"] img {
   transition: transform .5s ease;
 }
 .u-image-zoom--on-hover:hover img {
