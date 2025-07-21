@@ -1,6 +1,6 @@
 @custom-selector :--u-image-zoom
   .u-image-zoom,
-  [class*="u-image-zoom--"];
+  [class*="image-zoom--"];
 
 @custom-selector :--u-image-zoom__media
   img,

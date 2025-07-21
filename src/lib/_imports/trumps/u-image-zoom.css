@@ -1,6 +1,7 @@
 @import url("./u-image-zoom.selectors.css");
 
 :--u-image-zoom {
+  display: block;
   overflow: hidden;
 }
 :--u-image-zoom > :--u-image-zoom__media {
