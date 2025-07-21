@@ -1,0 +1,8 @@
+@custom-selector :--u-image-zoom
+  .u-image-zoom,
+  [class*="u-image-zoom--"];
+
+@custom-selector :--u-image-zoom__media
+  img,
+  svg;
+  /* FAQ: Embedded media not permitted cuz its internal UI would move */

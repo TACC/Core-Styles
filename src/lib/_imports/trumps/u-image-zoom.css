@@ -1,11 +1,15 @@
-.u-image-zoom,
-[class*="u-image-zoom--"] {
+@import url("./u-image-zoom.selectors.css");
+
+:--u-image-zoom {
   overflow: hidden;
 }
-.u-image-zoom img,
-[class*="u-image-zoom--"] img {
+:--u-image-zoom > :--u-image-zoom__media {
   transition: transform .5s ease;
 }
-.u-image-zoom--on-hover:hover img {
+
+/* NOTE: Testing suggests this only works on anchors,
+         so explitely limit this utility to anchors */
+a:--u-image-zoom:hover > :--u-image-zoom__media,
+a:hover > :--u-image-zoom > :--u-image-zoom__media {
   transform: scale(1.5);
 }

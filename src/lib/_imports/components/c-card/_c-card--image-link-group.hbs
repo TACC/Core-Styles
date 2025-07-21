@@ -5,10 +5,20 @@
         {{> @c-card--image position="bottom" wide=true variant=variant card-link="#" disabled="true" }}
         {{> @c-card--image position="right" tall=true variant=variant card-link="#" disabled="true" }}
         {{> @c-card--image position="left" tall=true variant=variant card-link="#" disabled="true" }}
+        <!-- has-zoom -->
+        {{> @c-card--image position="top" wide=true variant=variant card-link="#" has-zoom=true }}
+        {{> @c-card--image position="bottom" wide=true variant=variant card-link="#" has-zoom=true disabled="true" }}
+        {{> @c-card--image position="right" tall=true variant=variant card-link="#" has-zoom=true disabled="true" }}
+        {{> @c-card--image position="left" tall=true variant=variant card-link="#" has-zoom=true disabled="true" }}
     {{else}}
         {{> @c-card--image position="top" wide=true variant=variant image-link="#" }}
         {{> @c-card--image position="bottom" wide=true variant=variant image-link="#" }}
         {{> @c-card--image position="right" tall=true variant=variant image-link="#" }}
         {{> @c-card--image position="left" tall=true variant=variant image-link="#" }}
+        <!-- has-zoom -->
+        {{> @c-card--image position="top" wide=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="bottom" wide=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="right" tall=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="left" tall=true variant=variant image-link="#" has-zoom=true }}
     {{/if}}
 </section> 

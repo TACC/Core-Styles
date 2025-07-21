@@ -15,6 +15,9 @@ variants:
   - name: standard-3
     status: backup
   - name: images
+    context:
+      supportStyles:
+        - ../../assets/trumps/u-image-zoom.css
   - name: docs
     context:
       shouldLoadDocs: true
