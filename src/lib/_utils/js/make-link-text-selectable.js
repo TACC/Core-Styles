@@ -8,8 +8,9 @@ function makeLinkTextSelectable(attribute = 'data-text-selectable') {
   const style = document.createElement('style');
         style.textContent = `
           a[${attribute}] :is(p, h1, h2, h3, h4, h5, h6) {
-            user-select: text;
             cursor: text;
+            -webkit-user-select: text;
+            user-select: text;
           }
       `;
   document.head.appendChild(style);
