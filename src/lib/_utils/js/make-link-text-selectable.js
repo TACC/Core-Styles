@@ -2,15 +2,26 @@
  * Makes text selectable within anchor links
  * (applies to existing links and new links)
  * @param {string} [attribute="data-text-selectable"] - The attribute to add to selectable text selectable
+ * @param {string|string[]} [textElementQuerySelector='p, h1, h2, h3, h4, h5, h6'] - CSS selector string to match the text elements to make selectable
+ * @param {string} [layer='base.allow-override'] - The CSS layer to use for styles
+ * @returns {Object} An object with a `disable` method to remove the functionality
  */
-function makeLinkTextSelectable(attribute = 'data-text-selectable') {
-
+function makeLinkTextSelectable(
+  attribute = 'data-text-selectable',
+  textElementQuerySelector = 'p, h1, h2, h3, h4, h5, h6',
+  layer = 'base.allow-override'
+) {
   const style = document.createElement('style');
         style.textContent = `
-          a[${attribute}] :is(p, h1, h2, h3, h4, h5, h6) {
-            cursor: text;
-            -webkit-user-select: text;
-            user-select: text;
+          @layer ${layer} {
+            a[${attribute}] {
+              display: inline-block;
+            }
+            a[${attribute}] :is(${textElementQuerySelector}) {
+              cursor: text;
+              -webkit-user-select: text;
+              user-select: text;
+            }
           }
       `;
   document.head.appendChild(style);
@@ -19,7 +30,7 @@ function makeLinkTextSelectable(attribute = 'data-text-selectable') {
     link.draggable = false;
     link.setAttribute(attribute, 'true');
 
-    link.querySelectorAll('p, h1, h2, h3, h4, h5, h6').forEach(element => {
+    link.querySelectorAll(textElementQuerySelector).forEach(element => {
       element.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -28,7 +39,7 @@ function makeLinkTextSelectable(attribute = 'data-text-selectable') {
   }
 
   // For present links
-  document.querySelectorAll('a').forEach(processLink);
+  document.querySelectorAll(`a:has(${textElementQuerySelector})`).forEach(processLink);
 
   // For future links
   const observer = new MutationObserver((mutations) => {
