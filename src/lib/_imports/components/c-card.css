@@ -315,7 +315,10 @@ a:--c-card:hover {
     grid-row-start: 1;
     margin-bottom: var(--global-space--pattern-pad);
 }
-:--c-card--image-bottom > :is(h1, h2, h3, h4, h5):first-of-type {
+:--c-card--image-top > :is(h1, h2, h3, h4, h5):first-of-type {
+    /* NOTE: Redundant, but maybe good to have if
+             :--c-card :is(h1, h2, h3, h4, h5, h6)
+             ever does not do the same */
     margin-top: unset; /* to avoid combining margin with image */
 }
 
