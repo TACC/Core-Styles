@@ -3,27 +3,31 @@
  * (applies to existing links and new links)
  * @param {string} [attribute="data-text-selectable"] - The attribute to add to selectable text selectable
  * @param {string|string[]} [textElementQuerySelector='p, h1, h2, h3, h4, h5, h6'] - CSS selector string to match the text elements to make selectable
- * @param {string} [layer='base.allow-override'] - The CSS layer to use for styles
+ * @param {string} [layer] - A CSS layer to use for styles
  * @returns {Object} An object with a `disable` method to remove the functionality
  */
 function makeLinkTextSelectable(
   attribute = 'data-text-selectable',
   textElementQuerySelector = 'p, h1, h2, h3, h4, h5, h6',
-  layer = 'base.allow-override'
+  layer
 ) {
   const style = document.createElement('style');
         style.textContent = `
-          @layer ${layer} {
-            a[${attribute}] {
-              display: inline-block;
-            }
-            a[${attribute}] :is(${textElementQuerySelector}) {
-              cursor: text;
-              -webkit-user-select: text;
-              user-select: text;
-            }
+          a[${attribute}] {
+            display: inline-block;
+          }
+          a[${attribute}] :is(${textElementQuerySelector}) {
+            cursor: text;
+            -webkit-user-select: text;
+            user-select: text;
           }
       `;
+      if (layer) {
+        style.textContent = `
+        @layer ${layer} {` + '\n'
+          + style.textContent + `
+        }`;
+      }
   document.head.appendChild(style);
 
   function processLink(link) {
@@ -69,10 +73,4 @@ function makeLinkTextSelectable(
       console.log('Disabled selectable text in links');
     }
   };
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', makeLinkTextSelectable);
-} else {
-  makeLinkTextSelectable();
 }
