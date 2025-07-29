@@ -2,13 +2,13 @@
  * Makes text selectable within anchor links
  * (applies to existing links and new links)
  * @param {string} [attribute="data-text-selectable"] - The attribute to add to selectable text selectable
- * @param {string|string[]} [textElementQuerySelector='p, h1, h2, h3, h4, h5, h6'] - CSS selector string to match the text elements to make selectable
+ * @param {string|string[]} [contentQuerySelector='*'] - CSS selector string to match the elements to make selectable
  * @param {string} [layer] - A CSS layer to use for styles
  * @returns {Object} An object with a `disable` method to remove the functionality
  */
-export default function makeLinkTextSelectable(
+export default function makeLinkContentSelectable(
   attribute = 'data-text-selectable',
-  textElementQuerySelector = 'p, h1, h2, h3, h4, h5, h6',
+  contentQuerySelector = '*',
   layer
 ) {
   const style = document.createElement('style');
@@ -16,7 +16,7 @@ export default function makeLinkTextSelectable(
           a[${attribute}] {
             display: inline-block;
           }
-          a[${attribute}] :is(${textElementQuerySelector}) {
+          a[${attribute}] :is(${contentQuerySelector}) {
             cursor: text;
             -webkit-user-select: text;
             user-select: text;
@@ -34,7 +34,7 @@ export default function makeLinkTextSelectable(
     link.draggable = false;
     link.setAttribute(attribute, 'true');
 
-    link.querySelectorAll(textElementQuerySelector).forEach(element => {
+    link.querySelectorAll(contentQuerySelector).forEach(element => {
       element.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -43,7 +43,7 @@ export default function makeLinkTextSelectable(
   }
 
   // For present links
-  document.querySelectorAll(`a:has(${textElementQuerySelector})`).forEach(processLink);
+  document.querySelectorAll(`a:has(${contentQuerySelector})`).forEach(processLink);
 
   // For future links
   const observer = new MutationObserver((mutations) => {
