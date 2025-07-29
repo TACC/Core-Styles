@@ -6,7 +6,7 @@
  * @param {string} [layer] - A CSS layer to use for styles
  * @returns {Object} An object with a `disable` method to remove the functionality
  */
-function makeLinkTextSelectable(
+export default function makeLinkTextSelectable(
   attribute = 'data-text-selectable',
   textElementQuerySelector = 'p, h1, h2, h3, h4, h5, h6',
   layer
