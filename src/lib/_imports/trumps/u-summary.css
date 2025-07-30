@@ -1,0 +1,19 @@
+/* To undo core-styles, which assumes href-less <a> is disabled */
+summary.u-summary-with-a-link > a:not([href]) {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/* To use text content instead of a ::marker */
+summary.u-summary-with-a-link,
+summary.u-summary-fake-marker {
+   list-style: none;
+}
+summary.u-summary-with-a-link::before,
+summary.u-summary-fake-marker::before {
+    content: '▸';
+}
+details[open] > summary.u-summary-with-a-link::before,
+details[open] > summary.u-summary-fake-marker::before {
+    content: '▾';
+}

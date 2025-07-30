@@ -16,7 +16,6 @@ Markup: s-header.html
 Styleguide Trumps.Scopes.Header
 */
 @import url("../tools/media-queries.css");
-@import url("./s-header.bootstrap.css");
 
 /* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
@@ -180,14 +179,6 @@ Styleguide Trumps.Scopes.Header
 /* FAQ: Bootstrap uses rem space values but CMS and Portal rem values differ */
 .s-header .dropdown-menu {
   font-size: 16px; /* NO-R/EM: 1rem (from Bootstrap via `.dropdown-menu`) */
-}
-/* - to match portal nav size */
-.s-header .dropdown-menu {
-  padding-block: 5px;
-}
-.s-header .dropdown-item {
-  padding-block: 2.5px;
-  padding-inline: 15px;
 }
 
 /* Icons */
