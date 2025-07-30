@@ -6,4 +6,4 @@ This directory is here to show and document all [ITCSS] directories.
 
 [^1]: Bootstrap also provides its own objects, components, elements, and trumps.
 
-[itcss]: https://confluence.tacc.utexas.edu/x/IAA9Cw
+[itcss]: https://tacc-main.atlassian.net/wiki/x/QQhv

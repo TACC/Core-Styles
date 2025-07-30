@@ -21,6 +21,6 @@ Styleguide Components.ImageMap
 */
 
 /* Styles are organized by OOCSS methodology */
-/* SEE: https://confluence.tacc.utexas.edu/x/VwALBg */
+/* SEE: https://tacc-main.atlassian.net/wiki/x/6Atv */
 @import url("./c-image-map.structure.css");
 @import url("./c-image-map.skin.css");

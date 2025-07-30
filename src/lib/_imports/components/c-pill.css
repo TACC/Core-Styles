@@ -24,7 +24,7 @@
 /* Modifiers - Structure */
 
 /* CAVEAT: This alone may not trigger truncation */
-/* SEE: https://confluence.tacc.utexas.edu/x/sAoFDg */
+/* SEE: https://tacc-main.atlassian.net/wiki/x/6hpv */
 :--c-pill--should-truncate {
   max-width: 100%;
 

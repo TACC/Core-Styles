@@ -2,11 +2,26 @@
 
 .demo-grid {
   display: grid;
-  gap: 10px;
+  gap: var(--global-space--grid-gap);
 }
 .demo-grid > figure {
   margin: unset; /* undo browser & Bootstrap */
 }
+
+/* Grid: Plain */
+
+.demo-grid--plain {
+  --min-width: 400px;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(100%, var(--min-width)),
+      1fr
+    )
+  );
+}
+
 
 /* Grid: Boxes */
 

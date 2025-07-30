@@ -1,0 +1,201 @@
+@import url("../tools/x-link.css");
+/* TODO: Use x-button (instead of copied styles) */
+/* @import url("../tools/x-button.css"); */
+
+
+
+
+/* BASE */
+
+@define-mixin pagination {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  place-items: center;
+
+  margin-bottom: unset; /* overwrites core-styles.base.css */
+
+  &:is(ol, ul) {
+    padding-left: unset;
+    list-style: none;
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination {
+  @mixin pagination;
+}
+
+
+
+
+/* ELEMENTS */
+
+
+/* Item */
+
+@define-mixin pagination__end-item {
+  padding: 0 12px;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  &:is(button) {
+    background-color: transparent;
+    border: none;
+    border-radius: unset;
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination__end-item {
+  @mixin pagination__end-item;
+}
+
+@define-mixin pagination__page-item {
+  &:not(
+    :first-child,
+    :last-child
+  ) {
+    margin-inline: 0.25em;
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination__page-item {
+  @mixin pagination__page-item;
+}
+
+@define-mixin pagination__skipped-item {
+  display: flex;
+  place-content: center;
+
+  cursor: default;
+}
+/* DEMO-USE ONLY */
+.x-pagination__skipped-item {
+  @mixin pagination__skipped-item;
+}
+
+@define-mixin pagination__active-item {
+  /* no styles needed */
+}
+/* DEMO-USE ONLY */
+.x-pagination__active-item {
+  @mixin pagination__active-item;
+}
+
+@define-mixin pagination__disabled-item {
+  pointer-events: none;
+}
+/* DEMO-USE ONLY */
+.x-pagination__disabled-item {
+  @mixin pagination__disabled-item;
+}
+
+
+/* Link */
+
+@define-mixin pagination__link {
+  display: flex;
+  place-content: center;
+
+  padding: 5px;
+  line-height: 1;
+  min-width: 1em;
+  box-sizing: content-box; /* to support square links and button links */
+
+  &:is(button) {
+    cursor: pointer;
+  }
+}
+@define-mixin pagination__page-link {
+  @mixin pagination__link;
+
+  background-color: var(--global-color-primary--x-light);
+  border-color: var(--global-color-primary--xx-dark);
+  border-style: solid;
+  border-width: var(--global-border-width--normal);
+  color: var(--global-color-primary--xx-dark);
+
+  &:hover {
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--normal);
+    color: var(--global-color-primary--xx-dark);
+
+    &:is(a) {
+      text-decoration: none;
+    }
+  }
+  &:focus {
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-primary--xx-dark);
+    color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
+  }
+  &:active {
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--dark);
+    border-width: var(--global-border-width--normal);
+    color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--normal) solid var(--global-color-accent--dark);
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination__page-link {
+  @mixin pagination__page-link;
+}
+
+@define-mixin pagination__end-link {
+  @mixin pagination__link;
+
+  &:focus {
+    outline: var(--global-border-width--thick) solid var(--global-color-accent--light);
+  }
+
+  &:is(button):not(:disabled) {
+    @mixin link;
+    &:hover { @mixin link--hover; }
+    &:active { @mixin link--active; }
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination__end-link {
+  @mixin pagination__end-link;
+}
+
+@define-mixin pagination__skipped-link {
+  @mixin pagination__link;
+
+  /* FAQ: If client applies this with other mixins,
+          then client must resolve conflicting styles
+          (like in Bootstrap4 pagination.css) */
+}
+/* DEMO-USE ONLY */
+.x-pagination__skipped-link {
+  @mixin pagination__skipped-link;
+}
+
+@define-mixin pagination__page-link--active {
+  background-color: var(--global-color-accent--x-light);
+  border-color: var(--global-color-primary--xx-dark);
+  color: var(--global-color-primary--xx-dark);
+
+  &:hover {
+    background-color: var(--global-color-accent--xx-light);
+    border-color: var(--global-color-accent--dark);
+  }
+}
+/* DEMO-USE ONLY */
+.x-pagination__page-link--active {
+  @mixin pagination__page-link--active;
+}
+
+@define-mixin pagination__page-link--disabled {
+  color: var(--global-color-primary--light);
+  background-color: var(--global-color-primary--xx-light);
+  border-color: var(--global-color-primary--light);
+}
+/* DEMO-USE ONLY */
+.x-pagination__page-link--disabled {
+  @mixin pagination__page-link--disabled;
+}
