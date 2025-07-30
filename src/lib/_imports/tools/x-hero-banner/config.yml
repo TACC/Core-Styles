@@ -1,0 +1,14 @@
+status: ready
+context:
+  shouldSkipPattern: false
+variants:
+  - name: default
+    hidden: true
+  - name: wide-context
+    label: Wide Context
+    context:
+      context: wide
+  - name: slim-context
+    label: Slim Context
+    context:
+      context: slim

@@ -1,20 +1,12 @@
 @import url("../objects/o-section.selectors.postcss");
+
 @import url("../tools/selectors.postcss");
 @import url("../tools/x-link.postcss");
+@import url("../tools/x-action.postcss");
 
 @import url("./c-button.selectors.postcss");
 @import url("./c-card.selectors.postcss");
 
-
-
-
-
-/* Settings */
-
-:root {
-    --global-space--pattern-pad: 30px;
-    --global-space--unnamed: 50px;
-}
 
 
 
@@ -117,14 +109,6 @@
 
 /* Elements */
 
-:--c-card > a:not(:--c-button),
-:--c-card > p > a:not(:--c-button) {
-    /* XXX: Prevents text around it from wrapping if link spans two lines */
-    /* FAQ: To fix on client, `class="d-inline"` or `style="display: inline"` */
-    /* ???: Why does this use `inline-flex`? */
-    display: inline-flex;
-    align-items: baseline;
-}
 /* I.e. one of multiple icon links within a p tag */
 :--c-card > p > a:not(:--c-button):has(.icon):not(:last-child) {
     margin-right: 1rem;
@@ -134,6 +118,26 @@
 
     margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
     margin-right: var(--global-space--pattern-pad);
+}
+/* To style actions that have an icon */
+:--c-card > a:not(:--c-button):has(.icon),
+:--c-card > p > a:not(:--c-button):has(.icon) {
+    @mixin action--with-icon;
+}
+:--c-card > a:not(:--c-button) > .icon,
+:--c-card > p > a:not(:--c-button) > .icon {
+    @mixin action__icon;
+}
+/* So text of card links does not all look like a link */
+a:--c-card {
+    color: inherit;
+    text-decoration: none;
+}
+a:--c-card:hover {
+    --border-width: var(--global-border-width--thick);
+
+    outline-offset: calc(-1* var(--border-width));
+    outline: var(--border-width) solid var(--global-color-accent--normal);
 }
 
 /* Block */
@@ -313,7 +317,10 @@
     grid-row-start: 1;
     margin-bottom: var(--global-space--pattern-pad);
 }
-:--c-card--image-bottom > :is(h1, h2, h3, h4, h5):first-of-type {
+:--c-card--image-top > :is(h1, h2, h3, h4, h5):first-of-type {
+    /* NOTE: Redundant, but maybe good to have if
+             :--c-card :is(h1, h2, h3, h4, h5, h6)
+             ever does not do the same */
     margin-top: unset; /* to avoid combining margin with image */
 }
 

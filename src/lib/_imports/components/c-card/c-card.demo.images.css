@@ -1,30 +1,49 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
-/* To allow the image max-height to not be 100% for the demo */
-.o-grid img {
-    max-height: unset;
-}
-
 /* Rid margin-bottom on last section */
 .o-section>:last-child {
     margin-bottom: var(--global-space--bootstrap-gap);
 }
 
+/* To make a title inside a section… */
+.o-section > h2 {
+  /* …have "better" gap above and below */
+  margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
+}
+
 /* create a two column grid (cleaner look) */
-.s-image-grid {
-    --max-cols: 2;
+.c-card-list {
+    grid-template-columns: 1fr 1fr;
 }
 
-/* get rid of margin for inner-sections */
-section > section {
-    margin: unset;
+/* To make a title inside a card list… */
+.c-card-list > h3 {
+  /* …span all columns */
+  grid-column: 1/-1;
+
+  /* …have "better" gap above and below */
+  margin-top: 40px;
+  margin-bottom: calc(-1* var(--global-space--bootstrap-gap) / 2);
 }
 
-/* Image: Contact Card */
-/* To overwrite `.s-image-grid > *` specificity */
-/* WARNING: This may be a specificty bug... */
-/* NOTE: Should `s-image-grid` be `o-image-grid`,
-         so `c-card` has greater specificity? */
-.c-card--image-top:has(h4) {
-    max-width: fit-content;
+/* So hover outline shrink-wraps to card */
+.c-card-list > .c-card {
+    height: min-content;
+}
+
+/* To show a card must not be used (even if it works) */
+.c-card.demo-disabled * {
+    opacity: 0.5;
+}
+.c-card.demo-disabled { position: relative; }
+.c-card.demo-disabled::after {
+    content: "Card like this must not be linked. Design does not approve of such a configuration.";
+    padding: 1rem;
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    background-color: black;
+    color: white;
 }

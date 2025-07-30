@@ -17,7 +17,7 @@ variants:
   - name: images
     context:
       supportStyles:
-        - ../../assets/trumps/s-image-grid.css
+        - ../../assets/trumps/u-image-zoom.css
   - name: docs
     context:
       shouldLoadDocs: true

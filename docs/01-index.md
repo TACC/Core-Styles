@@ -8,8 +8,6 @@ The pattern CSS is available via [@tacc/core-styles].
 
 The patterns are organized by [ITCSS][tacc itcss].
 
-Any patterns that expect Bootstrap are tested on [Bootstrap 4.3.1][bootstrap].
-
 ---
 
 Known Clients:
@@ -23,8 +21,8 @@ Known Clients:
 [tacc/core-portal]: https://github.com/TACC/Core-Portal
 [@tacc/core-styles]: https://www.npmjs.com/package/@tacc/core-styles
 
-[tacc shared css]: https://confluence.tacc.utexas.edu/x/eJR9E
-[tacc itcss]: https://confluence.tacc.utexas.edu/x/IAA9Cw
+[tacc shared css]: https://tacc-main.atlassian.net/wiki/x/PR1v
+[tacc itcss]: https://tacc-main.atlassian.net/wiki/x/QQhv
 [bootstrap]: https://getbootstrap.com/docs/4.3/
 
 <script type="module">

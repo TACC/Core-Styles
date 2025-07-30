@@ -8,174 +8,26 @@
   </ul>
 </nav>
 
-<h2 id="section--null">Section (Default a.k.a Unstyled a.k.a Transparent)</h2>
 <section class="o-section">
-    <h3 id="card-image-transparent-default">Transparent Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" }}
-    </section>
-    <h3 id="card-image-transparent-default-link">Transparent Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" image-link="#" }}
-    </section>
-    <h3 id="card-image-transparent-default-contact">Contact Card with Image - Transparent</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true image-link="#" }}
-    </section>
-
-    <h3 id="card-image-plain-default">Plain Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" }}
-        {{> @c-card--image position="right" tall=true variant="plain" }}
-        {{> @c-card--image position="left" tall=true variant="plain" }}
-    </section>
-    <h3 id="card-image-plain-default-link">Plain Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" image-link="#"}}
-        {{> @c-card--image position="right" tall=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="plain" image-link="#" }}
-    </section>
-    <h3 id="card-image-plain-default-contact">Contact Card with Image - Plain</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true image-link="#" }}
-    </section>
+    <h2 id="section--null">Section (Default a.k.a Unstyled a.k.a Transparent)</h2>
+    {{> @c-card--image-variant-section variant="transparent" section="default" }}
+    {{> @c-card--image-variant-section variant="plain" section="default" }}
 </section>
 <hr>
-<h2 id="section--light">Section - Light</h2>
 <section class="o-section o-section--style-light">
-    <h3 id="card-image-transparent-light">Transparent Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" }}
-    </section>
-    <h3 id="card-image-transparent-light-link">Transparent Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" image-link="#" }}
-    </section>
-    <h3 id="card-image-transparent-light-contact">Contact Card with Image - Transparent</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true image-link="#" }}
-    </section>
-
-    <h3 id="card-image-plain-light">Plain Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" }}
-        {{> @c-card--image position="right" tall=true variant="plain" }}
-        {{> @c-card--image position="left" tall=true variant="plain" }}
-    </section>
-    <h3 id="card-image-plain-light-link">Plain Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="plain" image-link="#" }}
-    </section>
-    <h3 id="card-image-plain-light-contact">Contact Card with Image - Plain</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true image-link="#" }}
-    </section>
+    <h2 id="section--light">Section - Light</h2>
+    {{> @c-card--image-variant-section variant="transparent" section="light" }}
+    {{> @c-card--image-variant-section variant="plain" section="light" }}
 </section>
 <hr>
-<h2 id="section--muted">Section - Muted</h2>
 <section class="o-section o-section--style-muted">
-    <h3 id="card-image-transparent-muted">Transparent Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" }}
-    </section>
-    <h3 id="card-image-transparent-muted-link">Transparent Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" image-link="#" }}
-    </section>
-    <h3 id="card-image-transparent-muted-contact">Contact Card with Image - Transparent</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true image-link="#" }}
-    </section>
-
-    <h3 id="card-image-plain-muted">Plain Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" }}
-        {{> @c-card--image position="right" tall=true variant="plain" }}
-        {{> @c-card--image position="left" tall=true variant="plain" }}
-    </section>
-    <h3 id="card-image-plain-muted-link">Plain Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="plain" image-link="#" }}
-    </section>
-    <h3 id="card-image-plain-muted-contact">Contact Card with Image - Plain</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true image-link="#" }}
-    </section>
+    <h2 id="section--muted">Section - Muted</h2>
+    {{> @c-card--image-variant-section variant="transparent" section="muted" }}
+    {{> @c-card--image-variant-section variant="plain" section="muted" }}
 </section>
 <hr>
-<h2 id="section--dark">Section - Dark</h2>
 <section class="o-section o-section--style-dark">
-    <h3 id="card-image-transparent-dark">Transparent Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" }}
-    </section>
-    <h3 id="card-image-transparent-dark-link">Transparent Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="transparent" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="transparent" image-link="#" }}
-    </section>
-    <h3 id="card-image-transparent-dark-contact">Contact Card with Image - Transparent</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="transparent" is-staff=true image-link="#" }}
-    </section>
-
-    <h3 id="card-image-plain-dark">Plain Card Image</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" }}
-        {{> @c-card--image position="right" tall=true variant="plain" }}
-        {{> @c-card--image position="left" tall=true variant="plain" }}
-    </section>
-    <h3 id="card-image-plain-dark-link">Plain Card Image with Link</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="bottom" wide=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="right" tall=true variant="plain" image-link="#" }}
-        {{> @c-card--image position="left" tall=true variant="plain" image-link="#" }}
-    </section>
-    <h3 id="card-image-plain-dark-contact">Contact Card with Image - Plain</h3>
-    <section class="o-section s-image-grid">
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true }}
-        {{> @c-card--image position="top" wide=true variant="plain" is-staff=true image-link="#" }}
-    </section>
+    <h2 id="section--dark">Section - Dark</h2>
+    {{> @c-card--image-variant-section variant="transparent" section="dark" }}
+    {{> @c-card--image-variant-section variant="plain" section="dark" }}
 </section>
