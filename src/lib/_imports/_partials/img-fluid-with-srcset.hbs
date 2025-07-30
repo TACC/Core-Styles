@@ -1,0 +1,17 @@
+{{! Image using:
+    - `srcset` attribute (like Django CMS "Picture")
+    - Bootstrap's `.img-fluid` class
+}}
+<img
+    src="https://tacc.utexas.edu/media/filer_public_thumbnails/filer_public/01/e0/01e0ab8d-3af4-4fac-9817-cb375ae1a557/research-projects.jpg__800.0x530.0_q85_subject_location-500%2C336_subsampling-2.jpg"
+    srcset="
+    https://tacc.utexas.edu/media/filer_public_thumbnails/filer_public/01/e0/01e0ab8d-3af4-4fac-9817-cb375ae1a557/research-projects.jpg__576x576_q85_subsampling-2.jpg 576w,
+    https://tacc.utexas.edu/media/filer_public_thumbnails/filer_public/01/e0/01e0ab8d-3af4-4fac-9817-cb375ae1a557/research-projects.jpg__768x768_q85_subsampling-2.jpg 768w,
+    https://tacc.utexas.edu/media/filer_public_thumbnails/filer_public/01/e0/01e0ab8d-3af4-4fac-9817-cb375ae1a557/research-projects.jpg__800.0x530.0_q85_subject_location-500%2C336_subsampling-2.jpg 800.0w"
+    sizes="
+        (max-width: 576px) 576px,
+        (max-width: 768px) 768px,
+        800.0px
+    "
+    class="img-fluid"
+>
