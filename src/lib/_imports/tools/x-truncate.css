@@ -48,7 +48,7 @@ Styleguide Tools.Mixins.Truncate
 /* One Line */
 
 @define-mixin truncate--one-line {
-	text-overflow: var(--text-overflow, ellipsis);
+	text-overflow: ellipsis;
 
 	overflow: hidden;
 	white-space: nowrap;

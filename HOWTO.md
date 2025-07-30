@@ -173,10 +173,10 @@ See [how Core Styles can be used in React with CSS Modules](https://github.com/T
 To _author_ CSS like is done for [Core Styles], follow TACC's [CSS Style Guide].
 
 [core styles]: https://github.com/TACC/Core-Styles
-[css style guide]: https://confluence.tacc.utexas.edu/display/~wbomar/Shared+UI+-+CSS+-+Style+Guide
+[css style guide]: https://tacc-main.atlassian.net/wiki/x/7Bdv
 [foundation]: https://css-tricks.com/reboot-resets-reasoning/
 [react]: https://react.dev/
 
 [^1]: Core-Styles testing with a [reset, normalize, or reboot][foundation] has onyl been atop Bootstrap 4's `reboot.scss`.
 [^2]: If you have access, [report issues in JIRA "WP" Project](https://jira.tacc.utexas.edu/projects/WP/issues). Otherwise, [report issues in Github](https://github.com/TACC/Core-Styles/issues).
-[^3]: Stylesheet load order and naming comes from [MCSS](https://confluence.tacc.utexas.edu/x/b53tDg).
+[^3]: Stylesheet load order and naming comes from [MCSS](https://tacc-main.atlassian.net/wiki/x/hRlv).

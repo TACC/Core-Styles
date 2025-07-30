@@ -8,6 +8,6 @@ To label the status of something.
 | `.c-pill--is-success`      | `.pill--success`         | for a "success" status
 | `.c-pill--is-...`          | `.pill--...`             | for a "..." status
 
-<small>* Requires client styles, because [truncation can be context-dependent](https://confluence.tacc.utexas.edu/x/sAoFDg).</small>
+<small>* Requires client styles, because [truncation can be context-dependent](https://tacc-main.atlassian.net/wiki/x/6hpv).</small>
 
 <script src="{{path '/assets/_utils/js/open-ext-links-in-new-window.js'}}" />

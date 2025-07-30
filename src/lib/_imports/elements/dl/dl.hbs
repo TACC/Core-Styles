@@ -1,6 +1,14 @@
 <dl {{#if class }}class="{{ class }}"{{/if}}>
   {{#each data.key-value-pairs}}
-    {{#if key}}<dt class="c-data-list__key">{{ key }}</dt>{{/if}}
-    {{#if value}}<dd class="c-data-list__value">{{ value }}</dd>{{/if}}
+    {{#if key}}
+    <dt {{#if key-class}}class="{{ key-class }}"{{/if}}>
+      {{ key }}
+    </dt>
+    {{/if}}
+    {{#if value}}
+    <dd {{#if value-class}}class="{{ value-class }}"{{/if}}>
+      {{ value }}
+    </dd>
+    {{/if}}
   {{/each}}
 </dl>
