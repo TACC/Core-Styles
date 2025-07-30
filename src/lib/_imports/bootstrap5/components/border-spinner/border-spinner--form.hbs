@@ -1,0 +1,37 @@
+<dl>
+  <dt>Spinner in a Form</dt>
+  <dd>
+    <dl>
+      <dt>Component Form (<code>c-form</code>)</dt>
+      <dd class="s-form">
+        <dl>
+          <dt>Submit Button</dt>
+          <dd class="c-form">
+            <footer class="c-form__buttons">
+              {{> @border-spinner--button is-tacc="true" type="submit" class="c-form__button" }}
+            </footer>
+          </dd>
+          <dt>Other Button</dt>
+          <dd class="c-form">
+              {{> @border-spinner--button is-tacc="true" type="button" class="c-form__button" }}
+          </dd>
+        </dl>
+      </dd>
+      <dt>Scope Form (<code>s-form</code>)</dt>
+      <dd class="s-form">
+        <dl>
+          <dt>Submit Button</dt>
+          <dd class="s-form">
+            <footer>
+              {{> @border-spinner--button is-tacc="true" type="submit" }}
+            </footer>
+          </dd>
+          <dt>Other Button</dt>
+          <dd class="s-form">
+              {{> @border-spinner--button is-tacc="true" type="button" }}
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+  </dd>
+</dl>

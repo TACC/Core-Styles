@@ -1,0 +1,21 @@
+context:
+  subdir: "bootstrap5/components/border-spinner"
+variants:
+  - name: default
+    label: Bootstrap
+    status: reference
+  - name: tacc
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: false
+      supportStyles:
+        - ../../assets/components/c-button.css
+  - name: form
+    label: in a Form
+    status: ready
+    context:
+      shouldSkipPattern: false
+  # partials
+  - name: button
+    hidden: true
