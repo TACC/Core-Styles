@@ -28,3 +28,26 @@ variants:
     context:
       supportStyles:
         - ../../assets/components/bootstrap.form.css
+  - name: pagination
+    status: ready
+    context:
+      supportStyles:
+        - ../../assets/components/bootstrap.pagination.css
+  - name: dropdown
+    view: 'bootstrap--dropdown.hbs'
+    status: ready
+    context:
+      supportStyles:
+        - ../../assets/components/bootstrap.dropdown.css
+  - name: dropdown-cms
+    label: (CMS) Dropdown
+    view: 'bootstrap--dropdown-cms.hbs'
+    status: ready
+    context:
+      shouldLoadCMS: true
+  - name: dropdown-portal
+    label: (Portal) Dropdown
+    view: 'bootstrap--dropdown-portal.hbs'
+    status: ready
+    context:
+      shouldLoadPortal: true
