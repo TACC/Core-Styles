@@ -3,19 +3,18 @@ Truncate
 
 Styles that allow truncating text.
 
-%x-truncate--one-line     - Truncated text may only be one line tall.
-%x-untruncate--one-line   - Remove one-line truncation after it's added.
-%x-truncate--many-lines   - Truncated text may be many lines tall.
-%x-untruncate--many-lines - Remove many-lines truncation after it's added.
+truncate--one-line     - Truncated text may only be one line tall.
+untruncate--one-line   - Remove one-line truncation after it's added.
+truncate--many-lines   - Truncated text may be many lines tall.
+untruncate--many-lines - Remove many-lines truncation after it's added.
 
-Styleguide Tools.ExtendsAndMixins.Truncate
+Styleguide Tools.Mixins.Truncate
 */
 
 /* Many Lines */
 /* WARNING: Relies on proprietary and undocumented rules (that work well) */
 
-.x-truncate--many-lines,
-%x-truncate--many-lines /* DEPRECATED */ {
+@define-mixin truncate--many-lines {
   --lines: 2;
 
   display: -webkit-box;
@@ -24,24 +23,48 @@ Styleguide Tools.ExtendsAndMixins.Truncate
   overflow: hidden;
   -webkit-line-clamp: var(--lines);
 }
-.x-untruncate--many-lines,
-%x-untruncate--many-lines /* DEPRECATED */ {
+/* DEPRECATED */
+.x-truncate--many-lines,
+%x-truncate--many-lines {
+  @mixin truncate--many-lines;
+}
+
+
+@define-mixin untruncate--many-lines {
   overflow: visible;
   -webkit-line-clamp: inherit;
+}
+/* DEPRECATED */
+.x-untruncate--many-lines,
+%x-untruncate--many-lines {
+  @mixin untruncate--many-lines;
+}
+
+.x-untruncate--many-lines,
+%x-untruncate--many-lines {
+  @mixin untruncate--many-lines;
 }
 
 /* One Line */
 
-.x-truncate--one-line,
-%x-truncate--one-line /* DEPRECATED */ {
-	text-overflow: var(--text-overflow, ellipsis);
+@define-mixin truncate--one-line {
+	text-overflow: ellipsis;
 
 	overflow: hidden;
 	white-space: nowrap;
 }
-.x-untruncate--one-line,
-%x-untruncate--one-line /* DEPRECATED */ {
+/* DEPRECATED */
+.x-truncate--one-line,
+%x-truncate--one-line {
+  @mixin truncate--one-line;
+}
+
+@define-mixin untruncate--one-line {
   overflow: visible;
 	white-space: normal;
 }
-
+/* DEPRECATED */
+.x-untruncate--one-line,
+%x-untruncate--one-line {
+  @mixin untruncate--one-line;
+}

@@ -11,7 +11,6 @@
   padding-inline: 0.75em;
   min-width: 6.5em;
 
-  line-height: 1.4;
   text-align: center;
   text-transform: none; /* avoid inheritance form context e.g. <h1> */
   border-radius: 0.5em;
@@ -25,7 +24,7 @@
 /* Modifiers - Structure */
 
 /* CAVEAT: This alone may not trigger truncation */
-/* SEE: https://confluence.tacc.utexas.edu/x/sAoFDg */
+/* SEE: https://tacc-main.atlassian.net/wiki/x/6hpv */
 :--c-pill--should-truncate {
   max-width: 100%;
 

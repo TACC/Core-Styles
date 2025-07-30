@@ -135,11 +135,11 @@ table:--data-list {
 
 /* To truncate text */
 :--data-list__key {
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 @supports(text-overflow: ':') {
   :--data-list__non-table-key {
-    --text-overflow: ':';
+    text-overflow: ':';
   }
 }
 
@@ -280,7 +280,7 @@ table:--data-list--horz :--table-key {
 /* FAQ: Truncate when doing is unlikely to almost entirely obscure text */
 
 :--data-list--truncate-values :--any-value {
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
 }
 
 
@@ -299,3 +299,19 @@ table:--data-list--is-horz tr { align-items: baseline; }
 /* NOTE: This assumes key and value are inline display, not flex items */
 table:--data-list--is-vert :--table-key,
 table:--data-list--is-vert :--table-value { vertical-align: baseline; }
+
+
+
+
+/* Multi-Row Items */
+/* FAQ: For data list items that span multiple rows (start-final pattern) */
+
+/* To use one background color for all final rows */
+tr.c-data-list__row--start-final:nth-child(odd) :is(th, td),
+tr.c-data-list__row--start-final:nth-child(odd) ~ tr :is(th, td) {
+  background: var(--global-color-background--app);
+}
+tr.c-data-list__row--start-final:nth-child(even) :is(th, td),
+tr.c-data-list__row--start-final:nth-child(even) ~ tr :is(th, td) {
+  background: var(--global-color-primary--x-light);
+}

@@ -1,0 +1,37 @@
+@import url("../tools/media-queries.css");
+@import url("../tools/x-hero-banner.css");
+
+:has(> .s-hero-banner) {
+    @mixin hero-banner-container;
+}
+
+.s-hero-banner {
+  @mixin hero-banner;
+}
+@media (--medium-and-above) {
+  .s-hero-banner {
+    @mixin hero-banner--wide-context;
+  }
+  .s-hero-banner article {
+    @mixin hero-banner-article--wide-context;
+  }
+}
+@media (--medium-and-below) {
+  .s-hero-banner {
+    @mixin hero-banner--slim-context;
+  }
+}
+
+.s-hero-banner article {
+  @mixin hero-banner-article;
+}
+.s-hero-banner.container article {
+  @mixin hero-banner-article--in-container;
+}
+
+.s-hero-banner h1 {
+  @mixin hero-banner-title;
+}
+.s-hero-banner img {
+  @mixin hero-banner-media;
+}

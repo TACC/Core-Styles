@@ -16,19 +16,19 @@ body {
 
 main > dl {
 
-  &:is(dt, dd):not(.no-demo-styles > *) {
+  & :is(dt, dd):not(.no-demo-styles > *) {
     font-family: var(--global-font-family--sans);
     color: #484848;
     line-height: normal;
   }
   & dt:not(.no-demo-styles > *) {
     font-size: 1.6rem;
-    font-weight: var(--medium);
     margin-bottom: 10px;
   }
-  & > dt:not(.no-demo-styles > *) {
-    font-weight: var(--bold);
-  }
+  & dt:not(.no-demo-styles > *) { font-weight: var(--bold); }
+  & dl dt:not(.no-demo-styles > *) { font-weight: var(--medium); }
+  & dl dl dt:not(.no-demo-styles > *) { font-weight: var(--regular); }
+
   & dt:not(:first-of-type):not(.no-demo-styles > *) {
     margin-top: 20px;
   }

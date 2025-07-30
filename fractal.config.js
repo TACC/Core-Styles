@@ -13,6 +13,11 @@ fractal.components.set('label', 'Patterns');
 fractal.components.set('title', 'Patterns');
 fractal.components.set('default.status', 'wip');
 fractal.components.set('statuses', {
+  reference: {
+    label: "Reference",
+    description: "Original skin from third-party library.",
+    color: "#333333"
+  },
   prototype: {
     label: "Prototype",
     description: "Do not implement.",
@@ -71,7 +76,7 @@ fractal.components.set('default.context', {
   }],
   docsStyles: [{
     isInternal: true,
-    layer: 'project',
+    layer: 'base',
     path: '/assets/core-styles.docs.css'
   }],
   portalStyles: [{
@@ -97,6 +102,13 @@ engine.handlebars.registerHelper('eq', function(a, b) {
 });
 engine.handlebars.registerHelper('has', function(array, item) {
   return array.includes(item);
+});
+engine.handlebars.registerHelper('ifno', function(value, fallback) {
+  const output = value || fallback;
+  return new engine.handlebars.SafeString(output);
+});
+engine.handlebars.registerHelper('default', function(value, defaultValue) {
+  return value || defaultValue;
 });
 
 // Export

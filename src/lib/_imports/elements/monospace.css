@@ -1,5 +1,5 @@
 @import url("../tools/selectors.css");
-
+@import url('../tools/x-link.css');
 
 
 /* To share styles between component and elements without scoping components */
@@ -78,16 +78,16 @@ pre {
 
 /* To apply link styles */
 & :--monospace--inline:where(a > *) {
-  @extend .x-link;
+  @mixin link;
 }
 & :--monospace--inline:where(a:not([href]) > *) {
-  @extend .x-link--disabled;
+  @mixin link--disabled;
 }
 & :--monospace--inline:where(a:hover > *) {
-  @extend .x-link--hover;
+  @mixin link--hover;
 }
 & :--monospace--inline:where(a:active > *) {
-  @extend .x-link--active;
+  @mixin link--active;
 }
 
 

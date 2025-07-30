@@ -1,0 +1,61 @@
+<dl>
+  <dt>Spinner</dt>
+  <dd>
+    <span class="spinner-border" aria-hidden="true"></span>
+  </dd>
+  <dt>Spinner in Bootstrap Button</dt>
+  <dd>
+    <button class="btn btn-primary" type="button" disabled>
+      {{> @loading-action }}
+    </button>
+  </dd>
+  <dt>Spinner in a TACC Button</dt>
+  <dd>
+    <button class="c-button c-button--primary c-button--is-busy" type="button" disabled>
+      {{> @loading-action }}
+    </button>
+  </dd>
+  <dt>Spinner in a Form</dt>
+  <dd>
+    <dl>
+      <dt>Component Form (<code>c-form</code>)</dt>
+      <dd class="s-form">
+        <dl>
+          <dt>Submit Button</dt>
+          <dd class="c-form">
+            <footer class="c-form__buttons">
+              <button class="c-form__button" data-state="busy" type="submit" disabled>
+                {{> @loading-action }}
+              </button>
+            </footer>
+          </dd>
+          <dt>Other Button</dt>
+          <dd class="c-form">
+            <button data-state="busy" type="button" disabled>
+                {{> @loading-action }}
+            </button>
+          </dd>
+        </dl>
+      </dd>
+      <dt>Scope Form (<code>s-form</code>)</dt>
+      <dd class="s-form">
+        <dl>
+          <dt>Submit Button</dt>
+          <dd class="s-form">
+            <footer>
+              <button data-state="busy" type="submit" disabled>
+                {{> @loading-action }}
+              </button>
+            </footer>
+          </dd>
+          <dt>Other Button</dt>
+          <dd class="s-form">
+            <button data-state="busy" type="button" disabled>
+                {{> @loading-action }}
+            </button>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+  </dd>
+</dl>

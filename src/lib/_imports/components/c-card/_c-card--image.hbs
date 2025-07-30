@@ -1,22 +1,89 @@
-<article class="c-card c-card--{{variant}} c-card--image-{{position}}">
+{{#if card-link}}
+<a class="c-card c-card--{{variant}} c-card--image-{{position}} {{#if disabled}}demo-disabled{{/if}}" href="{{card-link}}">
+{{else}}
+<article class="c-card c-card--{{variant}} c-card--image-{{position}} {{#if disabled}}demo-disabled{{/if}}">
+{{/if}}
+
 {{#if is-staff}}
 
-  <h4><a href="#">Bender Rodríguez</a></h4>
+  <h4>
+    {{#if image-link}}
+    <a href="{{image-link}}">Bender Rodríguez</a>
+    {{else}}
+    Bender Rodríguez
+    {{/if}}
+    {{#if has-zoom}}
+    (Zoom on Hover)
+    {{/if}}
+  </h4>
+  {{#unless card-link}}
   <p>Planet Express Worker</p>
-  <p>Anti-hero in Futurama</p>
+  <p>(Anti-hero in Futurama)</p>
+  {{/unless}}
+  {{#if image-link}}
+  <a href="{{image-link}}"
+     class="{{#if has-zoom}}u-image-zoom--on-hover{{/if}}"
+  >
+    <img class="img-fluid" width="234px" height="293px"
+      src="https://cohro.ukzn.ac.za/wp-content/uploads/2019/02/profile-placeholder.png"
+      title="University of Texas at Austin" class="img-fluid"
+    />
+  </a>
+  {{else if has-zoom}}
+  <span class="u-image-zoom--on-hover">
+    <img class="img-fluid" width="234px" height="293px"
+      src="https://cohro.ukzn.ac.za/wp-content/uploads/2019/02/profile-placeholder.png"
+      title="University of Texas at Austin" class="img-fluid"
+    />
+  </span>
+  {{else}}
   <img class="img-fluid" width="234px" height="293px"
     src="https://cohro.ukzn.ac.za/wp-content/uploads/2019/02/profile-placeholder.png"
     title="University of Texas at Austin" class="img-fluid"
   />
+  {{/if}}
 
 {{else}}
 
-  <h3>Card - Image {{position}}</h3>
+  <h3 id="card-image-{{position}}">
+    {{#if (eq media-type "embed")}}
+    Card - <small>Embedded</small> Media {{position}}
+    {{else}}
+    Card - Image {{position}}
+    {{/if}}
+    {{#if has-zoom}}
+    (Zoom on Hover)
+    {{/if}}
+  </h3>
+  {{#unless card-link}}
   <p>{{> @text-of-one-paragraph-short }}</p>
   {{#if tall}}
   {{> @message tag="p" type="warning" scope="inline" content="Narrow images might not fill space available. Just use a wider image." }}
   {{/if}}
+  {{/unless}}
+  {{#if image-link}}
+  <a href="{{image-link}}"
+     class="{{#if has-zoom}}u-image-zoom--on-hover{{/if}}"
+  >
+    <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
+  </a>
+  {{else}}
+    {{#if (eq media-type "embed")}}
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe src="//www.youtube.com/embed/Lw1hOFZCjxg"></iframe>
+  </div>
+    {{else if has-zoom}}
+  <span class="u-image-zoom--on-hover">
+    <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
+  </span>
+    {{else}}
   <img src="{{> @img-url wide=wide tall=tall medium=true }}" />
-
+    {{/if}}
+  {{/if}}
 {{/if}}
+
+{{#if card-link}}
+</a>
+{{else}}
 </article>
+{{/if}}

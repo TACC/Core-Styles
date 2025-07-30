@@ -1,0 +1,15 @@
+@define-mixin action--with-icon {
+    display: inline-flex; /* for simple alignment code */
+    align-items: center;
+    gap: 0.5em;
+}
+@define-mixin action__icon {
+    font-size: 1.2em;
+}
+/* DEMO-USE ONLY */
+.x-action--with-icon {
+    @mixin action--with-icon;
+}
+.x-action__icon {
+    @mixin action__icon;
+}

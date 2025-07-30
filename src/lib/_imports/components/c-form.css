@@ -30,17 +30,13 @@
 
 
 /* Fields */
-/* IDEA: Make fieldset-child <div>s be opt-out automatic field-wrappers.
-    0. [ ] Define `fieldset > div { @extend :--form__field; }` ruleset.
-    1. [ ] Create `:--form--no-auto-wrappers`.
-    2. [ ] Define `:--form:where(:not(:--form--no-auto-wrappers)) fieldset > div` rules.
-*/
 
 :--form__field {
-  margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
-
   display: flex;
   flex-direction: column;
+}
+:--form__field:not(:last-child) {
+  margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
 }
 
 :--form__field--has-checkbox {

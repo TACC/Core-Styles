@@ -26,9 +26,31 @@ function config(customConfigFiles = [], cssVersion) {
   // Initialize final config file
   emptyOrCreateFile(NEW_CONFIG_FILE);
 
+  // Manipulate final config
+  configFiles.forEach((nextFile) => {
+    const testJson = getConfigObject(nextFile);
+
+    // The 'postcss-import-url' should be moved to front of config
+    if (testJson.plugins && 'postcss-import-url' in testJson.plugins) {
+
+      configObjects.unshift({
+        'plugins': {
+          'postcss-import-url': testJson.plugins['postcss-import-url']
+        }
+      });
+    }
+  });
+
   // Merge configs in order
   configFiles.forEach((nextFile) => {
     newJson = getConfigObject(nextFile);
+
+    // The 'postcss-import-url' would have been moved to front of config
+    if (newJson.plugins && 'postcss-import-url' in newJson.plugins) {
+
+      delete newJson.plugins['postcss-import-url'];
+    }
+
     configObjects.push(newJson);
   });
   const mergedJson = merge(...configObjects);

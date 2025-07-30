@@ -25,7 +25,7 @@ Styleguide Components.SeeAllLink
   padding-bottom: 1.0em;
   margin-bottom: -1.0em; /* to "undo" space added from `padding-bottom` */
 
-  @extend %x-truncate--one-line;
+  @mixin truncate--one-line;
   max-width: 100%; /* SEE: https://stackoverflow.com/a/44521595 */
 
   font-size: 1.2rem;

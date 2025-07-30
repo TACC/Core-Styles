@@ -1,16 +1,17 @@
 @import url('../components/c-button.selectors.css');
+@import url('../components/c-card.selectors.css');
 @import url("../tools/selectors.css");
 @import url('../tools/x-link.css');
 
-a:not(:--c-button) {
-  @extend .x-link;
+a:where(:not(:--c-button, :--c-card)) {
+  @mixin link;
 }
-a:not([href]) {
-  @extend .x-link--disabled;
+a:where(:not([href])) {
+  @mixin link--disabled;
 }
-a:not(:--c-button):hover {
-  @extend .x-link--hover;
+a:where(:not(:--c-button, :--c-card)):hover {
+  @mixin link--hover;
 }
-a:not(:--c-button):active {
-  @extend .x-link--active;
+a:where(:not(:--c-button, :--c-card)):active {
+  @mixin link--active;
 }

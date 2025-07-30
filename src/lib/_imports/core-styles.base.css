@@ -2,14 +2,14 @@
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
 /* Organize via ITCSS */
-/* https://confluence.tacc.utexas.edu/x/IAA9Cw */
+/* https://tacc-main.atlassian.net/wiki/x/QQhv */
 
 /* SETTINGS */
 @import url("./core-styles.settings.css");
 
 /* GENERICS */
 /* Mostly from Bootstrap */
-/* https://confluence.tacc.utexas.edu/x/b53tDg */
+/* https://tacc-main.atlassian.net/wiki/x/khJv */
 @import url("./generics/fonts.css");
 @import url("./generics/pseudo-elements.css");
 @import url("./generics/attributes.css");
@@ -31,6 +31,7 @@
 
 /* COMPONENTS */
 @import url("./components/bootstrap.container.css");
+@import url("./components/bootstrap.dropdown.css");
 @import url("./components/bootstrap.figure.css");
 @import url("./components/bootstrap.modal.css");
 @import url("./components/bootstrap.nav-tabs.css");
@@ -52,5 +53,7 @@
 @import url("./trumps/s-breadcrumbs.css");
 @import url("./trumps/u-empty.css");
 @import url("./trumps/s-irregular-links.css");
+@import url("./trumps/u-highlight.css");
 @import url("./trumps/u-mailto-text-replace.css");
-@import url("./trumps/u-highlight.css")
+@import url("./trumps/u-summary.css");
+@import url("./trumps/u-image-zoom.css");

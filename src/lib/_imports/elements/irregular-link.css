@@ -5,11 +5,11 @@
 @import url('../tools/x-link.css');
 
 a {
-  @extend .x-link--irregular;
+  @mixin link--irregular;
 }
 a:hover {
-  @extend .x-link--irregular--hover;
+  @mixin link--irregular--hover;
 }
 a:active {
-  @extend .x-link--irregular--active;
+  @mixin link--irregular--active;
 }

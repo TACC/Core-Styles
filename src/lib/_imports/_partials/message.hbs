@@ -1,9 +1,10 @@
 <{{#if tag}}{{ tag }}{{else}}div{{/if}}
   class="
-    c-message
-    {{#if type}}c-message--type-{{ type }}{{/if}}
-    {{#if scope}}c-message--scope-{{ scope }}{{/if}}
-    {{#unless scope}}c-message--scope-global{{/unless}}
+    {{ifno ns 'c-'}}message
+    {{#if type}}{{ifno ns 'c-'}}message--type-{{ type }}{{/if}}
+    {{#if scope}}{{ifno ns 'c-'}}message--scope-{{ scope }}{{/if}}
+    {{#unless scope}}{{ifno ns 'c-'}}message--scope-global{{/unless}}
+    {{#if needs}}{{ifno ns 'c-'}}message--has-{{ needs }}{{/if}}
   "
 >
 

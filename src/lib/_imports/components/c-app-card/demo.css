@@ -1,0 +1,12 @@
+/* To add vertical gap in Bootstrap 4 grid */
+.col {
+    margin-bottom: var(--global-space--bootstrap-gap);
+}
+.row {
+    margin-bottom: calc( var(--global-space--bootstrap-gap) * -1 );
+}
+
+/* To stretch app card height to match col */
+.col .c-app-card {
+    height: 100%;
+}

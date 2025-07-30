@@ -21,6 +21,30 @@ Styleguide Trumps.Scopes.GuideDoc
   text-align: center;
 }
 
+/* ELEMENTS: Description List */
+
+.s-guide-doc dt {
+  display: block;
+  float: left;
+
+  /* Remove space between <dt> and <dd> (from our styles) */
+  /* SEE: ../elments/html-elements.html */
+  margin-bottom: 0;
+
+  font-weight: var(--bold);
+}
+.s-guide-doc dt::after {
+  content: ':';
+
+  margin-inline-end: 0.25em;
+}
+.s-guide-doc dd {
+  clear: right;
+
+  /* Remove space between <dd>'s (from Bootstrap) */
+  margin-bottom: 0;
+}
+
 
 
 
