@@ -1,5 +1,5 @@
 context:
-  subdir: "bootstrap5/components/border-spinner"
+  subdir: "bootstrap5/components/spinner/spinner-border"
 variants:
   - name: default
     label: Bootstrap
