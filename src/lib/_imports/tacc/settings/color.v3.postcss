@@ -1,4 +1,4 @@
-@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
+@design-tokens url('../../../tokens/v3.json') format('style-dictionary3');
 
 /* SETTINGS: Color */
 
@@ -31,37 +31,35 @@
 
   /* Accent */
 
-  --global-color-accent--xxx-light: #dfeafe; /* DEPRECATED */
-  --global-color-accent--xx-light: design-token('color.v2.blue.light-2x');
-  --global-color-accent--x-light: design-token('color.v2.blue.light-x');
-  --global-color-accent--light-old: design-token('color.v2.blue.light-old'); /* DEPRECATED */
-  --global-color-accent--light: design-token('color.v2.blue.light');
-  --global-color-accent--normal: design-token('color.v2.blue.medium');
-  --global-color-accent--dark: design-token('color.v2.blue.dark');
-  --global-color-accent--x-dark: design-token('color.v2.blue.dark-x');
-  --global-color-accent--xx-dark: design-token('color.v2.blue.dark-2x');
-  --global-color-accent--xxx-dark: #000a22; /* DEPRECATED */
+  --global-color-accent--xxx-light: #ffffff; /* DEPRECATED */
+  --global-color-accent--xx-light: design-token('colors.accent.1.light-2x');
+  --global-color-accent--x-light: design-token('colors.accent.1.light-x');
+  --global-color-accent--light: design-token('colors.accent.1.light');
+  --global-color-accent--normal: design-token('colors.accent.1.medium');
+  --global-color-accent--dark: design-token('colors.accent.1.dark');
+  --global-color-accent--x-dark: design-token('colors.accent.1.dark-x');
+  --global-color-accent--xx-dark: design-token('colors.accent.1.dark-2x');
+  --global-color-accent--xxx-dark: #000000; /* DEPRECATED */
 
-  --global-color-secondary--xx-light: design-token('color.v2.gold.light-2x');
-  --global-color-secondary--x-light: design-token('color.v2.gold.light-x');
-  --global-color-secondary--light: design-token('color.v2.gold.light');
-  --global-color-secondary--normal: design-token('color.v2.gold.medium');
-  --global-color-secondary--dark: design-token('color.v2.gold.dark');
-  --global-color-secondary--x-dark: design-token('color.v2.gold.dark-x');
-  --global-color-secondary--xx-dark: design-token('color.v2.gold.dark-2x');
+  --global-color-secondary--xx-light: design-token('colors.accent.2.light-2x');
+  --global-color-secondary--x-light: design-token('colors.accent.2.light-x');
+  --global-color-secondary--light: design-token('colors.accent.2.light');
+  --global-color-secondary--normal: design-token('colors.accent.2.medium');
+  --global-color-secondary--dark: design-token('colors.accent.2.dark');
+  --global-color-secondary--x-dark: design-token('colors.accent.2.dark-x');
+  --global-color-secondary--xx-dark: design-token('colors.accent.2.dark-2x');
+  --global-color-tertiary--xx-light: design-token('colors.accent.3.light-2x');
 
-  --global-color-tertiary--xx-light: design-token('color.v2.teal.light-2x');
-  --global-color-tertiary--x-light: design-token('color.v2.teal.light-x');
-  --global-color-tertiary--light: design-token('color.v2.teal.light');
-  --global-color-tertiary--normal: design-token('color.v2.teal.medium');
-  --global-color-tertiary--dark: design-token('color.v2.teal.dark');
-  --global-color-tertiary--x-dark: design-token('color.v2.teal.dark-x');
-  --global-color-tertiary--xx-dark: design-token('color.v2.teal.dark-2x');
+  --global-color-tertiary--x-light: design-token('colors.accent.3.light-x');
+  --global-color-tertiary--light: design-token('colors.accent.3.light');
+  --global-color-tertiary--normal: design-token('colors.accent.3.medium');
+  --global-color-tertiary--dark: design-token('colors.accent.3.dark');
+  --global-color-tertiary--x-dark: design-token('colors.accent.3.dark-x');
+  --global-color-tertiary--xx-dark: design-token('colors.accent.3.dark-2x');
 
   /* DEPRECATED */
   --global-color-accent--secondary: var(--global-color-secondary--normal);
   --global-color-accent--tertiary: var(--global-color-tertiary--normal);
-
 
   /* State */
 
@@ -114,6 +112,6 @@
   /* DEPRECATED */
   /* TODO: Rely on :--light-context and :--dark-context instead */
 
-  --global-color-link-on-light--normal: var(--global-color-accent--normal);
-  --global-color-link-on-dark--normal: var(--global-color-accent--xxx-light);
+  --global-color-link-on-light--normal: design-token('colors.accent.1.light-2x');
+  --global-color-link-on-dark--normal: design-token('colors.accent.1.light-2x');
 }
