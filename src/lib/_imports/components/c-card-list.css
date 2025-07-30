@@ -18,10 +18,6 @@ ul.c-card-list {
 }
 
 /* to prevent card images from overflowing */
-.c-card-list [class*="card--"] {
-    & > img,
-    & > a > img,
-    & > a:has(>img) {
-        max-width: 100%;
-    }
+.c-card-list [class*="card--"] img {
+    max-width: 100%;
 }

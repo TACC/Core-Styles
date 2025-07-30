@@ -1,0 +1,47 @@
+<dl {{#if wrapper-class}}class="{{ wrapper-class }}"{{/if}}>
+  <dt><code>.u-summary-with-a-link</code></dt>
+  <dd {{#if example-class}}class="{{ example-class }}"{{/if}}>
+    <p>Summary element containing a link:</p>
+
+    <details>
+      <summary class="u-summary-with-a-link">
+        <a href="https://example.com" target="_blank">
+          a link with a functional <code>href</code>
+        </a>
+        <small>(to toggle details, click the triangle or this small text)</small>
+      </summary>
+      <p>This is content that shows when the summary is expanded. The summary contains a navigation link to leave this page.</p>
+    </details>
+
+    <details>
+      <summary class="u-summary-with-a-link">
+        <a>
+          a link with <strong>no</strong> <code>href</code>
+        </a>
+        <small>(to toggle details, click the triangle, the link, or this small text)</small>
+      </summary>
+      <p>This demonstrates that links without href attributes are properly restored to appear as links within a summary.</p>
+    </details>
+  </dd>
+
+  <dt><code>.u-summary-fake-marker</code></dt>
+  <dd {{#if example-class}}class="{{ example-class }}"{{/if}}>
+    <p>Summary element with custom pseudo-element markers:</p>
+
+    <details>
+      <summary class="u-summary-fake-marker">
+        closed by default
+        <small>(to toggle details, click the triangle or text)</small>
+      </summary>
+      <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
+    </details>
+
+    <details open>
+      <summary class="u-summary-fake-marker">
+        open by default
+        <small>(to toggle details, click the triangle or text)</small>
+      </summary>
+      <p>This content uses custom marker styling with pseudo-elements instead of the default list markers. Notice the ▸ marker when closed and ▾ when open.</p>
+    </details>
+  </dd>
+</dl>

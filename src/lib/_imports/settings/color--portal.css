@@ -1,8 +1,4 @@
+@import url("./color--portal.selectors.css");
+
 @import url("./color--portal.v1.css");
 @import url("./color--portal.v2.css");
-
-/* Set scope for accent colors */
-@custom-selector :--light-context-safe
-  :root;
-@custom-selector :--dark-context-safe
-  .u-dark-context;
