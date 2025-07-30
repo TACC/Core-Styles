@@ -1,0 +1,24 @@
+<section class="c-card-list">
+    <h3 id="card-image-{{variant}}-{{section}}-link"><code>{{variant}}</code> Card Image <strong>{{link_type}}</strong> Link</h3>
+    {{#if is_card_link}}
+        {{> @c-card--image position="top" wide=true variant=variant card-link="#" }}
+        {{> @c-card--image position="bottom" wide=true variant=variant card-link="#" disabled="true" }}
+        {{> @c-card--image position="right" tall=true variant=variant card-link="#" disabled="true" }}
+        {{> @c-card--image position="left" tall=true variant=variant card-link="#" disabled="true" }}
+        <!-- has-zoom -->
+        {{> @c-card--image position="top" wide=true variant=variant card-link="#" has-zoom=true }}
+        {{> @c-card--image position="bottom" wide=true variant=variant card-link="#" has-zoom=true disabled="true" }}
+        {{> @c-card--image position="right" tall=true variant=variant card-link="#" has-zoom=true disabled="true" }}
+        {{> @c-card--image position="left" tall=true variant=variant card-link="#" has-zoom=true disabled="true" }}
+    {{else}}
+        {{> @c-card--image position="top" wide=true variant=variant image-link="#" }}
+        {{> @c-card--image position="bottom" wide=true variant=variant image-link="#" }}
+        {{> @c-card--image position="right" tall=true variant=variant image-link="#" }}
+        {{> @c-card--image position="left" tall=true variant=variant image-link="#" }}
+        <!-- has-zoom -->
+        {{> @c-card--image position="top" wide=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="bottom" wide=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="right" tall=true variant=variant image-link="#" has-zoom=true }}
+        {{> @c-card--image position="left" tall=true variant=variant image-link="#" has-zoom=true }}
+    {{/if}}
+</section> 

@@ -39,6 +39,26 @@
         <p>{{> @text-of-one-paragraph-with-tags }}</p>
       </dd>
 
+      <dt>Paragraph then List <small>(reduced spacing)</small></dt>
+      <dd>
+        <p>This paragraph is immediately followed by a list with reduced spacing:</p>
+        <ul>
+          <li>First item in the list</li>
+          <li>Second item in the list</li>
+          <li>Third item in the list</li>
+        </ul>
+        <p>Another paragraph followed by an ordered list:</p>
+        <ol>
+          <li>First ordered item</li>
+          <li>Second ordered item</li>
+        </ol>
+        <p>And a paragraph followed by a definition list:</p>
+        <dl class="no-demo-styles">
+          <dt>Term</dt>
+          <dd>Definition of the term</dd>
+        </dl>
+      </dd>
+
       <dt>Lists</dt>
       <dd>
         <dl>
@@ -78,6 +98,26 @@
 
       <dt>Blockquote</dt>
       <dd>{{> @blockquote }}</dd>
+    </dl>
+
+    <dl>
+      <dt>Demarcating Edits</dt>
+      <dd>
+        <dl>
+          <dt>Inline Inserted Text</dt>
+          <dd>
+            <p>This paragraph contains <ins>some inserted text</ins> to demonstrate the styling.</p>
+          </dd>
+          <dt>Block Inserted Content</dt>
+          <dd>
+            <div class="ins-block">
+              <p>This is a block of inserted content that demonstrates the .ins-block class styling.</p>
+              <p>It can contain multiple paragraphs and other content.</p>
+              <p>The final paragraph should not have extra bottom margin.</p>
+            </div>
+          </dd>
+        </dl>
+      </dd>
     </dl>
   </dd>
 </dl>
