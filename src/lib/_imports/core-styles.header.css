@@ -2,14 +2,14 @@
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
 /* Organize via ITCSS */
-/* https://confluence.tacc.utexas.edu/x/IAA9Cw */
+/* https://tacc-main.atlassian.net/wiki/x/QQhv */
 
 /* SETTINGS */
 /* To get these, client should load `./base.css` first */
 
 /* GENERICS */
 /* Mostly from Bootstrap */
-/* https://confluence.tacc.utexas.edu/x/b53tDg */
+/* https://tacc-main.atlassian.net/wiki/x/khJv */
 
 /* ELEMENTS */
 /* To override Bootstrap */
@@ -19,7 +19,7 @@
 /* (none) */
 
 /* COMPONENTS */
-/* (none) */
+@import url("./components/bootstrap.dropdown.css");
 
 /* TRUMPS */
 /* FAQ: Because of third-party code and a rush to style the Frontera header

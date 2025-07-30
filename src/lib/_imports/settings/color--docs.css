@@ -1,7 +1,3 @@
-@import url("../settings/color.accent.css");
+@import url("./color--docs.selectors.css");
 
-/* Set scope for accent colors */
-@custom-selector :--light-context-safe
-  :root;
-@custom-selector :--dark-context-safe
-  .u-dark-context;
+@import url("../settings/color.accent.css");

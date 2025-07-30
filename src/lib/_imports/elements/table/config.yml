@@ -385,3 +385,5 @@ variants:
                   custom-1: 1 TB
                   custom-2: <span class="c-pill c-pill--is-success">932 GB</span>
                   time: 12/01/2019 11:04:19
+  - name: content-after
+    hidden: true

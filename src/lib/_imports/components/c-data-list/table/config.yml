@@ -1,6 +1,9 @@
 collated: true
 name: c-data-list--table
 label: '&lt;table&gt; Table'
+context:
+  key-class: c-data-list__key
+  value-class: c-data-list__value
 # NOTE: Variant config is mirrored on `../list/config` and `../table/config`
 # NOTE: Can `../list/config` and `../table/config` have source of truth?
 variants:
@@ -66,3 +69,9 @@ variants:
         c-data-list--is-vert
         c-data-list--is-narrow
         c-data-list--should-truncate-values
+  - name: multi-row
+    label: Multi-Row Items
+    view: table--multi-row.hbs
+    context:
+      class: |-
+        c-data-list

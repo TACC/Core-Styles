@@ -12,8 +12,16 @@
   <tbody>
   {{#each data.key-value-pairs}}
     <tr>
-      {{#if key}}<th class="c-data-list__key">{{ key }}</th>{{/if}}
-      {{#if value}}<td class="c-data-list__value">{{ value }}</td>{{/if}}
+      {{#if key}}
+      <th {{#if key-class}}class="{{ key-class }}"{{/if}}>
+        {{ key }}
+      </th>
+      {{/if}}
+      {{#if value}}
+      <td {{#if value-class}}class="{{ value-class }}"{{/if}}>
+        {{ value }}
+      </td>
+      {{/if}}
     </tr>
   {{/each}}
   {{#each data.rows}}
@@ -59,7 +67,7 @@
       {{/if}}
       {{#if table}}
         <td class="has-table">
-          {{> @table data=table class="nested-table"}}
+          {{> @table data=table class="nested-table" has-content-after=false }}
         </td>
       {{/if}}
     </tr>
@@ -71,3 +79,5 @@
 
   {{> @table data=data.table class="nested-table" }}
 {{/if}} --}}
+
+{{#unless (eq has-content-after false)}}{{> @table--content-after }}{{/unless}}

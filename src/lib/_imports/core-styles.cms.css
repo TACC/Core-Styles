@@ -2,7 +2,7 @@
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
 /* Organize via ITCSS */
-/* https://confluence.tacc.utexas.edu/x/IAA9Cw */
+/* https://tacc-main.atlassian.net/wiki/x/QQhv */
 
 /* SETTINGS */
 /* To get most settings, client should load `./base.css` first */
@@ -11,7 +11,7 @@
 
 /* GENERICS */
 /* Mostly from Bootstrap */
-/* https://confluence.tacc.utexas.edu/x/b53tDg */
+/* https://tacc-main.atlassian.net/wiki/x/khJv */
 
 /* ELEMENTS */
 @import url("./elements/root--cms.css");
@@ -39,12 +39,14 @@
 @import url("./components/c-button--cms.css");
 @import url("./components/c-card.css");
 @import url("./components/c-card-list.css");
+@import url("./components/c-feed-list.css");
 @import url("./components/c-form--cms.css");
 @import url("./components/c-message.css");
 @import url("./components/c-message--expanded.css");
 @import url("./components/c-recognition.css");
 @import url("./components/c-show-more.css");
 @import url("./components/c-update.css");
+@import url("./components/c-hero-banner.css");
 
 /* TODO: Move to TACC/Core-CMS-Resources:/frontera-cms
         or — alternatively — TACC/Core-CMS */
