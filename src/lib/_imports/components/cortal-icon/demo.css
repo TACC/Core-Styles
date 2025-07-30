@@ -1,7 +1,6 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
 .demo-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1em;
 }

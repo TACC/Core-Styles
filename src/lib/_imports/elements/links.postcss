@@ -1,16 +1,17 @@
 @import url("../components/c-button.selectors.postcss");
+@import url("../components/c-card.selectors.postcss");
 @import url("../tools/selectors.postcss");
 @import url("../tools/x-link.postcss");
 
-a:where(:not(:--c-button)) {
+a:where(:not(:--c-button, :--c-card)) {
   @mixin link;
 }
 a:where(:not([href])) {
   @mixin link--disabled;
 }
-a:where(:not(:--c-button)):hover {
+a:where(:not(:--c-button, :--c-card)):hover {
   @mixin link--hover;
 }
-a:where(:not(:--c-button)):active {
+a:where(:not(:--c-button, :--c-card)):active {
   @mixin link--active;
 }

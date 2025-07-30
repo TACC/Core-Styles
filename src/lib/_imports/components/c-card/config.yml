@@ -2,7 +2,7 @@ status: ready
 context:
   shouldLoadCMS: true
   📝 shouldLoadCMS: this pattern is not intended nor expected for use beyond CMS
-  shouldLoadBootstrap: true
+  shouldLoadBootstrap4: true
 variants:
   - name: default
     label: Default (Transparent)
@@ -17,7 +17,7 @@ variants:
   - name: images
     context:
       supportStyles:
-        - ../../assets/trumps/s-image-grid.css
+        - ../../assets/trumps/u-image-zoom.css
   - name: docs
     context:
       shouldLoadDocs: true

@@ -10,25 +10,25 @@ html {
 
 /* Organize Content */
 
-main > dl:not(.no-demo-styles) {
+main > dl {
 
-  &:is(dt, dd) {
+  & :is(dt, dd):not(.no-demo-styles > *) {
     font-family: var(--global-font-family--sans);
     color: #484848;
     line-height: normal;
   }
-  & dt {
+  & dt:not(.no-demo-styles > *) {
     font-size: 1.6rem;
     margin-bottom: 10px;
   }
-  & dt { font-weight: var(--bold); }
-  & dl dt { font-weight: var(--medium); }
-  & dl dl dt { font-weight: var(--regular); }
+  & dt:not(.no-demo-styles > *) { font-weight: var(--bold); }
+  & dl dt:not(.no-demo-styles > *) { font-weight: var(--medium); }
+  & dl dl dt:not(.no-demo-styles > *) { font-weight: var(--regular); }
 
-  & dt:not(:first-of-type) {
+  & dt:not(:first-of-type):not(.no-demo-styles > *) {
     margin-top: 20px;
   }
-  & dd {
+  & dd:not(.no-demo-styles > *) {
     margin-bottom: 10px;
     margin-left: 25px;
   }
