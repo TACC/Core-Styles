@@ -1,0 +1,15 @@
+/* https://github.com/TACC/Core-Styles/issues/458 */
+.data-tree {
+    --indent: 1.5rem;
+}
+.data-tree__item details {
+    margin-left: var(--indent);
+}
+.data-tree__item summary {
+    margin-left: calc( -1 * var(--indent) );
+}
+.data-tree__item summary.u-summary-with-a-link::before,
+.data-tree__item summary.u-summary-fake-marker::before {
+    width: var(--indent);
+    display: inline-block;
+}
