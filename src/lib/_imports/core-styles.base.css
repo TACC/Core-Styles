@@ -31,6 +31,7 @@
 
 /* COMPONENTS */
 @import url("./components/bootstrap.container.css");
+@import url("./components/bootstrap.dropdown.css");
 @import url("./components/bootstrap.figure.css");
 @import url("./components/bootstrap.modal.css");
 @import url("./components/bootstrap.nav-tabs.css");
@@ -52,5 +53,7 @@
 @import url("./trumps/s-breadcrumbs.css");
 @import url("./trumps/u-empty.css");
 @import url("./trumps/s-irregular-links.css");
+@import url("./trumps/u-highlight.css");
 @import url("./trumps/u-mailto-text-replace.css");
-@import url("./trumps/u-highlight.css")
+@import url("./trumps/u-summary.css");
+@import url("./trumps/u-image-zoom.css");

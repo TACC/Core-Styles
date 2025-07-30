@@ -1,0 +1,6 @@
+.s-references p + ol {
+    margin-top: unset; /* to undo negative margin from html-elements.cms.css */
+}
+.s-references ol li {
+    margin-block: 1em;
+}
