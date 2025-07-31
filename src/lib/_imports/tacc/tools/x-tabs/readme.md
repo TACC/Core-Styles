@@ -1,4 +1,4 @@
-Mixins for tab components e.g. [Bootstrap Nav Tabs]({{path './bootstrap--nav-tabs' }}), [Python-Markdown Tabbed Extension]({{path './pymdownx--tabbed' }}).
+Mixins for tab components e.g. [Bootstrap Nav Tabs]({{path './tabs--default' }}), [Python-Markdown Tabbed Extension]({{path './pymdownx--tabbed' }}).
 
 | Mixin | Description
 | - | -
