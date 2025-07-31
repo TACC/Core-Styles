@@ -1,0 +1,4 @@
+label: Breadcrumbs
+context:
+  subdir: "readthedocs/wy-breadcrumbs"
+  shouldSkipPattern: false
