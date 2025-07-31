@@ -1,5 +1,6 @@
 status: prototype
 context:
+  subdir: "tacc/components/c-app-card"
   shouldSkipPattern: false
   📝 shouldSkipPattern: because core-styles.….css does not import this
   shouldLoadBootstrap4: true

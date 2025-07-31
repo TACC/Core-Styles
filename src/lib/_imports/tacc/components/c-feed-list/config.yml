@@ -1,4 +1,6 @@
 status: ready
+context:
+  subdir: "tacc/components/c-feed-list"
 variants:
   - name: default
     label: Default

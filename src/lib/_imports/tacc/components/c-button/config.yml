@@ -1,4 +1,5 @@
 context:
+  subdir: "tacc/components/c-button"
   supports:
     states: true
     icons: true

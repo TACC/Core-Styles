@@ -1,4 +1,5 @@
 context:
+  subdir: "tacc/components/c-data-list"
   data:
     key-value-pairs:
       - key: System Processor
