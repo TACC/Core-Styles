@@ -1,0 +1,31 @@
+@import url("../../tools/x-message.postcss");
+@import url("../../tools/x-message.v1.postcss");
+@import url("../../tools/selectors.form.postcss");
+
+
+
+/* Errors */
+
+:--form__errors--form {
+  @mixin message;
+  @mixin message--scope-section;
+  @mixin message--type-error---message--scope-section;
+}
+:--form__errors--field li {
+  @mixin message;
+  @mixin message--scope-inline;
+  @mixin message--type-error---message--scope-inline;
+}
+
+/* Errors: V1 */
+:--form__errors--form {
+  @mixin message-v1;
+  @mixin message-v1--scope-section;
+  @mixin message-v1--type-error;
+  @mixin message-v1--type-error---message-v1--scope-section;
+}
+:--form__errors--field li {
+  @mixin message-v1;
+  @mixin message-v1--scope-inline;
+  @mixin message-v1--type-error;
+}

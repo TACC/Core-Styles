@@ -1,0 +1,22 @@
+context:
+  shouldLoadCMS: true
+  📝 shouldLoadCMS: this pattern is not intended nor expected for use beyond CMS
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: so we can test .container.o-section combo
+variants:
+  - name: style-light
+    label: (Style) Light
+    context:
+      modifier: style-light
+  - name: style-muted
+    label: (Style) Muted
+    context:
+      modifier: style-muted
+  - name: style-dark
+    label: (Style) Dark
+    context:
+      modifier: style-dark
+  - name: docs
+    status: ready
+    context:
+      shouldLoadDocs: true

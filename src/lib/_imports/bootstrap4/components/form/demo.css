@@ -1,0 +1,4 @@
+/* To let validtion errors show */
+.invalid-feedback.js-show-errors {
+    display: unset; /* FAQ: Bootstrap sets `display: none` by default */
+}
