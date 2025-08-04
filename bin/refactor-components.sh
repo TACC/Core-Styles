@@ -27,6 +27,7 @@ declare -a COMPONENTS=(
     "c-show-more"
     "c-tag"
     "c-update"
+    "cortal-icon"
 )
 
 # Function to refactor a single component
@@ -81,21 +82,38 @@ update_imports() {
     echo "  ✅ Updated import paths for $component"
 }
 
-# Function to update config.yml if it exists
+# Function to update or create config.yml
 update_config() {
     local component=$1
+
     if [ -f "${component}/config.yml" ]; then
         echo "📝 Updating config.yml for $component..."
 
-        # Check if config already exists
-        if ! grep -q "subdir:" "${component}/config.yml"; then
-            # Add subdir property after context:
-            sed -i '' '/^context:/a\
-  subdir: "tacc/components/'$component'"' "${component}/config.yml"
-            echo "  ✅ Added subdir to config.yml"
+        # Check if context: already exists
+        if grep -q "^context:" "${component}/config.yml"; then
+            # Check if subdir already exists under context
+            if ! grep -q "subdir:" "${component}/config.yml"; then
+                # Add subdir property after context:
+                sed -i '' '/^context:/a\
+  subdir: "tacc/components/'$component'"\n' "${component}/config.yml"
+                echo "  ✅ Added subdir to existing context in config.yml"
+            else
+                echo "  ℹ️  subdir already exists in config.yml"
+            fi
         else
-            echo "  ℹ️ subdir already exists in config.yml"
+            # Add context: section with subdir at the end of the file
+            echo "context:" >> "${component}/config.yml"
+            echo "  subdir: \"tacc/components/$component\"" >> "${component}/config.yml"
+            echo "  ✅ Added context section with subdir to config.yml"
         fi
+    else
+        echo "📝 Creating config.yml for $component..."
+        # Create new config.yml with context and subdir
+        cat > "${component}/config.yml" << EOF
+context:
+  subdir: "tacc/components/$component"
+EOF
+        echo "  ✅ Created config.yml with context and subdir"
     fi
 }
 
@@ -104,17 +122,19 @@ for component in "${COMPONENTS[@]}"; do
     echo ""
     echo "🔧 Processing $component..."
 
-    # Skip if already refactored (directory exists and main file is inside)
+    # Check if already refactored (directory exists and main file is inside)
     if [ -d "$component" ] && [ -f "${component}/${component}.postcss" ]; then
-        echo "  ⏭️  $component already refactored, skipping..."
-        continue
+        echo "  ℹ️  $component files already moved, checking config.yml..."
+        # Still run config update in case context/subdir is missing
+        update_config "$component"
+        echo "  ✅ $component config check complete!"
+    else
+        # Full refactoring needed
+        refactor_component "$component"
+        update_imports "$component"
+        update_config "$component"
+        echo "  ✅ $component refactoring complete!"
     fi
-
-    refactor_component "$component"
-    update_imports "$component"
-    update_config "$component"
-
-    echo "  ✅ $component refactoring complete!"
 done
 
 echo ""
