@@ -1,0 +1,10 @@
+label: Pagination
+context:
+  subdir: "djangocms-blog/djangocms-blog-pagination"
+variants:
+  - name: default
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: false
+      shouldLoadCMS: true

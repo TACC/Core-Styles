@@ -5,7 +5,9 @@
 {{#if markup.wrap_start}}
 {{{markup.wrap_start}}}
 {{else}}
-<form action="" method="POST" enctype="multipart/form-data" class="{{ class.root }}">
+<form action="" method="POST" enctype="multipart/form-data"
+      {{#if class.root }}class="{{ class.root }}"{{/if}}
+>
 
   <h3 {{#if class.title }}class="{{ class.title }}"{{/if}}>
     (Optional) Title of Form
@@ -15,20 +17,20 @@
   </p>
 {{/if}}
 
-  {{> @form-errors class=class.errors wrapClass=class.form_errors_wrap }}
+  {{> @form-errors class=class.form_errors wrapClass=class.form_errors_wrap }}
 
   <div class="{{ class.field }} {{ class.has_required }}">
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="name">
       Name
-      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
-        aria-label="(required)">*</span>
+      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}>(required)</span>
     </label>
 
     <input
+      class="{{ class.control }}"
       type="text"
       name="name"
       required=""
@@ -37,7 +39,7 @@
     />
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -49,12 +51,12 @@
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="favorite-fruit">Favorite Fruit</label>
 
-    <select name="favorite-fruit" id="favorite-fruit">
+    <select class="{{ class.control }}" name="favorite-fruit" id="favorite-fruit">
       <option value="" selected="">
         Please select an option
       </option>
@@ -67,7 +69,7 @@
     </select>
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -79,19 +81,20 @@
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="wake-up-time">Wake Up Time</label>
 
     <input
+      class="{{ class.control }}"
       type="time"
       name="wake-up-time"
       id="wake-up-time"
     />
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -101,174 +104,52 @@
     {{/with}}
   </div>
 
-  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
-    {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/if}}
+  {{> @form-field-checkboxes
+    type="radio"
+    class=(concat class.field " " class.check_menu)
+    inputClass=class.radio_control
+    helpTextClass=class.hint
+    helpTextTag=helpTextTag
+    errorLoc=errorLoc
+    inputListTag=inputListTag
+    inputListClass=class.check_menu
+    boxFieldClass=inputListItemClass
+    checkboxes=form_field_radioboxes
+  }}
 
-    <label>Radio stations</label>
+  {{> @form-field-checkbox
+    class=(concat class.field " " class.has_checkbox)
+    inputClass=class.checkbox_control
+    helpTextClass=class.hint
+    helpTextTag=helpTextTag
+    helpText="Are you checking out today?"
+    errorLoc=errorLoc
+    label="Checking Out?"
+    name="checking-out"
+    id="checking-out"
+  }}
 
-    {{#with inputListTag as | tag |}}
-    <{{#if tag}}{{tag}}{{else}}menu{{/if}}
-      {{#if ../class.radio_menu }}class="{{../class.radio_menu}}"{{/if}}
-      id="radio-stations"
-    >
-      <li>
-        <label for="radio-stations-0">
-          <input
-            type="radio"
-            name="radio-stations"
-            value="LX 1234"
-            id="radio-stations-0"
-          />
-          LX 1234
-        </label>
-      </li>
-      <li>
-        <label for="radio-stations-1">
-          <input
-            type="radio"
-            name="radio-stations"
-            value="LOVE 45"
-            id="radio-stations-1"
-          />
-          LOVE 45
-        </label>
-      </li>
-      <li>
-        <label for="radio-stations-2">
-          <input
-            type="radio"
-            name="radio-stations"
-            value="OLD 555"
-            id="radio-stations-2"
-          />
-          OLD 555
-        </label>
-      </li>
-    </{{#if tag}}{{tag}}{{else}}menu{{/if}}>
-    {{/with}}
-
-    {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/unless}}
-
-    {{#with helpTextTag as | tag |}}
-    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
-      Which radio stations do you prefer?
-    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
-    {{/with}}
-  </div>
-
-  <div class="{{ class.field }} {{ class.has_checkbox }}">
-    {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/if}}
-
-    <input
-      type="checkbox"
-      name="checking-out"
-      id="checking-out"
-    />
-
-    <label for="checking-out">Checking Out?</label>
-
-    {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/unless}}
-
-    {{#with helpTextTag as | tag |}}
-    <{{#if tag}}{{tag}}{{else}}small{{/if}} class="{{../class.hint}}">
-      Are you checking out today?
-    </{{#if tag}}{{tag}}{{else}}small{{/if}}>
-    {{/with}}
-  </div>
+  {{> @form-field-checkboxes
+    type="checkbox"
+    class=(concat class.field " " class.check_menu)
+    inputClass=class.checkbox_control
+    helpTextClass=class.hint
+    helpTextTag=helpTextTag
+    errorLoc=errorLoc
+    inputListTag=inputListTag
+    inputListClass=class.check_menu
+    boxFieldClass=inputListItemClass
+    checkboxes=form_field_checkboxes
+  }}
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/if}}
-
-    <label for="">
-      Which fish do you want?
-    </label>
-
-    {{#with inputListTag as | tag |}}
-    <{{#if tag}}{{tag}}{{else}}menu{{/if}}
-      {{#if ../class.check_menu }}class="{{../class.check_menu}}"{{/if}}
-      id="which-fish-do-you-want"
-    >
-      <li>
-        <label for="which-fish-do-you-want-0">
-          <input
-            type="checkbox"
-            name="which-fish-do-you-want"
-            value="one fish"
-            id="which-fish-do-you-want-0"
-          />
-          one fish
-        </label>
-      </li>
-      <li>
-        <label for="which-fish-do-you-want-1">
-          <input
-            type="checkbox"
-            name="which-fish-do-you-want"
-            value="two fish"
-            id="which-fish-do-you-want-1"
-          />
-          two fish
-        </label>
-      </li>
-      <li>
-        <label for="which-fish-do-you-want-2">
-          <input
-            type="checkbox"
-            name="which-fish-do-you-want"
-            value="red fish"
-            id="which-fish-do-you-want-2"
-          />
-          red fish
-        </label>
-      </li>
-      <li>
-        <label for="which-fish-do-you-want-3">
-          <input
-            type="checkbox"
-            name="which-fish-do-you-want"
-            value="blue fish"
-            id="which-fish-do-you-want-3"
-          />
-          blue fish
-        </label>
-      </li>
-      <li>
-        <label for="which-fish-do-you-want-4">
-          <input
-            type="checkbox"
-            name="which-fish-do-you-want"
-            value="all the fish"
-            id="which-fish-do-you-want-4"
-          />
-          all the fish
-        </label>
-      </li>
-    </{{#if tag}}{{tag}}{{else}}menu{{/if}}>
-    {{/with}}
-
-    {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
-    {{/unless}}
-  </div>
-
-  <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
-    {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="hangry-time">Hangry Time</label>
 
-    <select name="hangry-time" id="hangry-time">
+    <select class="{{ class.control }}" name="hangry-time" id="hangry-time">
       <option value="" selected="">
         Please select an option
       </option>
@@ -281,7 +162,7 @@
     </select>
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -293,12 +174,13 @@
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="life-story">Life Story</label>
 
     <textarea
+      class="{{ class.control }}"
       name="life-story"
       cols="40"
       rows="10"
@@ -306,7 +188,7 @@
     ></textarea>
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -318,19 +200,20 @@
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="what-day-is-it">What day is it?</label>
 
     <input
+      class="{{ class.control }}"
       type="date"
       name="what-day-is-it"
       id="what-day-is-it"
     />
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -342,19 +225,20 @@
 
   <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
     {{#if (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/if}}
 
     <label for="your-favorite-picture">Your favorite picture</label>
 
     <input
+      class="{{ class.file_control }}"
       type="file"
       name="your-favorite-picture"
       id="your-favorite-picture"
     />
 
     {{#unless (eq errorLoc "top")}}
-      {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+      {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
     {{/unless}}
 
     {{#with helpTextTag as | tag |}}
@@ -371,8 +255,7 @@
   <div class="{{ class.field }} {{ class.has_spam_filter }} {{ class.has_required }}">
     <label for="recaptcha_g9y93gP8">
       Are you a robot?
-      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
-        aria-label="(required)">*</span>
+      <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}>(required)</span>
     </label>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -384,31 +267,31 @@
     <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" required="" id="recaptcha_g9y93gP8" data-widget-uuid="9e32f28ccb9545109ff6ae891f9af324" data-callback="onSubmit_9e32f28ccb9545109ff6ae891f9af324" data-size="normal"></div>
   </div>
 
-  <fieldset class="{{ class.field }} {{ class.has_spam_filter }} {{ class.has_required }}">
+  <fieldset>
     <legend>sample fields in a fieldset</legend>
 
     {{!-- FAQ: Copied from first two fields --}}
     <div class="{{ class.field }} {{ class.has_required }}">
       {{#if (eq errorLoc "top")}}
-        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+        {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
       {{/if}}
 
       <label for="name">
         Name
-        <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}
-          aria-label="(required)">*</span>
+        <span {{#if class.badge }}class="{{ class.badge }}"{{/if}}>(required)</span>
       </label>
 
       <input
         type="text"
         name="name"
+        class="{{ class.control }}"
         required=""
         placeholder="Your name"
         id="name"
       />
 
       {{#unless (eq errorLoc "top")}}
-        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+        {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
       {{/unless}}
 
       {{#with helpTextTag as | tag |}}
@@ -420,12 +303,12 @@
 
     <div {{#if class.field }}class="{{ class.field }}"{{/if}}>
       {{#if (eq errorLoc "top")}}
-        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+        {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
       {{/if}}
 
       <label for="favorite-fruit">Favorite Fruit</label>
 
-      <select name="favorite-fruit" id="favorite-fruit">
+      <select class="{{ class.control }}" name="favorite-fruit" id="favorite-fruit">
         <option value="" selected="">
           Please select an option
         </option>
@@ -438,7 +321,7 @@
       </select>
 
       {{#unless (eq errorLoc "top")}}
-        {{> @field-errors class=class.errors wrapClass=class.field_errors_wrap }}
+        {{> @field-errors class=class.field_errors wrapClass=class.field_errors_wrap }}
       {{/unless}}
 
       {{#with helpTextTag as | tag |}}

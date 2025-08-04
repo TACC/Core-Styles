@@ -1,0 +1,12 @@
+variants:
+  - name: default
+    label: HTML Elements
+  - name: cms
+    label: (CMS) HTML Elements
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
+  - name: docs
+    label: (Docs) HTML Elements
+    context:
+      shouldLoadDocs: true
