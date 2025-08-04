@@ -33,67 +33,51 @@ declare -a COMPONENTS=(
 refactor_component() {
     local component=$1
     echo "📁 Refactoring $component..."
-    
+
     # Create subdirectory if it doesn't exist
     mkdir -p "$component"
-    
+
     # Move main postcss file
     if [ -f "${component}.postcss" ]; then
         git mv "${component}.postcss" "${component}/${component}.postcss"
         echo "  ✅ Moved ${component}.postcss"
     fi
-    
-    # Move selector files if they exist
-    if [ -f "${component}.selectors.postcss" ]; then
-        git mv "${component}.selectors.postcss" "${component}/${component}.selectors.postcss"
-        echo "  ✅ Moved ${component}.selectors.postcss"
-    fi
-    
-    # Move variant files (--compact, --expanded, etc.)
+
+    # Move variant files of pattern ${component}.*.postcss
+    for variant_file in ${component}.*.postcss; do
+        if [ -f "$variant_file" ] && [ "$variant_file" != "${component}.postcss" ]; then
+            git mv "$variant_file" "${component}/$variant_file"
+            echo "  ✅ Moved $variant_file"
+        fi
+    done
+
+    # Move variant files of -- pattern (--compact, --expanded, etc.)
     for variant_file in ${component}--*.postcss; do
         if [ -f "$variant_file" ]; then
             git mv "$variant_file" "${component}/$variant_file"
             echo "  ✅ Moved $variant_file"
         fi
     done
-    
-    # Move skin/structure files for image-map
-    if [ "$component" = "c-image-map" ]; then
-        if [ -f "c-image-map.skin.postcss" ]; then
-            git mv "c-image-map.skin.postcss" "c-image-map/c-image-map.skin.postcss"
-            echo "  ✅ Moved c-image-map.skin.postcss"
-        fi
-        if [ -f "c-image-map.structure.postcss" ]; then
-            git mv "c-image-map.structure.postcss" "c-image-map/c-image-map.structure.postcss"
-            echo "  ✅ Moved c-image-map.structure.postcss"
-        fi
-    fi
 }
 
 # Function to update import paths
 update_imports() {
     local component=$1
     echo "🔄 Updating import paths for $component..."
-    
+
     cd ../../../../..  # Go back to project root
-    
+
     # Update main component imports
     find src -name "*.postcss" -type f -exec sed -i '' "s|components/${component}\.postcss|components/${component}/${component}.postcss|g" {} \;
-    
-    # Update selector imports
-    find src -name "*.postcss" -type f -exec sed -i '' "s|components/${component}\.selectors\.postcss|components/${component}/${component}.selectors.postcss|g" {} \;
-    
-    # Update variant imports (--compact, --expanded, etc.)
+
+    # Update all variant imports with pattern ${component}.*.postcss
+    find src -name "*.postcss" -type f -exec sed -i '' "s|components/${component}\.[^/]*\.postcss|components/${component}/&|g" {} \;
+
+    # Update variant imports with -- pattern (--compact, --expanded, etc.)
     find src -name "*.postcss" -type f -exec sed -i '' "s|components/${component}--\([^/]*\)\.postcss|components/${component}/${component}--\1.postcss|g" {} \;
-    
-    # Special handling for image-map skin/structure files
-    if [ "$component" = "c-image-map" ]; then
-        find src -name "*.postcss" -type f -exec sed -i '' "s|components/c-image-map\.skin\.postcss|components/c-image-map/c-image-map.skin.postcss|g" {} \;
-        find src -name "*.postcss" -type f -exec sed -i '' "s|components/c-image-map\.structure\.postcss|components/c-image-map/c-image-map.structure.postcss|g" {} \;
-    fi
-    
+
     cd src/lib/_imports/tacc/components  # Go back to components directory
-    
+
     echo "  ✅ Updated import paths for $component"
 }
 
@@ -102,15 +86,15 @@ update_config() {
     local component=$1
     if [ -f "${component}/config.yml" ]; then
         echo "📝 Updating config.yml for $component..."
-        
-        # Check if subdir already exists
+
+        # Check if config already exists
         if ! grep -q "subdir:" "${component}/config.yml"; then
             # Add subdir property after context:
             sed -i '' '/^context:/a\
   subdir: "tacc/components/'$component'"' "${component}/config.yml"
             echo "  ✅ Added subdir to config.yml"
         else
-            echo "  ℹ️  subdir already exists in config.yml"
+            echo "  ℹ️ subdir already exists in config.yml"
         fi
     fi
 }
@@ -119,17 +103,17 @@ update_config() {
 for component in "${COMPONENTS[@]}"; do
     echo ""
     echo "🔧 Processing $component..."
-    
+
     # Skip if already refactored (directory exists and main file is inside)
     if [ -d "$component" ] && [ -f "${component}/${component}.postcss" ]; then
         echo "  ⏭️  $component already refactored, skipping..."
         continue
     fi
-    
+
     refactor_component "$component"
     update_imports "$component"
     update_config "$component"
-    
+
     echo "  ✅ $component refactoring complete!"
 done
 
