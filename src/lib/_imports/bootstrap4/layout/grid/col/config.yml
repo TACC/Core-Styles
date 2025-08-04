@@ -2,9 +2,9 @@ order: 3
 context:
   subdir: "bootstrap4/layout/grid/col"
   supportStyles:
-    - ../../assets/components/c-nav.css
-    - ../../assets/components/c-card.css
-    - ../../assets/components/c-button.css
+    - ../../assets/tacc/components/c-nav/c-nav.css
+    - ../../assets/tacc/components/c-card/c-card.css
+    - ../../assets/tacc/components/c-button/c-button.css
 variants:
   - name: default
     label: Bootstrap

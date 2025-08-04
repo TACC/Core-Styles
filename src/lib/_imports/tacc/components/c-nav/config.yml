@@ -29,6 +29,7 @@ variants:
   - name: is-list
     hidden: true
 context:
+  subdir: "tacc/components/c-nav"
   links:
     - name:   Alabama
       href: '#alabama'

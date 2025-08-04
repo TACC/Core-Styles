@@ -10,7 +10,7 @@ variants:
     context:
       shouldSkipPattern: false
       supportStyles:
-        - ../../assets/components/c-button.css
+        - ../../assets/tacc/components/c-button/c-button.css
   - name: form
     label: in a Form
     status: ready

@@ -3,8 +3,8 @@ context:
   subdir: "bootstrap4/layout/grid/container"
   shouldSkipBase: true
   supportStyles:
-    - ../../assets/components/c-message.css
-    - ../../assets/components/c-message--expanded.css
+    - ../../assets/tacc/components/c-message/c-message.css
+    - ../../assets/tacc/components/c-message/c-message--expanded.css
 variants:
   - name: default
     label: Bootstrap

@@ -44,4 +44,4 @@ variants:
         nav: c-form__nav
       shouldLoadPortal: true
       supportStyles:
-        - ../../assets/components/c-form--login.css
+        - ../../assets/tacc/components/c-form--login/c-form--login.css

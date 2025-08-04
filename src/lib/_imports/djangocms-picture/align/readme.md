@@ -1,4 +1,6 @@
-Simple classes to align media or content within paragraphs:
+To style [Django CMS Picture](https://github.com/django-cms/djangocms-picture/blob/3.0.0/djangocms_picture/cms_plugins.py#L63) alignment.
+
+I.e. simple classes to align media or content within paragraphs:
 - `align-left`
 - `align-right`
 - `align-center`

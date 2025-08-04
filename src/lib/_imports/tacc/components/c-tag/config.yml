@@ -1,4 +1,6 @@
 status: ready
+context:
+  subdir: "tacc/components/c-tag"
 variants:
   - name: default
     hidden: true

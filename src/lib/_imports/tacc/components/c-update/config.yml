@@ -1,3 +1,4 @@
 status: ready
 context:
+  subdir: "tacc/components/c-update"
   shouldLoadCMS: true

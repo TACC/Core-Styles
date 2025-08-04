@@ -6,8 +6,8 @@ context:
   shouldLoadBootstrap4: true
   📝 shouldLoadBootstrap4: to use Bootstrap 4 grid for layout
   supportStyles:
-    - ../../assets/bootstrap4/row.css
-    - ../../assets/components/cortal.icon.css
+    - ../../assets/bootstrap4/layout/grid/row/row.css
+    - ../../assets/tacc/components/cortal-icon/cortal-icon.css
   can-wrap-in-a-link: false
   data:
     - title: ADCIRC

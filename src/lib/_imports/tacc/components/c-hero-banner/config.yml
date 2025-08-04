@@ -1,5 +1,6 @@
 status: wip
 context:
+  subdir: "tacc/components/c-hero-banner"
   shouldLoadCMS: true
 variants:
   - name: default

@@ -2,4 +2,4 @@ status: prototype
 context:
   shouldSkipPattern: false
   supportStyles:
-    - ../../assets/components/cortal-icon.css
+    - ../../assets/tacc/components/cortal-icon/cortal-icon.css

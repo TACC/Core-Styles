@@ -241,7 +241,7 @@ npm run build:css -- --build-id="..."
 ##### Build Individual Stylesheets
 
 ```bash
-npm run build:each -- src/lib/_imports/components/align.postcss src/lib/_imports/components/admonition.postcss ...
+npm run build:each -- src/lib/_imports/components/c-callout/c-callout.postcss src/lib/_imports/components/c-island/c-island.postcss ...
 ```
 
 

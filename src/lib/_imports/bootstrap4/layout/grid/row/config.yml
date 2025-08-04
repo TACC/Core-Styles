@@ -2,7 +2,7 @@ order: 2
 context:
   subdir: "bootstrap4/layout/grid/row"
   supportStyles:
-    - ../../assets/components/c-card.css
+    - ../../assets/tacc/components/c-card/c-card.css
 variants:
   - name: default
     label: Bootstrap

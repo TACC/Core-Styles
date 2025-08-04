@@ -1,6 +1,7 @@
 status: ready
 label: Icon (Cortal)
 context:
+  subdir: "tacc/components/cortal-icon"
   shouldSkipPattern: false
   sections:
     - id: basic

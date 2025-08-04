@@ -1,5 +1,6 @@
 status: wip
 context:
+  subdir: "tacc/components/c-show-more"
   shouldSkipPattern: false
   📝 shouldSkipPattern: because core-styles.….css does not import this
 variants:

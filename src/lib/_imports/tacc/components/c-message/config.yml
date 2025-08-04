@@ -1,5 +1,6 @@
 status: ready
 context:
+  subdir: "tacc/components/c-message"
   types:
     - name: info
       content: Notify user of any details that are <strong>not</strong> a problem.

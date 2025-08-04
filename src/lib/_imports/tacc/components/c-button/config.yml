@@ -8,7 +8,7 @@ context:
     size-small: true
     link-tag: true
   supportStyles:
-    - ../../assets/components/cortal-icon.css
+    - ../../assets/tacc/components/cortal-icon/cortal-icon.css
 variants:
   # type
   - name: default
