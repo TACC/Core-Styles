@@ -6,8 +6,8 @@
         scope="inline" title="Inline" content=this.content}}
     {{> @x-message--single type=this.name
         scope="section" title="Section" content=this.content}}
-    <!--{{> @x-message--single type=this.name
-        scope="app" title="App" content=this.content}}-->
+    {{> @x-message--single type=this.name
+        scope="section" title="Section" needs="icon" content=this.content}}
     {{> @x-message--single type=this.name
         scope="global" title="Global" content=this.content}}
   </dd>

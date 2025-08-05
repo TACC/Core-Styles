@@ -1,13 +1,19 @@
-@import url("../components/c-message.css");
-@import url("../components/c-message--expanded.css");
-@import url("../components/c-message.selectors.css");
+@import url("../tools/x-message.css");
 @import url("../tools/selectors.monospace.css");
 
 
 
 .admonition {
   @mixin message;
+  @mixin message--has-icon;
   @mixin message--scope-section;
+  @mixin message--has-icon---message--scope-section;
+
+  --icon-block-width: 65px;
+  --icon-size: 36px;
+
+  padding-block: 20px;
+  padding-inline: 30px;
 }
 .admonition-title {
   font-weight: var(--bold);
@@ -18,41 +24,29 @@
 }
 
 .admonition:is(.tip) {
-  @mixin message--type-tip;
-  @mixin message--type-tip---message--scope-section;
+  @mixin message--has-icon---message--type-extra;
+  @mixin message--type-extra---message--scope-section;
 }
 .admonition:is(.hint) {
-  @mixin message--type-success;
+  @mixin message--has-icon---message--type-success;
   @mixin message--type-success---message--scope-section;
 }
 .admonition:is(.note, .attention) {
-  @mixin message--type-info;
+  @mixin message--has-icon---message--type-info;
   @mixin message--type-info---message--scope-section;
 }
 .admonition:is(.caution, .important) {
-  @mixin message--type-warning;
+  @mixin message--has-icon---message--type-warning;
   @mixin message--type-warning---message--scope-section;
 }
 .admonition:is(.warning, .error, .danger) {
-  @mixin message--type-error;
+  @mixin message--has-icon---message--type-error;
   @mixin message--type-error---message--scope-section;
 }
-
-/* To layout icon and content */
-.admonition {
-  --icon-block-width: 65px;
-
-  display: grid;
-  grid-template-columns: var(--icon-block-width) minmax(0, 1fr);
-  column-gap: var(--pad-horz);
-
-  padding-block: var(--pad-vert);
-  padding-right: var(--pad-horz);
-}
-/* To "stretch" icon to parent height */
-.admonition::before {
-  margin-block: calc( -1 * var(--pad-vert) );
-}
+/* To change certain icons */
+.admonition:is(.tip)::before { content: "☀"; }
+.admonition:is(.warning)::before { content: "𝖷"; }
+.admonition:is(.error, .danger)::before { content: "ⓧ"; }
 
 /* To adjust spacing for certain elements */
 .admonition > .admonition-title + p { margin-top: 5px; }
@@ -63,26 +57,3 @@
 .admonition :--monospace--block { 
   border-color: var(--global-color-primary--dark);
 }
-
-/* To style icon */
-.admonition::before {
-  color: white;
-  font-size: 36px;
-
-  /* To take up left column */
-  grid-row: 1 / span 99; /* 99 is for arbitrary implicit row count */
-
-  /* To center content */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* To add placeholder icon */
-/* NOTE: Client is expected to overwrite these */
-.admonition:is(.caution, .important)::before { content: "⚠"; }
-.admonition:is(.warning)::before { content: "𝖷"; }
-.admonition:is(.tip)::before { content: "☀"; }
-.admonition:is(.note, .attention)::before { content: "✎"; }
-.admonition:is(.hint)::before { content: "✓"; }
-.admonition:is(.error, .danger)::before { content: "𝗫"; }

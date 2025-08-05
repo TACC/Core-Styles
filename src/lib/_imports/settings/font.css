@@ -14,7 +14,7 @@ Usage:
 
 Reference:
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
-- [Shared UI - Constants - Font](https://confluence.tacc.utexas.edu/x/cYAZCg)
+- [Shared UI - Constants - Font](https://tacc-main.atlassian.net/wiki/x/XRtv)
 
 Styleguide Settings.CustomProperties.Font
 */
@@ -28,15 +28,30 @@ Styleguide Settings.CustomProperties.Font
   --sans--portal: "Roboto", sans-serif;
   --serif: sans-serif;
   --mono: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --icon: "Hiragino Sans", monospace;
 
   /* Weight */
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping */
+  --thin: 100;
+  --hairline: 100;
+  --extra-light: 200;
+  --ultra-light: 200;
+  --light: 300;
+  --normal: 400;
   --regular: 400;
   --medium: 500;
+  --semi-bold: 600;
+  --demi-bold: 600;
   --bold: 700;
-  --black: 800;
+  --extra-bold: 800;
+  --ultra-bold: 800;
+  --black: 900;
+  --heavy: 900;
+  --extra-black: 950;
+  --ultra-black: 950;
 }
 
+/* DEPRECATED */
 /* For backwards-compatibility with v0, v1, v2.23 */
 :root {
   --global-font-family--sans--cms: var(--sans--cms);

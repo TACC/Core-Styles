@@ -18,6 +18,9 @@
 @custom-selector :--c-message--type-error
     .c-message--type-error,
     .message--type-error;
+@custom-selector :--c-message--type-extra
+    .c-message--type-extra,
+    .message--type-extra;
 
 @custom-selector :--c-message--scope
     [class*="message--scope-"];
@@ -30,3 +33,7 @@
 @custom-selector :--c-message--scope-global
     .c-message--scope-global,
     .message--scope-global;
+
+@custom-selector :--c-message--has-icon
+    .c-message--has-icon,
+    .message--has-icon;

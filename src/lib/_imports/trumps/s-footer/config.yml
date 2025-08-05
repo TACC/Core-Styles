@@ -25,3 +25,11 @@ variants:
     context:
       shouldLoadPortal: true
       shouldSkipPattern: true
+  - name: complex
+    status: prototype
+    context:
+      modifier: thick
+      isComplex: true
+      bodyContent: More complex footers may inlcude heading(s) and list(s) of links.
+      shouldLoadCMS: true
+      shouldLoadBootstrap: true

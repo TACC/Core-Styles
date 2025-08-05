@@ -1,0 +1,4 @@
+status: ready
+context:
+  supportStyles:
+    - ../../assets/tools/x-drop-cap.demo.css

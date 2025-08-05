@@ -1,0 +1,5 @@
+status: ready
+context:
+  shouldSkipPattern: false
+  supportStyles:
+    - ../../assets/components/cortal-icon.css

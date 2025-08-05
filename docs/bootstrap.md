@@ -29,14 +29,14 @@ Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless othe
 
 | Core Styles <u>replaces</u> | Bootstrap
 | - | -
-| [Message](https://tacc.utexas.edu/static/ui/components/detail/c-message--scope-cms.html) | Alerts
-| [Admonition](https://tacc.utexas.edu/static/ui/components/detail/admonition.html) (on [TACC Docs])† | Alerts
-| [Form](https://tacc.utexas.edu/static/ui/components/detail/c-form--default.html) | Forms
-| [Input Wrapper](https://tacc.utexas.edu/static/ui/components/detail/s-affixed-input-wrapper--prepend-and-append) | Input Groups
-| [Button](https://tacc.utexas.edu/static/ui/components/detail/c-button--secondary.html) | Buttons
-| [Card](https://tacc.utexas.edu/static/ui/components/detail/c-card--standard.html) | Cards
+| [Message](https://cep.tacc.utexas.edu/static/ui/components/detail/c-message--scope-cms.html) | Alerts
+| [Admonition](https://cep.tacc.utexas.edu/static/ui/components/detail/admonition.html) (on [TACC Docs])† | Alerts
+| [Form](https://cep.tacc.utexas.edu/static/ui/components/detail/c-form--default.html) | Forms
+| [Input Wrapper](https://cep.tacc.utexas.edu/static/ui/components/detail/s-affixed-input-wrapper--prepend-and-append) | Input Groups
+| [Button](https://cep.tacc.utexas.edu/static/ui/components/detail/c-button--secondary.html) | Buttons
+| [Card](https://cep.tacc.utexas.edu/static/ui/components/detail/c-card--standard.html) | Cards
 | [Page](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/components/c-page.css) | Pagination
-| [Tag](https://tacc.utexas.edu/static/ui/components/detail/c-tag.html) | Badges
+| [Tag](https://cep.tacc.utexas.edu/static/ui/components/detail/c-tag.html) | Badges
 
 | Core Styles <u>extends</u> | Bootstrap
 | - | -
@@ -44,10 +44,10 @@ Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless othe
 
 | Core Styles <u>changes</u> | Bootstrap
 | - | -
-| [Container](https://tacc.utexas.edu/static/ui/components/detail/bootstrap--container.html) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Container
-| [Breadcrumb](https://tacc.utexas.edu/static/ui/components/detail/bootstrap3--breadcrumb) | [Breadcrumb (**v3**)](https://getbootstrap.com/docs/4.0/components/breadcrumb/)
-| [Modal](https://tacc.utexas.edu/static/ui/components/detail/bootstrap--modal.html) | [Modal](https://getbootstrap.com/docs/4.0/components/modal/)
-| [Nav Tabs](https://tacc.utexas.edu/static/ui/components/detail/bootstrap--nav-tabs.html) | Navs: [Tabs](https://getbootstrap.com/docs/4.0/components/navs/#tabs)
+| [Container](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--container.html) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Container
+| [Breadcrumb](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap3--breadcrumb) | [Breadcrumb (**v3**)](https://getbootstrap.com/docs/4.0/components/breadcrumb/)
+| [Modal](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--modal.html) | [Modal](https://getbootstrap.com/docs/4.0/components/modal/)
+| [Nav Tabs](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--nav-tabs.html) | Navs: [Tabs](https://getbootstrap.com/docs/4.0/components/navs/#tabs)
 | [Pagination](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/components/bootstrap.pagination.css) | [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
 
 | Where Core Styles <u>yields</u> to | Bootstrap

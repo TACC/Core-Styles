@@ -1,106 +1,57 @@
+@import url('../tools/x-message.css');
+
 @import url("./c-message.selectors.css");
 
 
-
-/* Elements */
-
-/* To prevent excess space at top and bottom of message */
-
-@define-mixin message {
-  & > *:first-child {
-    margin-top: 0;
-  }
-
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-}
 
 :--c-message {
   @mixin message;
 }
 
-
-
-/* Modifiers */
-
-/* Modifiers: Structure */
-
-:--c-message--scope-inline,
-:--c-message--scope-section,
-:--c-message--scope-global,
-:--c-message--type-info,
-:--c-message--type-success,
-:--c-message--type-warning,
-:--c-message--type-error,
-:--c-message--type-tip {
-  /* FAQ: So alternate class name @extend can not fail on missing selectors */
+:--c-message--scope-inline {
+  @mixin message--scope-inline;
 }
-:--c-message--scope {
-  /* FAQ: Variables allow using this values outside of parent padding */
-  /* SEE: ./admonition.css */
-  padding: var(--pad-vert, 0) var(--pad-horz, 0);
+:--c-message--type-info:--c-message--scope-inline {
+  @mixin message--type-info---message--scope-inline;
 }
-:--c-message--scope-global {
-  --pad-vert: 15px;
-  --pad-horz: 20px;
-
-  border-width: var(--global-border-width--thick);
-
-  text-align: center;
+:--c-message--type-success:--c-message--scope-inline {
+  @mixin message--type-success---message--scope-inline;
+  @mixin message--has-icon---message--type-success;
+  @mixin message--has-icon;
+}
+:--c-message--type-warning:--c-message--scope-inline {
+  @mixin message--type-warning---message--scope-inline;
+  @mixin message--has-icon---message--type-warning;
+  @mixin message--has-icon;
+}
+:--c-message--type-error:--c-message--scope-inline {
+  @mixin message--type-error---message--scope-inline;
+  @mixin message--has-icon---message--type-error;
+  @mixin message--has-icon;
+}
+:--c-message--type-extra:--c-message--scope-inline {
+  @mixin message--type-extra---message--scope-inline;
 }
 
-/* Modifiers: Skin */
-
-:--c-message--type {
-  /* To let clients prematurely @extend (to reduce their later maintenance) */
-}
-@define-mixin message--type-info---message--scope-section {
-  background-color: var(--global-color-info--x-light);
-  border-color: var(--global-color-info--normal);
+:--c-message--scope-section {
+  @mixin message--scope-section;
 }
 :--c-message--type-info:--c-message--scope-section {
   @mixin message--type-info---message--scope-section;
 }
-
-@define-mixin message--type-success---message--scope-section {
-  background-color: var(--global-color-success--x-light);
-  border-color: var(--global-color-success--normal);
-}
-
 :--c-message--type-success:--c-message--scope-section {
   @mixin message--type-success---message--scope-section;
-}
-
-@define-mixin message--type-warning---message--scope-section {
-  background-color: var(--global-color-warning--x-light);
-  border-color: var(--global-color-warning--normal);
 }
 :--c-message--type-warning:--c-message--scope-section {
   @mixin message--type-warning---message--scope-section;
 }
-
-@define-mixin message--type-error---message--scope-section {
-  background-color: var(--global-color-danger--x-light);
-  border-color: var(--global-color-danger--normal);
-}
 :--c-message--type-error:--c-message--scope-section {
   @mixin message--type-error---message--scope-section;
 }
-
-@define-mixin message--type-tip---message--scope-section {
-  background-color: var(--global-color-extra--x-light);
-  border-color: var(--global-color-extra--normal);
-}
-:--c-message--type-tip:--c-message--scope-section {
-  @mixin message--type-tip---message--scope-section;
+:--c-message--type-extra:--c-message--scope-section {
+  @mixin message--type-extra---message--scope-section;
 }
 
-@define-mixin message--scope-global {
-  color: var(--global-color-primary--xx-light);
-  background-color: var(--global-color-accent--secondary);
-  border-color: var(--global-color-primary--dark);
-}
 :--c-message--scope-global {
   @mixin message--scope-global;
 }

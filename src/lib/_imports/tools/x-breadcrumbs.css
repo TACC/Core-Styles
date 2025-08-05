@@ -41,7 +41,7 @@ Styleguide Tools.Mixins.Breadcrumbs
   margin-top: unset;
 }
 @define-mixin x-breadcrumbs-major--list {
-  font-weight: var(--global-font-weight--medium, 500);
+  font-weight: var(--medium, 500);
 }
 
 @define-mixin x-breadcrumbs__list {
@@ -60,7 +60,7 @@ Styleguide Tools.Mixins.Breadcrumbs
 }
 @define-mixin x-breadcrumbs-major__list-item {
   &:last-child {
-    font-weight: var(--global-font-weight--bold, 700);
+    font-weight: var(--bold, 700);
   }
 }
 

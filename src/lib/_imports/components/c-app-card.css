@@ -1,3 +1,5 @@
+@import url('../tools/x-truncate.css');
+
 @custom-selector :--c-app-card
   .c-app-card;
 
@@ -45,6 +47,12 @@
 /* Title */
 :--c-app-card__title > .icon {
   vertical-align: middle;
+}
+
+
+/* Desc */
+:--c-app-card__desc {
+    @mixin truncate--many-lines;
 }
 
 

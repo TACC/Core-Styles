@@ -5,6 +5,8 @@
     <li><a href="#section--light">Section - Light</a></li>
     <li><a href="#section--muted">Section - Muted</a></li>
     <li><a href="#section--dark">Section - Dark</a></li>
+    <li><a href="#col--muted">Column - Muted</a></li>
+    <li><a href="#col--dark">Column - Dark</a></li>
   </ul>
 </nav>
 <h2 id="section--null">Section (Default a.k.a Unstyled a.k.a Transparent)</h2>
@@ -34,3 +36,16 @@
   {{> @c-card--one-with-grid }}
   {{> @c-card--one-with-grid only-standard=true}}
 </section>
+<hr />
+<h2 id="col--muted">Column - Muted</h2>
+<div class="col col-muted o-grid o-grid--col-min-width">
+  {{> @c-card--many-variable }}
+  {{> @c-card--one-with-grid }}
+  {{> @c-card--one-with-grid only-standard=true}}
+</div>
+<h2 id="col--dark">Column - Dark</h2>
+<div class="col col-dark o-grid o-grid--col-min-width">
+  {{> @c-card--many-variable }}
+  {{> @c-card--one-with-grid }}
+  {{> @c-card--one-with-grid only-standard=true}}
+</div>

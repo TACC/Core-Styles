@@ -8,21 +8,21 @@ Colored boxes that appear atop a large image (like a banner).
 
 Styleguide Tools.Mixins.Overlay
 */
+@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
 
-%x-overlay--curtain {
-  --color-text: inherit;
-  --color-bkgd-rgb: var(--global-color-primary--normal);
-
-  color: var(--color-text);
-  background-color: rgba(var(--color-bkgd-rgb), 0.65);
+@define-mixin overlay--curtain {
+  color: inherit;
+  background-color: rgb( from design-token('color.gray.medium') r g b / 0.65 );
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+}
+%x-overlay--curtain {
+  @mixin overlay--curtain;
 }
 
+@define-mixin overlay--callout {
+  color: inherit;
+  background-color: rgb( from design-token('color.gray.medium') r g b / 0.90 );
+}
 %x-overlay--callout {
-  --color-text: inherit;
-  --color-bkgd-rgb: var(--global-color-primary--normal);
-
-  color: var(--color-text);
-  background-color: rgba(var(--color-bkgd-rgb), 0.90);
+  @mixin overlay--curtain;
 }

@@ -1,12 +1,12 @@
-status: wip
+status: ready
 context:
   supportStyles:
     - ../../assets/tools/x-message.demo.css
   types:
-    - name: success
-      content: Notify user of a successful event.
     - name: info
       content: Notify user of any details that are <strong>not</strong> a problem.
+    - name: success
+      content: Notify user of a successful event.
     - name: warning
       content: Notify user of an <strong>un</strong>successful event that <em>could prevent</em> functionality.
     - name: error
@@ -25,31 +25,7 @@ variants:
     hidden: true
   - name: type
     label: by Type
-    status: prototype
-  - name: type-portal
-    label: by Type (Portal)
     status: ready
-    view: 'x-message--type.hbs'
-    context:
-      shouldLoadPortal: true
-  - name: type-cms
-    label: by Type (CMS)
-    status: ready
-    view: 'x-message--type.hbs'
-    context:
-      shouldLoadCMS: true
   - name: scope
     label: by Scope
-    status: prototype
-  - name: scope-portal
-    label: by Scope (Portal)
     status: ready
-    view: 'x-message--scope.hbs'
-    context:
-      shouldLoadPortal: true
-  - name: scope-cms
-    label: by Scope (CMS)
-    status: ready
-    view: 'x-message--scope.hbs'
-    context:
-      shouldLoadCMS: true

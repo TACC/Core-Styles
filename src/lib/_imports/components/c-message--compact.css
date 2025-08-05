@@ -1,3 +1,4 @@
+@import url('../tools/x-message.v1.css');
 @import url('../tools/x-link.css');
 
 @import url("./c-button.selectors.css");
@@ -5,62 +6,69 @@
 
 
 
-/* Elements */
-
-/* To avoid clash of link color with message color */
-:--c-message a,
-:--c-message :--c-button--as-link {
-  color: inherit !important; /* override :hover and :active */
+:--c-message {
+  @mixin message-v1;
 }
 
-/* To distinguish link from message text */
-:--c-message a,
-:--c-message :--c-button--as-link {
-  @mixin link--irregular;
+:--c-message--scope-inline {
+  @mixin message-v1--scope-inline;
 }
-:--c-message a:hover,
-:--c-message :--c-button--as-link:hover {
-  @mixin link--irregular--hover;
-}
-:--c-message a:active,
-:--c-message :--c-button--as-link:active {
-  @mixin link--irregular--active;
-}
-
-
-
-/* Modifiers */
-
-/* Structure */
-
-:--c-message--scope-inline,
-:--c-message--scope-section,
-:--c-message--scope-global {
-  font-size: var(--global-font-size--small);
-}
-
 :--c-message--scope-section {
-  --pad-vert: 15px;
-  --pad-horz: 20px;
-
-  border-width: var(--global-border-width--thick);
-  border-style: solid;
+  @mixin message-v1--scope-section;
+}
+:--c-message--scope-global {
+  @mixin message-v1--scope-global;
 }
 
-/* Skin */
+:--c-message--type-info {
+  @mixin message-v1--type-info;
+}
+:--c-message--type-success {
+  @mixin message-v1--type-success;
+}
+:--c-message--type-warning {
+  @mixin message-v1--type-warning;
+}
+:--c-message--type-error {
+  @mixin message-v1--type-error;
+}
+:--c-message--type-extra {
+  @mixin message-v1--type-extra;
+}
 
-:--c-message--type-info:not(:--c-message--scope-global) {
-  color: var(--global-color-info--dark);
+:--c-message--type-info:--c-message--scope-section {
+  @mixin message-v1--type-info---message-v1--scope-section;
 }
-:--c-message--type-success:not(:--c-message--scope-global) {
-  color: var(--global-color-success--dark);
+:--c-message--type-success:--c-message--scope-section {
+  @mixin message-v1--type-success---message-v1--scope-section;
+
+  /* IDEA: Add icons (in v3) */
+  /*
+  @mixin message--has-icon---message--type-success;
+  @mixin message--has-icon---message--scope-section;
+  @mixin message--has-icon;
+  */
 }
-:--c-message--type-warning:not(:--c-message--scope-global) {
-  color: var(--global-color-warning--dark);
+:--c-message--type-warning:--c-message--scope-section {
+  @mixin message-v1--type-warning---message-v1--scope-section;
+
+  /* IDEA: Add icons (in v3) */
+  /*
+  @mixin message--has-icon---message--type-success;
+  @mixin message--has-icon---message--scope-section;
+  @mixin message--has-icon;
+  */
 }
-:--c-message--type-error:not(:--c-message--scope-global) {
-  color: var(--global-color-danger--dark);
+:--c-message--type-error:--c-message--scope-section {
+  @mixin message-v1--type-error---message-v1--scope-section;
+
+  /* IDEA: Add icons (in v3) */
+  /*
+  @mixin message--has-icon---message--type-success;
+  @mixin message--has-icon---message--scope-section;
+  @mixin message--has-icon;
+  */
 }
-:--c-message--type-tip:not(:--c-message--scope-global) {
-  color: var(--global-color-extra--dark);
+:--c-message--type-extra:--c-message--scope-section {
+  @mixin message-v1--type-extra---message-v1--scope-section;
 }

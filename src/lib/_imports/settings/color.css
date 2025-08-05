@@ -1,3 +1,5 @@
+@design-tokens url('../../tokens/v2.json') format('style-dictionary3');
+
 /* SETTINGS: Color */
 
 /* Usage: `var(--global-color-primary--normal)` */
@@ -5,13 +7,10 @@
 
 /* Modifers
     --normal:   standard color
-    --alt:      alternate color
-    --weak:     transparent instance
+    --weak:     transparent instance (DEPRECATED)
     --(…)light: lighter value
     --(…)dark:  darker value
-    --(…)rgb:   "R, G, B" value partial (ex. usage: `rgba(var(--...-rgb), 0.5)`)
 */
-/* SEE: https://huetone.ardov.me/?palette=N4IgdghgtgpiBcIAqBBAwmkAaEALArjAM4IDaoksCIADgPYBOALhADYC02IAxna4yXikQAYgBmEMQBYxYruICMMAEZiAJvJgBmNQHZ18tQFZVs%2BRC0AOXTA04RuyzJiX5ANgAMWgJzdu8nQVLb2V5ACZLBQ83N3klD24pfwBdAF8sCmg4RAg-GDAmThxefgZBYXEtMX04ezUxGEla0W4INXrmkQhc-Tl7SzcIGDN7Dy8fb3kxsLCYqY8FBS0tKbCFMK0PeY8IGZA0jPAs6iIYXjA1CAYATyKePgEyUUsPF5f5N9et%2BzFuMTczpojHpuN9RMZlEZdP5%2BrpdFIjCt7EYFFItBEAujuAo%2Bs8vu9%2BvitgdMlREEwYMwAJZXW5cEqPIR4z4fImafQ4sEiZQKNQKbidbxhPzcIzuBQWXzyKTRNRuVz2JTLLQKVkswksklHMkgKlgMR0O4MspPESfAnMr5qq0-GR2wy6PR6eS6Dyu13Spxe8IzX3Wi1mtlayjZECXMAAc0pRoeJqZgfVloD5q5vxgUjUoR%2BrTE3lV9lsSUW8m4GwgXnk3nRymi-q5Kf26VJoYA7lcwHqIzHSuUk-W2RqbaJ1GIPGokcPbJYA2Iwsp0boS2pvLp%2BZXvG5RxA6zvg8dEER8HkiERu4yKg3B8mB6JlJJLGoYaIq-9uHZRFFqhBJvYdAKheE8qWEYuIJkOYHvHuOowAAHkwDAQGecYXjeEH9om4geP8IwtGEmYSAEYjAdI4RGCYPJxPC34-n2u6pMkOBMHQYDEE8UAQDB7CsFSEa4EwXAwYJXE8XxAmcdxvH8Tg4kiVJIASaJOBgIw7GsFwlwMAA1gJ7Aadp0mcXpYmGVc2lpEAA */
 
 :root {
 
@@ -19,109 +18,95 @@
   /* FAQ: Primary colors of an app (neutral text, borders, backgrounds) */
   /* IDEA: Rename these from `primary` to `neutral` */
 
-  --global-color-primary--xx-light: #FFFFFF;
-    --global-color-primary--xx-light-rgb: 255, 255, 255;
-  --global-color-primary--x-light: #F4F4F4;
-    --global-color-primary--x-light-rgb: 244, 244, 244;
-  --global-color-primary--light: #D7D7D7;
-    --global-color-primary--light-rgb: 198, 198, 198;
-  --global-color-primary--normal: #AFAFAF;
-    --global-color-primary--normal-rgb: 175, 175, 175;
-  --global-color-primary--dark: #707070;
-    --global-color-primary--dark-rgb: 112, 112, 112;
-  --global-color-primary--x-dark: #484848;
-    --global-color-primary--x-dark-rgb: 72, 72, 72;
-  --global-color-primary--xx-dark: #222222;
-    --global-color-primary--xx-dark-rgb: 34, 34, 34;
+  --global-color-primary--xx-light: design-token('color.gray.light-2x');
+  --global-color-primary--x-light: design-token('color.gray.light-x');
+  --global-color-primary--light: design-token('color.gray.light');
+  --global-color-primary--normal: design-token('color.gray.medium');
+  --global-color-primary--dark: design-token('color.gray.dark');
+  --global-color-primary--x-dark: design-token('color.gray.dark-x');
+  --global-color-primary--xx-dark: design-token('color.gray.dark-2x');
   --global-color-primary--xxx-dark: #000000;
-    --global-color-primary--xxx-dark-rgb: 0, 0, 0;
 
 
 
   /* Accent */
 
-  --global-color-accent--xxx-light: #dfeafe;
-  --global-color-accent--xx-light: #caddfe;
-  --global-color-accent--x-light: #AAC7FF;
-  --global-color-accent--light: #86aeff;
-  --global-color-accent--normal: #003399;
-  --global-color-accent--dark: #002266;
-  --global-color-accent--x-dark: #001133;
-  --global-color-accent--xx-dark: #021230;
-  --global-color-accent--xxx-dark: #000a22;
+  --global-color-accent--xxx-light: #dfeafe; /* DEPRECATED */
+  --global-color-accent--xx-light: design-token('color.v2.blue.light-2x');
+  --global-color-accent--x-light: design-token('color.v2.blue.light-x');
+  --global-color-accent--light-old: design-token('color.v2.blue.light-old'); /* DEPRECATED */
+  --global-color-accent--light: design-token('color.v2.blue.light');
+  --global-color-accent--normal: design-token('color.v2.blue.medium');
+  --global-color-accent--dark: design-token('color.v2.blue.dark');
+  --global-color-accent--x-dark: design-token('color.v2.blue.dark-x');
+  --global-color-accent--xx-dark: design-token('color.v2.blue.dark-2x');
+  --global-color-accent--xxx-dark: #000a22; /* DEPRECATED */
+
+  --global-color-secondary--xx-light: design-token('color.v2.gold.light-2x');
+  --global-color-secondary--x-light: design-token('color.v2.gold.light-x');
+  --global-color-secondary--light: design-token('color.v2.gold.light');
+  --global-color-secondary--normal: design-token('color.v2.gold.medium');
+  --global-color-secondary--dark: design-token('color.v2.gold.dark');
+  --global-color-secondary--x-dark: design-token('color.v2.gold.dark-x');
+  --global-color-secondary--xx-dark: design-token('color.v2.gold.dark-2x');
+
+  --global-color-tertiary--xx-light: design-token('color.v2.teal.light-2x');
+  --global-color-tertiary--x-light: design-token('color.v2.teal.light-x');
+  --global-color-tertiary--light: design-token('color.v2.teal.light');
+  --global-color-tertiary--normal: design-token('color.v2.teal.medium');
+  --global-color-tertiary--dark: design-token('color.v2.teal.dark');
+  --global-color-tertiary--x-dark: design-token('color.v2.teal.dark-x');
+  --global-color-tertiary--xx-dark: design-token('color.v2.teal.dark-2x');
 
   /* DEPRECATED */
-  /* TODO: Do not use these in TUP CMS (Snippet) CSS */
   --global-color-accent--secondary: var(--global-color-secondary--normal);
   --global-color-accent--tertiary: var(--global-color-tertiary--normal);
-
-  --global-color-secondary--xx-light: #fcf6ec;
-  --global-color-secondary--x-light: #e5d7c0;
-  --global-color-secondary--light: #d5b57c; /* from designer */
-  --global-color-secondary--normal: #877453; /* from designer */
-  --global-color-secondary--dark: #514328;
-  --global-color-secondary--x-dark: #332C1F; /* from designer */
-  /* HELP: Where is this used? Not Core-Styles nor TACC CMS global snippets… */
-  --global-color-secondary--xxx-dark: var(--global-color-secondary--x-dark);
-
-  --global-color-tertiary--xx-light: #e7f1f0; /* from designer */
-  --global-color-tertiary--x-light: #b1d1ce;
-  --global-color-tertiary--light: #92ccc5;
-  --global-color-tertiary--normal: #61A39C; /* from designer */
-  --global-color-tertiary--dark: #406d68;
-  --global-color-tertiary--x-dark: #1E3331; /* from designer */
-  /* HELP: Where is this used? Not Core-Styles nor TACC CMS global snippets… */
-  --global-color-tertiary--xxx-dark: var(--global-color-tertiary--x-dark);
-
 
 
   /* State */
 
-  --global-color-info--x-light: var(--global-color-primary--x-light);
-  --global-color-info--light: var(--global-color-primary--light);
-  --global-color-info--normal: var(--global-color-primary--dark);
-    --global-color-info--normal-rgb: var(--global-color-primary--dark-rgb);
-  --global-color-info--dark: var(--global-color-primary--x-dark);
-  --global-color-info--x-dark: var(--global-color-primary--xx-dark);
+  --global-color-info--x-light: design-token('color.info.light-x');
+  --global-color-info--light: design-token('color.info.light');
+  --global-color-info--normal: design-token('color.info.medium');
+  --global-color-info--dark: design-token('color.info.dark');
+  --global-color-info--x-dark: design-token('color.info.dark-x');
 
-  --global-color-danger--x-light: #fce4db; /* from designer */
-  --global-color-danger--light: #fcaf91;
-  --global-color-danger--normal: #ed4c11; /* from designer */
-    --global-color-danger--normal-rgb: 237, 76, 17;
-  --global-color-danger--dark: #c23a03;
-  --global-color-danger--x-dark: #932b06;
+  --global-color-danger--x-light: design-token('color.danger.light-x');
+  --global-color-danger--light: design-token('color.danger.light');
+  --global-color-danger--normal: design-token('color.danger.medium');
+  --global-color-danger--dark: design-token('color.danger.dark');
+  --global-color-danger--x-dark: design-token('color.danger.dark-x');
 
-  --global-color-warning--x-light: #FDF0D3; /* from designer */
-  --global-color-warning--light: #fed880;
-  --global-color-warning--normal: #F2B327; /* from designer */
-    --global-color-warning--normal-rgb: 242, 179, 39;
-  --global-color-warning--dark: #cd971c;
-  --global-color-warning--x-dark: #996f0a;
+  --global-color-warning--x-light: design-token('color.warning.light-x');
+  --global-color-warning--light: design-token('color.warning.light');
+  --global-color-warning--normal: design-token('color.warning.medium');
+  --global-color-warning--dark: design-token('color.warning.dark');
+  --global-color-warning--x-dark: design-token('color.warning.dark-x');
 
-  --global-color-success--x-light: #baf8dc; /* from designer */
-  --global-color-success--light: #93f6cd;
-  --global-color-success--normal: #10f7a9; /* from designer */
-    --global-color-success--normal-rgb: 16, 247, 169;
-  --global-color-success--dark: #3dce92;
-  --global-color-success--x-dark: #26885f;
+  --global-color-success--x-light: design-token('color.success.light-x');
+  --global-color-success--light: design-token('color.success.light');
+  --global-color-success--normal: design-token('color.success.medium');
+  --global-color-success--dark: design-token('color.success.dark');
+  --global-color-success--x-dark: design-token('color.success.dark-x');
 
-  --global-color-extra--x-light: #f0f6ff; /* from designer */
-  --global-color-extra--light: #b4d0f9;
-  --global-color-extra--normal: #3f85f4; /* from designer */
-    --global-color-extra--normal-rgb: 63, 133, 244;
-  --global-color-extra--dark: #255bb1;
-  --global-color-extra--x-dark: #174a99;
+  --global-color-extra--x-light: design-token('color.extra.light-x');
+  --global-color-extra--light: design-token('color.extra.light');
+  --global-color-extra--normal: design-token('color.extra.medium');
+  --global-color-extra--dark: design-token('color.extra.dark');
+  --global-color-extra--x-dark: design-token('color.extra.dark-x');
 
-  --global-color-info--weak: rgba( var(--global-color-info--normal-rgb), 0.125 );
-  --global-color-danger--weak: rgba( var(--global-color-danger--normal-rgb), 0.125 );
-  --global-color-warning--weak: rgba( var(--global-color-warning--normal-rgb), 0.125 );
-  --global-color-success--weak: rgba( var(--global-color-success--normal-rgb), 0.125 );
-  --global-color-extra--weak: rgba( var(--global-color-extra--normal-rgb), 0.125 );
+  /* DEPRECATED */
+  --global-color-info--weak: rgb( from design-token('color.info.medium') r g b / 0.125 );
+  --global-color-danger--weak: rgb( from design-token('color.danger.medium') r g b / 0.125 );
+  --global-color-warning--weak: rgb( from design-token('color.warning.medium') r g b / 0.125 );
+  --global-color-success--weak: rgb( from design-token('color.success.medium') r g b / 0.125 );
+  --global-color-extra--weak: rgb( from design-token('color.extra.medium') r g b / 0.125 );
+
 
 
   /* Generic */
 
-  --global-color-background--app: var(--global-color-primary--xx-light);
+  --global-color-background--app: design-token('color.gray.light-2x');
 
 
 

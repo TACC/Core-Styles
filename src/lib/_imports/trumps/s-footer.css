@@ -1,3 +1,6 @@
+@import url("../tools/selectors.css");
+@import url("../components/c-button.selectors.css");
+
 @import url("./s-footer.properties.css");
 
 .s-footer {
@@ -16,9 +19,16 @@
   padding-inline: var(--pad-horz--thin);
 }
 
-.s-footer a {
-  /* NOTE: Design by M.S. (for TACC), confirmed by H.P. (for TACC CMS) */
-  color: var(--global-color-primary--light);
+.s-footer a:not(:--c-button, :hover) {
+    color: var(--global-color-primary--light)
+}
+
+.s-footer a:not(:--c-button):hover {
+    color: var(--global-color-accent--light-old)
+}
+
+.s-footer :--heading {
+  color: var(--global-color-primary--xx-light);
 }
 
 /* Let paragraphs behave normally */
@@ -27,3 +37,8 @@
 }
 .s-footer > p:first-of-type { margin-top: 0; }
 .s-footer > p:last-of-type { margin-bottom: 0; }
+
+/* To suggest semantic solution for horiontal lines */
+.s-footer hr {
+    margin-block: 1rem;
+}

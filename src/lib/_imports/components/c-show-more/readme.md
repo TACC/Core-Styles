@@ -1,0 +1,2 @@
+- Will show more text when the user clicks the toggle.
+- Will show less text when the user clicks the toggle again.

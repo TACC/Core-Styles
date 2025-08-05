@@ -7,6 +7,28 @@
     @mixin message;
   }
 
+  .x-message--scope-inline {
+    @mixin message--scope-inline;
+  }
+  .x-message--scope-inline.x-message--type-info {
+    @mixin message--type-info---message--scope-inline;
+  }
+  .x-message--scope-inline.x-message--type-success {
+    @mixin message--type-success---message--scope-inline;
+  }
+  .x-message--scope-inline.x-message--type-warning {
+    @mixin message--type-warning---message--scope-inline;
+  }
+  .x-message--scope-inline.x-message--type-error {
+    @mixin message--type-error---message--scope-inline;
+  }
+  .x-message--scope-inline.x-message--type-extra {
+    @mixin message--type-extra---message--scope-inline;
+  }
+
+  .x-message--scope-section {
+    @mixin message--scope-section;
+  }
   .x-message--scope-section.x-message--type-info {
     @mixin message--type-info---message--scope-section;
   }
@@ -19,11 +41,36 @@
   .x-message--scope-section.x-message--type-error {
     @mixin message--type-error---message--scope-section;
   }
-  .x-message--scope-section.x-message--type-tip {
-    @mixin message--type-tip---message--scope-section;
+  .x-message--scope-section.x-message--type-extra {
+    @mixin message--type-extra---message--scope-section;
   }
 
   .x-message--scope-global {
     @mixin message--scope-global;
+  }
+
+  .x-message--has-icon.x-message--scope-section {
+    @mixin message--has-icon;
+    @mixin message--has-icon---message--scope-section;
+  }
+  .x-message--has-icon.x-message--type-info,
+  .x-message--scope-inline.x-message--type-info {
+    @mixin message--has-icon---message--type-info;
+  }
+  .x-message--has-icon.x-message--type-success,
+  .x-message--scope-inline.x-message--type-success {
+    @mixin message--has-icon---message--type-success;
+  }
+  .x-message--has-icon.x-message--type-warning,
+  .x-message--scope-inline.x-message--type-warning {
+    @mixin message--has-icon---message--type-warning;
+  }
+  .x-message--has-icon.x-message--type-error,
+  .x-message--scope-inline.x-message--type-error {
+    @mixin message--has-icon---message--type-error;
+  }
+  .x-message--has-icon.x-message--type-extra,
+  .x-message--scope-inline.x-message--type-extra {
+    @mixin message--has-icon---message--type-extra;
   }
 }
