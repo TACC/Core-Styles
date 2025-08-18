@@ -32,7 +32,6 @@ export default function makeLinkContentSelectable(
 
   function processLink(link) {
     link.draggable = false;
-    link.setAttribute(attribute, 'true');
 
     link.querySelectorAll(contentQuerySelector).forEach(element => {
       element.addEventListener('click', (e) => {
@@ -43,7 +42,9 @@ export default function makeLinkContentSelectable(
   }
 
   // For present links
-  document.querySelectorAll(`a:has(${contentQuerySelector})`).forEach(processLink);
+  document.querySelectorAll(
+    `a[${attribute}]:has(${contentQuerySelector})`
+  ).forEach(processLink);
 
   // For future links
   const observer = new MutationObserver((mutations) => {
