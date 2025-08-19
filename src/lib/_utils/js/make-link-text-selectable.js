@@ -1,59 +1,68 @@
 /**
- * Makes text selectable within anchor links
+ * Makes text selectable within specified anchor links
  * (applies to existing links and new links)
- * @param {string} [attribute="data-text-selectable"] - The attribute to add to selectable text selectable
- * @param {string|string[]} [contentQuerySelector='*'] - CSS selector string to match the elements to make selectable
- * @param {string} [layer] - A CSS layer to use for styles
+ * @param {string} [linkAttribute="data-text-selectable"] - The linkAttribute on links with selectable text
+ * @param {string|string[]} [linkTextSelector='*'] - Query to find link text elements to make selectable
+ * @param {string} [cssLayer] - The CSS layer for the required styles
  * @returns {Object} An object with a `disable` method to remove the functionality
  */
 export default function makeLinkContentSelectable(
-  attribute = 'data-text-selectable',
-  contentQuerySelector = '*',
-  layer
+  linkAttribute = 'data-text-selectable',
+  linkTextSelector = '*',
+  cssLayer
 ) {
+  const linkQuery = `a[${linkAttribute}]:has(${linkTextSelector})`;
+
   const style = document.createElement('style');
         style.textContent = `
-          a[${attribute}] {
+          a[${linkAttribute}] {
             display: inline-block;
           }
-          a[${attribute}] :is(${contentQuerySelector}) {
+          a[${linkAttribute}] :is(${linkTextSelector}) {
             cursor: text;
             -webkit-user-select: text;
             user-select: text;
           }
       `;
-      if (layer) {
+      if (cssLayer) {
         style.textContent = `
-        @layer ${layer} {` + '\n'
+        @layer ${cssLayer} {` + '\n'
           + style.textContent + `
         }`;
       }
   document.head.appendChild(style);
 
+  function handleClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
   function processLink(link) {
     link.draggable = false;
-
-    link.querySelectorAll(contentQuerySelector).forEach(element => {
-      element.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-      });
+    link.querySelectorAll(linkTextSelector).forEach(element => {
+      element.addEventListener('click', handleClick);
+    });
+  }
+  function unProcessLink(link) {
+    link.draggable = true;
+    link.querySelectorAll(linkTextSelector).forEach(element => {
+      element.addEventListener('click', handleClick);
     });
   }
 
   // For present links
-  document.querySelectorAll(
-    `a[${attribute}]:has(${contentQuerySelector})`
-  ).forEach(processLink);
+  document.querySelectorAll(linkQuery).forEach(link => {
+    processLink(link);
+  });
 
   // For future links
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
-        if (node.nodeType === Node.ELEMENT_NODE) {
-          if (node.tagName === 'A') processLink(node);
-          const links = node.querySelectorAll && node.querySelectorAll('a');
-          if (links) links.forEach(processLink);
+        const isElement = node.nodeType === Node.ELEMENT_NODE;
+        const isLinkToProcess = isElement && node.matches(linkQuery);
+        if (isLinkToProcess) {
+          processLink(node);
         }
       });
     });
@@ -67,9 +76,8 @@ export default function makeLinkContentSelectable(
     disable: () => {
       observer.disconnect();
       style.remove();
-      document.querySelectorAll(`a[${attribute}]`).forEach(link => {
-        link.removeAttribute(attribute);
-        link.draggable = true;
+      document.querySelectorAll(linkQuery).forEach(link => {
+        unProcessLink(link);
       });
       console.log('Disabled selectable text in links');
     }
