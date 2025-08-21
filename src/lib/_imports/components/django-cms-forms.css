@@ -18,3 +18,11 @@
   font-size: inherit; /* to let Core-Styles `em` margin use regular font size */
   width: 0; /* to remove space from asterisk character */
 }
+
+/* TODO: Test whether this fixes size difference between demo and cms */
+/*
+::file-selector-button {
+  @extend .c-button;
+  @extend .c-button--secondary;
+}
+*/

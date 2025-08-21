@@ -23,7 +23,7 @@
 /* To prevent help text font-style from affecting any tags */
 /* FAQ: Help text can contain inline elements like <samp> */
 /* FAQ: Help text can be (ab)used to add headings between form fields */
-:--form__help > :where(:not(details, a, samp)) {
+:--form__help > :where(:not(details, a, samp, small)) {
   font-style: initial;
 }
 
@@ -162,3 +162,11 @@ ul:--form__errors--field {
 :--form__buttons button:not(:--form__button)[type="reset"] {
   @extend :--c-button--tertiary;
 }
+
+/* TODO: Test whether this fixes size difference between demo and cms */
+/*
+::file-selector-button {
+  @extend .c-button;
+  @extend .c-button--secondary;
+}
+*/
