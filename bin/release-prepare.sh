@@ -85,5 +85,5 @@ git commit -m "chore: $version_tag"
 # Push branch
 git push origin "$branch_name"
 
-echo "Branch pushed. Please create and merge PR for $branch_name"
+echo -e "Branch pushed. Please create and merge PR for $branch_name via\n    https://github.com/TACC/Core-Styles/compare/main...$branch_name?template=release_template.md"
 echo -e "After PR is merged, run:\n    ./bin/release-publish.sh $version_tag"
