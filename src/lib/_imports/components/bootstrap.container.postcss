@@ -1,0 +1,14 @@
+@import url("../tools/media-queries.postcss");
+
+@media (--xx-wide-and-above) {
+  .container { max-width: var(--global-max-width--x-wide); }
+}
+@media (--xxx-wide-and-above) {
+  .container { max-width: var(--global-max-width--xx-wide); }
+}
+/* FAQ: We can do this, but Design does not want to stretch this wide */
+/*
+@media (--xxx-wide-and-above) {
+  .container { max-width: var(--global-max-width--xxx-wide); }
+}
+*/
