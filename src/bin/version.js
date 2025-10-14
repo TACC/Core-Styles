@@ -1,20 +1,35 @@
 #!/usr/bin/env node
 
-/** Create CSS version based on lifecycle app data and given data */
+/** Create CSS version based on available data */
 
 const package = require(process.env.npm_package_json || '../package.json');
 
 /**
- * Create version from app data and given data
+ * Create version from available data
  * @param {string} [buildId] - Any value to identify the build
  */
 function create(buildId) {
   const appName = package.name;
-  const appVersion = buildId || package.version + '+';
+  const appVersion = buildId || gitDescribeTag() || package.version + '+';
   const appLicense = package.license;
   const appWebsite = package.homepage.replace('https://', '');
 
   return `${appName} ${appVersion} | ${appLicense} | ${appWebsite}`;
+}
+
+/** Get tag-based description from Git */
+function gitDescribeTag() {
+  const { execSync } = require('child_process');
+  const gitDescribe = undefined;
+
+  try {
+    gitDescribe = execSync('git describe --tags', { encoding: 'utf8' }).trim();
+    console.log('Output from `git describe`:', gitDescribe);
+  } catch (error) {
+    console.error('Error running `git describe`:', error.message);
+  }
+
+  return gitDescribe;
 }
 
 /*
