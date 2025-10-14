@@ -41,8 +41,4 @@ else
 fi
 
 # Create GitHub release
-echo "Please create a release on GitHub now."
-echo "Visit: https://github.com/TACC/Core-Styles/releases/new"
-read -p "Press Enter once you've created the release..."
-
-echo "Release process complete!" 
+echo "Create GitHub release now: https://github.com/TACC/Core-Styles/releases/new"
