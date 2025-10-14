@@ -20,7 +20,8 @@ function create(buildId) {
 /** Get tag-based description from Git */
 function gitDescribeTag() {
   const { execSync } = require('child_process');
-  const gitDescribe = undefined;
+
+  let gitDescribe = undefined;
 
   try {
     gitDescribe = execSync('git describe --tags', { encoding: 'utf8' }).trim();
