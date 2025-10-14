@@ -1,9 +1,0 @@
-@import url("../tools/selectors.css");
-@import url("../tools/x-figure.css");
-@import url("../tools/x-blockquote.css");
-
-/* To style elements that have captions */
-figure { @extend .x-figure; }
-figcaption { @extend .x-figure-caption; }
-blockquote { @extend .x-blockquote; }
-blockquote footer { @extend .x-blockquote-caption; }

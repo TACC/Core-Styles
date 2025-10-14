@@ -1,0 +1,45 @@
+/*
+Float Content (Responsive)
+
+Content that should be:
+1. floated in the flow of text within which it is placed
+2. not floated at certain viewports
+
+Styleguide Objects.FloatContent
+*/
+@import url("../tools/media-queries.postcss");
+
+
+
+@custom-selector :--o-float-content
+  .o-float-content--left,
+  .o-float-content--right;
+
+
+
+:--o-float-content {
+	--buffer: calc( 2 * var(--global-space--grid-gap) );
+}
+
+@media only screen and (--medium-and-above) {
+	.o-float-content--right {
+		float: right;
+		margin-left: var(--buffer);
+	}
+	.o-float-content--right + .o-float-content--right { clear: right; }
+
+	.o-float-content--left {
+		float: left;
+		margin-right: var(--buffer);
+	}
+	.o-float-content--left + .o-float-content--left { clear: left; }
+
+  .figure:is(:--o-float-content) .figure-caption {
+    padding-right: 125px;
+  }
+}
+@media only screen and (--medium-and-above) and (--max-wide-and-below) {
+  :--o-float-content {
+    max-width: 560px;
+  }
+}

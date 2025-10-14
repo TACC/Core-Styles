@@ -1,0 +1,37 @@
+/*! core-styles.header.css */
+/* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
+
+/* Organize via ITCSS */
+/* https://tacc-main.atlassian.net/wiki/x/QQhv */
+
+/* SETTINGS */
+/* To get these, client should load `./base.css` first */
+
+/* GENERICS */
+/* Mostly from Bootstrap */
+/* https://tacc-main.atlassian.net/wiki/x/khJv */
+
+/* ELEMENTS */
+/* To override Bootstrap */
+/* (none) */
+
+/* OBJECTS */
+/* (none) */
+
+/* COMPONENTS */
+@import url("./components/bootstrap.dropdown.postcss");
+
+/* TRUMPS */
+/* FAQ: Because of third-party code and a rush to style the Frontera header
+        (which meant maintaining existing markup), scope classes were used for
+        - the header
+        - the Portal nav
+        - the CMS nav
+*/
+@import url("./trumps/s-header.postcss");
+@import url("./trumps/s-portal-nav.postcss");
+@import url("./trumps/s-cms-nav.postcss");
+
+/* UNORGANIZED */
+/* TODO: Convert to a component */
+@import url("./branding_logos.postcss");
