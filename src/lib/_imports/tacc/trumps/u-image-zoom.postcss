@@ -1,6 +1,8 @@
 @import url("./u-image-zoom.selectors.postcss");
 
 :--u-image-zoom {
+  --scale: 1.5;
+
   display: block;
   overflow: hidden;
 }
@@ -12,5 +14,5 @@
          so explitely limit this utility to anchors */
 a:--u-image-zoom:hover :--u-image-zoom__media,
 a:hover :--u-image-zoom :--u-image-zoom__media {
-  transform: scale(1.5);
+  transform: scale( var(--scale, 1.5) );
 }
