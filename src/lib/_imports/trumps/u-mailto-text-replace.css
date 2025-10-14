@@ -1,7 +1,0 @@
-/* A utility class of `x-mailto-text-replace` */
-
-@import url("../tools/x-mailto-text-replace.css");
-
-.u-mailto-text-replace[data-user][data-domain] {
-    @extend %x-mailto-text-replace;
-}

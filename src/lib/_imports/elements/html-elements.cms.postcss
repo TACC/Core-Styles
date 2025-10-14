@@ -1,0 +1,263 @@
+@import url("../tools/selectors.postcss");
+@import url("../tools/selectors.form.postcss");
+
+/* To scope these styles to main content (i.e. not header, not navbar) */
+:where(:--main-content) {
+
+
+
+
+
+/*
+Content Sectioning
+
+Elements that organize a document into logical pieces and create a broad outline for page content.
+
+```
+<main> <nav> <section> <header> <h1> <h2> <h3> <h4> <h5> <h6> <hgroup> <footer> <article> <aside> <address>
+```
+
+Reference:
+
+- [HTML element reference: Content sectioning | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Content_sectioning)
+
+Styleguide Elements.ContentSectioning
+*/
+
+/* Headings */
+
+/* SEE: ./headings--cms.css */
+
+
+
+
+
+/*
+Text Content
+
+Elements that organize blocks or sections of content placed (includes lists).
+
+```
+<blockquote> <dd> <div> <dl> <dt> <figcaption> <figure> <hr> <li> <ol> <p> <pre> <ul>
+```
+
+Reference:
+
+- [HTML element reference: Text content | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Text_content)
+
+Styleguide Elements.TextContent
+*/
+
+& p {
+  margin-bottom: 2rem; /* overwrite Bootstrap */
+}
+p + :is(ul, ol, dl) {
+    margin-top: -1rem;
+}
+
+/* Lists */
+
+& :where(
+  ol, ul,
+  dl dl /* Treat nested definition lists like other nested lists */
+) {
+  padding-left: var(--global-space--list-indent);
+}
+& :is(
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul
+) {
+  margin: revert; /* Undo Bootstrap `_reboot.css` */
+}
+/* Add space between `dt` and `dd` */
+& dt {
+  margin-bottom: .5rem; /* overwrite Bootstrap */
+  font-weight: initial; /* overwrite Bootstrap */
+}
+
+& li:not(td li) {
+  line-height: 1.6;
+}
+
+/* Figures */
+
+/* https://stackoverflow.com/a/49287729/11817077 */
+/* To make figure size and caption wrap dependent on content:
+  - figure unaffected by content with intrinsic width
+  - shrink figure to content with dynamic width
+  - shrink figure to content with static width
+  - prevent content from overflowing parent
+  - wrap caption text at content edge
+*/
+& figure {
+  display: table;
+}
+& figure figcaption {
+  display: table-caption;
+  caption-side: bottom;
+}
+
+/* Misc. */
+
+& hr {
+  margin-top: var(--global-space--hr-buffer-above); /* overwrite Bootstrap */
+
+  border-top-width: var(--global-border-width--normal);
+  border-top-style: solid;
+  border-top-color: var(--global-color-primary--light);
+
+  margin-bottom: var(--global-space--hr-buffer-below); /* overwrite Bootstrap */
+}
+
+
+
+
+
+/*
+Inline Text Semantics
+
+Elements that define the meaning, structure, or style of a word, line, or any arbitrary piece of text. (The [<a>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) is styled in `../links.css`.)
+
+```
+<abbr> <b> <bdi> <bdo> <br> <cite> <code> <data> <dfn> <em> <i> <kbd> <mark> <q> <rb> <rp> <rt> <rtc> <ruby> <s> <samp> <small> <span> <strong> <sub> <sup> <time> <u> <var> <wbr>
+```
+
+Reference:
+
+- [HTML element reference: Inline text semantics | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Inline_text_semantics)
+
+Styleguide Elements.InlineTextSemantics
+*/
+
+/* To allow user to distinguish bold and black */
+& strong {
+  font-weight: var(--bold);
+}
+& b {
+  font-weight: var(--black);
+}
+
+/* Monospace */
+
+/* SEE: ./monospace.css */
+
+
+
+
+
+/*
+Demarcating Edits
+
+Elements that provide indications that specific parts of the text have been altered.
+
+```
+<del> <ins>
+```
+
+Reference:
+
+- [HTML element reference: Demarcating edits | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Demarcating_edits)
+
+Styleguide Elements.DemarcatingEdits
+*/
+
+/* To improve default underline style for inserted text */
+ins {
+    text-underline-position: under;
+    text-decoration-style: dotted;
+}
+
+/* To highlight blocks of inserted content */
+.ins-block {
+    /* To keep outline within a .container */
+    --offset: calc( var(--global-space--bootstrap-gap) * 0.375 );
+
+    border: 0.125em dotted currentcolor;
+    padding: var(--offset);
+
+    /* To keep outline within a .container */
+    margin-inline: calc( -1 * var(--offset));
+    /* To prevent outline from touching sibling content */
+    margin-block: 1em;
+
+    /* To create color that is between `x-light` and `xx-light` */
+    background: rgb( from var(--global-color-primary--x-light) r g b / 50% );
+}
+/* To remove likely extra space from final p */
+.ins-block > p:last-child {
+    margin-bottom: unset;
+}
+
+
+
+
+
+/*
+Image & Multimedia
+
+Elements that support various multimedia resources such as images, audio, and video.
+
+```
+<area> <audio> <img> <map> <track> <video>
+```
+
+Reference:
+
+- [HTML element reference: Image and multimedia | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Image_and_multimedia)
+
+Styleguide Elements.Media
+*/
+
+/* … */
+
+
+
+
+
+/*
+Embedded Content
+
+Elements that support various other media that has limited interaction.
+
+```
+<embed> <iframe> <object> <param> <picture> <source>
+```
+
+Reference:
+
+- [HTML element reference: Embedded content | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Embedded_content)
+
+Styleguide Elements.EmbeddedContent
+*/
+
+/* … */
+
+
+
+
+
+/*
+SVG & MathML
+
+Elements for Scalable Vector Graphics and Mathematical Markup Language.
+
+```
+<svg> <math>
+```
+
+Reference:
+
+- [HTML element reference: Demarcating edits | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Demarcating_edits)
+
+Styleguide Elements.DemarcatingEdits
+*/
+
+/* … */
+
+
+
+
+
+}
