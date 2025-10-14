@@ -1,0 +1,48 @@
+<main>
+  <p>
+    {{#if bodyContent}}
+      {{{bodyContent}}}
+    {{else}}
+      Sample body content. Footer is at bottom of page.
+    {{/if}}
+  </p>
+    {{#if shouldLoadCMS}}
+  <p>
+    CMS always uses <a href="{{path '../detail/s-footer--thick'}}" target="_parent">thick</a> footer.
+  </p>
+    {{/if}}{{#if shouldLoadPortal}}
+  <p>
+    Portal always uses <a href="{{path '../detail/s-footer--thin'}}" target="_parent">thin</a> footer.
+  </p>
+    {{/if}}{{#if shouldLoadBootstrap4}}
+  <p>
+    This pattern is not protected from Bootstrap side-effects (e.g. heading margin).
+  </p>
+    {{/if}}
+</main>
+<footer class="s-footer{{#if modifier }} s-footer--{{ modifier }}{{/if}}">
+  {{#if isComplex}}
+  <div style="text-align:left;">
+    <h4>About</h4>
+    <p>
+      <a href="#">About TACC</a><br>
+      <a href="#">Jobs at TACC</a><br>
+      <a href="#">Contact</a><br>
+      <a href="#">Staff Directory</a><br>
+      <a href="#">Tours</a><br>
+      <a href="#">Citing TACC</a><br>
+      <a href="#">Security and Compliance</a><br>
+      <a href="#">Help</a>
+    </p>
+    <hr>
+    <a href="#" class="c-button c-button--primary">Button</a>
+  </div>
+  {{else}}
+    <p>
+      ©2023
+      <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Advanced Computing Center</a>,
+      <a href="https://www.utexas.edu/" target="_blank">The University of Texas at Austin</a>,
+      <a href="https://research.utexas.edu/" target="_blank">Office of the Vice President for Research</a>.
+    </p>
+  {{/if}}
+</footer>

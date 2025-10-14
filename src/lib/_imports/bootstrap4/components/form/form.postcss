@@ -1,0 +1,19 @@
+/* FAQ: c-form.css styles most of all form patterns */
+@import url("../../../tacc/components/c-form/c-form.postcss");
+
+.form-check {
+    padding-left: unset; /* to overwrite Bootstrap */
+}
+.form-check-input {
+    position: unset;
+}
+.form-check label {
+    margin-bottom: unset;
+}
+
+/* To overwrite Bootstrap's muted text color that they often suggest */
+@layer foundation {
+    .form-text.text-muted {
+        color: inherit !important;
+    }
+}

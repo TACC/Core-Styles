@@ -1,0 +1,5 @@
+label: Align
+context:
+  subdir: "djangocms-picture/djangocms-picture-align"
+  shouldSkipPattern: false
+  📝 shouldSkipPattern: because core-styles.….css does not import this
