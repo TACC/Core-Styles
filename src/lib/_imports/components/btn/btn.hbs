@@ -1,0 +1,25 @@
+{{#groups}}
+<dl>
+    <dt>{{title}}</dt>
+    {{#types}}
+    <dd>
+    {{#unless asLink}}
+    <button
+        type="button"
+        class="btn btn-{{type}}{{#if size}} btn-{{size}}{{/if}}{{#if active}} active{{/if}}"
+        {{#if disabled}}disabled{{/if}}
+    >
+        {{text}}
+    </button>
+    {{else}}
+    <a
+        href="{{href}}"
+        class="btn btn-link"
+    >
+        {{text}}
+    </a>
+    {{/unless}}
+    </dd>
+    {{/types}}
+</dl>
+{{/groups}}

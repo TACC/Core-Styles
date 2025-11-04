@@ -1,0 +1,53 @@
+label: Bootstrap Btn
+context:
+  groups:
+    - title: Types
+      types:
+      - type: primary
+        text: Primary
+      - type: secondary
+        text: Secondary
+      - type: info
+        text: Info
+      - type: success
+        text: Success
+      - type: warning
+        text: Warning
+      - type: danger
+        text: Danger
+    - title: Brightness
+      types:
+      - type: dark
+        text: Dark
+      - type: light
+        text: Light
+    - title: Sizes
+      types:
+      - type: primary
+        size: sm
+        text: Small
+    - title: States
+      types:
+      - type: primary
+        active: true
+        text: Primary Active
+      - type: secondary
+        active: true
+        text: Secondary Active
+      - type: info
+        active: true
+        text: Other Active
+      - type: primary
+        disabled: true
+        text: Primary Disabled
+      - type: secondary
+        disabled: true
+        text: Secondary Disabled
+      - type: info
+        disabled: true
+        text: Other Disabled
+    - title: Variants
+      types:
+      - asLink: true
+        href: "#"
+        text: Link
