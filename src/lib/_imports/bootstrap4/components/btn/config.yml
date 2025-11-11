@@ -1,5 +1,6 @@
-label: Bootstrap Btn
+label: Buttons
 context:
+  shouldLoadBootstrap: true
   groups:
     - title: Types
       types:

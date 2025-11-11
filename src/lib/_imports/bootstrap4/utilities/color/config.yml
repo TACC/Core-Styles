@@ -1,0 +1,44 @@
+variants:
+  - name: default
+    hidden: True
+  - name: text
+context:
+  shouldLoadBootstrap: true
+  groups:
+    - title: Types
+      types:
+      - type: primary
+        text: Primary
+      - type: primary
+        text: Primary (Link)
+        asLink: true
+      - type: secondary
+        text: Secondary
+      - type: secondary
+        text: Secondary (Link)
+        asLink: true
+      - type: muted
+        text: Muted
+      - type: muted
+        text: Muted (Link)
+        asLink: true
+      - type: success
+        text: Success
+      - type: warning
+        text: Warning
+      - type: danger
+        text: Danger
+    - title: Brightness
+      types:
+      - type: dark
+        text: Dark
+      - type: light
+        text: Light
+      - type: black
+        text: Black
+      - type: white
+        text: White
+      - type: black-50
+        text: Black 50%
+      - type: white-50
+        text: White 50%

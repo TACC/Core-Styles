@@ -4,24 +4,31 @@ Core-Styles is reusable CSS used by [TACC] and [TACC User Portal].
 
 ## Basic Usage
 
-For a static website:
+If you must use Bootstrap, load Core-Styles' Bootstrap after it:
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.cms.css" />
+```css
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css") layer(foundation);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap.css") layer(foundation);
 ```
 
-For a dynamic web application:
+If you are styling a static website, add:
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.portal.css" />
+```css
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.base.css") layer(base);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.cms.css") layer(base);
 ```
 
-For **only** [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) e.g. colors, size, spacing, et cetera:
+If you are styling a dynamic web application, add:
 
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css" />
+```css
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.base.css") layer(base);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.portal.css") layer(base);
+```
+
+If you **only** want [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (colors, size, spacing, etc.), then **only** load:
+
+```css
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.settings.css") layer(base);
 ```
 
 > [!TIP]
