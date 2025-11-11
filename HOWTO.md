@@ -29,11 +29,11 @@ __If__ your project uses a full library (e.g. Bootstrap, Ant), __then__ load tha
 
 #### 0. Foundation: Bootstrap
 
-Load Bootstrap and `core-styles.bootstrap.css` from a [CDN] in CSS:
+Load Bootstrap and `core-styles.bootstrap4.css` from a [CDN] in CSS:
 
 ```css
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css") layer(foundation);
-@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap.css") layer(foundation);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap4.css") layer(foundation);
 ```
 
 <sup>The use of `layer` avoids specificity conflicts [^spec-doc][^spec-art].</sup>
