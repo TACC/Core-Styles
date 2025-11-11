@@ -1,0 +1,15 @@
+{{#groups}}
+<dl>
+    <dt>{{title}}</dt>
+    {{#types}}
+    <dd>
+    <{{#if asLink}}a href="#"{{else}}p{{/if}}
+        class="text-{{type}}{{#if size}} text-{{size}}{{/if}}"
+        {{#if disabled}}disabled{{/if}}
+    >
+        {{text}}
+    </{{#if asLink}}a{{else}}p{{/if}}>
+    </dd>
+    {{/types}}
+</dl>
+{{/groups}}
