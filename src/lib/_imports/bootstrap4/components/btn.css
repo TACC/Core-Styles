@@ -3,12 +3,12 @@
 
 .btn {
     border-radius: unset; /* to undo bootstrap */
-},
+}
 .btn-sm,
 .btn-lg {
     font-size: inherit; /* to undo bootstrap */
 }
-.btn-link.focus,
-.btn-link:focus {
+.btn.focus,
+.btn:focus {
     box-shadow: unset; /* to undo bootstrap */
 }
