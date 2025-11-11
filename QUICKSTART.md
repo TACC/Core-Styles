@@ -8,7 +8,7 @@ If you must use Bootstrap, load Core-Styles' Bootstrap after it:
 
 ```css
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css") layer(foundation);
-@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap.css") layer(foundation);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap4.css") layer(foundation);
 ```
 
 If you are styling a static website, add:
