@@ -35,9 +35,6 @@
 :--c-button:where(:not(:--disabled)) {
   cursor: pointer; /* WARNING: Opinionated */
 }
-:--c-button:has(:--c-button__icon) {
-  vertical-align: middle;
-}
 
 a:--c-button {
   text-decoration: none;
@@ -295,7 +292,7 @@ a:--c-button--is-busy {
   opacity: 0.5;
   pointer-events: none;
 }
-:--c-button--is-busy :--c-button__text {
+:--c-button--is-busy * {
   opacity: 0.5;
 }
 
