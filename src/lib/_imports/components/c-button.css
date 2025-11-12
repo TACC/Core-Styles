@@ -23,6 +23,9 @@
   align-items: center;
   justify-content: center;
 
+  line-height: 1; /* to make consistent vertical alignment of icons */
+  gap: 0.5ch; /* to add space between icons and text */
+
   /* To ensure identical <button> and <a> instances have same width */
   box-sizing: border-box;
 
@@ -32,7 +35,9 @@
 :--c-button:where(:not(:--disabled)) {
   cursor: pointer; /* WARNING: Opinionated */
 }
-:--c-button:has(:--c-button__icon) {
+/* To align buttons that have icons */
+/* FAQ: Doing for all buttons, for consistent behavior in possible edge case */
+:--c-button/*:has(.icon)*/ {
   vertical-align: middle;
 }
 
@@ -292,10 +297,9 @@ a:--c-button--is-busy {
   opacity: 0.5;
   pointer-events: none;
 }
-:--c-button--is-busy :--c-button__text {
+:--c-button--is-busy * {
   opacity: 0.5;
 }
-
 
 
 /* Modifiers: Sizes */
@@ -331,15 +335,7 @@ a:--c-button--is-busy {
 
 /* Elements */
 
-:--c-button__icon--before {
-  margin-right: 0.5em;
-}
-:--c-button__icon--after {
-  margin-left: 0.5em;
-}
-
 /* To position Bootstrap spinner inside TACC's flex-based button */
 :--c-button .spinner-border {
   align-self: center;
-  margin-left: 0.5ch;
 }

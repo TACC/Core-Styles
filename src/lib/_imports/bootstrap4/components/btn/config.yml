@@ -1,6 +1,8 @@
 label: Buttons
 context:
   shouldLoadBootstrap: true
+  supportStyles:
+    - ../../assets/components/cortal-icon.css
   groups:
     - title: Types
       types:
@@ -52,3 +54,19 @@ context:
       - asLink: true
         href: "#"
         text: Link
+    - title: With Icons
+      types:
+      - type: primary
+        hasIconBefore: true
+        text: Before
+      - type: success
+        hasIconAfter: true
+        text: After
+      - type: danger
+        hasIconBefore: true
+        hasIconAfter: true
+        text: Before & After
+      - type: info
+        size: sm
+        hasIconBefore: true
+        text: Small

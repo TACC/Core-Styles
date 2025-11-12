@@ -56,13 +56,3 @@
     [class*="button--size-small"],
     /* WARN: borrowing file to support Bootstrap */
     .btn-sm;
-
-@custom-selector :--c-button__text
-    [class*="button__text"];
-
-@custom-selector :--c-button__icon
-    [class*="button__icon"];
-@custom-selector :--c-button__icon--before
-    [class*="button__icon--before"];
-@custom-selector :--c-button__icon--after
-    [class*="button__icon--after"];

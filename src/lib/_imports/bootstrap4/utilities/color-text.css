@@ -64,3 +64,9 @@ a[class*="text-"]:not(
 ) {
   color: var(--global-color-accent--normal) !important;
 }
+
+/* Child Elements */
+
+[class*="text-"] .icon {
+  vertical-align: middle;
+}
