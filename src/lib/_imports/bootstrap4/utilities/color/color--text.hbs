@@ -7,7 +7,9 @@
         class="text-{{type}}{{#if size}} text-{{size}}{{/if}}"
         {{#if disabled}}disabled{{/if}}
     >
+        {{#if hasIconBefore}}<i class="icon icon-user"></i>{{/if}}
         {{text}}
+        {{#if hasIconAfter}}<i class="icon icon-user"></i>{{/if}}
     </{{#if asLink}}a{{else}}p{{/if}}>
     </dd>
     {{/types}}
