@@ -35,6 +35,11 @@
 :--c-button:where(:not(:--disabled)) {
   cursor: pointer; /* WARNING: Opinionated */
 }
+/* To align buttons that have icons */
+/* FAQ: Doing for all buttons, for consistent behavior in possible edge case */
+:--c-button/*:has(.icon)*/ {
+  vertical-align: middle;
+}
 
 a:--c-button {
   text-decoration: none;
@@ -295,7 +300,6 @@ a:--c-button--is-busy {
 :--c-button--is-busy * {
   opacity: 0.5;
 }
-
 
 
 /* Modifiers: Sizes */
