@@ -23,6 +23,8 @@
   align-items: center;
   justify-content: center;
 
+  max-width: var(--max-width);
+
   line-height: 1; /* to make consistent vertical alignment of icons */
   gap: 0.5ch; /* to add space between icons and text */
 
@@ -76,13 +78,13 @@ a:--c-button--is-busy {
 
 /* Modifiers: Types */
 
-:--c-button--primary,
-:--c-button--secondary,
-:--c-button--tertiary,
-:--c-button--is-active {
-  padding: 6px 18px;
-  min-width: var(--min-width);
+:--c-button {
   max-width: var(--max-width);
+}
+:--c-button:not(
+  :--c-button--size-small
+) {
+  padding: 6px 18px;
 }
 
 /* Modifiers: Types: Primary */
@@ -326,7 +328,6 @@ a:--c-button--is-busy {
 :--c-button--size-small {
   min-width: 0;
   padding: 4px 9px;
-  line-height: 1;
 }
 
 
