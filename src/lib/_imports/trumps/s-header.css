@@ -63,6 +63,10 @@ Styleguide Trumps.Scopes.Header
   flex-basis: 175px;
   margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
 
+  /* To veritcally center child image that has manual height */
+  display: flex;
+  align-items: center;
+
   padding: unset;
 }
 

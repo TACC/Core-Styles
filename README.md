@@ -246,13 +246,7 @@ All testing is done manually.
 
 ## Deployment
 
-### Production Deployment
-
-The Core Styles are not independently deployed.
-
-_Currently_, the demo is served by [Core CMS] (since [v3.9.0](https://github.com/TACC/Core-CMS/compare/v3.9.0)).
-
-_Later_, the demo may be deployed indpendently and `core-styles.….css` served from a CDN.
+Auto-deploy occurs [via workflow](.github/workflows/) to https://tacc.github.io/core-styles.
 
 
 ## Contributing
