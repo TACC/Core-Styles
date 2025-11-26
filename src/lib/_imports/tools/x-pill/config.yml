@@ -1,0 +1,16 @@
+status: ready
+context:
+  supportStyles:
+    - ../../assets/tools/x-pill.demo.css
+  types:
+    - danger
+    - success
+    - warning
+    - normal
+    - fixed
+    - updated
+variants:
+  - name: default
+    hidden: true
+  - name: html-elements
+    label: HTML Elements
