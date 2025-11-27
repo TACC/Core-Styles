@@ -15,7 +15,6 @@
 
 /* to style h3 like an h4 */
 .blog-latest-entries article header h3 {
-    margin-top: unset;
     margin-bottom: 0.5rem; /* Bootstrap _type.css */
 
     font-size: var(--global-font-size--medium);
@@ -59,7 +58,7 @@
 
 /* to add line and space between articles */
 .blog-latest-entries article + article {
-    border-top: var(--global-border-width--normal) solid var(--global-color-primary--dark);
+    border-top: var(--global-border-width--normal) solid var(--global-color-primary--light);
     margin-top: var(--article-buffer);
     padding-top: var(--article-buffer);
 }
