@@ -1,1 +1,1 @@
-/*! @tacc/core-styles 2.51.0+ | MIT | github.com/TACC/Core-Styles */a[data-user][data-domain]{font-size:0;text-underline-offset:.3rem;visibility:hidden}a[data-user][data-domain]:before{content:attr(data-user) "@" attr(data-domain);display:inline;font-size:initial;visibility:visible}
+/*! @tacc/core-styles 2.52.0+ | MIT | github.com/TACC/Core-Styles */a[data-user][data-domain]{font-size:0;text-underline-offset:.3rem;visibility:hidden}a[data-user][data-domain]:before{content:attr(data-user) "@" attr(data-domain);display:inline;font-size:initial;visibility:visible}
