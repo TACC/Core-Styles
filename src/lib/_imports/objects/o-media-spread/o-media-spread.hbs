@@ -1,0 +1,25 @@
+{{#types}}
+<section class="o-section o-section--style-{{this.section}}">
+  <h3>{{this.cols}} Columns</h3>
+  <div class="o-media-spread o-media-spread--{{this.cols}}-cols">
+    {{#if (eq this.cols "2")}}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{/if}}
+    {{#if (eq this.cols "3")}}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{/if}}
+    {{#if (eq this.cols "4")}}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{> @img-fluid-with-srcset }}
+    {{/if}}
+  </div>
+</section>
+{{/types}}
