@@ -1,0 +1,94 @@
+# Label definitions for TACC/Core-Styles (synced via label-sync action)
+# See https://github.com/TACC/Core-Styles/labels
+
+- name: alternative
+  color: 'FFFFFF'
+  description: Alternative solution(s) exist(s)
+
+- name: blocked
+  color: 'FA8122'
+  description: Unable to continue work
+
+- name: changes
+  color: 'ECD13A'
+  description: Changes user-facing behavior
+
+- name: chore
+  color: 'FFFFFF'
+  description: Changes with no (or minimal) user-facing effect
+
+- name: declined
+  color: 'FFFFFF'
+  description: This will not be worked on
+
+- name: dependencies
+  color: '2EBAEC'
+  description: Pull requests that update a dependency file
+
+- name: deprecates
+  color: 'FA8122'
+  description: Flags user-facing behavior for removal
+
+- name: devops
+  color: '7A0403'
+  description: Affects build or ops components
+
+- name: documentation
+  color: '4967E3'
+  description: Improvements or additions to documentation
+
+- name: enhancement
+  color: '33F299'
+  description: Improvements or additions to existing features
+
+- name: feature
+  color: 'A3FF3D'
+  description: A new feature or replacement of existing feature
+
+- name: fix
+  color: 'D13205'
+  description: Fixes user-facing behavior or feature
+
+- name: javascript
+  color: '168700'
+  description: Pull requests that update javascript code
+
+- name: major
+  color: '30113B'
+  description: An incompatible API change
+
+- name: minor
+  color: '30113B'
+  description: A feature in backward-compatible manner
+
+- name: patch
+  color: '30113B'
+  description: A backward-compatible fix
+
+- name: paused
+  color: 'ECD13A'
+  description: Started but not actively in progress
+
+- name: performance
+  color: '33F299'
+  description: Improves performance of user-facing behavior
+
+- name: refactor
+  color: 'ECD13A'
+  description: Re-writes/structures code but retains behavior
+
+- name: removes
+  color: 'D13205'
+  description: Removes user-facing behavior
+
+- name: research
+  color: 'FFFFFF'
+  description: Investigation is required
+
+- name: security
+  color: '7A0403'
+  description: Improves security
+
+- name: style
+  color: 'FFFFFF'
+  description: No meaningful effect (white-space, format, etc.)
