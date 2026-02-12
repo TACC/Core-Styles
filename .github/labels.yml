@@ -1,5 +1,5 @@
-# Label definitions for TACC/Core-Styles (synced via label-sync action)
-# See https://github.com/TACC/Core-Styles/labels
+# Defines labels for https://github.com/TACC/Core-Styles/labels
+# Synced via `./workflows/sync-labels.yml` action
 
 - name: alternative
   color: 'FFFFFF'
