@@ -326,7 +326,6 @@ a:--c-button--is-busy {
 :--c-button--size-small {
   min-width: 0;
   padding: 4px 9px;
-  line-height: 1;
 }
 
 
