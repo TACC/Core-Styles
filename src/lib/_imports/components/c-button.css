@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
 
-  line-height: 1; /* to make consistent vertical alignment of icons */
+  line-height: 1.5; /* to make consistent vertical alignment of icons */
   gap: 0.5ch; /* to add space between icons and text */
 
   /* To ensure identical <button> and <a> instances have same width */
