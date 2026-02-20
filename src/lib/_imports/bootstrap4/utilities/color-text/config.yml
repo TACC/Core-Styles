@@ -1,7 +1,4 @@
-variants:
-  - name: default
-    hidden: True
-  - name: text
+label: Color (Text)
 context:
   shouldLoadBootstrap: true
   supportStyles:
