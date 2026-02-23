@@ -43,7 +43,7 @@ a.text-primary:is(
   :hover,
   :focus
 ) {
-  color: var(--global-color-accent--normal) !important;
+  color: var(--global-color-accent--light) !important;
 }
 a.text-secondary:is(
   :link,
@@ -62,5 +62,5 @@ a[class*="text-"]:not(
   :hover,
   :focus
 ) {
-  color: var(--global-color-accent--normal) !important;
+  color: var(--global-color-accent--light) !important;
 }

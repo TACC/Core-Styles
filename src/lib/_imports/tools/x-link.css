@@ -1,7 +1,7 @@
 /* Regular Links */
 
 @define-mixin link {
-  color: var(--global-color-accent--normal);
+  color: var(--global-color-accent--light);
 
   text-decoration: none;
   text-underline-offset: 0.2em;
@@ -13,7 +13,7 @@
 }
 
 @define-mixin link--disabled {
-  opacity: 0.5;
+  opacity: 0.75;
   pointer-events: none;
 }
 /* DEPRECATED */
@@ -26,7 +26,7 @@
   text-decoration-style: solid;
 
   /* To overwrite Bootstrap (on Client) */
-  color: var(--global-color-accent--normal);
+  color: var(--global-color-accent--light);
   text-decoration-thickness: var(--global-border-width--normal);
 }
 /* DEPRECATED */
