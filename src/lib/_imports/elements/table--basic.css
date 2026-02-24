@@ -60,8 +60,6 @@ tr:nth-child(even) :is(th, td),
   vertical-align: top;
   padding-block: var(--cell-pad-vert);
   padding-inline: var(--cell-pad-horz);
-
-  color: var(--global-color-primary--dark);
 }
 /* To ensure <thead> height matches between browsers */
 /* IMPORTANT: More than for consistency; `table--nested.css` requires this */
@@ -79,8 +77,6 @@ tr:nth-child(even) :is(th, td),
 }
 
 th {
-  color: var(--global-color-primary--x-dark);
-
   text-align: inherit; /* copied from Bootstrap 4.0.0 */
 }
 thead > tr > th {

@@ -45,7 +45,7 @@
   }
 }
 .s-form-page > footer a {
-  color: var(--global-color-primary--x-dark);
+  color: inherit;
   font-weight: var(--bold);
 }
 
