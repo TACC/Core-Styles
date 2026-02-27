@@ -60,6 +60,11 @@ fractal.components.set('resources', {
 });
 fractal.components.set('default.context', {
   shouldSkipPattern: true, // true, because core-styles.….css loads most
+  bootstrap4Styles: [{
+    isInternal: true,
+    layer: 'foundation',
+    path: '/assets/core-styles.bootstrap4.css'
+  }],
   demoStyles: [{
     isInternal: true,
     layer: 'base',

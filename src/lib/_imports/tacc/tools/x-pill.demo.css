@@ -1,0 +1,37 @@
+@import url("./x-pill.postcss");
+
+/* FAQ: Wrapped to deter clients from using `.x-pill` */
+/* HACK: Not in `x-pill/demo.css` because it is not processed */
+#demo {
+  .x-pill {
+    @mixin pill;
+
+    &:not([class*="x-pill--"]) {
+      background-color: var(--global-color-primary--x-light);
+    }
+  }
+  .x-pill--should-truncate {
+    @mixin pill--should-truncate;
+
+    white-space: nowrap;
+    max-width: 10em;
+  }
+  .x-pill--is-danger {
+    @mixin pill--is-danger;
+  }
+  .x-pill--is-success {
+    @mixin pill--is-success;
+  }
+  .x-pill--is-warning {
+    @mixin pill--is-warning;
+  }
+  .x-pill--is-normal {
+    @mixin pill--is-normal;
+  }
+  .x-pill--is-fixed {
+    @mixin pill--is-fixed;
+  }
+  .x-pill--is-updated {
+    @mixin pill--is-updated;
+  }
+}

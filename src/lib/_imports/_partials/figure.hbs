@@ -1,14 +1,18 @@
 <figure {{#if class}}class="{{ class }}"{{/if}}>
   {{#if use-image-wide}}
-    {{> @img large=true wide=true }}
+    {{> @img large=true wide=true class=img-class }}
   {{else if use-image-tall}}
-    {{> @img large=true tall=true }}
+    {{> @img large=true tall=true class=img-class }}
   {{else}}
-    {{> @img }}
+    {{> @img class=img-class }}
   {{/if}}
   <figcaption>
-    I am a &lt;figcaption&gt; within a &lt;figure&gt;. 
-    {{> @message tag="span" type="warning" scope="inline"
-        content="I may be wider than image. If so, should I wrap?" }}
+    {{#if caption}}
+      {{{ caption }}}
+    {{else}}
+      I am a &lt;figcaption&gt; within a &lt;figure&gt;. 
+      {{> @message tag="span" type="warning" scope="inline"
+          content="I may be wider than image. If so, should I wrap?" }}
+    {{/if}}
   </figcaption>
 </figure>

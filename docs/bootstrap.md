@@ -4,14 +4,11 @@
 
 Because [several TACC projects load Bootstrap (internal document)](https://tacc-main.atlassian.net/wiki/x/khJv).
 
-- independent of Bootstrap\
-    <sup>(to the best of its authors' knowledge and efforts)</sup>
-- alters some Bootstrap styles\
-    <sup>(to look like Core Styles)</sup>
-- replaces some Bootstrap classes\
-    <sup>(to deprecate use of Boostrap)</sup>
+- independent of Bootstrap
+- alters some Bootstrap styles
+- replaces some Bootstrap classes
 
-## [Core Styles v3](https://github.com/TACC/Core-Styles/milestone/1)
+## [Core Styles v3](https://github.com/orgs/TACC/projects/10)
 
 Because external projects, that request TACC assistance, often use Bootstrap.
 
@@ -21,13 +18,13 @@ Core-Styles v3 will support Bootstrap differently, but will retain existing comp
 
 Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless otherwise noted.
 
-| regular CSS <u>replaces</u> | Bootstrap
+| Where ad-hoc CSS <u>replaces</u> Bootstrap | Bootstrap
 | - | -
 | [Grid](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grid) (on [Core Portal])\* | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/)
 | [elements](https://github.com/TACC/Core-Styles/tree/v2.14.0/src/lib/_imports/elements) & [generics](https://github.com/TACC/Core-Styles/tree/v2.14.0/src/lib/_imports/elements) | [Reboot](https://getbootstrap.com/docs/4.0/getting-started/introduction/#reboot)
-| write styles instead | [Utilities](https://getbootstrap.com/docs/4.0/utilities/borders/)
+| ad-hoc clases & styles | [Utilities](https://getbootstrap.com/docs/4.0/utilities/borders/)
 
-| Core Styles <u>replaces</u> | Bootstrap
+| Core Styles that <u>replace</u> Bootstrap | Bootstrap
 | - | -
 | [Message](https://cep.tacc.utexas.edu/static/ui/components/detail/c-message--scope-cms.html) | Alerts
 | [Admonition](https://cep.tacc.utexas.edu/static/ui/components/detail/admonition.html) (on [TACC Docs])† | Alerts
@@ -38,21 +35,23 @@ Any support is for [Bootstrap v4](https://getbootstrap.com/docs/4.0) unless othe
 | [Page](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/components/c-page.css) | Pagination
 | [Tag](https://cep.tacc.utexas.edu/static/ui/components/detail/c-tag.html) | Badges
 
-| Core Styles <u>extends</u> | Bootstrap
+| Core Styles that <u>extend</u> Bootstrap | Bootstrap
 | - | -
 | [Container](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/container.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Container
 | [Row](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/row.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Row
 | [Col](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/col.css) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Col
 
-| Core Styles <u>changes</u> | Bootstrap
+| Core Styles that <u>change</u> Bootstrap | Bootstrap
 | - | -
+| [Buttons](https://cep.tacc.utexas.edu/static/ui/components/detail/btn) | [Buttons (**v5**)](https://getbootstrap.com/docs/5.2/components/buttons/)
+| [Colors](https://cep.tacc.utexas.edu/static/ui/components/detail/color) | [Colors (**v5**)](https://getbootstrap.com/docs/5.2/utilities/colors/)
 | [Container](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--container.html) | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/): Container
 | [Breadcrumb](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap3--breadcrumb) | [Breadcrumb (**v3**)](https://getbootstrap.com/docs/4.0/components/breadcrumb/)
 | [Modal](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--modal.html) | [Modal](https://getbootstrap.com/docs/4.0/components/modal/)
 | [Nav Tabs](https://cep.tacc.utexas.edu/static/ui/components/detail/bootstrap--nav-tabs.html) | Navs: [Tabs](https://getbootstrap.com/docs/4.0/components/navs/#tabs)
 | [Pagination](https://github.com/TACC/Core-Styles/blob/v2.14.0/src/lib/_imports/bootstrap4/pagination.css) | [Pagination](https://getbootstrap.com/docs/4.0/components/pagination/)
 
-| Where Core Styles <u>yields</u> to | Bootstrap
+| Where Core Styles <u>yields</u> to Bootstrap | Bootstrap
 | - | -
 | Modal | [Modal](https://getbootstrap.com/docs/4.0/components/modal/)
 | Grid (on [Core CMS])\* | [Grid](https://getbootstrap.com/docs/4.0/layout/grid/)

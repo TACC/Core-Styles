@@ -1,3 +1,5 @@
+@import url("../../tools/x-tag.postcss");
+
 @import url("./c-tag.selectors.postcss");
 
 :--c-tag {
@@ -5,8 +7,5 @@
   /* FAQ: We should not assume the display of an element client controls */
   /* display: inline-block; */
 
-  padding: 0.25rem 0.5rem 0rem;
-  width: min-content;
-
-  white-space: nowrap;
+  @mixin tag;
 }
