@@ -28,7 +28,6 @@
     "prebuild:demo": "rm -rf dist/_utils && cp -r src/lib/_utils dist/_utils",
     "prestart": "npm run prebuild:demo",
     "build:demo": "fractal build",
-    "test": "bin/test.js && echo \"Test output at 'dist/_tests' (compare to test input)\"",
     "build:watch": "npm run build:css && touch src/lib/_imports/fractal.server.refresh.css",
     "watch": "npm-watch"
   },

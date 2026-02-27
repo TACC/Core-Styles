@@ -243,8 +243,6 @@ npm run build:css -- --build-id="..."
 
 All testing is done manually.
 
-Run `npm test` to build test CSS and compare output. An `Input Error: You must pass a valid list of files to parse` message is expected and does not indicate failure.
-
 
 ## Deployment
 
