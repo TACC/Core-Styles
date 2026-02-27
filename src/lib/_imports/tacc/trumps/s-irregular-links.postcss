@@ -1,0 +1,15 @@
+@import url("../components/c-button/c-button.selectors.postcss");
+@import url("../tools/x-link.postcss");
+
+.s-irregular-links a,
+.s-irregular-links :--c-button--as-link {
+  @mixin link--irregular;
+}
+.s-irregular-links a:hover,
+.s-irregular-links :--c-button--as-link:hover {
+  @mixin link--irregular--hover;
+}
+.s-irregular-links a:active,
+.s-irregular-links :--c-button--as-link:active {
+  @mixin link--irregular--active;
+}

@@ -1,0 +1,171 @@
+@import url("../c-button/c-button.postcss");
+
+@import url("../../tools/selectors.form.postcss");
+
+
+
+/* Title & Description */
+
+:--form__desc {
+  margin-block: 25px;
+}
+
+
+
+/* Help Text */
+
+:--form__help {
+  display: block; /* FAQ: An inline element tag may be used */
+  margin-top: 0.3em; /* mimic Bootstrap _reboot.css label margin-bottom */
+
+  font-size: var(--global-font-size--small);
+  font-style: italic;
+}
+/* To prevent help text font-style from affecting any tags */
+/* FAQ: Help text can contain inline elements like <samp> */
+/* FAQ: Help text can be (ab)used to add headings between form fields */
+:--form__help > :where(:not(details, a, samp)) {
+  font-style: initial;
+}
+
+
+
+/* Fields */
+
+:--form__field {
+  display: flex;
+  flex-direction: column;
+}
+:--form__field:not(:last-child) {
+  margin-bottom: 2rem; /* mimic <p> `margin-bottom` */
+}
+
+:--form__field--has-checkbox {
+  display: inline-grid;
+
+  column-gap: 0.5em;
+  align-items: center;
+  grid-template-columns: min-content auto; /* shrink input, let label extend */
+  grid-template-areas:
+    'input label'
+    'error error'
+    'notes notes';
+}
+:--form__field--has-checkbox :--form__errors { grid-area: error; }
+:--form__field--has-checkbox input           { grid-area: input; }
+:--form__field--has-checkbox label           { grid-area: label; }
+:--form__field--has-checkbox :--form__help   { grid-area: notes; }
+:--form__field--has-checkbox label {
+  margin-bottom: 0; /* overwrite forms.css label */
+}
+
+:--form__menu_line {
+  display: inline-flex;
+  gap: 0.5em;
+  align-items: center;
+}
+:--form__menu_label {
+  font-weight: revert; /* undo html-elements.cms.css */
+}
+li:--form__menu_item {
+  display: block;
+}
+
+/* Field: Required, Asterisk, Important */
+
+:--form__badge {
+  margin-left: 0.5em;
+}
+:--form__badge:where(:--form__field--has-required *) {
+  color: var(--global-color-danger--dark);
+}
+:--form__badge:where(:not(:--form__field--has-required *))
+/* NOTE: Manual markup ONLY; form plugin can't render non-required asterisk */ {
+  color: var(--global-color-warning--dark);
+}
+/* To replace asterisk character with text */
+:--form__badge {
+  display: inline-block;
+  visibility: hidden;
+
+  /* To remove space from asterisk character */
+  line-height: 0;
+  font-size: 0;
+  width: 0;
+}
+:--form__badge::after {
+  visibility: visible;
+  line-height: initial;
+  font-size: var(--global-font-size--small); /* mimic elements/form.css label */
+}
+:--form__badge:where(:--form__field--has-required *)::after {
+  content: '(required)';
+}
+:--form__badge:where(:not(:--form__field--has-required *))::after
+/* NOTE: Manual markup ONLY; form plugin can't render non-required asterisk */ {
+  content: '(important)';
+}
+
+
+
+/* Errors */
+
+ul:--form__errors_list {
+  list-style: none;
+  padding-left: 0;
+}
+ul:--form__errors_list:only-child {
+  margin-bottom: 0; /* overwrite ul margin-bottom */
+}
+ul:--form__errors--field {
+  margin-top: 1rem; /* mimic ul margin-bottom */
+  margin-bottom: 0; /* overwrite ul margin-bottom */
+}
+
+
+
+/* Menus (Input Lists) */
+
+:--form__menu:is(ul, ol, menu) {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+
+
+/* Buttons */
+
+:--form__button {
+  @extend :--c-button;
+}
+:--form__button[type="submit"]:where(:--form__buttons > *) {
+  @extend :--c-button--primary;
+}
+:--form__button[type="submit"]:not(:--form__buttons > *) {
+  @extend :--c-button--secondary;
+}
+:--form__button[type="button"] {
+  @extend :--c-button--secondary;
+}
+:--form__button[type="reset"] {
+  @extend :--c-button--tertiary;
+}
+
+:--form__buttons {
+  margin-top: 35px;
+}
+/* To style obvious buttons that neglect class */
+/* FAQ: I think I saw this on APCD… */
+:--form__buttons button:not(:--form__button) {
+  @extend :--c-button;
+}
+:--form__buttons button:not(:--form__button)[type="submit"] {
+  @extend :--c-button--primary;
+}
+:--form__buttons button:not(:--form__button)[type="button"] {
+  @extend :--c-button--secondary;
+}
+:--form__buttons button:not(:--form__button)[type="reset"] {
+  @extend :--c-button--tertiary;
+}

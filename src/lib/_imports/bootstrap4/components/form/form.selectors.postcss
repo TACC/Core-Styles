@@ -1,0 +1,58 @@
+@custom-selector :--bs4-form
+    .c-form;
+
+/* Generic */
+
+@custom-selector :--bs4-form__desc
+    form > :is(h1, h2, h3, h4, h5, h6) + p;
+@custom-selector :--bs4-form__title
+    form > :is(h1, h2, h3, h4, h5, h6);
+
+@custom-selector :--bs4-form__errors
+    :where(
+        :--bs4-form__errors--form,
+        :--bs4-form__errors--field
+    );
+@custom-selector :--bs4-form__errors_list
+    :where(
+        :--bs4-form__errors--form > ul
+    );
+@custom-selector :--bs4-form__errors--form /* submission errors */
+    .alert.alert-danger;
+@custom-selector :--bs4-form__errors--field /* validation errors */
+    .invalid-feedback;
+
+@custom-selector :--bs4-form__field
+    .form-group;
+@custom-selector :--bs4-form__field--has-required
+    :--bs4-form__field:has([required]);
+@custom-selector :--bs4-form__field--has-checkbox
+    :--bs4-form__field.form-check;
+
+@custom-selector :--bs4-form__menu
+    .form-group-checklist,
+    .form-group-radiolist;
+@custom-selector :--bs4-form__menu_item
+    :--bs4-form__menu > .form-check;
+@custom-selector :--bs4-form__menu_line
+    :--bs4-form__menu_item;
+@custom-selector :--bs4-form__menu_label
+    :--bs4-form__menu_item > label;
+
+@custom-selector :--bs4-form__help
+    .form-text;
+
+@custom-selector :--bs4-form__badge
+    .badge.badge-danger;
+
+@custom-selector :--bs4-form__buttons
+    .form-group:has(.btn);
+@custom-selector :--bs4-form__button
+    .btn;
+
+/* Login */
+
+@custom-selector :--bs4-form--login
+    .form-login;
+@custom-selector :--bs4-form__nav
+    .form-nav;

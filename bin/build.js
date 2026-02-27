@@ -2,8 +2,9 @@
 
 /** Build CSS using the Core-Styles API */
 
-const { buildStylesheets } = require('../src/main');
 const mininmist = require('minimist');
+
+const { buildStylesheets } = require('../src/main');
 
 const ARGS = mininmist( process.argv.slice( 2 ) );
 const BUILD_ID = ARGS['build-id'] || '';

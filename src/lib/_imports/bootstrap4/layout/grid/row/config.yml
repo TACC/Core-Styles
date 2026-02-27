@@ -1,0 +1,16 @@
+order: 2
+context:
+  subdir: "bootstrap4/layout/grid/row"
+  supportStyles:
+    - ../../assets/tacc/components/c-card/c-card.css
+variants:
+  - name: default
+    label: Bootstrap
+    status: reference
+    context:
+      shouldSkipBase: true
+  - name: tacc
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: false

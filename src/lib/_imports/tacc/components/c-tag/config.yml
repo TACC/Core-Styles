@@ -1,0 +1,8 @@
+status: ready
+context:
+  subdir: "tacc/components/c-tag"
+variants:
+  - name: default
+    hidden: true
+  - name: html-elements
+    label: HTML Elements

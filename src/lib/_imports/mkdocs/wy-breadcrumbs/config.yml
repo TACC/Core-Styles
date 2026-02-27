@@ -1,0 +1,4 @@
+label: Breadcrumbs
+context:
+  subdir: "mkdocs/wy-breadcrumbs"
+  shouldSkipPattern: false

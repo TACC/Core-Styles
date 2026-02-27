@@ -18,7 +18,7 @@
 </style>
 {{/unless}}
 {{/if}}
-{{#if _target.context.shouldLoadBootstrap }}
+{{#if _target.context.shouldLoadBootstrap4 }}
 {{#unless _target.context.shouldSkipBootstrap }}
 <!-- Styles: Global (for current pattern): Bootstrap -->
 <style>
@@ -37,7 +37,12 @@
 {{/if}}
 
 <!-- Styles: Global (for every pattern) -->
-{{> @import-client-styles styles=globalStyles }}
+{{> @import-client-styles styles=demoStyles }}
+{{#if _target.context.shouldSkipBase }}
+{{> @import-client-styles styles=settingsStyles }}
+{{else}}
+{{> @import-client-styles styles=baseStyles }}
+{{/if}}
 
 {{#if _target.context.shouldLoadCMS }}
 {{#unless _target.context.shouldSkipCMS }}
@@ -97,7 +102,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 {{/unless}}
 {{/if}}
-{{#if _target.context.shouldLoadBootstrap}}
+{{#if _target.context.shouldLoadBootstrap4}}
 {{#unless _target.context.shouldSkipBootstrap }}
 <!-- Scripts: Global (for current pattern): Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

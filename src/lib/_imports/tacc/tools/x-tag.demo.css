@@ -1,0 +1,12 @@
+@import url("./x-tag.postcss");
+
+/* FAQ: Wrapped to deter clients from using `.x-tag` */
+/* HACK: Not in `x-tag/demo.css` because it is not processed */
+#demo {
+  .x-tag {
+    @mixin tag;
+
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-primary--xxx-dark);
+  }
+}

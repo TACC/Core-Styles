@@ -1,0 +1,62 @@
+status: prototype
+order: 1
+context:
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: >-
+    not yet tested without Bootstrap
+    (known dependencies: <caption> font color)
+  data:
+    cols:
+      - ID
+      - Name
+      - Size
+      - Time
+    rows:
+      - id: n234as
+        name: apple-sauce
+        custom-1: 0.5 KB
+        time: 12/01/2019 11:04:19
+      - id: 56l810
+        name: milk-shake-032
+        custom-1: 300.0 KB
+        time: 03/22/2021 05:23:01
+      - id: 3r56xc
+        name: white-candy-5
+        custom-1: 1.5 MB
+        time: 12/01/2019 11:04:19
+      - id: 7ysnw3
+        name: butter-balls
+        custom-1: 0.5 KB
+        time: 09/11/2010 10:54:09
+      - id: 20ksdf
+        name: lemon-cookies-30
+        custom-1: 250.0 MB
+        time: 04/20/2020 15:03:10
+      - id: 7uys9e
+        name: purple-turnips-6
+        custom-1: 10.5 GB
+        time: 10/31/2017 19:59:41
+      - id: 98eeui
+        name: nightmare-treats
+        custom-1: 0.5 KB
+        time: 12/01/2019 11:04:19
+      - id: 54rr0s
+        name: toffe-pimples-12
+        custom-1: 300.0 KB
+        time: 03/22/2021 05:23:01
+      - id: 12dsds
+        name: cartesian-dumpling
+        custom-1: 1.5 MB
+        time: 12/01/2019 11:04:19
+      - id: 2gesee
+        name: crunchy-noodles
+        custom-1: 0.5 KB
+        time: 09/11/2010 10:54:09
+      - id: wr435e
+        name: ripe-mango-220
+        custom-1: 250.0 MB
+        time: 04/20/2020 15:03:10
+      - id: 76rgd3
+        name: purple-turnips-6
+        custom-1: 10.5 GB
+        time: 10/31/2017 19:59:41

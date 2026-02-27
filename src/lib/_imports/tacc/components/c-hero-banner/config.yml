@@ -1,0 +1,17 @@
+status: wip
+context:
+  subdir: "tacc/components/c-hero-banner"
+  shouldLoadCMS: true
+variants:
+  - name: default
+    hidden: true
+  - name: has-container
+    label: Has Container
+    context:
+      shouldLoadBootstrap4: true
+      hasContainer: true
+  - name: no-container
+    label: No Container
+    context:
+      shouldLoadBootstrap4: false
+      hasContainer: false

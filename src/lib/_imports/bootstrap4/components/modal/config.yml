@@ -1,0 +1,23 @@
+context:
+  subdir: "bootstrap4/components/modal"
+variants:
+  - name: default
+    label: Bootstrap
+    status: reference
+    context:
+      shouldSkipBase: true
+  - name: tacc-portal
+    label: TACC (Portal)
+    status: prototype
+    context:
+      shouldSkipPattern: true
+      shouldLoadPortal: true
+  - name: tacc-cms
+    label: TACC (CMS)
+    status: prototype
+    context:
+      shouldSkipPattern: true
+      shouldLoadCMS: true
+  # partials
+  - name: tacc
+    hidden: true

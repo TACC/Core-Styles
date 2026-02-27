@@ -1,0 +1,14 @@
+label: Breadcrumbs
+context:
+  subdir: "bootstrap3/components/breadcrumb"
+variants:
+  - name: default
+    label: Bootstrap
+  - name: tacc
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: false
+  # partials
+  - name: list
+    hidden: true

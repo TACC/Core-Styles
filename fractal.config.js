@@ -65,11 +65,17 @@ fractal.components.set('default.context', {
     layer: 'foundation',
     path: '/assets/core-styles.bootstrap4.css'
   }],
-  globalStyles: [{
+  demoStyles: [{
     isInternal: true,
     layer: 'base',
     path: '/assets/core-styles.demo.css'
-  },{
+  }],
+  settingsStyles: [{
+    isInternal: true,
+    layer: 'base',
+    path: '/assets/core-styles.settings.css'
+  }],
+  baseStyles: [{
     isInternal: true,
     layer: 'base',
     path: '/assets/core-styles.base.css'
@@ -111,6 +117,9 @@ engine.handlebars.registerHelper('has', function(array, item) {
 engine.handlebars.registerHelper('ifno', function(value, fallback) {
   const output = value || fallback;
   return new engine.handlebars.SafeString(output);
+});
+engine.handlebars.registerHelper('concat', function() {
+  return Array.prototype.slice.call(arguments, 0, -1).join('');
 });
 engine.handlebars.registerHelper('default', function(value, defaultValue) {
   return value || defaultValue;

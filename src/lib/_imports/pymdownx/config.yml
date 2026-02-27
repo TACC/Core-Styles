@@ -1,0 +1,3 @@
+label: PyMdown Extensions
+context:
+  subdir: "pymdownx"

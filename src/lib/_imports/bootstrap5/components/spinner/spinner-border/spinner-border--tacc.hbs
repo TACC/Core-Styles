@@ -1,0 +1,12 @@
+{{!-- XXX: Almost identical to spinner-border.hbs, but using TACC buttons --}}
+<dl>
+  <dt>Spinner</dt>
+  <dd>
+    <span class="spinner-border" aria-hidden="true"></span>
+  </dd>
+  <dt>Spinner in Button</dt>
+  <dd>
+    {{!-- HACK: To support TACC .c-button until TACC skins Bootstrap .btn --}}
+    {{> @spinner-border--button is-tacc="true" type="button" class="c-button c-button--primary c-button--is-busy" }}
+  </dd>
+</dl>
