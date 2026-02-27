@@ -65,6 +65,11 @@ fractal.components.set('default.context', {
     layer: 'foundation',
     path: '/assets/core-styles.bootstrap4.css'
   }],
+  bootstrap5Styles: [{
+    isInternal: true,
+    layer: 'foundation',
+    path: '/assets/core-styles.bootstrap5.css'
+  }],
   globalStyles: [{
     isInternal: true,
     layer: 'base',
