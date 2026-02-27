@@ -1,6 +1,6 @@
 {
   "name": "@tacc/core-styles",
-  "version": "2.53.2",
+  "version": "3.0.0-alpha.0",
   "license": "MIT",
   "author": "TACC COA CMD <coa-cmd@tacc.utexas.edu>",
   "contributors": [
@@ -23,13 +23,17 @@
     "start": "fractal start --sync",
     "build": "npm run build:css && npm run build:demo",
     "build:css": "bin/build.js --build-id=$npm_config_build_id",
+    "build:each": "bin/build-each.js",
     "build:tokens": "bin/build-tokens.js",
     "postbuild:css": "rm -rf dist/fonts && cp -r src/lib/fonts dist/fonts",
     "prebuild:demo": "rm -rf dist/_utils && cp -r src/lib/_utils dist/_utils",
     "prestart": "npm run prebuild:demo",
     "build:demo": "fractal build",
     "test": "bin/test.js && echo \"Test output at 'dist/_tests' (compare to test input)\"",
+    "lint": "npm run lint:dirs",
+    "lint:dirs": "bin/only-commit-source.js",
     "build:watch": "npm run build:css && touch src/lib/_imports/fractal.server.refresh.css",
+    "prepublishOnly": "bin/only-commit-source.js",
     "watch": "npm-watch"
   },
   "engines": {

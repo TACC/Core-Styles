@@ -1,6 +1,0 @@
-@import url("../tools/x-truncate.css");
-
-/* To truncate paragraphs in specific tables */
-.s-truncated-table p {
-  @mixin truncate--many-lines;
-}

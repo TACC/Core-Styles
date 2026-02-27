@@ -1,1 +1,0 @@
-/*! @tacc/core-styles 2.53.2+ | MIT | github.com/TACC/Core-Styles */.data-tree{--indent:1.5rem}.data-tree__item details{margin-left:var(--indent)}.data-tree__item summary{margin-left:calc(-1 * var(--indent))}.data-tree__item summary.u-summary-fake-marker:before,.data-tree__item summary.u-summary-with-a-link:before{display:inline-block;width:var(--indent)}
