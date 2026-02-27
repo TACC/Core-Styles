@@ -38,7 +38,7 @@ body {
   min-width: 290px; /* developer-decided value */
 
   /* To overwrite Bootstrap */
-  color: var(--global-color-primary--x-dark);
+  color: var(--global-color-primary--xx-dark);
 
   /* Prevent trackpad scroll from showing white background beyond page height */
   overscroll-behavior-y: none;
