@@ -3,9 +3,10 @@
 @define-mixin link {
   color: var(--global-color-accent--normal);
 
-  text-decoration: none;
   text-underline-offset: 0.2em;
+  text-decoration-line: none;
   text-decoration-thickness: var(--global-border-width--normal);
+  text-decoration-color: currentColor;
 }
 /* DEPRECATED */
 .x-link {
@@ -27,7 +28,6 @@
 
   /* To overwrite Bootstrap (on Client) */
   color: var(--global-color-accent--normal);
-  text-decoration-thickness: var(--global-border-width--normal);
 }
 /* DEPRECATED */
 .x-link--hover {
