@@ -1,0 +1,29 @@
+{{#groups}}
+<dl>
+    <dt>{{title}}</dt>
+    {{#types}}
+    <dd>
+    {{#unless asLink}}
+    <button
+        type="button"
+        class="btn btn-{{type}}{{#if size}} btn-{{size}}{{/if}}{{#if active}} active{{/if}}"
+        {{#if disabled}}disabled{{/if}}
+    >
+        {{#if hasIconBefore}}<i class="icon icon-user"></i>{{/if}}
+        {{text}}
+        {{#if hasIconAfter}}<i class="icon icon-user"></i>{{/if}}
+    </button>
+    {{else}}
+    <a
+        href="{{href}}"
+        class="btn btn-link"
+    >
+        {{#if hasIconBefore}}<i class="icon icon-user"></i>{{/if}}
+        {{text}}
+        {{#if hasIconAfter}}<i class="icon icon-user"></i>{{/if}}
+    </a>
+    {{/unless}}
+    </dd>
+    {{/types}}
+</dl>
+{{/groups}}

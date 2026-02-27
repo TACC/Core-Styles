@@ -1,0 +1,4 @@
+status: ready
+context:
+  supportStyles:
+    - ../../assets/tools/x-tag.demo.css

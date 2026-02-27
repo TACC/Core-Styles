@@ -1,6 +1,6 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
-.demo-truncate .c-pill {
+.c-pill--should-truncate {
   white-space: nowrap;
   max-width: 10em;
 }

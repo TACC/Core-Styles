@@ -8,35 +8,38 @@ Content that should be:
 Styleguide Objects.OffsetContent
 */
 @import url("../tools/media-queries.postcss");
+@import url("../tools/x-offset-content.css");
 
 .o-offset-content--left,
 .o-offset-content--right {
-  	--offset-distance: 12vw;
-	--buffer: calc( 2 * var(--global-space--grid-gap) );
-
-    max-width: 85%;
+	@mixin offset-content;
 }
 
 /* To merely float content on narrow screens */
 @media only screen and (--medium-and-above) {
 	.o-offset-content--right {
-		float: right;
-		margin-left: var(--buffer);
+		@mixin offset-content--float-right;
+		& + & {
+			@mixin offset-content--terminate-offset-right;
+		}
 	}
-	.o-offset-content--right + .o-offset-content--right { clear: right; }
 
 	.o-offset-content--left {
-		float: left;
-		margin-right: var(--buffer);
+		@mixin offset-content--float-left;
+		& + & {
+			@mixin offset-content--terminate-offset-left;
+		}
 	}
-	.o-offset-content--left + .o-offset-content--left { clear: left; }
 
-    .figure:is(
-	  .o-offset-content--left,
-	  .o-offset-content--right
+	/* WARNING: Seems specific to one website's use case */
+	/* TODO: Determine whether to apply to:
+	          <figcaption>, only CMS, only Texascale */
+	.figure:is(
+		.o-offset-content--left,
+		.o-offset-content--right
 	) .figure-caption {
-        padding-right: 125px;
-    }
+		padding-right: 125px;
+	}
 }
 
 /* To offset content only on wide screens */
@@ -44,9 +47,9 @@ Styleguide Objects.OffsetContent
 /* FAQ: M.S. did on texascale.org but that may have been only for that site */
 @media only screen and (--medium-and-above)/* and (--max-wide-and-below) */{
 	.o-offset-content--right {
-		margin-right: calc( var(--offset-distance) * -1);
+		@mixin offset-content--offset-right;
 	}
 	.o-offset-content--left {
-		margin-left: calc( var(--offset-distance) * -1);
+		@mixin offset-content--offset-left;
 	}
 }
