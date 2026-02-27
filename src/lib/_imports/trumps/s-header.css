@@ -106,6 +106,12 @@ Styleguide Trumps.Scopes.Header
 /* FAQ: Bootstrap selector is `.navbar-expand-… .navbar-nav .nav-link` */ {
   padding-inline: 14px;
 }
+.s-header .nav-link:is(:hover, :active) {
+  text-decoration: none;
+}
+.s-header .nav-link:active {
+  border-style: double;
+}
 
 @define-mixin header--not-expanded {
   &.s-header .nav-item {
