@@ -73,7 +73,6 @@
     "@fractality/fractality": "^1.6.3",
     "@fractality/handlebars": "^1.4.3",
     "@fractality/mandelbrot": "^1.12.3",
-    "fs-extra": "^11.3.3",
     "minimist": "^1.2.7",
     "npm-watch": "^0.13.0"
   },
