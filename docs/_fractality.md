@@ -1,4 +1,4 @@
-# TACC Core Styles - Tips for Fractal Component Library
+# TACC Core Styles - Tips for Fractality Component Library
 
 ## Debugging
 
@@ -22,7 +22,7 @@ To see values available in a preview template, adapt this template code:
 To output values (like objects) in the console, adapt this config code:
 
 ```js
-const hbs = require('@frctl/handlebars')({
+const hbs = require('@fractality/handlebars')({
   helpers: {
     debug: function (optionalValue) {
       console.log('Current Context');
