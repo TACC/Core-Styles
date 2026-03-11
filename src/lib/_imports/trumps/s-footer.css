@@ -6,8 +6,8 @@
 .s-footer {
   padding-block: 15px;
 
-  color: var(--global-color-primary--light);
-  background-color: var(--global-color-primary--xx-dark-alt);
+  color: var(--global-color-primary--x-light);
+  background-color: var(--header-bkgd-color);
 
   font-size: var(--global-font-size--small);
   text-align: center;
@@ -20,7 +20,7 @@
 }
 
 .s-footer a:not(:--c-button) {
-    color: var(--global-color-accent--light-alt)
+    color: var(--global-color-accent--light-alt);
 }
 
 .s-footer :--heading {
