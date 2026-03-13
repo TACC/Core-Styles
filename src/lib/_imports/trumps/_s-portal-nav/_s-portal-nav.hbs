@@ -9,23 +9,50 @@ from https://frontera-portal.tacc.utexas.edu/. It has:
 <ul class="s-portal-nav navbar-nav">
   <!-- When user is not logged in, there are zero dropdown(-*) classes -->
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button
+      class="nav-link dropdown-toggle"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-controls="nav-menu-{{default id 0}}-portal-1"
+      id="nav-link-{{default id 0}}-portal-1"
+    >
       <i class="icon icon-user"></i>
-      <span>username</span>
+      username
       <span class="sr-only">Toggle Dropdown</span>
-    </a>
-    <nav class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="/workbench/dashboard">
-        <i class="icon icon-dashboard"></i> My Dashboard
+    </button>
+    <nav
+      class="dropdown-menu dropdown-menu-right"
+      id="nav-menu-{{default id 0}}-portal-1"
+      aria-labelledby="nav-link-{{default id 0}}-portal-1"
+    >
+      <a
+        class="dropdown-item"
+        href="#"
+      >
+        <i class="icon icon-dashboard"></i>
+        My Dashboard
       </a>
-      <a class="dropdown-item" href="/workbench/onboarding/admin">
-        <i class="icon icon-approved-boxed"></i> Onboarding Admin
+      <a
+        class="dropdown-item"
+        href="#"
+      >
+        <i class="icon icon-approved-boxed"></i>
+        Onboarding Admin
       </a>
-      <a class="dropdown-item" href="/accounts/profile/">
-        <i class="icon icon-gear"></i> My Account
+      <a
+        class="dropdown-item"
+        href="#"
+      >
+        <i class="icon icon-gear"></i>
+        My Account
       </a>
-      <a class="dropdown-item" href="/accounts/logout">
-        <i class="icon icon-user"></i> Log Out
+      <a
+        class="dropdown-item"
+        href="#"
+      >
+        <i class="icon icon-user"></i>
+        Log Out
       </a>
     </nav>
   </li>
