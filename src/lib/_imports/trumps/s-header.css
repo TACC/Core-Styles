@@ -136,8 +136,16 @@ Styleguide Trumps.Scopes.Header
 }
 
 @define-mixin header--is-expanded {
+  &.s-header .nav-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &.s-header .nav-link {
     padding-block: 8px;
+  }
+  &.s-header .dropdown-menu {
+    flex-basis: 100%;
   }
 }
 @media (--x-narrow-and-below) {
