@@ -9,18 +9,18 @@
         class="btn btn-{{type}}{{#if size}} btn-{{size}}{{/if}}{{#if active}} active{{/if}}"
         {{#if disabled}}disabled{{/if}}
     >
-        {{#if hasIconBefore}}<i class="icon icon-user"></i>{{/if}}
+        {{#if hasIconBefore}}<i class="icon icon-user">Meaningful text or add [role="presentation"]</i>{{/if}}
         {{text}}
-        {{#if hasIconAfter}}<i class="icon icon-user"></i>{{/if}}
+        {{#if hasIconAfter}}<i class="icon icon-user">Meaningful text or add [role="presentation"]</i>{{/if}}
     </button>
     {{else}}
     <a
         href="{{href}}"
         class="btn btn-link"
     >
-        {{#if hasIconBefore}}<i class="icon icon-user"></i>{{/if}}
+        {{#if hasIconBefore}}<i class="icon icon-user">Meaningful text or add [role="presentation"]</i>{{/if}}
         {{text}}
-        {{#if hasIconAfter}}<i class="icon icon-user"></i>{{/if}}
+        {{#if hasIconAfter}}<i class="icon icon-user">Meaningful text or add [role="presentation"]</i>{{/if}}
     </a>
     {{/unless}}
     </dd>

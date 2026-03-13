@@ -71,20 +71,17 @@
 /* Modifers: Style: Options */
 
 :--o-section--light {
-  --color--text: var(--global-color-primary--x-dark);
-  --color--text-strong: var(--global-color-primary--xx-dark);
+  --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--xx-light);
   --color--line: var(--global-color-primary--normal);
 }
 :--o-section--muted {
-  --color--text: var(--global-color-primary--x-dark);
-  --color--text-strong: var(--global-color-primary--xx-dark);
+  --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--x-light);
   --color--line: var(--global-color-primary--dark);
 }
 :--o-section--dark {
   --color--text: var(--global-color-primary--xx-light);
-  --color--text-strong: var(--global-color-primary--xx-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
   --color--line: var(--global-color-primary--xx-light);
 }
@@ -102,17 +99,6 @@
 /* Nested sections must not stretch to page edge */
 :--o-section--style :--o-section--style {
   box-shadow: none;
-}
-
-/* Modifers: Style: Child Text */
-
-/* To color text, but not those within certain contexts */
-:--o-section--style :is(h1, h3, h4, h5, h6):not(
-  :--c-card--plain *,
-  :--c-card--standard *,
-  :--c-card--standard-N *
-) {
-  color: var(--color--text-strong);
 }
 
 
