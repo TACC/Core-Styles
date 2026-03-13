@@ -27,3 +27,7 @@ We use a modifed version of [GitFlow](https://datasift.github.io/gitflow/Introdu
 - "release branches" (as needed) are prefixed with `release/`
 - "hotfix branches" are prefixed `fix/`
 - "master branch" is always `main`
+
+## Release Workflow
+
+Follow [PUBLISHING.md](PUBLISHING.md#how-to-publish) instructions.
