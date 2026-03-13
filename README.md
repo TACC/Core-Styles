@@ -171,7 +171,7 @@ Notes:
 
 ### Prerequisites for Running
 
-* Nodejs 15.x
+* Nodejs 20.x
 
 ### Quick Start
 
