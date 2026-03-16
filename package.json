@@ -10,8 +10,8 @@
   "files": [
     "dist",
     "docs/bootstrap.md",
-    "fractal.config.js",
-    "fractal.theme.js",
+    "fractality.config.js",
+    "fractality.theme.js",
     "src/cli.js",
     "src/bin",
     "src/lib",
@@ -20,7 +20,7 @@
   "main": "src/main.js",
   "bin": "src/cli.js",
   "scripts": {
-    "start": "fractal start --sync",
+    "start": "fractality start --sync",
     "build": "npm run build:css && npm run build:demo",
     "build:css": "bin/build.js --build-id=$npm_config_build_id",
     "build:each": "bin/build-each.js",
@@ -28,16 +28,16 @@
     "postbuild:css": "rm -rf dist/fonts && cp -r src/lib/fonts dist/fonts",
     "prebuild:demo": "rm -rf dist/_utils && cp -r src/lib/_utils dist/_utils",
     "prestart": "npm run prebuild:demo",
-    "build:demo": "fractal build",
+    "build:demo": "fractality build",
     "test": "bin/test.js && echo \"Test output at 'dist/_tests' (compare to test input)\"",
     "lint": "npm run lint:dirs",
     "lint:dirs": "bin/only-commit-source.js",
-    "build:watch": "npm run build:css && touch src/lib/_imports/fractal.server.refresh.css",
+    "build:watch": "npm run build:css && touch src/lib/_imports/fractality.server.refresh.css",
     "prepublishOnly": "bin/only-commit-source.js",
     "watch": "npm-watch"
   },
   "engines": {
-    "node": ">=15.x",
+    "node": ">=20.x",
     "npm": ">=7.x"
   },
   "homepage": "https://github.com/TACC/Core-Styles",
@@ -75,9 +75,9 @@
     "postcss-replace": "To edit relative paths to fonts"
   },
   "devDependencies": {
-    "@frctl/fractal": "^1.5.15",
-    "@frctl/handlebars": "^1.2.15",
-    "@frctl/mandelbrot": "^1.10.1",
+    "@fractality/fractality": "^1.6.3",
+    "@fractality/handlebars": "^1.4.3",
+    "@fractality/mandelbrot": "^1.12.3",
     "minimist": "^1.2.7",
     "npm-watch": "^0.13.0"
   },
@@ -94,7 +94,7 @@
       "patterns": "src/**/*",
       "extensions": "css,json",
       "ignore": [
-        "fractal.server.refresh.css",
+        "fractality.server.refresh.css",
         "tokens/*.json"
       ]
     }
