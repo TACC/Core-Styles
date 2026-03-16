@@ -18,6 +18,9 @@
   font-size: var(--global-font-size--medium);
   font-weight: var(--medium);
 }
+.x-tabs__tab:is(label) {
+  margin-bottom: 0; /* to undo `elements/form.css` */
+}
 .x-tabs__tab:is(a) {
   text-decoration: none;
 }

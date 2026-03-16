@@ -88,8 +88,8 @@
         <div class="demo-list">
           {{#each in_buttons}}
           <button class="c-button c-button--{{this.type}}">
-            <i class="icon icon-{{this.icon}} c-button__icon--before"></i>
-            <span class="c-button__text">{{this.text}}</span>
+            <i class="icon icon-{{this.icon}}"></i>
+            {{this.text}}
           </button>
           {{/each}}
         </div>

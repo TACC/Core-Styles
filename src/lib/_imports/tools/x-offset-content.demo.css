@@ -1,0 +1,24 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+@import url("./x-offset-content.css");
+
+.x-offset-content--left,
+.x-offset-content--right {
+	@mixin offset-content;
+}
+
+.x-offset-content--right {
+	@mixin offset-content--float-right;
+	@mixin offset-content--offset-right;
+	& + & {
+		@mixin offset-content--terminate-offset-right;
+	}
+}
+
+.x-offset-content--left {
+	@mixin offset-content--float-left;
+	@mixin offset-content--offset-left;
+	& + & {
+		@mixin offset-content--terminate-offset-left;
+	}
+}
