@@ -142,8 +142,16 @@ Styleguide Trumps.Scopes.Header
 }
 
 @define-mixin header--is-expanded {
+  &.s-header .nav-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &.s-header .nav-link {
     padding-block: 8px;
+  }
+  &.s-header .dropdown-menu {
+    flex-basis: 100%;
   }
 }
 @media (--x-narrow-and-below) {
@@ -165,11 +173,17 @@ Styleguide Trumps.Scopes.Header
 .s-header .nav-item.active .nav-link {
   border-color: var(--global-color-secondary--light);
 }
-/* HACK: Using an ID selector, because Bootstrap has overspecific selectors */
-#s-header .nav-link,
-/* HACK: Support `span.nav-link` having children `a` and `a.dropdown-toggle-split` */
-#s-header .nav-link > a {
+.s-header .nav-link {
   color: var(--header-text-color);
+}
+.s-header button.nav-link {
+  font-weight: inherit;
+  background-color: inherit;
+}
+/* To support Bootstrap "Split button" */
+/* https://getbootstrap.com/docs/4.6/components/dropdowns/#split-button */
+.s-header .nav-link:has(+ .dropdown-toggle-split) {
+  padding-right: 0;
 }
 
 
