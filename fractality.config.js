@@ -1,10 +1,11 @@
 'use strict';
 
-const mandelbrot = require('@frctl/mandelbrot');
-const fractal = require('@frctl/fractal').create();
+const mandelbrotPackage = require('@fractality/mandelbrot');
+const fractal = require('@fractality/fractality').create();
+const mandelbrot = mandelbrotPackage.default || mandelbrotPackage;
 
 // Get base theme
-const themeConfig = require('./fractal.theme.js');
+const themeConfig = require('./fractality.theme.js');
 const theme = mandelbrot(themeConfig);
 
 // Configure UI
@@ -64,6 +65,11 @@ fractal.components.set('default.context', {
     isInternal: true,
     layer: 'foundation',
     path: '/assets/core-styles.bootstrap4.css'
+  }],
+  bootstrap5Styles: [{
+    isInternal: true,
+    layer: 'foundation',
+    path: '/assets/core-styles.bootstrap5.css'
   }],
   demoStyles: [{
     isInternal: true,
