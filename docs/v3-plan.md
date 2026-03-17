@@ -109,6 +109,12 @@ label: Links
 > same subdir alongside the main file. The subdir name should be the
 > "base name" without the variant suffix (e.g. `root/`).
 
+> **Note:** Some patterns are partially reorganized — a subdirectory already
+> exists with some files (`config.yml`, `.hbs`, `readme.md`) but the source
+> `.postcss` is still flat at the parent level. Treat these the same way:
+> move the flat `.postcss` (and any variants) into the existing subdir and
+> complete Steps B and C as normal.
+
 > **Note:** Some items (e.g. `_elements.config.yml`, `demo.postcss`,
 > `README.css`, `selectors.*.postcss`) are infrastructure files, not patterns.
 > Do not create subdirs for them.
@@ -181,8 +187,13 @@ src/v3/variables/
 
 ### Remaining ❌
 
-1. **Confirm token values** — verify the manually-entered Figma values are
-   current against the latest Figma re-brand spec.
+> **Blocker — human required:** Task 1 below requires access to Figma and
+> cannot be completed autonomously. All other tasks can proceed independently,
+> but the PR should not be marked ready for review until task 1 is resolved.
+
+1. **Confirm token values** _(human required — needs Figma access)_ — verify
+   the manually-entered values in `src/v3/variables/tokens/primitives-*.css`
+   are current against the latest TACC re-brand spec in Figma.
 2. **Verify build integration** — confirm the token files are imported by the
    main build entry points in `epic/v3` (they currently live under `src/v3/`,
    which may or may not be included in the main build yet).
