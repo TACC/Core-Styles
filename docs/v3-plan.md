@@ -230,7 +230,6 @@ This is the base branch all other v3 work merges into. Key changes already in pl
 | No committed `/dist` | Build output is generated-only; never committed |
 | `bin/build-each.js` | Builds individual stylesheets in place |
 | `bin/only-commit-source.js` | Lint guard: errors if compiled `.css` is found inside `src/` — fixed and passing as of PR #604 |
-| CI lint workflow | Enforces the above on every push |
 | `3.0.0-alpha.0` | Version bump |
 
 **Backwards-compatibility:**
@@ -286,9 +285,9 @@ This covers source files in the reorganized third-party library structure
 heuristic, not a semantic "compiled vs source" check.
 
 **Status:** `npm run lint` and `npm run build` both pass on `epic/v3` as of
-PR #604. Once `epic/v3--reorg` merges the updated `epic/v3`, the new
-`isDemoOrExample` rule will cover all ~54 depth-4 demo files on that branch
-and `npm run lint` will pass there too.
+PR #604. `epic/v3--reorg` has already merged that update; the `isDemoOrExample`
+rule covers all depth-4 demo files on that branch, and `npm run lint` passes
+there too.
 
 New features merged from `main` into `epic/v3` may bring in `.css` source
 files that need renaming to `.postcss`. Check with `npm run lint` after any merge.
