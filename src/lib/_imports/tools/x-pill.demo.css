@@ -1,4 +1,4 @@
-@import url("./x-pill.css");
+@import url("./x-pill.postcss");
 
 /* FAQ: Wrapped to deter clients from using `.x-pill` */
 /* HACK: Not in `x-pill/demo.css` because it is not processed */
