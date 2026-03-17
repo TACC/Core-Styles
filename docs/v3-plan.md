@@ -229,7 +229,7 @@ This is the base branch all other v3 work merges into. Key changes already in pl
 | `.css` → `.postcss` | All source files renamed; built `.css` output is never confused with source |
 | No committed `/dist` | Build output is generated-only; never committed |
 | `bin/build-each.js` | Builds individual stylesheets in place |
-| `bin/only-commit-source.js` | Lint guard: errors if compiled `.css` is found inside `src/` |
+| `bin/only-commit-source.js` | Lint guard: errors if compiled `.css` is found inside `src/` — fixed and passing as of PR #604 |
 | CI lint workflow | Enforces the above on every push |
 | `3.0.0-alpha.0` | Version bump |
 
@@ -266,47 +266,32 @@ accidentally-committed build artifact.
 
 **What it flags:** every `.css` file in `src/` that is not explicitly ignored.
 
-**What it ignores** (four rules, all must-be-ignored to not flag):
+**What it ignores** (six named rules as of PR #604):
 
-| Rule | Pattern | Examples |
-|------|---------|---------|
-| 3-segment depth | `_imports/{A}/{B}/{file}.css` | `bootstrap4/components/btn.css`, `bootstrap5/utilities/link.css` |
-| Fractal server | `fractal.server.refresh.css` | (build-time temp file) |
-| Vendors dir | any path containing `_imports/vendors` | (third-party vendored CSS) |
-| README files | any file named `README.css` | `tacc/components/README.css` |
+| Variable | Matches | Examples |
+|----------|---------|---------|
+| `isLibrarySource` | `_imports/{A}/{B}/{file}.css` — exactly 2 dirs deep | `bootstrap4/components/btn.css` |
+| `isEntryPoint` | `_imports/core-styles.*.css` — consumer-facing aggregators | `core-styles.bootstrap5.css` |
+| `isDemoOrExample` | basename starts with `demo`/`example`, or contains `.demo` | `demo.css`, `c-card.demo.css`, `demo-family.css` |
+| `isVendored` | any path containing `_imports/vendors` | (no-op on `epic/v3--reorg`; `vendors/` was removed) |
+| _(inline)_ | `fractality.server.refresh.css` | (build-time temp file; was `fractal.server.refresh.css` before the Fractality migration) |
+| _(inline)_ | any file named `README.css` | `tacc/components/README.css` |
 
-**The 3-segment rule in plain English:**
+**`isLibrarySource` in plain English:**
 
 > If a `.css` file lives exactly two directories below `_imports/`, leave it alone.
 
-This was written to cover the files in the already-reorganized Bootstrap/third-party
-libraries: `bootstrap4/components/btn.css`, `color-text.css`, etc. These are
-source files that legitimately use `.css` extension in the new library-organized
-structure. It is a depth heuristic, not a semantic "compiled vs source" check.
+This covers source files in the reorganized third-party library structure
+(Bootstrap 4/5 etc.) that legitimately use `.css` extension. It is a depth
+heuristic, not a semantic "compiled vs source" check.
 
-**What the guard does NOT cover (and would flag):**
-
-- **Depth-1 entry points** like `core-styles.bootstrap4.css` and
-  `core-styles.bootstrap5.css` — these are the consumer-facing aggregator files
-  that clients `@import` to load a library's styles. They are supposed to be
-  published. The script predates them (written Oct 2024; both files arrived via
-  `main` merges in 2025–2026) and was never updated to allow them. The guard
-  needs a new ignore rule for top-level `core-styles.*.css` entry points.
-- **Depth-4+ `demo.css` files** inside pattern subdirectories —
-  e.g. `tacc/components/c-button/demo.css`, `bootstrap4/components/btn/demo.css`.
-  These are small plain-CSS demo-context helpers committed alongside their
-  pattern. They are not meant to be published; the guard treating them as
-  suspicious is arguably correct, but the right resolution is unclear until the
-  full build pipeline for v3 is defined (generate them at build time? commit
-  them as `.postcss`?).
-
-On `epic/v3--reorg` there are currently ~54 such `.css` files that the guard
-would flag. They do not break CI (no lint workflow runs on push) but they
-**would** break `npm publish`. Resolving them — at minimum fixing the
-`core-styles.*.css` entry-point gap — is required before v3 can ship.
+**Status:** `npm run lint` and `npm run build` both pass on `epic/v3` as of
+PR #604. Once `epic/v3--reorg` merges the updated `epic/v3`, the new
+`isDemoOrExample` rule will cover all ~54 depth-4 demo files on that branch
+and `npm run lint` will pass there too.
 
 New features merged from `main` into `epic/v3` may bring in `.css` source
-files that still need attention. Check with `npm run lint` after any merge.
+files that need renaming to `.postcss`. Check with `npm run lint` after any merge.
 
 ### Ghost directories on `epic/v3--reorg`
 
