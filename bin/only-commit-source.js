@@ -20,6 +20,11 @@ function findBuiltFiles( dir ) {
     const isProbablyBuilt = filePath.endsWith('.css');
     const basename = path.basename( filePath, '.css' );
 
+    // `.css` files exactly 2 directories below `_imports/` are source files
+    // in the reorganized third-party library structure (e.g. Bootstrap 4/5).
+    // They use `.css` extension by convention and are not build artifacts.
+    const isLibrarySource = /_imports\/[^/]+\/[^/]+\/[^/]+\.css$/.test( relativePath );
+
     // `core-styles.*.css` files are consumer-facing entry points in `_imports/`;
     // they aggregate @imports for a client library and must be published.
     const isEntryPoint = /_imports\/core-styles\.[^/]+\.css$/.test( relativePath );
@@ -28,10 +33,14 @@ function findBuiltFiles( dir ) {
     // are Fractal-only demo helpers and are never compiled into the package.
     const isDemoOrExample = /(?:^demo(?:[.-]|$)|\.demo(?:[.-]|$)|^example(?:[.-]|$))/.test( basename );
 
+    // `_imports/vendors/` exists on epic/v3 but is removed on epic/v3--reorg;
+    // this rule becomes a no-op once the reorg merges in.
+    const isVendored = relativePath.includes( '_imports/vendors' );
+
     const shouldIgnore = (
-      /_imports\/[^/]+\/[^/]+\/[^/]+\.css$/.test(relativePath) ||
+      isLibrarySource ||
       filePath.endsWith('fractal.server.refresh.css') ||
-      relativePath.includes('_imports/vendors') ||
+      isVendored ||
       filePath.endsWith('README.css') ||
       isEntryPoint ||
       isDemoOrExample
