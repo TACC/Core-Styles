@@ -39,7 +39,7 @@ function findBuiltFiles( dir ) {
 
     const shouldIgnore = (
       isLibrarySource ||
-      filePath.endsWith('fractal.server.refresh.css') ||
+      filePath.endsWith('fractality.server.refresh.css') ||
       isVendored ||
       filePath.endsWith('README.css') ||
       isEntryPoint ||
