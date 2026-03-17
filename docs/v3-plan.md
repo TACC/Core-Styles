@@ -3,10 +3,10 @@
 ## Branch / PR Map
 
 ```
-main ◄── epic/v3                          PR #454  (last to merge)
+main ◄── epic/v3                          PR #454  (Step 3 — last to merge)
               ▲
-              ├── epic/v3--reorg           PR #455  (merge second)
-              └── epic/v3--gh-345-…figma  PR #456  (merge third)
+              ├── epic/v3--reorg           PR #455  (Step 1)
+              └── epic/v3--gh-345-…figma  PR #456  (Step 2)
 ```
 
 | PR | Title | Branch → Base | Link |
@@ -264,11 +264,14 @@ On `epic/v3` and all its child branches, the rule is:
 
 - **Source** files use `.postcss`
 - **Built output** files use `.css`
-- The `only-commit-source.js` guard allows `.css` files that are **3+ levels**
-  deep inside `_imports/` (e.g. `bootstrap5/utilities/link.css`) — these are
-  treated as built-in-place outputs
-- A `.css` file at a shallower depth (e.g. `tools/x-pill.css`) will trip the
-  guard and must be renamed to `.postcss`
+- The `only-commit-source.js` guard allows `.css` files at **exactly 3 path
+  segments deep** inside `_imports/` — i.e. `_imports/{library}/{category}/{file}.css`
+  (e.g. `bootstrap5/utilities/link.css`) — these are the compiled-in-place
+  pattern outputs that Fractal needs to serve each pattern
+- A `.css` file at a shallower depth (e.g. `tools/x-pill.css`, 2 segments)
+  **or a deeper depth** (e.g. `tacc/components/c-button/demo.css`, 4 segments)
+  will trip the guard and must be renamed to `.postcss` or generated, not
+  committed as source
 
 New features merged from `main` into `epic/v3` may bring in `.css` source
 files that still need renaming. Check with `npm run lint` after any merge.
