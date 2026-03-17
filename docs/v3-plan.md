@@ -258,23 +258,46 @@ npm start          # demo server must start and show all patterns
 
 ## Notes
 
-### The `.css` vs `.postcss` distinction
+### The `only-commit-source.js` guard
 
-On `epic/v3` and all its child branches, the rule is:
+`bin/only-commit-source.js` runs as `prepublishOnly` (and via `npm run lint`).
+It walks `src/` and errors if it finds any `.css` file that looks like an
+accidentally-committed build artifact.
 
-- **Source** files use `.postcss`
-- **Built output** files use `.css`
-- The `only-commit-source.js` guard allows `.css` files at **exactly 3 path
-  segments deep** inside `_imports/` — i.e. `_imports/{library}/{category}/{file}.css`
-  (e.g. `bootstrap5/utilities/link.css`) — these are the compiled-in-place
-  pattern outputs that Fractal needs to serve each pattern
-- A `.css` file at a shallower depth (e.g. `tools/x-pill.css`, 2 segments)
-  **or a deeper depth** (e.g. `tacc/components/c-button/demo.css`, 4 segments)
-  will trip the guard and must be renamed to `.postcss` or generated, not
-  committed as source
+**What it flags:** every `.css` file in `src/` that is not explicitly ignored.
+
+**What it ignores** (four rules, all must-be-ignored to not flag):
+
+| Rule | Pattern | Examples |
+|------|---------|---------|
+| 3-segment depth | `_imports/{A}/{B}/{file}.css` | `bootstrap4/components/btn.css`, `bootstrap5/utilities/link.css` |
+| Fractal server | `fractal.server.refresh.css` | (build-time temp file) |
+| Vendors dir | any path containing `_imports/vendors` | (third-party vendored CSS) |
+| README files | any file named `README.css` | `tacc/components/README.css` |
+
+**The 3-segment rule in plain English:**
+
+> If a `.css` file lives exactly two directories below `_imports/`, leave it alone.
+
+This was written to cover the files in the already-reorganized Bootstrap/third-party
+libraries: `bootstrap4/components/btn.css`, `color-text.css`, etc. These are
+source files that legitimately use `.css` extension in the new library-organized
+structure. It is a depth heuristic, not a semantic "compiled vs source" check.
+
+**What the guard does NOT cover (and would flag):**
+
+- Depth-1 entry points like `core-styles.bootstrap4.css`
+- Depth-4+ `demo.css` files inside pattern subdirectories —
+  e.g. all of `tacc/components/c-button/demo.css`, `bootstrap4/components/btn/demo.css`, etc.
+
+On `epic/v3--reorg` there are currently ~54 such `.css` files that the guard
+would flag. They do not break CI (no lint workflow runs on push) but they
+**would** break `npm publish`. This is intentional — the branch is a WIP draft
+and the full resolution (renaming, regenerating, or adding ignore rules) is part
+of the remaining work.
 
 New features merged from `main` into `epic/v3` may bring in `.css` source
-files that still need renaming. Check with `npm run lint` after any merge.
+files that still need attention. Check with `npm run lint` after any merge.
 
 ### Ghost directories on `epic/v3--reorg`
 
