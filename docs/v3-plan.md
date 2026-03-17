@@ -286,15 +286,24 @@ structure. It is a depth heuristic, not a semantic "compiled vs source" check.
 
 **What the guard does NOT cover (and would flag):**
 
-- Depth-1 entry points like `core-styles.bootstrap4.css`
-- Depth-4+ `demo.css` files inside pattern subdirectories —
-  e.g. all of `tacc/components/c-button/demo.css`, `bootstrap4/components/btn/demo.css`, etc.
+- **Depth-1 entry points** like `core-styles.bootstrap4.css` and
+  `core-styles.bootstrap5.css` — these are the consumer-facing aggregator files
+  that clients `@import` to load a library's styles. They are supposed to be
+  published. The script predates them (written Oct 2024; both files arrived via
+  `main` merges in 2025–2026) and was never updated to allow them. The guard
+  needs a new ignore rule for top-level `core-styles.*.css` entry points.
+- **Depth-4+ `demo.css` files** inside pattern subdirectories —
+  e.g. `tacc/components/c-button/demo.css`, `bootstrap4/components/btn/demo.css`.
+  These are small plain-CSS demo-context helpers committed alongside their
+  pattern. They are not meant to be published; the guard treating them as
+  suspicious is arguably correct, but the right resolution is unclear until the
+  full build pipeline for v3 is defined (generate them at build time? commit
+  them as `.postcss`?).
 
 On `epic/v3--reorg` there are currently ~54 such `.css` files that the guard
 would flag. They do not break CI (no lint workflow runs on push) but they
-**would** break `npm publish`. This is intentional — the branch is a WIP draft
-and the full resolution (renaming, regenerating, or adding ignore rules) is part
-of the remaining work.
+**would** break `npm publish`. Resolving them — at minimum fixing the
+`core-styles.*.css` entry-point gap — is required before v3 can ship.
 
 New features merged from `main` into `epic/v3` may bring in `.css` source
 files that still need attention. Check with `npm run lint` after any merge.
