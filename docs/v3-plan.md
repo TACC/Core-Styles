@@ -19,18 +19,7 @@ main ◄── epic/v3                          PR #454  (Step 3 — last to mer
 
 ## Execution Order
 
-```
-Step 1 → Complete PR #455  (finish TACC sub-lib reorg + QoL + UX grouping)
-           → merge epic/v3--reorg into epic/v3
-
-Step 2 → Complete PR #456  (un-pause tokens, verify build integration)
-           → merge epic/v3--gh-345-tokens-from-figma into epic/v3
-
-Step 3 → Complete PR #454  (finalize description, verify full build)
-           → merge epic/v3 into main
-```
-
-Steps 1 and 2 touch different files and can run in parallel if desired.
+Steps 1 and 2 touch different files and can run in parallel.
 Step 3 must come last.
 
 ---
@@ -53,17 +42,9 @@ tacc/components/c-button/
   c-button--cms.postcss    ← variant source (also inside subdir)
   c-button.hbs             ← Fractal template
   c-button.selectors.postcss
-  config.yml               ← includes context.subdir (see below)
+  config.yml               ← includes context.subdir (see Step B below)
   demo.css                 ← demo-context styles
 ```
-
-`config.yml` for a finished item includes:
-```yaml
-context:
-  subdir: "tacc/components/c-button"
-```
-
-The `subdir` value is the path from `src/lib/_imports/` to the pattern folder.
 
 ### Done ✅
 
@@ -259,38 +240,10 @@ npm start          # demo server must start and show all patterns
 
 ### The `only-commit-source.js` guard
 
-`bin/only-commit-source.js` runs as `prepublishOnly` (and via `npm run lint`).
-It walks `src/` and errors if it finds any `.css` file that looks like an
-accidentally-committed build artifact.
-
-**What it flags:** every `.css` file in `src/` that is not explicitly ignored.
-
-**What it ignores** (six named rules as of PR #604):
-
-| Variable | Matches | Examples |
-|----------|---------|---------|
-| `isLibrarySource` | `_imports/{A}/{B}/{file}.css` — exactly 2 dirs deep | `bootstrap4/components/btn.css` |
-| `isEntryPoint` | `_imports/core-styles.*.css` — consumer-facing aggregators | `core-styles.bootstrap5.css` |
-| `isDemoOrExample` | basename starts with `demo`/`example`, or contains `.demo` | `demo.css`, `c-card.demo.css`, `demo-family.css` |
-| `isVendored` | any path containing `_imports/vendors` | (no-op on `epic/v3--reorg`; `vendors/` was removed) |
-| _(inline)_ | `fractality.server.refresh.css` | (build-time temp file; was `fractal.server.refresh.css` before the Fractality migration) |
-| _(inline)_ | any file named `README.css` | `tacc/components/README.css` |
-
-**`isLibrarySource` in plain English:**
-
-> If a `.css` file lives exactly two directories below `_imports/`, leave it alone.
-
-This covers source files in the reorganized third-party library structure
-(Bootstrap 4/5 etc.) that legitimately use `.css` extension. It is a depth
-heuristic, not a semantic "compiled vs source" check.
-
-**Status:** `npm run lint` and `npm run build` both pass on `epic/v3` as of
-PR #604. `epic/v3--reorg` has already merged that update; the `isDemoOrExample`
-rule covers all depth-4 demo files on that branch, and `npm run lint` passes
-there too.
-
-New features merged from `main` into `epic/v3` may bring in `.css` source
-files that need renaming to `.postcss`. Check with `npm run lint` after any merge.
+Runs as `prepublishOnly` and via `npm run lint`. Passes on `epic/v3` and
+`epic/v3--reorg` as of PR #604. After any merge from `main`, run
+`npm run lint` — new `.css` source files from `main` may need renaming to
+`.postcss`.
 
 ### Ghost directories on `epic/v3--reorg`
 
