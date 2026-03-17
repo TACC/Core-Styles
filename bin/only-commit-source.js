@@ -18,11 +18,23 @@ function findBuiltFiles( dir ) {
     }
 
     const isProbablyBuilt = filePath.endsWith('.css');
+    const basename = path.basename( filePath, '.css' );
+
+    // `core-styles.*.css` files are consumer-facing entry points in `_imports/`;
+    // they aggregate @imports for a client library and must be published.
+    const isEntryPoint = /_imports\/core-styles\.[^/]+\.css$/.test( relativePath );
+
+    // Files whose name starts with `demo` / `example`, or contains `.demo`,
+    // are Fractal-only demo helpers and are never compiled into the package.
+    const isDemoOrExample = /(?:^demo(?:[.-]|$)|\.demo(?:[.-]|$)|^example(?:[.-]|$))/.test( basename );
+
     const shouldIgnore = (
       /_imports\/[^/]+\/[^/]+\/[^/]+\.css$/.test(relativePath) ||
       filePath.endsWith('fractal.server.refresh.css') ||
       relativePath.includes('_imports/vendors') ||
-      filePath.endsWith('README.css')
+      filePath.endsWith('README.css') ||
+      isEntryPoint ||
+      isDemoOrExample
     );
 
     if ( isProbablyBuilt && ! shouldIgnore ) {
