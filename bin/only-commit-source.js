@@ -20,7 +20,7 @@ function findBuiltFiles( dir ) {
     const isProbablyBuilt = filePath.endsWith('.css');
     const shouldIgnore = (
       /_imports\/[^/]+\/[^/]+\/[^/]+\.css$/.test(relativePath) ||
-      filePath.endsWith('fractal.server.refresh.css') ||
+      filePath.endsWith('fractality.server.refresh.css') ||
       relativePath.includes('_imports/vendors') ||
       filePath.endsWith('README.css')
     );
