@@ -1,0 +1,16 @@
+status: ready
+context:
+  subdir: "tacc/components/c-feed-list"
+variants:
+  - name: default
+    label: Default
+    context:
+      shouldSkipPattern: false
+  - name: cms
+    label: CMS
+    context:
+      shouldLoadCMS: true
+  - name: portal
+    label: Portal
+    context:
+      shouldLoadPortal: true

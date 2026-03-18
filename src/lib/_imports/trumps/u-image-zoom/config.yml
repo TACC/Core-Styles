@@ -1,3 +1,0 @@
-context:
-  shouldSkipPattern: false
-  📝 shouldSkipPattern: because core-styles.….css does not import this

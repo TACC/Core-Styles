@@ -1,0 +1,9 @@
+context:
+  subdir: "pymdownx/extensions/tabbed"
+variants:
+  - name: default
+    label: TACC
+    status: ready
+    context:
+      shouldSkipPattern: true
+      shouldLoadDocs: true

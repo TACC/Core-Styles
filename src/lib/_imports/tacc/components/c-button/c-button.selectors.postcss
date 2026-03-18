@@ -1,0 +1,58 @@
+@import url("../../tools/selectors.postcss");
+
+@custom-selector :--c-button
+    .c-button,
+    [class*="button--"],
+    /* WARN: borrowing file to support Bootstrap */
+    .btn;
+
+@custom-selector :--c-button--primary
+    .c-button--primary,
+    .button--1,
+    /* WARN: borrowing file to support Bootstrap */
+    .btn-primary,
+    .btn-dark;
+@custom-selector :--c-button--secondary
+    .c-button--secondary,
+    .button--2,
+    /* WARN: borrowing file to support Bootstrap */
+    .btn-secondary,
+    .btn-light;
+@custom-selector :--c-button--tertiary
+    .c-button--tertiary,
+    .button--3,
+    /* WARN: borrowing file to support Bootstrap */
+    .btn-info,
+    .btn-success,
+    .btn-warning,
+    .btn-danger;
+
+@custom-selector :--c-button--can-truncate
+    .c-button--can-truncate,
+    .button--truncate;
+
+@custom-selector :--c-button--is-active
+    [class*="button--is-active"],
+    /* WARN: borrowing file to support Bootstrap */
+    .btn.active;
+@custom-selector :--c-button--is-busy
+    [class*="button--is-busy"],
+    [data-state="busy"];
+@custom-selector :--c-button--as-link
+    [class*="button--as-link"],
+    /* WARN: borrowing file to support Bootstrap */
+    .btn-link;
+
+@custom-selector :--c-button--width-long
+    [class*="button--width-long"];
+@custom-selector :--c-button--width-medium
+    [class*="button--width-medium"];
+@custom-selector :--c-button--width-short
+    [class*="button--width-short"];
+@custom-selector :--c-button--width
+    [class*="button--width-"];
+
+@custom-selector :--c-button--size-small
+    [class*="button--size-small"],
+    /* WARN: borrowing file to support Bootstrap */
+    .btn-sm;

@@ -1,0 +1,39 @@
+@import url("../../tools/selectors.postcss");
+
+@custom-selector :--c-message
+    .c-message,
+    [class*="message--"];
+
+@custom-selector :--c-message--type
+    [class*="message--type-"];
+@custom-selector :--c-message--type-info
+    .c-message--type-info,
+    .message--type-info;
+@custom-selector :--c-message--type-success
+    .c-message--type-success,
+    .message--type-success;
+@custom-selector :--c-message--type-warning
+    .c-message--type-warning,
+    .message--type-warning;
+@custom-selector :--c-message--type-error
+    .c-message--type-error,
+    .message--type-error;
+@custom-selector :--c-message--type-extra
+    .c-message--type-extra,
+    .message--type-extra;
+
+@custom-selector :--c-message--scope
+    [class*="message--scope-"];
+@custom-selector :--c-message--scope-inline
+    .c-message--scope-inline,
+    .message--scope-inline;
+@custom-selector :--c-message--scope-section
+    .c-message--scope-section,
+    .message--scope-section;
+@custom-selector :--c-message--scope-global
+    .c-message--scope-global,
+    .message--scope-global;
+
+@custom-selector :--c-message--has-icon
+    .c-message--has-icon,
+    .message--has-icon;

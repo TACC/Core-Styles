@@ -1,0 +1,19 @@
+@import url("../../tacc/tools/x-pagination.postcss");
+
+.pagination {
+  @mixin pagination;
+
+  margin-block: var(--global-space--x-large);
+
+  margin-inline: auto;
+}
+.pagination a {
+  @mixin pagination__end-item;
+
+  padding-block: 0;
+}
+.pagination span {
+  @mixin pagination__page-item;
+
+  padding-block: 0;
+}

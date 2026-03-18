@@ -1,0 +1,32 @@
+@import url("./c-button.selectors.postcss");
+
+@import url("../../tools/selectors.form.postcss");
+
+
+:where(:--main-content) {
+  & :--c-button--primary,
+  & :--c-button--secondary,
+  & :--c-button--tertiary,
+  & :--c-button--is-active,
+  & :--form__button {
+    padding: 10px 20px;
+
+    font-size: var(--global-font-size--small);
+    & .icon {
+      font-size: calc(
+        1.2 * var(--global-font-size--medium)
+      ); /* to retain standard action icon size */
+    }
+
+    font-weight: var(--bold);
+    letter-spacing: 0.05em;
+  }
+}
+
+:--c-button--primary,
+:--c-button--secondary,
+:--c-button--tertiary,
+:--c-button--is-active,
+:--form__button {
+  text-transform: uppercase;
+}
