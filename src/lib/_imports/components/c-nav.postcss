@@ -1,0 +1,226 @@
+@import url("../tools/media-queries.postcss");
+
+@import url("./c-button.selectors.postcss");
+
+
+
+
+/* Block */
+
+nav.c-nav {
+  /* NOTE: Client is expected to overwrite these */
+  --link-padding: 0.5em;
+}
+
+
+
+
+
+/* Modifiers */
+
+
+
+/* Modifiers: Boxed */
+
+nav.c-nav--boxed {
+  /* NOTE: Client is expected to overwrite these */
+  --indent-small: calc(var(--global-space--list-indent) / 4);
+  --indent-medium: calc(var(--global-space--list-indent) / 2);
+  --indent-large: var(--global-space--list-indent);
+
+  width: fit-content;
+
+  border: var(--global-border--normal);
+}
+
+/* any list */
+nav.c-nav--boxed :is(ul,ol) {
+  margin: 0;
+}
+
+/* Modifiers: Boxed: Padding */
+
+/* unordered list */
+nav.c-nav--boxed ul {
+  list-style-type: none; /* to remove bullets (must then reduce padding left) */
+  padding-left: var(--indent-medium);
+  padding-right: var(--indent-large);
+}
+
+/* wide screen */
+@media (--medium-and-above) {
+  nav.c-nav--boxed {
+    /* Normal vertical padding */
+    padding-block: var(--indent-medium);
+  }
+
+  nav.c-nav--boxed ol {
+    /* We retain bullets, which (wide screen) need large padding (so keep it) */
+    padding-left: var(--indent-large);
+    padding-right: calc( var(--indent-large) - var(--link-padding) );
+  }
+}
+
+/* narrow screen */
+@media (--medium-and-below) {
+  nav.c-nav--boxed {
+    /* Reduced vertical padding because of narrow screen link line-height */
+    padding-block: var(--indent-small);
+  }
+
+  nav.c-nav--boxed ol {
+    /* We retain bullets, which (narrow screen) don't need large padding left */
+    padding-left: calc( var(--indent-medium) - var(--link-padding) );
+    padding-right: calc( var(--indent-large) - var(--link-padding) );
+  }
+}
+
+/* no list */
+nav.c-nav--boxed.c-nav--no-list {
+  /* Has no bullets, thus smaller padding left */
+  padding-left: var(--indent-medium);
+  padding-right: var(--indent-large);
+}
+
+
+
+/* Modifiers: Pipes */
+
+nav.c-nav--piped {
+  --pipe-style: 1px solid currentColor;
+}
+
+/* To ensure pipe is visible */
+/* CAVEAT: Truncation will NOT work */
+nav[class*="c-nav--piped"] button:--c-button--as-link {
+  overflow: visible;
+}
+
+
+/* Modifiers: Pipes: Methods */
+
+@custom-selector :--child-no-list
+  :not(ul,ol);
+@custom-selector :--child-of-list
+  :is(ul,ol) > *;
+
+.c-nav--piped--after > :--child-of-list,
+.c-nav--piped--after > :--child-no-list,
+.c-nav--piped--before > :--child-of-list,
+.c-nav--piped--before > :--child-no-list {
+  position: relative;
+}
+.c-nav--piped--after > :--child-of-list::after,
+.c-nav--piped--after > :--child-no-list::after,
+.c-nav--piped--before > :--child-of-list::before,
+.c-nav--piped--before > :--child-no-list::before {
+  content: '';
+  display: block;
+  height: 1em;
+
+  /* To vertically center (because height ≠ 100%) */
+  position: absolute;
+  margin-top: 0.1em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* via "after" pseduo-element */
+.c-nav--piped--after > :--child-no-list:not(:last-child)::after,
+.c-nav--piped--after > :--child-of-list:not(:last-child)::after {
+  border-right: var(--pipe-style);
+  right: calc( -0.5 * var(--link-padding));
+}
+.c-nav--piped--after button:--c-button--as-link:not(:last-child)::after {
+  margin-right: calc( -1 * var(--global-border-width--normal));
+}
+.c-nav--piped--after button:not(:--c-button--as-link):not(:last-child)::after {
+  margin-right: calc( -2 * var(--global-border-width--normal));
+}
+/* via "before" pseduo-element */
+.c-nav--piped--before > :--child-no-list:not(:first-child)::before,
+.c-nav--piped--before > :--child-of-list:not(:first-child)::before {
+  border-left: var(--pipe-style);
+  left: calc( -0.5 * var(--link-padding));
+}
+.c-nav--piped--before button:--c-button--as-link:not(:first-child)::before {
+  margin-left: calc( -2 * var(--global-border-width--normal));
+}
+.c-nav--piped--before button:not(:--c-button--as-link):not(:first-child)::before {
+  margin-left: calc( -2 * var(--global-border-width--normal));
+}
+/* default */
+nav.c-nav--piped:not([class*="c-nav--piped--"]) {
+  @extend .c-nav--piped--after;
+}
+
+
+
+/* Modifiers: No List */
+
+/* This is not a true modifier. It is required to support certain markup. */
+/* SEE: stylesheet docblock, "no list" comments, `...--no-list` selectors */
+
+
+
+
+
+/* Elements */
+
+
+
+nav.c-nav {
+  /* NOTE: Client is expected to overwrite these */
+  --space-between-inline-items: 0.5em;
+}
+nav.c-nav :is(a, :--c-button--as-link) {
+  display: inline-block; /* to let line-height define clickable area */
+  padding-inline: var(--link-padding);
+}
+
+/* no list */
+nav.c-nav--no-list {
+  display: flex; /* to remove whitespace between items */
+  flex-wrap: wrap;
+  align-items: center; /* for diff-height items e.g. links with buttons */
+}
+nav.c-nav--no-list:has(button) {
+  row-gap: var(--space-between-inline-items);
+}
+nav.c-nav--no-list > :is(a, button) {
+  /* To space items via margin (use `-right` to not increase left indent) */
+  margin-right: var(--space-between-inline-items);
+}
+
+
+
+/* Elements: Narrow Screen */
+
+@media (--medium-and-below) {
+
+  nav.c-nav a {
+    line-height: 2.5;
+  }
+
+  /* any list */
+  nav.c-nav :is(ul,ol) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* for diff-height items e.g. links with buttons */
+
+    /* To prevent overlap of any lists' decorators (when items are inline) */
+    list-style-position: inside;
+  }
+  nav.c-nav :is(ul,ol):not(.c-nav--boxed :is(ul,ol)) {
+    /* To remove padding because list decorators are `...position: inside` */
+    padding-left: unset;
+  }
+  nav.c-nav :is(ul,ol) li {
+    /* To space items via margin (use `-right` to not increase left indent) */
+    margin-right: var(--space-between-inline-items);
+  }
+
+  /* unordered list */
+  nav.c-nav ul { list-style-type: none; }
+
+}
