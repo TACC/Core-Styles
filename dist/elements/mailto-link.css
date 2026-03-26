@@ -1,2 +1,2 @@
-/*! @tacc/core-styles 2.54.0+ | MIT | github.com/TACC/Core-Styles */
+/*! @tacc/core-styles 2.54.0-rc1+ | MIT | github.com/TACC/Core-Styles */
 /* !!!: A user can not navigate to such a link with tab key */a[data-user][data-domain]:not(:is(.c-button,[class*=button--],.btn)){font-size:0;text-underline-offset:.3rem;visibility:hidden}a[data-user][data-domain]:not(:is(.c-button,[class*=button--],.btn)):before{content:attr(data-user) "@" attr(data-domain);display:inline;font-size:initial;visibility:visible}
