@@ -9,6 +9,8 @@ Styleguide Tools.Mixins.MailtoTextReplace
 @import url("../components/c-button.selectors.css");
 
 /* To replace actual link text with generated link text */
+/* !!!: A user can not navigate to such a link with tab key */
+/* TODO: Deprecate this (or fix accessibility issue) */
 %x-mailto-text-replace {
     &:not(:--c-button) {
         /* FAQ: Using `display: none` would hide pseudo element text */
