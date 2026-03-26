@@ -26,7 +26,3 @@
 
     border-bottom: unset; /* to undo figure-caption */
 }
-
-/* DEPRECATED */
-.x-blockquote { @mixin blockquote; }
-.x-blockquote-caption { @mixin blockquote-caption; }
