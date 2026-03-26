@@ -10,7 +10,7 @@
     --buffer-above: 1.0rem;
     --buffer-below: 1.0rem;
 
-    color: var(--global-color-primary--dark);
+    opacity: 0.6;
 
     line-height: 1.7;
     font-style: italic;
