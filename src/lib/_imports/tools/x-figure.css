@@ -23,3 +23,7 @@
     border-bottom-style: solid;
     border-bottom-color: var(--global-color-primary--normal);
 }
+
+/* DEPRECATED */
+.x-figure { @mixin figure; }
+.x-figure-caption { @mixin figure-caption; }
