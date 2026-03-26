@@ -1,6 +1,10 @@
 # Defines labels for https://github.com/TACC/Core-Styles/labels
 # Synced via `./workflows/sync-labels.yml` action
 
+- name: accessibility
+  color: 'FA8122'
+  description: Accessibility degraded or unavailable
+
 - name: alternative
   color: 'FFFFFF'
   description: Alternative solution(s) exist(s)
