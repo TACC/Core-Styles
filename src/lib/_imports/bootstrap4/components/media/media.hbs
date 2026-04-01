@@ -1,0 +1,41 @@
+<dl>
+    <dt>Bootstrap <code>.media</code></dt>
+    <dd>
+        <div class="media">
+            {{> @img }}
+            <div class="media-body">
+                <h4>No Extra Classes</h4>
+                <p>Default alignment (none).</p>
+            </div>
+        </div>
+    </dd>
+    <dd>
+        <div class="media">
+            {{> @img class="mr-3" }}
+            <div class="media-body align-self-center">
+                <h4>Has Extra Classes</h4>
+                <p>Custom alignment (center).</p>
+            </div>
+        </div>
+    </dd>
+
+    <dt>TACC <code>.media.media-link</code></dt>
+    <dd>
+        <a href="#" class="media media-link">
+            {{> @img }}
+            <div class="media-body">
+                <h4>HTML5 Markup</h4>
+                <p>The <code>.media</code> is a link.</p>
+            </div>
+        </a>
+    </dd>
+    <dd>
+        <div class="media media-link">
+            <a href="#" title="HTML4 Markup">{{> @img }}</a>
+            <span class="media-body">
+                <a href="#">HTML4 Markup</a><br>
+                <span>Links are inside <code>.media</code>.</span>
+            </span>
+        </div>
+    </dd>
+</dl>
