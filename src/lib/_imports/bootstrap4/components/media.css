@@ -1,4 +1,6 @@
 .media-link {
     gap: 1rem;
-    align-items: center;
+}
+.media-link > :not(.media-body) {
+    margin-top: 0.5rem;
 }
