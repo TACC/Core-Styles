@@ -77,8 +77,8 @@
 }
 :--o-section--accent {
   --color--text: var(--global-color-primary--xx-dark);
-  --color--bkgd: var(--global-color-warning--x-light);
-  --color--line: var(--global-color-warning--dark);
+  --color--bkgd: var(--global-color-accent--xxx-light);
+  --color--line: var(--global-color-accent--dark);
 }
 :--o-section--muted {
   --color--text: var(--global-color-primary--xx-dark);
