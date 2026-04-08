@@ -1,0 +1,13 @@
+---
+description: Tag-team screenshot workflow (agent + human)
+alwaysApply: true
+---
+
+# Screenshot tag-team
+
+- **Roles**: The human sets zoom and scroll position; the agent captures screenshots only when told to.
+- **Open**: Agent may navigate to the target URL once (e.g. preview route). Human adjusts zoom afterward if needed.
+- **First shot (top)**: Human zooms out and scrolls to the **top**, then says **ready**. Agent takes **one** screenshot **without** navigating or reloading.
+- **Second shot (bottom)**: Human scrolls to the **bottom**, then says **ready**. Agent takes **one** screenshot **without** navigating or reloading.
+- **Stability**: After human says ready, agent must not refresh, navigate, resize viewport, or change zoom—only capture.
+- **Clarity**: If capture fails or state is wrong, agent asks human to fix zoom/scroll and say ready again; agent does not improvise extra steps.

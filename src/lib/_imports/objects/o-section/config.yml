@@ -8,6 +8,10 @@ variants:
     label: (Style) Light
     context:
       modifier: style-light
+  - name: style-accent
+    label: (Style) Accent
+    context:
+      modifier: style-accent
   - name: style-muted
     label: (Style) Muted
     context:
