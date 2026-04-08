@@ -79,6 +79,10 @@
   --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-accent--xxx-light);
   --color--line: var(--global-color-accent--light);
+
+  & h2 {
+    color: currentColor;
+  }
 }
 :--o-section--muted {
   --color--text: var(--global-color-primary--xx-dark);
@@ -89,6 +93,10 @@
   --color--text: var(--global-color-primary--xx-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
   --color--line: var(--global-color-primary--normal);
+
+  & h2 {
+    color: var(--global-color-secondary--light);
+  }
 }
 
 /* Modifers: Style: Text & Background */
