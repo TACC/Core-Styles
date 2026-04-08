@@ -78,7 +78,7 @@
 :--o-section--accent {
   --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-accent--xxx-light);
-  --color--line: var(--global-color-accent--dark);
+  --color--line: var(--global-color-accent--light);
 }
 :--o-section--muted {
   --color--text: var(--global-color-primary--xx-dark);
@@ -88,7 +88,7 @@
 :--o-section--dark {
   --color--text: var(--global-color-primary--xx-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
-  --color--line: var(--global-color-primary--xx-light);
+  --color--line: var(--global-color-primary--normal);
 }
 
 /* Modifers: Style: Text & Background */
@@ -104,6 +104,16 @@
 /* Nested sections must not stretch to page edge */
 :--o-section--style :--o-section--style {
   box-shadow: none;
+}
+
+/* Modifers: Style: Borders */
+
+/* To add border between same-style sections */
+:--o-section--light + :--o-section--light,
+:--o-section--accent + :--o-section--accent,
+:--o-section--muted + :--o-section--muted,
+:--o-section--dark + :--o-section--dark {
+  border-top: 1px solid var(--color--line);
 }
 
 
