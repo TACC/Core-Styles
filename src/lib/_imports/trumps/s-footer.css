@@ -7,24 +7,23 @@
   padding-block: 15px;
 
   color: var(--global-color-primary--x-light);
-  background-color: var(--header-bkgd-color);
+  background-color: var(--global-color-primary--xx-dark);
 
   font-size: var(--global-font-size--small);
   text-align: center;
+
+  & h2 {
+    color: currentColor;
+  }
+  & a:not(:--c-button) {
+    color: var(--global-color-accent--light-alt);
+  }
 }
 .s-footer--thick {
   padding-inline: var(--pad-horz--thick);
 }
 .s-footer--thin {
   padding-inline: var(--pad-horz--thin);
-}
-
-.s-footer a:not(:--c-button) {
-    color: var(--global-color-accent--light-alt);
-}
-
-.s-footer :--heading {
-  color: var(--global-color-primary--xx-light);
 }
 
 /* Let paragraphs behave normally */
