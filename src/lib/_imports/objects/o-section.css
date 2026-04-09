@@ -90,7 +90,7 @@
   --color--line: var(--global-color-primary--dark);
 }
 :--o-section--dark {
-  --color--text: var(--global-color-primary--xx-light);
+  --color--text: var(--global-color-primary--x-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
   --color--line: var(--global-color-primary--normal);
 
