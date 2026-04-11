@@ -85,4 +85,5 @@
 /* To suggest semantic solution for horiontal lines */
 .s-footer hr {
     margin-block: 1rem;
+    border-color: var(--global-color-primary--xx-light);
 }
