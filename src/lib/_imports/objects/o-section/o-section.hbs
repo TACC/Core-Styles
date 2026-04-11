@@ -1,7 +1,8 @@
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section</h2>
-    {{render '@o-section--usage'}}
+    <h3>Sub-heading</h3>
+    <p>{{render '@o-section--usage'}}</p>
 </section>
 
 <hr />
@@ -24,13 +25,18 @@
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
     {{> @button-samples }}
 </section>
+<section class="o-section o-section--style-accent">
+    <h2>Accent Section</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
 <section class="o-section o-section--style-muted">
     <h2>Muted Section</h2>
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
     {{> @button-samples }}
 </section>
 <section class="o-section o-section--{{this._self.name}}">
-    <h2>Section (after Muted Section)</h2>
+    <h2>Section (after Accent + Muted Sections)</h2>
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
     {{> @button-samples }}
 </section>
@@ -55,11 +61,16 @@
         <p>{{> @text-of-one-paragraph-with-actions }}</p>
         {{> @button-samples }}
     </div>
+    <div class="o-section o-section--style-accent">
+        <h3>(Nested) Accent Section</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+        {{> @button-samples }}
+    </div>
 </section>
 
 <hr />
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (at Bottom of Page)</h2>
-    <p>At the bottom of a CMS page: a <strong>light</strong> Section will stand out above the Footer, a <strong>muted</strong> Section will stand out above the Footer, a <strong>dark</strong> Section will visually merge with the Footer.</p>
+    <p>At the bottom of a CMS page: a <strong>light</strong> Section will stand out above the Footer, an <strong>accent</strong> Section will stand out above the Footer, a <strong>muted</strong> Section will stand out above the Footer, and a <strong>dark</strong> Section will visually merge with the Footer.</p>
 </section>

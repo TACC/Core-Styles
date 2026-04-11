@@ -1,17 +1,46 @@
 @import url("../tools/selectors.css");
 @import url("../components/c-button.selectors.css");
+@import url("../tools/media-queries.css");
 
 @import url("./s-footer.properties.css");
 
-.s-footer {
-  padding-block: 15px;
+/* MIXINS */
 
+@define-mixin footer-link {
+  color: inherit;
+
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(currentColor 50%, transparent);
+
+  &:hover {
+    text-decoration-color: inherit;
+  }
+}
+
+/* BASE */
+
+.s-footer {
   color: var(--global-color-primary--x-light);
-  background-color: var(--header-bkgd-color);
+  background-color: var(--global-color-primary--xx-dark);
 
   font-size: var(--global-font-size--small);
-  text-align: center;
+
+  & h2 {
+    color: currentColor;
+  }
+
+  &:not(:has(.s-footer__identity)) {
+    text-align: center;
+
+    & a:not(:--c-button) {
+      @mixin footer-link;
+    }
+  }
 }
+
+
+/* MODIFIERS */
+
 .s-footer--thick {
   padding-inline: var(--pad-horz--thick);
 }
@@ -19,13 +48,32 @@
   padding-inline: var(--pad-horz--thin);
 }
 
-.s-footer a:not(:--c-button) {
-    color: var(--global-color-accent--light-alt);
+.s-footer:not(.s-footer--fat) {
+  padding-block: var(--pad-vert--thin);
+}
+.s-footer--fat {
+  padding-block: var(--pad-vert--thick);
 }
 
-.s-footer :--heading {
-  color: var(--global-color-primary--xx-light);
+/* ELEMENTS */
+
+.s-footer__identity {
+  background-color: var(--global-color-primary--x-dark);
+
+  /* To stretch identity column to fill height */
+  .s-footer--fat & {
+    padding-inline: var(--pad-horz--thick);
+
+    margin-block: calc(-1 * var(--pad-vert--thick));
+    padding-block: var(--pad-vert--thick);
+  }
+
+  & a:not(:--c-button) {
+    @mixin footer-link;
+  }
 }
+
+/* HTML ELEMENTS */
 
 /* Let paragraphs behave normally */
 .s-footer > p {
@@ -37,4 +85,5 @@
 /* To suggest semantic solution for horiontal lines */
 .s-footer hr {
     margin-block: 1rem;
+    border-color: var(--global-color-primary--xx-light);
 }

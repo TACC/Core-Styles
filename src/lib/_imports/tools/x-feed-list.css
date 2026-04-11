@@ -123,8 +123,6 @@
     font-size: var(--global-font-size--medium);
 
     margin-block: 0 2rem;
-
-    @mixin truncate--one-line;
 }
 @define-mixin feed-list__more-link {
     @mixin action--with-icon;
