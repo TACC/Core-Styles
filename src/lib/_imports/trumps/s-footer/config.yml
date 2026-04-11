@@ -9,27 +9,45 @@ variants:
     hidden: true
   - name: thin
     context:
-      modifier: thin
+      width: thin
       bodyContent: Thin footer has narrow horizontal padding. <em>You may need to reduce panel width to see this.</em>
   - name: thick
     context:
-      modifier: thick
+      width: thick
       bodyContent: Thick footer has wider horizontal padding. <em>You may need to reduce panel width to see this.</em>
   - name: cms
     label: CMS
     context:
+      isPortalOrCMS: true
       shouldLoadCMS: true
       shouldSkipPattern: true
   - name: portal
     label: Portal
     context:
+      isPortalOrCMS: true
       shouldLoadPortal: true
       shouldSkipPattern: true
-  - name: complex
+  - name: fat-footer
+    label: Fat Footer
     status: prototype
     context:
-      modifier: thick
-      isComplex: true
-      bodyContent: More complex footers may inlcude heading(s) and list(s) of links.
+      shouldSkipPattern: true
+      width: thick
+      weight: fat
+      hasIdentityColumn: true
+      bodyContent: >-
+        More complex footers benefit from:
+        <ul>
+          <li>the <code>.s-footer--fat</code> modifier</li>
+          <li>a <code>.s-footer__identity</code> child element</li>
+        </ul>
+        But may require:
+        <ul>
+          <li>layout management <small>(e.g. Bootstrap classes, custom CSS)</small></li>
+          <li>
+            narrow screen overrides
+            <small>(e.g. <a href="/components/raw/s-footer/demo.css" target="_blank">demo.css</a> restyles <code>.s-footer__identity</code>)</small>
+          </li>
+        </ul>
       shouldLoadCMS: true
       shouldLoadBootstrap: true
