@@ -1,48 +1,77 @@
 <main>
+  {{#if bodyContent}}
   <p>
-    {{#if bodyContent}}
-      {{{bodyContent}}}
-    {{else}}
-      Sample body content. Footer is at bottom of page.
-    {{/if}}
+    {{{bodyContent}}}
   </p>
-    {{#if shouldLoadCMS}}
+  {{/if}}
+  {{#if isPortalOrCMS}}
   <p>
-    CMS always uses <a href="{{path '../detail/s-footer--thick'}}" target="_parent">thick</a> footer.
+    Note:
+    <ul>
+      <li>CMS footer is always <a href="{{path '../detail/s-footer--thick'}}" target="_parent">thick</a>.</li>
+      <li>Portal footer is always <a href="{{path '../detail/s-footer--thin'}}" target="_parent">thin</a>.</li>
+    </ul>
   </p>
-    {{/if}}{{#if shouldLoadPortal}}
-  <p>
-    Portal always uses <a href="{{path '../detail/s-footer--thin'}}" target="_parent">thin</a> footer.
-  </p>
-    {{/if}}{{#if shouldLoadBootstrap}}
-  <p>
-    This pattern is not protected from Bootstrap side-effects (e.g. heading margin).
-  </p>
-    {{/if}}
+  {{/if}}
 </main>
-<footer class="s-footer{{#if modifier }} s-footer--{{ modifier }}{{/if}}">
-  {{#if isComplex}}
-  <div style="text-align:left;">
+<footer class="
+  s-footer
+  {{#if width }}
+  s-footer--{{ width }}
+  {{/if}}
+  {{#if weight }}
+  s-footer--{{ weight }}
+  {{/if}}
+  {{#if hasIdentityColumn}}
+  row no-gutters pr-md-0
+  {{/if}}
+">
+  {{#if hasIdentityColumn}}
+  <nav class="col col-auto col-lg-2
+              mr-5 mb-lg-0">
     <h4>About</h4>
     <p>
-      <a href="#">About TACC</a><br>
-      <a href="#">Jobs at TACC</a><br>
+      <a href="#">Mission</a><br>
       <a href="#">Contact</a><br>
-      <a href="#">Staff Directory</a><br>
+      <a href="#">Staff</a><br>
+    </p>
+  </nav>
+  <nav class="col col-auto col-lg-2
+              mr-5 mb-lg-0">
+    <h4>Services</h4>
+    <p>
+      <a href="#">Data</a><br>
+      <a href="#">AI</a><br>
+      <a href="#">HPC</a><br>
+    </p>
+  </nav>
+  <nav class="col col-auto col-lg-2
+              mr-5 mb-lg-0">
+    <h4>Resources</h4>
+    <p>
+      <a href="#">Jobs</a><br>
       <a href="#">Tours</a><br>
-      <a href="#">Citing TACC</a><br>
-      <a href="#">Security and Compliance</a><br>
-      <a href="#">Help</a>
+      <a href="#">Security</a>
     </p>
     <hr>
-    <a href="#" class="c-button c-button--primary">Button</a>
-  </div>
-  {{else}}
+    <a href="#" class="c-button c-button--primary">Help</a>
+  </nav>
+  <aside class="col col-12 col-md-4
+                ml-md-auto
+                s-footer__identity">
     <p>
-      ©2023
-      <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Advanced Computing Center</a>,
-      <a href="https://www.utexas.edu/" target="_blank">The University of Texas at Austin</a>,
-      <a href="https://research.utexas.edu/" target="_blank">Office of the Vice President for Research</a>.
+      The <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Advanced Computing Center</a> is part of the
+      <a href="https://research.utexas.edu/" target="_blank">Office of the Vice President for Research</a> at
+      <a href="https://www.utexas.edu/" target="_blank">The University of Texas at Austin</a>.
+      Pack my red box with five dozen quality jugs. <a href="#">Inline link in prose</a>.
     </p>
+  </aside>
+  {{else}}
+  <p>
+    ©2023
+    <a href="https://www.tacc.utexas.edu/" target="_blank">Texas Advanced Computing Center</a>,
+    <a href="https://www.utexas.edu/" target="_blank">The University of Texas at Austin</a>,
+    <a href="https://research.utexas.edu/" target="_blank">Office of the Vice President for Research</a>.
+  </p>
   {{/if}}
 </footer>
