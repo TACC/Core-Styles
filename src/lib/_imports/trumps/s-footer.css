@@ -20,7 +20,7 @@
 /* BASE */
 
 .s-footer {
-  color: var(--global-color-primary--x-light);
+  color: var(--global-color-primary--light);
   background-color: var(--global-color-primary--xx-dark);
 
   font-size: var(--global-font-size--small);
