@@ -1,0 +1,12 @@
+context:
+  shouldSkipPattern: false
+  📝 shouldSkipPattern: because core-styles.….css does not import this
+  supportStyles:
+    - ../../assets/objects/o-section.css
+  types:
+    - cols: 2
+      section: light
+    - cols: 3
+      section: dark
+    - cols: 4
+      section: light
