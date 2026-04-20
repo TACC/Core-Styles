@@ -11,6 +11,7 @@ if [ -z "$1" ]; then
 fi
 
 version_tag=$1
+version_number=${version_tag#v}
 
 # Check npm login status
 if ! npm whoami >/dev/null 2>&1; then
@@ -26,8 +27,8 @@ git checkout main
 git pull origin main
 
 # Check if version is already published
-if npm view "@tacc/core-styles@${version_tag#v}" >/dev/null 2>&1; then
-    echo "Version ${version_tag#v} is already published to npm."
+if npm view "@tacc/core-styles@${version_number}" >/dev/null 2>&1; then
+    echo "Version ${version_number} is already published to npm."
     if confirm "Skip npm publish step?"; then
         echo "Skipping npm publish..."
     else
@@ -36,8 +37,16 @@ if npm view "@tacc/core-styles@${version_tag#v}" >/dev/null 2>&1; then
     fi
 else
     # Publish to npm
-    echo "Publishing to npm..."
-    npm publish --access public
+    npm_publish_args=(--access public)
+
+    if [[ "$version_number" =~ -rc[0-9]+$ ]]; then
+        npm_publish_args+=(--tag rc)
+        echo "Publishing ${version_number} (release candidate) to npm (with 'rc' tag)..."
+    else
+        echo "Publishing ${version_number} to npm..."
+    fi
+
+    npm publish "${npm_publish_args[@]}"
 fi
 
 # Create GitHub release

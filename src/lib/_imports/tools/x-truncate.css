@@ -17,11 +17,13 @@ Styleguide Tools.Mixins.Truncate
 @define-mixin truncate--many-lines {
   --lines: 2;
 
+  overflow: hidden;
+
   display: -webkit-box;
   -webkit-box-orient: vertical;
 
-  overflow: hidden;
   -webkit-line-clamp: var(--lines);
+  max-height: calc(var(--lines) * 1lh);
 }
 /* DEPRECATED */
 .x-truncate--many-lines,

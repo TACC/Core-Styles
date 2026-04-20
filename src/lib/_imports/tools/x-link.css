@@ -1,11 +1,12 @@
 /* Regular Links */
 
 @define-mixin link {
-  color: var(--global-color-accent--normal);
+  color: var(--global-color-accent--light);
 
-  text-decoration: none;
   text-underline-offset: 0.2em;
+  text-decoration-line: none;
   text-decoration-thickness: var(--global-border-width--normal);
+  text-decoration-color: currentColor;
 }
 /* DEPRECATED */
 .x-link {
@@ -13,7 +14,7 @@
 }
 
 @define-mixin link--disabled {
-  opacity: 0.5;
+  opacity: 0.75;
   pointer-events: none;
 }
 /* DEPRECATED */
@@ -26,8 +27,7 @@
   text-decoration-style: solid;
 
   /* To overwrite Bootstrap (on Client) */
-  color: var(--global-color-accent--normal);
-  text-decoration-thickness: var(--global-border-width--normal);
+  color: var(--global-color-accent--light);
 }
 /* DEPRECATED */
 .x-link--hover {

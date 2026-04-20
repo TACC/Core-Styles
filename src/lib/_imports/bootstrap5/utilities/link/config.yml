@@ -1,0 +1,15 @@
+label: Link
+context:
+  shouldLoadBootstrap5: true
+  groups:
+    - title: Colored links
+      types:
+      - type: primary
+      - type: secondary
+      - type: success
+      - type: danger
+      - type: warning
+      - type: info
+      - type: light
+      - type: dark
+      - type: body-emphasis

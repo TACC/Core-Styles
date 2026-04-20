@@ -80,7 +80,7 @@ npm run build:css
 
 # Commit changes
 git add .
-git commit -m "chore: $version_tag"
+git commit -m "ci: $version_tag"
 
 # Push branch
 git push origin "$branch_name"

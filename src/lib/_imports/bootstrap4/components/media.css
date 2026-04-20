@@ -1,0 +1,6 @@
+.media-link {
+    gap: 1rem;
+}
+.media-link > :not(.media-body) {
+    margin-top: 0.5rem;
+}

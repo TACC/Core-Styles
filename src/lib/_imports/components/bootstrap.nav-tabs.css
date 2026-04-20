@@ -7,6 +7,7 @@
 
 .nav-tabs {
   @extend .x-tabs;
+  border-bottom: none;
 }
 ul.nav-tabs {
   padding-left: unset; /* overwrite core-styles.cms.css */

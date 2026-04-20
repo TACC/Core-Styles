@@ -1,0 +1,61 @@
+/* Base */
+
+@define-mixin pill {
+  font-weight: var(--medium);
+  font-size: var(--global-font-size--x-small);
+
+  display: inline-block; /* FAQ: Supports `min/max-width` */
+  box-sizing: border-box; /* override browser */
+  padding-inline: 0.75em;
+  min-width: 6.5em;
+
+  text-align: center;
+  text-transform: none; /* avoid inheritance form context e.g. <h1> */
+  border-radius: 0.5em;
+  color: var(--global-color-primary--xx-dark);
+}
+
+
+
+/* Modifiers */
+
+/* Modifiers - Structure */
+
+/* CAVEAT: This alone may not trigger truncation */
+/* SEE: https://tacc-main.atlassian.net/wiki/x/6hpv */
+@define-mixin pill--should-truncate {
+  max-width: 100%;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */ /* FAQ: Let client decide */
+
+  /* Keep alignment that is changed by `overflow: hidden;` */
+  /* SEE: https://stackoverflow.com/q/25818199 */
+  vertical-align: bottom;
+}
+
+
+
+/* Modifiers */
+
+/* Modifiers - Skin */
+
+@define-mixin pill--is-danger {
+  background-color: var(--global-color-danger--light);
+}
+@define-mixin pill--is-success {
+  background-color: var(--global-color-success--normal);
+}
+@define-mixin pill--is-warning {
+  background-color: var(--global-color-warning--normal);
+}
+@define-mixin pill--is-normal {
+  background-color: var(--global-color-extra--light);
+}
+@define-mixin pill--is-fixed {
+  background-color: var(--global-color-primary--light);
+}
+@define-mixin pill--is-updated {
+  background-color: #FFF500;
+}

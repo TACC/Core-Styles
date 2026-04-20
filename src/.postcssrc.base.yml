@@ -35,6 +35,9 @@ plugins:
         # So that if we use `initial` it remains `initial`
         # SEE: src/lib/_imports/tools/x-mailto-text-replace.css
         reduceInitial: false
+        # Silence misleading syntax warnings
+        # https://github.com/postcss/postcss-calc/issues/216#issuecomment-3680948805
+        calc: false
 
   postcss-banner:
     banner: 'no build id'

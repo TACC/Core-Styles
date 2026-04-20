@@ -18,7 +18,7 @@ main > dl {
 
   & :is(dt, dd):not(.no-demo-styles > *) {
     font-family: var(--global-font-family--sans);
-    color: #484848;
+    color: var(--global-color-primary--xx-dark);
     line-height: normal;
   }
   & dt:not(.no-demo-styles > *) {

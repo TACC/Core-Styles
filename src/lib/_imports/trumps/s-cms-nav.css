@@ -15,8 +15,3 @@ ul.s-cms-nav {
   padding-left: 0; /* copied from Bootstrap */
   margin-bottom: 0; /* overwrite html-elements.css */
 }
-
-.s-cms-nav a:hover {
-  /* To overwrite @tacc/core-styles */
-  text-decoration: none; /* copied from Bootstrap */
-}

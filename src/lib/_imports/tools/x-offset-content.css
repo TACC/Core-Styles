@@ -1,0 +1,37 @@
+/* Base */
+
+@define-mixin offset-content {
+	--offset-distance: 12vw;
+	--buffer: calc( 2 * var(--global-space--grid-gap) );
+
+	max-width: 85%;
+}
+
+
+/* Modifiers */
+
+@define-mixin offset-content--float-left {
+	float: left;
+	margin-right: var(--buffer);
+}
+
+@define-mixin offset-content--float-right {
+	float: right;
+	margin-left: var(--buffer);
+}
+
+@define-mixin offset-content--offset-left {
+	margin-left: calc( var(--offset-distance) * -1);
+}
+
+@define-mixin offset-content--offset-right {
+	margin-right: calc( var(--offset-distance) * -1);
+}
+
+@define-mixin offset-content--terminate-offset-left {
+	clear: left;
+}
+
+@define-mixin offset-content--terminate-offset-right {
+	clear: right;
+}

@@ -1,0 +1,5 @@
+.card[class*="card--"] {
+  /* To overwrite Bootstrap 4 */
+  border-radius: unset;
+  border: unset;
+}
