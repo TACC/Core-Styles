@@ -1,6 +1,6 @@
-@import url("../../tools/selectors.css");
-@import url("../../tools/x-headings.css");
-@import url("../../tools/x-headings--cms.css");
+@import url("../../../tools/selectors.css");
+@import url("../../../tools/x-headings.css");
+@import url("../../../tools/x-headings--cms.css");
 
 &:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
     @mixin heading;
