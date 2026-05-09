@@ -1,4 +1,5 @@
 @import url("../tools/selectors.css");
+@import url("../tools/x-headings.css");
 @import url("../tools/x-headings--docs.css");
 
 /* To scope these styles to main content (i.e. not header, not navbar) */
@@ -8,35 +9,17 @@
 
 
 
-/* Structure & skin — mixins: ../tools/x-headings--docs.css */
+/* Structure */
 
-&:is( h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 ) {
-    line-height: unset; /* mimics headings--cms.css */
+&:is( h1, h2, h3, h4, h5, h6 ) {
+    @mixin heading;
 }
-& h1,
-& .h1 {
-    @mixin heading--docs--1;
-}
-& h2,
-& .h2 {
-    @mixin heading--docs--2;
-}
-& h3,
-& .h3 {
-    @mixin heading--docs--3;
-}
-& h4,
-& .h4 {
-    @mixin heading--docs--4;
-}
-& h5,
-& .h5 {
-    @mixin heading--docs--5;
-}
-& h6,
-& .h6 {
-    @mixin heading--docs--6;
-}
+& h1 { @mixin heading--docs--1; }
+& h2 { @mixin heading--docs--2; }
+& h3 { @mixin heading--docs--3; }
+& h4 { @mixin heading--docs--4; }
+& h5 { @mixin heading--docs--5; }
+& h6 { @mixin heading--docs--6; }
 
 
 

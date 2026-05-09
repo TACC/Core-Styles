@@ -20,7 +20,7 @@ variants:
       shouldLoadBootstrap: true
   - name: bootstrap-compare
     status: ready
-    label: Bootstrap (Comparison)
+    label: Compare to Bootstrap Headings
     view: headings--bootstrap-compare.hbs
     context:
       shouldLoadCMS: true

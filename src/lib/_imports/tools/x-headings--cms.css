@@ -29,12 +29,11 @@
     font-weight: var(--bold);
 }
 
-/* To  deter use of "smaller" headings by making them match body font */
+/* To deter use of "smaller" headings by making them match body font */
 @define-mixin heading--cms--5 {
     font-size: inherit;
     font-weight: var(--normal);
 }
-
 @define-mixin heading--cms--6 {
     font-size: inherit;
     font-weight: var(--normal);
