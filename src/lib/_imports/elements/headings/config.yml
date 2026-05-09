@@ -14,8 +14,6 @@ variants:
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap: true
-      supportStyles:
-        - ../../assets/bootstrap4/content/typography-headings/typography-headings--cms.css
   - name: docs
     status: wip
     label: Docs
@@ -28,5 +26,3 @@ variants:
     context:
       shouldLoadDocs: true
       shouldLoadBootstrap: true
-      supportStyles:
-        - ../../assets/bootstrap4/content/typography-headings/typography-headings--docs.css
