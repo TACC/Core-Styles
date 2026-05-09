@@ -80,7 +80,8 @@
   --color--bkgd: var(--global-color-accent--xxx-light);
   --color--line: var(--global-color-accent--light);
 
-  & h2 {
+  & h2,
+  & .h2 {
     color: currentColor;
   }
 }
@@ -94,7 +95,8 @@
   --color--bkgd: var(--global-color-primary--xx-dark);
   --color--line: var(--global-color-primary--normal);
 
-  & h2 {
+  & h2,
+  & .h2 {
     color: var(--global-color-secondary--light);
   }
 }

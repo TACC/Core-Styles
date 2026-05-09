@@ -1,4 +1,4 @@
-@define-mixin heading-1--cms {
+@define-mixin heading-1 {
     font-size: var(--global-font-size--xx-large);
     font-weight: var(--black);
 
@@ -6,7 +6,7 @@
     text-transform: uppercase;
 }
 
-@define-mixin heading-2--cms {
+@define-mixin heading-2 {
     color: var(--global-color-accent--secondary);
     font-size: var(--global-font-size--x-large);
     font-weight: var(--black);
@@ -15,7 +15,7 @@
     margin-bottom: 30px; /* rounded from design 31px */
 }
 
-@define-mixin heading-3--cms {
+@define-mixin heading-3 {
     font-size: var(--global-font-size--large);
     font-weight: var(--black);
 
@@ -24,17 +24,17 @@
 }
 
 /* WARNING: No design available; these are just developer guesswork */
-@define-mixin heading-4--cms {
+@define-mixin heading-4 {
     font-size: var(--global-font-size--medium);
     font-weight: var(--bold);
 }
 
 /* To deter use of "smaller" headings by making them match body font */
-@define-mixin heading-5--cms {
+@define-mixin heading-5 {
     font-size: inherit;
     font-weight: var(--normal);
 }
-@define-mixin heading-6--cms {
+@define-mixin heading-6 {
     font-size: inherit;
     font-weight: var(--normal);
 }
