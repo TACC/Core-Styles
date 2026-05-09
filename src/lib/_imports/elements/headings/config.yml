@@ -21,7 +21,6 @@ variants:
   - name: bootstrap-compare
     status: ready
     label: Compare to Bootstrap Headings
-    view: headings--bootstrap-compare.hbs
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap: true
