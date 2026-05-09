@@ -1,4 +1,5 @@
 @import url("../tools/selectors.css");
+@import url("../tools/x-headings--docs.css");
 
 /* To scope these styles to main content (i.e. not header, not navbar) */
 /* To prevent these styles on portal content (i.e. within a React app) */
@@ -7,41 +8,34 @@
 
 
 
-/* Structure */
+/* Structure & skin — mixins: ../tools/x-headings--docs.css */
 
-&:is( h1, h2, h3, h4, h5, h6 ) {
+&:is( h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 ) {
     line-height: unset; /* mimics headings--cms.css */
 }
-& h1 {
-    text-transform: uppercase; /* mimics headings--cms.css */
+& h1,
+& .h1 {
+    @mixin heading--docs--1;
 }
-
-
-
-/* Skin */
-
-& h1 {
-    font-size: var(--global-font-size--xxx-large);
-    font-weight: var(--black);
+& h2,
+& .h2 {
+    @mixin heading--docs--2;
 }
-& h2 {
-    font-size: var(--global-font-size--xx-large);
-    font-weight: var(--bold);
+& h3,
+& .h3 {
+    @mixin heading--docs--3;
 }
-& h3 {
-    font-size: var(--global-font-size--x-large);
-    font-weight: var(--bold);
+& h4,
+& .h4 {
+    @mixin heading--docs--4;
 }
-/* WARNING: No design available; these are just developer guesswork */
-& h4 {
-    font-size: var(--global-font-size--large);
-    font-weight: var(--bold);
-}
-/* To  deter use of "smaller" headings by making them match body font */
 & h5,
-& h6 {
-    font-size: inherit;
-    font-weight: var(--normal);
+& .h5 {
+    @mixin heading--docs--5;
+}
+& h6,
+& .h6 {
+    @mixin heading--docs--6;
 }
 
 

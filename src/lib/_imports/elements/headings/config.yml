@@ -18,3 +18,10 @@ variants:
     context:
       shouldLoadPortal: true
       shouldLoadBootstrap: true
+  - name: bootstrap-compare
+    status: ready
+    label: Bootstrap (Comparison)
+    view: headings--bootstrap-compare.hbs
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap: true

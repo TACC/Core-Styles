@@ -2,6 +2,7 @@
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
 @import url("./bootstrap4/components/btn.css");
+@import url("./bootstrap4/components/headings.css");
 @import url("./bootstrap4/components/card.css");
 @import url("./bootstrap4/components/media.css");
 @import url("./bootstrap4/utilities/color-text.css");
