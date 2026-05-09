@@ -14,12 +14,12 @@
 &:is( h1, h2, h3, h4, h5, h6 ) {
     @mixin heading;
 }
-& h1 { @mixin heading--docs--1; }
-& h2 { @mixin heading--docs--2; }
-& h3 { @mixin heading--docs--3; }
-& h4 { @mixin heading--docs--4; }
-& h5 { @mixin heading--docs--5; }
-& h6 { @mixin heading--docs--6; }
+& h1 { @mixin heading-1--docs; }
+& h2 { @mixin heading-2--docs; }
+& h3 { @mixin heading-3--docs; }
+& h4 { @mixin heading-4--docs; }
+& h5 { @mixin heading-5--docs; }
+& h6 { @mixin heading-6--docs; }
 
 
 
