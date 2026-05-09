@@ -19,17 +19,17 @@
 & h5 { @mixin heading-5; }
 & h6 { @mixin heading-6; }
 
+
+
+}
+
 /* Must load after regular elements so classes take precedence */
-&:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
+:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
     @mixin heading;
 }
-& .h1 { @mixin heading-1; }
-& .h2 { @mixin heading-2; }
-& .h3 { @mixin heading-3; }
-& .h4 { @mixin heading-4; }
-& .h5 { @mixin heading-5; }
-& .h6 { @mixin heading-6; }
-
-
-
-}
+.h1 { @mixin heading-1; }
+.h2 { @mixin heading-2; }
+.h3 { @mixin heading-3; }
+.h4 { @mixin heading-4; }
+.h5 { @mixin heading-5; }
+.h6 { @mixin heading-6; }
