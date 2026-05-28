@@ -1,6 +1,17 @@
 @import url("../tools/x-figure.css");
 @import url("../tools/x-blockquote.css");
 
+
+/* Lists */
+
+/* So definition terms stand out more */
+& dt {
+  font-weight: var(--medium);
+}
+
+
+/* Figures */
+
 /* To style elements that have captions */
 figure { @mixin figure; }
 figcaption { @mixin figure-caption; }
