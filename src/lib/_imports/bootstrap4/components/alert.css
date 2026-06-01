@@ -1,30 +1,72 @@
-/* FAQ: c-message.css also styles Bootstrap alert when `.c-message` is present */
-@import url("../../components/c-message.css");
+@import url("../../tools/x-message.css");
 
-.alert.c-message {
+.alert {
   border-radius: unset; /* to undo bootstrap */
-  border: unset;
-  background-color: unset;
-  color: unset;
+
+  @mixin message;
+  @mixin message--scope-section;
 }
 
-.alert.c-message hr {
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info,
+.alert-light,
+.alert-dark {
+  color: unset; /* to undo bootstrap */
+}
+
+.alert-primary {
+  @mixin message--type-info---message--scope-section;
+}
+.alert-secondary {
+  @mixin message--type-extra---message--scope-section;
+}
+.alert-success {
+  @mixin message--type-success---message--scope-section;
+}
+.alert-danger {
+  @mixin message--type-error---message--scope-section;
+}
+.alert-warning {
+  @mixin message--type-warning---message--scope-section;
+}
+.alert-info {
+  @mixin message--type-info---message--scope-section;
+}
+.alert-light {
+  @mixin message--type-info---message--scope-section;
+}
+.alert-dark {
+  @mixin message--type-info---message--scope-section;
+}
+
+.alert hr {
   border-top-color: unset;
 }
 
-.alert.c-message .alert-link {
+.alert-link {
   font-weight: unset;
+}
+
+.alert-link {
   color: unset;
 }
 
-.alert.c-message.alert-dismissible {
-  padding-right: unset;
-}
+.alert-dismissible {
+  padding-right: calc(12px + 1ch);
 
-.alert.c-message.alert-dismissible .close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.75rem 1.25rem;
-  color: inherit;
+  & .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 8px 12px;
+    width: 1ch;
+    box-sizing: content-box;
+
+    color: inherit;
+  }
 }

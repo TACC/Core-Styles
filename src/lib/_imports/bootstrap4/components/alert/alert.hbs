@@ -3,11 +3,7 @@
     <h3>{{title}}</h3>
     {{#types}}
       <div
-        class="
-          alert alert-{{type}}
-          {{#if dismissible}}alert-dismissible fade show{{/if}}
-          {{cMessageClasses}}
-        "
+        class="alert alert-{{type}}{{#if dismissible}} alert-dismissible fade show{{/if}}"
         role="alert"
       >
         {{#if heading}}<h4 class="alert-heading">{{heading}}</h4>{{/if}}

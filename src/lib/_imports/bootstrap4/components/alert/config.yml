@@ -26,9 +26,3 @@ context:
         - type: warning
           dismissible: true
           content: Holy guacamole! You should check in on some of those fields below.
-    - title: CMS Alert plugin + c-message (archive banner)
-      types:
-        - type: warning
-          dismissible: true
-          cMessageClasses: c-message c-message--scope-section c-message--type-warning
-          content: <p>This project is archived.</p>
