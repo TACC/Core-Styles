@@ -49,10 +49,11 @@
 
 .alert-link {
   font-weight: unset;
+  color: unset;
 }
 
-.alert-link {
-  color: unset;
+.alert-heading {
+  font-weight: bold;
 }
 
 .alert-dismissible {
