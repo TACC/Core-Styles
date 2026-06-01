@@ -1,7 +1,7 @@
 label: Alerts
 context:
   shouldLoadBootstrap: true
-  shouldLoadCMS: true
+  # shouldLoadCMS: true # (for expanded message size)
   groups:
     - title: Bootstrap (default)
       types:
