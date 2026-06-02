@@ -44,6 +44,9 @@
 }
 
 .alert hr {
+  --global-space--hr-buffer-below: 1em;
+  --global-space--hr-buffer-above: 1em;
+
   border-top-color: unset;
 }
 

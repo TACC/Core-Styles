@@ -4,45 +4,26 @@ context:
   # shouldLoadCMS: true # (for expanded message size)
   groups:
     - title: Basic
+      linkText: "with a link"
       types:
         - type: primary
-          content: A simple primary alert with <a href="#" class="alert-link">an example link</a>.
         - type: secondary
-          content: A simple secondary alert with <a href="#" class="alert-link">an example link</a>.
         - type: success
-          content: A simple success alert with <a href="#" class="alert-link">an example link</a>.
         - type: danger
-          content: A simple danger alert with <a href="#" class="alert-link">an example link</a>.
         - type: warning
-          content: A simple warning alert with <a href="#" class="alert-link">an example link</a>.
         - type: info
-          content: A simple info alert with <a href="#" class="alert-link">an example link</a>.
         - type: light
-          content: A simple light alert with <a href="#" class="alert-link">an example link</a>.
         - type: dark
-          content: A simple dark alert with <a href="#" class="alert-link">an example link</a>.
-    - title: Alert heading
-      types:
-        - type: success
-          heading: Well done!
-          content: <p>Aww yeah, you successfully read this important alert message. <a href="#" class="alert-link">Example link</a></p>
-        - type: info
-          heading: Heads up!
-          content: <p>This alert needs your attention, but it is not super important. <a href="#" class="alert-link">Example link</a></p>
-        - type: warning
-          heading: Warning!
-          content: <p>Better check yourself, you are not looking too good. <a href="#" class="alert-link">Example link</a></p>
-        - type: danger
-          heading: Oh snap!
-          content: <p>Change a few things up and try submitting again. <a href="#" class="alert-link">Example link</a></p>
-        - type: success
-          heading: Well done!
-          content: >-
-            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
-            <hr>
-            <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
     - title: Dismissible
+      message: Holy guacamole! You should check in on some of those fields below.
       types:
         - type: warning
           dismissible: true
-          content: Holy guacamole! You should check in on some of those fields below.
+    - title: with Heading
+      heading: Well done!
+      message: Aww yeah, you successfully read this important alert message.
+      messageAfterHr: Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+      types:
+        - type: secondary
+        - type: success
+          hasHr: true
