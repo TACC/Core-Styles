@@ -19,7 +19,7 @@
 }
 
 .alert-primary {
-  @mixin message--type-info---message--scope-section;
+  @mixin message--scope-global;
 }
 .alert-secondary {
   @mixin message--type-extra---message--scope-section;

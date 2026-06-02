@@ -3,15 +3,20 @@
 @import url("../tools/selectors.css");
 @import url('../tools/x-link.css');
 
-a:where(:not(:--c-button, :--c-card)) {
+@custom-selector :--exempt-link
+  :--c-button,
+  :--c-card,
+  .alert-link;
+
+a:where(:not(:--exempt-link)) {
   @mixin link;
 }
 a:where(:not([href])) {
   @mixin link--disabled;
 }
-a:where(:not(:--c-button, :--c-card)):hover {
+a:where(:not(:--exempt-link)):hover {
   @mixin link--hover;
 }
-a:where(:not(:--c-button, :--c-card)):active {
+a:where(:not(:--exempt-link)):active {
   @mixin link--active;
 }
