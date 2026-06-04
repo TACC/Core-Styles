@@ -222,9 +222,9 @@ Styleguide Trumps.Scopes.Header
   margin-right: 10px;
 }
 
-.s-header .nav-item .nav-link.ai-button-link {
+.s-header .nav-item .ai-button-link {
+  display: flex;
   align-items: center;
-  padding-inline: 8px;
 }
 .nav-item .nav-link.ai-button-link:is(:hover,:focus)  {
   border-color: var(--header-bkgd-color);
