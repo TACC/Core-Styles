@@ -223,14 +223,14 @@ Styleguide Trumps.Scopes.Header
 }
 
 .s-header .nav-item .nav-link.ai-button-link {
-  align-items: baseline;
+  align-items: center;
   padding-inline: 8px;
 }
 .nav-item .nav-link.ai-button-link:is(:hover,:focus)  {
   border-color: var(--header-bkgd-color);
 }
 
-.nav-item .ai-button-link ~ .nav.item {
+.nav-item:has(.ai-button-link) ~ .nav-item {
   border-left: 1px solid var(--header-minor-border-color);
 }
 
