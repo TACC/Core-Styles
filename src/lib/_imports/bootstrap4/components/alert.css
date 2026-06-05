@@ -1,0 +1,76 @@
+@import url("../../tools/x-message.css");
+
+.alert {
+  border-radius: unset; /* to undo bootstrap */
+
+  @mixin message;
+  @mixin message--scope-section;
+}
+
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-danger,
+.alert-warning,
+.alert-info,
+.alert-light,
+.alert-dark {
+  color: unset; /* to undo bootstrap */
+}
+
+.alert-primary {
+  @mixin message--scope-global;
+}
+.alert-secondary {
+  @mixin message--type-extra---message--scope-section;
+}
+.alert-success {
+  @mixin message--type-success---message--scope-section;
+}
+.alert-danger {
+  @mixin message--type-error---message--scope-section;
+}
+.alert-warning {
+  @mixin message--type-warning---message--scope-section;
+}
+.alert-info {
+  @mixin message--type-info---message--scope-section;
+}
+.alert-light {
+  @mixin message--type-info---message--scope-section;
+}
+.alert-dark {
+  @mixin message--type-info---message--scope-section;
+}
+
+.alert hr {
+  --global-space--hr-buffer-below: 1em;
+  --global-space--hr-buffer-above: 1em;
+
+  border-top-color: unset;
+}
+
+.alert-link {
+  font-weight: unset;
+  color: unset;
+}
+
+.alert-heading {
+  font-weight: bold;
+}
+
+.alert-dismissible {
+  padding-right: calc(12px + 1ch);
+
+  & .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 8px 12px;
+    width: 1ch;
+    box-sizing: content-box;
+
+    color: inherit;
+  }
+}
