@@ -213,10 +213,10 @@ Styleguide Trumps.Scopes.Header
   height: 32px;
   padding: 0px 15px;
   border-radius: 0;
-  background: linear-gradient(135deg, #47a59d, #337ab7) !important;
-  border: 2px solid transparent !important;
-  background-clip: padding-box !important;
-  color: #fff !important;
+  background: linear-gradient(135deg, #47a59d, #337ab7);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  color: #fff;
   margin-inline: 10px;
 }
 
