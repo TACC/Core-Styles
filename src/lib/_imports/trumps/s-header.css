@@ -217,8 +217,7 @@ Styleguide Trumps.Scopes.Header
   border: 2px solid transparent !important;
   background-clip: padding-box !important;
   color: #fff !important;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-inline: 10px;
 }
 
 .s-header .nav-item .ai-button-link {
