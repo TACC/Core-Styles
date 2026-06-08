@@ -1,1 +1,1 @@
-/*! @tacc/core-styles 2.57.0-rc1+ | MIT | github.com/TACC/Core-Styles */.alert,:is(.c-message--scope-global,.message--scope-global),:is(.c-message--scope-section,.message--scope-section){padding-block:20px;padding-inline:30px}.alert-dismissible{padding-right:calc(30px + 1ch)}
+/*! @tacc/core-styles 2.57.0+ | MIT | github.com/TACC/Core-Styles */.alert,:is(.c-message--scope-global,.message--scope-global),:is(.c-message--scope-section,.message--scope-section){padding-block:20px;padding-inline:30px}.alert-dismissible{padding-right:calc(30px + 1ch)}
