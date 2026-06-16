@@ -20,8 +20,13 @@ Styleguide Trumps.Scopes.Header
 /* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
 .s-header {
-  --height: 50px;
+  --header-default-height: 50px;
   --header-major-border-width: 1px;
+  --logo-default-height: calc(
+      var(--header-default-height)
+    - var(--nav-padding-vert) * 2
+    - var(--header-major-border-width)
+  );
 
   font-size: 14px; /* NO-R/EM: See `font--cms.css` */
   font-weight: var(--bold);
@@ -37,18 +42,6 @@ Styleguide Trumps.Scopes.Header
   border-bottom: var(--header-major-border-width) solid var(--header-major-border-color);
 }
 
-/* To prevent header bar resize whether:
-  - navbar is collapsed or expanded
-  - logo is wide or narrow
-  - logo is raster or vector
-*/
-.s-header .navbar-brand {
-  height: calc(
-    var(--height)
-    - var(--nav-padding-vert) * 2
-    - var(--header-major-border-width)
-  );
-}
 
 /* Affiliation */
 
@@ -67,7 +60,18 @@ Styleguide Trumps.Scopes.Header
   display: flex;
   align-items: center;
 
+  /* To undo Bootstrap layout */
   padding: unset;
+
+  /* So height can grow but not shrink */
+  min-height: var(--logo-default-height);
+
+  /* To give a default height if user does not set one */
+  /* FAQ: Prevents a vector <img> from overflowing the container */
+  /* FAQ: Prevents a raster <img> from ballooning the container */
+  :where(& img:not([height])) {
+    height: var(--logo-default-height);
+  }
 }
 
 /* Navigation */
