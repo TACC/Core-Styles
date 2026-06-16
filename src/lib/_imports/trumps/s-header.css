@@ -69,6 +69,12 @@ Styleguide Trumps.Scopes.Header
     height: var(--logo-default-height);
   }
 }
+.s-header .navbar-brand:has(.portal-logo) {
+  /* To align first CMS nav link with Portal "Dashboard" header */
+  /* CAVEAT: A wide logo will shift first CMS nav link rightward */
+  flex-shrink: 0;
+  flex-basis: 175px;
+}
 
 /* Navigation */
 
