@@ -2,17 +2,18 @@
 
 /** Get tag-based description from Git */
 function gitDescribe() {
-  const { execSync } = require('child_process');
+  const { execFileSync } = require('child_process');
 
-  try {
-    return execSync(
-      'git describe --tags 2>/dev/null || git rev-parse --short HEAD',
-      { encoding: 'utf8' }
-    ).trim();
-  } catch (error) {
-    console.error('Error running `git describe`:', error.message);
-    return undefined;
+  function runGit(args) {
+    return execFileSync('git', args, {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore']
+    }).trim();
   }
+
+  try { return runGit(['describe', '--tags']); } catch {}
+  try { return runGit(['rev-parse', '--short', 'HEAD']); } catch {}
+  return undefined;
 }
 
 module.exports = gitDescribe;
