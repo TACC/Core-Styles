@@ -50,23 +50,12 @@ else
 fi
 
 # Create GitHub release
-echo "Please create a release on GitHub now."
-echo "Visit: https://github.com/TACC/Core-Styles/releases/new"
-read -p "Press Enter once you've created the release..."
-
-# Fetch and check tags
-echo "Fetching tags..."
-git fetch --tags
-
-echo "Checking if tag is annotated..."
-if git describe --exact-match "$version_tag" >/dev/null 2>&1; then
-    echo "Tag $version_tag is already annotated"
+if command_exists gh; then
+    echo "Creating GitHub release..."
+    gh release create "$version_tag" --generate-notes
 else
-    echo "Tag $version_tag is not annotated, annotating..."
-    ./bin/annotate-tag.sh "$version_tag"
-
-    echo "Force pushing annotated tag..."
-    git push --tags --force
+    echo "gh CLI not found. Please create a release manually:"
+    echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
 fi
 
-echo "Release process complete!" 
+echo "Release process complete!"
