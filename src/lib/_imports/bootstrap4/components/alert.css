@@ -50,9 +50,9 @@
   border-top-color: unset;
 }
 
-.alert-link {
+.alert .alert-link {
   font-weight: unset;
-  color: unset;
+  color: var(--global-color-accent--light);
 }
 
 .alert-heading {
