@@ -52,7 +52,10 @@ fi
 # Create GitHub release
 if command_exists gh; then
     echo "Creating GitHub release..."
-    gh release create "$version_tag" --generate-notes
+    if ! gh release create "$version_tag" --generate-notes; then
+        echo "gh failed. Please create a release manually:"
+        echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
+    fi
 else
     echo "gh CLI not found. Please create a release manually:"
     echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
