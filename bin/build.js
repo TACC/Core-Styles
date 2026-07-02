@@ -4,9 +4,10 @@
 
 const { buildStylesheets } = require('../src/main');
 const mininmist = require('minimist');
+const gitDescribe = require('./git-describe');
 
 const ARGS = mininmist( process.argv.slice( 2 ) );
-const BUILD_ID = ARGS['build-id'] || '';
+const BUILD_ID = ARGS['build-id'] || gitDescribe() || '';
 
 /* Theme: (default) */
 buildStylesheets('src/lib/_imports/**/*!(fractality.server.refresh).css', './dist', {
