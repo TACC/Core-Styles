@@ -11,21 +11,21 @@
     .button--1,
     /* WARN: borrowing file to support Bootstrap */
     .btn-primary,
-    .btn-dark;
+    .btn-dark,
+    .btn-success;
 @custom-selector :--c-button--secondary
     .c-button--secondary,
     .button--2,
     /* WARN: borrowing file to support Bootstrap */
     .btn-secondary,
-    .btn-light;
+    .btn-light,
+    .btn-warning,
+    .btn-danger;
 @custom-selector :--c-button--tertiary
     .c-button--tertiary,
     .button--3,
     /* WARN: borrowing file to support Bootstrap */
-    .btn-info,
-    .btn-success,
-    .btn-warning,
-    .btn-danger;
+    .btn-info;
 
 @custom-selector :--c-button--can-truncate
     .c-button--can-truncate,
