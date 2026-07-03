@@ -86,7 +86,7 @@ npm version "$version_tag" --no-git-tag-version
 
 # Build again with new version
 echo "Building with new version..."
-npm run build:css
+npm run build:css -- --build-id="$(git describe --tags)"
 
 # Commit and push
 git add .
