@@ -50,7 +50,7 @@ echo "1. Build CSS"
 echo "2. Update version"
 echo "3. Create release commit"
 echo "4. Push branch to remote"
-echo "5. Describe next steps"
+echo "5. Open a PR and enable auto-merge"
 if ! confirm "Do you want to proceed?"; then
     echo "Release preparation cancelled."
     exit 0
@@ -85,5 +85,19 @@ git commit -m "ci: $version_tag"
 # Push branch
 git push origin "$branch_name"
 
-echo "Branch pushed. Please create and merge PR for $branch_name"
+# Open PR and enable auto-merge
+if command_exists gh; then
+    echo "Creating PR..."
+    gh pr create \
+        --title "Release/$version_tag" \
+        --body "" \
+        --base main \
+        --head "$branch_name"
+    echo "Enabling auto-merge..."
+    gh pr merge "$branch_name" --auto --merge
+    echo "PR will merge automatically once checks pass."
+else
+    echo "gh CLI not found. Please create and merge PR for $branch_name manually."
+fi
+
 echo -e "After PR is merged, run:\n    ./bin/release-publish.sh $version_tag"
