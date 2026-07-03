@@ -97,8 +97,10 @@ git push origin "$branch_name"
 if command_exists gh; then
     echo "Creating PR..."
     gh pr create \
-        --title "Release/$version_tag" \
-        --body "" \
+        --title "ci: $version_tag" \
+        --body "## Overview
+
+Prepare for $version_tag release." \
         --base main \
         --head "$branch_name"
     echo "Enabling auto-merge..."
