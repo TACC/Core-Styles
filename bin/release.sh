@@ -102,7 +102,7 @@ if command_exists gh; then
         --base main \
         --head "$branch_name"
     echo "Enabling auto-merge..."
-    gh pr merge "$branch_name" --auto --squash
+    gh pr merge "$branch_name" --auto --merge
     echo "Waiting for PR to merge..."
     while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
         sleep 5
