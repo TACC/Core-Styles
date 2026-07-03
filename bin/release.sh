@@ -142,7 +142,11 @@ fi
 # Create GitHub release
 if command_exists gh; then
     echo "Creating GitHub release..."
-    if ! gh release create "$version_tag" --generate-notes; then
+    release_args=(--generate-notes)
+    if [[ "$version_number" =~ -rc[0-9]+$ ]]; then
+        release_args+=(--prerelease)
+    fi
+    if ! gh release create "$version_tag" "${release_args[@]}"; then
         echo "gh failed. Please create a release manually:"
         echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
         read -rp "Press Enter once you've created the release..."
