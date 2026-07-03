@@ -14,6 +14,15 @@ if ! command_exists git; then
     exit 1
 fi
 
+# Check npm login status
+if ! npm whoami >/dev/null 2>&1; then
+    echo "Error: You are not logged in to npm."
+    echo -e "Please login first with:\n    npm login"
+    echo -e "\nNote: When running npm login, you'll be prompted to visit a URL in your browser."
+    echo "Make sure you're already logged into npmjs.com in your browser before starting."
+    exit 1
+fi
+
 # Ensure working directory is clean
 if [ -n "$(git status --porcelain)" ]; then
     echo "Error: Working directory has unexpected changes. Please commit or stash changes."
@@ -24,6 +33,7 @@ fi
 current_version=$(npm pkg get version | tr -d '"')
 read -r -p "Enter version number (current: $current_version, format: N.N.N): " version
 version_tag="v$version"
+version_number="$version"
 
 # Name the branch
 branch_name="release/$version_tag"
@@ -34,13 +44,12 @@ if git rev-parse --verify "$branch_name" >/dev/null 2>&1 || \
     echo "Branch '$branch_name' already exists."
     if confirm "Would you like to use the existing branch?"; then
         git checkout "$branch_name"
-        git pull origin "$branch_name" 2>/dev/null || true  # Pull if remote exists, ignore if it doesn't
+        git pull origin "$branch_name" 2>/dev/null || true
     else
-        echo "Release preparation cancelled."
+        echo "Release cancelled."
         exit 0
     fi
 else
-    # Create new branch
     git checkout -b "$branch_name"
 fi
 
@@ -49,10 +58,11 @@ echo "This script will:"
 echo "1. Build CSS"
 echo "2. Update version"
 echo "3. Create release commit"
-echo "4. Push branch to remote"
-echo "5. Open a PR and enable auto-merge"
+echo "4. Open a PR and auto-merge it"
+echo "5. Publish to npm"
+echo "6. Create GitHub release"
 if ! confirm "Do you want to proceed?"; then
-    echo "Release preparation cancelled."
+    echo "Release cancelled."
     exit 0
 fi
 
@@ -78,14 +88,12 @@ npm version "$version_tag" --no-git-tag-version
 echo "Building with new version..."
 npm run build:css
 
-# Commit changes
+# Commit and push
 git add .
 git commit -m "ci: $version_tag"
-
-# Push branch
 git push origin "$branch_name"
 
-# Open PR and enable auto-merge
+# Open PR, auto-merge, wait
 if command_exists gh; then
     echo "Creating PR..."
     gh pr create \
@@ -95,9 +103,52 @@ if command_exists gh; then
         --head "$branch_name"
     echo "Enabling auto-merge..."
     gh pr merge "$branch_name" --auto --merge
-    echo "PR will merge automatically once checks pass."
+    echo "Waiting for PR to merge..."
+    while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
+        sleep 5
+    done
+    echo "PR merged."
 else
     echo "gh CLI not found. Please create and merge PR for $branch_name manually."
+    read -rp "Press Enter once the PR is merged..."
 fi
 
-echo -e "After PR is merged, run:\n    ./bin/release-publish.sh $version_tag"
+# Switch to main
+git checkout main
+git pull origin main
+
+# Publish to npm
+if npm view "@tacc/core-styles@${version_number}" >/dev/null 2>&1; then
+    echo "Version ${version_number} is already published to npm."
+    if ! confirm "Skip npm publish step?"; then
+        echo "Aborting to avoid version conflict."
+        exit 1
+    fi
+else
+    npm_publish_args=(--access public)
+
+    if [[ "$version_number" =~ -rc[0-9]+$ ]]; then
+        npm_publish_args+=(--tag rc)
+        echo "Publishing ${version_number} (release candidate) to npm (with 'rc' tag)..."
+    else
+        echo "Publishing ${version_number} to npm..."
+    fi
+
+    npm publish "${npm_publish_args[@]}"
+fi
+
+# Create GitHub release
+if command_exists gh; then
+    echo "Creating GitHub release..."
+    if ! gh release create "$version_tag" --generate-notes; then
+        echo "gh failed. Please create a release manually:"
+        echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
+        read -rp "Press Enter once you've created the release..."
+    fi
+else
+    echo "gh CLI not found. Please create a release manually:"
+    echo "Visit: https://github.com/TACC/Core-Styles/releases/new?tag=${version_tag}"
+    read -rp "Press Enter once you've created the release..."
+fi
+
+echo "Release complete!"

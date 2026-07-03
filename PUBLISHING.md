@@ -4,14 +4,10 @@ Only appointed team members may publish releases.
 
 ### Automated Release (Bash Scripts)
 
-1. (one time) Login to npm via:\
+1. (if not already) Login to npm via:\
     `npm login`
-2. Run the release preparation script:\
-    `./bin/release-prepare.sh`\
-    <sub>This opens a PR and enables auto-merge. Wait for it to merge.</sub>
-3. Run the release publish script:\
-    `./bin/release-publish.sh vN.N.N`\
-    (where `N.N.N` is the version tag)
+2. Run the release script:\
+    `./bin/release.sh`
 
 ### Manual Release Steps
 
