@@ -32,6 +32,7 @@ fi
 # Get current version and prompt for new version
 current_version=$(npm pkg get version | tr -d '"')
 read -r -p "Enter version number (current: $current_version, format: N.N.N): " version
+version="${version#v}"
 version_tag="v$version"
 version_number="$version"
 
