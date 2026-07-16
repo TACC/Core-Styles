@@ -61,8 +61,7 @@ textarea {
 :is(input, textarea):read-only {
   border-color: transparent;
 }
-input, select {
-  height: 1.4em;
+input:not([type="file"]), select {
   box-sizing: content-box;
 }
 
