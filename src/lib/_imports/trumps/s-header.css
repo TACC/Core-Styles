@@ -20,8 +20,13 @@ Styleguide Trumps.Scopes.Header
 /* WARNING: NO-R/EM: CMS uses 1rem = 10px, but Portal uses 1rem = 16px */
 
 .s-header {
-  --height: 50px;
+  --header-default-height: 50px;
   --header-major-border-width: 1px;
+  --logo-default-height: calc(
+      var(--header-default-height)
+    - var(--nav-padding-vert) * 2
+    - var(--header-major-border-width)
+  );
 
   font-size: 14px; /* NO-R/EM: See `font--cms.css` */
   font-weight: var(--bold);
@@ -37,18 +42,6 @@ Styleguide Trumps.Scopes.Header
   border-bottom: var(--header-major-border-width) solid var(--header-major-border-color);
 }
 
-/* To prevent header bar resize whether:
-  - navbar is collapsed or expanded
-  - logo is wide or narrow
-  - logo is raster or vector
-*/
-.s-header .navbar-brand {
-  height: calc(
-    var(--height)
-    - var(--nav-padding-vert) * 2
-    - var(--header-major-border-width)
-  );
-}
 
 /* Affiliation */
 
@@ -57,13 +50,37 @@ Styleguide Trumps.Scopes.Header
 /* Logo */
 
 .s-header .navbar-brand {
+  margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
+
+  /* To veritcally center child image that has manual height */
+  display: flex;
+  align-items: center;
+
+  /* To undo Bootstrap layout */
+  padding: unset;
+
+  /* So height can grow but not shrink */
+  min-height: var(--logo-default-height);
+
+  /* To give a default height if user does not set one */
+  /* FAQ: Prevents a vector <img> from overflowing the container */
+  /* FAQ: Prevents a raster <img> from ballooning the container */
+  :where(& img:not([height])),
+  :where(&:is(img):not([height])) {
+    height: var(--logo-default-height);
+  }
+}
+.s-header .navbar-brand:has(.portal-logo),
+.s-header .navbar-brand:is(.portal-logo) {
   /* To align first CMS nav link with Portal "Dashboard" header */
   /* CAVEAT: A wide logo will shift first CMS nav link rightward */
   flex-shrink: 0;
   flex-basis: 175px;
-  margin-right: 15px; /* NO-R/EM: 1rem (from Bootstrap via `.navbar-brand`) */
-
-  padding: unset;
+}
+.s-header .navbar-brand:is(img.portal-logo) {
+  /* To align image as it would be aligned within a.navbar-brand */
+  object-position: left center;
+  object-fit: none;
 }
 
 /* Navigation */
@@ -102,6 +119,12 @@ Styleguide Trumps.Scopes.Header
 /* FAQ: Bootstrap selector is `.navbar-expand-… .navbar-nav .nav-link` */ {
   padding-inline: 14px;
 }
+.s-header .nav-link:is(:hover, :active) {
+  text-decoration: none;
+}
+.s-header .nav-link:active {
+  border-style: double;
+}
 
 @define-mixin header--not-expanded {
   &.s-header .nav-item {
@@ -132,8 +155,16 @@ Styleguide Trumps.Scopes.Header
 }
 
 @define-mixin header--is-expanded {
+  &.s-header .nav-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &.s-header .nav-link {
     padding-block: 8px;
+  }
+  &.s-header .dropdown-menu {
+    flex-basis: 100%;
   }
 }
 @media (--x-narrow-and-below) {
@@ -155,13 +186,64 @@ Styleguide Trumps.Scopes.Header
 .s-header .nav-item.active .nav-link {
   border-color: var(--global-color-secondary--light);
 }
-/* HACK: Using an ID selector, because Bootstrap has overspecific selectors */
-#s-header .nav-link,
-/* HACK: Support `span.nav-link` having children `a` and `a.dropdown-toggle-split` */
-#s-header .nav-link > a {
+.s-header .nav-link {
   color: var(--header-text-color);
 }
+.s-header button.nav-link {
+  font-weight: inherit;
+  background-color: inherit;
+}
+/* To support Bootstrap "Split button" */
+/* https://getbootstrap.com/docs/4.6/components/dropdowns/#split-button */
+.s-header .nav-link:has(+ .dropdown-toggle-split) {
+  padding-right: 0;
+}
 
+/* AI Chatbot Button */
+
+.ai-button {
+  overflow: visible;
+  text-transform: none;
+  line-height: inherit;
+  vertical-align: baseline;
+  -webkit-appearance: button;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  box-sizing: border-box;
+  outline: none;
+  position: relative;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  user-select: none;
+  touch-action: manipulation;
+  font-size: 14px;
+  height: 32px;
+  padding: 0px 15px;
+  border-radius: 0;
+  background: linear-gradient(135deg, #47a59d, #337ab7);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  color: #fff;
+  margin-inline: 10px;
+}
+
+.s-header .nav-item .ai-button-link {
+  display: flex;
+  align-items: center;
+}
+.nav-item .nav-link.ai-button-link:is(:hover,:focus)  {
+  border-color: var(--header-bkgd-color);
+}
+
+.nav-item:has(.ai-button-link) ~ .nav-item {
+  border-left: 1px solid var(--header-minor-border-color);
+}
 
 /* Search */
 

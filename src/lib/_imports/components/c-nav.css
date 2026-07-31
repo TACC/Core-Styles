@@ -87,7 +87,7 @@ nav.c-nav--boxed.c-nav--no-list {
 /* Modifiers: Pipes */
 
 nav.c-nav--piped {
-  --pipe-style: var(--global-border--normal);
+  --pipe-style: 1px solid currentColor;
 }
 
 /* To ensure pipe is visible */
@@ -100,33 +100,34 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
 /* Modifiers: Pipes: Methods */
 
 @custom-selector :--child-no-list
-  > :not(ul,ol);
+  :not(ul,ol);
 @custom-selector :--child-of-list
   :is(ul,ol) > *;
 
-.c-nav--piped--after :--child-of-list,
-.c-nav--piped--after :--child-no-list,
-.c-nav--piped--before :--child-of-list,
-.c-nav--piped--before :--child-no-list {
+.c-nav--piped--after > :--child-of-list,
+.c-nav--piped--after > :--child-no-list,
+.c-nav--piped--before > :--child-of-list,
+.c-nav--piped--before > :--child-no-list {
   position: relative;
 }
-.c-nav--piped--after :--child-of-list::after,
-.c-nav--piped--after :--child-no-list::after,
-.c-nav--piped--before :--child-of-list::before,
-.c-nav--piped--before :--child-no-list::before {
+.c-nav--piped--after > :--child-of-list::after,
+.c-nav--piped--after > :--child-no-list::after,
+.c-nav--piped--before > :--child-of-list::before,
+.c-nav--piped--before > :--child-no-list::before {
   content: '';
   display: block;
   height: 1em;
 
   /* To vertically center (because height ≠ 100%) */
   position: absolute;
+  margin-top: 0.1em;
   top: 50%;
   transform: translateY(-50%);
 }
 
 /* via "after" pseduo-element */
-.c-nav--piped--after :--child-no-list:not(:last-child)::after,
-.c-nav--piped--after :--child-of-list:not(:last-child)::after {
+.c-nav--piped--after > :--child-no-list:not(:last-child)::after,
+.c-nav--piped--after > :--child-of-list:not(:last-child)::after {
   border-right: var(--pipe-style);
   right: calc( -0.5 * var(--link-padding));
 }
@@ -137,8 +138,8 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
   margin-right: calc( -2 * var(--global-border-width--normal));
 }
 /* via "before" pseduo-element */
-.c-nav--piped--before :--child-no-list:not(:first-child)::before,
-.c-nav--piped--before :--child-of-list:not(:first-child)::before {
+.c-nav--piped--before > :--child-no-list:not(:first-child)::before,
+.c-nav--piped--before > :--child-of-list:not(:first-child)::before {
   border-left: var(--pipe-style);
   left: calc( -0.5 * var(--link-padding));
 }

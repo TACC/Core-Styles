@@ -1,0 +1,5 @@
+label: Cards
+status: prototype
+context:
+  shouldLoadBootstrap: true
+  shouldLoadCMS: true

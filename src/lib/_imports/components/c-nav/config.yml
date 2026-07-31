@@ -18,7 +18,6 @@ variants:
         - [piped, boxed, piped--before]
         - [piped, piped--after]
         - [piped, boxed, piped--after]
-    status: wip
   - name: no-list
     context:
       show_buttons: true

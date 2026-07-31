@@ -13,64 +13,81 @@ Load stylesheets (as needed) in this order. The Core Styles "Base" is required. 
 
 0. [Foundation](#0-foundation)
 1. [**Base**](#1-base)
-2. [**Project**](#2-project)
-3. [**Cosmetic**](#3-cosmetic)
+2. [Project](#2-project)
+3. [Cosmetic](#3-cosmetic)
 
 ### 0. Foundation
 
-__<u>Not</u> necessary.__ (Also, we prefer you use Core-Styles **without** Bootstrap.)
+__Optional.__
 
-__If__ your project requires Bootstrap (e.g. [Django CMS](https://www.django-cms.org/)), __then__ load Bootstrap 4 first. _[Compatibility](./docs/bootstrap.md) not guaranteed beyond Bootstrap 4._
+__If__ you want your project to use a [reset, normalize, or reboot][foundation], __then__ load it first. _Please report any compatibility issues.[^1][^2]_
 
-__If__ you want your project to use a [reset, normalize, or reboot][foundation], __then__ load it first. _Compatibility desired.[^1] Please report any issues.[^2]_
+__If__ your project uses a full library (e.g. Bootstrap, Ant), __then__ load that library first. _Compatibility not yet guaranteed beyond [our Bootstrap support](./docs/bootstrap.md)._
+
+- [Bootstrap](#0-foundation-bootstrap)
+- [Other](#0-foundation-other)
+
+#### 0. Foundation: Bootstrap
+
+Load Bootstrap and `core-styles.bootstrap4.css` from a [CDN] in CSS:
+
+```css
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css") layer(foundation);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.bootstrap4.css") layer(foundation);
+```
+
+<sup>The use of `layer` avoids specificity conflicts [^spec-doc][^spec-art].</sup>
+
+#### 0. Foundation: Other
+
+We are also considering support for Ant or ShadCN.
 
 ### 1. Base
 
-Load `core-styles.base.css` from a CDN e.g. [JSDeliver].
-
-- Either in HTML:
-
-    ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css" />
-    ```
-
-- Or in CSS:
-
-    ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.base.css");
-    ```
-
-### 2. Project
-
-Load any one of these relevant project-type CSS from a CDN e.g. [JSDeliver]:
+Load **first** `core-styles.base.css` **then** any one of these relevant project-type CSS from [CDN] —
 
 | stylesheet | purpose |
 | - | - |
 | `core-styles.cms.css` | marketing or branding sites |
+| `core-styles.header.css` | Core-CMS & Core-Portal |
 | `core-styles.docs.css` | documentation sites |
 | `core-styles.portal.css` | portals (i.e. web apps) |
+
+— in CSS:
+
+```css
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.base.css") layer(base);
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.______.css") layer(base);
+```
+
+<sup>Replace `______` with `cms`, `docs`, `portal`, etc.</sup>
+
+### 2. Project
+
+Load global stylesheet(s) specific to your project.
 
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.______.css" />
+    <link rel="stylesheet" href="..." />
     ```
-
-    Replace `______` with `cms` or `docs` or `portal`.
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.______.css");
+    @import url("...") layer(project);
     ```
 
-    Replace `______` with `cms` or `docs` or `portal`.
+    <sup>The use of `layer` avoids specificity conflicts [^spec-doc][^spec-art].</sup>
 
-[JSDeliver]: https://www.jsdelivr.com/package/npm/@tacc/core-styles?tab=files&path=dist
+[^spec-doc]: See [developer documentation for specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity).
+[^spec-art]: See [educational illustration on specificity](https://stuffandnonsense.co.uk/specisithity).
 
 ### 3. Cosmetic
 
-Load stylesheets from your project.
+__Optional__
+
+Load stylesheet(s) for variant style of your project.
 
 - Either in HTML:
 
@@ -81,7 +98,7 @@ Load stylesheets from your project.
 - Or in CSS:
 
     ```css
-    @import url("/your/project/stylesheet.css");
+    @import url("/your/project/stylesheet.css") layer(cosmetic);
     ```
 
 ## Use **Some** of [Core Styles]
@@ -109,18 +126,18 @@ To use only what you need of [Core Styles]:
 
 ### Load Settings
 
-Load `core-styles.settings.css` from a CDN e.g. [JSDeliver].
+Load `core-styles.settings.css` from a [CDN].
 
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.settings.css" />
     ```
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.settings.css");
     ```
 
 ### Load a [Core Styles] Pattern
@@ -130,13 +147,13 @@ To use a pattern as is.
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/components/c-message.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/components/c-message.css" />
     ```
 
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.settings.css");
     ```
 
 ### Extend a [Core Styles] Pattern
@@ -146,7 +163,7 @@ To use a pattern but also change it to fit a unique requirement of your site.
 - Either in HTML:
 
     ```html
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/components/c-message.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/components/c-message.css" />
     <style>
       .c-message--scope-section {
         margin-bottom: 1em;
@@ -157,7 +174,7 @@ To use a pattern but also change it to fit a unique requirement of your site.
 - Or in CSS:
 
     ```css
-    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.25.3/dist/core-styles.settings.css");
+    @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.settings.css");
 
     .c-message--scope-section {
       margin-bottom: 1em;
@@ -177,6 +194,12 @@ To _author_ CSS like is done for [Core Styles], follow TACC's [CSS Style Guide].
 [foundation]: https://css-tricks.com/reboot-resets-reasoning/
 [react]: https://react.dev/
 
-[^1]: Core-Styles testing with a [reset, normalize, or reboot][foundation] has onyl been atop Bootstrap 4's `reboot.scss`.
-[^2]: If you have access, [report issues in JIRA "WP" Project](https://jira.tacc.utexas.edu/projects/WP/issues). Otherwise, [report issues in Github](https://github.com/TACC/Core-Styles/issues).
+[cdn]: We prefer [JSDeliver], because it allows the same syntax for tag, branch, and commit **and** because its parsing of [Semver] lets you use `@v2` to get the latest release within version 2.
+
+[semver]: https://semver.org/
+
+[jsdeliver]: https://www.jsdelivr.com/package/npm/@tacc/core-styles?tab=files&path=dist
+
+[^1]: Core-Styles testing with a [reset, normalize, or reboot][foundation] has only been atop Bootstrap 4's `reboot.scss`.
+[^2]: Report as [issues in Github](https://github.com/TACC/Core-Styles/issues).
 [^3]: Stylesheet load order and naming comes from [MCSS](https://tacc-main.atlassian.net/wiki/x/hRlv).

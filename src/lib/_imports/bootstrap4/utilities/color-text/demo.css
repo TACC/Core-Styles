@@ -1,0 +1,14 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+#demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.text-light,
+.text-white,
+.text-white-50 {
+  background-color: var(--global-color-primary--xx-dark) !important;
+  outline: 0.25em solid var(--global-color-primary--xx-dark);
+}

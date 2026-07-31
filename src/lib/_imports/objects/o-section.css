@@ -71,48 +71,60 @@
 /* Modifers: Style: Options */
 
 :--o-section--light {
-  --color--text: var(--global-color-primary--x-dark);
-  --color--text-strong: var(--global-color-primary--xx-dark);
+  --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--xx-light);
   --color--line: var(--global-color-primary--normal);
 }
+:--o-section--accent {
+  --color--text: var(--global-color-primary--xx-dark);
+  --color--bkgd: var(--global-color-accent--xxx-light);
+  --color--line: var(--global-color-accent--light);
+
+  & h2,
+  & .h2 {
+    color: currentColor;
+  }
+}
 :--o-section--muted {
-  --color--text: var(--global-color-primary--x-dark);
-  --color--text-strong: var(--global-color-primary--xx-dark);
+  --color--text: var(--global-color-primary--xx-dark);
   --color--bkgd: var(--global-color-primary--x-light);
   --color--line: var(--global-color-primary--dark);
 }
 :--o-section--dark {
-  --color--text: var(--global-color-primary--xx-light);
-  --color--text-strong: var(--global-color-primary--xx-light);
+  --color--text: var(--global-color-primary--x-light);
   --color--bkgd: var(--global-color-primary--xx-dark);
-  --color--line: var(--global-color-primary--xx-light);
+  --color--line: var(--global-color-primary--normal);
+
+  & h2,
+  & .h2 {
+    color: var(--global-color-secondary--light);
+  }
 }
 
 /* Modifers: Style: Text & Background */
 
 :--o-section--style {
-  --box-shadow--fake-bkgd: 50vw 0 var(--color--bkgd),
-                          -50vw 0 var(--color--bkgd);
+  --box-shadow--fake-bkgd: 100vw 0 0 100vw var(--color--bkgd),
+                          -100vw 0 0 100vw var(--color--bkgd);
 
   color: var(--color--text);
   background-color: var(--color--bkgd);
   box-shadow: var(--box-shadow--fake-bkgd);
+  clip-path: inset(0 -100vw); /* to hide vertical overflow of extended bkgd */
 }
 /* Nested sections must not stretch to page edge */
 :--o-section--style :--o-section--style {
   box-shadow: none;
 }
 
-/* Modifers: Style: Child Text */
+/* Modifers: Style: Borders */
 
-/* To color text, but not those within certain contexts */
-:--o-section--style :is(h1, h3, h4, h5, h6):not(
-  :--c-card--plain *,
-  :--c-card--standard *,
-  :--c-card--standard-N *
-) {
-  color: var(--color--text-strong);
+/* To add border between same-style sections */
+:--o-section--light + :--o-section--light,
+:--o-section--accent + :--o-section--accent,
+:--o-section--muted + :--o-section--muted,
+:--o-section--dark + :--o-section--dark {
+  border-top: 1px solid var(--color--line);
 }
 
 
@@ -141,6 +153,7 @@
 
 :--o-section--style.o-section--banner + :--o-section--style {
   box-shadow: var(--box-shadow--fake-bkgd);
+  clip-path: inset(0 -100vw);
 }
 
 

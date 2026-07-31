@@ -27,7 +27,11 @@ function build(input, output, opts = {}) {
   // Build command
   const command = `postcss "${input}" --dir "${output}" ${verbose} --config "${configDir}" ${base} ${ext}`;
 
-  console.log(`Building stylesheet(s) to ${output}`);
+  if (verbose) {
+    console.log(`Building stylesheet(s) to ${output} via command:\n`, command);
+  } else {
+    console.log(`Building stylesheet(s) to ${output}`);
+  }
 
   // Run command
   cmd.runSync(command);

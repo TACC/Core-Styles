@@ -26,6 +26,8 @@
   /* To mirror cortal.icon.font.css font-size */
   width: 1em;
   height: 1em;
+  /* To center icon (use case: in a link or paragraph & not inside a button) */
+  vertical-align: middle;
 }
 
 
@@ -58,7 +60,7 @@
 
 /* Icon within an Action */
 
-:--action > .icon {
+:where(:--action) > .icon {
     @mixin action__icon;
 }
 

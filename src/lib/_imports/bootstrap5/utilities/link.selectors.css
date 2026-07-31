@@ -1,0 +1,5 @@
+@custom-selector :--link-disabled
+    a:not([href]),
+    :disabled,
+    [aria-disabled="true"],
+    .disabled;

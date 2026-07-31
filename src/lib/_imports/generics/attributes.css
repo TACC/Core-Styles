@@ -1,4 +1,5 @@
 /* To render data-prefix value as prefixed text */
+/* WARNING: Important text must also have `aria-label="some explanation"` */
 [data-prefix]::before {
   display: inline-block;
   content: attr(data-prefix);

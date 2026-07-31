@@ -1,7 +1,7 @@
 @import url('../tools/x-figure.css');
 
-.x-blockquote {
-    @extend .x-figure;
+@define-mixin blockquote {
+    @mixin figure;
 
     --buffer-above: 3.0rem;
     --buffer-below: 3.0rem;
@@ -17,11 +17,16 @@
     border-left-style: solid;
     border-left-color: currentcolor;
 }
-.x-blockquote-caption {
-    @extend .x-figure-caption;
 
-    --buffer-above: 0; /* FAQ: cuz .x-blockquote line-height is enough */
-    --buffer-below: 0; /* FAQ: cuz .x-blockquote-caption has no border */
+@define-mixin blockquote-caption {
+    @mixin figure-caption;
 
-    border-bottom: unset; /* to undo .x-figure-caption */
+    --buffer-above: 0; /* FAQ: cuz blockquote line-height is enough */
+    --buffer-below: 0; /* FAQ: cuz blockquote-caption has no border */
+
+    border-bottom: unset; /* to undo figure-caption */
 }
+
+/* DEPRECATED */
+.x-blockquote { @mixin blockquote; }
+.x-blockquote-caption { @mixin blockquote-caption; }

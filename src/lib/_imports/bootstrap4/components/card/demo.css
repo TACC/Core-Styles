@@ -1,0 +1,9 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.card {
+  max-width: 200px;
+}
+
+[class*="card--"] img {
+  width: 100%;
+}

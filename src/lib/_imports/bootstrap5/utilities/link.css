@@ -1,0 +1,61 @@
+@import url("../../tools/x-link.css");
+
+@import url("./link.selectors.css");
+
+:not(a):is(
+  .link-primary,
+  .link-secondary
+) {
+  @mixin link;
+
+  &:--link-disabled {
+    @mixin link--disabled;
+  }
+  &:hover {
+    @mixin link--hover;
+  }
+  &:active {
+    @mixin link--active;
+  }
+}
+
+.link-primary {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:--link-disabled {
+    color: var(--global-color-accent--normal) !important;
+    text-decoration-color: currentColor !important;
+  }
+}
+
+.link-secondary {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:--link-disabled {
+    color: var(--global-color-secondary--normal) !important;
+    text-decoration-color: currentColor !important;
+  }
+}
+
+.link-success,
+.link-danger,
+.link-warning,
+.link-info,
+.link-light,
+.link-dark,
+.link-body-emphasis {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    color: inherit !important;
+    text-decoration-color: currentColor !important;
+  }
+}
