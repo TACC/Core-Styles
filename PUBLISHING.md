@@ -2,16 +2,12 @@
 
 Only appointed team members may publish releases.
 
-Publishing to npm happens automatically via the [`npm-publish`](.github/workflows/npm-publish.yml) GitHub Actions workflow, which runs whenever a GitHub release is created. It authenticates to npm via [Trusted Publishing (OIDC)](https://docs.npmjs.com/trusted-publishers), so no npm token or local `npm login`/`npm publish` step is needed.
-
-<sub>One-time setup: an npm org admin must register this repo + workflow as a Trusted Publisher on the `@tacc/core-styles` package settings page on npmjs.com.</sub>
-
-### Automated Release (Bash Scripts)
+### Automated Release
 
 1. Run the release script:\
     `./bin/release.sh`
 
-### Manual Release Steps
+### Manual Release
 
 <details>
 <summary>Instructions</summary>
