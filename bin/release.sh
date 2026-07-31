@@ -128,4 +128,5 @@ else
     read -rp "Press Enter once you've created the release..."
 fi
 
-echo "Release complete! npm publish will run via GitHub Actions now that the release was created."
+echo "GitHub release complete!"
+echo "NPM release should have been triggered via GitHub Actions."
