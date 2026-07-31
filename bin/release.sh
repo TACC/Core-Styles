@@ -14,15 +14,6 @@ if ! command_exists git; then
     exit 1
 fi
 
-# Check npm login status
-if ! npm whoami >/dev/null 2>&1; then
-    echo "Error: You are not logged in to npm."
-    echo -e "Please login first with:\n    npm login"
-    echo -e "\nNote: When running npm login, you'll be prompted to visit a URL in your browser."
-    echo "Make sure you're already logged into npmjs.com in your browser before starting."
-    exit 1
-fi
-
 # Ensure working directory is clean
 if [ -n "$(git status --porcelain)" ]; then
     echo "Error: Working directory has unexpected changes. Please commit or stash changes."
@@ -60,8 +51,7 @@ echo "1. Build CSS"
 echo "2. Update version"
 echo "3. Create release commit"
 echo "4. Open a PR and auto-merge it"
-echo "5. Publish to npm"
-echo "6. Create GitHub release"
+echo "5. Create a GitHub release (which triggers npm publish via GitHub Actions)"
 if ! confirm "Do you want to proceed?"; then
     echo "Release cancelled."
     exit 0
@@ -120,26 +110,6 @@ fi
 git checkout main
 git pull origin main
 
-# Publish to npm
-if npm view "@tacc/core-styles@${version_number}" >/dev/null 2>&1; then
-    echo "Version ${version_number} is already published to npm."
-    if ! confirm "Skip npm publish step?"; then
-        echo "Aborting to avoid version conflict."
-        exit 1
-    fi
-else
-    npm_publish_args=(--access public)
-
-    if [[ "$version_number" =~ -rc[0-9]+$ ]]; then
-        npm_publish_args+=(--tag rc)
-        echo "Publishing ${version_number} (release candidate) to npm (with 'rc' tag)..."
-    else
-        echo "Publishing ${version_number} to npm..."
-    fi
-
-    npm publish "${npm_publish_args[@]}"
-fi
-
 # Create GitHub release
 if command_exists gh; then
     echo "Creating GitHub release..."
@@ -158,4 +128,4 @@ else
     read -rp "Press Enter once you've created the release..."
 fi
 
-echo "Release complete!"
+echo "Release complete! npm publish will run via GitHub Actions now that the release was created."
