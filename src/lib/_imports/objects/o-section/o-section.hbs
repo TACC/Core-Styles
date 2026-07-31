@@ -30,6 +30,11 @@
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
     {{> @button-samples }}
 </section>
+<section class="container o-section o-section--style-accent">
+    <h2>Accent Section (with <code>.container</code>)</h2>
+    <p>Combining <code>.container</code> directly on an <code>.o-section</code> caps its own width at very wide viewports (&gt;1920px), which can expose gaps in the fake background beyond ~3160px (or try zooming out).</p>
+    {{> @button-samples }}
+</section>
 <section class="o-section o-section--style-muted">
     <h2>Muted Section</h2>
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
