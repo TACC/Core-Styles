@@ -3,18 +3,26 @@ variants:
     hidden: true
   - name: cms
     status: ready
-    label: (CMS) Headings
+    label: CMS
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap: true
+  - name: cms-vs-bootstrap
+    status: wip
+    label: CMS vs. Bootstrap
+    view: 'headings--bootstrap.hbs'
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap: true
   - name: docs
     status: wip
-    label: (Docs) Headings
+    label: Docs
     context:
       shouldLoadDocs: true
-  - name: portal
-    status: prototype
-    label: (Portal) Headings
+  - name: docs-vs-bootstrap
+    status: wip
+    label: Docs vs. Bootstrap
+    view: 'headings--bootstrap.hbs'
     context:
-      shouldLoadPortal: true
+      shouldLoadDocs: true
       shouldLoadBootstrap: true
