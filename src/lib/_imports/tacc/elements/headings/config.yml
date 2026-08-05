@@ -7,11 +7,25 @@ variants:
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap4: true
+  - name: cms-vs-bootstrap
+    status: wip
+    label: CMS vs. Bootstrap
+    view: 'headings--bootstrap.hbs'
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
   - name: docs
     status: wip
     label: (Docs) Headings
     context:
       shouldLoadDocs: true
+  - name: docs-vs-bootstrap
+    status: wip
+    label: Docs vs. Bootstrap
+    view: 'headings--bootstrap.hbs'
+    context:
+      shouldLoadDocs: true
+      shouldLoadBootstrap4: true
   - name: portal
     status: prototype
     label: (Portal) Headings

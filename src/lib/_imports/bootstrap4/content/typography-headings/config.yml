@@ -1,0 +1,25 @@
+label: "(Typography) Headings"
+status: ready
+context:
+  shouldLoadBootstrap: true
+variants:
+  - name: default
+    hidden: true
+  - name: cms
+    status: wip
+    label: (CMS) Headings
+    context:
+      shouldLoadCMS: true
+      supportStyles:
+        - ../../assets/settings/font--cms.css
+        - ../../assets/settings/color--cms.css
+        - ../../assets/bootstrap4/content/typography-headings/typography-headings--cms.css
+  - name: docs
+    status: wip
+    label: (Docs) Headings
+    context:
+      shouldLoadDocs: true
+      supportStyles:
+        - ../../assets/settings/font--docs.css
+        - ../../assets/settings/color--docs.css
+        - ../../assets/bootstrap4/content/typography-headings/typography-headings--docs.css
