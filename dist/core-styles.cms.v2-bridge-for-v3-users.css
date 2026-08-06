@@ -1,0 +1,2 @@
+/*! @tacc/core-styles v2.57.4+ | MIT | github.com/TACC/Core-Styles */
+/*! core-styles.cms.v2-bridge-for-v3-users.css */:where(:is([role=main],main)) h2{color:var(--global-color-accent--secondary);font-size:var(--global-font-size--x-large);font-weight:var(--black);line-height:unset;margin-bottom:30px;margin-top:0}
