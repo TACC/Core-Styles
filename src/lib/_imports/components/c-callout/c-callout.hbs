@@ -1,0 +1,74 @@
+<dl>
+  <dt>Text Only</dt>
+  <dd>
+    <aside class="c-callout">
+      <h2>Text</h2>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+    </aside>
+  </dd>
+
+  <dt>Image (Thumbnail) + Text</dt>
+  <dd>
+    <aside class="c-callout">
+      <img
+        src="https://cep.tacc.utexas.edu/media/filer_public_thumbnails/filer_public/5b/3b/5b3bbbf6-eb43-4853-b19e-9b7c67944648/spectrum-square-1024px.png__310x130_q85_crop_subject_location-171%2C166_subsampling-2_upscale.png"
+        alt="(sample image)"
+      />
+      <h2>Image (Thumbnail) + Text</h2>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+    </aside>
+  </dd>
+
+  <dt>Image (Square) + Text</dt>
+  <dd>
+    <aside class="c-callout">
+      {{> @img }}
+      <h2>Image (Square) + Text</h2>
+      <p>{{> @text-of-one-paragraph-short }} {{> @text-of-one-paragraph-short }}</p>
+    </aside>
+  </dd>
+
+  <dt>(Link) Image (Wide) + Text</dt>
+  <dd>
+    <a href="#" class="c-callout">
+      <h1>(Link) Image (Wide) + Text</h1>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+      {{> @img wide=true }}
+    </a>
+  </dd>
+
+  <dt>(Link) Image (Tall) + Text</dt>
+  <dd>
+    <a href="#" class="c-callout">
+      <h1>(Link) Image (Tall) + Text</h1>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+      {{> @img tall=true }}
+    </a>
+  </dd>
+
+  <dt>(Link) Image With Caption (Wide) + Text</dt>
+  <dd>
+    <a href="#" class="c-callout">
+      <h1>(Link) Image With Caption (Wide) + Text</h1>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+      <figure>
+        {{> @img wide=true }}
+        <figcaption>Lorem ipsum dolor sit amet, et cetera.</figcaption>
+      </figure>
+    </a>
+  </dd>
+
+  <dt>(Link) Image With Caption (Tall) + Text</dt>
+  <dd>
+    <a href="#" class="c-callout">
+      <h1>(Link) Image With Caption (Tall) + Text</h1>
+      <p>{{> @text-of-one-paragraph-short }}</p>
+      <figure>
+        {{> @img tall=true }}
+        <figcaption>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </figcaption>
+      </figure>
+    </a>
+  </dd>
+</dl>
