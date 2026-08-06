@@ -1,16 +1,8 @@
 /*! core-styles.h2-as-intro.css */
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
-/*
-Restyles a bare `<h2>` as a large, accent-colored intro paragraph — the
-same treatment `core-styles.cms.css` applies to `<h2>` by default today.
-
-Exists for sites that upgrade past the Core-Styles version where that
-default changes, but whose CMS content still (incorrectly) uses `<h2>`
-for this purpose instead of `<p class="h2">`. As of Core-Styles v2,
-loading this atop `core-styles.cms.css` is a no-op, since v2 already does
-this by default; it is published now so it is ready when that changes.
-*/
+/* Copy of `<h2>` styles from: https://github.com/TACC/Core-Styles/blob/v2.57.4/src/lib/_imports/elements/headings--cms.css */
+/* SEE ALSO: core-styles.h2-as-heading.css */
 
 @import url("./tools/selectors.css");
 @import url("./tools/x-headings.css");
