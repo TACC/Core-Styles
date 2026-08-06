@@ -1,0 +1,9 @@
+/* To undo `<h2>` styles from @v2 headings--cms.css */
+/* https://github.com/TACC/Core-Styles/blob/v2.57.4/src/lib/_imports/elements/headings--cms.css */
+h2 {
+    color: revert;
+    font-size: revert;
+    font-weight: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+}

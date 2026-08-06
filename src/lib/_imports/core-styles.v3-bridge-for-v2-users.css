@@ -1,0 +1,4 @@
+/*! core-styles.v3-bridge-for-v2-users.css */
+/* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
+
+@import url("./elements/h2-as-heading.css");
