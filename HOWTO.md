@@ -66,7 +66,7 @@ Load **first** `core-styles.base.css` **then** any one of these relevant project
 > To prepare a `cms.css`-base project for v3, append
 >
 > ```css
-> @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.cms.v3-bridge-for-v2-users.css") layer(base);
+> @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v2/dist/core-styles.cms.v3-bridge-for-v2-users.css") layer(project);
 > ```
 
 ### 2. Project
