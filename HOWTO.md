@@ -62,6 +62,13 @@ Load **first** `core-styles.base.css` **then** any one of these relevant project
 
 <sup>Replace `______` with `cms`, `docs`, `portal`, etc.</sup>
 
+> [!TIP]
+> To keep old `<h2>` styles in a `cms.css`-base project on v3, **append**
+>
+> ```css
+> @import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@v3/dist/core-styles.cms.v2-bridge-for-v3-users.css") layer(base);
+> ```
+
 ### 2. Project
 
 Load global stylesheet(s) specific to your project.
