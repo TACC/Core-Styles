@@ -4,9 +4,8 @@
 @custom-selector :--c-card
     .c-card,
     /* So Portal nor its modals loads TACC card styles */
-    /* CAVEAT: CMS can not load cards in modals (but it would not anyway) */
-    /* TODO: When Portal does not load core-styles.cms.css remove the :not(…) */
-    .card:where(:not(:--portal-content, .modal) *),
+    /* FAQ: CMS does not load cards in modals (not easy, odd design pattern) */
+    .card:where(:not(.modal) *),
     [class*="card--"];
 
 @custom-selector :--c-card--standard
