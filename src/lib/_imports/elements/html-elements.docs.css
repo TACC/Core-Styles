@@ -1,18 +1,12 @@
-@import url("../tools/selectors.css");
 @import url("../tools/x-figure.css");
 @import url("../tools/x-blockquote.css");
 
 
 /* Lists */
 
-/* To scope this style to main content (i.e. not header, not navbar) */
-:where(:--main-content) {
-
 /* So definition terms stand out more */
-& dt {
+dt {
   font-weight: var(--medium);
-}
-
 }
 
 
