@@ -1,0 +1,21 @@
+/*! core-styles.h2-as-heading.css */
+/* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
+
+/*
+Restores a bare `<h2>` to a plain semantic heading.
+
+`core-styles.cms.css` styles `<h2>` as a large, accent-colored intro
+paragraph — a legacy pattern from CMS editors misusing `<h2>` for that
+purpose instead of `<p class="h2">`. Load this stylesheet after (or in a
+layer atop) `core-styles.cms.css` on any site where `<h2>` is used
+correctly as a heading. Does not affect `.h2`/`p.h2`, which keep the
+intro-paragraph treatment via a separate, unscoped selector.
+*/
+
+h2 {
+    color: revert;
+    font-size: revert;
+    font-weight: revert;
+    margin-top: revert;
+    margin-bottom: revert;
+}
