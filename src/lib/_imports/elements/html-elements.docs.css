@@ -5,7 +5,7 @@
 /* Lists */
 
 /* So definition terms stand out more */
-& dt {
+dt {
   font-weight: var(--medium);
 }
 
