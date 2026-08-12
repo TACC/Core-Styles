@@ -1,0 +1,136 @@
+/* TACC CUSTOM STYLES (Based on https://github.com/TACC/Core-Styles) */
+/* IMPORTANT: Test all changes on all themes */
+/* https://docs.bestpractical.com/rt/5.0.5/customizing/styling_rt.html#Selecting-a-Theme */
+
+/* To load TACC/Core-Styles variables */
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.23.1/dist/core-styles.settings.css");
+@import url("https://cdn.jsdelivr.net/npm/@tacc/core-styles@2.23.1/dist/core-styles.theme.default.css");
+
+/* To apply custom styles only for light theme */
+/* FAQ: The elevator-dark theme is poorly written ∴ cumbersome to overwrite */
+/* CAVEAT: Older major browsers may not apply these styles */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Nesting_selector */
+body:not(.darkmode) {
+
+  /* To match footer to header */
+  #footer {
+    background-color: var(--global-color-primary--xx-dark); /* i.e. #222222 */
+  }
+
+  /* To re-color top-level header link arrows */
+  #main-navigation .sf-menu.toplevel.sf-arrows > li > a.sf-with-ul::after {
+    /* https://github.com/bestpractical/rt/blob/rt-5.0.5/share/static/css/elevator-light/nav.css#L367-L392 */
+    filter: invert(100%) brightness(200%);
+  }
+
+  /* To style buttons like TACC website */
+  /* https://github.com/TACC/Core-Styles/blob/v2.23.1/src/lib/_imports/components/c-button.css */
+  button, input.button {
+    & {
+      border-width: var(--global-border-width--normal);
+      border-style: solid;
+    }
+    &.btn-primary:not( :hover, :focus, :active, :disabled, .disabled ) {
+      color: var(--global-color-primary--xx-light);
+      background-color: var(--global-color-accent--normal);
+      border-color: var(--global-color-accent--normal);
+    }
+    &.btn-primary:hover {
+      color: var(--global-color-primary--xx-light);
+      background-color: var(--global-color-accent--dark);
+      border-color: var(--global-color-accent--dark);
+    }
+    &.btn-primary:active:not( :disabled, .disabled ) {
+      color: var(--global-color-primary--xx-light);
+      background-color: var(--global-color-accent--x-dark);
+      border-color: var(--global-color-accent--dark);
+
+      outline: var(--global-border-width--normal) solid var(--global-color-accent--dark);
+    }
+    &.btn-primary:focus:not( :active ) {
+      color: var(--global-color-primary--xx-light);
+      background-color: var(--global-color-accent--normal);
+      border-color: var(--global-color-primary--xx-light);
+
+      outline: var(--global-border-width--normal) solid var(--global-color-accent--light);
+    }
+    /* To overwrite RT elevator-light theme */
+    &.btn-primary:is( :focus, .focus ),
+    &.btn-primary:not( :disabled, .disabled ):active:focus {
+      box-shadow: none;
+    }
+  }
+
+  /* To minimally style input like TACC */
+  /* To overwrite RT elevator-light theme */
+  .button, input[type=reset], input[type=submit], input[class=button], button,
+  .custom-file-label, .custom-file-label::after,
+  .form-control {
+    border-radius: 0;
+  }
+
+  /* To make any search bar dark */
+  #topactions form:where(
+    [id*="-search"], /* e.g. Articles search */
+    [class*="-search"] /*  e.g. Tickets search */
+  ) {
+    /* https://github.com/TACC/Core-Styles/blob/v2.23.1/src/lib/_imports/trumps/tacc-search-bar.css */
+    input {
+      color: var(--header-text-color);
+      background-color: var(--header-search-bkgd-color);
+      border: var(--global-border-width--normal) solid var(--header-search-brdr-color);
+      border-radius: 5px;
+
+      padding-right: 0; /* to offer maximum space before characters are cut off */
+    }
+    input::placeholder {
+      color: var(--header-text-color);
+      opacity: 0.5;
+    }
+  }
+
+}
+
+
+
+
+
+/* RT THEME EDITOR (Basic Customization) */
+/* https://docs.bestpractical.com/rt/5.0.5/customizing/styling_rt.html#RT-Theme-Editor */
+/* Edits here should ONLY be Automatic via "Logo and Colors" form:
+   https://docs.bestpractical.com/rt/5.0.5/customizing/styling_rt.html#Logo-and-Colors */
+
+/* Page */
+body {}
+div#body {}
+
+/* Menu bar */
+div#quickbar { background: #222222; color: #fff; border: none; }
+#main-navigation #app-nav.sf-shadow > li, #main-navigation #app-nav.sf-shadow > li > a, #prefs-menu > li, #prefs-menu > li > a, #logo .rtname { color: #fff }
+
+/* Title bar */
+div#header {}
+
+/* Page title */
+div#header h1 {}
+
+/* Page content */
+div#body, .body-content-class {}
+
+/* Buttons */
+input[type="reset"], input[type="submit"], input[class="button"] { background: #003399; color: #fff }
+
+/* Button hover */
+input[type="reset"]:hover, input[type="submit"]:hover, input[class="button"]:hover { background: #002266; color: #fff }
+
+/* Search results */
+table.collection-as-table th.collection-as-table a { color: #003399 }
+
+/* Portlet Text */
+.titlebox .titlebox-title .left a, .titlebox .titlebox-title .left {}
+
+/* Selected bubble */
+.selectize-control.multi .selectize-input [data-value] {}
+
+/* Selected bubble (active) */
+.selectize-control.multi .selectize-input [data-value].active {}
