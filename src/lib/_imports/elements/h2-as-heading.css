@@ -1,9 +1,14 @@
-/* To undo `<h2>` styles from @v2 headings--cms.css */
-/* https://github.com/TACC/Core-Styles/blob/v2.57.4/src/lib/_imports/elements/headings--cms.css */
+@import url("../tools/x-headings--cms.css");
+
+/*
+PLACEHOLDER pending a real design for a correctly-used, non-lead `<h2>`.
+
+Same size, weight, and spacing as v2's `<h2>` (elements/headings--cms.css),
+minus the accent color — color is the one property that specifically
+signals "lead paragraph," not "heading." Sits between v2's h1 (xx-large)
+and h3 (large) on the type scale, same as v2's h2 always has.
+*/
 h2 {
-    color: revert;
-    font-size: revert;
-    font-weight: revert;
-    margin-top: revert;
-    margin-bottom: revert;
+    @mixin heading-2;
+    color: inherit;
 }
