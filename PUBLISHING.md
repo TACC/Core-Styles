@@ -2,20 +2,16 @@
 
 Only appointed team members may publish releases.
 
-### Automated Release (Bash Scripts)
+### Automated Release
 
-1. (if not already) Login to npm via:\
-    `npm login`
-2. Run the release script:\
+1. Run the release script:\
     `./bin/release.sh`
 
-### Manual Release Steps
+### Manual Release
 
 <details>
 <summary>Instructions</summary>
 
-1. (one time) Login to npm via:\
-    `npm login`
 1. Create new branch for version bump.
 1. Verify build is up-to-date:\
     `npm run build:css`\
@@ -26,9 +22,7 @@ Only appointed team members may publish releases.
 1. Build with new version:\
     `npm run build:css`
 1. Commit, push, PR, review, merge.
-1. Publish to NPM via:\
-    `npm publish --access public`\
-    <sub>Project build will automatically occur before publish.</sub>
-1. Create release and tag on GitHub.
+1. Create release and tag on GitHub.\
+    <sub>This triggers the `npm-publish` GitHub Actions workflow, which publishes to npm.</sub>
 
 </details>
