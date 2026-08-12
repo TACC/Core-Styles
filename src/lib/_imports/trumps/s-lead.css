@@ -1,5 +1,5 @@
 @import url("../tools/x-lead.css");
 
-:is(.s-lead, .lead) {
+.s-lead {
     @mixin x-lead;
 }
