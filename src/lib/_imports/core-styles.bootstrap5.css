@@ -1,5 +1,6 @@
 /*! core-styles.bootstrap5.css */
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
-@import url("./bootstrap5/content/lead.css");
+/* Bootstrap 4 and 5's .lead are identical; reuse the same file. */
+@import url("./bootstrap4/content/lead.css");
 @import url("./bootstrap5/utilities/link.css");
