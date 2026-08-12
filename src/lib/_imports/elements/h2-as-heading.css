@@ -1,13 +1,5 @@
 @import url("../tools/x-headings--cms.css");
 
-/*
-PLACEHOLDER pending a real design for a correctly-used, non-lead `<h2>`.
-
-Same size, weight, and spacing as v2's `<h2>` (elements/headings--cms.css),
-minus the accent color — color is the one property that specifically
-signals "lead paragraph," not "heading." Sits between v2's h1 (xx-large)
-and h3 (large) on the type scale, same as v2's h2 always has.
-*/
 h2 {
     @mixin heading-2;
     color: inherit;
