@@ -1,0 +1,1 @@
+To skin Bootstrap's own [`.lead`](https://getbootstrap.com/docs/4.6/content/typography/#lead) class with TACC's [lead paragraph](../../../trumps/s-lead) design. Shared with Bootstrap 5, since its `.lead` is identical.
