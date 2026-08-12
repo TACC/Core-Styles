@@ -8,7 +8,6 @@
     text-transform: uppercase;
 }
 
-/* Same design as a lead paragraph — SEE tools/x-lead.css */
 @define-mixin heading-2 {
     @mixin x-lead;
 }
