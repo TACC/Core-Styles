@@ -1,3 +1,4 @@
-label: Lead
+label: "(Typography) Lead"
+status: ready
 context:
   shouldLoadBootstrap: true
