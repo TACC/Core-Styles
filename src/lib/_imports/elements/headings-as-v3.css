@@ -1,0 +1,15 @@
+@import url("../tools/x-headings--cms.css");
+
+/*
+Preview of Core-Styles v3's planned heading redesign, once <h2> stops
+carrying the lead-paragraph look (SEE trumps/s-lead.css): every level
+below h1 shifts down to the next level's current look. Known caveat,
+still under review: this leaves v3's h4 (and h5) unstyled, since v2's h5
+and h6 already have no distinct look of their own.
+*/
+h2 { @mixin heading-3; color: inherit; }
+/* heading-4 sets no margin; mimic Bootstrap 4/5 Reboot's heading margin (their only source of one) so this matches what h4 actually renders as today, not a raw un-authored browser default. */
+h3 { @mixin heading-4; margin-top: 0; margin-bottom: 0.5rem; }
+h4 { @mixin heading-5; }
+h5 { @mixin heading-6; }
+h6 { @mixin heading-6; }

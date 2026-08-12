@@ -1,6 +1,0 @@
-@import url("../tools/x-headings--cms.css");
-
-h2 {
-    @mixin heading-2;
-    color: inherit;
-}
