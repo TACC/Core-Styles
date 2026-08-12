@@ -1,16 +1,3 @@
-/*
-"Lead" Paragraph
-
-A large, prominent paragraph — e.g. summarizing a page, right under its
-`<h1>`. Also restyles Bootstrap's own `.lead` class the same way, so sites
-loading Bootstrap get this design instead of Bootstrap's own `.lead`.
-
-Markup:
-<p class="s-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-Styleguide Trumps.Scopes.Lead
-*/
-
 @import url("../tools/x-lead.css");
 
 :is(.s-lead, .lead) {
