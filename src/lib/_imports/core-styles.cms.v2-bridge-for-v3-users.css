@@ -1,4 +1,4 @@
 /*! core-styles.cms.v2-bridge-for-v3-users.css */
 /* DO NOT ADD STYLES HERE; ONLY IMPORT OTHER STYLESHEETS */
 
-@import url("./elements/h2-as-intro.css");
+@import url("./elements/headings-as-v2.css");
