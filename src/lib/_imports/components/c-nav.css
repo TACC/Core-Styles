@@ -104,14 +104,46 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
 @custom-selector :--child-of-list
   :is(ul,ol) > *;
 
-.c-nav--piped--after > :--child-of-list,
-.c-nav--piped--after > :--child-no-list,
+/* via "after" pseduo-element */
+
+@define-mixin c-nav--piped--after {
+  & > :--child-of-list,
+  & > :--child-no-list {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1em;
+
+      /* To vertically center (because height ≠ 100%) */
+      position: absolute;
+      margin-top: 0.1em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:not(:last-child)::after {
+      border-right: var(--pipe-style);
+      right: calc( -0.5 * var(--link-padding));
+    }
+  }
+  & button:--c-button--as-link:not(:last-child)::after {
+    margin-right: calc( -1 * var(--global-border-width--normal));
+  }
+  & button:not(:--c-button--as-link):not(:last-child)::after {
+    margin-right: calc( -2 * var(--global-border-width--normal));
+  }
+}
+.c-nav--piped--after {
+  @mixin c-nav--piped--after;
+}
+
+/* via "before" pseduo-element */
+
 .c-nav--piped--before > :--child-of-list,
 .c-nav--piped--before > :--child-no-list {
   position: relative;
 }
-.c-nav--piped--after > :--child-of-list::after,
-.c-nav--piped--after > :--child-no-list::after,
 .c-nav--piped--before > :--child-of-list::before,
 .c-nav--piped--before > :--child-no-list::before {
   content: '';
@@ -124,20 +156,6 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
   top: 50%;
   transform: translateY(-50%);
 }
-
-/* via "after" pseduo-element */
-.c-nav--piped--after > :--child-no-list:not(:last-child)::after,
-.c-nav--piped--after > :--child-of-list:not(:last-child)::after {
-  border-right: var(--pipe-style);
-  right: calc( -0.5 * var(--link-padding));
-}
-.c-nav--piped--after button:--c-button--as-link:not(:last-child)::after {
-  margin-right: calc( -1 * var(--global-border-width--normal));
-}
-.c-nav--piped--after button:not(:--c-button--as-link):not(:last-child)::after {
-  margin-right: calc( -2 * var(--global-border-width--normal));
-}
-/* via "before" pseduo-element */
 .c-nav--piped--before > :--child-no-list:not(:first-child)::before,
 .c-nav--piped--before > :--child-of-list:not(:first-child)::before {
   border-left: var(--pipe-style);
@@ -151,7 +169,7 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
 }
 /* default */
 nav.c-nav--piped:not([class*="c-nav--piped--"]) {
-  @extend .c-nav--piped--after;
+  @mixin c-nav--piped--after;
 }
 
 
