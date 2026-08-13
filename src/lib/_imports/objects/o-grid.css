@@ -31,7 +31,7 @@ Styleguide Objects.Grid
   gap: var(--gap);
 
   /* To always have equal height rows that match tallest content */
-  @extend %x-grid--layout-rows-equal-max-height;
+  @mixin x-grid--layout-rows-equal-max-height;
 }
 
 
@@ -67,7 +67,7 @@ Styleguide Objects.Grid
 /* Layout: Columns: Same Width, Preset Col. Count */
 
 .o-grid--col-auto-count {
-  @extend %x-grid--layout-cols-equal-set-count;
+  @mixin x-grid--layout-cols-equal-set-count;
 }
 @media (--x-narrow-and-below) { .o-grid--col-auto-count { --count: 1; } }
 @media (--x-narrow-to-narrow) { .o-grid--col-auto-count { --count: 2; } }
@@ -84,7 +84,7 @@ Styleguide Objects.Grid
 .o-grid--col-min-width {
   --width: 250px;
 
-  @extend %x-grid--layout-cols-equal-min-width;
+  @mixin x-grid--layout-cols-equal-min-width;
 }
 /* Prevent content overflow */
 /* FAQ: Excluding `img` because `.o-grid img` already sets this for images */
@@ -100,7 +100,7 @@ Styleguide Objects.Grid
 /* Layout: Content: Align Vert/Horz Center */
 
 .o-grid--center-align {
-  @extend %x-grid--content-align-center;
+  @mixin x-grid--content-align-center;
 }
 
 /* Layout: Content: Image Fills Cell/Container */
