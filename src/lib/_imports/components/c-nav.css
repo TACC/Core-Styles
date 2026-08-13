@@ -140,32 +140,36 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
 
 /* via "before" pseduo-element */
 
-.c-nav--piped--before > :--child-of-list,
-.c-nav--piped--before > :--child-no-list {
-  position: relative;
-}
-.c-nav--piped--before > :--child-of-list::before,
-.c-nav--piped--before > :--child-no-list::before {
-  content: '';
-  display: block;
-  height: 1em;
+@define-mixin c-nav--piped--before {
+  & > :--child-of-list,
+  & > :--child-no-list {
+    position: relative;
 
-  /* To vertically center (because height ≠ 100%) */
-  position: absolute;
-  margin-top: 0.1em;
-  top: 50%;
-  transform: translateY(-50%);
+    &::before {
+      content: '';
+      display: block;
+      height: 1em;
+
+      /* To vertically center (because height ≠ 100%) */
+      position: absolute;
+      margin-top: 0.1em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:not(:first-child)::before {
+      border-left: var(--pipe-style);
+      left: calc( -0.5 * var(--link-padding));
+    }
+  }
+  & button:--c-button--as-link:not(:first-child)::before {
+    margin-left: calc( -2 * var(--global-border-width--normal));
+  }
+  & button:not(:--c-button--as-link):not(:first-child)::before {
+    margin-left: calc( -2 * var(--global-border-width--normal));
+  }
 }
-.c-nav--piped--before > :--child-no-list:not(:first-child)::before,
-.c-nav--piped--before > :--child-of-list:not(:first-child)::before {
-  border-left: var(--pipe-style);
-  left: calc( -0.5 * var(--link-padding));
-}
-.c-nav--piped--before button:--c-button--as-link:not(:first-child)::before {
-  margin-left: calc( -2 * var(--global-border-width--normal));
-}
-.c-nav--piped--before button:not(:--c-button--as-link):not(:first-child)::before {
-  margin-left: calc( -2 * var(--global-border-width--normal));
+.c-nav--piped--before {
+  @mixin c-nav--piped--before;
 }
 /* default */
 nav.c-nav--piped:not([class*="c-nav--piped--"]) {
