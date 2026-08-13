@@ -1,5 +1,5 @@
 .x-tabs {
-  /* FAQ: To avoid @extend error */
+  /* FAQ: Empty ruleset avoids error from `@extend .x-tabs;` */
 }
 @define-mixin x-tabs--custom-properties {
   --buffer: 20px;
