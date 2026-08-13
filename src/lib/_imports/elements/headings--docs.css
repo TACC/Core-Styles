@@ -3,9 +3,7 @@
 @import url("../tools/x-headings--docs.css");
 
 /* To scope these styles to main content (i.e. not header, not navbar) */
-/* To prevent these styles on portal content (i.e. within a React app) */
-/* TODO: Delete `:not(…)` after tup-ui does not load `core-styles.cms.css` */
-:where(:--main-content, :not(:--portal-content)) {
+:where(:--main-content) {
 
 
 
