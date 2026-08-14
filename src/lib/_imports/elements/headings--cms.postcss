@@ -10,11 +10,19 @@
 &:is( h1, h2, h3, h4, h5, h6 ) {
     @mixin heading;
 }
+/*
+v3's heading redesign: <h2> stops carrying the lead-paragraph look (SEE
+trumps/s-lead.postcss); every level below h1 shifts down to the next
+level's current look. Previously previewed as an opt-in bridge for v2
+sites (SEE elements/headings-as-v3.postcss); this is now the default.
+*/
 & h1 { @mixin heading-1; }
-& h2 { @mixin heading-2; }
-& h3 { @mixin heading-3; }
-& h4 { @mixin heading-4; }
-& h5 { @mixin heading-5; }
+& h2 { @mixin heading-3; color: inherit; }
+/* heading-4 sets no margin; mimic Bootstrap 4/5 Reboot's heading margin (their only source of one) so this matches what h4 actually renders as today, not a raw un-authored browser default. */
+& h3 { @mixin heading-4; margin-top: 0; margin-bottom: 0.5rem; }
+/* Distinct from h3 (bold) without exceeding v3's design voice: same size as body, just medium weight. */
+& h4 { font-size: inherit; font-weight: var(--medium); }
+& h5 { @mixin heading-6; }
 & h6 { @mixin heading-6; }
 
 
