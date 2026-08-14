@@ -65,7 +65,18 @@
         </a>
         <a disabled tabindex="-1" href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}">
-          disabled-attr
+          disabled-attr (invalid on &lt;a&gt;; should NOT look disabled)
+        </a>
+        <a href="#" tabindex="-1" class="c-button c-button--{{this._self.name}} disabled
+        {{#if type}}{{type}}{{/if}}">
+          disabled-class
+        </a>
+        <a href="#" aria-disabled="true" tabindex="-1" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}">
+          aria-disabled
+        </a>
+        <a class="c-button c-button--{{this._self.name}} {{#if type}}{{type}}{{/if}}" tabindex="-1">
+          no-href
         </a>
         <a href="#" class="c-button c-button--{{this._self.name}} c-button--is-busy
         {{#if type}}{{type}}{{/if}}" disabled tabindex="-1">

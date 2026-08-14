@@ -5,8 +5,10 @@
 @import url("./c-button.selectors.css");
 
 @custom-selector :--disabled
+  a:not([href]),
   :disabled,
-  :where(a[disabled]);
+  [aria-disabled="true"],
+  .disabled;
 
 
 
@@ -52,6 +54,7 @@ a:--c-button--is-busy {
 :--c-button:--disabled {
   -webkit-user-select: none;
   user-select: none; /* WARNING: Opinionated */
+  pointer-events: none; /* Real <button disabled> already blocks this; needed for <a> since HTML has no native disabled state for links */
 }
 :--c-button:--disabled:not(
   :--c-button--is-busy
