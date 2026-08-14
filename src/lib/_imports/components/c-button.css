@@ -233,6 +233,11 @@ a:--c-button--is-busy {
 
 :--c-button--can-truncate {
   @mixin truncate--one-line;
+
+  /* To ensure truncation */
+  /* CAVEAT: Changes alignment of > .icon */
+  /* FAQ: No truncation if `:--c-button` `display: inline-flex` */
+  display: inline-block;
 }
 
 /* Modifiers: Types: Is Active */
