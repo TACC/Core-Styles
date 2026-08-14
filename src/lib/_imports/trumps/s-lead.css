@@ -1,0 +1,5 @@
+@import url("../tools/x-lead.css");
+
+.s-lead {
+    @mixin x-lead;
+}
