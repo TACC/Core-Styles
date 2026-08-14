@@ -29,7 +29,7 @@ __If__ your project uses a full library (e.g. Bootstrap, Ant), __then__ load tha
 
 #### 0. Foundation: Bootstrap
 
-Load Bootstrap and `core-styles.bootstrap4.css` from a [CDN] in CSS:
+Load Bootstrap and `core-styles.bootstrap4.css` from a CDN[^cdn] in CSS:
 
 ```css
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css") layer(foundation);
@@ -44,7 +44,7 @@ We are also considering support for Ant or ShadCN.
 
 ### 1. Base
 
-Load **first** `core-styles.base.css` **then** any one of these relevant project-type CSS from [CDN] —
+Load **first** `core-styles.base.css` **then** any one of these relevant project-type CSS from CDN[^cdn] —
 
 | stylesheet | purpose |
 | - | - |
@@ -133,7 +133,7 @@ To use only what you need of [Core Styles]:
 
 ### Load Settings
 
-Load `core-styles.settings.css` from a [CDN].
+Load `core-styles.settings.css` from a CDN[^cdn].
 
 - Either in HTML:
 
@@ -201,7 +201,7 @@ To _author_ CSS like is done for [Core Styles], follow TACC's [CSS Style Guide].
 [foundation]: https://css-tricks.com/reboot-resets-reasoning/
 [react]: https://react.dev/
 
-[cdn]: We prefer [JSDeliver], because it allows the same syntax for tag, branch, and commit **and** because its parsing of [Semver] lets you use `@v2` to get the latest release within version 2.
+[^cdn]: We prefer [JSDeliver], because it allows the same syntax for tag, branch, and commit **and** because its parsing of [Semver] lets you use `@v2` to get the latest release within version 2.
 
 [semver]: https://semver.org/
 
