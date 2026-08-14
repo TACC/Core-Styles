@@ -8,7 +8,9 @@
   a:not([href]),
   :disabled,
   [aria-disabled="true"],
-  .disabled;
+  .disabled,
+  /* Not valid HTML, but supported for backwards-compatibility */
+  :where(a[disabled]);
 
 
 
