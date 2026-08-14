@@ -45,12 +45,12 @@
       <dd>
         <button class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
-          default
+          (default)
         </button>
         <button class="c-button c-button--{{this._self.name}} 
         {{#if type}}{{type}}{{/if}}" disabled>
-          disabled-attr
-        </button>
+          [disabled]
+        </button>*
         <button class="c-button c-button--{{this._self.name}} c-button--is-busy
         {{#if type}}{{type}}{{/if}}" disabled>
           --is-busy
@@ -61,29 +61,32 @@
       <dd>
         <a href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
-          default
+          (default)
         </a>
         <a disabled tabindex="-1" href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}">
-          disabled-attr (invalid on &lt;a&gt;; should NOT look disabled)
-        </a>
-        <a href="#" tabindex="-1" class="c-button c-button--{{this._self.name}} disabled
-        {{#if type}}{{type}}{{/if}}">
-          disabled-class
-        </a>
-        <a href="#" aria-disabled="true" tabindex="-1" class="c-button c-button--{{this._self.name}}
-        {{#if type}}{{type}}{{/if}}">
-          aria-disabled
-        </a>
-        <a class="c-button c-button--{{this._self.name}} {{#if type}}{{type}}{{/if}}" tabindex="-1">
-          no-href
-        </a>
+          [disabled]
+        </a>*
         <a href="#" class="c-button c-button--{{this._self.name}} c-button--is-busy
         {{#if type}}{{type}}{{/if}}" disabled tabindex="-1">
           --is-busy
         </a>
+        <a href="#" tabindex="-1" class="c-button c-button--{{this._self.name}} disabled
+        {{#if type}}{{type}}{{/if}}">
+          .disabled
+        </a>
+        <a href="#" aria-disabled="true" tabindex="-1" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}">
+          [aria-disabled]
+        </a>
+        <a class="c-button c-button--{{this._self.name}} {{#if type}}{{type}}{{/if}}" tabindex="-1">
+          (no [href])
+        </a>
       </dd>
       {{/if}}
+      <dt>Footnotes</dt>
+      <dd>
+        <small>* The <code>disabled</code> attribute is valid on button (<code>&lt;button&gt;</code>) elements so it looks disabled, but is not valid on anchor (<code>&lt;a&gt;</code>) elements so it has no special style.</small>
     </dl>
   <dd>
     {{/if}}
