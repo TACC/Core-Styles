@@ -1,28 +1,46 @@
-.x-tabs {
+@define-mixin x-tabs {
   position: relative;
   display: flex;
   flex-wrap: wrap;
 }
+.x-tabs {
+  @mixin x-tabs;
+}
 
-.x-tabs__toggle {
+@define-mixin x-tabs__toggle {
   /* FAQ: If `display: none` were used, keyboard accessibility would break */
   position: absolute;
   opacity: 0;
 }
+.x-tabs__toggle {
+  @mixin x-tabs__toggle;
+}
 
-.x-tabs__tab {
+@define-mixin x-tabs__tab--structure {
   white-space: nowrap;
   cursor: pointer;
 }
+.x-tabs__tab {
+  @mixin x-tabs__tab--structure;
+}
 
-.x-tabs__content {
+@define-mixin x-tabs__content--structure {
   width: 100%;
   display: none;
 }
-.x-tabs__content--active {
+.x-tabs__content {
+  @mixin x-tabs__content--structure;
+}
+@define-mixin x-tabs__content--active {
   order: 99;
   display: block;
 }
-.x-tabs__content--force-active {
+.x-tabs__content--active {
+  @mixin x-tabs__content--active;
+}
+@define-mixin x-tabs__content--force-active {
   display: contents;
+}
+.x-tabs__content--force-active {
+  @mixin x-tabs__content--force-active;
 }

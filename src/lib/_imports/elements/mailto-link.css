@@ -6,5 +6,5 @@
 @import url("../tools/x-mailto-text-replace.css");
 
 a[data-user][data-domain] {
-  @extend %x-mailto-text-replace;
+  @mixin x-mailto-text-replace;
 }

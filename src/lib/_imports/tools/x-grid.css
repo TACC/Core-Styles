@@ -9,12 +9,12 @@ Caveats:
 Reference:
 - [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-%x-grid--layout-rows-equal-max-height - Same height rows, match tallest content
-%x-grid--layout-rows-equal-set-height - Same height rows, default var. height (custom properties: `--height`)
-%x-grid--layout-cols-equal-set-count  - Same width columns, auto. column count (custom properties: `--count`)
-%x-grid--layout-cols-equal-min-width  - Same width columns, default min. width (custom properties: `--width`)
-%x-grid--layout-cols-equal-min-width-max-count  - Same width columns, default min. width, max. column count (custom properties: `--min-width`, `--max-cols`, `--row-height`, `--gap`)
-%x-grid--content-align-center         - Align content vert.ly and horz.ly center
+x-grid--layout-rows-equal-max-height - Same height rows, match tallest content
+x-grid--layout-rows-equal-set-height - Same height rows, default var. height (custom properties: `--height`)
+x-grid--layout-cols-equal-set-count  - Same width columns, auto. column count (custom properties: `--count`)
+x-grid--layout-cols-equal-min-width  - Same width columns, default min. width (custom properties: `--width`)
+x-grid--layout-cols-equal-min-width-max-count  - Same width columns, default min. width, max. column count (custom properties: `--min-width`, `--max-cols`, `--row-height`, `--gap`)
+x-grid--content-align-center         - Align content vert.ly and horz.ly center
 
 Styleguide Tools.Mixins.Grid
 */
@@ -31,20 +31,28 @@ Styleguide Tools.Mixins.Grid
 
 /* Layout: Columns: Same Width, Preset Col. Count */
 
-%x-grid--layout-cols-equal-set-count, /* DEPRECATED */
-.x-grid--layout-cols-equal-set-count {
+@define-mixin x-grid--layout-cols-equal-set-count {
   /* --count */
 
   grid-template-columns: repeat(var(--count), auto);
 }
+/* DEPRECATED */
+%x-grid--layout-cols-equal-set-count,
+.x-grid--layout-cols-equal-set-count {
+  @mixin x-grid--layout-cols-equal-set-count;
+}
 
 /* Layout: Columns: Same Width, Preset Min. Width */
 
-%x-grid--layout-cols-equal-min-width, /* DEPRECATED */
-.x-grid--layout-cols-equal-min-width {
+@define-mixin x-grid--layout-cols-equal-min-width {
   /* --width */
 
   grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
+}
+/* DEPRECATED */
+%x-grid--layout-cols-equal-min-width,
+.x-grid--layout-cols-equal-min-width {
+  @mixin x-grid--layout-cols-equal-min-width;
 }
 /* Suggestion for User: Avoid content overflow */
 /*
@@ -58,7 +66,7 @@ Styleguide Tools.Mixins.Grid
 /* https://css-tricks.com/an-auto-filling-css-grid-with-max-columns/ */
 /* TODO: Replace `x-grid--layout-cols-equal-min-width` with this */
 
-.x-grid--layout-cols-equal-min-width-max-count {
+@define-mixin x-grid--layout-cols-equal-min-width-max-count {
   /* input */
   --gap: var(--global-space--grid-gap);
   --max-cols: 7;
@@ -77,6 +85,9 @@ Styleguide Tools.Mixins.Grid
   grid-template-columns: repeat(auto-fill, minmax(max(var(--min-width), var(--max-width)), 1fr));
   grid-auto-rows: var(--row-height);
 }
+.x-grid--layout-cols-equal-min-width-max-count {
+  @mixin x-grid--layout-cols-equal-min-width-max-count;
+}
 /* Suggestion for User: Avoid content overflow */
 /*
 .x-grid--layout-cols-equal-min-width-max-count > * {
@@ -91,18 +102,26 @@ Styleguide Tools.Mixins.Grid
 
 /* Layout: Rows: Same Height (equal to height of tallest content in grid) */
 
-%x-grid--layout-rows-equal-max-height, /* DEPRECATED */
-.x-grid--layout-rows-equal-max-height {
+@define-mixin x-grid--layout-rows-equal-max-height {
   grid-auto-rows: 1fr;
+}
+/* DEPRECATED */
+%x-grid--layout-rows-equal-max-height,
+.x-grid--layout-rows-equal-max-height {
+  @mixin x-grid--layout-rows-equal-max-height;
 }
 
 /* Layout: Rows: Same Height (equal to default, variable value) */
 
-%x-grid--layout-rows-equal-set-height, /* DEPRECATED */
-.x-grid--layout-rows-equal-set-height {
+@define-mixin x-grid--layout-rows-equal-set-height {
   /* --height */
 
   grid-auto-rows: var(--height);
+}
+/* DEPRECATED */
+%x-grid--layout-rows-equal-set-height,
+.x-grid--layout-rows-equal-set-height {
+  @mixin x-grid--layout-rows-equal-set-height;
 }
 
 
@@ -115,10 +134,14 @@ Styleguide Tools.Mixins.Grid
 
 /* Content: Align Vert/Horz Center */
 
-%x-grid--content-align-center, /* DEPRECATED */
-.x-grid--content-align-center {
+@define-mixin x-grid--content-align-center {
   justify-items: center;
   align-items: center;
+}
+/* DEPRECATED */
+%x-grid--content-align-center,
+.x-grid--content-align-center {
+  @mixin x-grid--content-align-center;
 }
 
 
@@ -136,7 +159,7 @@ Styleguide Tools.Mixins.Grid
 }
 
 .user-block--modifier {
-  @extend .x-grid--...;
+  @mixin x-grid--...;
 }
 
 \/* Avoid leting content size (e.g. image) exceed cell size *\/

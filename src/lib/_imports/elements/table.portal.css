@@ -2,5 +2,5 @@
 
 /* Assume portal tables always supports truncation */
 table {
-  @extend .s-truncated-table;
+  @mixin s-truncated-table;
 }
