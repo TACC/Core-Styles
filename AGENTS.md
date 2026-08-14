@@ -26,6 +26,10 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 - When updating dependencies, use `npm` commands (e.g. `uninstall`/`install`); do not hand-edit lockfile entries.
 
+## Vocab
+
+- Use the word "deleted", not "removed".
+
 ## Commits
 
 - **Format:** `.gitmessage` (fallback: `~/.gitmessage`)
