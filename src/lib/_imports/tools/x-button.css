@@ -1,0 +1,339 @@
+@import url("./x-link.css"); /* for x-button--as-link's delegation to link/link--hover/link--active */
+@import url("../components/c-button.selectors.css"); /* for :--c-button, :--c-button--is-busy, :--c-button--as-link, :--c-button--size-small, :--c-button--width-* */
+
+/*
+  NOTE: Not importing `c-button.css` for `:--disabled` (defined there, not in
+  `c-button.selectors.css`) — that file's own disabled-state rules are
+  intentionally left untouched by this migration (see PR description), so
+  `:disabled, :where(a[disabled])` is inlined here instead, to stay
+  independent of that in-flight work.
+*/
+
+@define-mixin x-button {
+  --min-width: 75px;
+  --mid-width: 110px;
+  --max-width: 130px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1.5; /* to make consistent vertical alignment of icons */
+  gap: 0.5ch; /* to add space between icons and text */
+
+  /* To ensure identical <button> and <a> instances have same width */
+  box-sizing: border-box;
+
+  border-width: var(--global-border-width--normal);
+  border-style: solid;
+
+  &:where(:not(:is(:disabled, :where(a[disabled])))) {
+    cursor: pointer; /* WARNING: Opinionated */
+  }
+
+  /* To align buttons that have icons */
+  /* FAQ: Doing for all buttons, for consistent behavior in possible edge case */
+  &/*:has(.icon)*/ {
+    vertical-align: middle;
+  }
+
+  a& {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &:where(:not(
+    :--c-button--width-short,
+    :--c-button--width-medium,
+    :--c-button--width-long,
+    :--c-button--size-small,
+    :--c-button--as-link
+  )) {
+    width: auto;
+    --max-width: auto;
+  }
+
+  & .spinner-border {
+    align-self: center;
+  }
+}
+.x-button {
+  @mixin x-button;
+}
+
+
+
+@define-mixin x-button--primary {
+  padding: 6px 18px;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+
+  &:hover {
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-accent--dark);
+    border-color: var(--global-color-accent--dark);
+  }
+
+  &:active:not(
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-accent--x-dark);
+    border-color: var(--global-color-accent--dark);
+
+    border-width: var(--global-border-width--normal);
+    outline: var(--global-border-width--normal) solid
+      var(--global-color-accent--dark);
+  }
+
+  &:focus:not(
+    :active,
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-accent--normal);
+    border-color: var(--global-color-primary--xx-light);
+
+    outline: var(--global-border-width--normal) solid
+      var(--global-color-accent--light);
+  }
+
+  &:--c-button--is-busy,
+  &:not(
+    :hover,
+    :focus,
+    :active,
+    :is(:disabled, :where(a[disabled]))
+  ) {
+    color: var(--global-color-primary--xx-light);
+    background-color: var(--global-color-accent--normal);
+    border-color: var(--global-color-accent--normal);
+  }
+}
+.x-button--primary {
+  @mixin x-button--primary;
+}
+
+
+
+@define-mixin x-button--secondary {
+  padding: 6px 18px;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+
+  &:hover {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--normal);
+  }
+
+  &:active:not(
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--dark);
+
+    border-width: var(--global-border-width--normal);
+    outline: var(--global-border-width--normal) solid
+      var(--global-color-accent--dark);
+  }
+
+  &:focus:not(
+    :active,
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--thick) solid
+      var(--global-color-accent--light);
+  }
+
+  &:--c-button--is-busy,
+  &:not(
+    :hover,
+    :focus,
+    :active,
+    :is(:disabled, :where(a[disabled]))
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-primary--x-light);
+    border-color: var(--global-color-primary--xx-dark);
+  }
+
+  /* To handle (what?) edge case */
+  /* FAQ: Extra specificity is to override (...what?) */
+  /* HELP: Document this fix */
+  &:--c-button:is(:disabled, :where(a[disabled])) {
+    background-color: var(--global-color-primary--x-light);
+  }
+}
+.x-button--secondary {
+  @mixin x-button--secondary;
+}
+
+
+
+@define-mixin x-button--tertiary {
+  padding: 6px 18px;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+
+  &:hover {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-primary--light);
+    border-color: var(--global-color-accent--dark);
+  }
+
+  &:active:not(
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--dark);
+
+    border-width: var(--global-border-width--normal);
+    outline: var(--global-border-width--normal) solid
+      var(--global-color-accent--dark);
+  }
+
+  &:focus:not(
+    :active,
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-primary--light);
+    border-color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--thick) solid
+      var(--global-color-accent--light);
+  }
+
+  &:--c-button--is-busy,
+  &:not(
+    :hover,
+    :focus,
+    :active,
+    :is(:disabled, :where(a[disabled]))
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-primary--xx-light);
+    border-color: var(--global-color-primary--xx-dark);
+  }
+}
+.x-button--tertiary {
+  @mixin x-button--tertiary;
+}
+
+
+
+@define-mixin x-button--is-active {
+  padding: 6px 18px;
+  min-width: var(--min-width);
+  max-width: var(--max-width);
+
+  &:hover {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--xx-light);
+    border-color: var(--global-color-accent--dark);
+  }
+
+  &:active {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-accent--dark);
+
+    border-width: var(--global-border-width--normal);
+    outline: var(--global-border-width--normal) solid
+      var(--global-color-accent--dark);
+  }
+
+  &:focus:not(
+    :active
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--xx-light);
+    border-color: var(--global-color-primary--xx-dark);
+
+    outline: var(--global-border-width--thick) solid
+      var(--global-color-accent--light);
+  }
+
+  &:--c-button--is-busy,
+  &:not(
+    :hover,
+    :focus,
+    :active,
+    :is(:disabled, :where(a[disabled]))
+  ) {
+    color: var(--global-color-primary--xx-dark);
+    background-color: var(--global-color-accent--x-light);
+    border-color: var(--global-color-primary--xx-dark);
+  }
+}
+.x-button--is-active {
+  @mixin x-button--is-active;
+}
+
+
+
+@define-mixin x-button--as-link {
+  @mixin link;
+
+  background: unset;
+  border: unset;
+  padding-inline: unset;
+
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+.x-button--as-link {
+  @mixin x-button--as-link;
+}
+@define-mixin x-button--as-link--hover {
+  @mixin link--hover;
+}
+.x-button--as-link--hover {
+  @mixin x-button--as-link--hover;
+}
+@define-mixin x-button--as-link--active {
+  @mixin link--active;
+}
+.x-button--as-link--active {
+  @mixin x-button--as-link--active;
+}
+
+
+
+@define-mixin x-button--size-small {
+  min-width: 0;
+  padding: 4px 9px;
+  line-height: 1;
+}
+.x-button--size-small {
+  @mixin x-button--size-small;
+}
+
+
+
+@define-mixin x-button--width-short {
+  width: var(--min-width);
+}
+.x-button--width-short {
+  @mixin x-button--width-short;
+}
+@define-mixin x-button--width-medium {
+  width: var(--mid-width);
+}
+.x-button--width-medium {
+  @mixin x-button--width-medium;
+}
+@define-mixin x-button--width-long {
+  width: var(--max-width);
+}
+.x-button--width-long {
+  @mixin x-button--width-long;
+}
