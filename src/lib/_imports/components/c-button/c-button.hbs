@@ -45,12 +45,12 @@
       <dd>
         <button class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled{{/if}}>
-          default
+          (default)
         </button>
         <button class="c-button c-button--{{this._self.name}} 
         {{#if type}}{{type}}{{/if}}" disabled>
-          disabled-attr
-        </button>
+          [disabled]
+        </button>*
         <button class="c-button c-button--{{this._self.name}} c-button--is-busy
         {{#if type}}{{type}}{{/if}}" disabled>
           --is-busy
@@ -61,18 +61,32 @@
       <dd>
         <a href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}" {{#if disabled}}disabled tabindex="-1" {{/if}}>
-          default
+          (default)
         </a>
         <a disabled tabindex="-1" href="#" class="c-button c-button--{{this._self.name}}
         {{#if type}}{{type}}{{/if}}">
-          disabled-attr
-        </a>
+          [disabled]
+        </a>*
         <a href="#" class="c-button c-button--{{this._self.name}} c-button--is-busy
         {{#if type}}{{type}}{{/if}}" disabled tabindex="-1">
           --is-busy
         </a>
+        <a href="#" tabindex="-1" class="c-button c-button--{{this._self.name}} disabled
+        {{#if type}}{{type}}{{/if}}">
+          .disabled
+        </a>
+        <a href="#" aria-disabled="true" tabindex="-1" class="c-button c-button--{{this._self.name}}
+        {{#if type}}{{type}}{{/if}}">
+          [aria-disabled]
+        </a>
+        <a class="c-button c-button--{{this._self.name}} {{#if type}}{{type}}{{/if}}" tabindex="-1">
+          (no [href])
+        </a>
       </dd>
       {{/if}}
+      <dt>Footnotes</dt>
+      <dd>
+        <small>* The <code>disabled</code> attribute is not valid HTML on anchor (<code>&lt;a&gt;</code>) elements, only on button (<code>&lt;button&gt;</code>) elements &mdash; but it is still supported here for backwards-compatibility. Prefer <code>aria-disabled="true"</code> on anchors instead.</small>
     </dl>
   <dd>
     {{/if}}
