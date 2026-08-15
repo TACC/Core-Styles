@@ -1,0 +1,16 @@
+@import url("../tools/selectors.postcss");
+@import url("../tools/x-headings.cms.v2.postcss");
+
+/* To style `<h1>`-`<h6>` as did @v2 headings--cms.css */
+/* https://github.com/TACC/Core-Styles/blob/v2.57.4/src/lib/_imports/elements/headings--cms.css */
+:where(:--main-content) {
+    &:is( h1, h2, h3, h4, h5, h6 ) {
+        @mixin heading--v2;
+    }
+    & h1 { @mixin heading-1--v2; }
+    & h2 { @mixin heading-2--v2; }
+    & h3 { @mixin heading-3--v2; }
+    & h4 { @mixin heading-4--v2; }
+    & h5 { @mixin heading-5--v2; }
+    & h6 { @mixin heading-6--v2; }
+}

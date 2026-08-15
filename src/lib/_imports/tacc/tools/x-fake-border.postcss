@@ -32,7 +32,7 @@ To avoid overwriting an existing `box-shadow`, use the public shadow variables:
 - `--fb--shadow-above: var(--YOUR-existing-shadow-ABOVE-fake-border)`
 - `--fb--shadow-below: var(--YOUR-existing-shadow-BELOW-fake-border)`
 */
-%x-fake-border--inset-horz {
+@define-mixin x-fake-border--inset-horz {
   --fb--line-width: 0px; /* CAVEAT: add unit so `calc()` will not fail */
   --fb--line-color: transparent;
 
@@ -53,19 +53,19 @@ To avoid overwriting an existing `box-shadow`, use the public shadow variables:
     var(--fb),
     var(--fb--shadow-below, 0 0 transparent)
 }
-%x-fake-border--inset-horz-top {
-  @extend %x-fake-border--inset-horz;
+@define-mixin x-fake-border--inset-horz-top {
+  @mixin x-fake-border--inset-horz;
 
   --fb--line: inset 0 calc( 1 * var(--fb--line-width)) var(--fb--line-color);
 }
-%x-fake-border--inset-horz-both {
-  @extend %x-fake-border--inset-horz;
+@define-mixin x-fake-border--inset-horz-both {
+  @mixin x-fake-border--inset-horz;
 
   --fb--line: inset 0 calc( 1 * var(--fb--line-width)) var(--fb--line-color),
               inset 0 calc(-1 * var(--fb--line-width)) var(--fb--line-color);
 }
-%x-fake-border--inset-horz-bottom {
-  @extend %x-fake-border--inset-horz;
+@define-mixin x-fake-border--inset-horz-bottom {
+  @mixin x-fake-border--inset-horz;
 
   --fb--line: inset 0 calc(-1 * var(--fb--line-width)) var(--fb--line-color);
 }

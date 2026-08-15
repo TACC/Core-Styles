@@ -1,0 +1,9 @@
+@import url("./x-lead.postcss");
+
+/* FAQ: Wrapped to deter clients from using `.x-lead` */
+/* HACK: Not in `x-lead/demo.css` because it is not processed */
+#demo {
+  .x-lead {
+    @mixin x-lead;
+  }
+}

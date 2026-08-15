@@ -1,3 +1,5 @@
+@import url("./x-lead.postcss");
+
 @define-mixin heading-1 {
     font-size: var(--global-font-size--xx-large);
     font-weight: var(--black);
@@ -7,12 +9,7 @@
 }
 
 @define-mixin heading-2 {
-    color: var(--global-color-accent--secondary);
-    font-size: var(--global-font-size--x-large);
-    font-weight: var(--black);
-
-    margin-top: 0px; /* depends on interpretation of design */
-    margin-bottom: 30px; /* rounded from design 31px */
+    @mixin x-lead;
 }
 
 @define-mixin heading-3 {
