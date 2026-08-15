@@ -5,7 +5,11 @@
 @import url("./c-button.selectors.css");
 
 @custom-selector :--disabled
+  a:not([href]),
   :disabled,
+  [aria-disabled="true"],
+  .disabled,
+  /* Not valid HTML, but supported for backwards-compatibility */
   :where(a[disabled]);
 
 
@@ -52,6 +56,7 @@ a:--c-button--is-busy {
 :--c-button:--disabled {
   -webkit-user-select: none;
   user-select: none; /* WARNING: Opinionated */
+  pointer-events: none; /* Real <button disabled> already blocks this; needed for <a> since HTML has no native disabled state for links */
 }
 :--c-button:--disabled:not(
   :--c-button--is-busy
@@ -228,6 +233,11 @@ a:--c-button--is-busy {
 
 :--c-button--can-truncate {
   @mixin truncate--one-line;
+
+  /* To ensure truncation */
+  /* CAVEAT: Changes alignment of > .icon */
+  /* FAQ: No truncation if `:--c-button` `display: inline-flex` */
+  display: inline-block;
 }
 
 /* Modifiers: Types: Is Active */

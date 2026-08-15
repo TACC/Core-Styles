@@ -53,6 +53,7 @@
 @import url("./components/c-card--frontera-about-page.css");
 
 /* TRUMPS */
+@import url("./trumps/s-lead.css");
 @import url("./trumps/s-drop-cap.css");
 @import url("./trumps/s-footer.css");
 @import url("./trumps/s-footer--thick.css");
