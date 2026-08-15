@@ -5,8 +5,9 @@
   NOTE: Not importing `c-button.css` for `:--disabled` (defined there, not in
   `c-button.selectors.css`) — that file's own disabled-state rules are
   intentionally left untouched by this migration (see PR description), so
-  `:disabled, :where(a[disabled])` is inlined here instead, to stay
-  independent of that in-flight work.
+  `:--disabled`'s expansion is inlined here instead, to stay independent of
+  that file. Keep this in sync with `c-button.css`'s `@custom-selector
+  :--disabled` if that ever changes again.
 */
 
 @define-mixin x-button {
@@ -27,7 +28,7 @@
   border-width: var(--global-border-width--normal);
   border-style: solid;
 
-  &:where(:not(:is(:disabled, :where(a[disabled])))) {
+  &:where(:not(:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])))) {
     cursor: pointer; /* WARNING: Opinionated */
   }
 
@@ -103,7 +104,7 @@
     :hover,
     :focus,
     :active,
-    :is(:disabled, :where(a[disabled]))
+    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
   ) {
     color: var(--global-color-primary--xx-light);
     background-color: var(--global-color-accent--normal);
@@ -156,7 +157,7 @@
     :hover,
     :focus,
     :active,
-    :is(:disabled, :where(a[disabled]))
+    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-primary--x-light);
@@ -166,7 +167,7 @@
   /* To handle (what?) edge case */
   /* FAQ: Extra specificity is to override (...what?) */
   /* HELP: Document this fix */
-  &:--c-button:is(:disabled, :where(a[disabled])) {
+  &:--c-button:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])) {
     background-color: var(--global-color-primary--x-light);
   }
 }
@@ -216,7 +217,7 @@
     :hover,
     :focus,
     :active,
-    :is(:disabled, :where(a[disabled]))
+    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-primary--xx-light);
@@ -266,7 +267,7 @@
     :hover,
     :focus,
     :active,
-    :is(:disabled, :where(a[disabled]))
+    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-accent--x-light);
