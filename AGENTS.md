@@ -26,6 +26,15 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 - When updating dependencies, use `npm` commands (e.g. `uninstall`/`install`); do not hand-edit lockfile entries.
 
+### Sync with main
+
+- Merging `main` to `epic/v3` always conflicts on `dist/` (this branch doesn't commit it, `main` does).
+  Run `bin/sync-main.sh` to auto-resolve those and rebuild; it stops for you on any other conflict.
+
+## Vocab
+
+- Use the word "deleted", not "removed".
+
 ## Commits
 
 - **Format:** `.gitmessage` (fallback: `~/.gitmessage`)
@@ -37,7 +46,7 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
   - Be concise: plain language, simple sentences, present lists as bullets not prose.
   - When summarizing changeset, say what changed and (only if it matters) why, never how.
   - If listing a file change, then only describe change at a high level.
-  - In "Changes" section, group into as few bullets as the logical changes require (never one per file) and default to zero explanation per bullet (e.g. `**added** logos`).
+  - In "Changes" section, group into as few bullets as the logical changes require (never one per file) and default to zero explanation per bullet (e.g. `**added** logos`). Leave the detail for the code diff itself — a bullet is not the place to restate what the diff already shows.
   - In "Overview" section, match the template's example length (1 sentence), not its stated max (1–3).
   - When updating, first re-read the current description, because it may have been edited.
   - In "Related" section, links to PRs should instead just be raw URLs (because GitHub will auto-create rich links).
