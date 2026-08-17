@@ -11,7 +11,7 @@
 a:where(:not(:--exempt-link)) {
   @mixin link;
 }
-a:where(:not([href])) {
+a:where(:not(:--exempt-link)):not([href]) {
   @mixin link--disabled;
 }
 a:where(:not(:--exempt-link)):hover {
