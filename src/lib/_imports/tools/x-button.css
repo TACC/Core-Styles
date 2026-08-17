@@ -3,10 +3,9 @@
 
 /*
   NOTE: Not importing `c-button.css` for `:--disabled` (defined there, not in
-  `c-button.selectors.css`) — that file's own disabled-state rules are
-  intentionally left untouched by this migration (see PR description), so
-  `:--disabled`'s expansion is inlined here instead, to stay independent of
-  that file. Keep this in sync with `c-button.css`'s `@custom-selector
+  `c-button.selectors.css`) — `c-button.css` imports this file, so importing
+  it back would be circular. `:--disabled`'s expansion is inlined here
+  instead. Keep this in sync with `c-button.css`'s `@custom-selector
   :--disabled` if that ever changes again.
 */
 
