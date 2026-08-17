@@ -1,5 +1,3 @@
-@import url("./x-lead.postcss");
-
 @define-mixin heading-1 {
     font-size: var(--global-font-size--xx-large);
     font-weight: var(--black);
@@ -8,11 +6,9 @@
     text-transform: uppercase;
 }
 
+/* v3: no longer carries the lead-paragraph look (SEE trumps/s-lead.postcss) */
 @define-mixin heading-2 {
-    @mixin x-lead;
-}
-
-@define-mixin heading-3 {
+    color: inherit;
     font-size: var(--global-font-size--large);
     font-weight: var(--black);
 
@@ -21,9 +17,19 @@
 }
 
 /* WARNING: No design available; these are just developer guesswork */
-@define-mixin heading-4 {
+/* margin-top/margin-bottom mimic Bootstrap 4/5 Reboot's heading margin (their only source of one) so this matches what h3 actually renders as today, not a raw un-authored browser default. */
+@define-mixin heading-3 {
     font-size: var(--global-font-size--medium);
     font-weight: var(--bold);
+
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Distinct from heading-3 (bold) without exceeding v3's design voice: same size as body, just medium weight. */
+@define-mixin heading-4 {
+    font-size: inherit;
+    font-weight: var(--medium);
 }
 
 /* To deter use of "smaller" headings by making them match body font */
@@ -37,31 +43,12 @@
 }
 
 /*
-v3's heading redesign: <h2> stops carrying the lead-paragraph look (SEE
-trumps/s-lead.postcss); every level below h1 shifts down to the next
-level's current look. Named per-level so h1-h6 and .h1-.h6 (SEE
-elements/headings--cms.postcss) share one definition instead of
-duplicating it.
+Named per-level so h1-h6 and .h1-.h6 (SEE elements/headings--cms.postcss)
+share one definition instead of duplicating it.
 */
-@define-mixin heading-1--cms {
-    @mixin heading-1;
-}
-@define-mixin heading-2--cms {
-    @mixin heading-3;
-    color: inherit;
-}
-@define-mixin heading-3--cms {
-    @mixin heading-4;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-@define-mixin heading-4--cms {
-    font-size: inherit;
-    font-weight: var(--medium);
-}
-@define-mixin heading-5--cms {
-    @mixin heading-6;
-}
-@define-mixin heading-6--cms {
-    @mixin heading-6;
-}
+@define-mixin heading-1--cms { @mixin heading-1; }
+@define-mixin heading-2--cms { @mixin heading-2; }
+@define-mixin heading-3--cms { @mixin heading-3; }
+@define-mixin heading-4--cms { @mixin heading-4; }
+@define-mixin heading-5--cms { @mixin heading-5; }
+@define-mixin heading-6--cms { @mixin heading-6; }
