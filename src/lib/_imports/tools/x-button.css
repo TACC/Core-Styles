@@ -42,6 +42,24 @@
     text-align: center;
   }
 
+  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])) {
+    -webkit-user-select: none;
+    user-select: none; /* WARNING: Opinionated */
+    pointer-events: none; /* Real <button disabled> already blocks this; needed for <a> since HTML has no native disabled state for links */
+  }
+  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])):not(
+    :--c-button--is-busy
+  ) {
+    color: var(--global-color-primary--dark);
+    border-color: var(--global-color-primary--dark);
+  }
+  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])):not(
+    :--c-button--is-busy,
+    :--c-button--as-link
+  ) {
+    background-color: var(--global-color-primary--xx-light);
+  }
+
   &:where(:not(
     :--c-button--width-short,
     :--c-button--width-medium,
