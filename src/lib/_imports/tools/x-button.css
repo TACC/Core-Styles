@@ -1,13 +1,5 @@
 @import url("./x-link.css"); /* for x-button--as-link's delegation to link/link--hover/link--active */
-@import url("../components/c-button.selectors.css"); /* for :--c-button, :--c-button--is-busy, :--c-button--as-link, :--c-button--size-small, :--c-button--width-* */
-
-/*
-  NOTE: Not importing `c-button.css` for `:--disabled` (defined there, not in
-  `c-button.selectors.css`) — `c-button.css` imports this file, so importing
-  it back would be circular. `:--disabled`'s expansion is inlined here
-  instead. Keep this in sync with `c-button.css`'s `@custom-selector
-  :--disabled` if that ever changes again.
-*/
+@import url("../components/c-button.selectors.css"); /* for :--disabled, :--c-button, :--c-button--is-busy, :--c-button--as-link, :--c-button--size-small, :--c-button--width-* */
 
 @define-mixin x-button {
   --min-width: 75px;
@@ -27,7 +19,7 @@
   border-width: var(--global-border-width--normal);
   border-style: solid;
 
-  &:where(:not(:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])))) {
+  &:where(:not(:--disabled)) {
     cursor: pointer; /* WARNING: Opinionated */
   }
 
@@ -42,18 +34,18 @@
     text-align: center;
   }
 
-  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])) {
+  &:--disabled {
     -webkit-user-select: none;
     user-select: none; /* WARNING: Opinionated */
     pointer-events: none; /* Real <button disabled> already blocks this; needed for <a> since HTML has no native disabled state for links */
   }
-  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])):not(
+  &:--disabled:not(
     :--c-button--is-busy
   ) {
     color: var(--global-color-primary--dark);
     border-color: var(--global-color-primary--dark);
   }
-  &:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])):not(
+  &:--disabled:not(
     :--c-button--is-busy,
     :--c-button--as-link
   ) {
@@ -121,7 +113,7 @@
     :hover,
     :focus,
     :active,
-    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
+    :--disabled
   ) {
     color: var(--global-color-primary--xx-light);
     background-color: var(--global-color-accent--normal);
@@ -174,7 +166,7 @@
     :hover,
     :focus,
     :active,
-    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
+    :--disabled
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-primary--x-light);
@@ -184,7 +176,7 @@
   /* To handle (what?) edge case */
   /* FAQ: Extra specificity is to override (...what?) */
   /* HELP: Document this fix */
-  &:--c-button:is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled])) {
+  &:--c-button:--disabled {
     background-color: var(--global-color-primary--x-light);
   }
 }
@@ -234,7 +226,7 @@
     :hover,
     :focus,
     :active,
-    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
+    :--disabled
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-primary--xx-light);
@@ -284,7 +276,7 @@
     :hover,
     :focus,
     :active,
-    :is(a:not([href]), :disabled, [aria-disabled="true"], .disabled, :where(a[disabled]))
+    :--disabled
   ) {
     color: var(--global-color-primary--xx-dark);
     background-color: var(--global-color-accent--x-light);

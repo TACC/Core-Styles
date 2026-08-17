@@ -4,16 +4,6 @@
 
 @import url("./c-button.selectors.css");
 
-@custom-selector :--disabled
-  a:not([href]),
-  :disabled,
-  [aria-disabled="true"],
-  .disabled,
-  /* Not valid HTML, but supported for backwards-compatibility */
-  :where(a[disabled]);
-
-
-
 
 
 /* Base */
