@@ -2,23 +2,35 @@
 @import url("../tools/x-headings.postcss");
 @import url("../tools/x-headings--cms.postcss");
 
-/* h1-h6 are scoped to main content (i.e. not header, not navbar); .h1-.h6 utility classes are not, so they work anywhere. */
-:where(:--main-content) :is( h1, h2, h3, h4, h5, h6 ), :is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
+:where(:--main-content) :is( h1, h2, h3, h4, h5, h6 ),
+:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
     @mixin heading;
 }
-:where(:--main-content) h1, .h1 { @mixin heading-1; }
-:where(:--main-content) h2, .h2 {
+:where(:--main-content) h1,
+.h1 {
+    @mixin heading-1;
+}
+:where(:--main-content) h2,
+.h2 {
     @mixin heading-3;
     color: inherit;
 }
-:where(:--main-content) h3, .h3 {
+:where(:--main-content) h3,
+.h3 {
     @mixin heading-4;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-:where(:--main-content) h4, .h4 {
+:where(:--main-content) h4,
+.h4 {
     font-size: inherit;
     font-weight: var(--medium);
 }
-:where(:--main-content) h5, .h5 { @mixin heading-6; }
-:where(:--main-content) h6, .h6 { @mixin heading-6; }
+:where(:--main-content) h5,
+.h5 {
+    @mixin heading-6;
+}
+:where(:--main-content) h6,
+.h6 {
+    @mixin heading-6;
+}
