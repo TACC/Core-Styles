@@ -36,8 +36,18 @@
     @mixin heading;
 }
 .h1 { @mixin heading-1; }
-.h2 { @mixin heading-2; }
-.h3 { @mixin heading-3; }
-.h4 { @mixin heading-4; }
-.h5 { @mixin heading-5; }
+.h2 {
+    @mixin heading-3;
+    color: inherit;
+}
+.h3 {
+    @mixin heading-4;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.h4 {
+    font-size: inherit;
+    font-weight: var(--medium);
+}
+.h5 { @mixin heading-6; }
 .h6 { @mixin heading-6; }
