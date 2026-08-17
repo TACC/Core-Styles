@@ -30,3 +30,15 @@
     font-size: inherit;
     font-weight: var(--normal);
 }
+
+/*
+Named per-level so h1-h6 (elements/headings--docs.postcss) and .h1-.h6
+(elements/heading-classes--docs.postcss) share one definition instead of
+duplicating it.
+*/
+@define-mixin heading-1--docs { @mixin heading-1; }
+@define-mixin heading-2--docs { @mixin heading-2; }
+@define-mixin heading-3--docs { @mixin heading-3; }
+@define-mixin heading-4--docs { @mixin heading-4; }
+@define-mixin heading-5--docs { @mixin heading-5; }
+@define-mixin heading-6--docs { @mixin heading-6; }

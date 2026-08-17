@@ -1,13 +1,5 @@
-@import url("../../../tacc/tools/selectors.postcss");
-@import url("../../../tacc/tools/x-headings.postcss");
-@import url("../../../tacc/tools/x-headings--docs.postcss");
-
-:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
-    @mixin heading;
-}
-.h1 { @mixin heading-1; }
-.h2 { @mixin heading-2; }
-.h3 { @mixin heading-3; }
-.h4 { @mixin heading-4; }
-.h5 { @mixin heading-5; }
-.h6 { @mixin heading-6; }
+/*
+Bootstrap's `.h1`-`.h6` heading classes are the same classes TACC already
+supports independent of Bootstrap; reuse them instead of redefining.
+*/
+@import url("../../../tacc/elements/heading-classes--docs.postcss");

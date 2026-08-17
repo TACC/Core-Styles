@@ -1,0 +1,21 @@
+@import url("../tools/x-headings.postcss");
+@import url("../tools/x-headings--cms.postcss");
+
+/*
+TACC's own `.h1`-`.h6` utility classes (independent of Bootstrap): apply a
+heading's look to any element without the semantics of the real tag. SEE
+bootstrap4/content/typography-headings/typography-headings--cms.postcss,
+which reuses these same classes for Bootstrap-based sites instead of
+redefining them.
+*/
+
+/* Must load after regular elements so classes take precedence */
+:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
+    @mixin heading;
+}
+.h1 { @mixin heading-1--cms; }
+.h2 { @mixin heading-2--cms; }
+.h3 { @mixin heading-3--cms; }
+.h4 { @mixin heading-4--cms; }
+.h5 { @mixin heading-5--cms; }
+.h6 { @mixin heading-6--cms; }
