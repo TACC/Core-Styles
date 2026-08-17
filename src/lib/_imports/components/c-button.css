@@ -11,10 +11,8 @@
 :--c-button {
   @mixin x-button;
 }
-a:--c-button--is-busy {
-  cursor: default;
-}
 
+/* NOTE: a:--c-button--is-busy rules emitted via `@mixin x-button--is-busy`, below */
 /* NOTE: :--c-button:--disabled rules emitted via `@mixin x-button`, above */
 
 
@@ -75,11 +73,7 @@ a:--c-button--is-busy {
 /* Modifiers: Types: Is Busy */
 
 :--c-button--is-busy {
-  opacity: 0.5;
-  pointer-events: none;
-}
-:--c-button--is-busy * {
-  opacity: 0.5;
+  @mixin x-button--is-busy;
 }
 
 

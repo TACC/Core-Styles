@@ -321,13 +321,20 @@
 
 
 
-@define-mixin x-button--size-small {
-  min-width: 0;
-  padding: 4px 9px;
-  line-height: 1;
+@define-mixin x-button--is-busy {
+  opacity: 0.5;
+  pointer-events: none;
+
+  a& {
+    cursor: default;
+  }
+
+  & * {
+    opacity: 0.5;
+  }
 }
-.x-button--size-small {
-  @mixin x-button--size-small;
+.x-button--is-busy {
+  @mixin x-button--is-busy;
 }
 
 
@@ -349,4 +356,15 @@
 }
 .x-button--width-long {
   @mixin x-button--width-long;
+}
+
+
+
+@define-mixin x-button--size-small {
+  min-width: 0;
+  padding: 4px 9px;
+  line-height: 1;
+}
+.x-button--size-small {
+  @mixin x-button--size-small;
 }
