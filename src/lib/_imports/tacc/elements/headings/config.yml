@@ -7,6 +7,14 @@ variants:
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap4: true
+  - name: cms-v3
+    status: wip
+    label: CMS (v3)
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
+      supportStyles:
+        - ../../assets/core-styles.cms.v3-bridge-for-v2-users.css
   - name: cms-vs-bootstrap
     status: wip
     label: CMS vs. Bootstrap

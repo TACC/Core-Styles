@@ -1,0 +1,4 @@
+label: "(Typography) Lead"
+status: ready
+context:
+  shouldLoadBootstrap: true
