@@ -1,12 +1,12 @@
-@import url("../../../../tacc/tools/x-tabs.skin.postcss");
+@import url("../../../../tacc/tools/x-tabs.postcss");
 
 .nav-tabs,
 .tab-pane {
-  @extend .x-tabs--custom-properties;
+  @mixin x-tabs--custom-properties;
 }
 
 .nav-tabs {
-  @extend .x-tabs;
+  @mixin x-tabs;
   border-bottom: none;
 }
 ul.nav-tabs {
@@ -15,10 +15,12 @@ ul.nav-tabs {
 }
 
 .tab-pane {
-  @extend .x-tabs__content;
+  @mixin x-tabs__content--structure;
+  @mixin x-tabs__content--skin;
 }
 .nav-tabs .nav-link {
-  @extend .x-tabs__tab;
+  @mixin x-tabs__tab--structure;
+  @mixin x-tabs__tab--skin;
 
   /* To overwrite Bootstrap _nav.scss border */
   border-top: none;
@@ -26,12 +28,12 @@ ul.nav-tabs {
   border-radius: 0;
 }
 .nav-tabs .nav-link:hover {
-  @extend .x-tabs__tab--hover;
+  @mixin x-tabs__tab--hover;
 }
 
 .nav-tabs .nav-link.active {
-  @extend .x-tabs__tab--active;
+  @mixin x-tabs__tab--active;
 }
 .nav-tabs .nav-link:not(.active) {
-  @extend .x-tabs__tab--not-active;
+  @mixin x-tabs__tab--not-active;
 }
