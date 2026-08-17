@@ -28,19 +28,19 @@ a:--c-button--is-busy {
 /* Modifiers: Types: Primary */
 
 :--c-button--primary {
-  @mixin x-button--primary;
+  @mixin x-button--type-primary;
 }
 
 /* Modifiers: Types: Secondary */
 
 :--c-button--secondary {
-  @mixin x-button--secondary;
+  @mixin x-button--type-secondary;
 }
 
 /* Modifiers: Types: Tertiary */
 
 :--c-button--tertiary {
-  @mixin x-button--tertiary;
+  @mixin x-button--type-tertiary;
 }
 
 /* Modifiers: Types: Truncate */

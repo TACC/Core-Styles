@@ -73,10 +73,19 @@
 
 
 
-@define-mixin x-button--primary {
+@define-mixin x-button--type {
   padding: 6px 18px;
   min-width: var(--min-width);
   max-width: var(--max-width);
+}
+.x-button--type {
+  @mixin x-button--type;
+}
+
+
+
+@define-mixin x-button--type-primary {
+  @mixin x-button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-light);
@@ -120,16 +129,14 @@
     border-color: var(--global-color-accent--normal);
   }
 }
-.x-button--primary {
-  @mixin x-button--primary;
+.x-button--type-primary {
+  @mixin x-button--type-primary;
 }
 
 
 
-@define-mixin x-button--secondary {
-  padding: 6px 18px;
-  min-width: var(--min-width);
-  max-width: var(--max-width);
+@define-mixin x-button--type-secondary {
+  @mixin x-button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
@@ -180,16 +187,14 @@
     background-color: var(--global-color-primary--x-light);
   }
 }
-.x-button--secondary {
-  @mixin x-button--secondary;
+.x-button--type-secondary {
+  @mixin x-button--type-secondary;
 }
 
 
 
-@define-mixin x-button--tertiary {
-  padding: 6px 18px;
-  min-width: var(--min-width);
-  max-width: var(--max-width);
+@define-mixin x-button--type-tertiary {
+  @mixin x-button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
@@ -233,16 +238,14 @@
     border-color: var(--global-color-primary--xx-dark);
   }
 }
-.x-button--tertiary {
-  @mixin x-button--tertiary;
+.x-button--type-tertiary {
+  @mixin x-button--type-tertiary;
 }
 
 
 
 @define-mixin x-button--is-active {
-  padding: 6px 18px;
-  min-width: var(--min-width);
-  max-width: var(--max-width);
+  @mixin x-button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
