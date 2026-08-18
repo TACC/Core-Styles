@@ -8,7 +8,9 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 ### Build
 
-- If local `npm` is unavailable, use containerized Node:
+- For persistent dev environment (build watcher + demo server), run `make start` (Docker Compose; see `docker-compose.yml`). Safe to run from any git worktree — Compose namespaces containers per directory. To run a second instance from another worktree at the same time, override the ports first: `PORT=3010 make start`.
+
+- For throwaway build without installing Node locally:
   ```sh
   docker run --rm -v "$(pwd):/code" -w /code node:20 sh -lc "npm ci && npm run build:css"
   ```
