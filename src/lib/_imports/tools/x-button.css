@@ -1,5 +1,5 @@
-@import url("./x-link.css"); /* for x-button--as-link's delegation to link/link--hover/link--active */
-@import url("../components/c-button.selectors.css"); /* for :--disabled, :--c-button, :--c-button--is-busy, :--c-button--as-link, :--c-button--size-small, :--c-button--width-* */
+@import url("./x-link.css");
+@import url("../components/c-button.selectors.css");
 
 @define-mixin x-button {
   --min-width: 75px;
@@ -63,6 +63,7 @@
     --max-width: auto;
   }
 
+  /* To position Bootstrap spinner inside TACC's flex-based button */
   & .spinner-border {
     align-self: center;
   }

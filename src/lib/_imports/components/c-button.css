@@ -12,36 +12,17 @@
   @mixin x-button;
 }
 
-/* NOTE: a:--c-button--is-busy rules emitted via `@mixin x-button--is-busy`, below */
-/* NOTE: :--c-button:--disabled rules emitted via `@mixin x-button`, above */
-
-
-
-
-
 /* Modifiers */
-
-
-
-/* Modifiers: Types: Primary */
 
 :--c-button--primary {
   @mixin x-button--type-primary;
 }
-
-/* Modifiers: Types: Secondary */
-
 :--c-button--secondary {
   @mixin x-button--type-secondary;
 }
-
-/* Modifiers: Types: Tertiary */
-
 :--c-button--tertiary {
   @mixin x-button--type-tertiary;
 }
-
-/* Modifiers: Types: Truncate */
 
 :--c-button--can-truncate {
   @mixin truncate--one-line;
@@ -52,13 +33,9 @@
   display: inline-block;
 }
 
-/* Modifiers: Types: Is Active */
-
 :--c-button--is-active {
   @mixin x-button--is-active;
 }
-
-/* Modifiers: Types: As Link */
 
 :--c-button--as-link {
   @mixin x-button--as-link;
@@ -70,14 +47,9 @@
   @mixin x-button--as-link--active;
 }
 
-/* Modifiers: Types: Is Busy */
-
 :--c-button--is-busy {
   @mixin x-button--is-busy;
 }
-
-
-/* Modifiers: Sizes */
 
 :--c-button--width-short {
   @mixin x-button--width-short;
@@ -88,15 +60,7 @@
 :--c-button--width-long {
   @mixin x-button--width-long;
 }
+
 :--c-button--size-small {
   @mixin x-button--size-small;
 }
-
-
-
-
-
-/* Elements */
-
-/* To position Bootstrap spinner inside TACC's flex-based button */
-/* NOTE: emitted via `@mixin x-button` on `:--c-button`, above */
