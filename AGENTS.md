@@ -46,3 +46,10 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
   - When updating, first re-read the current description, because it may have been edited.
   - In "Related" section, links to PRs should instead just be raw URLs (because GitHub will auto-create rich links).
   - If responding to a PR comment as the user instead of a bot, then quote and sign your entire reply.
+  - Explanatory rationale specific to this PR's decisions belong in PR comments, not description.
+  - Code comments are only for durable, non-obvious facts for future readers regardless of PR history.
+
+### Review Comments
+
+- Group it into one self-review with inline comments.
+- Prefix each such comment with **Explanation:**, **Question:**, or **Suggestion:**.
