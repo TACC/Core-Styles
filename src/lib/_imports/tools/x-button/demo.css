@@ -1,0 +1,7 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
