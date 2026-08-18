@@ -6,7 +6,7 @@
     text-transform: uppercase;
 }
 
-/* v3: no longer carries the lead-paragraph look (SEE trumps/s-lead.postcss) */
+/* Explicitly inherits color; does not use the accent color from trumps/s-lead.postcss's x-lead mixin. */
 @define-mixin heading-2 {
     color: inherit;
     font-size: var(--global-font-size--large);

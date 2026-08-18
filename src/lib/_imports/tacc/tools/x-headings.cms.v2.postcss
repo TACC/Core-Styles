@@ -3,9 +3,9 @@ Frozen aliases for v2's heading-N mixins, for use by files that must keep
 rendering v2's heading appearance regardless of how the live heading-N
 mixins (in x-headings--cms.postcss) look in later major versions.
 
-Core-Styles v3 changed the live heading-N mixins (SEE PR #693); these
-`--v2` mixins hardcode v2's original per-level values directly so they
-stay correct regardless of future changes to the live mixins.
+These `--v2` mixins hardcode v2's original per-level values directly,
+decoupled from the live heading-N mixins, so they stay correct no matter
+how those mixins change in the future.
 */
 
 @import url("./x-headings.postcss");
