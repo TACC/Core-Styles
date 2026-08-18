@@ -39,12 +39,15 @@
 
 :--c-button--as-link {
   @mixin x-button--as-link;
-}
-:--c-button--as-link:where(:not(:--disabled)):hover {
-  @mixin x-button--as-link--hover;
-}
-:--c-button--as-link:where(:not(:--disabled)):active {
-  @mixin x-button--as-link--active;
+
+  &:where(:not(:--disabled)) {
+    &:hover {
+      @mixin x-button--as-link--hover;
+    }
+    &:active {
+      @mixin x-button--as-link--active;
+    }
+  }
 }
 
 :--c-button--is-busy {
