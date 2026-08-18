@@ -1,6 +1,6 @@
 services:
   core-styles:
-    image: node:20
+    build: .
     working_dir: /code
     volumes:
       - .:/code
