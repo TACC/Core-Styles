@@ -1,0 +1,17 @@
+services:
+  core-styles:
+    image: node:20
+    working_dir: /code
+    volumes:
+      - .:/code
+      - node_modules:/code/node_modules
+    ports:
+      - "${PORT:-3000}:3000"
+      - "${PORT_BROWSERSYNC:-3001}:3001"
+      - "${PORT_BROWSERSYNC_UI:-3002}:3002"
+    command: sh -c "npm install && (npm run watch &) && npm start"
+    stdin_open: true
+    tty: true
+
+volumes:
+  node_modules:
