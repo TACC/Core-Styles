@@ -63,4 +63,4 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 - Group it into one self-review with inline comments.
 - Prefix each such comment with **Explanation:**, **Question:**, or **Suggestion:**.
-- If responding to a PR comment as the user instead of a distinct bot identity, then quote and sign your entire message.
+- If commenting on a PR as the user instead of a distinct bot identity, then quote and sign your entire message.
