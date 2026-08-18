@@ -41,7 +41,6 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
   - In general:
     - When updating, first re-read the current description, because it may have been edited.
     - Be concise: plain language, simple sentences, present lists as bullets not prose.
-    - If responding to a PR comment as the user instead of a bot, then quote and sign your entire reply.
     - Explanatory rationale specific to this PR's decisions belong in [review comments](#review-comments), not description.
     - Code comments are only for durable, non-obvious facts for future readers regardless of PR history.
     - Say each fact once (e.g. a dependency named in "Related" should not be repeated in "Notes").
@@ -62,3 +61,4 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 - Group it into one self-review with inline comments.
 - Prefix each such comment with **Explanation:**, **Question:**, or **Suggestion:**.
+- If responding to a PR comment as the user instead of a distinct bot identity, then quote and sign your entire message.
