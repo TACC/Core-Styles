@@ -20,14 +20,3 @@
 
 
 }
-
-/* Must load after regular elements so classes take precedence */
-:is( .h1, .h2, .h3, .h4, .h5, .h6 ) {
-    @mixin heading;
-}
-.h1 { @mixin heading-1--cms; }
-.h2 { @mixin heading-2--cms; }
-.h3 { @mixin heading-3--cms; }
-.h4 { @mixin heading-4--cms; }
-.h5 { @mixin heading-5--cms; }
-.h6 { @mixin heading-6--cms; }
