@@ -1,3 +1,7 @@
 @define-mixin heading {
     line-height: unset;
+
+    /* to mimic Bootstrap */
+    margin-top: 0;
+    margin-bottom: .5rem;
 }
