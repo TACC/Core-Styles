@@ -15,8 +15,8 @@ variants:
         - ../../assets/core-styles.cms.v2-bridge-for-v3-users.css
   - name: cms-vs-bootstrap
     status: wip
-    label: CMS vs. Bootstrap
-    view: 'headings--bootstrap.hbs'
+    label: <code>&lt;hN&gt;</code> vs. <code>.hN</code>
+    view: 'headings--classes.hbs'
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap4: true
