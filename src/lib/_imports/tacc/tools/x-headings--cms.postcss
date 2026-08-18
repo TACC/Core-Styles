@@ -6,9 +6,7 @@
     text-transform: uppercase;
 }
 
-/* Explicitly inherits color; does not use the accent color from trumps/s-lead.postcss's x-lead mixin. */
 @define-mixin heading-2 {
-    color: inherit;
     font-size: var(--global-font-size--large);
     font-weight: var(--black);
 
@@ -17,7 +15,6 @@
 }
 
 /* WARNING: No design available; these are just developer guesswork */
-/* margin-top/margin-bottom mimic Bootstrap 4/5 Reboot's heading margin (their only source of one) so this matches what h3 actually renders as today, not a raw un-authored browser default. */
 @define-mixin heading-3 {
     font-size: var(--global-font-size--medium);
     font-weight: var(--bold);
@@ -25,8 +22,6 @@
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
-
-/* Distinct from heading-3 (bold) without exceeding v3's design voice: same size as body, just medium weight. */
 @define-mixin heading-4 {
     font-size: inherit;
     font-weight: var(--medium);
@@ -42,10 +37,6 @@
     font-weight: var(--normal);
 }
 
-/*
-Named per-level so h1-h6 and .h1-.h6 (SEE elements/headings--cms.postcss)
-share one definition instead of duplicating it.
-*/
 @define-mixin heading-1--cms { @mixin heading-1; }
 @define-mixin heading-2--cms { @mixin heading-2; }
 @define-mixin heading-3--cms { @mixin heading-3; }
