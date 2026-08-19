@@ -80,7 +80,6 @@
     "npm-watch": "^0.13.0"
   },
   "overrides": {
-    "qs": "6.15.3",
     "axios": "0.30.0",
     "package-json": "7.0.0",
     "serve-static": "1.16.3",
