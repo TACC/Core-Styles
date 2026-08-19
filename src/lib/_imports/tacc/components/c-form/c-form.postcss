@@ -137,19 +137,19 @@ ul:--form__errors--field {
 /* Buttons */
 
 :--form__button {
-  @extend :--c-button;
+  @mixin button;
 }
 :--form__button[type="submit"]:where(:--form__buttons > *) {
-  @extend :--c-button--primary;
+  @mixin button--type-primary;
 }
 :--form__button[type="submit"]:not(:--form__buttons > *) {
-  @extend :--c-button--secondary;
+  @mixin button--type-secondary;
 }
 :--form__button[type="button"] {
-  @extend :--c-button--secondary;
+  @mixin button--type-secondary;
 }
 :--form__button[type="reset"] {
-  @extend :--c-button--tertiary;
+  @mixin button--type-tertiary;
 }
 
 :--form__buttons {
@@ -158,14 +158,14 @@ ul:--form__errors--field {
 /* To style obvious buttons that neglect class */
 /* FAQ: I think I saw this on APCD… */
 :--form__buttons button:not(:--form__button) {
-  @extend :--c-button;
+  @mixin button;
 }
 :--form__buttons button:not(:--form__button)[type="submit"] {
-  @extend :--c-button--primary;
+  @mixin button--type-primary;
 }
 :--form__buttons button:not(:--form__button)[type="button"] {
-  @extend :--c-button--secondary;
+  @mixin button--type-secondary;
 }
 :--form__buttons button:not(:--form__button)[type="reset"] {
-  @extend :--c-button--tertiary;
+  @mixin button--type-tertiary;
 }

@@ -1,5 +1,13 @@
 @import url("../../tools/selectors.postcss");
 
+@custom-selector :--disabled
+    a:not([href]),
+    :disabled,
+    [aria-disabled="true"],
+    .disabled,
+    /* Not valid HTML, but supported for backwards-compatibility */
+    :where(a[disabled]);
+
 @custom-selector :--c-button
     .c-button,
     [class*="button--"],
