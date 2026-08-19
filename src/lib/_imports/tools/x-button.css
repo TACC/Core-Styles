@@ -29,7 +29,7 @@
     vertical-align: middle;
   }
 
-  a& {
+  &:where(a) {
     text-decoration: none;
     text-align: center;
   }
@@ -326,7 +326,7 @@
   opacity: 0.5;
   pointer-events: none;
 
-  a& {
+  &:where(a) {
     cursor: default;
   }
 

@@ -1,0 +1,11 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+dfn {
+    width: 8ch;
+}
+
+dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
