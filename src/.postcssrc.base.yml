@@ -17,7 +17,9 @@ plugins:
     features:
       custom-media-queries: true
       media-query-ranges: true
-      nesting-rules: true
+      # Disabled because supported browser have native support
+      # Disabled to let DevTools show nesting when inspecting
+      nesting-rules: false
       custom-selectors: true
       relative-color-syntax: true
       # This feature (to come in v8) is not ready yet
