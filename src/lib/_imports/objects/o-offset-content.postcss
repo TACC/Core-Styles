@@ -1,0 +1,55 @@
+/*
+Offset Content (Responsive)
+
+Content that should be:
+1. offset from the flow of text within which it is placed
+2. not offset at certain viewports
+
+Styleguide Objects.OffsetContent
+*/
+@import url("../tools/media-queries.postcss");
+@import url("../tools/x-offset-content.postcss");
+
+.o-offset-content--left,
+.o-offset-content--right {
+	@mixin offset-content;
+}
+
+/* To merely float content on narrow screens */
+@media only screen and (--medium-and-above) {
+	.o-offset-content--right {
+		@mixin offset-content--float-right;
+		& + & {
+			@mixin offset-content--terminate-offset-right;
+		}
+	}
+
+	.o-offset-content--left {
+		@mixin offset-content--float-left;
+		& + & {
+			@mixin offset-content--terminate-offset-left;
+		}
+	}
+
+	/* WARNING: Seems specific to one website's use case */
+	/* TODO: Determine whether to apply to:
+	          <figcaption>, only CMS, only Texascale */
+	.figure:is(
+		.o-offset-content--left,
+		.o-offset-content--right
+	) .figure-caption {
+		padding-right: 125px;
+	}
+}
+
+/* To offset content only on wide screens */
+/* HELP: Do designers want to prevent offset on mega-wide screens */
+/* FAQ: M.S. did on texascale.org but that may have been only for that site */
+@media only screen and (--medium-and-above)/* and (--max-wide-and-below) */{
+	.o-offset-content--right {
+		@mixin offset-content--offset-right;
+	}
+	.o-offset-content--left {
+		@mixin offset-content--offset-left;
+	}
+}

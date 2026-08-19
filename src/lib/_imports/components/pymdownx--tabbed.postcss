@@ -1,0 +1,67 @@
+@import url("../tools/x-tabs.postcss");
+
+.tabbed-set {
+  @mixin tabs;
+  @mixin tabs--custom-properties;
+}
+
+.tabbed-set > input {
+  @mixin tabs__toggle;
+}
+.tabbed-set > .tabbed-content {
+  @mixin tabs__content--structure;
+  @mixin tabs__content--skin;
+}
+.tabbed-set > label {
+  @mixin tabs__tab--structure;
+  @mixin tabs__tab--skin;
+
+  margin-bottom: unset; /* overwrite form.css which core-style.docs loads */
+}
+.tabbed-set > label:hover {
+  @mixin tabs__tab--hover;
+}
+
+.tabbed-set > input:checked + label {
+  @mixin tabs__tab--active;
+}
+.tabbed-set > input:not(:checked) + label {
+  @mixin tabs__tab--not-active;
+}
+
+@media screen {
+  .tabbed-set > input:checked + label + .tabbed-content {
+    @mixin tabs__content--active;
+  }
+}
+@media print {
+  .tabbed-content {
+    @mixin tabs__content--force-active;
+  }
+}
+
+
+
+/* To show focus on container ONLY if a toggle has VISIBLE focus */
+/* NOTE: Simple version shows outline even if browser would not do so for inputs
+
+.tabbed-set:focus-within {
+  @mixin tabs--focus-within;
+}
+
+*/
+@media screen {
+  @supports selector(:has(*)) {
+    /* FAQ: The `:where(.tabbed-set > *)` prevents tabs focus UI
+            when focusing on an element within the content */
+    .tabbed-set:has(input:focus-visible:where(.tabbed-set > *)) {
+      @mixin tabs--focus-within;
+    }
+  }
+
+  @supports not selector(:has(*)) {
+    .tabbed-set:focus-within {
+      @mixin tabs--focus-within;
+    }
+  }
+}

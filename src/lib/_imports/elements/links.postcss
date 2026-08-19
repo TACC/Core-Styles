@@ -1,0 +1,22 @@
+@import url('../components/c-button.selectors.postcss');
+@import url('../components/c-card.selectors.postcss');
+@import url("../tools/selectors.postcss");
+@import url('../tools/x-link.postcss');
+
+@custom-selector :--exempt-link
+  :--c-button,
+  :--c-card,
+  .alert-link;
+
+a:where(:not(:--exempt-link)) {
+  @mixin link;
+}
+a:where(:not(:--exempt-link)):not([href]) {
+  @mixin link--disabled;
+}
+a:where(:not(:--exempt-link)):hover {
+  @mixin link--hover;
+}
+a:where(:not(:--exempt-link)):active {
+  @mixin link--active;
+}

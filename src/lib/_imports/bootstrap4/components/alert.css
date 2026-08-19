@@ -1,4 +1,4 @@
-@import url("../../tools/x-message.css");
+@import url("../../tools/x-message.postcss");
 
 .alert {
   border-radius: unset; /* to undo bootstrap */

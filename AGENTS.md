@@ -28,6 +28,11 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 
 - When updating dependencies, use `npm` commands (e.g. `uninstall`/`install`); do not hand-edit lockfile entries.
 
+### Sync with main
+
+- Merging `main` to `epic/v3` always conflicts on `dist/` (this branch doesn't commit it, `main` does).
+  Run `bin/sync-main.sh` to auto-resolve those and rebuild; it stops for you on any other conflict.
+
 ## Vocab
 
 - Use the word "deleted", not "removed".

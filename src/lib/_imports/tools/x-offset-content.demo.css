@@ -1,6 +1,6 @@
 /* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
 
-@import url("./x-offset-content.css");
+@import url("./x-offset-content.postcss");
 
 .x-offset-content--left,
 .x-offset-content--right {
