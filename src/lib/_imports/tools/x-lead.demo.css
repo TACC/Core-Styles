@@ -4,6 +4,6 @@
 /* HACK: Not in `x-lead/demo.css` because it is not processed */
 #demo {
   .x-lead {
-    @mixin x-lead;
+    @mixin lead;
   }
 }
