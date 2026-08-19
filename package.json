@@ -34,7 +34,7 @@
     "watch": "npm-watch"
   },
   "engines": {
-    "node": ">=20.x",
+    "node": ">=22.x",
     "npm": ">=7.x"
   },
   "homepage": "https://github.com/TACC/Core-Styles",
@@ -76,8 +76,6 @@
   },
   "devDependencies": {
     "@fractality/fractality": "^1.7.0",
-    "@fractality/handlebars": "^1.5.0",
-    "@fractality/mandelbrot": "^1.13.0",
     "minimist": "^1.2.7",
     "npm-watch": "^0.13.0"
   },
