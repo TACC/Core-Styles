@@ -1,42 +1,42 @@
 @import url("../tools/x-tabs.css");
 
 .tabbed-set {
-  @mixin x-tabs;
-  @mixin x-tabs--custom-properties;
+  @mixin tabs;
+  @mixin tabs--custom-properties;
 }
 
 .tabbed-set > input {
-  @mixin x-tabs__toggle;
+  @mixin tabs__toggle;
 }
 .tabbed-set > .tabbed-content {
-  @mixin x-tabs__content--structure;
-  @mixin x-tabs__content--skin;
+  @mixin tabs__content--structure;
+  @mixin tabs__content--skin;
 }
 .tabbed-set > label {
-  @mixin x-tabs__tab--structure;
-  @mixin x-tabs__tab--skin;
+  @mixin tabs__tab--structure;
+  @mixin tabs__tab--skin;
 
   margin-bottom: unset; /* overwrite form.css which core-style.docs loads */
 }
 .tabbed-set > label:hover {
-  @mixin x-tabs__tab--hover;
+  @mixin tabs__tab--hover;
 }
 
 .tabbed-set > input:checked + label {
-  @mixin x-tabs__tab--active;
+  @mixin tabs__tab--active;
 }
 .tabbed-set > input:not(:checked) + label {
-  @mixin x-tabs__tab--not-active;
+  @mixin tabs__tab--not-active;
 }
 
 @media screen {
   .tabbed-set > input:checked + label + .tabbed-content {
-    @mixin x-tabs__content--active;
+    @mixin tabs__content--active;
   }
 }
 @media print {
   .tabbed-content {
-    @mixin x-tabs__content--force-active;
+    @mixin tabs__content--force-active;
   }
 }
 
@@ -46,7 +46,7 @@
 /* NOTE: Simple version shows outline even if browser would not do so for inputs
 
 .tabbed-set:focus-within {
-  @mixin x-tabs--focus-within;
+  @mixin tabs--focus-within;
 }
 
 */
@@ -55,13 +55,13 @@
     /* FAQ: The `:where(.tabbed-set > *)` prevents tabs focus UI
             when focusing on an element within the content */
     .tabbed-set:has(input:focus-visible:where(.tabbed-set > *)) {
-      @mixin x-tabs--focus-within;
+      @mixin tabs--focus-within;
     }
   }
 
   @supports not selector(:has(*)) {
     .tabbed-set:focus-within {
-      @mixin x-tabs--focus-within;
+      @mixin tabs--focus-within;
     }
   }
 }

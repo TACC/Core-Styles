@@ -1,4 +1,4 @@
-@define-mixin x-lead {
+@define-mixin lead {
     color: var(--global-color-accent--secondary);
     font-size: var(--global-font-size--x-large);
     font-weight: var(--black);
