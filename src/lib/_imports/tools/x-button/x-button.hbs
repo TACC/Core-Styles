@@ -1,0 +1,91 @@
+<dl>
+  <dt><code>button</code> (raw)</dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{> @x-button--tag tag="button" label="default" }}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{> @x-button--tag tag="a" label="default" }}
+  </dd>
+
+  <dt><code>button--type</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{> @x-button--tag tag="button" modifier="x-button--type" label="default" }}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{> @x-button--tag tag="a" modifier="x-button--type" label="default" }}
+  </dd>
+
+  <dt><code>button--type-primary</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="button" modifier="x-button--type-primary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="a" modifier="x-button--type-primary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+
+  <dt><code>button--type-secondary</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="button" modifier="x-button--type-secondary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="a" modifier="x-button--type-secondary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+
+  <dt><code>button--type-tertiary</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="button" modifier="x-button--type-tertiary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="a" modifier="x-button--type-tertiary" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+
+  <dt><code>button--is-active</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="button" modifier="x-button--is-active" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each typeStates as | state |}}{{> @x-button--tag tag="a" modifier="x-button--is-active" extraClass=state.extraClass label=state.label disabled=state.disabled }}{{/each}}
+  </dd>
+
+  <dt><code>button--as-link</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each linkStates as | state |}}{{> @x-button--tag tag="button" modifier="x-button--as-link" extraClass=state.extraClass label=state.label }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each linkStates as | state |}}{{> @x-button--tag tag="a" modifier="x-button--as-link" extraClass=state.extraClass label=state.label }}{{/each}}
+  </dd>
+
+  <dt><code>button--size-…</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{> @x-button--tag tag="button" modifier="x-button--type-secondary" extraClass="x-button--size-small" label="small" }}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{> @x-button--tag tag="a" modifier="x-button--type-secondary" extraClass="x-button--size-small" label="small" }}
+  </dd>
+
+  <dt><code>button--width-…</code></dt>
+  <dd>
+    <dfn><code>&lt;button&gt;</code>:</dfn>
+    {{#each widths as | state |}}{{> @x-button--tag tag="button" modifier="x-button--type-secondary" extraClass=state.extraClass label=state.label }}{{/each}}
+  </dd>
+  <dd>
+    <dfn><code>&lt;a&gt;</code>:</dfn>
+    {{#each widths as | state |}}{{> @x-button--tag tag="a" modifier="x-button--type-secondary" extraClass=state.extraClass label=state.label }}{{/each}}
+  </dd>
+</dl>
