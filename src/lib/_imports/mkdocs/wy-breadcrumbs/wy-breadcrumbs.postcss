@@ -1,19 +1,19 @@
 @import url("../../tacc/tools/x-breadcrumbs.postcss");
 
 [role="navigation"] {
-  @mixin x-breadcrumbs;
-  @mixin x-breadcrumbs-major;
+  @mixin breadcrumbs;
+  @mixin breadcrumbs-major;
 }
 ul.wy-breadcrumbs {
-  @mixin x-breadcrumbs__list;
-  @mixin x-breadcrumbs-major__list;
+  @mixin breadcrumbs__list;
+  @mixin breadcrumbs-major__list;
 }
 .wy-breadcrumbs li {
-  @mixin x-breadcrumbs__list-item;
-  @mixin x-breadcrumbs-major__list-item;
+  @mixin breadcrumbs__list-item;
+  @mixin breadcrumbs-major__list-item;
 }
 .wy-breadcrumbs li + li {
-  @mixin x-breadcrumbs__list-item--prefix-separator;
+  @mixin breadcrumbs__list-item--prefix-separator;
 }
 
 
@@ -27,7 +27,7 @@ ul.wy-breadcrumbs {
 }
 
 /* to bold last child */
-/* FAQ: The x-breadcrumbs bolds :last-child, but
+/* FAQ: The breadcrumbs mixin bolds :last-child, but
         not effective here cuz last child is .wy-breadcrumbs-aside */
 .wy-breadcrumbs li:nth-last-child(2) {
   font-weight: var(--bold);
