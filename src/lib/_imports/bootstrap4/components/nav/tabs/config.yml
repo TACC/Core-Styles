@@ -1,0 +1,12 @@
+context:
+  subdir: "bootstrap4/components/nav/tabs"
+variants:
+  - name: default
+    label: Bootstrap
+    context:
+      shouldSkipBase: true
+  - name: tacc
+    label: TACC
+    status: prototype
+    context:
+      shouldSkipPattern: false

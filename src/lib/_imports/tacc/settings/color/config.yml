@@ -1,0 +1,4 @@
+context:
+  # FAQ: Demo looks nicer with CMS styles
+  shouldLoadCMS: true
+  shouldLoadBootstrap4: true

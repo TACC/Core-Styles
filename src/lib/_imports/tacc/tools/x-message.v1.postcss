@@ -1,0 +1,84 @@
+@import url("../tools/x-link.postcss");
+@import url("../components/c-button/c-button.selectors.postcss");
+
+
+
+@define-mixin message-v1 {
+  font-size: var(--global-font-size--small);
+
+  & :is(a, :--c-button--as-link) {
+    /* To distinguish link from message text */
+    & {
+      @mixin link--irregular;
+    }
+    &:hover {
+      @mixin link--irregular--hover;
+    }
+    &:active {
+      @mixin link--irregular--active;
+    }
+
+    /* To avoid clash of link color with message color */
+    &:is(*, :hover, :active) {
+      color: inherit;
+    }
+  }
+}
+@define-mixin message-v1--scope-inline {
+  &::before {
+    display: none; /* IDEA: Use icons (in v3) */
+  }
+}
+@define-mixin message-v1--scope-section {
+  border-width: var(--global-border-width--thick);
+  border-style: solid;
+
+  padding: 15px 20px;
+}
+@define-mixin message-v1--scope-global {
+  padding: 15px 20px;
+}
+
+/* To match text and border color */
+@define-mixin message-v1--type-info {
+  &:not(:--c-message--scope-global) {
+    color: var(--global-color-info--dark);
+  }
+}
+@define-mixin message-v1--type-success {
+  &:not(:--c-message--scope-global) {
+    color: var(--global-color-success--dark);
+  }
+}
+@define-mixin message-v1--type-warning {
+  &:not(:--c-message--scope-global) {
+    color: var(--global-color-warning--dark);
+  }
+}
+@define-mixin message-v1--type-error {
+  &:not(:--c-message--scope-global) {
+    color: var(--global-color-danger--dark);
+  }
+}
+@define-mixin message-v1--type-extra {
+  &:not(:--c-message--scope-global) {
+    color: var(--global-color-extra--dark);
+  }
+}
+
+/* To match border color to text color */
+@define-mixin message-v1--type-info---message-v1--scope-section {
+  border-color: var(--global-color-info--normal);
+}
+@define-mixin message-v1--type-success---message-v1--scope-section {
+  border-color: var(--global-color-success--normal);
+}
+@define-mixin message-v1--type-warning---message-v1--scope-section {
+  border-color: var(--global-color-warning--normal);
+}
+@define-mixin message-v1--type-error---message-v1--scope-section {
+  border-color: var(--global-color-danger--normal);
+}
+@define-mixin message-v1--type-extra---message-v1--scope-section {
+  border-color: var(--global-color-extra--normal);
+}

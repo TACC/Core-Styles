@@ -1,0 +1,40 @@
+/*
+Frozen aliases for v2's heading-N mixins, for use by files that must keep rendering v2's heading appearance regardless of how the live heading-N mixins (in x-headings--cms.postcss) look in later major versions.
+
+These `--v2` mixins hardcode v2's original per-level values directly, decoupled from the live heading-N mixins, so they stay correct no matter how those mixins change in the future.
+*/
+
+@import url("./x-headings.postcss");
+@import url("./x-lead.postcss");
+
+@define-mixin heading--v2 { @mixin heading; }
+
+@define-mixin heading-1--v2 {
+    font-size: var(--global-font-size--xx-large);
+    font-weight: var(--black);
+
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+@define-mixin heading-2--v2 {
+    @mixin lead;
+}
+@define-mixin heading-3--v2 {
+    font-size: var(--global-font-size--large);
+    font-weight: var(--black);
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+@define-mixin heading-4--v2 {
+    font-size: var(--global-font-size--medium);
+    font-weight: var(--bold);
+}
+@define-mixin heading-5--v2 {
+    font-size: inherit;
+    font-weight: var(--normal);
+}
+@define-mixin heading-6--v2 {
+    font-size: inherit;
+    font-weight: var(--normal);
+}

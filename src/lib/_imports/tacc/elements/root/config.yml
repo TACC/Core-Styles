@@ -1,0 +1,16 @@
+variants:
+  - name: default
+  - name: cms
+    label: (CMS) Monospace
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
+  - name: portal
+    label: (Portal) Monospace
+    context:
+      shouldLoadPortal: true
+      shouldLoadBootstrap4: true
+  - name: docs
+    label: (Docs) Monospace
+    context:
+      shouldLoadDocs: true

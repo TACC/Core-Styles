@@ -1,0 +1,44 @@
+@custom-selector :--cms-form
+    .forms;
+
+@custom-selector :--cms-form__title
+    .title;
+@custom-selector :--cms-form__desc
+    .description;
+
+@custom-selector :--cms-form__errors
+    :where(.form-errors, .field-errors);
+@custom-selector :--cms-form__errors_list
+    .errorlist;
+@custom-selector :--cms-form__errors--form /* submission errors */
+    :is(.form-errors .errorlist);
+@custom-selector :--cms-form__errors--field /* validation errors */
+    :is(.field-errors .errorlist);
+
+@custom-selector :--cms-form__field
+    .field-wrapper;
+@custom-selector :--cms-form__field--has-required
+    :--cms-form__field.required;
+@custom-selector :--cms-form__field--has-checkbox
+    :--cms-form__field.checkboxinput;
+
+@custom-selector :--cms-form__menu
+    /* HELP: Clients get djangocms-forms via c-form via core-styles.base, thus djangocms-forms can be overridden by core-styles.cms, yet only (Core-)CMS should ever load djangocms-forms... */
+    :is(.radioselect, .checkboxselectmultiple);
+@custom-selector :--cms-form__menu_item
+    :--cms-form__menu > li;
+@custom-selector :--cms-form__menu_line
+    :--cms-form__menu_label;
+@custom-selector :--cms-form__menu_label
+    :--cms-form__menu_item > label;
+
+@custom-selector :--cms-form__help
+    .help-text;
+
+@custom-selector :--cms-form__badge
+    .asterisk;
+
+@custom-selector :--cms-form__buttons
+    .button-wrapper;
+@custom-selector :--cms-form__button
+    .form-button;

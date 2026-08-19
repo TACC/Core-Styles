@@ -1,0 +1,9 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+main {
+    display: flex;
+    flex-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

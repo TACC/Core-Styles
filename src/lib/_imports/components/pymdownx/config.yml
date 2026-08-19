@@ -1,8 +1,0 @@
-label: PyMdown Extensions
-context:
-  shouldLoadDocs: true
-  📝 shouldLoadDocs: because only core-styles.docs.css loads this
-variants:
-  - name: default
-    label: (Overview)
-  - name: tabbed

@@ -1,0 +1,76 @@
+{{#if isSemantic}}
+
+  <div {{#if class }}class="{{ class }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{ errors }}
+    {{/if}}
+
+    <label for="{{ checkboxes.id }}">
+      {{ checkboxes.label }}
+    </label>
+
+    <{{inputListTag}}
+      {{#if inputListClass }}class="{{ inputListClass }}"{{/if}}
+      id="{{ checkboxes.id }}"
+    >
+    {{#each checkboxes.boxes}}
+      <li {{#if ../inputListItemClass }}class="{{ ../inputListItemClass }}"{{/if}}>
+        <label for="{{ ../checkboxes.id }}-{{@index}}">
+          <input
+            type="{{ ../type }}"
+            class="{{ ../inputClass }}"
+            name="{{ ../checkboxes.name }}"
+            value="{{ value }}"
+            id="{{ ../checkboxes.id }}-{{@index}}"
+          />
+          {{ label }}
+        </label>
+      </li>
+    {{/each}}
+    </{{inputListTag}}>
+
+    {{#unless (eq errorLoc "top")}}
+      {{ errors }}
+    {{/unless}}
+
+    <{{helpTextTag}} {{#if helpTextClass }}class="{{ helpTextClass }}"{{/if}}>
+      {{ checkboxes.help }}
+    </{{helpTextTag}}>
+  </div>
+
+{{else}}
+
+  <div {{#if class }}class="{{ class }}"{{/if}}>
+    {{#if (eq errorLoc "top")}}
+      {{ errors }}
+    {{/if}}
+    <label for="{{ checkboxes.id }}">
+      {{ checkboxes.label }}
+    </label>
+
+    {{#each checkboxes.boxes}}
+    <div id="{{ ../checkboxes.id }}" {{#if ../inputListItemClass }}
+         class="{{ ../inputListItemClass }}"
+    {{/if}}>
+      <input
+        type="{{ ../type }}"
+        class="{{ ../inputClass }}"
+        name="{{ ../checkboxes.name }}"
+        value="{{ value }}"
+        id="{{ ../checkboxes.id }}-{{@index}}"
+      />
+      <label for="{{ ../checkboxes.id }}-{{@index}}">
+        {{ label }}
+      </label>
+    </div>
+    {{/each}}
+
+    {{#unless (eq errorLoc "top")}}
+      {{ errors }}
+    {{/unless}}
+    <{{helpTextTag}} {{#if helpTextClass }}class="{{ helpTextClass }}"{{/if}}>
+        {{ checkboxes.help }}
+    </{{helpTextTag}}>
+  </div>
+
+{{/if}}
