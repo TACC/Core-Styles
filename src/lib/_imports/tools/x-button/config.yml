@@ -1,0 +1,23 @@
+context:
+  supportStyles:
+    - ../../assets/tools/x-button.css
+  typeStates:
+    - label: default
+    - label: disabled
+      disabled: true
+    - label: "--is-busy"
+      disabled: true
+      extraClass: x-button--is-busy
+  linkStates:
+    - label: default
+    - label: ":hover"
+      extraClass: x-button--as-link--hover
+    - label: ":active"
+      extraClass: x-button--as-link--active
+  widths:
+    - label: short
+      extraClass: x-button--width-short
+    - label: medium
+      extraClass: x-button--width-medium
+    - label: long
+      extraClass: x-button--width-long
