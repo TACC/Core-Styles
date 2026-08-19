@@ -1,4 +1,6 @@
 context:
+  supportStyles:
+    - ../../assets/tools/x-button.css
   typeStates:
     - label: default
     - label: disabled
