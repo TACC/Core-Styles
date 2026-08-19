@@ -2,11 +2,11 @@
 
 .nav-tabs,
 .tab-pane {
-  @mixin x-tabs--custom-properties;
+  @mixin tabs--custom-properties;
 }
 
 .nav-tabs {
-  @mixin x-tabs;
+  @mixin tabs;
   border-bottom: none;
 }
 ul.nav-tabs {
@@ -15,12 +15,12 @@ ul.nav-tabs {
 }
 
 .tab-pane {
-  @mixin x-tabs__content--structure;
-  @mixin x-tabs__content--skin;
+  @mixin tabs__content--structure;
+  @mixin tabs__content--skin;
 }
 .nav-tabs .nav-link {
-  @mixin x-tabs__tab--structure;
-  @mixin x-tabs__tab--skin;
+  @mixin tabs__tab--structure;
+  @mixin tabs__tab--skin;
 
   /* To overwrite Bootstrap _nav.scss border */
   border-top: none;
@@ -28,12 +28,12 @@ ul.nav-tabs {
   border-radius: 0;
 }
 .nav-tabs .nav-link:hover {
-  @mixin x-tabs__tab--hover;
+  @mixin tabs__tab--hover;
 }
 
 .nav-tabs .nav-link.active {
-  @mixin x-tabs__tab--active;
+  @mixin tabs__tab--active;
 }
 .nav-tabs .nav-link:not(.active) {
-  @mixin x-tabs__tab--not-active;
+  @mixin tabs__tab--not-active;
 }

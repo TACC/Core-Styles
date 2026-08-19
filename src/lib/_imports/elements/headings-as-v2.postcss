@@ -4,7 +4,7 @@
 /* To style `<h1>`-`<h6>` as did @v2 headings--cms.css */
 /* https://github.com/TACC/Core-Styles/blob/v2.57.4/src/lib/_imports/elements/headings--cms.css */
 :where(:--main-content) {
-    &:is( h1, h2, h3, h4, h5, h6 ) {
+    & :is( h1, h2, h3, h4, h5, h6 ) {
         @mixin heading--v2;
     }
     & h1 { @mixin heading-1--v2; }
