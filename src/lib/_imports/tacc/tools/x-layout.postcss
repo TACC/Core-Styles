@@ -3,11 +3,11 @@ Layout
 
 Styles that allow re-usable layouts.
 
-x-layout--a - Widest: two even columns
-x-layout--b - Widest: one wide column & one narrow column
-x-layout--c - Widest: one narrow column & one wide column
-x-layout--d - Widest: three even columns
-x-layout--e - (deprecated) Always: multiple even rows
+layout--a - Widest: two even columns
+layout--b - Widest: one wide column & one narrow column
+layout--c - Widest: one narrow column & one wide column
+layout--d - Widest: three even columns
+layout--e - (deprecated) Always: multiple even rows
 
 Styleguide Tools.Mixins.Layout
 */
@@ -19,7 +19,7 @@ Styleguide Tools.Mixins.Layout
 
 /* A (two even columns) */
 
-@define-mixin x-layout--a {
+@define-mixin layout--a {
   display: grid;
 
   @media (--medium-and-below) {
@@ -32,12 +32,12 @@ Styleguide Tools.Mixins.Layout
 /* DEPRECATED */
 .x-layout--a,
 %x-layout--a {
-  @mixin x-layout--a;
+  @mixin layout--a;
 }
 
 /* B (one wide column & one narrow column) */
 
-@define-mixin x-layout--b {
+@define-mixin layout--b {
   display: grid;
 
   @media (--medium-and-below) {
@@ -50,12 +50,12 @@ Styleguide Tools.Mixins.Layout
 /* DEPRECATED */
 .x-layout--b,
 %x-layout--b {
-  @mixin x-layout--b;
+  @mixin layout--b;
 }
 
 /* C (one narrow column & one wide column) */
 
-@define-mixin x-layout--c {
+@define-mixin layout--c {
   display: grid;
 
   @media (--medium-and-below) {
@@ -68,12 +68,12 @@ Styleguide Tools.Mixins.Layout
 /* DEPRECATED */
 .x-layout--c,
 %x-layout--c {
-  @mixin x-layout--c;
+  @mixin layout--c;
 }
 
 /* D (three equal columns) */
 
-@define-mixin x-layout--d {
+@define-mixin layout--d {
   display: grid;
 
   @media (--x-narrow-and-below) {
@@ -89,18 +89,18 @@ Styleguide Tools.Mixins.Layout
 /* DEPRECATED */
 .x-layout--d,
 %x-layout--d {
-  @mixin x-layout--d;
+  @mixin layout--d;
 }
 
 
 /* Row-Based */
 
-@define-mixin x-layout--e {
+@define-mixin layout--e {
   display: flex;
   flex-direction: column;
 }
 /* DEPRECATED */
 .x-layout--e,
 %x-layout--e {
-  @mixin x-layout--e;
+  @mixin layout--e;
 }

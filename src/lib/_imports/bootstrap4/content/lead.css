@@ -1,5 +1,5 @@
 @import url("../../tacc/tools/x-lead.postcss");
 
 .lead {
-    @mixin x-lead;
+    @mixin lead;
 }

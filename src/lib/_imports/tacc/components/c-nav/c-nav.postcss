@@ -106,7 +106,7 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
 
 /* via "after" pseduo-element */
 
-@define-mixin c-nav--piped--after {
+@define-mixin nav--piped--after {
   & > :--child-of-list,
   & > :--child-no-list {
     position: relative;
@@ -135,12 +135,12 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
   }
 }
 .c-nav--piped--after {
-  @mixin c-nav--piped--after;
+  @mixin nav--piped--after;
 }
 
 /* via "before" pseduo-element */
 
-@define-mixin c-nav--piped--before {
+@define-mixin nav--piped--before {
   & > :--child-of-list,
   & > :--child-no-list {
     position: relative;
@@ -169,11 +169,11 @@ nav[class*="c-nav--piped"] button:--c-button--as-link {
   }
 }
 .c-nav--piped--before {
-  @mixin c-nav--piped--before;
+  @mixin nav--piped--before;
 }
 /* default */
 nav.c-nav--piped:not([class*="c-nav--piped--"]) {
-  @mixin c-nav--piped--after;
+  @mixin nav--piped--after;
 }
 
 
