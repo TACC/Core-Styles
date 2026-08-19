@@ -1,7 +1,7 @@
 @import url("./x-link.css");
 @import url("../components/c-button.selectors.css");
 
-@define-mixin x-button {
+@define-mixin button {
   --min-width: 75px;
   --mid-width: 110px;
   --max-width: 130px;
@@ -69,24 +69,24 @@
   }
 }
 .x-button {
-  @mixin x-button;
+  @mixin button;
 }
 
 
 
-@define-mixin x-button--type {
+@define-mixin button--type {
   padding: 6px 18px;
   min-width: var(--min-width);
   max-width: var(--max-width);
 }
 .x-button--type {
-  @mixin x-button--type;
+  @mixin button--type;
 }
 
 
 
-@define-mixin x-button--type-primary {
-  @mixin x-button--type;
+@define-mixin button--type-primary {
+  @mixin button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-light);
@@ -131,13 +131,13 @@
   }
 }
 .x-button--type-primary {
-  @mixin x-button--type-primary;
+  @mixin button--type-primary;
 }
 
 
 
-@define-mixin x-button--type-secondary {
-  @mixin x-button--type;
+@define-mixin button--type-secondary {
+  @mixin button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
@@ -189,13 +189,13 @@
   }
 }
 .x-button--type-secondary {
-  @mixin x-button--type-secondary;
+  @mixin button--type-secondary;
 }
 
 
 
-@define-mixin x-button--type-tertiary {
-  @mixin x-button--type;
+@define-mixin button--type-tertiary {
+  @mixin button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
@@ -240,13 +240,13 @@
   }
 }
 .x-button--type-tertiary {
-  @mixin x-button--type-tertiary;
+  @mixin button--type-tertiary;
 }
 
 
 
-@define-mixin x-button--is-active {
-  @mixin x-button--type;
+@define-mixin button--is-active {
+  @mixin button--type;
 
   &:hover {
     color: var(--global-color-primary--xx-dark);
@@ -288,12 +288,12 @@
   }
 }
 .x-button--is-active {
-  @mixin x-button--is-active;
+  @mixin button--is-active;
 }
 
 
 
-@define-mixin x-button--as-link {
+@define-mixin button--as-link {
   @mixin link;
 
   background: unset;
@@ -305,24 +305,24 @@
   font-weight: inherit;
 }
 .x-button--as-link {
-  @mixin x-button--as-link;
+  @mixin button--as-link;
 }
-@define-mixin x-button--as-link--hover {
+@define-mixin button--as-link--hover {
   @mixin link--hover;
 }
 .x-button--as-link--hover {
-  @mixin x-button--as-link--hover;
+  @mixin button--as-link--hover;
 }
-@define-mixin x-button--as-link--active {
+@define-mixin button--as-link--active {
   @mixin link--active;
 }
 .x-button--as-link--active {
-  @mixin x-button--as-link--active;
+  @mixin button--as-link--active;
 }
 
 
 
-@define-mixin x-button--is-busy {
+@define-mixin button--is-busy {
   opacity: 0.5;
   pointer-events: none;
 
@@ -335,37 +335,37 @@
   }
 }
 .x-button--is-busy {
-  @mixin x-button--is-busy;
+  @mixin button--is-busy;
 }
 
 
 
-@define-mixin x-button--width-short {
+@define-mixin button--width-short {
   width: var(--min-width);
 }
 .x-button--width-short {
-  @mixin x-button--width-short;
+  @mixin button--width-short;
 }
-@define-mixin x-button--width-medium {
+@define-mixin button--width-medium {
   width: var(--mid-width);
 }
 .x-button--width-medium {
-  @mixin x-button--width-medium;
+  @mixin button--width-medium;
 }
-@define-mixin x-button--width-long {
+@define-mixin button--width-long {
   width: var(--max-width);
 }
 .x-button--width-long {
-  @mixin x-button--width-long;
+  @mixin button--width-long;
 }
 
 
 
-@define-mixin x-button--size-small {
+@define-mixin button--size-small {
   min-width: 0;
   padding: 4px 9px;
   line-height: 1;
 }
 .x-button--size-small {
-  @mixin x-button--size-small;
+  @mixin button--size-small;
 }

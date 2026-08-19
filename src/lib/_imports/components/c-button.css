@@ -9,19 +9,19 @@
 /* Base */
 
 :--c-button {
-  @mixin x-button;
+  @mixin button;
 }
 
 /* Modifiers */
 
 :--c-button--primary {
-  @mixin x-button--type-primary;
+  @mixin button--type-primary;
 }
 :--c-button--secondary {
-  @mixin x-button--type-secondary;
+  @mixin button--type-secondary;
 }
 :--c-button--tertiary {
-  @mixin x-button--type-tertiary;
+  @mixin button--type-tertiary;
 }
 
 :--c-button--can-truncate {
@@ -34,33 +34,33 @@
 }
 
 :--c-button--is-active {
-  @mixin x-button--is-active;
+  @mixin button--is-active;
 }
 
 :--c-button--as-link {
-  @mixin x-button--as-link;
+  @mixin button--as-link;
 }
 :--c-button--as-link:where(:not(:--disabled)):hover {
-  @mixin x-button--as-link--hover;
+  @mixin button--as-link--hover;
 }
 :--c-button--as-link:where(:not(:--disabled)):active {
-  @mixin x-button--as-link--active;
+  @mixin button--as-link--active;
 }
 
 :--c-button--is-busy {
-  @mixin x-button--is-busy;
+  @mixin button--is-busy;
 }
 
 :--c-button--width-short {
-  @mixin x-button--width-short;
+  @mixin button--width-short;
 }
 :--c-button--width-medium {
-  @mixin x-button--width-medium;
+  @mixin button--width-medium;
 }
 :--c-button--width-long {
-  @mixin x-button--width-long;
+  @mixin button--width-long;
 }
 
 :--c-button--size-small {
-  @mixin x-button--size-small;
+  @mixin button--size-small;
 }
