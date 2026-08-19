@@ -5,9 +5,9 @@ Fake borders that have features unavailable to regular borders
 
 (custom property a.k.a. variable prefix `fb` stands for __f__ake __b__order)
 
-%x-fake-border--inset-horz-top - A top border that is not full width
-%x-fake-border--inset-horz-both - Borders top & bottom that are not full width
-%x-fake-border--inset-horz-bottom - A bottom border that is not full width
+%fake-border--inset-horz-top - A top border that is not full width
+%fake-border--inset-horz-both - Borders top & bottom that are not full width
+%fake-border--inset-horz-bottom - A bottom border that is not full width
 
 Styleguide Tools.Mixins.Overlay
 */
@@ -32,7 +32,7 @@ To avoid overwriting an existing `box-shadow`, use the public shadow variables:
 - `--fb--shadow-above: var(--YOUR-existing-shadow-ABOVE-fake-border)`
 - `--fb--shadow-below: var(--YOUR-existing-shadow-BELOW-fake-border)`
 */
-@define-mixin x-fake-border--inset-horz {
+@define-mixin fake-border--inset-horz {
   --fb--line-width: 0px; /* CAVEAT: add unit so `calc()` will not fail */
   --fb--line-color: transparent;
 
@@ -53,19 +53,19 @@ To avoid overwriting an existing `box-shadow`, use the public shadow variables:
     var(--fb),
     var(--fb--shadow-below, 0 0 transparent)
 }
-@define-mixin x-fake-border--inset-horz-top {
-  @mixin x-fake-border--inset-horz;
+@define-mixin fake-border--inset-horz-top {
+  @mixin fake-border--inset-horz;
 
   --fb--line: inset 0 calc( 1 * var(--fb--line-width)) var(--fb--line-color);
 }
-@define-mixin x-fake-border--inset-horz-both {
-  @mixin x-fake-border--inset-horz;
+@define-mixin fake-border--inset-horz-both {
+  @mixin fake-border--inset-horz;
 
   --fb--line: inset 0 calc( 1 * var(--fb--line-width)) var(--fb--line-color),
               inset 0 calc(-1 * var(--fb--line-width)) var(--fb--line-color);
 }
-@define-mixin x-fake-border--inset-horz-bottom {
-  @mixin x-fake-border--inset-horz;
+@define-mixin fake-border--inset-horz-bottom {
+  @mixin fake-border--inset-horz;
 
   --fb--line: inset 0 calc(-1 * var(--fb--line-width)) var(--fb--line-color);
 }

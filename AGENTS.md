@@ -62,5 +62,7 @@ This is a **Node/PostCSS** styles project. Build outputs are generated artifacts
 ### Review Comments
 
 - Group it into one self-review with inline comments.
-- Prefix each such comment with **Explanation:**, **Question:**, or **Suggestion:**.
-- If responding to a PR comment as the user instead of a distinct bot identity, then quote and sign your entire message.
+- Prefix each such comment with:
+    - either **Explanation:**, **Question:**, **Suggestion:**
+    - or appropriate callout syntax (e.g. [GitHub Alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts))
+- If commenting on a PR as the user instead of a distinct bot identity, then quote and sign your entire message.
