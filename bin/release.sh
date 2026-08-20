@@ -103,21 +103,36 @@ git push origin "$branch_name"
 
 # Open PR, auto-merge, wait
 if command_exists gh; then
-    echo "Creating PR..."
-    gh pr create \
-        --title "ci: $version_tag" \
-        --body "## Overview
+    if gh pr view "$branch_name" >/dev/null 2>&1; then
+        pr_state=$(gh pr view "$branch_name" --json state --jq '.state')
+        echo "PR for $branch_name already exists (state: $pr_state)."
+    else
+        echo "Creating PR..."
+        gh pr create \
+            --title "ci: $version_tag" \
+            --body "## Overview
 
 Prepare for $version_tag release." \
-        --base main \
-        --head "$branch_name"
-    echo "Enabling auto-merge..."
-    gh pr merge "$branch_name" --auto --squash
-    echo "Waiting for PR to merge..."
-    while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
-        sleep 5
-    done
-    echo "PR merged."
+            --base main \
+            --head "$branch_name"
+        pr_state="OPEN"
+    fi
+
+    if [ "$pr_state" == "MERGED" ]; then
+        echo "PR already merged."
+    else
+        if [ "$(gh pr view "$branch_name" --json autoMergeRequest --jq '.autoMergeRequest != null')" == "true" ]; then
+            echo "Auto-merge already enabled."
+        else
+            echo "Enabling auto-merge..."
+            gh pr merge "$branch_name" --auto --squash
+        fi
+        echo "Waiting for PR to merge..."
+        while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
+            sleep 5
+        done
+        echo "PR merged."
+    fi
 else
     echo "gh CLI not found. Please create and merge PR for $branch_name manually."
     read -rp "Press Enter once the PR is merged..."
