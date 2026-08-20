@@ -82,16 +82,23 @@ if [ -n "$(git status --porcelain | grep -v '^.. dist/')" ]; then
 fi
 
 # Update version
-echo "Updating version..."
-npm version "$version_tag" --no-git-tag-version
+# (skip if branch already has version committed e.g. a resumed release attempt)
+current_pkg_version=$(npm pkg get version | tr -d '"')
+if [ "$current_pkg_version" == "$version_number" ]; then
+    echo "Version already set to $version_number; skipping version bump."
+else
+    echo "Updating version..."
+    npm version "$version_tag" --no-git-tag-version
 
-# Build again with new version
-echo "Building with new version..."
-npm run build:css
+    # Build again with new version
+    echo "Building with new version..."
+    npm run build:css
 
-# Commit and push
-git add .
-git commit -m "ci: $version_tag"
+    # Commit and push
+    git add .
+    git commit -m "ci: $version_tag"
+fi
+
 git push origin "$branch_name"
 
 # Open PR, auto-merge, wait
