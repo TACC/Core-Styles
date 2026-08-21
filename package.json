@@ -34,7 +34,7 @@
     "watch": "npm-watch"
   },
   "engines": {
-    "node": ">=20.x",
+    "node": ">=22.x",
     "npm": ">=7.x"
   },
   "homepage": "https://github.com/TACC/Core-Styles",
@@ -75,14 +75,11 @@
     "postcss-replace": "To edit relative paths to fonts"
   },
   "devDependencies": {
-    "@fractality/fractality": "^1.6.3",
-    "@fractality/handlebars": "^1.4.3",
-    "@fractality/mandelbrot": "^1.12.3",
+    "@fractality/fractality": "^1.7.0",
     "minimist": "^1.2.7",
     "npm-watch": "^0.13.0"
   },
   "overrides": {
-    "qs": "6.14.1",
     "axios": "0.30.0",
     "package-json": "7.0.0",
     "serve-static": "1.16.3",
