@@ -82,35 +82,57 @@ if [ -n "$(git status --porcelain | grep -v '^.. dist/')" ]; then
 fi
 
 # Update version
-echo "Updating version..."
-npm version "$version_tag" --no-git-tag-version
+# (skip if branch already has version committed e.g. a resumed release attempt)
+current_pkg_version=$(npm pkg get version | tr -d '"')
+if [ "$current_pkg_version" == "$version_number" ]; then
+    echo "Version already set to $version_number; skipping version bump."
+else
+    echo "Updating version..."
+    npm version "$version_tag" --no-git-tag-version
 
-# Build again with new version
-echo "Building with new version..."
-npm run build:css
+    # Build again with new version
+    echo "Building with new version..."
+    npm run build:css
 
-# Commit and push
-git add .
-git commit -m "ci: $version_tag"
+    # Commit and push
+    git add .
+    git commit -m "ci: $version_tag"
+fi
+
 git push origin "$branch_name"
 
 # Open PR, auto-merge, wait
 if command_exists gh; then
-    echo "Creating PR..."
-    gh pr create \
-        --title "ci: $version_tag" \
-        --body "## Overview
+    if gh pr view "$branch_name" >/dev/null 2>&1; then
+        pr_state=$(gh pr view "$branch_name" --json state --jq '.state')
+        echo "PR for $branch_name already exists (state: $pr_state)."
+    else
+        echo "Creating PR..."
+        gh pr create \
+            --title "ci: $version_tag" \
+            --body "## Overview
 
 Prepare for $version_tag release." \
-        --base main \
-        --head "$branch_name"
-    echo "Enabling auto-merge..."
-    gh pr merge "$branch_name" --auto --squash
-    echo "Waiting for PR to merge..."
-    while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
-        sleep 5
-    done
-    echo "PR merged."
+            --base main \
+            --head "$branch_name"
+        pr_state="OPEN"
+    fi
+
+    if [ "$pr_state" == "MERGED" ]; then
+        echo "PR already merged."
+    else
+        if [ "$(gh pr view "$branch_name" --json autoMergeRequest --jq '.autoMergeRequest != null')" == "true" ]; then
+            echo "Auto-merge already enabled."
+        else
+            echo "Enabling auto-merge..."
+            gh pr merge "$branch_name" --auto --squash
+        fi
+        echo "Waiting for PR to merge..."
+        while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
+            sleep 5
+        done
+        echo "PR merged."
+    fi
 else
     echo "gh CLI not found. Please create and merge PR for $branch_name manually."
     read -rp "Press Enter once the PR is merged..."
