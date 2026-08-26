@@ -3,8 +3,6 @@ plugins:
     path:
       - 'src/lib'
 
-  postcss-extend: {} # DEPRECATED
-
   postcss-mixins: {}
 
   '@csstools/postcss-design-tokens': {}
