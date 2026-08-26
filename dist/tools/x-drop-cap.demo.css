@@ -1,1 +1,1 @@
-/*! @tacc/core-styles v2.58.0-rc2+ | MIT | github.com/TACC/Core-Styles */#demo{.x-drop-cap:first-letter{@supports (initial-letter:3){initial-letter:3;padding-right:1em}@supports (-webkit-initial-letter:3){-webkit-initial-letter:3;font-family:Arial;padding-right:1em}}}
+/*! @tacc/core-styles v2.58.0+ | MIT | github.com/TACC/Core-Styles */#demo{.x-drop-cap:first-letter{@supports (initial-letter:3){initial-letter:3;padding-right:1em}@supports (-webkit-initial-letter:3){-webkit-initial-letter:3;font-family:Arial;padding-right:1em}}}
