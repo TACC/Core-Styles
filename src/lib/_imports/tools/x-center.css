@@ -20,36 +20,51 @@ Styleguide Tools.Mixins.Center
 /* Horizontal */
 
 /* Horizontal: Inline */
-.x-center--horz-inline {
+@define-mixin center--horz-inline {
   text-align: center;
+}
+.x-center--horz-inline {
+  @mixin center--horz-inline;
 }
 
 /* Horizontal: Block */
-.x-center--horz-block {
+@define-mixin center--horz-block {
   margin: 0 auto;
+}
+.x-center--horz-block {
+  @mixin center--horz-block;
 }
 
 /* Horizontal: Block: Multiple Children */
-.x-center--horz-block-multiple-children {
+@define-mixin center--horz-block-multiple-children {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.x-center--horz-block-multiple-children {
+  @mixin center--horz-block-multiple-children;
 }
 
 /* Vertical */
 
 /* Vertical: Inline: Multiple Lines - via Flexbox */
-.x-center--vert-inline-multiline--flex {
+@define-mixin center--vert-inline-multiline--flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.x-center--vert-inline-multiline--flex {
+  @mixin center--vert-inline-multiline--flex;
 }
 
 /* Both */
 
 /* Both: Any - via Flexbox */
-.x-center--both--flex {
+@define-mixin center--both--flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.x-center--both--flex {
+  @mixin center--both--flex;
 }
