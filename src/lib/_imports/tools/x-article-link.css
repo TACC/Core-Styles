@@ -5,12 +5,12 @@ Styles that allow visible link hover for article lists.
 
 > __⚠️ Warning__: A link ancestor must have its `position` set (not to `static`)
 
-x-article-link-stretch          - Stretch link to cover container
-x-article-link-stretch--gapless - Make link box fix gapless layout
-x-article-link-hover            - Give link a hover state
-x-article-link-hover--gapless   - Make link hover state fix gapless layout
-article-link-active             - Give link an active (click, enter) state (via `@mixin`)
-article-link-text               - Hide link text (via `@mixin`)
+article-link-stretch          - Stretch link to cover container
+article-link-stretch--gapless - Make link box fix gapless layout
+article-link-hover            - Give link a hover state
+article-link-hover--gapless   - Make link hover state fix gapless layout
+article-link-active           - Give link an active (click, enter) state
+article-link-text             - Hide link text
 
 Styleguide Tools.Mixins.ArticleLink
 */

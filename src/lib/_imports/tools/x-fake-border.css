@@ -5,9 +5,9 @@ Fake borders that have features unavailable to regular borders
 
 (custom property a.k.a. variable prefix `fb` stands for __f__ake __b__order)
 
-fake-border--inset-horz-top - A top border that is not full width (via `@mixin`)
-fake-border--inset-horz-both - Borders top & bottom that are not full width (via `@mixin`)
-fake-border--inset-horz-bottom - A bottom border that is not full width (via `@mixin`)
+fake-border--inset-horz-top - A top border that is not full width
+fake-border--inset-horz-both - Borders top & bottom that are not full width
+fake-border--inset-horz-bottom - A bottom border that is not full width
 
 Styleguide Tools.Mixins.Overlay
 */

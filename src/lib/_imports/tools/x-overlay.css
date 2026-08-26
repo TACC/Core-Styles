@@ -3,8 +3,8 @@ Overlay
 
 Colored boxes that appear atop a large image (like a banner).
 
-overlay--curtain - A full size transluscent curtain over the background (via `@mixin`)
-overlay--callout - A transluscent box surrounding the content (via `@mixin`)
+overlay--curtain - A full size transluscent curtain over the background
+overlay--callout - A transluscent box surrounding the content
 
 Styleguide Tools.Mixins.Overlay
 */
