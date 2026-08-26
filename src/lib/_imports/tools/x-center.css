@@ -20,20 +20,17 @@ Styleguide Tools.Mixins.Center
 /* Horizontal */
 
 /* Horizontal: Inline */
-.x-center--horz-inline, /* DEPRECATED */
-%x-center--horz-inline {
+.x-center--horz-inline {
   text-align: center;
 }
 
 /* Horizontal: Block */
-.x-center--horz-block, /* DEPRECATED */
-%x-center--horz-block {
+.x-center--horz-block {
   margin: 0 auto;
 }
 
 /* Horizontal: Block: Multiple Children */
-.x-center--horz-block-multiple-children, /* DEPRECATED */
-%x-center--horz-block-multiple-children {
+.x-center--horz-block-multiple-children {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,8 +39,7 @@ Styleguide Tools.Mixins.Center
 /* Vertical */
 
 /* Vertical: Inline: Multiple Lines - via Flexbox */
-.x-center--vert-inline-multiline--flex, /* DEPRECATED */
-%x-center--vert-inline-multiline--flex {
+.x-center--vert-inline-multiline--flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,8 +48,7 @@ Styleguide Tools.Mixins.Center
 /* Both */
 
 /* Both: Any - via Flexbox */
-.x-center--both--flex, /* DEPRECATED */
-%x-center--both--flex {
+.x-center--both--flex {
   display: flex;
   justify-content: center;
   align-items: center;

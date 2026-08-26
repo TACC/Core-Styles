@@ -5,12 +5,12 @@ Styles that allow visible link hover for article lists.
 
 > __⚠️ Warning__: A link ancestor must have its `position` set (not to `static`)
 
-%x-article-link-stretch          - Stretch link to cover container
-%x-article-link-stretch--gapless - Make link box fix gapless layout
-%x-article-link-hover            - Give link a hover state
-%x-article-link-hover--gapless   - Make link hover state fix gapless layout
-%x-article-link-active           - Give link an active (click, enter) state
-%x-article-link-text             - Hide link text
+x-article-link-stretch          - Stretch link to cover container
+x-article-link-stretch--gapless - Make link box fix gapless layout
+x-article-link-hover            - Give link a hover state
+x-article-link-hover--gapless   - Make link hover state fix gapless layout
+article-link-active             - Give link an active (click, enter) state (via `@mixin`)
+article-link-text               - Hide link text (via `@mixin`)
 
 Styleguide Tools.Mixins.ArticleLink
 */
@@ -28,16 +28,14 @@ Styleguide Tools.Mixins.ArticleLink
   /* SEE: http://johndoesdesign.com/blog/2012/css/firefox-and-its-css-focus-outline-bug/ */
   overflow: hidden;
 }
-.x-article-link-stretch,
-%x-article-link-stretch {
+.x-article-link-stretch {
   @mixin article-link-stretch;
 }
 @define-mixin article-link-stretch--gapless {
   width: calc(100% + 30px);
   left: -15px;
 }
-.x-article-link-stretch--gapless,
-%x-article-link-stretch--gapless {
+.x-article-link-stretch--gapless {
   @mixin article-link-stretch--gapless;
 }
 
@@ -49,15 +47,13 @@ Styleguide Tools.Mixins.ArticleLink
 
   outline-offset: var(--outline-offset);
 }
-.x-article-link-hover,
-%x-article-link-hover {
+.x-article-link-hover {
   @mixin article-link-hover;
 }
 @define-mixin article-link-hover--gapless {
   --outline-offset: 0;
 }
-.x-article-link-hover--gapless,
-%x-article-link-hover--gapless {
+.x-article-link-hover--gapless {
   @mixin article-link-hover--gapless;
 }
 
@@ -66,16 +62,9 @@ Styleguide Tools.Mixins.ArticleLink
   outline: 1px dotted var(--global-color-accent--normal);
 }
 
-%x-article-link-active {
-  @mixin article-link-active;
-}
-
 /* To hide link text but retain link element */
 @define-mixin article-link-text {
   line-height: 0;
   font-size: 0;
   color: transparent;
-}
-%x-article-link-text {
-  @mixin article-link-text;
 }

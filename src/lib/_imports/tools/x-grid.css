@@ -37,7 +37,6 @@ Styleguide Tools.Mixins.Grid
   grid-template-columns: repeat(var(--count), auto);
 }
 /* DEPRECATED */
-%x-grid--layout-cols-equal-set-count,
 .x-grid--layout-cols-equal-set-count {
   @mixin grid--layout-cols-equal-set-count;
 }
@@ -50,7 +49,6 @@ Styleguide Tools.Mixins.Grid
   grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
 }
 /* DEPRECATED */
-%x-grid--layout-cols-equal-min-width,
 .x-grid--layout-cols-equal-min-width {
   @mixin grid--layout-cols-equal-min-width;
 }
@@ -106,7 +104,6 @@ Styleguide Tools.Mixins.Grid
   grid-auto-rows: 1fr;
 }
 /* DEPRECATED */
-%x-grid--layout-rows-equal-max-height,
 .x-grid--layout-rows-equal-max-height {
   @mixin grid--layout-rows-equal-max-height;
 }
@@ -119,7 +116,6 @@ Styleguide Tools.Mixins.Grid
   grid-auto-rows: var(--height);
 }
 /* DEPRECATED */
-%x-grid--layout-rows-equal-set-height,
 .x-grid--layout-rows-equal-set-height {
   @mixin grid--layout-rows-equal-set-height;
 }
@@ -139,7 +135,6 @@ Styleguide Tools.Mixins.Grid
   align-items: center;
 }
 /* DEPRECATED */
-%x-grid--content-align-center,
 .x-grid--content-align-center {
   @mixin grid--content-align-center;
 }
