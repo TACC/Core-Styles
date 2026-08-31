@@ -51,7 +51,7 @@ echo "1. Build CSS"
 echo "2. Update version"
 echo "3. Create release commit"
 echo "4. Open a PR and auto-merge it"
-echo "5. Create a GitHub release (this will auto-trigger `npm publish`)"
+echo "5. Create a GitHub release (this will auto-trigger \`npm publish\`)"
 if ! confirm "Do you want to proceed?"; then
     echo "Release cancelled."
     exit 0
