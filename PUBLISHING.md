@@ -23,6 +23,6 @@ Only appointed team members may publish releases.
     `npm run build:css`
 1. Commit, push, PR, review, merge.
 1. Create release and tag on GitHub.\
-    <sub>This triggers the `npm-publish` GitHub Actions workflow, which publishes to npm.</sub>
+    <sub>This triggers the `npm-publish` GitHub Actions workflow, which publishes to NPM.</sub>
 
 </details>
