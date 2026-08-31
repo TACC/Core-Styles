@@ -1,6 +1,6 @@
 {
   "name": "@tacc/core-styles",
-  "version": "2.58.1-rc1",
+  "version": "2.58.1-rc2",
   "publishConfig": {
     "access": "public"
   },
@@ -43,7 +43,7 @@
   "homepage": "https://github.com/TACC/Core-Styles",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/TACC/Core-Styles.git"
+    "url": "git+https://github.com/TACC/Core-Styles.git"
   },
   "peerDependencies": {
     "@csstools/postcss-design-tokens": "^4.0.1",
