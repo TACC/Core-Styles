@@ -7,6 +7,12 @@
 # re-runs and re-commits each time; if there's no diff, git-auto-commit-action
 # is a no-op. The commit uses the default GITHUB_TOKEN, whose pushes don't
 # cascade-trigger other workflows, so this can't loop on itself.
+#
+# release-please updates this branch via two pushes per cycle: first it
+# resets the branch to the new main tip (no release commit yet), then it
+# pushes its own version-bump commit on top. Only the second push needs a
+# rebuild, so skip the job unless the head commit is release-please's own
+# bump commit.
 
 name: Build dist for v2 release
 
@@ -20,6 +26,7 @@ permissions:
 
 jobs:
   build-dist:
+    if: "startsWith(github.event.head_commit.message, 'chore(main): release')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
