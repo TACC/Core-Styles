@@ -1,9 +1,0 @@
-variants:
-  - name: border-spinner
-    status: prototype
-    context:
-      shouldLoadBootstrap5: true
-      supportStyles:
-        - ../../assets/trumps/u-hide.css
-        - ../../assets/vendors/bootstrap5--border-spinner.css
-        - ../../assets/components/bootstrap5.border-spinner.css

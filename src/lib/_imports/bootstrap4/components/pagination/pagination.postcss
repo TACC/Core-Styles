@@ -1,0 +1,68 @@
+@import url("../../../tacc/tools/x-pagination.postcss");
+
+.pagination {
+  @mixin pagination;
+}
+
+.page-item:not(
+  :first-child,
+  :last-child,
+  .skip
+) {
+  @mixin pagination__page-item;
+
+  & .page-link {
+    @mixin pagination__page-link;
+  }
+}
+
+.page-item:is(
+  :first-child,
+  :last-child
+) {
+  @mixin pagination__end-item;
+
+  & .page-link {
+    @mixin pagination__end-link;
+
+    border: none;
+    background-color: transparent;
+    border-radius: unset;
+  }
+}
+
+.page-item.skip {
+  @mixin pagination__skipped-item;
+
+  & .page-link {
+    @mixin pagination__skipped-link;
+
+    color: inherit;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.page-item.active {
+  @mixin pagination__active-item;
+
+  & .page-link {
+    @mixin pagination__page-link--active;
+  }
+}
+
+.page-item.disabled {
+  @mixin pagination__disabled-item;
+
+  & .page-link {
+    @mixin pagination__page-link--disabled;
+  }
+}
+
+.page-link {
+  margin-left: unset;
+
+  &:focus {
+    box-shadow: none;
+  }
+}

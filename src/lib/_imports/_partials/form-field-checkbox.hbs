@@ -1,0 +1,22 @@
+<div {{#if class }}class="{{ class }}"{{/if}}>
+  {{#if (eq errorLoc "top")}}
+    {{ errors }}
+  {{/if}}
+
+  <input
+    type="checkbox"
+    class="{{ inputClass }}"
+    name="{{ name }}"
+    id="{{ id }}"
+  />
+
+  <label for="{{ id }}">{{ label }}</label>
+
+  {{#unless (eq errorLoc "top")}}
+    {{ errors }}
+  {{/unless}}
+
+  <{{helpTextTag}} {{#if helpTextClass }}class="{{ helpTextClass }}"{{/if}}>
+    {{ helpText }}
+  </{{helpTextTag}}>
+</div>

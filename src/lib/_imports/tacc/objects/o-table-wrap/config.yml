@@ -1,0 +1,84 @@
+order: 1
+variants:
+  - name: flexible-horz
+    label: Flexible, Horz.
+  - name: flexible-vert
+    label: Flexible, Vert.
+  - name: overflow-hidden
+    label: Overflow Hidden
+  - name: overflow-scroll
+    label: Overflow Scroll
+  - name: overflow-scroll-extra
+    label: Overflow Scroll (Extra)
+    context:
+      data:
+        cols:
+          - ID
+          - Name
+          # - Description
+          - Size
+          - Time
+        rows:
+          - id: n234as
+            name: apple-sauce
+            # sentence: true
+            custom-1: 0.5 KB
+            time: 12/01/2019 11:04:19
+          - id: 56l810
+            name: milk-shake-032
+            # sentence: true
+            custom-1: 300.0 KB
+            time: 03/22/2021 05:23:01
+          - id: 3r56xc
+            name: white-candy-5
+            # sentence: true
+            custom-1: 1.5 MB
+            time: 12/01/2019 11:04:19
+          - id: 7ysnw3
+            name: butter-balls
+            # sentence: true
+            custom-1: 0.5 KB
+            time: 09/11/2010 10:54:09
+          - id: 20ksdf
+            name: lemon-cookies-30
+            # sentence: true
+            custom-1: 250.0 MB
+            time: 04/20/2020 15:03:10
+context:
+  shouldLoadBootstrap4: true
+  📝 shouldLoadBootstrap4: >-
+    not yet tested without Bootstrap
+    (known dependencies: <caption> font color)
+  data:
+    cols:
+      - ID
+      - Name
+      - Description
+      - Size
+      - Time
+    rows:
+      - id: n234as
+        name: apple-sauce
+        sentence: true
+        custom-1: 0.5 KB
+        time: 12/01/2019 11:04:19
+      - id: 56l810
+        name: milk-shake-032
+        sentence: true
+        custom-1: 300.0 KB
+        time: 03/22/2021 05:23:01
+      - id: 3r56xc
+        name: white-candy-5
+        sentence: true
+        custom-1: 1.5 MB
+        time: 12/01/2019 11:04:19
+      - id: 7ysnw3
+        name: butter-balls
+        sentence: true
+        custom-1: 0.5 KB
+        time: 09/11/2010 10:54:09
+      - id: 20ksdf
+        name: lemon-cookies-30
+        sentence: true
+        custom-1: 250.0 MB
+        time: 04/20/2020 15:03:10

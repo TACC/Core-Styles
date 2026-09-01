@@ -1,0 +1,33 @@
+variants:
+  - name: default
+    hidden: true
+  - name: cms
+    status: ready
+    label: (CMS) Headings
+    context:
+      shouldLoadCMS: true
+  - name: cms-v2
+    status: wip
+    label: CMS (v2)
+    context:
+      shouldLoadCMS: true
+      supportStyles:
+        - ../../assets/core-styles.cms.v2-bridge-for-v3-users.css
+  - name: cms-vs-bootstrap
+    status: wip
+    label: CMS vs. Bootstrap
+    view: 'headings--bootstrap.hbs'
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
+  - name: docs
+    status: wip
+    label: (Docs) Headings
+    context:
+      shouldLoadDocs: true
+  - name: portal
+    status: prototype
+    label: (Portal) Headings
+    context:
+      shouldLoadPortal: true
+      shouldLoadBootstrap4: true

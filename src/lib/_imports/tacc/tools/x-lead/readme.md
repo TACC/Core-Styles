@@ -1,0 +1,1 @@
+The underlying design shared by [`.s-lead`](../../trumps/s-lead) and Bootstrap's restyled [`.lead`](../../../bootstrap4/content/lead) — a large, prominent paragraph, e.g. summarizing a page, right under its `<h1>`.

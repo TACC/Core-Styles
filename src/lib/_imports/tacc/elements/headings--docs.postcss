@@ -1,0 +1,22 @@
+@import url("../tools/selectors.postcss");
+@import url("../tools/x-headings.postcss");
+@import url("../tools/x-headings--docs.postcss");
+
+/* To scope these styles to main content (i.e. not header, not navbar) */
+:where(:--main-content) {
+
+
+
+& :is( h1, h2, h3, h4, h5, h6 ) {
+    @mixin heading;
+}
+& h1 { @mixin heading-1--docs; }
+& h2 { @mixin heading-2--docs; }
+& h3 { @mixin heading-3--docs; }
+& h4 { @mixin heading-4--docs; }
+& h5 { @mixin heading-5--docs; }
+& h6 { @mixin heading-6--docs; }
+
+
+
+}

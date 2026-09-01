@@ -1,0 +1,69 @@
+@import url("../../tools/x-truncate.postcss");
+@import url("../../tools/x-button.postcss");
+
+@import url("./c-button.selectors.postcss");
+@import url("../../objects/o-section.selectors.postcss");
+
+
+
+/* Base */
+
+:--c-button {
+  @mixin button;
+}
+
+/* Modifiers */
+
+:--c-button--primary {
+  @mixin button--type-primary;
+}
+:--c-button--secondary {
+  @mixin button--type-secondary;
+}
+:--c-button--tertiary {
+  @mixin button--type-tertiary;
+}
+
+:--c-button--can-truncate {
+  @mixin truncate--one-line;
+
+  /* To ensure truncation */
+  /* CAVEAT: Changes alignment of > .icon */
+  /* FAQ: No truncation if `:--c-button` `display: inline-flex` */
+  display: inline-block;
+}
+
+:--c-button--is-active {
+  @mixin button--is-active;
+}
+
+:--c-button--as-link {
+  @mixin button--as-link;
+
+  &:where(:not(:--disabled)) {
+    &:hover {
+      @mixin button--as-link--hover;
+    }
+    &:active {
+      @mixin button--as-link--active;
+    }
+  }
+}
+
+:--c-button--is-busy {
+  @mixin button--is-busy;
+}
+
+:--c-button--width-short {
+  @mixin button--width-short;
+}
+:--c-button--width-medium {
+  @mixin button--width-medium;
+}
+:--c-button--width-long {
+  @mixin button--width-long;
+}
+
+:--c-button--size-small {
+  @mixin button--size-small;
+}

@@ -1,9 +1,0 @@
-status: wip
-context:
-  shouldSkipPattern: false
-  📝 shouldSkipPattern: because core-styles.….css does not import this
-variants:
-  - name: default
-    label: Static Markup
-  - name: generated
-    label: Generated Markup

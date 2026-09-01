@@ -1,0 +1,48 @@
+@import url("../../tacc/tools/x-breadcrumbs.postcss");
+
+[role="navigation"] {
+  @mixin breadcrumbs;
+  @mixin breadcrumbs-major;
+}
+ul.wy-breadcrumbs {
+  @mixin breadcrumbs__list;
+  @mixin breadcrumbs-major__list;
+}
+.wy-breadcrumbs li {
+  @mixin breadcrumbs__list-item;
+  @mixin breadcrumbs-major__list-item;
+}
+.wy-breadcrumbs li + li {
+  @mixin breadcrumbs__list-item--prefix-separator;
+}
+
+
+/* to hide link to home */
+/* FAQ: The link is not in design (cuz it is redundant cuz side nav has link) */
+.wy-breadcrumbs li:first-child {
+  display: none;
+}
+.wy-breadcrumbs li:nth-child(2)::before {
+  content: unset;
+}
+
+/* to bold last child */
+/* FAQ: The breadcrumbs mixin bolds :last-child, but
+        not effective here cuz last child is .wy-breadcrumbs-aside */
+.wy-breadcrumbs li:nth-last-child(2) {
+  font-weight: var(--bold);
+}
+
+/* to hide the " ≫" from ReadTheDocs theme markup */
+.wy-breadcrumbs li + li::before {
+  margin-left: -1.25ch;
+  background-color: var(--global-color-primary--xx-light);
+}
+
+/* to push repo link aside */
+.wy-breadcrumbs li.wy-breadcrumbs-aside {
+  margin-left: auto;
+}
+.wy-breadcrumbs li.wy-breadcrumbs-aside::before {
+  content: unset;
+}

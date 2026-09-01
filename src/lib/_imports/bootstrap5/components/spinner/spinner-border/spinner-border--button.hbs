@@ -1,0 +1,13 @@
+<button
+  class="{{ class }}"
+  {{#if type}}
+  type="{{ type }}"
+  {{/if}}
+  disabled
+  {{!-- HACK: To support TACC .c-button until TACC skins Bootstrap .btn --}}
+  {{#if is-tacc}}
+  data-state="busy"
+  {{/if}}
+>
+  {{> @loading-action }}
+</button>

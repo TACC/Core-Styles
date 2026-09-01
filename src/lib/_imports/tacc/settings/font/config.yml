@@ -1,0 +1,16 @@
+variants:
+  - name: default
+    context:
+      shouldShowSizeMessage: true
+  - name: cms
+    status: ready
+    label: (CMS) Font
+    context:
+      shouldLoadCMS: true
+      shouldLoadBootstrap4: true
+  - name: portal
+    status: ready
+    label: (Portal) Font
+    context:
+      shouldLoadPortal: true
+      shouldLoadBootstrap4: true
