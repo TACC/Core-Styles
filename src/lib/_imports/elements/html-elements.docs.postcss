@@ -1,0 +1,19 @@
+@import url("../tools/x-figure.postcss");
+@import url("../tools/x-blockquote.postcss");
+
+
+/* Lists */
+
+/* So definition terms stand out more */
+dt {
+  font-weight: var(--medium);
+}
+
+
+/* Figures */
+
+/* To style elements that have captions */
+figure { @mixin figure; }
+figcaption { @mixin figure-caption; }
+blockquote { @mixin blockquote; }
+blockquote footer { @mixin blockquote-caption; }

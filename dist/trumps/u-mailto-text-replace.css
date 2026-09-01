@@ -1,3 +1,0 @@
-/*! @tacc/core-styles v2.58.1-rc4+ | MIT | github.com/TACC/Core-Styles */
-
-/* !!!: A user can not navigate to such a link with tab key */.u-mailto-text-replace[data-user][data-domain]{&:not(:is(.c-button,[class*=button--],.btn)){font-size:0;text-underline-offset:.3rem;visibility:hidden;&:before{content:attr(data-user) "@" attr(data-domain);display:inline;font-size:initial;visibility:visible}}}

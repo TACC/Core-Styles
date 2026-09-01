@@ -2,6 +2,7 @@
 
 /** Export internal function used by this package to build styles */
 
+const path = require('path');
 const cmd = require('node-cmd');
 
 // SEE: https://stackoverflow.com/a/63530170
@@ -19,19 +20,18 @@ process.env.FORCE_COLOR = true;
  */
 function build(input, output, opts = {}) {
   // Get data
+  const outDir = output || path.dirname(input);
   const configDir = opts.configDir || `${__dirname}/../`;
   const verbose = opts.verbose === true ? '--verbose' : '';
   const base = opts.baseMirrorDir ? `--base "${opts.baseMirrorDir}"` : '';
   const ext = opts.fileExt ? `--ext "${opts.fileExt}"` : '';
 
   // Build command
-  const command = `postcss "${input}" --dir "${output}" ${verbose} --config "${configDir}" ${base} ${ext}`;
+  const command = `postcss "${input}" --dir "${outDir}" ${verbose} --config "${configDir}" ${base} ${ext}`;
 
-  if (verbose) {
-    console.log(`Building stylesheet(s) to ${output} via command:\n`, command);
-  } else {
-    console.log(`Building stylesheet(s) to ${output}`);
-  }
+  const outDirLog = output ? ` to ${output}` : ``;
+  console.log(`Building stylesheet(s)`, outDirLog);
+  if (opts.verbose) console.log('>', command);
 
   // Run command
   cmd.runSync(command);
