@@ -1,27 +1,35 @@
 # How to Publish
 
-Only appointed team members may publish releases.
+## Automated Release
 
-Releases are automated via [release-please](https://github.com/googleapis/release-please): every push to `main` opens or updates a standing "release PR" with the next version and changelog, computed from [conventional commits](.gitmessage). A [`build-dist-for-v2-release`](.github/workflows/build-dist-for-v2-release.yml) workflow keeps that PR's `dist/` in sync automatically.
+1. Review the open release PR:
+   - Title: `chore(main): release vN.N.N`
+   - Branch: `release/vN.N.N`
+2. Merge when you're ready to publish.
 
-1. Review and merge the open release-please PR (titled `chore(main): release vN.N.N`) when you're ready to publish.
-1. Merging creates the GitHub release and tag, which triggers [`npm-publish`](.github/workflows/npm-publish.yml) to publish to npm via OIDC.
+<details>
+<summary>Explanation</summary>
 
-<sub>One-time setup: a `RELEASE_PLEASE_TOKEN` repo secret (a PAT with `contents: write` + `pull-requests: write` on this repo) must exist — release-please's default `GITHUB_TOKEN` can't trigger the follow-on workflows above.</sub>
+Every push to `main` opens or updates a standing "release PR" with the next version and changelog, computed from [conventional commits](.gitmessage). Merging creates the GitHub release and tag, which triggers publish to NPM.
 
-### Manual Release (legacy fallback)
+</details>
+
+## Legacy Fallback Manual Release
+
+> [!WARNING]
+> Use only if [Automated Release] is broken. Prefer fixing [Automated Release] over this.
 
 <details>
 <summary>Instructions</summary>
 
-Use only if release-please is broken. Prefer fixing release-please over relying on this long-term.
+[Automated Release]: #automated-release
 
-#### Automated Release Script
+#### _either_ Automated Release Script
 
 1. Run the release script:\
     `./bin/release.sh`
 
-#### Manual Release Steps
+#### _or_ Manual Release Steps
 
 1. Create new branch for version bump.
 1. Verify build is up-to-date:\
