@@ -1,0 +1,14 @@
+---
+name: sync-epic-v3
+description: Sync main into epic/v3 (PR #454) and epic/v3 into epic/v3--reorg (PR #455). Use when either PR is reported CONFLICTING, or when asked to re-sync/update epic/v3 or epic/v3--reorg with the latest main.
+---
+
+`main` keeps moving, and every commit touching `dist/` re-conflicts `epic/v3` (which doesn't track `dist/`) against `main` (PR #454), and by extension `epic/v3--reorg` (PR #455) against `epic/v3`. This isn't fixable once-and-done — repeat this whenever either PR goes CONFLICTING.
+
+## Steps
+
+1. Check out `epic/v3` (fetch/fast-forward the local branch from `origin/epic/v3` first if needed) and run `bin/sync-main.sh`. It fetches `origin/main`, merges it in, auto-resolves the mechanical `dist/` modify/delete conflicts (this branch's policy is to not track `dist/`), rebuilds `dist/`, and commits.
+2. For any conflict the script reports outside `dist/`, resolve it by hand — don't trust either side's raw text or a clean auto-merge at face value. Diff each side against `git merge-base <branch> origin/main` to find the actual intended change, then reapply it. Git's rename detection frequently fails to pair a file that was renamed or relocated differently on each branch (e.g. `.postcss` vs `.css` extension) — this can surface as a straight add/delete conflict, or worse, auto-merge silently into a wrong result without flagging a conflict at all. Verify the semantic intent on both sides before trusting the merge output.
+3. Check out `epic/v3--reorg` (fast-forward from `origin/epic/v3--reorg` first if needed) and run `git merge epic/v3`. Apply the same care as step 2 to any conflicts — `epic/v3--reorg` relocates many files under `tacc/`, which makes rename-detection misses even more likely here. Git's directory-rename heuristic sometimes helps by suggesting where a brand-new file should move to, but always double-check the suggestion is actually correct.
+4. Whenever a merge introduces a file that's new to the target branch (a clean, unconflicted add — no conflict markers at all), still check its own internal `@import`s by hand. A clean add means nobody's content flagged a conflict, but the new file's imports were written for the source branch's conventions and won't automatically match the target's — e.g. `.css` extensions that need converting to `.postcss`, or relative paths that need adjusting for a deeper/shallower directory nesting (especially on `epic/v3--reorg`, even after git's rename heuristic relocates the file for you). This class of bug often won't surface as a conflict at all — it may only show up as a build failure (`Failed to find './whatever.css'`) or, worse, not until runtime.
+5. After each merge (both on `epic/v3` and on `epic/v3--reorg`), run `npm run build:css` to verify the result actually builds before considering the merge done.

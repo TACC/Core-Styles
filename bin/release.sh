@@ -14,15 +14,6 @@ if ! command_exists git; then
     exit 1
 fi
 
-# Check npm login status
-if ! npm whoami >/dev/null 2>&1; then
-    echo "Error: You are not logged in to npm."
-    echo -e "Please login first with:\n    npm login"
-    echo -e "\nNote: When running npm login, you'll be prompted to visit a URL in your browser."
-    echo "Make sure you're already logged into npmjs.com in your browser before starting."
-    exit 1
-fi
-
 # Ensure working directory is clean
 if [ -n "$(git status --porcelain)" ]; then
     echo "Error: Working directory has unexpected changes. Please commit or stash changes."
@@ -60,8 +51,7 @@ echo "1. Build CSS"
 echo "2. Update version"
 echo "3. Create release commit"
 echo "4. Open a PR and auto-merge it"
-echo "5. Publish to npm"
-echo "6. Create GitHub release"
+echo "5. Create a GitHub release (this will auto-trigger \`npm publish\`)"
 if ! confirm "Do you want to proceed?"; then
     echo "Release cancelled."
     exit 0
@@ -82,35 +72,57 @@ if [ -n "$(git status --porcelain | grep -v '^.. dist/')" ]; then
 fi
 
 # Update version
-echo "Updating version..."
-npm version "$version_tag" --no-git-tag-version
+# (skip if branch already has version committed e.g. a resumed release attempt)
+current_pkg_version=$(npm pkg get version | tr -d '"')
+if [ "$current_pkg_version" == "$version_number" ]; then
+    echo "Version already set to $version_number; skipping version bump."
+else
+    echo "Updating version..."
+    npm version "$version_tag" --no-git-tag-version
 
-# Build again with new version
-echo "Building with new version..."
-npm run build:css
+    # Build again with new version
+    echo "Building with new version..."
+    npm run build:css
 
-# Commit and push
-git add .
-git commit -m "ci: $version_tag"
+    # Commit and push
+    git add .
+    git commit -m "ci: $version_tag"
+fi
+
 git push origin "$branch_name"
 
 # Open PR, auto-merge, wait
 if command_exists gh; then
-    echo "Creating PR..."
-    gh pr create \
-        --title "ci: $version_tag" \
-        --body "## Overview
+    if gh pr view "$branch_name" >/dev/null 2>&1; then
+        pr_state=$(gh pr view "$branch_name" --json state --jq '.state')
+        echo "PR for $branch_name already exists (state: $pr_state)."
+    else
+        echo "Creating PR..."
+        gh pr create \
+            --title "ci: $version_tag" \
+            --body "## Overview
 
 Prepare for $version_tag release." \
-        --base main \
-        --head "$branch_name"
-    echo "Enabling auto-merge..."
-    gh pr merge "$branch_name" --auto --squash
-    echo "Waiting for PR to merge..."
-    while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
-        sleep 5
-    done
-    echo "PR merged."
+            --base main \
+            --head "$branch_name"
+        pr_state="OPEN"
+    fi
+
+    if [ "$pr_state" == "MERGED" ]; then
+        echo "PR already merged."
+    else
+        if [ "$(gh pr view "$branch_name" --json autoMergeRequest --jq '.autoMergeRequest != null')" == "true" ]; then
+            echo "Auto-merge already enabled."
+        else
+            echo "Enabling auto-merge..."
+            gh pr merge "$branch_name" --auto --squash
+        fi
+        echo "Waiting for PR to merge..."
+        while [ "$(gh pr view "$branch_name" --json state --jq '.state')" != "MERGED" ]; do
+            sleep 5
+        done
+        echo "PR merged."
+    fi
 else
     echo "gh CLI not found. Please create and merge PR for $branch_name manually."
     read -rp "Press Enter once the PR is merged..."
@@ -119,26 +131,6 @@ fi
 # Switch to main
 git checkout main
 git pull origin main
-
-# Publish to npm
-if npm view "@tacc/core-styles@${version_number}" >/dev/null 2>&1; then
-    echo "Version ${version_number} is already published to npm."
-    if ! confirm "Skip npm publish step?"; then
-        echo "Aborting to avoid version conflict."
-        exit 1
-    fi
-else
-    npm_publish_args=(--access public)
-
-    if [[ "$version_number" =~ -rc[0-9]+$ ]]; then
-        npm_publish_args+=(--tag rc)
-        echo "Publishing ${version_number} (release candidate) to npm (with 'rc' tag)..."
-    else
-        echo "Publishing ${version_number} to npm..."
-    fi
-
-    npm publish "${npm_publish_args[@]}"
-fi
 
 # Create GitHub release
 if command_exists gh; then
@@ -158,4 +150,5 @@ else
     read -rp "Press Enter once you've created the release..."
 fi
 
-echo "Release complete!"
+echo "GitHub release complete!"
+echo "NPM release should have been triggered. See GitHub Actions."

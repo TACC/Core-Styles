@@ -1,21 +1,47 @@
 # How to Publish
 
-Only appointed team members may publish releases.
+## Automated Release
 
-### Automated Release (Bash Scripts)
+1. Review the open release PR:
+   - Title: `chore(main): release vN.N.N`
+2. Merge when you're ready to publish.
 
-1. (if not already) Login to npm via:\
-    `npm login`
-2. Run the release script:\
-    `./bin/release.sh`
+<details>
+<summary>Explanation</summary>
 
-### Manual Release Steps
+Every push to `main` opens or updates a standing "release PR" with the next version and changelog, computed from [conventional commits](.gitmessage). Merging creates the GitHub release and tag, which triggers publish to NPM.
+
+</details>
+
+### for a Release Candidate
 
 <details>
 <summary>Instructions</summary>
 
-1. (one time) Login to npm via:\
-    `npm login`
+1. Before merging a PR to `main`, add this line to its merge commit message:\
+    `Release-As: N.N.N-rcN`
+2. Merge the release PR it opens (proposes that `-rc` version).
+3. Confirm the `npm-publish` workflow succeeds with the `rc` npm tag.
+
+</details>
+
+## Legacy Fallback Manual Release
+
+> [!WARNING]
+> Use only if [Automated Release] is broken. Prefer fixing [Automated Release] over this.
+
+<details>
+<summary>Instructions</summary>
+
+[Automated Release]: #automated-release
+
+### _either_ Automated Release Script
+
+1. Run the release script:\
+    `./bin/release.sh`
+
+### _or_ Manual Release Steps
+
 1. Create new branch for version bump.
 1. Verify build is up-to-date:\
     `npm run build:css`\
@@ -26,9 +52,7 @@ Only appointed team members may publish releases.
 1. Build with new version:\
     `npm run build:css`
 1. Commit, push, PR, review, merge.
-1. Publish to NPM via:\
-    `npm publish --access public`\
-    <sub>Project build will automatically occur before publish.</sub>
-1. Create release and tag on GitHub.
+1. Create release and tag on GitHub.\
+    <sub>This triggers the `npm-publish` GitHub Actions workflow, which publishes to NPM.</sub>
 
 </details>

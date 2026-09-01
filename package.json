@@ -1,6 +1,9 @@
 {
   "name": "@tacc/core-styles",
   "version": "3.0.0-alpha.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "author": "TACC COA CMD <coa-cmd@tacc.utexas.edu>",
   "contributors": [
@@ -38,13 +41,13 @@
     "watch": "npm-watch"
   },
   "engines": {
-    "node": ">=20.x",
+    "node": ">=22.x",
     "npm": ">=7.x"
   },
   "homepage": "https://github.com/TACC/Core-Styles",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/TACC/Core-Styles.git"
+    "url": "git+https://github.com/TACC/Core-Styles.git"
   },
   "peerDependencies": {
     "@csstools/postcss-design-tokens": "^4.0.1",
@@ -56,7 +59,6 @@
     "postcss": "^8.4.38",
     "postcss-banner": "^4.0.1",
     "postcss-cli": "^10.0.0",
-    "postcss-extend": "^1.0.5",
     "postcss-import": "^15.0.0",
     "postcss-mixins": "^10.0.1",
     "postcss-preset-env": "^10.0.2",
@@ -73,20 +75,16 @@
     "postcss-banner": "To prepend preserved comment to built stylesheets",
     "postcss-cli": "To process CSS (the simplest and cheapest PostCSS runner)",
     "postcss-import": "To import CSS files at build-time",
-    "postcss-extend": "(DEPRECATED) To extend CSS rule sets at build-time",
     "postcss-preset-env": "To use future CSS features now",
     "// postcss-preset-env": "Using bleeding edge because https://github.com/csstools/postcss-plugins/issues/481#issuecomment-1334903391",
     "postcss-replace": "To edit relative paths to fonts"
   },
   "devDependencies": {
-    "@fractality/fractality": "^1.6.3",
-    "@fractality/handlebars": "^1.4.3",
-    "@fractality/mandelbrot": "^1.12.3",
+    "@fractality/fractality": "^1.7.0",
     "minimist": "^1.2.7",
     "npm-watch": "^0.13.0"
   },
   "overrides": {
-    "qs": "6.14.1",
     "axios": "0.30.0",
     "package-json": "7.0.0",
     "serve-static": "1.16.3",
