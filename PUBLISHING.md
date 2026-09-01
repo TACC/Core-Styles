@@ -14,8 +14,10 @@ Every push to `main` opens or updates a standing "release PR" with the next vers
 
 </details>
 
+### for a Release Candidate
+
 <details>
-<summary>Release Candidate</summary>
+<summary>Instructions</summary>
 
 1. Before merging a PR to `main`, add this line to its merge commit message:\
     `Release-As: N.N.N-rcN`
@@ -34,12 +36,12 @@ Every push to `main` opens or updates a standing "release PR" with the next vers
 
 [Automated Release]: #automated-release
 
-#### _either_ Automated Release Script
+### _either_ Automated Release Script
 
 1. Run the release script:\
     `./bin/release.sh`
 
-#### _or_ Manual Release Steps
+### _or_ Manual Release Steps
 
 1. Create new branch for version bump.
 1. Verify build is up-to-date:\
