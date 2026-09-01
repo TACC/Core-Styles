@@ -2,7 +2,7 @@
 
 Only appointed team members may publish releases.
 
-Releases are automated via [release-please](https://github.com/googleapis/release-please): every push to `main` opens or updates a standing "release PR" with the next version and changelog, computed from [conventional commits](.gitmessage). A [`build-dist-for-release`](.github/workflows/build-dist-for-release.yml) workflow keeps that PR's `dist/` in sync automatically.
+Releases are automated via [release-please](https://github.com/googleapis/release-please): every push to `main` opens or updates a standing "release PR" with the next version and changelog, computed from [conventional commits](.gitmessage). A [`build-dist-for-v2-release`](.github/workflows/build-dist-for-v2-release.yml) workflow keeps that PR's `dist/` in sync automatically.
 
 1. Review and merge the open release-please PR (titled `chore(main): release vN.N.N`) when you're ready to publish.
 1. Merging creates the GitHub release and tag, which triggers [`npm-publish`](.github/workflows/npm-publish.yml) to publish to npm via OIDC.

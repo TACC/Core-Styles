@@ -8,7 +8,7 @@
 # is a no-op. The commit uses the default GITHUB_TOKEN, whose pushes don't
 # cascade-trigger other workflows, so this can't loop on itself.
 
-name: Build dist for release
+name: Build dist for v2 release
 
 on:
   push:
