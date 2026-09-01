@@ -14,6 +14,16 @@ Every push to `main` opens or updates a standing "release PR" with the next vers
 
 </details>
 
+<details>
+<summary>Release Candidate</summary>
+
+1. Before merging a PR to `main`, add this line to its merge commit message:\
+    `Release-As: N.N.N-rcN`
+2. Merge the release PR it opens (proposes that `-rc` version).
+3. Confirm the `npm-publish` workflow succeeds with the `rc` npm tag.
+
+</details>
+
 ## Legacy Fallback Manual Release
 
 > [!WARNING]
