@@ -6,7 +6,8 @@
       "release-type": "node",
       "package-name": "@tacc/core-styles",
       "skip-changelog": true,
-      "include-component-in-tag": false
+      "include-component-in-tag": false,
+      "prerelease": true
     }
   }
 }
