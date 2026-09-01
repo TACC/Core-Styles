@@ -4,7 +4,6 @@
 
 1. Review the open release PR:
    - Title: `chore(main): release vN.N.N`
-   - Branch: `release/vN.N.N`
 2. Merge when you're ready to publish.
 
 <details>
