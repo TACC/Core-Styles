@@ -72,7 +72,7 @@ tr:nth-child(even) :is(th, td),
 /* TODO: Replace with APCD-CMS "responsive-data-tables" solution */
 /* SEE: https://github.com/TACC/Core-CMS-Custom/blob/3bec84b/apcd-cms/src/apps/view_users/static/view_users_table/css/table.css#L65-L129 */
 /* FAQ: [colspan] is excluded because a spanned cell is wider than one column, so pinning it would overlap the columns beneath it */
-:is(th, td):not([colspan]):first-child {
+th:not([colspan]):first-child {
   position: sticky;
   left: 0;
 }
