@@ -2,7 +2,7 @@ A [table]({{path './table' }}) whose `<thead>` uses `[colspan]` to group columns
 
 > **ⓘ Notice**
 >
-> The row header (`<th>`) still pins during horizontal scroll, but a `[colspan]`-ed cell never does, even when it is a row's first child — otherwise it would overlap the columns beneath it.
+> A `[colspan]`-ed cell never pins, even when it is a row's first child — otherwise it would overlap the columns beneath it. A row's first column otherwise only pins when it is a `<th>`.
 
 Scroll the table horizontally to confirm.
 

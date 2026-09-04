@@ -1,38 +1,83 @@
-<div class="o-table-wrap  o-table-wrap--overflow-scroll">
-  <table>
-    <thead>
-      <tr>
-        <th colspan="2">Product</th>
-        <th colspan="2">Sales</th>
-      </tr>
-      <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Q1</th>
-        <th>Q2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>Widget</th>
-        <td>Hardware</td>
-        <td>120</td>
-        <td>150</td>
-      </tr>
-      <tr>
-        <th>Gadget</th>
-        <td>Hardware</td>
-        <td>90</td>
-        <td>100</td>
-      </tr>
-      <tr>
-        <th>Gizmo</th>
-        <td>Software</td>
-        <td>60</td>
-        <td>80</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<dl>
+  <dt>With <code>&lt;th&gt;</code> in <code>&lt;tbody&gt;</code></dt>
+  <dd>
+    <div class="o-table-wrap  o-table-wrap--overflow-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th colspan="2">Sales</th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Q1</th>
+            <th>Q2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Widget</th>
+            <td>Hardware</td>
+            <td>120</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <th>Gadget</th>
+            <td>Hardware</td>
+            <td>90</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <th>Gizmo</th>
+            <td>Software</td>
+            <td>60</td>
+            <td>80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </dd>
+</dl>
 
-{{> @table--content-after }}
+<dl>
+  <dt>Without <code>&lt;th&gt;</code> in <code>&lt;tbody&gt;</code></dt>
+  <dd>
+    <div class="o-table-wrap  o-table-wrap--overflow-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Product</th>
+            <th colspan="2">Sales</th>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Q1</th>
+            <th>Q2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Widget</td>
+            <td>Hardware</td>
+            <td>120</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>Gadget</td>
+            <td>Hardware</td>
+            <td>90</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Gizmo</td>
+            <td>Software</td>
+            <td>60</td>
+            <td>80</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </dd>
+</dl>
