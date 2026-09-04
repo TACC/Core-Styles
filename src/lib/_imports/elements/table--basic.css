@@ -72,12 +72,8 @@ tr:nth-child(even) :is(th, td),
 /* TODO: Replace with APCD-CMS "responsive-data-tables" solution */
 /* SEE: https://github.com/TACC/Core-CMS-Custom/blob/3bec84b/apcd-cms/src/apps/view_users/static/view_users_table/css/table.css#L65-L129 */
 /* FAQ: [colspan] and [rowspan] are excluded because a spanned cell no longer aligns to a single column, so pinning it would overlap the columns beneath it */
-th:not([colspan]):not([rowspan]):first-child {
-  position: sticky;
-  left: 0;
-}
-/* BACKWARD COMPATIBILITY: pinning `td:first-child` (not just `th:first-child`) is only safe for a table that never uses [colspan]/[rowspan], since either can shift which cell is truly a row's first column */
-table:not(:has([colspan], [rowspan])) :is(td, th):first-child {
+/* FAQ: scoped to `tbody` so a `<thead>` cell (e.g. a column label) never pins on its own, leaving an unrelated column pinned beneath it */
+tbody th:not([colspan]):not([rowspan]):first-child {
   position: sticky;
   left: 0;
 }
