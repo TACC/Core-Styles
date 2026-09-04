@@ -1,8 +1,10 @@
 A [table]({{path './table' }}) whose `<thead>` uses `[colspan]` to group columns under a shared header.
 
 > **ⓘ Notice**
->
-> A `[colspan]`-ed cell never pins, even when it is a row's first child — otherwise it would overlap the columns beneath it. A row's first column otherwise only pins when it is a `<th>`, including a `<thead>` cell (a column label can pin independently of its column's body cells).
+> A `[colspan]`-ed cell never pins, even when it is a row's first child — otherwise it would overlap the columns beneath it.
+
+> **ⓘ Notice**
+> A row's first column can only pin if it is a `<th>`, because that is explicit definition for cell in a column that labels it's rows.
 
 Scroll the table horizontally to confirm.
 
