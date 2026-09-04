@@ -379,5 +379,8 @@ variants:
                   custom-1: 1 TB
                   custom-2: <span class="c-pill c-pill--is-success">932 GB</span>
                   time: 12/01/2019 11:04:19
+  - name: with-grouped-header
+    label: With Grouped Header
+    view: 'table--with-grouped-header.hbs'
   - name: content-after
     hidden: true
