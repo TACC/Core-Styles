@@ -1,6 +1,6 @@
 {
   "name": "@tacc/core-styles",
-  "version": "2.58.1-rc4",
+  "version": "2.58.1-rc5",
   "publishConfig": {
     "access": "public"
   },
