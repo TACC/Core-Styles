@@ -76,6 +76,11 @@ th:not([colspan]):first-child {
   position: sticky;
   left: 0;
 }
+/* BACKWARD COMPATIBILITY: a table with no [colspan]/[rowspan] anywhere can safely pin a plain <td> first column too, since nothing can shift which cell is truly a row's first column */
+table:not(:has([colspan], [rowspan])) :is(td, th):first-child {
+  position: sticky;
+  left: 0;
+}
 
 th {
   text-align: inherit; /* copied from Bootstrap 4.0.0 */
