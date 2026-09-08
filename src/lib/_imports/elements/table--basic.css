@@ -75,7 +75,7 @@ tr:nth-child(even) :is(th, td),
 /* FAQ: a <td> pins too, but only in a table with no [colspan]/[rowspan] anywhere — otherwise a span could shift which cell is truly a row's first column */
 :is(
   th:not([colspan]),
-  table:not(:has([colspan], [rowspan])) :is(td, th)
+  table:not(:has([colspan], [rowspan])) td
 ):first-child {
   position: sticky;
   left: 0;
