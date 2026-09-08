@@ -1,0 +1,52 @@
+:scope {
+  --color-info-light-x: var(--color-gray-light-x);
+  --color-info-light: var(--color-gray-light);
+  --color-info-normal: var(--color-gray-dark);
+  --color-info-dark: var(--color-gray-x-dark);
+  --color-info-dark-x: var(--color-gray-xx-dark);
+  --color-info-weak: var(--color-gray-weak);
+  --color-danger-light-x: var(--color-traffic-red-light-x);
+  --color-danger-light: var(--color-traffic-red-light);
+  --color-danger-normal: var(--color-traffic-red-normal);
+  --color-danger-dark: var(--color-traffic-red-dark);
+  --color-danger-dark-x: var(--color-traffic-red-dark-x);
+  --color-danger-weak: var(--color-traffic-red-weak);
+  --color-warning-light-x: var(--color-traffic-yellow-light-x);
+  --color-warning-light: var(--color-traffic-yellow-light);
+  --color-warning-normal: var(--color-traffic-yellow-normal);
+  --color-warning-dark: var(--color-traffic-yellow-dark);
+  --color-warning-dark-x: var(--color-traffic-yellow-dark-x);
+  --color-warning-weak: var(--color-traffic-yellow-weak);
+  --color-success-light-x: var(--color-traffic-green-light-x);
+  --color-success-light: var(--color-traffic-green-light);
+  --color-success-normal: var(--color-traffic-green-normal);
+  --color-success-dark: var(--color-traffic-green-dark);
+  --color-success-dark-x: var(--color-traffic-green-dark-x);
+  --color-success-weak: var(--color-traffic-green-weak);
+  --color-extra-light-x: var(--color-traffic-blue-light-x);
+  --color-extra-light: var(--color-traffic-blue-light);
+  --color-extra-normal: var(--color-traffic-blue-normal);
+  --color-extra-dark: var(--color-traffic-blue-dark);
+  --color-extra-dark-x: var(--color-traffic-blue-dark-x);
+  --color-extra-weak: var(--color-traffic-blue-weak);
+  --color-neutral-light-xx: var(--color-gray-light-2x);
+  --color-neutral-light-x: var(--color-gray-light-x);
+  --color-neutral-light: var(--color-gray-light);
+  --color-neutral-normal: var(--color-gray-normal);
+  --color-neutral-dark: var(--color-gray-dark);
+  --color-neutral-dark-x: var(--color-gray-x-dark);
+  --color-neutral-dark-xx: var(--color-gray-xx-dark);
+  --color-neutral-dark-xxx: var(--color-gray-xxx-dark);
+  --color-neutral-weak: var(--color-gray-weak);
+  --spacing-small-xx: var(--spacing-fourth);
+  --spacing-small-x: var(--spacing-half);
+  --spacing-small: var(--spacing-1);
+  --spacing-normal: var(--spacing-2);
+  --spacing-large: var(--spacing-3);
+  --spacing-large-x: var(--spacing-4);
+  /* XXX: Broken */
+  /*
+  --regular: var(--font-weight-400);
+  --bold: var(--font-weight-800);
+  */
+}
