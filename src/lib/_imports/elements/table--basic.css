@@ -72,9 +72,10 @@ tr:nth-child(even) :is(th, td),
 /* TODO: Replace with APCD-CMS "responsive-data-tables" solution */
 /* SEE: https://github.com/TACC/Core-CMS-Custom/blob/3bec84b/apcd-cms/src/apps/view_users/static/view_users_table/css/table.css#L65-L129 */
 :first-child:is(
-  /* FAQ: always pins — it's exactly one column wide */
+  /* FAQ: such a th is exactly one column wide */
   th:not([colspan]),
-  /* FAQ: excluded if the table has a span anywhere, since a span could shift which cell is truly a row's first column */
+  /* FAQ: colspan can make a cell too wide to pin */
+  /* FAQ: rowspan can shift which cell is truly first */
   table:not(:has([colspan], [rowspan])) td
 ) {
   position: sticky;
