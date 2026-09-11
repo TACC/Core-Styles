@@ -92,6 +92,7 @@ p + :is(ul, ol, dl) {
   - wrap caption text at content edge
 */
 & figure {
+  width: 100%;
   display: table;
 }
 & figure figcaption {
