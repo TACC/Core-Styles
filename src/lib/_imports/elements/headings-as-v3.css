@@ -2,7 +2,7 @@
 
 /*
 Preview of Core-Styles v3's planned heading redesign, once <h2> stops
-carrying the lead-paragraph look (SEE trumps/s-lead.css): every level
+carrying the lead-paragraph look (SEE trumps/u-lead.css): every level
 below h1 shifts down to the next level's current look. Known caveat,
 still under review: this leaves v3's h5 unstyled, since v2's h6 already
 has no distinct look of its own.
