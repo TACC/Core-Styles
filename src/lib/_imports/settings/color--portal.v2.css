@@ -6,4 +6,9 @@
   /* DEPRECATED */
   --global-color-accent--alt: var(--global-color-accent--x-light);
   --global-color-accent--weak: var(--global-color-accent--xx-light);
+
+  /* Portal info uses primary neutrals */
+  --global-color-info--light: var(--global-color-primary--x-light);
+  --global-color-info--normal: var(--global-color-primary--normal);
+  --global-color-info--dark: var(--global-color-primary--x-dark);
 }

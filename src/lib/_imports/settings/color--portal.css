@@ -2,10 +2,3 @@
 
 @import url("./color--portal.v1.css");
 @import url("./color--portal.v2.css");
-
-:root {
-  /* Portal info uses primary neutrals */
-  --global-color-info--light: var(--global-color-primary--x-light);
-  --global-color-info--normal: var(--global-color-primary--normal);
-  --global-color-info--dark: var(--global-color-primary--x-dark);
-}
