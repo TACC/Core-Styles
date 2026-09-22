@@ -104,17 +104,22 @@
 /* Modifers: Style: Text & Background */
 
 :--o-section--style {
-  --box-shadow--fake-bkgd: 100vw 0 0 100vw var(--color--bkgd),
-                          -100vw 0 0 100vw var(--color--bkgd);
+  position: relative;
 
   color: var(--color--text);
-  background-color: var(--color--bkgd);
-  box-shadow: var(--box-shadow--fake-bkgd);
-  clip-path: inset(0 -100vw); /* to hide vertical overflow of extended bkgd */
 }
-/* Nested sections must not stretch to page edge */
+:--o-section--style::before {
+  content: '';
+  background-color: var(--color--bkgd);
+  position: absolute;
+  inset: 0 -100vw;
+}
+/* Nested sections must not appear to stretch to page edge */
 :--o-section--style :--o-section--style {
-  box-shadow: none;
+  background-color: var(--color--bkgd);
+}
+:--o-section--style :--o-section--style::before {
+  display: none;
 }
 
 /* Modifers: Style: Borders */
@@ -150,11 +155,6 @@
 
 /* Modifers: Banner */
 /* FP-1462: Extract to new banner component(s) */
-
-:--o-section--style.o-section--banner + :--o-section--style {
-  box-shadow: var(--box-shadow--fake-bkgd);
-  clip-path: inset(0 -100vw);
-}
 
 
 
