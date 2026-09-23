@@ -105,21 +105,26 @@
 
 :--o-section--style {
   position: relative;
+  isolation: isolate;
 
   color: var(--color--text);
-}
-:--o-section--style::before {
-  content: '';
   background-color: var(--color--bkgd);
-  position: absolute;
-  inset: 0 -100vw;
+
+  &::before {
+    content: '';
+    background-color: var(--color--bkgd);
+    position: absolute;
+    inset: 0 -100vw;
+    z-index: -1;
+  }
 }
-/* Nested sections must not appear to stretch to page edge */
+/* Nested sections must not stretch to page edge */
 :--o-section--style :--o-section--style {
   background-color: var(--color--bkgd);
-}
-:--o-section--style :--o-section--style::before {
-  display: none;
+
+  &::before {
+    display: none;
+  }
 }
 
 /* Modifers: Style: Borders */
