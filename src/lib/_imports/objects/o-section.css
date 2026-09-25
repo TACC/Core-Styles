@@ -138,6 +138,9 @@
   &::before {
     display: none;
   }
+  &::after {
+    display: none;
+  }
 }
 
 /* Modifers: Style: Borders */
@@ -149,6 +152,46 @@
 :--o-section--dark + :--o-section--dark {
   box-shadow: inset 0 var(--global-border-width--normal) 0 0 var(--color--line);
 }
+
+/* To add borders above and below a section AND its extended background */
+:--o-section--border {
+  --border-width: var(--global-border-width--normal);
+  --border-color: var(--color--line, var(--global-color-primary--dark));
+  --border: var(--border-width) solid var(--border-color);
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 100vw;
+    pointer-events: none;
+    box-sizing: border-box;
+
+    /* FAQ: translateX avoids margin-based 100vw horizontal scroll (bordered → plain seam) */
+    transform: translateX(-50%);
+
+    border-top: var(--border);
+  }
+}
+/* To add bottom border only when not followed by another bordered section */
+:--o-section--border:not(:has(+ :--o-section--border))::after {
+  border-bottom: var(--border);
+}
+
+/* To add borders above and below a nested section */
+:--o-section :--o-section--border {
+  border-top: var(--border);
+  box-shadow: none;
+}
+:--o-section :--o-section--border:not(:has(+ :--o-section--border)) {
+  border-bottom: var(--border);
+}
+
 
 
 
