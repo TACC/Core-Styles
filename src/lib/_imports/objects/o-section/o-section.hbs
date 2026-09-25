@@ -1,10 +1,12 @@
+<h1>Standard Sections</h1>
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section</h2>
-    {{render '@o-section--usage'}}
+    <h3>Sub-heading</h3>
+    <p>{{render '@o-section--usage'}}</p>
 </section>
 
-<hr />
+<h1>Paried Sections</h1>
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (First of a Pair)</h2>
@@ -17,11 +19,21 @@
     {{> @button-samples }}
 </section>
 
-<hr />
+<h1>Styled Sections</h1>
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (before Muted Section)</h2>
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+<section class="o-section o-section--style-accent">
+    <h2>Accent Section</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    {{> @button-samples }}
+</section>
+<section class="container o-section o-section--style-accent">
+    <h2>Accent Section (with <code>.container</code>)</h2>
+    <p>Combining <code>.container</code> directly on an <code>.o-section</code> caps its own width at very wide viewports (&gt;1920px), which can expose gaps in the fake background beyond ~3160px (or try zooming out).</p>
     {{> @button-samples }}
 </section>
 <section class="o-section o-section--style-muted">
@@ -30,12 +42,12 @@
     {{> @button-samples }}
 </section>
 <section class="o-section o-section--{{this._self.name}}">
-    <h2>Section (after Muted Section)</h2>
+    <h2>Section (after Accent + Muted Sections)</h2>
     <p>{{> @text-of-one-paragraph-with-actions }}</p>
     {{> @button-samples }}
 </section>
 
-<hr />
+<h1>Nested Sections</h1>
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (with Nested Sections)</h2>
@@ -55,11 +67,43 @@
         <p>{{> @text-of-one-paragraph-with-actions }}</p>
         {{> @button-samples }}
     </div>
+    <div class="o-section o-section--style-accent">
+        <h3>(Nested) Accent Section</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+        {{> @button-samples }}
+    </div>
 </section>
 
-<hr />
+<h1>Bordered Sections</h1>
+
+<section class="o-section o-section--style-light o-section--has-border">
+    <h2>Section (Style Light, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-muted o-section--has-border">
+    <h2>Section (Style Muted, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-dark o-section--has-border">
+    <h2>Section (Style Dark, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-light o-section--has-border">
+    <h2>Section (Style Light, Has Border) (with Nested Sections)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    <section class="o-section o-section--style-muted o-section--has-border">
+        <h3>(Nested) Section (Style Muted, Has Border)</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    </section>
+    <section class="o-section o-section--style-muted o-section--has-border">
+        <h3>(Nested) Section (Style Muted, Has Border)</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    </section>
+</section>
+
+<h1>Unique Sections</h1>
 
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (at Bottom of Page)</h2>
-    <p>At the bottom of a CMS page: a <strong>light</strong> Section will stand out above the Footer, a <strong>muted</strong> Section will stand out above the Footer, a <strong>dark</strong> Section will visually merge with the Footer.</p>
+    <p>At the bottom of a CMS page: a <strong>light</strong> Section will stand out above the Footer, an <strong>accent</strong> Section will stand out above the Footer, a <strong>muted</strong> Section will stand out above the Footer, and a <strong>dark</strong> Section will visually merge with the Footer.</p>
 </section>

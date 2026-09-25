@@ -5,7 +5,7 @@
 /*
 Tools
 
-Tools are global sets of properties e.g. mixins / `@extend`s / functional selectors, functions / `@plugin`s. They are not defined as Settings, because one may require one of the global Settings as a default parameter.
+Tools are global sets of properties e.g. mixins / `@mixin`s / functional selectors, functions / `@plugin`s. They are not defined as Settings, because one may require one of the global Settings as a default parameter.
 
 Reference:
 

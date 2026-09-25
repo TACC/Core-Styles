@@ -3,6 +3,10 @@
 @design-tokens url('../../tokens/v2.json') format('style-dictionary3');
 
 :root {
+  --global-color-info--light: var(--global-color-primary--x-light);
+  --global-color-info--normal: var(--global-color-primary--normal);
+  --global-color-info--dark: var(--global-color-primary--x-dark);
+
   /* DEPRECATED */
   --global-color-accent--alt: var(--global-color-accent--x-light);
   --global-color-accent--weak: var(--global-color-accent--xx-light);

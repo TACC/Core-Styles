@@ -1,0 +1,8 @@
+@media (width < 768px) {
+  .s-footer--fat .s-footer__identity {
+    background-color: unset;
+
+    margin-top: 0;
+    padding-inline: 0;
+  }
+}

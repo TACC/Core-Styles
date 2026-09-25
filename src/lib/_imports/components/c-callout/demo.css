@@ -1,0 +1,5 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+dl > dd + dt {
+  margin-top: 3em;
+}

@@ -3,35 +3,35 @@
 .s-breadcrumbs:where(nav),
 .s-breadcrumbs:where(ol),
 .s-breadcrumbs-via-ul {
-  @mixin x-breadcrumbs;
+  @mixin breadcrumbs;
 }
 .s-breadcrumbs:where(nav),
 .s-breadcrumbs-via-ul {
-  @mixin x-breadcrumbs-major;
+  @mixin breadcrumbs-major;
 }
 
 .s-breadcrumbs:where(nav) ol,
 .s-breadcrumbs:where(ol),
 .s-breadcrumbs-via-ul ul {
-  @mixin x-breadcrumbs__list;
+  @mixin breadcrumbs__list;
 }
 .s-breadcrumbs:where(nav) ol,
 .s-breadcrumbs-via-ul ul {
-  @mixin x-breadcrumbs-major__list;
+  @mixin breadcrumbs-major__list;
 }
 
 .s-breadcrumbs:where(nav) ol li,
 .s-breadcrumbs:where(ol) li,
 .s-breadcrumbs-via-ul ul li {
-  @mixin x-breadcrumbs__list-item;
+  @mixin breadcrumbs__list-item;
 }
 .s-breadcrumbs:where(nav) ol li,
 .s-breadcrumbs-via-ul ul li {
-  @mixin x-breadcrumbs-major__list-item;
+  @mixin breadcrumbs-major__list-item;
 }
 
 .s-breadcrumbs:where(nav) ol li + li,
 .s-breadcrumbs:where(ol) li + li,
 .s-breadcrumbs-via-ul ul li + li {
-  @mixin x-breadcrumbs__list-item--prefix-separator;
+  @mixin breadcrumbs__list-item--prefix-separator;
 }

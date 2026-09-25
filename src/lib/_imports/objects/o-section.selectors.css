@@ -7,11 +7,15 @@
     .section;
 @custom-selector :--o-section--style
     :--o-section--light,
+    :--o-section--accent,
     :--o-section--muted,
     :--o-section--dark;
 @custom-selector :--o-section--light
     .o-section--style-light,
     .section--light;
+@custom-selector :--o-section--accent
+    .o-section--style-accent,
+    .section--accent;
 @custom-selector :--o-section--muted
     .o-section--style-muted,
     .section--muted;

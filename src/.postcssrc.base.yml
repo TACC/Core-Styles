@@ -1,8 +1,6 @@
 plugins:
   postcss-import: {}
 
-  postcss-extend: {} # DEPRECATED
-
   postcss-mixins: {}
 
   '@csstools/postcss-design-tokens': {}
@@ -15,7 +13,9 @@ plugins:
     features:
       custom-media-queries: true
       media-query-ranges: true
-      nesting-rules: true
+      # Disabled because supported browser have native support
+      # Disabled to let DevTools show nesting when inspecting
+      nesting-rules: false
       custom-selectors: true
       relative-color-syntax: true
       # This feature (to come in v8) is not ready yet
@@ -33,6 +33,9 @@ plugins:
         # So that if we use `initial` it remains `initial`
         # SEE: src/lib/_imports/tools/x-mailto-text-replace.css
         reduceInitial: false
+        # Silence misleading syntax warnings
+        # https://github.com/postcss/postcss-calc/issues/216#issuecomment-3680948805
+        calc: false
 
   postcss-banner:
     banner: 'no build id'

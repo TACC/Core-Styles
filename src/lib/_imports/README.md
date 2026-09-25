@@ -16,7 +16,7 @@ These directories are based on [ITCSS][tacc-itcss].
 
 ## Documentation Format
 
-See [Fractal: User Guide: Components][fractal-docs-guide]. (What we call "Patterns", Fractal calls "Components".)
+See [Fractality: User Guide: Components][fractality-docs-guide]. (What we call "Patterns", Fractality calls "Components".)
 
 ### Overview
 
@@ -37,4 +37,4 @@ See [TACC: CSS Style Guide][tacc-style-guide].
 
 [tacc-oocss]: https://tacc-main.atlassian.net/wiki/x/7Atv 'TACC: Object-Oriented CSS'
 [tacc-style-guide]: https://tacc-main.atlassian.net/wiki/x/7Bdv 'TACC: CSS Style Guide'
-[fractal-docs-guide]: https://fractal.build/guide/components/#what-defines-a-component 'Fractal: User Guide: Components'
+[fractality-docs-guide]: https://fractal.build/guide/components/#what-defines-a-component 'Fractality: User Guide: Components'

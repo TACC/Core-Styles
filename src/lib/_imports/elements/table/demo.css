@@ -1,0 +1,9 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+/* To force horizontal scrollbar (so sticky first-column behavior is visible) */
+.o-table-wrap--overflow-scroll {
+  max-width: 200px;
+}
+.o-table-wrap--overflow-scroll table {
+  white-space: nowrap;
+}

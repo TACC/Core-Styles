@@ -1,0 +1,14 @@
+/* This CSS is ONLY for the pattern library. It is NOT part of the pattern. */
+
+.media img {
+    max-width: 120px;
+    height: auto;
+}
+
+dd {
+    float: left;
+    width: clamp(300px, calc(50% - 25px), 400px); /* 25px is <dd> margin-left */
+}
+dt {
+    clear: left;
+}

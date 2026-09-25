@@ -1,7 +1,14 @@
 @import url("./c-message.selectors.css");
 
 :--c-message--scope-section,
-:--c-message--scope-global {
+:--c-message--scope-global,
+.alert {
   padding-block: 20px;
   padding-inline: 30px;
+}
+
+/* To match dismissible inset to expanded alert inline padding */
+/* SEE: ../bootstrap4/components/alert.css */
+.alert-dismissible {
+  padding-right: calc(30px + 1ch);
 }

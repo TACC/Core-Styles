@@ -6,6 +6,7 @@ The shared styles for TACC WMA Workspace Portals & Websites
 ## Known Clients
 
 - [Core CMS], the base CMS code for TACC WMA CMS Websites
+- [Core CMS Custom], the host for custom CMS assets
 - [Core Portal], the base Portal code for TACC WMA CMS Websites
 - [Core Components], the UI components for [Core Portal] and [TUP UI]
 - [TUP UI], the client code for TACC User Portal
@@ -171,7 +172,7 @@ Notes:
 
 ### Prerequisites for Running
 
-* Nodejs 15.x
+* Nodejs 20.x
 
 ### Quick Start
 
@@ -246,13 +247,7 @@ All testing is done manually.
 
 ## Deployment
 
-### Production Deployment
-
-The Core Styles are not independently deployed.
-
-_Currently_, the demo is served by [Core CMS] (since [v3.9.0](https://github.com/TACC/Core-CMS/compare/v3.9.0)).
-
-_Later_, the demo may be deployed indpendently and `core-styles.….css` served from a CDN.
+Auto-deploy occurs [via workflow](.github/workflows/) to https://tacc.github.io/core-styles.
 
 
 ## Contributing
@@ -274,6 +269,7 @@ Core Styles **had been** an effort to replace Bootstrap. Core Styles is **compat
 [core portal deployments]: https://github.com/TACC/Core-Portal-Deployments
 [camino]: https://github.com/TACC/Camino
 [core cms]: https://github.com/TACC/Core-CMS
+[core cms custom]: https://github.com/TACC/Core-CMS-Custom
 [core portal]: https://github.com/TACC/Core-Portal
 [core components]: https://github.com/TACC/Core-Components
 [tup ui]: https://github.com/TACC/tup-ui

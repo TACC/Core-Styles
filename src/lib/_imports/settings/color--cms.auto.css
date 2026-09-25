@@ -8,6 +8,9 @@
     :root {
         --tc-near-white-l: 0.95;
         --tc-near-black-l: 0.1;
+
+        /* IMPORTANT: color.css not distinguish context, so here also not */
+        --global-color-accent--light-alt: oklab(from var(--tc-color-1) calc(l + (var(--tc-near-white-l) - l) * 3/8) a b);
     }
     :root, /* cuz websites default to "light" */
     :--light-context-safe {

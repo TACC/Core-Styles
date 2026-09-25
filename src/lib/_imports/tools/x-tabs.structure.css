@@ -1,28 +1,46 @@
-.x-tabs {
+@define-mixin tabs {
   position: relative;
   display: flex;
   flex-wrap: wrap;
 }
+.x-tabs {
+  @mixin tabs;
+}
 
-.x-tabs__toggle {
+@define-mixin tabs__toggle {
   /* FAQ: If `display: none` were used, keyboard accessibility would break */
   position: absolute;
   opacity: 0;
 }
+.x-tabs__toggle {
+  @mixin tabs__toggle;
+}
 
-.x-tabs__tab {
+@define-mixin tabs__tab--structure {
   white-space: nowrap;
   cursor: pointer;
 }
+.x-tabs__tab {
+  @mixin tabs__tab--structure;
+}
 
-.x-tabs__content {
+@define-mixin tabs__content--structure {
   width: 100%;
   display: none;
 }
-.x-tabs__content--active {
+.x-tabs__content {
+  @mixin tabs__content--structure;
+}
+@define-mixin tabs__content--active {
   order: 99;
   display: block;
 }
-.x-tabs__content--force-active {
+.x-tabs__content--active {
+  @mixin tabs__content--active;
+}
+@define-mixin tabs__content--force-active {
   display: contents;
+}
+.x-tabs__content--force-active {
+  @mixin tabs__content--force-active;
 }

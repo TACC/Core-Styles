@@ -21,8 +21,8 @@ Styleguide Tools.Mixins.Breadcrumbs
 
 /* Container */
 
-@define-mixin x-breadcrumbs {}
-@define-mixin x-breadcrumbs-major {
+@define-mixin breadcrumbs {}
+@define-mixin breadcrumbs-major {
   padding-top: var(--global-space--above-breadcrumbs, 45px);
   margin-bottom: var(--global-space--under-breadcrumbs, 40px);
   font-size: var(--global-font-size--x-small, 1.4rem);
@@ -30,7 +30,7 @@ Styleguide Tools.Mixins.Breadcrumbs
 
 /* Content */
 
-@define-mixin x-breadcrumbs--list {
+@define-mixin breadcrumbs--list {
   /* To remove whitespace between items (but still allow text wrap) */
   display: flex;
   flex-wrap: wrap;
@@ -40,43 +40,43 @@ Styleguide Tools.Mixins.Breadcrumbs
   padding-left: unset;
   margin-top: unset;
 }
-@define-mixin x-breadcrumbs-major--list {
+@define-mixin breadcrumbs-major--list {
   font-weight: var(--medium, 500);
 }
 
-@define-mixin x-breadcrumbs__list {
-  @mixin x-breadcrumbs--list;
+@define-mixin breadcrumbs__list {
+  @mixin breadcrumbs--list;
 
   /* To undo default browser list (`<ol>`, `<ul>`) styles */
   margin-bottom: unset;
 }
-@define-mixin x-breadcrumbs-major__list {
-  @mixin x-breadcrumbs-major--list;
+@define-mixin breadcrumbs-major__list {
+  @mixin breadcrumbs-major--list;
 }
 
-@define-mixin x-breadcrumbs__list-item {
+@define-mixin breadcrumbs__list-item {
   /* To remove whitespace around text */
   display: inline-flex;
 }
-@define-mixin x-breadcrumbs-major__list-item {
+@define-mixin breadcrumbs-major__list-item {
   &:last-child {
     font-weight: var(--bold, 700);
   }
 }
 
-@define-mixin x-breadcrumbs__list-item--separator {
+@define-mixin breadcrumbs__list-item--separator {
   &::after,
   &::before {
     padding-inline: 0.5ch;
   }
 }
-@define-mixin x-breadcrumbs__list-item--suffix-separator {
-  @mixin x-breadcrumbs__list-item--separator;
+@define-mixin breadcrumbs__list-item--suffix-separator {
+  @mixin breadcrumbs__list-item--separator;
 
   &::after { content: ">"; }
 }
-@define-mixin x-breadcrumbs__list-item--prefix-separator {
-  @mixin x-breadcrumbs__list-item--separator;
+@define-mixin breadcrumbs__list-item--prefix-separator {
+  @mixin breadcrumbs__list-item--separator;
 
   &::before { content: ">"; }
 }

@@ -191,11 +191,11 @@ Styleguide Trumps.Scopes.ArticleList
 
 /* Modifiers: Layout */
 
-.s-article-list--layout-a { @extend .x-layout--a; }
-.s-article-list--layout-b { @extend .x-layout--b; }
-.s-article-list--layout-c { @extend .x-layout--c; }
-.s-article-list--layout-d { @extend .x-layout--d; }
-.s-article-list--layout-e { @extend .x-layout--e; }
+.s-article-list--layout-a { @mixin layout--a; }
+.s-article-list--layout-b { @mixin layout--b; }
+.s-article-list--layout-c { @mixin layout--c; }
+.s-article-list--layout-d { @mixin layout--d; }
+.s-article-list--layout-e { @mixin layout--e; }
 
 /* Modifiers: Layout: Column-Based */
 

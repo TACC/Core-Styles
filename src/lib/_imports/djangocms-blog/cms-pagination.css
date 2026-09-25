@@ -5,7 +5,6 @@
 
   margin-block: var(--global-space--x-large);
 
-  width: fit-content;
   margin-inline: auto;
 }
 .pagination a {

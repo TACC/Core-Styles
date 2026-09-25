@@ -1,6 +1,9 @@
-.col-stretch-content-y {
+@define-mixin col-stretch-content-y {
   display: grid;
   align-content: normal; /* to overwrite potential alignment */
+}
+.col-stretch-content-y {
+  @mixin col-stretch-content-y;
 }
 .col-muted {
   color: var(--global-color-primary--x-dark);

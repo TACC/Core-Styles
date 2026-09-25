@@ -1,0 +1,29 @@
+label: Alerts
+context:
+  shouldLoadBootstrap: true
+  # shouldLoadCMS: true # (for expanded message size)
+  groups:
+    - title: Basic
+      linkText: "with a link"
+      types:
+        - type: primary
+        - type: secondary
+        - type: success
+        - type: danger
+        - type: warning
+        - type: info
+        - type: light
+        - type: dark
+    - title: Dismissible
+      message: Holy guacamole! You should check in on some of those fields below.
+      types:
+        - type: warning
+          dismissible: true
+    - title: with Heading
+      heading: Well done!
+      message: Aww yeah, you successfully read this important alert message.
+      messageAfterHr: Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+      types:
+        - type: secondary
+        - type: success
+          hasHr: true

@@ -1,7 +1,4 @@
-Adds one fix and one feature to [default sections]({{path './o-section' }}):
-
-- Ensures section background is wide enough on "god-wide" viewports.
-- Adds border modifier:
+Adds a border modifier to [default sections]({{path './o-section' }}):
 
   | Class (Std.)              | Class (Alt.)     | Description
   | - | - | - |

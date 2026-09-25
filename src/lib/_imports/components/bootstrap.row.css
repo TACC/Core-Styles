@@ -3,7 +3,7 @@
 /* BOOTSTRAP 4 */
 /* Add this class to the row in need */
 .row-col-stretch-content-y .col {
-  @extend .col-stretch-content-y;
+  @mixin col-stretch-content-y;
 }
 
 /* BOOTSTRAP 3 */

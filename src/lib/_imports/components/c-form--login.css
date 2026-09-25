@@ -77,7 +77,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @extend :--c-button--width-long;
+  @mixin button--width-long;
 }
 & :--form__button[type="submit"] {
   padding-block: 10px; /* overrides core-styles.base.css button styles */

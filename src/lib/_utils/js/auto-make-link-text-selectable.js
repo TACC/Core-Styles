@@ -1,9 +1,9 @@
 import makeLinkContentSelectable from './make-link-text-selectable.js';
 
 const params = Object.values({
-  attribute: 'data-text-selectable',
-  textElementQuerySelector: '*',
-  layer: 'base.allow-override'
+  linkAttribute: 'data-text-selectable',
+  linkTextSelector: '*',
+  cssLayer: 'base.allow-override'
 });
 
 if (document.readyState === 'loading') {
