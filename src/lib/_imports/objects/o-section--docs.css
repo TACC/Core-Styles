@@ -2,6 +2,16 @@
 
 
 
+/* To fix section background on god-wide screens */
+/* CAVEAT: This just pushes the problem to even wider screens */
+:--o-section--muted {
+  /* FAQ: Mimics Core-Styles except changes any "50" to "25" */
+  --fake-bkgd-horiz: 25vw;
+  --fake-bkgd-spread: 25vw;
+}
+
+
+
 /* To add border to .o-section's */
 :--o-section--border {
   --border-width: var(--global-border-width--normal);

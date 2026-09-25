@@ -104,18 +104,31 @@
 /* Modifers: Style: Text & Background */
 
 :--o-section--style {
+  --fake-bkgd-horiz: 100vw;
+  --fake-bkgd-spread: 100vw;
+  --fake-bkgd-color: var(--color--bkgd);
+  --fake-bkgd:
+    var(--fake-bkgd-horiz) 0 0 var(--fake-bkgd-spread) var(--fake-bkgd-color),
+    calc(-1 * var(--fake-bkgd-horiz)) 0 0 var(--fake-bkgd-spread) var(--fake-bkgd-color);
+
   position: relative;
   isolation: isolate;
 
   color: var(--color--text);
   background-color: var(--color--bkgd);
 
+  /* To extend background color wider than section */
   &::before {
     content: '';
-    background-color: var(--color--bkgd);
     position: absolute;
-    inset: 0 -100vw;
+    inset: 0;
     z-index: -1;
+
+    box-shadow: var(--fake-bkgd);
+
+    /* To prevent horizontal scrolling */
+    /* FAQ: Done via pseudo-element not element to not clip parent content */
+    clip-path: inset(0 calc(-1 * var(--fake-bkgd-horiz)));
   }
 }
 /* Nested sections must not stretch to page edge */
@@ -130,22 +143,11 @@
 /* Modifers: Style: Borders */
 
 /* To add border between same-style sections */
-:--o-section--light:has(+ :--o-section--light),
-:--o-section--accent:has(+ :--o-section--accent),
-:--o-section--muted:has(+ :--o-section--muted),
-:--o-section--dark:has(+ :--o-section--dark) {
-  --border-width: var(--global-border-width--normal);
-
-  &::before {
-    bottom: calc(-1 * var(--border-width));
-  }
-}
 :--o-section--light + :--o-section--light,
 :--o-section--accent + :--o-section--accent,
 :--o-section--muted + :--o-section--muted,
 :--o-section--dark + :--o-section--dark {
-  --border-width: var(--global-border-width--normal);
-  border-top: var(--border-width) solid var(--color--line);
+  box-shadow: inset 0 var(--global-border-width--normal) 0 0 var(--color--line);
 }
 
 
