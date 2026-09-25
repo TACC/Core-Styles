@@ -22,8 +22,3 @@ variants:
     context:
       modifier: style-dark
       shouldLoadCMS: true
-  - name: docs
-    status: ready
-    context:
-      shouldLoadCMS: false
-      shouldLoadDocs: true

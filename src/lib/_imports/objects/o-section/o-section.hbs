@@ -48,6 +48,45 @@
 
 <hr />
 
+{{> @message
+    tag="p"
+    content="<code>o-section--has-border</code> adds full-width rules above and below the band."
+}}
+<section class="o-section o-section--style-light o-section--has-border">
+    <h2>Section (Style Light, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-muted o-section--has-border">
+    <h2>Section (Style Muted, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-dark o-section--has-border">
+    <h2>Section (Style Dark, Has Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-muted">
+    <h2>Section (Style Muted, No Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-muted">
+    <h2>Section (Style Muted, No Border)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+</section>
+<section class="o-section o-section--style-light o-section--has-border">
+    <h2>Section (Style Light, Has Border) (with Nested Sections)</h2>
+    <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    <section class="o-section o-section--style-muted o-section--has-border">
+        <h3>(Nested) Section (Style Muted, Has Border)</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    </section>
+    <section class="o-section o-section--style-muted o-section--has-border">
+        <h3>(Nested) Section (Style Muted, Has Border)</h3>
+        <p>{{> @text-of-one-paragraph-with-actions }}</p>
+    </section>
+</section>
+
+<hr />
+
 <section class="o-section o-section--{{this._self.name}}">
     <h2>Section (with Nested Sections)</h2>
     <p>⚠️ These are not used in any design. They are minimally supported only to prevent layouts from breaking if accidentally used.</p>
