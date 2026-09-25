@@ -104,17 +104,43 @@
 /* Modifers: Style: Text & Background */
 
 :--o-section--style {
-  --box-shadow--fake-bkgd: 100vw 0 0 100vw var(--color--bkgd),
-                          -100vw 0 0 100vw var(--color--bkgd);
+  --fake-bkgd-horiz: 100vw;
+  --fake-bkgd-spread: 100vw;
+  --fake-bkgd-color: var(--color--bkgd);
+  --fake-bkgd:
+    var(--fake-bkgd-horiz) 0 0 var(--fake-bkgd-spread) var(--fake-bkgd-color),
+    calc(-1 * var(--fake-bkgd-horiz)) 0 0 var(--fake-bkgd-spread) var(--fake-bkgd-color);
+
+  position: relative;
+  isolation: isolate;
 
   color: var(--color--text);
   background-color: var(--color--bkgd);
-  box-shadow: var(--box-shadow--fake-bkgd);
-  clip-path: inset(0 -100vw); /* to hide vertical overflow of extended bkgd */
+
+  /* To extend background color wider than section */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    box-shadow: var(--fake-bkgd);
+
+    /* To prevent horizontal scrolling */
+    /* FAQ: Done via pseudo-element not element to not clip parent content */
+    clip-path: inset(0 calc(-1 * var(--fake-bkgd-horiz)));
+  }
 }
 /* Nested sections must not stretch to page edge */
 :--o-section--style :--o-section--style {
-  box-shadow: none;
+  background-color: var(--color--bkgd);
+
+  &::before {
+    display: none;
+  }
+  &::after {
+    display: none;
+  }
 }
 
 /* Modifers: Style: Borders */
@@ -124,8 +150,48 @@
 :--o-section--accent + :--o-section--accent,
 :--o-section--muted + :--o-section--muted,
 :--o-section--dark + :--o-section--dark {
-  border-top: 1px solid var(--color--line);
+  box-shadow: inset 0 var(--global-border-width--normal) 0 0 var(--color--line);
 }
+
+/* To add borders above and below a section AND its extended background */
+:--o-section--border {
+  --border-width: var(--global-border-width--normal);
+  --border-color: var(--color--line, var(--global-color-primary--dark));
+  --border: var(--border-width) solid var(--border-color);
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 100vw;
+    pointer-events: none;
+    box-sizing: border-box;
+
+    /* FAQ: translateX avoids margin-based 100vw horizontal scroll (bordered → plain seam) */
+    transform: translateX(-50%);
+
+    border-top: var(--border);
+  }
+}
+/* To add bottom border only when not followed by another bordered section */
+:--o-section--border:not(:has(+ :--o-section--border))::after {
+  border-bottom: var(--border);
+}
+
+/* To add borders above and below a nested section */
+:--o-section :--o-section--border {
+  border-top: var(--border);
+  box-shadow: none;
+}
+:--o-section :--o-section--border:not(:has(+ :--o-section--border)) {
+  border-bottom: var(--border);
+}
+
 
 
 
@@ -150,11 +216,6 @@
 
 /* Modifers: Banner */
 /* FP-1462: Extract to new banner component(s) */
-
-:--o-section--style.o-section--banner + :--o-section--style {
-  box-shadow: var(--box-shadow--fake-bkgd);
-  clip-path: inset(0 -100vw);
-}
 
 
 

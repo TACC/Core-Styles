@@ -22,7 +22,6 @@
 
 /* OBJECTS */
 @import url("./objects/o-section.css");
-@import url("./objects/o-section--docs.css");
 
 /* COMPONENTS */
 @import url("./components/pymdownx--tabbed.css");

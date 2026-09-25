@@ -1,26 +1,28 @@
+status: ready
 context:
-  shouldLoadCMS: true
-  📝 shouldLoadCMS: this pattern is not intended nor expected for use beyond CMS
   shouldLoadBootstrap: true
   📝 shouldLoadBootstrap: so we can test .container.o-section combo
 variants:
+  - name: default
+    context:
+      shouldLoadCMS: true
   - name: style-light
     label: (Style) Light
     context:
       modifier: style-light
+      shouldLoadCMS: true
   - name: style-accent
     label: (Style) Accent
     context:
       modifier: style-accent
+      shouldLoadCMS: true
   - name: style-muted
     label: (Style) Muted
     context:
       modifier: style-muted
+      shouldLoadCMS: true
   - name: style-dark
     label: (Style) Dark
     context:
       modifier: style-dark
-  - name: docs
-    status: ready
-    context:
-      shouldLoadDocs: true
+      shouldLoadCMS: true
