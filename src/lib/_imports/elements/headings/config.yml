@@ -22,15 +22,3 @@ variants:
     context:
       shouldLoadCMS: true
       shouldLoadBootstrap: true
-  - name: docs
-    status: wip
-    label: Docs
-    context:
-      shouldLoadDocs: true
-  - name: docs-vs-bootstrap
-    status: wip
-    label: Docs vs. Bootstrap
-    view: 'headings--bootstrap.hbs'
-    context:
-      shouldLoadDocs: true
-      shouldLoadBootstrap: true
