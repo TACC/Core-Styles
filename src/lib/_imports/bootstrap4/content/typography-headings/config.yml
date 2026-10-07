@@ -22,4 +22,4 @@ variants:
       supportStyles:
         - ../../assets/settings/font--docs.css
         - ../../assets/settings/color--docs.css
-        - ../../assets/bootstrap4/content/typography-headings/typography-headings--docs.css
+        - ../../assets/bootstrap4/content/typography-headings/typography-headings--cms.css
