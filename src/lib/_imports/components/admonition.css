@@ -35,17 +35,17 @@
   @mixin message--has-icon---message--type-info;
   @mixin message--type-info---message--scope-section;
 }
-.admonition:is(.caution, .important) {
+.admonition:is(.warning, .important) {
   @mixin message--has-icon---message--type-warning;
   @mixin message--type-warning---message--scope-section;
 }
-.admonition:is(.warning, .error, .danger) {
+.admonition:is(.caution, .error, .danger) {
   @mixin message--has-icon---message--type-error;
   @mixin message--type-error---message--scope-section;
 }
 /* To change certain icons */
 .admonition:is(.tip)::before { content: "☀"; }
-.admonition:is(.warning)::before { content: "𝖷"; }
+.admonition:is(.caution)::before { content: "𝖷"; }
 .admonition:is(.error, .danger)::before { content: "ⓧ"; }
 
 /* To adjust spacing for certain elements */
