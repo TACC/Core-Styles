@@ -1,6 +1,8 @@
 @define-mixin heading {
     line-height: unset;
+}
 
+@define-mixin heading--margins-bootstrap {
     /* to mimic Bootstrap */
     margin-top: 0;
     margin-bottom: .5rem;
