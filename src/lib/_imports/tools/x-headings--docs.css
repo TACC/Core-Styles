@@ -1,0 +1,32 @@
+@define-mixin heading-1 {
+    font-size: var(--global-font-size--xxx-large);
+    font-weight: var(--black);
+
+    text-transform: uppercase; /* mimics headings--cms.css */
+}
+
+@define-mixin heading-2 {
+    font-size: var(--global-font-size--xx-large);
+    font-weight: var(--bold);
+}
+
+@define-mixin heading-3 {
+    font-size: var(--global-font-size--x-large);
+    font-weight: var(--bold);
+}
+
+/* WARNING: No design available; these are just developer guesswork */
+@define-mixin heading-4 {
+    font-size: var(--global-font-size--large);
+    font-weight: var(--bold);
+}
+
+/* To deter use of "smaller" headings by making them match body font */
+@define-mixin heading-5 {
+    font-size: inherit;
+    font-weight: var(--normal);
+}
+@define-mixin heading-6 {
+    font-size: inherit;
+    font-weight: var(--normal);
+}
