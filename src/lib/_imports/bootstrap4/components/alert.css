@@ -6,7 +6,8 @@
   @mixin message;
   @mixin message--scope-section;
 
-  margin-bottom: var(--global-space--grid-gap);
+  margin-top: var(--global-space--p-buffer-above);
+  margin-bottom: var(--global-space--p-buffer-below);
 }
 
 .alert-primary,
