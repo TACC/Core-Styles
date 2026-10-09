@@ -12,6 +12,7 @@
   --icon-block-width: 65px;
   --icon-size: 36px;
 
+  margin-block: var(--global-space--grid-gap);
   padding-block: 20px;
   padding-inline: 30px;
 }
