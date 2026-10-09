@@ -5,8 +5,7 @@
 
   @mixin message;
   @mixin message--scope-section;
-}
-.alert:not(:last-child) {
+
   margin-bottom: var(--global-space--grid-gap);
 }
 
