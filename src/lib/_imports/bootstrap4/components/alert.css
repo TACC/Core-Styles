@@ -5,6 +5,9 @@
 
   @mixin message;
   @mixin message--scope-section;
+
+  margin-top: var(--global-space--p-buffer-above);
+  margin-bottom: var(--global-space--p-buffer-below);
 }
 
 .alert-primary,
