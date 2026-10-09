@@ -12,9 +12,11 @@
   --icon-block-width: 65px;
   --icon-size: 36px;
 
-  margin-block: var(--global-space--grid-gap);
   padding-block: 20px;
   padding-inline: 30px;
+}
+.admonition:not(:last-child) {
+  margin-bottom: var(--global-space--grid-gap);
 }
 .admonition-title {
   font-weight: var(--bold);
